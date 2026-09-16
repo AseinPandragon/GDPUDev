@@ -1,8 +1,6 @@
-/**
- * 广药 游戏开发情报中枢 · 自动历史归档索引 (Auto-Generated)
- */
 window.NEWS_ARCHIVE_LIST = [
-  { date: "2026-09-16", weekday: "星期三", file: "data/2026-09-16.js", desc: "今日最新情报" },
+  { date: "2026-09-17", weekday: "星期四", file: "data/2026-09-17.js", desc: "今日最新情报" },
+  { date: "2026-09-16", weekday: "星期三", file: "data/2026-09-16.js", desc: "往期技术归档" },
   { date: "2026-09-13", weekday: "星期日", file: "data/2026-09-13.js", desc: "往期技术归档" },
   { date: "2026-09-12", weekday: "星期六", file: "data/2026-09-12.js", desc: "往期技术归档" },
   { date: "2026-09-08", weekday: "星期二", file: "data/2026-09-08.js", desc: "往期技术归档" },
