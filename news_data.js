@@ -1,62 +1,63 @@
 /**
- * 广药 游戏开发情报中枢 · 每日技术情报 - 2026-09-16
+ * 广药 游戏开发情报中枢 · 每日技术情报 - 2026-09-17
  */
 
 window.DAILY_NEWS_DATA = {
   meta: {
-    date: "2026-09-16",
-    weekday: "星期三",
+    date: "2026-09-17",
+    weekday: "星期四",
     title: "广药 游戏开发情报中枢 · 每日技术情报",
     subtitle: "全生态技术演进 · 3A工业化与前沿行业情报",
-    updateTime: "2026-09-16 08:45",
+    updateTime: "2026-09-17 08:30",
     editor: "广药技术中枢 & 豆包极客",
     highlights: [
-      "🚀 Godot 4.8 dev 6 发布：特性冻结前最后冲刺，CPU渲染优化+高轮询鼠标修复",
-      "🎮 漫威金刚狼正式发售：M站78分争议中登顶PS Store预购，销量超GTA6",
-      "🤖 Aura 1.0 AI开发代理正式发布：Unity/UE双引擎，验证代理+持久项目记忆",
-      "🔧 Unity官方免费AI Agent插件：接入Claude Code/Codex/Cursor/Grok全项目上下文",
-      "💰 巫师系列全球销量破9000万份，CDPR净利润暴涨37%，重制版9/29上线"
+      "🐺 《战狗》(Wardogs)抢先体验5天销量破200万份，Steam在线峰值42.8万，首发超Arc Raiders和Helldivers 2",
+      "🎮 任天堂上半财年Switch 2售出1036万台，净销售额1.099万亿日元同比增110%，营业利润1451亿日元",
+      "🔧 Unity 7技术细节全解析：CoreCLR架构+.NET 10+C# 14，Shader编译快90%，12月Beta/2027 Q1正式",
+      "🤖 LLMUnity开源库：C#包将大模型直接集成进Unity，本地推理无需联网，支持PC/移动/VR+RAG",
+      "💰 微软确认Xbox部门裁员超3200人并出售4个工作室；小岛秀夫Physint转投Xbox发行"
     ],
     engineStatus: [
       { name: "Unity 6.6", type: "unity", status: "9/1正式发布·Content Directories", badge: "最新版", color: "indigo" },
-      { name: "Unity 7", type: "unity", status: "12月Beta·2027 Q1正式·Shader快90%", badge: "下一代", color: "blue" },
-      { name: "团结引擎 1.10.3", type: "tuanjie", status: "9/9新版发布·Arm AI原生图形", badge: "全平台适配", color: "cyan" },
+      { name: "Unity 7", type: "unity", status: "12月Beta·2027 Q1正式·CoreCLR+.NET 10", badge: "下一代", color: "blue" },
+      { name: "团结引擎 2.0", type: "tuanjie", status: "7/28发布·底层重构·支持主机·Codely AI", badge: "重大版本", color: "cyan" },
       { name: "UE 5.8.2", type: "unreal", status: "Hotfix维护·UE6官宣2027年底EA", badge: "UE5工业化", color: "purple" },
-      { name: "Godot 4.8 dev6", type: "godot", status: "9/15发布·特性冻结前冲刺", badge: "开发版", color: "emerald" },
+      { name: "Godot 4.8 dev6", type: "godot", status: "9/15发布·macOS/Android Hotfix", badge: "开发版", color: "emerald" },
       { name: "Godot 4.7.2", type: "godot", status: "W4获腾讯$18M·企业化加速", badge: "轻量开源", color: "pink" }
     ]
   },
   hero: {
-    id: "hero-godot-48-dev6",
-    category: "engine",
-    categoryName: "引擎前沿 · 头条深度",
-    tag: "🚀 特性冻结冲刺",
-    title: "Godot 4.8 dev 6 发布：不到一周连发新版，CPU渲染优化与高轮询鼠标修复同步上线",
-    summary: "Godot Engine于9月15日发布4.8 dev 6开发快照，距离上一个dev 5不到一周，显示开发团队正进入特性冻结前的最后冲刺阶段。本次更新同步推出两篇深度技术文章：《Optimizing CPU-side Rendering Code》详解Godot渲染管线CPU端优化方法论，以及《Fixing high polling rate mice on Windows in Godot》修复长期存在的高轮询率鼠标性能问题。Godot 4.8正式版预计不久后进入特性冻结。",
+    id: "hero-wardogs-2m-sales",
+    category: "games",
+    categoryName: "热门游戏 · 头条深度",
+    tag: "🐺 现象级爆款",
+    title: "《战狗》(Wardogs)抢先体验5天销量破200万份：Steam在线峰值42.8万，首发成绩超越Arc Raiders和Helldivers 2",
+    summary: "Bulkhead Interactive与Team17联合发行的百人战术射击游戏《战狗》(Wardogs)于9月10日登陆Steam抢先体验，首日即售出100万份，5天内突破200万份，Steam同时在线峰值达428,666人。这一首发成绩超过了《Arc Raiders》和《Helldivers 2》等同类战术射击游戏。游戏通过一段名为《10个不要购买的理由》的反向营销视频公布发售日期，引发巨大关注。尽管开服首日服务器问题导致好评率一度跌破50%，但团队快速修复后将总好评率拉回至81%的「特别好评」。",
     image: "",
-    source: "Godot Engine 官方博客",
+    source: "GamesBeat / GAMES.GG / 游研社",
     date: "2026-09-15",
-    url: "https://godotengine.org/article/dev-snapshot-godot-4-8-dev-6/",
+    url: "https://gamesbeat.com/wardogs-hits-two-million-units-sold-within-week-one/",
     readTime: "4 分钟深度",
-    hotScore: 95,
-    tags: ["Godot 4.8", "dev 6", "CPU渲染优化", "高轮询鼠标", "特性冻结", "开源引擎"],
+    hotScore: 96,
+    tags: ["战狗", "Wardogs", "Bulkhead", "200万销量", "Steam抢先体验", "战术射击", "在线峰值42万"],
     content: [
       {
-        title: "dev 6 要点",
+        title: "关键数据",
         type: "list",
         items: [
-          "9月15日发布，距dev5不到一周；",
-          "特性冻结前最后冲刺阶段；",
-          "CPU端渲染代码优化深度文章；",
-          "Windows高轮询率鼠标性能修复；",
-          "Godot 4.8正式版即将进入特性冻结；",
-          "开源社区迭代速度持续加快。"
+          "9月10日Steam抢先体验上线；",
+          "首日售出100万份；",
+          "5天内突破200万份；",
+          "Steam在线峰值428,666人；",
+          "首发成绩超Arc Raiders和Helldivers 2；",
+          "好评率从<50%修复后回升至81%；",
+          "百人战术射击玩法。"
         ]
       },
       {
-        title: "技术意义",
+        title: "行业分析",
         type: "text",
-        text: "Godot 4.8的快速迭代节奏反映了开源引擎社区的成熟度——W4 Games获得腾讯1800万美元投资后，企业级开发者的涌入加速了性能优化需求。CPU渲染优化文章展示了Godot团队对渲染管线底层的掌控力，而高轮询率鼠标修复则是社区长期反馈的痛点解决。这些改进将直接提升Godot在商业项目中的可用性，缩小与Unity/UE的工程化差距。"
+        text: "《战狗》的成功是2026年独立/中型游戏爆发的又一例证——Bulkhead作为英国中型工作室，凭借反向营销策略（《10个不要购买的理由》）和扎实的战术射击玩法，在抢先体验阶段即获得现象级成功。这与《渔力全开》两天100万份、《杀戮尖塔2》Godot开发成功共同构成了2026年独立游戏的「爆款公式」：精准定位+社交传播+扎实玩法。对开发者而言，这说明不需要3A级预算也能创造商业奇迹，关键在于找到差异化的品类切入点和有效的社区运营策略。"
       }
     ]
   },
@@ -71,999 +72,946 @@ window.DAILY_NEWS_DATA = {
   ],
   items: [
     {
-      id: "godot-cpu-render-optimization",
-      category: "engine",
-      subcategory: "Godot 渲染",
-      title: "Godot 官方深度解析：如何优化 CPU 端渲染代码，方法论与实战技巧",
-      summary: "Godot Engine官方发布《Optimizing CPU-side Rendering Code》深度技术文章，详解渲染管线CPU端的优化方法论。文章覆盖渲染指令排序、状态切换最小化、批处理策略、可见性裁剪算法等核心主题，并结合Godot 4.x渲染器架构给出实战优化技巧，是引擎开发者理解渲染优化的优质参考。",
-      source: "Godot Engine 官方博客",
-      date: "2026-09-15",
-      url: "https://godotengine.org/article/optimizing-cpu-side-rendering-code/",
-      image: "",
-      badge: "渲染优化",
-      badgeType: "engine",
-      readTime: "4 分钟",
-      hotScore: 84,
-      tags: ["Godot", "CPU渲染", "渲染优化", "批处理", "可见性裁剪", "官方教程"],
-      content: [
-        {
-          title: "优化要点",
-          type: "list",
-          items: [
-            "渲染指令排序优化；",
-            "状态切换最小化策略；",
-            "批处理（Batching）技巧；",
-            "可见性裁剪算法；",
-            "Godot 4.x渲染器架构实战；",
-            "引擎开发者优质参考。"
-          ]
-        },
-        {
-          title: "摘要速读",
-          type: "text",
-          text: "Godot官方发布CPU端渲染代码优化深度文章，覆盖渲染指令排序、状态切换最小化、批处理策略、可见性裁剪等核心主题，结合Godot 4.x架构给出实战技巧。"
-        }
-      ]
-    },
-    {
-      id: "godot-high-polling-mouse-fix",
-      category: "engine",
-      subcategory: "Godot 输入",
-      title: "Godot 修复 Windows 高轮询率鼠标性能问题：长期痛点终于解决",
-      summary: "Godot Engine官方发布《Fixing high polling rate mice on Windows in Godot》技术文章，详细记录了修复Windows平台高轮询率（1000Hz+）鼠标导致性能问题的全过程。该问题长期影响使用高端电竞鼠标的Godot开发者和玩家，修复涉及Windows消息循环处理、输入事件节流和时间戳精度校准等多个层面。",
-      source: "Godot Engine 官方博客",
-      date: "2026-08-24",
-      url: "https://godotengine.org/article/fixing-high-polling-rate-mice-on-windows-in-godot/",
-      image: "",
-      badge: "输入修复",
-      badgeType: "engine",
-      readTime: "3 分钟",
-      hotScore: 80,
-      tags: ["Godot", "Windows", "高轮询鼠标", "性能修复", "输入系统", "1000Hz"],
-      content: [
-        {
-          title: "修复内容",
-          type: "list",
-          items: [
-            "Windows高轮询率鼠标性能问题修复；",
-            "Windows消息循环处理优化；",
-            "输入事件节流机制；",
-            "时间戳精度校准；",
-            "长期社区痛点解决；",
-            "1000Hz+电竞鼠标兼容。"
-          ]
-        },
-        {
-          title: "摘要速读",
-          type: "text",
-          text: "Godot官方发布Windows高轮询率鼠标性能问题修复详解，涉及消息循环处理、输入事件节流和时间戳精度校准，解决了长期影响高端电竞鼠标用户的性能痛点。"
-        }
-      ]
-    },
-    {
-      id: "tuanjie-1103-release",
-      category: "engine",
-      subcategory: "团结引擎",
-      title: "团结引擎 1.10.3 新版发布：携手 Arm 加速 AI 原生图形能力落地",
-      summary: "Unity中国于9月9日发布团结引擎1.10.3新版，同步宣布与Arm达成合作加速AI原生图形能力落地。新版本聚焦性能优化和平台适配，同时推进Tuanjie Codely AI开发助手的移动端体验。团结引擎1.6.13 LTS for HMI也于9月11日发布，面向车载和工业人机界面场景。",
-      source: "Unity中国 / 网易",
-      date: "2026-09-09",
-      url: "https://unity.cn/releases/full/2000",
-      image: "",
-      badge: "团结引擎",
-      badgeType: "engine",
-      readTime: "3 分钟",
-      hotScore: 81,
-      tags: ["团结引擎", "1.10.3", "Arm", "AI原生图形", "HMI", "车载"],
-      content: [
-        {
-          title: "发布要点",
-          type: "list",
-          items: [
-            "团结引擎1.10.3新版9/9发布；",
-            "携手Arm加速AI原生图形落地；",
-            "Tuanjie Codely移动端体验推进；",
-            "1.6.13 LTS for HMI 9/11发布；",
-            "面向车载和工业人机界面；",
-            "性能优化与平台适配。"
-          ]
-        },
-        {
-          title: "战略意义",
-          type: "text",
-          text: "团结引擎与Arm的合作标志着国产引擎在AI原生图形领域的战略布局——Arm架构在移动端和车载平台占据主导地位，AI原生图形能力将直接影响下一代移动游戏和智能座舱体验。HMI版本的持续更新显示团结引擎在非游戏领域（车载、工业）的商业化推进。"
-        }
-      ]
-    },
-    {
-      id: "ue6-2027-blueprint",
-      category: "engine",
-      subcategory: "虚幻引擎",
-      title: "UE6 官宣 2027 年底抢先体验：蓝图逐渐退场，C++与AI原生成为主流",
-      summary: "什么值得买发布UE6深度分析文章：Epic在Unreal Fest芝加哥官宣虚幻引擎6将于2027年底进入抢先体验，正式版在其后12-18个月。文章指出UE6时代蓝图将逐渐退场，C++编程和AI原生工具成为开发主流。现在学习虚幻引擎的开发者需要重新评估学习路径和投入产出比。",
-      source: "什么值得买",
-      date: "2026-09-12",
-      url: "https://post.m.smzdm.com/p/a6zd2gpz/",
-      image: "",
-      badge: "UE6 前瞻",
-      badgeType: "engine",
-      readTime: "4 分钟",
-      hotScore: 86,
-      tags: ["UE6", "虚幻引擎", "2027", "蓝图退场", "C++", "AI原生", "抢先体验"],
-      content: [
-        {
-          title: "UE6 要点",
-          type: "list",
-          items: [
-            "2027年底进入抢先体验；",
-            "正式版在EA后12-18个月；",
-            "蓝图逐渐退场；",
-            "C++编程成为主流；",
-            "AI原生工具深度集成；",
-            "开发者需重新评估学习路径。"
-          ]
-        },
-        {
-          title: "行业影响",
-          type: "text",
-          text: "UE6蓝图退场的趋势对游戏开发教育影响深远——过去十年蓝图降低了UE的入门门槛，培养了大量非程序员开发者。转向C++和AI原生意味着入门门槛重新提高，但AI工具可能弥补这一差距。对现有蓝图开发者而言，应尽早向C++和AI辅助开发转型，避免技术栈过时。"
-        }
-      ]
-    },
-    {
-      id: "unity-ai-muse-replaced",
-      category: "engine",
-      subcategory: "Unity AI",
-      title: "Unity AI 正式替代 Unity Muse：接入第三方前沿模型，捆绑订阅不再单独收费",
-      summary: "Rework发布2026年游戏开发AI工具全景报告：Unity已在2024年重组中 quietly 退役了独立收费30美元/月的Muse产品，取而代之的Unity AI于2026年5月4日开放测试。Unity AI运行在Gemini等第三方前沿模型上而非自研模型，可在编辑器内访问完整项目上下文，捆绑在Unity订阅等级中不再单独收费。",
-      source: "Rework",
-      date: "2026-09-01",
-      url: "https://resources.rework.com/tools/ai-tools/best-ai-tools-for-game-development-2026",
-      image: "",
-      badge: "Unity AI",
-      badgeType: "ai",
-      readTime: "3 分钟",
-      hotScore: 82,
-      tags: ["Unity AI", "Muse退役", "Gemini", "订阅捆绑", "AI工具", "第三方模型"],
-      content: [
-        {
-          title: "变化要点",
-          type: "list",
-          items: [
-            "Unity Muse已退役（原$30/月）；",
-            "Unity AI于2026年5月4日开放测试；",
-            "运行在Gemini等第三方前沿模型；",
-            "编辑器内完整项目上下文访问；",
-            "捆绑Unity订阅不再单独收费；",
-            "放弃自研模型转向第三方。"
-          ]
-        },
-        {
-          title: "策略分析",
-          type: "text",
-          text: "Unity从自研Muse转向第三方模型的Unity AI，反映了AI工具领域的务实策略——与其投入巨资自研大模型，不如接入最好的第三方模型并聚焦编辑器集成体验。捆绑订阅的定价方式降低了用户尝试门槛，也增加了Unity订阅的粘性。这与Epic在UE6中深度集成AI的策略形成差异化竞争。"
-        }
-      ]
-    },
-    {
-      id: "nvidia-dlss5-gamescom",
+      id: "nintendo-h1-fy2026-results",
       category: "industry",
-      subcategory: "图形技术",
-      title: "NVIDIA DLSS 5 科隆游戏展发布：3D 引导神经网络渲染，超越传统渲染的照片级真实度",
-      summary: "NVIDIA在2026年科隆游戏展正式发布DLSS 5，引入全新的「经3D引导的神经网络渲染」（3D-Guided Neural Rendering）模式。DLSS 5并非普通文生图AI应用那样凭空生成图像，而是结合3D几何引导与神经网络渲染，在实时游戏中实现超越传统光栅化渲染的照片级真实度，标志着实时渲染从「管线渲染」向「AI辅助渲染」的范式转变。",
-      source: "微型计算机 / 今日头条",
-      date: "2026-09-02",
-      url: "http://m.toutiao.com/group/7680770892334498346/",
+      subcategory: "财报",
+      title: "任天堂上半财年Switch 2售出1036万台，净销售额1.099万亿日元同比暴增110%",
+      summary: "任天堂公布2026财年上半期（4-9月）决算：净销售额1兆995亿日元（约1.099万亿日元），同比增长110.1%；营业利润1451亿日元。Switch 2主机上半财年售出1036万台，软件售出2062万份。旧款Switch售出189万台，软件6156万份。海外销售额占比79.5%。Switch 2累计销量已达约3000万台，成为任天堂历史上最成功的主机首发之一。",
+      source: "任天堂决算短信 / Japan IR",
+      date: "2026-09-14",
+      url: "https://japanir.jp/company/company-7974/ir/7974-20251104-03_wp_financial_detailed/",
       image: "",
-      badge: "DLSS 5",
-      badgeType: "hot",
-      readTime: "4 分钟",
-      hotScore: 88,
-      tags: ["NVIDIA", "DLSS 5", "3D引导渲染", "神经网络渲染", "科隆展", "照片级真实"],
-      content: [
-        {
-          title: "技术要点",
-          type: "list",
-          items: [
-            "科隆游戏展正式发布DLSS 5；",
-            "3D引导神经网络渲染新模式；",
-            "非凭空生成，结合3D几何引导；",
-            "实时照片级真实度；",
-            "超越传统光栅化渲染；",
-            "渲染范式转变标志。"
-          ]
-        },
-        {
-          title: "行业意义",
-          type: "text",
-          text: "DLSS 5的3D引导神经网络渲染是实时渲染的重要里程碑——传统光栅化渲染的性能瓶颈在于几何复杂度，而AI辅助渲染可以用较低分辨率输入生成高质量输出。3D几何引导确保了生成内容的几何准确性，避免了纯AI生成的「幻觉」问题。对开发者而言，这意味着未来可以用更低的渲染预算实现更高画质，尤其对开放世界和光线追踪场景意义重大。"
-        }
-      ]
-    },
-    {
-      id: "witcher-90m-sales",
-      category: "industry",
-      subcategory: "财报销量",
-      title: "巫师系列全球销量破 9000 万份，CDPR 净利润暴涨 37%，重制版 9/29 上线",
-      summary: "CD Projekt Red公布最新财报：《巫师》系列全球总销量正式突破9000万份大关，其中《巫师3：狂猎》单款销量达6500万份。CDPR净利润同比暴涨37%，核心IP持续运营与新项目开发双轮驱动。《巫师3：狂猎 重制版》将于9月29日全平台上线，全新DLC《巫师3：旧时曲》预计2027年上线，愿望单已破90万登顶。",
-      source: "3DM游戏网 / 游侠网",
-      date: "2026-09-03",
-      url: "https://m.3dmgame.com/news/202609/3952264.html",
-      image: "",
-      badge: "销量里程碑",
+      badge: "财报暴增",
       badgeType: "business",
       readTime: "3 分钟",
-      hotScore: 87,
-      tags: ["巫师", "CDPR", "9000万销量", "净利润37%", "巫师3重制版", "旧时曲DLC"],
+      hotScore: 88,
+      tags: ["任天堂", "Switch 2", "1036万台", "净销售额1.099万亿", "同比110%", "营业利润1451亿"],
       content: [
         {
           title: "关键数据",
           type: "list",
           items: [
-            "巫师系列全球销量破9000万份；",
-            "巫师3单款销量6500万份；",
-            "CDPR净利润同比暴涨37%；",
-            "巫师3重制版9/29全平台上线；",
-            "旧时曲DLC 2027年上线；",
-            "DLC愿望单破90万登顶。"
+            "净销售额1.099万亿日元，同比+110.1%；",
+            "营业利润1451亿日元；",
+            "Switch 2售出1036万台；",
+            "Switch 2软件2062万份；",
+            "旧Switch售出189万台；",
+            "海外销售占比79.5%；",
+            "Switch 2累计约3000万台。"
           ]
         },
         {
-          title: "商业分析",
+          title: "市场意义",
           type: "text",
-          text: "巫师系列9000万销量和37%净利润增长证明了经典IP持续运营的商业价值——巫师3发售已超过10年，仍能通过重制版和新DLC驱动增长。CDPR的「重制+续作+DLC」组合拳为行业提供了经典IP价值最大化的范本。对开发者而言，这说明高质量RPG的生命周期可以远超行业平均水平。"
+          text: "任天堂上半财年的爆发式增长证明了Switch 2的强劲市场表现——1036万台的半年销量远超行业预期，也验证了任天堂「主机+IP+订阅」的商业闭环。Switch 2的成功对游戏开发者意味着新主机平台的用户基数正在快速扩大，针对Switch 2的游戏开发和优化将成为越来越重要的业务方向。"
         }
       ]
     },
     {
-      id: "dawnwalker-steam-number1",
-      category: "industry",
-      subcategory: "销量榜单",
-      title: "黎明行者之血登顶 Steam 全球周销榜：前巫师 3 团队黑暗奇幻 ARPG 首战告捷",
-      summary: "Steam公布最新一周（9月1日-8日）全球游戏销量排行榜：由前《巫师3》核心开发班底打造的开放世界黑暗奇幻ARPG《黎明行者之血》（The Blood of Dawnwalker）强势登顶全球榜首。该作由Rebel Wolves工作室开发，团队成员多来自CD Projekt Red巫师3开发组，主打黑暗奇幻世界观和高自由度战斗系统，被视为巫师精神续作的有力竞争者。",
-      source: "游侠网 / 中关村在线",
-      date: "2026-09-09",
-      url: "https://3g.ali213.net/news/html/1038193.html",
+      id: "unity-7-coreclr-net10",
+      category: "engine",
+      subcategory: "Unity",
+      title: "Unity 7技术细节全解析：CoreCLR架构+.NET 10+C# 14，Shader编译快90%，12月Beta",
+      summary: "Unity官方投资者页面发布Unity 7完整技术路线图：引擎核心运行时全面迁移至CoreCLR架构，支持.NET 10、C# 14、MSBuild和官方.NET调试器。Shader编译耗时最高缩减90%（基于Microsoft DXC编译器），Play Mode近瞬时启动，Domain Reload仅重编译变更代码。新增Surface Cache GI实时全局光照技术。提供CLI命令行工具和公共API，支持离线资源校验和项目构建。存量Unity 6项目可无缝迁移，无需大规模重构。开放Beta将于2026年12月开始，正式版2027年Q1发布。",
+      source: "Unity投资者关系 / SHAttered",
+      date: "2026-07-20",
+      url: "https://investors.unity.com/news/news-details/2026/Unity-7-Roadmap-Revealed-At-Unite-Seoul/default.aspx",
       image: "",
-      badge: "Steam 登顶",
-      badgeType: "business",
-      readTime: "3 分钟",
-      hotScore: 83,
-      tags: ["黎明行者之血", "Steam周销榜", "Rebel Wolves", "前巫师3团队", "黑暗奇幻", "ARPG"],
-      content: [
-        {
-          title: "游戏要点",
-          type: "list",
-          items: [
-            "Steam全球周销榜登顶；",
-            "前巫师3核心团队打造；",
-            "Rebel Wolves工作室开发；",
-            "开放世界黑暗奇幻ARPG；",
-            "高自由度战斗系统；",
-            "巫师精神续作竞争者。"
-          ]
-        },
-        {
-          title: "行业意义",
-          type: "text",
-          text: "黎明行者之血的登顶验证了「核心团队出走创业」模式的可行性——Rebel Wolves由前巫师3开发者创立，凭借在CDPR积累的RPG开发经验，首款作品即获得市场认可。这对游戏行业人才流动和创业生态有积极示范作用。同时也说明黑暗奇幻ARPG品类仍有巨大市场空间。"
-        }
-      ]
-    },
-    {
-      id: "onimusha-japan-sales",
-      category: "industry",
-      subcategory: "销量榜单",
-      title: "鬼武者：剑之道首周销量夺冠日本实体榜，PS5 与 Switch 2 合计售出 9.6 万份",
-      summary: "卡普空《鬼武者：剑之道》发售首周登顶日本实体销量榜，PS5与Switch 2双平台合计售出96,029份。该作是经典鬼武者系列的全新重启作品，由卡普空内部团队开发，主打剑术战斗和战国时代背景，在日本市场获得强烈反响。Switch 2版本的销量表现也验证了新主机的市场活力。",
-      source: "游民星空",
-      date: "2026-09-11",
-      url: "http://www.gamersky.com/news/2517/List_10.html",
-      image: "",
-      badge: "日本夺冠",
-      badgeType: "business",
-      readTime: "2 分钟",
-      hotScore: 79,
-      tags: ["鬼武者", "卡普空", "日本实体销量", "PS5", "Switch 2", "9.6万份"],
-      content: [
-        {
-          title: "销量数据",
-          type: "list",
-          items: [
-            "首周登顶日本实体销量榜；",
-            "PS5+Switch 2合计96,029份；",
-            "卡普空内部团队开发；",
-            "经典鬼武者系列重启；",
-            "剑术战斗+战国时代背景；",
-            "Switch 2市场活力验证。"
-          ]
-        },
-        {
-          title: "摘要速读",
-          type: "text",
-          text: "卡普空《鬼武者：剑之道》首周登顶日本实体销量榜，PS5与Switch 2合计售出96,029份。经典系列重启+剑术战斗+战国背景在日本市场获得强烈反响，Switch 2版本销量验证了新主机市场活力。"
-        }
-      ]
-    },
-    {
-      id: "china-gamescom-60-studios",
-      category: "industry",
-      subcategory: "展会",
-      title: "60 家中国厂商亮相科隆游戏展：米哈游写实新作撕掉「二次元」标签，国产 3A 集体出海",
-      summary: "2026科隆游戏展上，60家中国游戏厂商集体亮相，创历史新高。米哈游全新IP《源初之结》（Nodus Fall）成为最大焦点：首次主力产品全量使用UE5、首次写实奇幻画风、首次把多人共斗放在中心、首次明确冲击全球主机/PC 3A规格。米哈游创始人大刘伟坦言这款产品「非常不米哈游」，释放出进军写实奇幻+硬核动作市场的清晰信号。",
-      source: "新闻晨报 / 今日头条",
-      date: "2026-08-31",
-      url: "http://m.toutiao.com/group/7680140115632521762/",
-      image: "",
-      badge: "科隆展",
-      badgeType: "event",
-      readTime: "3 分钟",
-      hotScore: 84,
-      tags: ["科隆展", "中国厂商", "米哈游", "源初之结", "UE5", "写实奇幻", "国产3A"],
-      content: [
-        {
-          title: "展会要点",
-          type: "list",
-          items: [
-            "60家中国厂商创历史新高；",
-            "米哈游《源初之结》最大焦点；",
-            "首次全量UE5主力产品；",
-            "首次写实奇幻画风；",
-            "首次多人共斗中心玩法；",
-            "首次冲击全球3A规格；",
-            "大刘伟称「非常不米哈游」。"
-          ]
-        },
-        {
-          title: "行业意义",
-          type: "text",
-          text: "60家中国厂商亮相科隆和米哈游转型写实3A，标志着中国游戏产业从「二次元/手游」向「全球3A/写实」的战略升级。米哈游选择UE5而非自研引擎，反映了3A开发中「聚焦内容而非引擎」的务实策略。国产3A集体出海将加剧全球游戏市场竞争，也为引擎和中间件厂商带来新的商业机会。"
-        }
-      ]
-    },
-    {
-      id: "slay-the-spire-2-godot",
-      category: "industry",
-      subcategory: "引擎选择",
-      title: "杀戮尖塔 2 用 Godot 开发成功，Unity 商店停服引独立开发者重新评估引擎选择",
-      summary: "什么值得买发布独立游戏引擎选择深度分析：《杀戮尖塔2》使用Godot引擎开发并获得商业成功，成为Godot在独立游戏领域的标杆案例。同时Unity资源商店政策调整和停服风波让国内开发者重新评估「素材从哪来、授权主体是谁」等问题。文章从2D项目实测对比出发，分析Godot在包体大小、冷启动速度、Android性能等方面的优势，以及Unity在URP优化和素材生态上的长处。",
-      source: "什么值得买",
-      date: "2026-09-12",
-      url: "https://post.m.smzdm.com/p/am9xg4vk/",
-      image: "",
-      badge: "引擎选择",
+      badge: "Unity 7",
       badgeType: "engine",
       readTime: "4 分钟",
-      hotScore: 82,
-      tags: ["杀戮尖塔2", "Godot", "Unity商店", "独立游戏", "引擎选择", "2D性能"],
+      hotScore: 89,
+      tags: ["Unity 7", "CoreCLR", ".NET 10", "C# 14", "Shader快90%", "Surface Cache GI", "12月Beta"],
       content: [
         {
-          title: "分析要点",
+          title: "五大核心支柱",
           type: "list",
           items: [
-            "杀戮尖塔2用Godot开发成功；",
-            "Unity资源商店政策调整引关注；",
-            "Godot包体更小冷启动更快；",
-            "Android实测Godot同FPS更低内存；",
-            "Unity URP优化和素材生态仍占优；",
-            "独立开发者需重新评估引擎。"
+            "更快创作：CoreCLR核心，近瞬时Play Mode；",
+            "Shader编译最高快90%（DXC编译器）；",
+            "Domain Reload仅触达变更代码；",
+            "Surface Cache GI实时全局光照；",
+            ".NET 10 + C# 14 + MSBuild + 官方调试器；",
+            "CLI工具+公共API，离线构建支持；",
+            "Unity 6项目无缝迁移；",
+            "12月Beta，2027 Q1正式版。"
           ]
         },
         {
-          title: "选型建议",
+          title: "技术意义",
           type: "text",
-          text: "杀戮尖塔2的成功为Godot在2D独立游戏领域提供了强有力的商业验证。对于2D项目，Godot在包体、启动速度和内存效率上确实有优势；但Unity的素材生态和跨平台工具链仍然成熟。开发者应根据项目类型（2D/3D）、目标平台和团队技术栈综合选择，而非盲目跟风迁移。"
+          text: "Unity 7迁移至CoreCLR是引擎架构的根本性变革——这意味着Unity将彻底摆脱自研Mono运行时的性能瓶颈，获得与现代.NET生态完全兼容的开发体验。C# 14的ReadOnlySpan<T>一等公民支持和.NET 10的性能改进将直接提升游戏代码的运行效率。Shader编译快90%对大型项目的迭代效率提升尤为显著，这是Unity团队长期被诟病的痛点解决。"
         }
       ]
     },
     {
-      id: "wolverine-launch-sales",
-      category: "games",
-      subcategory: "3A大作",
-      title: "漫威金刚狼正式发售后 PS Store 全球销量排名：美英第二，未发先火登顶预购榜",
-      summary: "Insomniac Games打造的《漫威金刚狼》于9月15日正式登陆PS5。根据PS Store实时销售数据监控，本作发售后在美国和英国PS Store排名第二，仅次于NBA 2K27；在德国、意大利、西班牙、加拿大排名第三。此前本作未发先火，已升至PS Store销量榜第四位，甚至超越尚未发售的GTA6预购。媒体评分争议（M站78/IGN 6）并未影响玩家购买热情。",
-      source: "Outer Space / 中关村在线",
-      date: "2026-09-16",
-      url: "https://www.outerspace.com.br/marvels-wolverine-nao-consegue-topo-dos-mais-vendidos-na-playstation-store/",
+      id: "microsoft-xbox-layoffs-3200",
+      category: "industry",
+      subcategory: "大厂动向",
+      title: "微软确认Xbox部门裁员超3200人并出售4个工作室，游戏业务持续重组",
+      summary: "微软正式确认Xbox游戏部门将进行大规模重组：裁员超过3200人，并出售旗下4个游戏工作室。这是继2024年微软游戏部门1900人裁员后的又一轮大规模调整。此次重组预计将持续到2027年。微软游戏CEO Phil Spencer此前表示，公司正在重新评估第一方工作室的投资策略，将更多资源转向第三方合作和Game Pass订阅服务。被出售的4个工作室具体名称尚未完全公布。",
+      source: "GameFM / 外媒综合",
+      date: "2026-09-10",
+      url: "https://gamefm.com.br/noticias/",
       image: "",
-      badge: "发售首周",
-      badgeType: "hot",
-      readTime: "3 分钟",
-      hotScore: 88,
-      tags: ["漫威金刚狼", "PS Store", "销量排名", "Insomniac", "PS5", "M站78"],
-      content: [
-        {
-          title: "销量数据",
-          type: "list",
-          items: [
-            "9月15日PS5正式发售；",
-            "美英PS Store排名第二；",
-            "德意西加排名第三；",
-            "未发先火升至预购榜第四；",
-            "超越GTA6预购排名；",
-            "媒体评分争议未影响销量。"
-          ]
-        },
-        {
-          title: "市场分析",
-          type: "text",
-          text: "金刚狼的销量表现再次验证了「IP+独占」的商业逻辑——即使媒体评分一般，漫威IP和PS5独占仍能驱动强劲销量。这与《星鸣特攻》的失败形成对比：同样是索尼第一方，金刚狼凭借成熟IP和Insomniac的动作游戏开发经验获得市场认可。对开发者而言，IP价值和开发经验比单纯的技术指标更能决定商业成功。"
-        }
-      ]
-    },
-    {
-      id: "witcher-songs-of-past-dlc",
-      category: "games",
-      subcategory: "DLC",
-      title: "巫师 3 全新 DLC《旧时曲》科隆公布：2027 年上线，规模对标石之心/血与酒",
-      summary: "CD Projekt Red在2026科隆游戏展开幕夜正式公布《巫师3：狂猎》全新DLC《巫师3：旧时曲》（Songs of the Past），这是本作时隔近十年推出的全新DLC。DLC以Geralt的老朋友Dandelion为中心展开新冒险，由Fool's Theory协助开发，规模对标《石之心》和《血与酒》两大经典资料片。DLC愿望单已破90万登顶Steam愿望单榜。",
-      source: "游民星空 / YugaTech",
-      date: "2026-08-26",
-      url: "https://www.gamersky.com/news/53886/",
-      image: "",
-      badge: "全新 DLC",
-      badgeType: "game",
+      badge: "Xbox 重组",
+      badgeType: "business",
       readTime: "3 分钟",
       hotScore: 85,
-      tags: ["巫师3", "旧时曲", "DLC", "CDPR", "Fool's Theory", "2027", "科隆展"],
+      tags: ["微软", "Xbox", "裁员3200", "出售4工作室", "游戏重组", "Phil Spencer", "Game Pass"],
       content: [
         {
-          title: "DLC 要点",
+          title: "重组要点",
           type: "list",
           items: [
-            "科隆展开幕夜正式公布；",
-            "时隔近十年的全新DLC；",
-            "以Dandelion为中心的新冒险；",
-            "Fool's Theory协助开发；",
-            "规模对标石之心/血与酒；",
-            "2027年上线；",
-            "愿望单破90万登顶。"
-          ]
-        },
-        {
-          title: "开发视角",
-          type: "text",
-          text: "巫师3在发售近十年后推出全新DLC，是经典IP长期运营的极致案例。CDPR选择Fool's Theory（《巫师1重制版》开发商）协助开发，既保证了系列风格一致性，又利用了外部团队的开发产能。90万+愿望单数据证明了玩家对巫师IP的持久热情，也为重制版+DLC的组合策略提供了市场验证。"
-        }
-      ]
-    },
-    {
-      id: "nodus-fall-ue5",
-      category: "games",
-      subcategory: "国产新作",
-      title: "米哈游《源初之结》科隆首曝：UE5 写实奇幻多人共斗，冲击全球 3A 规格",
-      summary: "米哈游在2026科隆游戏展正式公布全新IP《源初之结》（Nodus Fall），这是一款使用虚幻5引擎打造的写实向奇幻多人共斗类游戏。玩家将化身「织者」，与队友组队对抗体型庞大的神话巨兽「Dreadnodi」。预告片包含实机演示与引擎内过场动画混合画面，均使用UE5录制。这是米哈游首次主力产品全量使用UE5、首次写实奇幻画风、首次冲击全球3A规格。",
-      source: "Feed4Gamers / 新浪财经",
-      date: "2026-08-26",
-      url: "https://feed4gamers.com/game-news/331360/the-biggest-announcements-and-most-interesting-showcases-from-gamescom.htm",
-      image: "",
-      badge: "科隆首曝",
-      badgeType: "game",
-      readTime: "3 分钟",
-      hotScore: 86,
-      tags: ["源初之结", "米哈游", "Nodus Fall", "UE5", "写实奇幻", "多人共斗", "3A"],
-      content: [
-        {
-          title: "游戏要点",
-          type: "list",
-          items: [
-            "米哈游全新IP科隆首曝；",
-            "UE5引擎打造；",
-            "写实向奇幻画风；",
-            "多人共斗核心玩法；",
-            "对抗巨型神话巨兽Dreadnodi；",
-            "实机+引擎内过场混合画面；",
-            "首次冲击全球3A规格。"
-          ]
-        },
-        {
-          title: "技术选择",
-          type: "text",
-          text: "米哈游选择UE5开发源初之结而非自研引擎，是3A级项目的务实选择——UE5提供了成熟的高画质渲染、多人网络和工具链，让团队可以聚焦内容创作而非引擎研发。这与游戏科学在黑神话钟馗上选择UE5的策略一致，反映出中国3A开发者对引擎选择的成熟态度：用最成熟的工具做最好的内容。"
-        }
-      ]
-    },
-    {
-      id: "stellar-blade-complete",
-      category: "games",
-      subcategory: "新作发售",
-      title: "《剑星 完整版》宣布 2026 年发售：SHIFT UP 增强版登陆多平台",
-      summary: "SHIFT UP Corp.正式宣布《剑星 完整版》（Stellar Blade Complete Edition）将于2026年内发售。该增强版在原版基础上包含所有DLC内容和额外优化，将登陆更多平台。《剑星》原版以出色的角色设计和流畅的动作战斗获得玩家好评，完整版的推出将进一步扩大游戏受众。具体发售日期和新增内容尚未完全公布。",
-      source: "游民星空",
-      date: "2026-09-11",
-      url: "http://www.gamersky.com/news/2517/List_10.html",
-      image: "",
-      badge: "完整版",
-      badgeType: "game",
-      readTime: "2 分钟",
-      hotScore: 77,
-      tags: ["剑星", "Stellar Blade", "SHIFT UP", "完整版", "2026", "多平台"],
-      content: [
-        {
-          title: "发售信息",
-          type: "list",
-          items: [
-            "SHIFT UP正式宣布；",
-            "2026年内发售；",
-            "包含所有DLC内容；",
-            "额外优化；",
-            "登陆更多平台；",
-            "具体日期待公布。"
-          ]
-        },
-        {
-          title: "摘要速读",
-          type: "text",
-          text: "SHIFT UP宣布《剑星 完整版》2026年内发售，包含所有DLC和额外优化，将登陆更多平台。原版以角色设计和动作战斗获好评，完整版将进一步扩大受众。"
-        }
-      ]
-    },
-    {
-      id: "repo-llmgine",
-      category: "opensource",
-      subcategory: "AI引擎",
-      title: "llmgine：LLM 原生 ECS 游戏引擎，智能是核心原语——任何实体都能思考、看、说话",
-      summary: "llmgine是一款全新的LLM原生游戏引擎，采用ECS架构，将「智能」作为核心原语：开发者可以像附加物理或精灵组件一样，为任何实体附加Mind（LLM认知）、Eyes（感知/视觉）和Voice（神经TTS）组件。NPC、Boss、怪物、任务给予者、派系甚至天气——只要存在于世界中，就能思考、感知和说话。这是游戏引擎架构从「物理优先」向「智能优先」的范式探索。",
-      source: "MCP Repository",
-      date: "2026-09-14",
-      url: "https://mcprepository.com/lordbasilaiassistant-sudo/llmgine",
-      image: "",
-      badge: "LLM 引擎",
-      badgeType: "ai",
-      readTime: "3 分钟",
-      hotScore: 83,
-      tags: ["llmgine", "LLM原生", "ECS", "AI引擎", "智能原语", "Mind/Eyes/Voice"],
-      content: [
-        {
-          title: "架构特点",
-          type: "list",
-          items: [
-            "LLM原生ECS游戏引擎；",
-            "智能作为核心原语；",
-            "Mind（LLM认知）组件；",
-            "Eyes（感知/视觉）组件；",
-            "Voice（神经TTS）组件；",
-            "任何实体都能思考/看/说话；",
-            "智能优先范式探索。"
-          ]
-        },
-        {
-          title: "架构意义",
-          type: "text",
-          text: "llmgine的「智能即组件」设计是游戏引擎架构的重要探索——传统引擎中AI是外挂系统，而llmgine将智能提升到与物理、渲染同等的核心地位。这种架构让AI NPC的开发变得像添加刚体组件一样简单，可能催生全新的游戏类型和交互方式。但LLM推理的性能成本和延迟问题仍是需要解决的工程挑战。"
-        }
-      ]
-    },
-    {
-      id: "repo-claude-code-game-studios",
-      category: "opensource",
-      subcategory: "AI代理",
-      title: "Claude Code Game Studios：48 层 AI 代理模拟完整游戏开发团队，一人即可从设计到上线",
-      summary: "Claude Code Game Studios是一个基于Claude Code的开源项目，使用48层分层AI代理模拟完整的游戏开发团队，使单个人即可管理从游戏设计到上线发布的全流程。项目将游戏开发流程拆解为策划、程序、美术、测试、发布等多个专业角色，每个角色由专门的AI代理担任，代理之间通过结构化通信协作，实现游戏开发的全自动化流水线。",
-      source: "智趣AI甄选",
-      date: "2026-06-06",
-      url: "https://www.aifun.cc/en/sites/claude-code-game-studios.html",
-      image: "",
-      badge: "AI 团队",
-      badgeType: "ai",
-      readTime: "3 分钟",
-      hotScore: 82,
-      tags: ["Claude Code", "AI代理", "48层", "游戏开发团队", "自动化", "开源项目"],
-      content: [
-        {
-          title: "项目特点",
-          type: "list",
-          items: [
-            "基于Claude Code的开源项目；",
-            "48层分层AI代理；",
-            "模拟完整游戏开发团队；",
-            "策划/程序/美术/测试/发布；",
-            "代理间结构化通信协作；",
-            "单人管理全流程；",
-            "全自动化流水线。"
+            "Xbox部门裁员超3200人；",
+            "出售4个游戏工作室；",
+            "重组持续至2027年；",
+            "继2024年1900人裁员后又一轮；",
+            "重新评估第一方工作室投资；",
+            "转向第三方合作和Game Pass；",
+            "被售工作室名称待公布。"
           ]
         },
         {
           title: "行业影响",
           type: "text",
-          text: "Claude Code Game Studios代表了AI辅助游戏开发的终极形态——不是单个AI工具，而是完整的AI团队。48层代理的分层架构模拟了真实游戏工作室的组织结构，这种「团队级AI」可能比「工具级AI」更能改变游戏开发的生产力格局。但目前AI代理在创意质量和代码可靠性上仍有局限，更适合原型开发和小型项目。"
+          text: "微软Xbox的持续重组反映了游戏行业第一方开发模式的困境——高成本的3A开发与不确定的商业回报之间的矛盾日益尖锐。微软选择收缩第一方、扩大第三方合作和Game Pass订阅的策略，可能预示着主机战争从「独占内容」向「订阅服务」的范式转移。对开发者而言，这意味着第三方发行渠道可能更加开放，但也需要关注被出售工作室的人才流动机会。"
         }
       ]
     },
     {
-      id: "tut-helloagents-godot-npc",
-      category: "opensource",
-      subcategory: "AI NPC",
-      title: "HelloAgents + Godot 构建赛博小镇：从零打造具有记忆与好感度的 AI NPC 游戏",
-      summary: "CSDN发布完整技术指南，讲解如何将HelloAgents智能体框架与Godot游戏引擎结合，构建一个包含智能NPC对话、短期/长期记忆、五级好感度系统、批量对话生成与实时日志的2D像素风AI小镇。教程以《从零开始构建智能体》第十五章为骨架，覆盖游戏引擎与后端服务的架构设计、记忆系统实现、好感度机制和对话生成流水线，是AI NPC开发的实战参考。",
-      source: "CSDN",
-      date: "2026-09-11",
-      url: "https://blog.csdn.net/gitblog_01148/article/details/152298322",
-      image: "",
-      badge: "AI NPC 实战",
-      badgeType: "ai",
-      readTime: "4 分钟",
-      hotScore: 81,
-      tags: ["HelloAgents", "Godot", "AI NPC", "记忆系统", "好感度", "赛博小镇", "实战教程"],
-      content: [
-        {
-          title: "教程覆盖",
-          type: "list",
-          items: [
-            "HelloAgents+Godot结合；",
-            "智能NPC对话系统；",
-            "短期/长期记忆实现；",
-            "五级好感度系统；",
-            "批量对话生成；",
-            "实时日志系统；",
-            "2D像素风AI小镇；",
-            "游戏引擎+后端架构设计。"
-          ]
-        },
-        {
-          title: "实战价值",
-          type: "text",
-          text: "本教程的价值在于提供了AI NPC从理论到实战的完整路径——记忆系统和好感度机制是AI NPC超越简单对话的关键功能。HelloAgents框架提供了智能体的基础设施，Godot提供了轻量的游戏引擎，两者结合展示了独立开发者也能构建有深度的AI NPC游戏。"
-        }
-      ]
-    },
-    {
-      id: "repo-inworld-ai-npc",
-      category: "opensource",
-      subcategory: "AI NPC",
-      title: "Inworld AI：2026 年最佳 NPC 行为智能工具，持久记忆/情感追踪/知识 RAG 防幻觉",
-      summary: "AI工具评测网站发布2026年AI NPC工具精选，Inworld AI被评为需要真正行为深度的NPC的首选工具。Inworld AI提供持久记忆系统、可配置人格、情感追踪和知识RAG（防止破坏世界观的幻觉），角色能记住跨整个会话的玩家交互、与其他NPC发展关系、维持一致的情感状态并动态响应游戏事件。支持Unity和Unreal Engine集成。",
-      source: "AI Conjured",
-      date: "2026-09-06",
-      url: "https://aiconjured.com/ai-game-dev-tools/ai-behavior-npcs/",
-      image: "",
-      badge: "AI NPC 工具",
-      badgeType: "ai",
-      readTime: "3 分钟",
-      hotScore: 80,
-      tags: ["Inworld AI", "AI NPC", "持久记忆", "情感追踪", "RAG", "Unity/UE集成"],
-      content: [
-        {
-          title: "核心能力",
-          type: "list",
-          items: [
-            "持久记忆系统；",
-            "可配置人格；",
-            "情感追踪；",
-            "知识RAG防幻觉；",
-            "跨会话玩家交互记忆；",
-            "NPC间关系发展；",
-            "动态响应游戏事件；",
-            "Unity/UE集成支持。"
-          ]
-        },
-        {
-          title: "技术亮点",
-          type: "text",
-          text: "Inworld AI的知识RAG功能是解决AI NPC「幻觉」问题的关键——通过将NPC的知识限制在游戏世界观文档内，防止NPC说出破坏沉浸感的内容。持久记忆和情感追踪则让NPC具备真正的「角色深度」，而非简单的对话机器人。这是AI NPC从「玩具」走向「游戏角色」的重要技术基础。"
-        }
-      ]
-    },
-    {
-      id: "cross-platform-engines-2026",
-      category: "opensource",
-      subcategory: "引擎评测",
-      title: "2026 年 7 大跨平台游戏引擎评测：UE 覆盖最广/Unity 工具链最成熟/Godot 最强免费",
-      summary: "Egmatic发布2026年7大跨平台游戏引擎深度评测：Unreal Engine平台覆盖最广且无前期成本；Unity拥有最成熟的跨平台工具链和最大生态；Godot是桌面和移动端最强的免费选项；GameMaker提供最佳2D跨平台工作流；Defold提供免费主机导出；GDevelop和Construct 3限于桌面/移动/Web，无主机支持。评测从平台覆盖、成本、2D/3D能力、学习曲线等维度全面对比。",
-      source: "Egmatic",
-      date: "2026-09-09",
-      url: "https://egmatic.com/blog/7-best-cross-platform-engine-reviews-indie-devs",
-      image: "",
-      badge: "引擎横评",
-      badgeType: "engine",
-      readTime: "4 分钟",
-      hotScore: 79,
-      tags: ["跨平台引擎", "2026评测", "Unreal", "Unity", "Godot", "GameMaker", "Defold"],
-      content: [
-        {
-          title: "评测结论",
-          type: "list",
-          items: [
-            "UE：平台覆盖最广，无前期成本；",
-            "Unity：工具链最成熟，生态最大；",
-            "Godot：桌面/移动最强免费选项；",
-            "GameMaker：最佳2D跨平台工作流；",
-            "Defold：免费主机导出；",
-            "GDevelop/Construct 3：无主机支持。"
-          ]
-        },
-        {
-          title: "选型建议",
-          type: "text",
-          text: "2026年跨平台引擎市场格局已经清晰：UE和Unity主导3A和商业项目，Godot在独立和2D领域快速崛起，GameMaker和Defold在细分市场各有优势。开发者选型应优先考虑目标平台（是否需要主机导出）和项目类型（2D/3D），而非单纯的引擎热度。"
-        }
-      ]
-    },
-    {
-      id: "tut-ue-control-rig-workshop",
-      category: "tutorials",
-      subcategory: "UE 动画",
-      title: "UE Control Rig 绑定工作坊免费上线：Epic 开发者社区完整动画绑定教程",
-      summary: "Epic官方宣布《Rigging in UE Control Rig Workshop》现已在Epic Developer Community免费上线。该工作坊完整讲解在Unreal Engine中使用Control Rig进行角色绑定的全流程，包括骨骼创建、控制设计、约束系统、高级绑定技巧和动画复用。Control Rig是UE5中程序化动画绑定的核心工具，掌握它能显著提升动画团队的工作效率。",
-      source: "Unreal Engine 官方",
-      date: "2026-08-28",
-      url: "https://www.unrealengine.com/feed?categories=all&page=3",
-      image: "",
-      badge: "UE 教程",
-      badgeType: "engine",
-      readTime: "3 分钟",
-      hotScore: 78,
-      tags: ["UE5", "Control Rig", "动画绑定", "工作坊", "免费教程", "Epic官方"],
-      content: [
-        {
-          title: "教程内容",
-          type: "list",
-          items: [
-            "Epic Developer Community免费上线；",
-            "Control Rig角色绑定全流程；",
-            "骨骼创建与控制设计；",
-            "约束系统；",
-            "高级绑定技巧；",
-            "动画复用；",
-            "程序化动画绑定核心工具。"
-          ]
-        },
-        {
-          title: "学习价值",
-          type: "text",
-          text: "Control Rig是UE5动画管线的核心组件，它允许开发者用节点和代码创建可复用的绑定系统，比传统的外部DCC绑定更灵活且能在引擎内实时调整。掌握Control Rig能让动画团队减少对外部绑定师的依赖，提高迭代效率。Epic免费提供完整工作坊体现了对动画开发者生态的重视。"
-        }
-      ]
-    },
-    {
-      id: "tut-unity-vs-unreal-2026",
-      category: "tutorials",
-      subcategory: "引擎对比",
-      title: "Unity vs Unreal Engine 2026 深度对比：2D/移动选 Unity，高保真 3D 选 Unreal",
-      summary: "SoonLab发布2026年Unity vs Unreal Engine深度对比文章，从最佳适用场景、编程语言、图形能力、学习曲线、生态系统、成本等维度全面分析。结论清晰：2D游戏、移动端和独立项目选Unity（C#更易学，生态成熟）；高保真3D和AAA级画质选Unreal（C++和蓝图更强大，开箱即用视觉效果惊艳）。文章还对比了两引擎在AI集成、跨平台和社区支持上的差异。",
-      source: "SoonLab",
-      date: "2026-09-14",
-      url: "https://www.soonlab.ai/blog/unity-vs-unreal/",
-      image: "",
-      badge: "引擎对比",
-      badgeType: "engine",
-      readTime: "4 分钟",
-      hotScore: 80,
-      tags: ["Unity", "Unreal", "2026对比", "C#", "C++", "蓝图", "引擎选型"],
-      content: [
-        {
-          title: "对比结论",
-          type: "list",
-          items: [
-            "2D/移动/独立：选Unity；",
-            "高保真3D/AAA：选Unreal；",
-            "Unity：C#更易学，生态成熟；",
-            "Unreal：C++/蓝图更强大；",
-            "Unreal开箱即用视觉效果惊艳；",
-            "AI集成/跨平台/社区全面对比。"
-          ]
-        },
-        {
-          title: "选型建议",
-          type: "text",
-          text: "2026年Unity和Unreal的定位差异比以往任何时候都更清晰：Unity在移动和2D领域的优势仍然稳固，Unreal在3A高画质领域的领先地位不可撼动。对于初学者，Unity的C#和更友好的学习曲线仍然是更好的入门选择；对于追求极致画质的团队，Unreal的Nanite和Lumen等技术提供了开箱即用的次世代画质。"
-        }
-      ]
-    },
-    {
-      id: "tut-unity-vs-godot-indie",
-      category: "tutorials",
-      subcategory: "引擎对比",
-      title: "Unity vs Godot 2026 独立开发者选择：2D 项目 Godot 包体更小/启动更快/内存更低",
-      summary: "俄罗斯游戏开发媒体发布Unity vs Godot 2026独立开发者深度对比：在2D项目实测中，Godot 4.3在包体大小、冷启动速度和工作流简洁度上优于Unity；Android实测中Godot在相同或更高FPS下内存消耗更低。Unity在URP优化和Sprite优化后仍具竞争力，尤其在需要成熟素材生态和跨平台工具链时。文章为独立开发者提供了基于实测数据的选型参考。",
-      source: "KtoHto",
+      id: "kojima-physint-xbox",
+      category: "industry",
+      subcategory: "大厂动向",
+      title: "小岛秀夫Physint转投Xbox发行：PlayStation数月前通知取消项目，微软接手",
+      summary: "小岛秀夫透露其正在开发的全新游戏IP《Physint》已转投Xbox平台发行。此前PlayStation在数月前通知小岛工作室希望取消该项目，导致项目发行权出现真空。微软随即接手，成为Physint的发行方。Physint是小岛秀夫继《死亡搁浅》系列后的全新IP，据称将融合游戏与电影的边界，是小岛秀夫长期以来的梦想项目。这一转变标志着小岛工作室与索尼长期合作关系的重大变化。",
+      source: "PlayStation Universe / GameFM",
       date: "2026-09-15",
-      url: "https://ktohto.ru/article/unity-vs-godot-v-2026-vybor-indi",
+      url: "https://www.psu.com/?searchid=2883306",
       image: "",
-      badge: "独立选型",
-      badgeType: "engine",
-      readTime: "4 分钟",
-      hotScore: 79,
-      tags: ["Unity", "Godot", "独立开发者", "2D性能", "Android实测", "包体大小", "内存优化"],
-      content: [
-        {
-          title: "实测结论",
-          type: "list",
-          items: [
-            "2D项目Godot包体更小；",
-            "Godot冷启动更快；",
-            "工作流更简洁；",
-            "Android实测Godot同FPS更低内存；",
-            "Unity URP/Sprite优化后仍有竞争力；",
-            "Unity素材生态更成熟；",
-            "基于实测数据的选型参考。"
-          ]
-        },
-        {
-          title: "独立开发者建议",
-          type: "text",
-          text: "对于2D独立游戏开发者，Godot在性能和效率上的优势确实明显——更小的包体意味着更快的下载和安装，更快的冷启动意味着更好的用户体验，更低的内存意味着能在更多低端设备上运行。但Unity的素材生态和Asset Store仍然是重要优势，尤其对需要快速原型开发的团队。建议根据项目具体需求和团队技术栈选择。"
-        }
-      ]
-    },
-    {
-      id: "tut-godot-48-dev6-deep",
-      category: "tutorials",
-      subcategory: "Godot",
-      title: "Godot 4.8 dev 6 深度解析：特性冻结前的改进清单与升级注意事项",
-      summary: "Godot 4.8 dev 6发布后，社区迅速整理了本次开发快照的完整改进清单和升级注意事项。dev 6距离dev 5不到一周，显示开发团队正加速特性冻结前的最后冲刺。改进涵盖渲染器优化、编辑器改进、2D工具栏调整、Mip纹理流送修复、GDScript语言改进和多平台bug修复。文章提醒开发者在升级前备份项目并关注破坏性变更。",
-      source: "Godot Engine 官方",
-      date: "2026-09-15",
-      url: "https://godotengine.org/article/dev-snapshot-godot-4-8-dev-6/",
-      image: "",
-      badge: "Godot 解析",
-      badgeType: "engine",
+      badge: "小岛秀夫",
+      badgeType: "hot",
       readTime: "3 分钟",
-      hotScore: 82,
-      tags: ["Godot 4.8", "dev 6", "改进清单", "升级注意", "特性冻结", "渲染器优化"],
+      hotScore: 84,
+      tags: ["小岛秀夫", "Physint", "Xbox", "PlayStation取消", "死亡搁浅", "游戏电影融合"],
       content: [
         {
-          title: "改进清单",
+          title: "事件要点",
           type: "list",
           items: [
-            "渲染器优化；",
-            "编辑器改进；",
-            "2D工具栏调整；",
-            "Mip纹理流送修复；",
-            "GDScript语言改进；",
-            "多平台bug修复；",
-            "特性冻结前最后冲刺；",
-            "升级前备份项目。"
-          ]
-        },
-        {
-          title: "升级建议",
-          type: "text",
-          text: "Godot 4.8 dev 6的快速发布节奏意味着正式版即将进入特性冻结阶段。对于想提前体验4.8新特性的开发者，dev 6是相对稳定的测试版本，但仍需注意开发快照可能存在未修复的bug。建议在独立分支中测试升级，关注GDScript和渲染器相关的破坏性变更，确保项目兼容性。"
-        }
-      ]
-    },
-    {
-      id: "ai-aura-10-release",
-      category: "ai",
-      subcategory: "AI开发工具",
-      title: "Aura 1.0 正式发布：Unity/UE 双引擎 AI 开发代理，验证代理+持久项目记忆+Fab 商店上线",
-      summary: "Ramen公司于9月9日正式发布Aura 1.0，其面向Unity和Unreal Engine开发者的AI开发代理。1.0版本带来重新设计的界面、前沿级性能的验证代理（Verification Agent）、更快的蓝图生成、持久项目记忆、多项目支持、Auto模式无限使用，以及Mac支持和Fab商店上线。价格比beta更低，是目前游戏开发AI代理领域最成熟的产品之一。",
-      source: "Games Press",
-      date: "2026-09-09",
-      url: "https://beta.gamespress.com/ja-JP/Aura-10-Launches-Today-Pushing-the-Frontier-of-Agentic-AI-in-Game-Deve",
-      image: "",
-      badge: "Aura 1.0",
-      badgeType: "ai",
-      readTime: "4 分钟",
-      hotScore: 87,
-      tags: ["Aura", "AI开发代理", "Unity", "Unreal", "验证代理", "持久记忆", "Fab商店"],
-      content: [
-        {
-          title: "1.0 新特性",
-          type: "list",
-          items: [
-            "重新设计的界面；",
-            "验证代理（Verification Agent）；",
-            "更快的蓝图生成；",
-            "持久项目记忆；",
-            "多项目支持；",
-            "Auto模式无限使用；",
-            "Mac支持；",
-            "Fab商店上线；",
-            "价格比beta更低。"
-          ]
-        },
-        {
-          title: "产品分析",
-          type: "text",
-          text: "Aura 1.0的验证代理功能是AI开发代理从「生成代码」到「验证代码」的关键进化——AI生成的代码经常有bug，验证代理能自动检查和修复，显著提高AI辅助开发的可靠性。持久项目记忆让AI能理解项目上下文而非每次从零开始，这对大型游戏项目尤为重要。登陆Fab商店则让UE开发者可以一键安装，降低使用门槛。"
-        }
-      ]
-    },
-    {
-      id: "unity-official-ai-agent-plugin",
-      category: "ai",
-      subcategory: "Unity AI",
-      title: "Unity 官方免费 AI Agent 插件发布：接入 Claude Code/Codex/Cursor/Grok，全项目上下文访问",
-      summary: "Unity发布官方免费AI Agent插件，将Claude Code、OpenAI Codex、Cursor和Grok等主流AI编码代理接入Unity项目内部。与独立AI工具不同，该插件让AI代理能够访问Unity项目的完整上下文，包括场景层级、组件属性、资源引用和项目设置。开发者不再需要手动复制粘贴代码，AI代理可以直接理解和操作Unity项目，GitHub上已提供工具页面免费下载。",
-      source: "TechnoNews",
-      date: "2026-09-11",
-      url: "https://techno-news.net/2026/09/11/news_62968/",
-      image: "",
-      badge: "Unity 官方",
-      badgeType: "ai",
-      readTime: "3 分钟",
-      hotScore: 85,
-      tags: ["Unity", "AI Agent", "Claude Code", "Codex", "Cursor", "Grok", "官方插件", "免费"],
-      content: [
-        {
-          title: "插件要点",
-          type: "list",
-          items: [
-            "Unity官方免费AI Agent插件；",
-            "接入Claude Code/Codex/Cursor/Grok；",
-            "全项目上下文访问；",
-            "场景层级/组件属性/资源引用；",
-            "AI直接理解和操作Unity项目；",
-            "GitHub免费下载；",
-            "无需手动复制粘贴代码。"
+            "Physint转投Xbox发行；",
+            "PlayStation数月前通知取消项目；",
+            "微软接手发行权；",
+            "小岛秀夫继死亡搁浅后全新IP；",
+            "融合游戏与电影边界；",
+            "小岛秀夫长期梦想项目；",
+            "与索尼长期合作关系重大变化。"
           ]
         },
         {
           title: "行业意义",
           type: "text",
-          text: "Unity官方AI Agent插件的发布标志着游戏引擎厂商从「自研AI工具」转向「接入第三方AI生态」的策略转变——与其与Claude/GPT等大模型竞争，不如让开发者在Unity内直接使用最好的AI工具。全项目上下文访问是关键功能，它让AI代理真正理解游戏项目结构而非单纯生成代码片段。这将显著提升AI辅助Unity开发的效率和可靠性。"
+          text: "小岛秀夫Physint转投Xbox是2026年游戏行业最具戏剧性的事件之一——小岛工作室与索尼的合作可以追溯到PS1时代的《合金装备》系列，这一转变标志着一个时代的结束。对微软而言，获得小岛秀夫的全新IP是Xbox内容战略的重大胜利，尤其在第一方工作室收缩的背景下，与顶级独立制作人的合作变得更加重要。"
         }
       ]
     },
     {
-      id: "codely-iphone-app-store",
-      category: "ai",
-      subcategory: "团结引擎 AI",
-      title: "Codely for iPhone 正式上线 App Store：团结引擎 AI 开发助手移动端体验落地",
-      summary: "Unity中国官方宣布Tuanjie Codely for iPhone正式上线App Store，这是团结引擎AI开发助手的移动端版本。Codely是专属于Unity和团结引擎的AI开发助手，此前已推出Android抢先体验版。iPhone版本的上线意味着开发者可以在移动设备上使用Codely进行代码生成、问题解答和项目管理，进一步完善了团结引擎的AI开发生态。",
-      source: "网易 / Unity中国",
-      date: "2026-09-15",
-      url: "https://m.163.com/news/sub/T1490323659989.html",
+      id: "wo-long-2-release-date",
+      category: "games",
+      subcategory: "新作定档",
+      title: "《卧龙2：凤火连天》定档2027年3月4日：全平台发售，首发即加入Xbox Game Pass",
+      summary: "光荣特库摩官方宣布，由Team NINJA工作室打造的《卧龙2：凤火连天》正式定档2027年3月4日发售。作品将同步登陆PS5、Xbox Series X|S、Switch 2、PC全平台，且首发即加入Xbox Game Pass Ultimate订阅库。这是卧龙系列首次采用全平台发售+首发入驻XGP的模式，彻底改变了系列传统单机买断的收益逻辑。前作《卧龙：苍天陨落》于2023年发售，以三国题材+暗黑动作玩法获得玩家好评。",
+      source: "每日经济新闻 / 今日头条",
+      date: "2026-09-16",
+      url: "http://m.toutiao.com/group/7686272181378843172/",
       image: "",
-      badge: "Codely iOS",
-      badgeType: "ai",
+      badge: "定档 2027",
+      badgeType: "game",
       readTime: "2 分钟",
-      hotScore: 78,
-      tags: ["Codely", "团结引擎", "iPhone", "App Store", "AI开发助手", "移动端", "Unity中国"],
+      hotScore: 80,
+      tags: ["卧龙2", "凤火连天", "Team NINJA", "光荣特库摩", "2027年3月4日", "全平台", "首发XGP"],
       content: [
         {
-          title: "发布要点",
+          title: "发售信息",
           type: "list",
           items: [
-            "Codely for iPhone正式上线App Store；",
-            "团结引擎AI开发助手移动端；",
-            "此前已推出Android抢先体验版；",
-            "移动端代码生成/问题解答/项目管理；",
-            "完善团结引擎AI开发生态；",
-            "Unity中国官方发布。"
+            "2027年3月4日发售；",
+            "PS5/Xbox Series/Switch 2/PC全平台；",
+            "首发加入Xbox Game Pass Ultimate；",
+            "Team NINJA工作室开发；",
+            "系列首次全平台+首发XGP模式；",
+            "前作2023年发售获好评；",
+            "三国题材+暗黑动作玩法。"
+          ]
+        },
+        {
+          title: "商业分析",
+          type: "text",
+          text: "卧龙2选择全平台+首发XGP的发行策略，反映了光荣特库摩对订阅制商业模式的积极拥抱。首发加入XGP虽然会牺牲一部分买断收入，但能获得Xbox的营销支持和庞大的订阅用户基础，对IP的长期推广有利。Switch 2版本的同步发售也显示了光荣对任天堂新平台的重视。"
+        }
+      ]
+    },
+    {
+      id: "io-interactive-007-switch2-delay",
+      category: "games",
+      subcategory: "新作延期",
+      title: "IO Interactive将007 First Light的Switch 2版延期至2027年3月， citing性能优化需求",
+      summary: "IO Interactive宣布将《007：First Light》的Nintendo Switch 2版本从原定的2026年夏季延期至2027年3月，理由是需要更多时间进行性能打磨和优化。其他平台版本（PS5、Xbox Series、PC）仍按原计划发售。007：First Light是IO Interactive获得詹姆斯·邦德IP授权后的首款007游戏，采用全新的原创故事线，讲述邦德获得00号特工身份之前的经历。Switch 2版本的延期反映了新主机平台在性能优化上的挑战。",
+      source: "New Game Network",
+      date: "2026-09-16",
+      url: "https://www.newgamenetwork.com/category/news/",
+      image: "",
+      badge: "Switch 2 延期",
+      badgeType: "game",
+      readTime: "2 分钟",
+      hotScore: 78,
+      tags: ["007", "First Light", "IO Interactive", "Switch 2", "延期至2027年3月", "性能优化", "詹姆斯邦德"],
+      content: [
+        {
+          title: "延期要点",
+          type: "list",
+          items: [
+            "Switch 2版延期至2027年3月；",
+            "原定2026年夏季发售；",
+            "理由：性能打磨和优化；",
+            "PS5/Xbox/PC仍按原计划；",
+            "IO Interactive首款007游戏；",
+            "原创故事线，邦德前传；",
+            "新主机性能优化挑战。"
+          ]
+        },
+        {
+          title: "开发视角",
+          type: "text",
+          text: "007 First Light的Switch 2版本延期是新主机平台优化挑战的又一例证——尽管Switch 2的性能相比前代有显著提升，但与PS5/Xbox Series仍有差距，跨平台3A游戏的移植优化需要额外的开发时间。对开发者而言，这意味着在规划多平台项目时，应充分考虑Switch 2版本的优化周期，避免因性能问题导致整体延期。"
+        }
+      ]
+    },
+    {
+      id: "unity-runtime-fee-cancelled",
+      category: "engine",
+      subcategory: "Unity 政策",
+      title: "Unity彻底取消争议Runtime Fee收费，免费云存储暴增5倍，Personal收入门槛提至20万美元",
+      summary: "Unity Technologies于2026年6月7日宣布彻底取消Runtime Fee（运行时费用），新规立即生效。这一决定终结了自2023年引发巨大争议的收费模式。同步推出的免费用户政策调整包括：Unity Personal年收入上限从10万美元提高至20万美元，免费云存储容量暴增5倍。新任主管Matt Bromberg在声明中表示，经过与社区深入磋商，公司决定彻底废除这项引发开发者强烈反对的收费政策，回归以订阅为核心的商业模式。",
+      source: "什么值得买",
+      date: "2026-06-07",
+      url: "https://post.m.smzdm.com/p/a6zwnv3g/",
+      image: "",
+      badge: "政策反转",
+      badgeType: "engine",
+      readTime: "3 分钟",
+      hotScore: 83,
+      tags: ["Unity", "Runtime Fee取消", "免费云存储5倍", "Personal 20万美元", "Matt Bromberg", "订阅模式"],
+      content: [
+        {
+          title: "政策要点",
+          type: "list",
+          items: [
+            "彻底取消Runtime Fee运行时费用；",
+            "新规立即生效；",
+            "Unity Personal收入上限10万→20万美元；",
+            "免费云存储容量暴增5倍；",
+            "回归订阅为核心的商业模式；",
+            "新任主管Matt Bromberg主导；",
+            "终结2023年以来的争议。"
+          ]
+        },
+        {
+          title: "行业影响",
+          type: "text",
+          text: "Unity彻底取消Runtime Fee是游戏引擎行业的标志性事件——2023年Runtime Fee的推出曾引发开发者大规模抗议和出走，直接推动了Godot等开源引擎的普及。此次彻底取消标志着Unity管理层认识到开发者信任的重要性。Personal收入门槛提高至20万美元和免费云存储5倍，将显著降低小型团队和独立开发者的使用成本，有助于挽回流失的开发者群体。"
+        }
+      ]
+    },
+    {
+      id: "tuanjie-20-release",
+      category: "engine",
+      subcategory: "团结引擎",
+      title: "团结引擎2.0正式发布：底层架构全面重构，支持PS5/Xbox/Switch主机平台，深度整合AI",
+      summary: "Unity中国于7月28日在上海外滩茂悦酒店正式发布团结引擎2.0。新版本进行了底层架构的全面重构，首次支持PS5、Xbox Series和Nintendo Switch主机平台，实现了真正的全平台覆盖。2.0版本深度整合AI能力，推出名为Tuanjie Codely的跨端AI Agent产品，涵盖智能代码开发与多模态资产生成两大核心能力，全面对标Claude Code的Agent能力。内置专业Agent包括游戏工程深度分析、Error追踪、文档生成、Unity能力集成，支持Plugin/Extension/Skill/MCP全兼容自定义扩展。",
+      source: "竞核 / 17173",
+      date: "2026-07-28",
+      url: "https://cgames.com/contents/2/12353.html",
+      image: "",
+      badge: "团结引擎 2.0",
+      badgeType: "engine",
+      readTime: "4 分钟",
+      hotScore: 85,
+      tags: ["团结引擎2.0", "底层重构", "主机平台", "PS5", "Xbox", "Switch", "Codely AI Agent"],
+      content: [
+        {
+          title: "2.0 核心特性",
+          type: "list",
+          items: [
+            "底层架构全面重构；",
+            "首次支持PS5/Xbox/Switch主机平台；",
+            "真正的全平台覆盖；",
+            "Tuanjie Codely跨端AI Agent产品；",
+            "智能代码开发+多模态资产生成；",
+            "对标Claude Code的Agent能力；",
+            "内置游戏工程分析/Error追踪/文档生成；",
+            "Plugin/Extension/Skill/MCP全兼容。"
+          ]
+        },
+        {
+          title: "战略意义",
+          type: "text",
+          text: "团结引擎2.0支持主机平台是国产引擎发展的重要里程碑——此前国产引擎主要覆盖移动和PC平台，主机平台一直是Unity和Unreal的垄断领域。2.0版本的主机支持意味着国产引擎开始进入3A级游戏开发的核心赛道。Codely AI Agent的深度整合则显示了团结引擎在AI开发工具上的前瞻布局，与Unity AI和Aura形成差异化竞争。"
+        }
+      ]
+    },
+    {
+      id: "spiderman2-12b-revenue",
+      category: "industry",
+      subcategory: "销量收入",
+      title: "漫威蜘蛛侠2总收入突破12亿美元，实体销量占35%，Insomniac持续创造商业奇迹",
+      summary: "根据分析公司数据，Insomniac Games开发的《漫威蜘蛛侠2》总收入已突破12亿美元。其中实体版销量占总收入的35%，数字版占65%。这一成绩使《漫威蜘蛛侠2》成为PS5平台最成功的独占游戏之一。Insomniac Games近期还发布了《漫威金刚狼》，首周即登上PS Store美英销量榜第二。工作室持续以高质量的漫威IP游戏创造商业奇迹，成为索尼第一方阵容中最可靠的创收力量。",
+      source: "PlayStation Universe / 分析公司数据",
+      date: "2026-09-15",
+      url: "https://www.psu.com/?searchid=2883306",
+      image: "",
+      badge: "12亿美元",
+      badgeType: "business",
+      readTime: "2 分钟",
+      hotScore: 79,
+      tags: ["蜘蛛侠2", "Insomniac", "12亿美元", "实体占35%", "PS5独占", "漫威IP"],
+      content: [
+        {
+          title: "收入数据",
+          type: "list",
+          items: [
+            "总收入突破12亿美元；",
+            "实体版占35%，数字版占65%；",
+            "PS5最成功独占游戏之一；",
+            "Insomniac持续创造商业奇迹；",
+            "金刚狼首周PS Store美英第二；",
+            "索尼第一方最可靠创收力量。"
           ]
         },
         {
           title: "摘要速读",
           type: "text",
-          text: "Unity中国宣布Tuanjie Codely for iPhone正式上线App Store，这是团结引擎AI开发助手的移动端版本。开发者可在移动设备上进行代码生成、问题解答和项目管理，进一步完善了团结引擎的AI开发生态。"
+          text: "Insomniac的《漫威蜘蛛侠2》总收入突破12亿美元，实体占35%。工作室持续以高质量漫威IP游戏创造商业奇迹，成为索尼第一方最可靠的创收力量。"
         }
       ]
     },
     {
-      id: "tuanjie-arm-ai-graphics",
-      category: "ai",
-      subcategory: "AI图形",
-      title: "团结引擎携手 Arm 加速 AI 原生图形能力落地：移动端 AI 渲染战略布局",
-      summary: "Unity中国于9月9日宣布团结引擎与Arm达成战略合作，共同加速AI原生图形能力在移动端的落地。双方将围绕Arm架构的GPU和NPU优化AI驱动的渲染管线，包括AI超分辨率、AI降噪、AI材质生成等前沿图形技术。这一合作将帮助团结引擎在移动端和车载平台上实现AI原生图形体验，也是国产引擎在AI图形领域的重要战略布局。",
-      source: "网易 / Unity中国",
-      date: "2026-09-09",
-      url: "https://m.163.com/news/sub/T1490323659989.html",
+      id: "yuli-quankai-1m-sales",
+      category: "industry",
+      subcategory: "独立游戏",
+      title: "《渔力全开》两天卖出100万份：瑞典双人团队简陋建模却成Steam全球销冠，好评率94%",
+      summary: "36氪报道，由瑞典双人独立团队Dazed Games开发的《渔力全开》（Catch and Cook）发售仅两天即宣布销量突破100万份，拿下当周Steam全球及中国区付费游戏销量冠军。游戏支持1-4人游玩，角色和场景建模相当简陋，却凭借有趣的玩法和社交传播效应成为现象级爆款。Steam同时在线峰值一度冲到37万人，好评率94%。这与《战狗》200万份、《杀戮尖塔2》Godot成功共同构成2026年独立游戏的「爆款公式」。",
+      source: "36氪",
+      date: "2026-09-16",
+      url: "https://36kr.com/p/3985994098834181",
       image: "",
-      badge: "Arm 合作",
-      badgeType: "ai",
+      badge: "独立爆款",
+      badgeType: "business",
       readTime: "3 分钟",
-      hotScore: 80,
-      tags: ["团结引擎", "Arm", "AI原生图形", "移动端", "GPU/NPU优化", "AI超分辨率", "战略合作"],
+      hotScore: 82,
+      tags: ["渔力全开", "Dazed Games", "双人团队", "100万份", "Steam销冠", "好评率94%", "独立游戏"],
       content: [
         {
-          title: "合作要点",
+          title: "爆款数据",
           type: "list",
           items: [
-            "团结引擎与Arm战略合作；",
-            "加速AI原生图形能力落地；",
-            "Arm GPU/NPU优化AI渲染管线；",
-            "AI超分辨率/降噪/材质生成；",
-            "移动端和车载平台；",
-            "国产引擎AI图形战略布局。"
+            "两天销量突破100万份；",
+            "Steam全球+中国区付费销冠；",
+            "瑞典双人团队Dazed Games；",
+            "支持1-4人游玩；",
+            "建模简陋但玩法有趣；",
+            "在线峰值37万人；",
+            "好评率94%。"
           ]
         },
         {
-          title: "技术方向",
+          title: "爆款公式分析",
           type: "text",
-          text: "团结引擎与Arm的AI图形合作瞄准了移动端AI渲染的巨大市场——Arm架构在移动和车载平台占据主导地位，AI原生图形能力将直接影响下一代移动游戏的画质和性能。AI超分辨率和AI降噪等技术可以在较低渲染预算下实现高质量画面，这对移动平台的性能限制尤为重要。"
+          text: "《渔力全开》的成功再次验证了2026年独立游戏的「爆款公式」——不需要3A级预算和精美的画面，关键在于找到有趣的核心玩法循环和有效的社交传播策略。双人团队的简陋建模反而成为游戏的特色和记忆点。对独立开发者而言，这说明在当前市场环境下，创意和玩法仍然是最重要的成功因素，而非技术和画面。"
+        }
+      ]
+    },
+    {
+      id: "repo-llmunity",
+      category: "opensource",
+      subcategory: "Unity AI",
+      title: "LLMUnity：C#包将大模型直接集成进Unity，本地推理无需联网，支持PC/移动/VR+RAG",
+      summary: "LLMUnity是一个C#开源包，由undreamai开发，将大型语言模型直接集成到Unity游戏引擎中，使开发者能够创建由AI驱动的NPC和角色，且完全在本地运行无需互联网连接。该包基于llama.cpp构建，支持CPU/GPU推理，覆盖PC、移动和VR平台，并提供可选的RAG系统用于语义搜索。GitHub上已获得1.7k+ stars，是Unity生态中最受欢迎的本地AI集成方案之一。开发者可以通过简单的C# API调用LLM生成对话、任务描述和游戏叙事。",
+      source: "DEV.co / GitHub",
+      date: "2026-09-17",
+      url: "https://dev.co/ai/frameworks/llmunity",
+      image: "",
+      badge: "Unity LLM",
+      badgeType: "ai",
+      readTime: "3 分钟",
+      hotScore: 84,
+      tags: ["LLMUnity", "Unity", "C#", "llama.cpp", "本地推理", "PC/移动/VR", "RAG", "1.7k stars"],
+      content: [
+        {
+          title: "核心特性",
+          type: "list",
+          items: [
+            "C#开源包，直接集成进Unity；",
+            "AI驱动NPC和角色；",
+            "完全本地运行，无需互联网；",
+            "基于llama.cpp构建；",
+            "CPU/GPU推理支持；",
+            "PC/移动/VR全平台；",
+            "可选RAG语义搜索；",
+            "GitHub 1.7k+ stars。"
+          ]
+        },
+        {
+          title: "开发价值",
+          type: "text",
+          text: "LLMUnity的价值在于让Unity开发者能够在游戏中集成本地AI能力，而无需依赖云端API——这意味着更低的延迟、更好的隐私保护和零API调用成本。基于llama.cpp的架构确保了跨平台兼容性和推理效率。对需要AI NPC但又不想依赖云服务的开发者而言，LLMUnity是目前Unity生态中最成熟的本地方案。"
+        }
+      ]
+    },
+    {
+      id: "repo-gdevelop-ai-nocode",
+      category: "opensource",
+      subcategory: "无代码引擎",
+      title: "GDevelop：17年历史的开源AI无代码游戏引擎，26k Stars/40万月活，内置AI Agent直接改项目文件",
+      summary: "GDevelop是一款拥有17年历史的开源无代码游戏引擎，GitHub上获得26k+ Stars，月活创作者达40万人。最引人注目的是其内置的AI Agent功能：开发者可以用自然语言描述需求（如「让敌人看到玩家就追，200像素内」），AI Agent会自动创建事件、添加行为、修改变量，每一步还实时解释，真正修改项目文件而非仅生成代码。提供双模式：Ask（基于项目上下文回答功能问题）和Build for me（Agent直接构建功能）。MIT协议开源，支持导出到PC、移动、Web等多平台。",
+      source: "AI Agent技术社区 / CSDN",
+      date: "2026-09-05",
+      url: "https://agent.csdn.net/6a9b911b790f037e6e38e11b.html",
+      image: "",
+      badge: "AI 无代码",
+      badgeType: "ai",
+      readTime: "3 分钟",
+      hotScore: 81,
+      tags: ["GDevelop", "无代码引擎", "AI Agent", "26k Stars", "40万月活", "MIT开源", "自然语言开发"],
+      content: [
+        {
+          title: "核心特性",
+          type: "list",
+          items: [
+            "17年历史的开源无代码引擎；",
+            "GitHub 26k+ Stars；",
+            "40万月活创作者；",
+            "内置AI Agent，自然语言描述需求；",
+            "AI自动创建事件/添加行为/修改变量；",
+            "真正修改项目文件，非仅生成代码；",
+            "Ask+Build for me双模式；",
+            "MIT开源，多平台导出。"
+          ]
+        },
+        {
+          title: "行业意义",
+          type: "text",
+          text: "GDevelop的AI Agent功能代表了无代码游戏开发的未来方向——不是简单的代码生成，而是让AI直接理解和修改项目结构。这种「Agent直接改项目文件」的模式比传统的「AI生成代码+开发者手动粘贴」工作流高效得多。40万月活的数据证明了无代码游戏开发的庞大市场需求，AI的加入将进一步降低游戏开发的门槛。"
+        }
+      ]
+    },
+    {
+      id: "repo-openagentic-godot",
+      category: "opensource",
+      subcategory: "Godot AI",
+      title: "OpenAgentic：Godot 4运行时优先Agent SDK，事件溯源会话+SSE流式+工具调用权限门控",
+      summary: "OpenAgentic是一款面向Godot 4（GDScript）的运行时优先Agent SDK，已在Godot Asset Library上架。它提供Agent运行时循环、事件溯源的每存档/每NPC会话（JSONL格式）、通过自有代理的OpenAI Responses兼容SSE流式输出，以及带权限门控和沙盒工作空间的工具调用循环。项目还包含VR Offices 3D编排演示和IRC演示，以及可选的本地代理服务。已在Godot 4.x版本上测试通过，是Godot生态中最完整的AI Agent运行时方案。",
+      source: "Godot Asset Library",
+      date: "2026-09-13",
+      url: "https://godotassetlibrary.com/asset/tbjRZ7/openagentic-agent-runtime-sdk-for-godot-4",
+      image: "",
+      badge: "Godot Agent",
+      badgeType: "ai",
+      readTime: "3 分钟",
+      hotScore: 80,
+      tags: ["OpenAgentic", "Godot 4", "GDScript", "Agent SDK", "事件溯源", "SSE流式", "工具调用", "VR演示"],
+      content: [
+        {
+          title: "架构特点",
+          type: "list",
+          items: [
+            "运行时优先的Agent SDK；",
+            "GDScript实现，原生Godot 4；",
+            "事件溯源每存档/每NPC会话（JSONL）；",
+            "OpenAI Responses兼容SSE流式；",
+            "工具调用循环+权限门控；",
+            "沙盒工作空间（user://）；",
+            "VR Offices 3D+IRC演示；",
+            "可选本地代理服务。"
+          ]
+        },
+        {
+          title: "技术价值",
+          type: "text",
+          text: "OpenAgentic为Godot开发者提供了完整的AI Agent运行时基础设施——事件溯源的会话管理确保了NPC记忆的持久性和可追溯性，SSE流式输出提供了流畅的实时对话体验，权限门控和沙盒工作空间则确保了AI操作的安全性。VR Offices 3D演示展示了该SDK在沉浸式环境中的应用潜力。"
+        }
+      ]
+    },
+    {
+      id: "nvidia-ace-ue5-plugins",
+      category: "ai",
+      subcategory: "NVIDIA AI",
+      title: "NVIDIA ACE Game Agent SDK + UE5插件发布：端侧AI伴侣，本地ASR+小语言模型+TTS全栈",
+      summary: "NVIDIA发布ACE Game Agent SDK和配套的Unreal Engine 5插件，为开发者提供构建端侧AI伴侣的完整工具链。ACE Game Agent SDK是轻量级开源C/C++框架，提供Agent、Chat和RAG API。UE5插件则交付本地ASR（自动语音识别）、小语言模型和TTS（文本转语音）能力，支持Blueprint和C++调用，内置nemo-conformer-ctc-120m和Qwen 3.5 4B等即用模型。结合DLSS等技术，开发者可以在游戏中构建完全本地运行的AI角色，无需云端API调用。",
+      source: "NVIDIA Developer Blog",
+      date: "2026-06-16",
+      url: "https://developer.nvidia.com/blog/build-on-device-ai-companions-with-the-nvidia-ace-game-agent-sdk-and-unreal-engine-5-plugins/",
+      image: "",
+      badge: "NVIDIA ACE",
+      badgeType: "ai",
+      readTime: "4 分钟",
+      hotScore: 83,
+      tags: ["NVIDIA ACE", "Game Agent SDK", "UE5插件", "端侧AI", "本地ASR", "小语言模型", "TTS", "Qwen 3.5 4B"],
+      content: [
+        {
+          title: "工具链组成",
+          type: "list",
+          items: [
+            "ACE Game Agent SDK：轻量开源C/C++框架；",
+            "Agent/Chat/RAG三大API；",
+            "UE5插件：本地ASR+SLM+TTS；",
+            "Blueprint和C++双支持；",
+            "内置nemo-conformer-ctc-120m模型；",
+            "内置Qwen 3.5 4B语言模型；",
+            "完全本地运行，无需云端API；",
+            "结合DLSS等NVIDIA技术。"
+          ]
+        },
+        {
+          title: "技术意义",
+          type: "text",
+          text: "NVIDIA ACE Game Agent SDK的发布标志着端侧AI游戏角色开发进入成熟阶段——开发者不再需要依赖云端API和网络连接，就可以在游戏中构建具有语音识别、自然语言理解和语音合成能力的AI角色。本地运行意味着更低的延迟、更好的隐私保护和零API成本。Qwen 3.5 4B等小语言模型的内置使用，也展示了小模型在游戏AI场景中的实用性。"
+        }
+      ]
+    },
+    {
+      id: "gpt6-astra-three-engines",
+      category: "ai",
+      subcategory: "AI实测",
+      title: "GPT-6 Astra连挑三大引擎复刻《我的世界》：Godot仅59分钟，Unity跑通红石电路",
+      summary: "实测视频展示了用OpenAI最新的GPT-6 Astra模型，连续挑战三大主流游戏引擎（Godot、Unity、UE5），从零复刻出3款完全不同的《我的世界》。结果令人震惊：轻量引擎Godot仅用59分钟就搞定全套3D资产和物理世界，比Unity快了整整半小时，自动生成了91个三维资产模型和定制游戏界面，昼夜切换和怪物仇恨机制全部跑通。Unity版本顺畅跑通红石电路和水流物理。UE5版本则在画质上表现最佳。这一实测展示了AI辅助全流程游戏开发的巨大潜力。",
+      source: "抖音 / 实测视频",
+      date: "2026-09-13",
+      url: "https://www.iesdouyin.com/share/video/7684867807779081513",
+      image: "",
+      badge: "GPT-6 实测",
+      badgeType: "ai",
+      readTime: "3 分钟",
+      hotScore: 82,
+      tags: ["GPT-6 Astra", "三大引擎", "复刻我的世界", "Godot 59分钟", "Unity红石电路", "UE5画质", "AI全流程开发"],
+      content: [
+        {
+          title: "实测结果",
+          type: "list",
+          items: [
+            "GPT-6 Astra连挑Godot/Unity/UE5；",
+            "从零复刻3款《我的世界》；",
+            "Godot仅59分钟，比Unity快半小时；",
+            "自动生成91个3D资产模型；",
+            "定制游戏界面+昼夜切换；",
+            "怪物仇恨机制全部跑通；",
+            "Unity跑通红石电路和水流物理；",
+            "UE5画质表现最佳。"
+          ]
+        },
+        {
+          title: "行业启示",
+          type: "text",
+          text: "GPT-6 Astra连挑三大引擎的实测展示了AI辅助全流程游戏开发的巨大潜力——AI不仅能写代码，还能生成资产、设计界面、调试物理系统。Godot的59分钟成绩尤其引人注目，说明轻量引擎在AI辅助开发场景中具有天然优势——更简单的项目结构和API让AI更容易理解和操作。这可能预示着AI时代游戏引擎格局的重新洗牌。"
+        }
+      ]
+    },
+    {
+      id: "csharp-14-features",
+      category: "tutorials",
+      subcategory: "C# 语言",
+      title: "C# 14新特性详解：ReadOnlySpan<T>一等公民支持+更多隐式转换，.NET 10正式发布",
+      summary: "微软正式发布C# 14和.NET 10。C# 14引入了System.ReadOnlySpan<T>的语言级一等公民支持，这是C#语言发展的重要里程碑，使得在不分配内存的情况下处理连续数据块变得更加自然和高效。此外还增加了更多隐式转换规则，简化了常见类型转换的代码编写。.NET 10 SDK包含C# 14编译器，可通过Visual Studio 2026或.NET 10 SDK体验。Unity 7将支持.NET 10和C# 14，这意味着Unity开发者很快就能使用这些新特性。",
+      source: "Microsoft Learn",
+      date: "2026-09-03",
+      url: "https://learn.microsoft.com/en-gb/dotnet/csharp/whats-new/csharp-14",
+      image: "",
+      badge: "C# 14",
+      badgeType: "engine",
+      readTime: "3 分钟",
+      hotScore: 79,
+      tags: ["C# 14", ".NET 10", "ReadOnlySpan", "一等公民", "隐式转换", "Unity 7", "微软"],
+      content: [
+        {
+          title: "C# 14 新特性",
+          type: "list",
+          items: [
+            "System.ReadOnlySpan<T>语言级一等公民；",
+            "零内存分配处理连续数据块；",
+            "更多隐式转换规则；",
+            "简化常见类型转换代码；",
+            ".NET 10 SDK包含C# 14编译器；",
+            "Visual Studio 2026支持；",
+            "Unity 7将支持.NET 10+C# 14。"
+          ]
+        },
+        {
+          title: "开发价值",
+          type: "text",
+          text: "C# 14的ReadOnlySpan<T>一等公民支持对游戏开发性能优化意义重大——Span<T>是.NET中高性能内存处理的核心类型，但此前在语言层面使用不够自然。一等公民支持后，开发者可以更方便地编写零分配的高性能代码，这对游戏中的数据处理、网络通信和资源加载等场景尤为重要。Unity 7对.NET 10的支持将让Unity开发者直接受益于这些语言改进。"
+        }
+      ]
+    },
+    {
+      id: "circana-july-hardware",
+      category: "industry",
+      subcategory: "市场数据",
+      title: "Circana 7月美国硬件市场：PS5美元销售额领先，Switch 2销量领先但同比下滑51%",
+      summary: "Circana公布2026年7月美国视频游戏硬件市场数据：PlayStation 5在美元销售额上领先，Nintendo Switch 2在销量上领先。但与去年同期相比，所有主机平台销量均出现下滑：PS5销量同比下降6%，Xbox Series下降18%，Switch 2下降51%。Switch 2上市14个月后的累计销量比同期Switch 1高出11%。7月硬件市场整体呈现「PS5赚金额、Switch 2赚销量」的格局。主机涨价（Xbox涨100-150美元、Switch 2涨50美元/250港元）可能是销量下滑的因素之一。",
+      source: "Circana",
+      date: "2026-09-16",
+      url: "https://www.circana.com/industries/video-games",
+      image: "",
+      badge: "市场数据",
+      badgeType: "business",
+      readTime: "3 分钟",
+      hotScore: 78,
+      tags: ["Circana", "7月硬件", "PS5美元领先", "Switch 2销量领先", "同比下滑", "主机涨价", "美国市场"],
+      content: [
+        {
+          title: "7月数据",
+          type: "list",
+          items: [
+            "PS5美元销售额领先；",
+            "Switch 2销量领先；",
+            "PS5销量同比-6%；",
+            "Xbox Series同比-18%；",
+            "Switch 2同比-51%；",
+            "Switch 2累计比同期Switch 1高11%；",
+            "主机涨价可能影响销量。"
+          ]
+        },
+        {
+          title: "市场分析",
+          type: "text",
+          text: "7月美国硬件市场的全面下滑反映了主机生命周期中段的正常现象——Switch 2的同比下滑51%主要是因为去年同期是首发高峰期，基数较高。PS5和Xbox的下滑则与主机涨价和缺乏重磅独占作品有关。对游戏开发者而言，硬件销量的短期波动不影响长期趋势，但应关注主机涨价对消费者购买意愿的影响，以及这可能带来的游戏软件销售节奏变化。"
+        }
+      ]
+    },
+    {
+      id: "wardogs-player-decline",
+      category: "games",
+      subcategory: "运营动态",
+      title: "《战狗》在线峰值从42万跌至29万，制作人公开问玩家想改啥，又补一句「我们说了算」",
+      summary: "《战狗》(Wardogs)在创下42.8万在线峰值后，在线人数出现明显回落，目前稳定在29万左右。制作人在社区公开询问玩家希望修改哪些内容，但随后又补充了一句「最终我们说了算」，引发社区讨论。Bulkhead CEO Joe Brammer在接受The Game Business采访时，公开了一套颇具争议的游戏开发理念，称工作室「既不透明也不诚实」。尽管在线人数有所回落，游戏销量已突破200万份，好评率维持在81%的「特别好评」。",
+      source: "网易 / IT之家",
+      date: "2026-09-17",
+      url: "https://mobile.163.com/keywords/0/7/0073007400650061006d/1.html?spssid=25d4d5e8e9dd005d43ec4423db2df30f&spsw=8&spss=other",
+      image: "",
+      badge: "运营动态",
+      badgeType: "hot",
+      readTime: "2 分钟",
+      hotScore: 77,
+      tags: ["战狗", "Wardogs", "在线回落", "42万→29万", "制作人", "社区沟通", "Bulkhead"],
+      content: [
+        {
+          title: "动态要点",
+          type: "list",
+          items: [
+            "在线峰值42.8万→稳定29万；",
+            "制作人公开问玩家想改啥；",
+            "补充「最终我们说了算」；",
+            "CEO称工作室「既不透明也不诚实」；",
+            "销量已突破200万份；",
+            "好评率维持81%特别好评；",
+            "抢先体验阶段持续迭代中。"
+          ]
+        },
+        {
+          title: "运营分析",
+          type: "text",
+          text: "《战狗》在线人数从42万回落至29万是抢先体验游戏的正常现象——首发高峰期过后，核心玩家留存率通常在60-70%左右。制作人「我们说了算」的言论虽然引发了一些争议，但也反映了独立工作室在社区沟通中的真实态度——既要倾听玩家反馈，也要坚持自己的设计 vision。对200万销量的成绩而言，当前的在线人数仍然非常健康。"
+        }
+      ]
+    },
+    {
+      id: "marvel-cosmic-invasion-gamepass",
+      category: "games",
+      subcategory: "XGP阵容",
+      title: "《漫威宇宙入侵》等多款大作9月16日加入Xbox Game Pass，9月下半月19款新游连发",
+      summary: "微软公布9月下半月Xbox Game Pass新增阵容：《漫威宇宙入侵》(Marvel Cosmic Invasion)、《Planet of Lana II》、《Routine》等多款大作于9月16日加入Game Pass Ultimate/Premium/PC Game Pass，支持云端、Xbox Series、掌机和PC平台。整个9月下半月（15日至30日）共有19款新游排队发售，包括漫威金刚狼、寂静岭新作、火焰纹章等重磅作品。EA Sports FC 27也将于9月24日发售，目前已登上Steam热销榜前三。",
+      source: "Gamefront / Steam",
+      date: "2026-09-16",
+      url: "https://gamefront.de/",
+      image: "",
+      badge: "XGP 阵容",
+      badgeType: "event",
+      readTime: "2 分钟",
+      hotScore: 76,
+      tags: ["漫威宇宙入侵", "Game Pass", "9月下半月", "19款新游", "EA FC 27", "Planet of Lana II", "Routine"],
+      content: [
+        {
+          title: "XGP新增阵容",
+          type: "list",
+          items: [
+            "漫威宇宙入侵9/16加入XGP；",
+            "Planet of Lana II 9/16加入；",
+            "Routine 9/16加入；",
+            "支持云/Xbox/掌机/PC；",
+            "9月下半月共19款新游发售；",
+            "EA Sports FC 27 9/24发售；",
+            "FC 27已登Steam热销前三。"
+          ]
+        },
+        {
+          title: "摘要速读",
+          type: "text",
+          text: "微软公布9月下半月XGP新增阵容，漫威宇宙入侵等多款大作9/16加入。整个9月下半月19款新游连发，EA Sports FC 27将于9/24发售。"
+        }
+      ]
+    },
+    {
+      id: "505-games-20th-sale",
+      category: "industry",
+      subcategory: "发行商",
+      title: "505 Games成立20周年Steam大促：最高降价90%，中型意大利发行商的成长之路",
+      summary: "意大利中型游戏发行商505 Games迎来成立20周年纪念，在Steam开启全店大促，部分游戏最高降价90%。505 Games旗下拥有《死亡搁浅》PC版、《Control》、《吸血鬼：避世血族2》、《黑神话：悟空》海外发行等知名作品。SHAttered发布深度文章回顾了这家中型意大利发行商如何从默默无闻成长为全球知名的游戏发行商，包括其在独立游戏发行、3A合作发行和亚洲市场拓展方面的策略。20周年大促是其回馈玩家的重要活动。",
+      source: "SHAttered",
+      date: "2026-09-12",
+      url: "https://shattered.io/505-games-20th-anniversary-steam-sale-2026/",
+      image: "",
+      badge: "20周年",
+      badgeType: "business",
+      readTime: "3 分钟",
+      hotScore: 75,
+      tags: ["505 Games", "20周年", "Steam大促", "最高90%off", "意大利发行商", "死亡搁浅", "Control"],
+      content: [
+        {
+          title: "505 Games 要点",
+          type: "list",
+          items: [
+            "成立20周年纪念；",
+            "Steam全店大促，最高90%off；",
+            "旗下：死亡搁浅PC版/Control；",
+            "吸血鬼避世血族2；",
+            "黑神话悟空海外发行；",
+            "从默默无闻到全球知名；",
+            "独立游戏+3A合作+亚洲市场策略。"
+          ]
+        },
+        {
+          title: "行业意义",
+          type: "text",
+          text: "505 Games的20年成长之路是中型发行商成功的典范——在AAA巨头和独立发行商之间找到差异化定位，通过精准的选品和全球化的发行网络创造价值。其与游戏科学合作发行《黑神话：悟空》海外版的成功，展示了中型发行商在亚洲市场拓展方面的独特优势。对独立开发者而言，505 Games等中型发行商往往比大厂更灵活、更重视个人作品。"
+        }
+      ]
+    },
+    {
+      id: "wanmei-world-50m-fund",
+      category: "industry",
+      subcategory: "中国厂商",
+      title: "完美世界拟斥资5000万元认购股权投资基金，持续布局游戏产业链投资",
+      summary: "完美世界于9月16日发布公告，公司此前召开第六届董事会第二十三次会议，审议通过认购基金份额相关议案，拟出资5000万元认购天津砺思星深股权投资合伙企业（有限合伙）份额。近日公司已收到基金管理人海南砺思私募基金管理有限公司相关通知，该投资事项有序推进中。此次对外投资属于完美世界持续布局游戏产业链的战略举措，通过股权投资基金的方式参与游戏行业上下游企业的投资，获取产业协同效应和财务回报。",
+      source: "每日经济新闻 / 今日头条",
+      date: "2026-09-16",
+      url: "http://m.toutiao.com/group/7686272181378843172/",
+      image: "",
+      badge: "完美世界",
+      badgeType: "business",
+      readTime: "2 分钟",
+      hotScore: 74,
+      tags: ["完美世界", "5000万", "股权投资基金", "游戏产业链", "天津砺思星深", "产业布局"],
+      content: [
+        {
+          title: "投资要点",
+          type: "list",
+          items: [
+            "拟出资5000万元认购基金份额；",
+            "天津砺思星深股权投资合伙企业；",
+            "海南砺思私募基金管理；",
+            "董事会已审议通过；",
+            "投资事项有序推进中；",
+            "游戏产业链战略布局；",
+            "产业协同+财务回报。"
+          ]
+        },
+        {
+          title: "摘要速读",
+          type: "text",
+          text: "完美世界拟出资5000万元认购天津砺思星深股权投资基金份额，持续布局游戏产业链投资，通过基金方式参与行业上下游企业投资，获取产业协同效应和财务回报。"
+        }
+      ]
+    },
+    {
+      id: "godot-48-dev6-hotfix",
+      category: "engine",
+      subcategory: "Godot",
+      title: "Godot 4.8 dev 6同步发布macOS和Android Hotfix，特性冻结前稳定性持续提升",
+      summary: "Godot Engine在发布4.8 dev 6开发快照的同时，同步推出了针对macOS和Android平台的Hotfix修复。Clay John于9月15日发布了Hotfix说明，修复了dev 6在macOS上的若干兼容性问题和Android平台的构建错误。这是Godot 4.8开发周期中首次在dev快照发布后立即同步Hotfix，显示开发团队在特性冻结前对稳定性的高度重视。dev 6距离dev 5不到一周，Godot 4.8正式版预计很快进入特性冻结阶段。",
+      source: "Godot Engine 官方博客",
+      date: "2026-09-15",
+      url: "https://godotengine.org/blog/?ref=godotes.com",
+      image: "",
+      badge: "Godot Hotfix",
+      badgeType: "engine",
+      readTime: "2 分钟",
+      hotScore: 78,
+      tags: ["Godot 4.8", "dev 6", "macOS Hotfix", "Android Hotfix", "特性冻结", "稳定性", "Clay John"],
+      content: [
+        {
+          title: "Hotfix 要点",
+          type: "list",
+          items: [
+            "dev 6同步发布macOS/Android Hotfix；",
+            "Clay John 9/15发布说明；",
+            "修复macOS兼容性问题；",
+            "修复Android构建错误；",
+            "首次dev快照后立即同步Hotfix；",
+            "特性冻结前稳定性优先；",
+            "正式版即将进入特性冻结。"
+          ]
+        },
+        {
+          title: "摘要速读",
+          type: "text",
+          text: "Godot 4.8 dev 6同步发布macOS和Android Hotfix，修复了平台兼容性和构建问题。这是首次在dev快照后立即同步Hotfix，显示特性冻结前对稳定性的高度重视。"
+        }
+      ]
+    },
+    {
+      id: "unity-burst-1830-llvm21",
+      category: "tutorials",
+      subcategory: "Unity 性能",
+      title: "Unity Burst 1.8.30更新：默认LLVM版本升级至21，.NET 7+平台修复",
+      summary: "Unity官方Burst编译器包更新至1.8.30版本，默认LLVM版本从之前的版本升级至LLVM 21，这将带来更好的代码生成质量和性能优化。此次更新还修复了.NET 7+平台上的Fast<固定字符串>问题和math.Fixed问题，并更新了平台文档以准确反映当前Burst支持的平台。Burst是Unity DOTS（数据导向技术栈）的核心组件，提供高性能的C#代码编译，是Unity性能优化的关键工具。",
+      source: "Unity 官方文档",
+      date: "2026-07-06",
+      url: "https://docs.unity3d.com/Packages/com.unity.burst@1.8/changelog/CHANGELOG.html",
+      image: "",
+      badge: "Burst 更新",
+      badgeType: "engine",
+      readTime: "2 分钟",
+      hotScore: 75,
+      tags: ["Unity Burst", "1.8.30", "LLVM 21", ".NET 7+", "DOTS", "性能优化", "代码生成"],
+      content: [
+        {
+          title: "更新内容",
+          type: "list",
+          items: [
+            "Burst 1.8.30发布；",
+            "默认LLVM版本升级至21；",
+            "更好的代码生成质量；",
+            "修复.NET 7+ Fast<固定字符串>；",
+            "修复math.Fixed问题；",
+            "更新支持平台文档；",
+            "DOTS核心组件更新。"
+          ]
+        },
+        {
+          title: "开发价值",
+          type: "text",
+          text: "Burst编译器升级至LLVM 21将直接提升Unity DOTS项目的运行性能——LLVM 21带来了更好的优化pass和代码生成质量，尤其在SIMD向量化和循环优化方面有显著改进。对使用DOTS进行高性能游戏开发的团队而言，及时升级Burst版本是低成本高性能的优化手段。.NET 7+平台的修复也为Unity 7的CoreCLR迁移做好了准备。"
+        }
+      ]
+    },
+    {
+      id: "koboldcpp-local-npc",
+      category: "opensource",
+      subcategory: "AI NPC",
+      title: "KoboldCPP：隐私优先的本地LLM推理引擎，C++后端+GGUF格式，完整NPC对话能力",
+      summary: "KoboldCPP是一个基于C++的本地大语言模型推理后端，采用GGUF格式（与llama.cpp相同），可在自有硬件上运行本地LLM，无需云端依赖和第三方API调用。最初为KoboldAI角色扮演生态创建，现已发展为完整的本地推理引擎，支持现代模型，具备强大的NPC对话能力，包括记忆管理和人格注入。被评为2026年需要完全控制NPC数据的隐私意识开发者的首选开源自托管方案。",
+      source: "AI Conjured",
+      date: "2026-09-06",
+      url: "https://aiconjured.com/ai-game-dev-tools/npc-dialogue-scripting/",
+      image: "",
+      badge: "本地 LLM",
+      badgeType: "ai",
+      readTime: "3 分钟",
+      hotScore: 77,
+      tags: ["KoboldCPP", "本地LLM", "C++后端", "GGUF", "NPC对话", "记忆管理", "人格注入", "隐私优先"],
+      content: [
+        {
+          title: "核心能力",
+          type: "list",
+          items: [
+            "C++本地推理后端；",
+            "GGUF格式（llama.cpp兼容）；",
+            "完全本地运行，无云端依赖；",
+            "无第三方API调用；",
+            "现代模型支持；",
+            "NPC对话+记忆管理+人格注入；",
+            "隐私意识开发者首选；",
+            "开源自托管方案。"
+          ]
+        },
+        {
+          title: "技术价值",
+          type: "text",
+          text: "KoboldCPP为游戏开发者提供了完全自主的本地AI NPC方案——不需要订阅云服务、不需要担心API费用、不需要担心数据隐私。记忆管理和人格注入功能让本地LLM也能提供有深度的NPC对话体验。对需要完全控制NPC数据和行为的开发者而言，KoboldCPP是目前最成熟的开源自托管方案，与LLMUnity等Unity集成方案配合使用效果更佳。"
+        }
+      ]
+    },
+    {
+      id: "claude-code-game-studios-10k",
+      category: "opensource",
+      subcategory: "AI代理",
+      title: "Claude Code Game Studios突破10k Stars：48层AI代理模拟完整游戏开发团队，MIT开源",
+      summary: "基于Anthropic官方Claude Code的开源项目Claude Code Game Studios在GitHub上突破10,000 Stars，成为AI游戏开发领域最热门的开源工具之一。项目由开发者Donchitos维护，MIT协议开源。其核心概念是「你+48层AI代理=完整游戏开发团队」，将游戏开发流程拆解为策划、程序、美术、测试、发布等多个专业角色，每个角色由专门的AI代理担任，代理之间通过结构化通信协作，实现游戏开发的全自动化流水线，使单个人即可管理从设计到上线的全流程。",
+      source: "智趣AI甄选 / GitHub",
+      date: "2026-09-16",
+      url: "https://www.aifun.cc/en/sites/claude-code-game-studios.html",
+      image: "",
+      badge: "10k Stars",
+      badgeType: "ai",
+      readTime: "3 分钟",
+      hotScore: 80,
+      tags: ["Claude Code", "Game Studios", "10k Stars", "48层AI代理", "MIT开源", "Donchitos", "全自动化开发"],
+      content: [
+        {
+          title: "项目要点",
+          type: "list",
+          items: [
+            "GitHub突破10,000 Stars；",
+            "AI游戏开发最热门开源工具之一；",
+            "开发者Donchitos维护；",
+            "MIT协议开源；",
+            "48层分层AI代理；",
+            "模拟完整游戏开发团队；",
+            "策划/程序/美术/测试/发布；",
+            "单人管理全流程。"
+          ]
+        },
+        {
+          title: "行业影响",
+          type: "text",
+          text: "Claude Code Game Studios突破10k Stars标志着「AI团队」概念获得了开发者社区的广泛认可——从单个AI工具到完整AI团队的转变，是AI辅助开发的下一个阶段。48层代理的分层架构虽然在当前技术条件下仍有创意质量和代码可靠性的局限，但为未来AI辅助游戏开发的方向提供了重要的探索和参考。"
+        }
+      ]
+    },
+    {
+      id: "ea-privatization-saudi",
+      category: "industry",
+      subcategory: "并购",
+      title: "沙特牵头财团完成对EA的私有化：PIF+Silver Lake+Affinity Partners，摩根大通提供200亿美元债务融资",
+      summary: "由沙特主权基金Public Investment Fund (PIF)牵头的财团完成了对美国游戏公司Electronic Arts (EA)的私有化收购。参与私有化的财团包括沙特主权基金PIF、私募股权公司Silver Lake以及特朗普女婿Jared Kushner创立的Affinity Partners。EA旗下知名游戏包括EA Sports FC、战地、模拟人生、质量效应等。摩根大通银行为这笔交易提供了200亿美元的债务融资，这笔债务将由私有化后的EA承担。分析师担心高额债务可能影响EA未来的游戏开发投入。",
+      source: "奇客Solidot",
+      date: "2026-09-17",
+      url: "https://www.solidot.org/search?tid=13",
+      image: "",
+      badge: "EA 私有化",
+      badgeType: "business",
+      readTime: "3 分钟",
+      hotScore: 86,
+      tags: ["EA", "私有化", "沙特PIF", "Silver Lake", "Affinity Partners", "200亿美元债务", "摩根大通"],
+      content: [
+        {
+          title: "交易要点",
+          type: "list",
+          items: [
+            "沙特PIF牵头财团完成EA私有化；",
+            "参与方：PIF+Silver Lake+Affinity Partners；",
+            "EA旗下：FC/战地/模拟人生/质量效应；",
+            "摩根大通提供200亿美元债务融资；",
+            "债务由私有化后EA承担；",
+            "分析师担心影响开发投入；",
+            "游戏行业最大规模私有化之一。"
+          ]
+        },
+        {
+          title: "行业影响",
+          type: "text",
+          text: "沙特牵头财团完成对EA的私有化是游戏行业历史上最大规模的并购交易之一，标志着沙特主权财富基金在全球游戏行业的影响力进一步扩大。200亿美元的债务融资虽然为交易提供了资金支持，但也给私有化后的EA带来了沉重的债务负担，可能影响未来的游戏开发投入和创新能力。对游戏开发者而言，EA的私有化可能带来管理层和战略方向的变化，需要关注后续的工作室调整和项目变动。"
         }
       ]
     }
