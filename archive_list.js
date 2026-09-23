@@ -1,5 +1,6 @@
 window.NEWS_ARCHIVE_LIST = [
-  { date: "2026-09-23", weekday: "星期三", file: "data/2026-09-23.js", desc: "今日最新情报" },
+  { date: "2026-09-24", weekday: "星期四", file: "data/2026-09-24.js", desc: "今日最新情报" },
+  { date: "2026-09-23", weekday: "星期三", file: "data/2026-09-23.js", desc: "往期技术归档" },
   { date: "2026-09-22", weekday: "星期二", file: "data/2026-09-22.js", desc: "往期技术归档" },
   { date: "2026-09-20", weekday: "星期日", file: "data/2026-09-20.js", desc: "往期技术归档" },
   { date: "2026-09-19", weekday: "星期六", file: "data/2026-09-19.js", desc: "往期技术归档" },
