@@ -1,15 +1,5 @@
 window.NEWS_ARCHIVE_LIST = [
   { date: "2026-09-24", weekday: "星期四", file: "data/2026-09-24.js", desc: "今日最新情报" },
-  { date: "2026-09-23", weekday: "星期三", file: "data/2026-09-23.js", desc: "往期技术归档" },
-  { date: "2026-09-22", weekday: "星期二", file: "data/2026-09-22.js", desc: "往期技术归档" },
-  { date: "2026-09-20", weekday: "星期日", file: "data/2026-09-20.js", desc: "往期技术归档" },
-  { date: "2026-09-19", weekday: "星期六", file: "data/2026-09-19.js", desc: "往期技术归档" },
-  { date: "2026-09-18", weekday: "星期五", file: "data/2026-09-18.js", desc: "往期技术归档" },
-  { date: "2026-09-17", weekday: "星期四", file: "data/2026-09-17.js", desc: "往期技术归档" },
-  { date: "2026-09-16", weekday: "星期三", file: "data/2026-09-16.js", desc: "往期技术归档" },
-  { date: "2026-09-13", weekday: "星期日", file: "data/2026-09-13.js", desc: "往期技术归档" },
-  { date: "2026-09-12", weekday: "星期六", file: "data/2026-09-12.js", desc: "往期技术归档" },
-  { date: "2026-09-08", weekday: "星期二", file: "data/2026-09-08.js", desc: "往期技术归档" },
   { date: "2026-09-07", weekday: "星期一", file: "data/2026-09-07.js", desc: "往期技术归档" },
   { date: "2026-09-06", weekday: "星期日", file: "data/2026-09-06.js", desc: "往期技术归档" },
   { date: "2026-09-05", weekday: "星期六", file: "data/2026-09-05.js", desc: "往期技术归档" },
@@ -17,10 +7,8 @@ window.NEWS_ARCHIVE_LIST = [
   { date: "2026-09-03", weekday: "星期四", file: "data/2026-09-03.js", desc: "往期技术归档" },
   { date: "2026-09-02", weekday: "星期三", file: "data/2026-09-02.js", desc: "往期技术归档" },
   { date: "2026-09-01", weekday: "星期二", file: "data/2026-09-01.js", desc: "往期技术归档" },
-  { date: "2026-08-31", weekday: "星期一", file: "data/2026-08-31.js", desc: "往期技术归档" },
   { date: "2026-08-30", weekday: "星期日", file: "data/2026-08-30.js", desc: "往期技术归档" },
   { date: "2026-08-29", weekday: "星期六", file: "data/2026-08-29.js", desc: "往期技术归档" },
   { date: "2026-08-28", weekday: "星期五", file: "data/2026-08-28.js", desc: "往期技术归档" },
-  { date: "2026-08-27", weekday: "星期四", file: "data/2026-08-27.js", desc: "往期技术归档" },
   { date: "2026-08-26", weekday: "星期三", file: "data/2026-08-26.js", desc: "往期技术归档" }
 ];
