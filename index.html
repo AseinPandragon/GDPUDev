@@ -1407,8 +1407,8 @@
   </p>
 </footer>
 
-<script src="archive_list.js"></script>
-<script src="news_data.js"></script>
+<script>document.write('<script src="archive_list.js?v=' + Date.now() + '"><\/script>');</script>
+<script>document.write('<script src="news_data.js?v=' + Date.now() + '"><\/script>');</script>
 <script>
   let activeCategory = "all";
   let activeSubTag = "all";
@@ -2114,10 +2114,8 @@
         let isSelected = false;
         if (currentActiveFile) {
           isSelected = (item.file === currentActiveFile);
-        } else if (curDate) {
-          isSelected = (item.date === curDate || item.file.includes(curDate));
         } else {
-          isSelected = (idx === 0);
+          isSelected = (idx === 0); // 默认选中最新一期
         }
         return `<option value="${item.file}" ${isSelected ? 'selected' : ''}>📅 ${item.date} (${item.weekday || '日报'})</option>`;
       }).join("");
