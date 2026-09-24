@@ -19,7 +19,7 @@
       </div>
       <div class="brand-text">
         <h1>数媒技自学指南 · 客户端程序 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">DEEP DIVE 02</span></h1>
-        <p>C# 地基 → Unity 实操 → 内功 → 作品集 // UNITY / UE CLIENT DEV</p>
+        <p>按年级推进 · 每年有自检 · 大三开始拼技术深度 // UNITY / UE CLIENT DEV</p>
       </div>
     </div>
     <div class="nav-tools">
@@ -36,98 +36,214 @@
     <a class="ark-nav-item" href="art.html"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span></a>
     <a class="ark-nav-item" href="server.html"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
     <a class="ark-nav-item" href="contests.html"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="jobs.html"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
   </div>
 
-  <!-- ================= 深挖路线 ================= -->
+  <div class="takeaway-alert-box">
+    <strong>💡 这一页按年级组织，每年的标准不一样</strong>
+    大一拼的是"能跑起来"，大二拼的是"能交付完整"，大三拼的是<strong>技术深度</strong>（热更、性能、架构、联机——简历上值钱的全部来自这一年），大四拼的是"能把深度讲出来"。每个年级末尾都有<strong>年末自检</strong>：过不了就别急着往下一个年级赶，基础不牢，大三的深入内容全部是空中楼阁。
+  </div>
+
+  <!-- ================= 按年级路线 ================= -->
   <div class="category-section-block">
     <div class="section-block-header">
       <div class="section-title-wrap">
-        <div class="section-title">■ 深挖方向 02：客户端程序（Unity C# / UE C++）</div>
-        <span class="section-count-badge">4 STEPS</span>
+        <div class="section-title">■ 四年成长路线：每年都有明确的收获</div>
+        <span class="section-count-badge">4 YEARS</span>
       </div>
-      <span class="section-desc">数媒技走的人最多的路 · 从"会拖组件"到"能独立交付完整游戏"</span>
+      <span class="section-desc">唐老狮 C#/Unity 打底 · 大二交付完整 · 大三深入技术 · 大四收割</span>
     </div>
 
     <div class="timeline">
+      <!-- 大一 -->
       <div class="tl-item">
         <div class="article-card">
           <div class="card-tactical-header">
-            <span class="card-index-tag">STEP_01 · 语言基础（一切的地基）</span>
-            <span class="card-serial-code">C# FIRST</span>
+            <span class="card-index-tag">大一 · 从零到"能跑起来"</span>
+            <span class="card-serial-code">YEAR 1 · FOUNDATION</span>
           </div>
-          <div class="card-headline">先把 C# 学扎实：唐老狮 C# 四部曲</div>
+          <div class="card-headline">C# 地基 + 第一个能玩的小游戏</div>
           <div class="card-summary">
-            直接跳过语言去拖引擎组件，是数媒技学生最常见的翻坑方式。推荐的免费系统课是<strong>唐老狮（B站：一唐老狮一）</strong>的 C# 四部曲：入门 → 核心 → 进阶 → 数据结构与算法，讲得细、有作业、节奏适合自学，B站整套免费看。四部曲全部过完，你才有资格谈"会用 Unity 写逻辑"。
+            直接跳过语言去拖引擎组件，是数媒技学生最常见的翻坑方式。这一年就干两件事：
+            <ul>
+              <li><strong>C# 四部曲</strong>（唐老狮，B站免费）：入门 → 核心，至少啃完这两部，语法和面向对象过关；</li>
+              <li><strong>第一个小游戏</strong>：控制台版贪吃蛇 → Unity 版打飞机 / 平台跳跃，跟唐老狮 Unity 系列的案例做。</li>
+            </ul>
+            环境这一年也要定下来：Unity Hub + Visual Studio + Git（注册 GitHub，第一次 push 就在大一）。
           </div>
           <div class="tag-cluster">
             <a class="tag-pill em res-link" href="https://space.bilibili.com/79983517" target="_blank" rel="noopener">唐老狮 · B站个人空间</a>
-            <span class="tag-pill">C#入门 → C#核心 → C#进阶 → 数据结构与算法</span>
+            <span class="tag-pill">C#入门 → C#核心</span>
             <span class="tag-pill good">免费 · 有课后作业</span>
           </div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="article-card">
-          <div class="card-tactical-header">
-            <span class="card-index-tag">STEP_02 · 引擎实操（与 STEP_01 后半并行）</span>
-            <span class="card-serial-code">MAKE IT PLAYABLE</span>
-          </div>
-          <div class="card-headline">Unity 入门：跟着做，别只看</div>
-          <div class="card-summary">
-            唐老狮的 Unity 系列覆盖 MonoBehaviour 生命周期、UI（UGUI）、物理、动画、寻航等全部常用模块，跟着把每个模块的小案例做出来；同时配合 Unity 官方文档查 API——教程负责入门，文档负责精确。目标：能不抄教程独立做出贪吃蛇 / 打飞机 / 平台跳跃级别的小游戏。
-          </div>
-          <div class="tag-cluster">
-            <a class="tag-pill em res-link" href="https://space.bilibili.com/79983517" target="_blank" rel="noopener">唐老狮 · Unity 系列教程</a>
-            <a class="tag-pill res-link" href="https://learn.unity.com/" target="_blank" rel="noopener">Unity Learn 官方教程</a>
-            <a class="tag-pill res-link" href="https://docs.unity3d.com/Manual/index.html" target="_blank" rel="noopener">Unity 官方文档</a>
+          <div class="card-bottom-actions">
+            <span class="card-serial-code">// 年末自检 ↓</span>
           </div>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="article-card">
-          <div class="card-tactical-header">
-            <span class="card-index-tag">STEP_03 · 内功（大二下~大三上）</span>
-            <span class="card-serial-code">DATA STRUCTURE + FRAMEWORK</span>
-          </div>
-          <div class="card-headline">数据结构、设计模式与"框架感"</div>
-          <div class="card-summary">
-            校招笔试躲不开数据结构与算法（LeetCode 简单~中等量级即可），而面试更看你在项目里怎么组织代码：对象池、状态机、事件系统、单例、MVC 分层——这些"框架感"是从写 Demo 到写项目的分水岭。建议每个小机制都自己封装一遍，再回头看别人的实现对比。
-          </div>
-          <div class="tag-cluster">
-            <a class="tag-pill em res-link" href="https://leetcode.cn/" target="_blank" rel="noopener">LeetCode 力扣</a>
-            <span class="tag-pill">对象池 / 状态机 / 事件系统 / UI框架</span>
-          </div>
-        </div>
+      <div class="takeaway-alert-box" style="margin: -6px 0 16px 26px;">
+        <strong>✅ 大一年末自检（全过才算过关）</strong>
+        ① 能不抄教程独立写出一个 300 行以上、逻辑自洽的小游戏；② 能说清类/继承/接口/事件是什么、什么时候用；③ GitHub 上有第一次提交记录；④ Unity 里能独立完成"建场景→挂脚本→出包"的闭环。
       </div>
 
+      <!-- 大二 -->
       <div class="tl-item">
         <div class="article-card">
           <div class="card-tactical-header">
-            <span class="card-index-tag">STEP_04 · 作品集（大三上必须启动）</span>
-            <span class="card-serial-code">SHIP IT</span>
+            <span class="card-index-tag">大二 · 从"会写"到"会组织"</span>
+            <span class="card-serial-code">YEAR 2 · ARCHITECTURE SEED</span>
           </div>
-          <div class="card-headline">客户端的作品集长什么样</div>
+          <div class="card-headline">第一个"完整项目" + 三个系统级封装</div>
           <div class="card-summary">
             <ul>
-              <li><strong>1~2 个完整可玩的游戏</strong>：能安装、有音效、有结算、能重开，最好打过真机包（安卓 APK 能给别人装上玩）。</li>
-              <li><strong>GitHub 仓库</strong>：README 写清楚玩法、架构图和技术亮点（对象池怎么省内存、UI 框架怎么分层）。</li>
-              <li><strong>UE C++ 支线（加分项）</strong>：想走 UE 方向的，C++ 基础（唐老狮也有 UE 系列的 C++ 四部曲）→ UE 官方文档 → C++ 写小游戏逻辑，应届 UE 岗少但竞争更小。</li>
+              <li><strong>补完 C# 四部曲后两部</strong>（进阶 + 数据结构与算法），同步开始 LeetCode 简单~中等（每周 3~5 题的节奏即可）；</li>
+              <li><strong>Unity 全模块过一遍</strong>：UGUI、物理、动画状态机、音频、存档（PlayerPrefs/JSON 序列化）、场景切换；</li>
+              <li><strong>第一个完整项目</strong>（本年最重要产出）：有主菜单、有教学、有存档、有结算、能重开、打过 exe 或 APK 包能发给别人装——"完整"两个字值钱过一切炫技；</li>
+              <li><strong>三个系统级封装</strong>（架构的种子）：对象池（回收子弹/特效）、全局事件系统（解耦模块）、有限状态机（角色/敌人 AI）。每个都自己封装一遍，再看别人的实现对比。</li>
             </ul>
           </div>
           <div class="tag-cluster">
-            <a class="tag-pill em res-link" href="https://space.bilibili.com/79983517" target="_blank" rel="noopener">唐老狮 · UE C++ 四部曲</a>
-            <a class="tag-pill res-link" href="https://dev.epicgames.com/documentation/zh-cn/unreal-engine" target="_blank" rel="noopener">UE 官方文档</a>
-            <a class="tag-pill res-link" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a class="tag-pill em res-link" href="https://leetcode.cn/" target="_blank" rel="noopener">LeetCode 力扣</a>
+            <a class="tag-pill res-link" href="https://docs.unity3d.com/Manual/index.html" target="_blank" rel="noopener">Unity 官方文档</a>
+            <span class="tag-pill">对象池 / 事件系统 / 状态机</span>
+            <span class="tag-pill good">完整项目 = 本年核心 KPI</span>
           </div>
         </div>
+      </div>
+      <div class="takeaway-alert-box" style="margin: -6px 0 16px 26px;">
+        <strong>✅ 大二年末自检</strong>
+        ① 完整项目能让一个陌生人双击玩通全程不崩、不看说明也会玩；② 三个封装能白板讲清"为什么这么设计、不用会怎样"；③ LeetCode 累计 80 题以上；④ 项目用 Git 管理且提交历史干净（不是一次性传压缩包）；⑤ 看得懂别人项目里 80% 的代码结构。
+      </div>
+
+      <!-- 大三 -->
+      <div class="tl-item">
+        <div class="article-card amber">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">大三 · 技术深入（简历价值全在这一年）</span>
+            <span class="card-serial-code">YEAR 3 · GOING DEEP</span>
+          </div>
+          <div class="card-headline">热更 · 性能 · 架构 · 联机 —— 四座大山</div>
+          <div class="card-summary">
+            大二的项目证明你"能做"，大三要证明你"做得深"。四条深入线，每条都冲着面试官的问题去：
+            <ul>
+              <li><strong>热更与资源管线</strong>：HybridCLR（C# 热更）+ YooAsset（资源打包分发），给自己的完整项目接上热更；研究分包策略——我们真实项目里把"改一行业务代码全量重下 6.55MB"优化到"只重下 0.6MB"，这种案例就是面试的杀手锏；</li>
+              <li><strong>性能优化</strong>：学会 Profiler（CPU/内存/渲染三视图），实战减 DrawCall（合批/图集）、减 GC Alloc（避免每帧 new、字符串处理）、LOD 与遮挡剔除；<strong>优化前后必须有数字</strong>：帧率从多少到多少、内存峰值降了多少；</li>
+              <li><strong>UI 框架与架构升级</strong>：手写一套 UI 框架（层级管理/栈式界面/异步加载），把大二的事件系统升级成模块化架构，理解 MVC/MVVM 在游戏里怎么落；</li>
+              <li><strong>网络联机</strong>：做一个最简联机 Demo（帧同步或状态同步二选一），TCP/UDP、消息协议、断线重连各踩一遍坑。</li>
+            </ul>
+            这一年同时要做两件"场外事"：<strong>带项目打 1~2 个比赛冲奖</strong>（见比赛页）+ <strong>大三暑期实习必须拿下</strong>（秋招 offer 的一半来自转正或实习经历背书）。
+          </div>
+          <div class="tag-cluster">
+            <span class="tag-pill em">HybridCLR · C# 热更新</span>
+            <span class="tag-pill em">YooAsset · 资源管线</span>
+            <span class="tag-pill">Profiler / DrawCall / GC</span>
+            <span class="tag-pill">UI框架 / MVC</span>
+            <span class="tag-pill">帧同步 / 状态同步</span>
+            <a class="tag-pill warn res-link" href="contests.html">比赛冲奖 →</a>
+          </div>
+        </div>
+      </div>
+      <div class="takeaway-alert-box" style="margin: -6px 0 16px 26px;">
+        <strong>✅ 大三年末自检（这是校招的分水岭）</strong>
+        ① 项目接着热更：改一行业务代码能通过热更生效，说得清补丁包多大、为什么；② 有至少一条带数字的优化记录（帧率/内存/包体前后对比）；③ UI 框架能白板画架构图；④ 联机 Demo 两个人能实际对战；⑤ 拿到一个暑期实习 offer 或一个省级以上比赛奖。
+      </div>
+
+      <!-- 大四 -->
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">大四 · 收割（秋招不等人）</span>
+            <span class="card-serial-code">YEAR 4 · HARVEST</span>
+          </div>
+          <div class="card-headline">作品集终稿 + 面试攻坚</div>
+          <div class="card-summary">
+            <ul>
+              <li><strong>7~8 月提前批就开</strong>，开学前作品集必须是终稿：每个项目配 README（架构图 + 技术亮点）、演示视频（60~90 秒）、可下载的包；</li>
+              <li><strong>面试项目深挖</strong>：用 STAR 讲项目，每个技术决策都要能答"为什么不用别的方案"——热更为什么选 HybridCLR 不用 xLua、对象池为什么这么回收，答不上就是减分；</li>
+              <li><strong>八股与算法收尾</strong>：C# 高频（值类型引用类型/GC/装箱/协程本质）、Unity 高频（生命周期/渲染管线/物理时序）、LeetCode 中等题保持手感；</li>
+              <li><strong>offer 决策</strong>：平台 &gt; 薪资 &gt; 项目类型（能学到东西的团队 &gt; 钱多但边缘的业务线），第一份工作选成长速度。</li>
+            </ul>
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill em res-link" href="jobs.html">薪资与招聘情报页 →</a>
+            <a class="tag-pill res-link" href="https://www.nowcoder.com/" target="_blank" rel="noopener">牛客网（面经/爆料）</a>
+            <span class="tag-pill warn">提前批 7~8 月就开</span>
+          </div>
+        </div>
+      </div>
+      <div class="takeaway-alert-box" style="margin: -6px 0 16px 26px;">
+        <strong>✅ 大四上学期自检</strong>
+        ① 简历上每一条技术点都有数字或案例支撑，且能被深挖三层不露怯；② 三个项目的演示视频和 GitHub 仓库齐全；③ 牛客上刷过目标公司近两年的面经；④ 内推码到手（找在职学长，比官网直投存活率高）。
       </div>
     </div>
 
     <div class="takeaway-alert-box" style="margin-top: 18px;">
       <strong>💡 一句话总结客户端方向</strong>
-      客户端 = 语言底子（C# 四部曲 / C++）× 引擎系统知识（UI/物理/动画/热更）× 完整项目（打包到真机、别人真的玩过）。面试官问"你这个项目的内存峰值多少、包体多大"，答不上来就是 Demo 选手。
+      大一语言地基、大二完整交付、大三四座大山（热更/性能/架构/联机）、大四把深度换成 offer。面试官问"你这个项目的内存峰值多少、包体多大、为什么这么设计"——每一问的答案都在对应年级的产出里。
+    </div>
+  </div>
+
+  <!-- ================= 深入项目清单 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 毕业前该摸过的五个深入课题</div>
+        <span class="section-count-badge">5 PROJECTS</span>
+      </div>
+      <span class="section-desc">项目多了之后要挑 1~2 个"钻到底" · 这才是和同龄人拉开差距的地方</span>
+    </div>
+
+    <div class="section-cards-grid">
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">DEEP_01 · 热更全链路</span>
+          <span class="card-serial-code">HYBRIDCLR + YOOASSET</span>
+        </div>
+        <div class="card-headline">给完整项目接上热更，并回答三个问题</div>
+        <div class="card-summary">
+          补丁包为什么是这个体积？版本回滚怎么做？AOT 缺失怎么补？——做出结果再答出问题，才算真懂。
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">DEEP_02 · 性能优化报告</span>
+          <span class="card-serial-code">PROFILER CASE</span>
+        </div>
+        <div class="card-headline">一份带前后对比的优化报告</div>
+        <div class="card-summary">
+          选一个卡顿场景：Profiler 定位 → DrawCall/GC/物理逐项治理 → 数字收尾（如 24fps→55fps）。这份报告在面试里的价值等于半个 offer。
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">DEEP_03 · 手写 UI 框架</span>
+          <span class="card-serial-code">UI FRAMEWORK</span>
+        </div>
+        <div class="card-headline">层级管理 + 栈式界面 + 异步加载</div>
+        <div class="card-summary">
+          十个界面以上的项目没有 UI 框架必乱。自己写一遍，再看 Giraffe/OpenSource 的实现，差距在哪一目了然。
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">DEEP_04 · 联机 Demo</span>
+          <span class="card-serial-code">MULTIPLAYER</span>
+        </div>
+        <div class="card-headline">两人能实际对战的极简联机</div>
+        <div class="card-summary">
+          自定协议、处理粘包、断线重连、房间管理——做完这一个，网络同步的面试题全部有了具象。
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">DEEP_05 · 复刻研究</span>
+          <span class="card-serial-code">CLONE & LEARN</span>
+        </div>
+        <div class="card-headline">拆一款爆款的核心循环并复刻</div>
+        <div class="card-summary">
+          选一款玩法清晰的爆款（吸血鬼幸存者类最合适），复刻其核心 10% 玩法，写一篇"为什么这个循环让人停不下来"的技术+设计复盘——程序策划双视角，面试通吃。
+        </div>
+      </div>
     </div>
   </div>
 
@@ -135,7 +251,7 @@
   <div class="category-section-block">
     <div class="section-block-header">
       <div class="section-title-wrap">
-        <div class="section-title" style="color: var(--accent-rose);">■ 亲历踩坑实录 · 客户端篇（为什么"课本外"的东西更重要）</div>
+        <div class="section-title" style="color: var(--accent-rose);">■ 亲历踩坑实录 · 客户端篇</div>
         <span class="section-count-badge" style="background: #fff1f2; color: #e11d48; border-color: #fecdd3;">2 WAR STORIES</span>
       </div>
       <span class="section-desc">以下全部来自我们真实项目 · 教程里不会写 · 只有进项目才碰得到</span>
@@ -181,7 +297,7 @@
   <div class="page-footer">
     <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // CLIENT DEEP DIVE</div>
     <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
-    <div><a href="roadmap.html">← 返回总览</a> · <a href="ta.html">TA</a> · <a href="design.html">策划</a> · <a href="engine.html">引擎</a> · <a href="art.html">美术</a> · <a href="server.html">服务端</a> · <a href="contests.html">比赛</a></div>
+    <div><a href="roadmap.html">← 返回总览</a> · <a href="ta.html">TA</a> · <a href="design.html">策划</a> · <a href="engine.html">引擎</a> · <a href="art.html">美术</a> · <a href="server.html">服务端</a> · <a href="contests.html">比赛</a> · <a href="jobs.html">薪资</a></div>
   </div>
 
 </div>

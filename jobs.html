@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>薪资与招聘情报 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="roadmap-style.css">
+<script src="roadmap-common.js" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB · 四象菱形点阵核心">
+        <img src="gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>数媒技自学指南 · 薪资与招聘 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">JOBS INTEL</span></h1>
+        <p>薪资档位 · BOSS直聘直达 · 大厂校招官网 · 公众号清单 // SALARY & RECRUITING INTEL</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="index.html">← 返回情报中枢</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="roadmap.html"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="ta.html"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="client.html"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item" href="design.html"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span></a>
+    <a class="ark-nav-item" href="engine.html"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <a class="ark-nav-item" href="art.html"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span></a>
+    <a class="ark-nav-item" href="server.html"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="contests.html"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item active" href="jobs.html"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘 · 本页</span></a>
+  </div>
+
+  <div class="takeaway-alert-box amber">
+    <strong>⚠️ 薪资数据的正确读法</strong>
+    下表是<strong>大厂校招口径的经验参考区间</strong>（一线城市），综合了牛客网校招档位公开帖、职友集薪酬统计与媒体报道，波动极大且逐年变化——<strong>它只回答"量级和排序"，不回答"我能拿多少"</strong>。投递前一律以 BOSS直聘 / 牛客当届实况为准：搜同岗位在招 JD 看开价，比任何攻略都准。
+  </div>
+
+  <!-- ================= 薪资参考表 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 岗位薪资参考表（大厂校招口径）</div>
+        <span class="section-count-badge">6 POSITIONS</span>
+      </div>
+      <span class="section-desc">月薪 × 薪数 · 白菜=普通 offer · SP/SSP=优秀档 · 数据波动大仅供量级参考</span>
+    </div>
+
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead>
+          <tr><th>岗位</th><th>校招白菜</th><th>SP / SSP 档</th><th>3~5 年社招</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="name">客户端（Unity）</td><td>18~24k × 15</td><td class="yes">27~30k × 15 + 签字费/股票（年包 40~50w）</td><td>20~40k × 14</td><td>岗多竞争多，小厂 8~15k 起也常见</td></tr>
+          <tr><td class="name">服务端</td><td>20~26k × 15</td><td class="yes">28~32k × 15</td><td>25~45k</td><td>与互联网后端互通，退路最宽</td></tr>
+          <tr><td class="name">技术美术 TA</td><td>约 20~25k</td><td class="yes">稀缺岗，可谈</td><td class="yes">20~50k（近六成岗位区间）</td><td>缺口大、上限高，但对应届作品集要求硬</td></tr>
+          <tr><td class="name">游戏策划</td><td>10~18k × 13~15</td><td>系统/数值 20~25k</td><td>15~35k</td><td>文案策划明显偏低，TP/数值偏高</td></tr>
+          <tr><td class="name">特效 VFX</td><td>12~22k</td><td>紧缺指数高</td><td class="yes">资深 35~60k</td><td>美术岗里技术溢价最高的一支</td></tr>
+          <tr><td class="name">QA 测试</td><td>8~14k</td><td>—</td><td>15~25k（自动化方向）</td><td>天花板全押在自动化能力上</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pending-box">
+      <strong>数据说明</strong>　牛客网历届校招档位公开帖（白菜/SP/SSP）+ 职友集岗位薪酬统计 + 媒体报道综合；「×15」为 12 月薪 + 3 个月绩效/年终的常见结构。实习日薪另算（大厂普遍 200~400/天）。
+    </div>
+  </div>
+
+  <!-- ================= BOSS直聘直达 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ BOSS直聘 · 按岗位直达搜索</div>
+        <span class="section-count-badge">LIVE JD</span>
+      </div>
+      <span class="section-desc">点开看在招 JD 的真实要求与开价 · 比任何攻略都准 · 需登录后查看联系方式</span>
+    </div>
+
+    <div class="section-cards-grid">
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">SEARCH_01 · 客户端</span>
+          <span class="card-serial-code">UNITY / UE</span>
+        </div>
+        <div class="card-headline">游戏客户端开发</div>
+        <div class="card-summary">
+          重点看 JD 里"任职要求"一栏：几年经验、要什么引擎、要不要热更/性能经验——倒推自己的学习清单。
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="https://www.zhipin.com/web/geek/job?query=Unity%E5%AE%A2%E6%88%B7%E7%AB%AF&city=100010000" target="_blank" rel="noopener">搜「Unity客户端」</a>
+          <a class="tag-pill em res-link" href="https://www.zhipin.com/web/geek/job?query=%E6%B8%B8%E6%88%8F%E5%AE%A2%E6%88%B7%E7%AB%AF&city=100010000" target="_blank" rel="noopener">搜「游戏客户端」</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">SEARCH_02 · 技术美术</span>
+          <span class="card-serial-code">TA</span>
+        </div>
+        <div class="card-headline">技术美术 TA</div>
+        <div class="card-summary">
+          注意区分渲染向 / 管线向 / 绑定向的 JD——不同细分要求差别巨大，投递前先对号入座。
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="https://www.zhipin.com/web/geek/job?query=%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF&city=100010000" target="_blank" rel="noopener">搜「技术美术」</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">SEARCH_03 · 策划</span>
+          <span class="card-serial-code">GAME DESIGN</span>
+        </div>
+        <div class="card-headline">游戏策划 / 技术策划</div>
+        <div class="card-summary">
+          系统策划、数值策划、关卡策划、技术策划是四个不同岗位，分开搜、分开看要求。
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="https://www.zhipin.com/web/geek/job?query=%E6%B8%B8%E6%88%8F%E7%AD%96%E5%88%92&city=100010000" target="_blank" rel="noopener">搜「游戏策划」</a>
+          <a class="tag-pill res-link" href="https://www.zhipin.com/web/geek/job?query=%E6%8A%80%E6%9C%AF%E7%AD%96%E5%88%92&city=100010000" target="_blank" rel="noopener">搜「技术策划」</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">SEARCH_04 · 服务端 / 特效</span>
+          <span class="card-serial-code">SERVER / VFX</span>
+        </div>
+        <div class="card-headline">游戏服务器 / 游戏特效</div>
+        <div class="card-summary">
+          服务端看清楚是游戏公司还是泛互联网公司；特效岗注意区分"游戏特效"和"影视特效"，技能栈不同。
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="https://www.zhipin.com/web/geek/job?query=%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8&city=100010000" target="_blank" rel="noopener">搜「游戏服务器」</a>
+          <a class="tag-pill em res-link" href="https://www.zhipin.com/web/geek/job?query=%E6%B8%B8%E6%88%8F%E7%89%B9%E6%95%88&city=100010000" target="_blank" rel="noopener">搜「游戏特效」</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 校招官网与公众号 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大厂校招官网 · 公众号 · 社区渠道</div>
+        <span class="section-count-badge">CHANNELS</span>
+      </div>
+      <span class="section-desc">校招信息一手来源 · 内推 &gt; 官网直投 &gt; 等HR捞人</span>
+    </div>
+
+    <div class="section-cards-grid">
+      <div class="article-card emerald">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">CHANNEL_01 · 校招官网（已核实）</span>
+          <span class="card-serial-code">OFFICIAL SITES</span>
+        </div>
+        <div class="card-headline">头部大厂校招入口</div>
+        <div class="card-summary">
+          校招主战场，提前批一般 8 月就开（2027 届在 8~10 月集中爆发），网申 → 笔试 → 面试周期长，别等秋招"正日子"。
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="https://campus.tencent.com/" target="_blank" rel="noopener">腾讯校园招聘</a>
+          <a class="tag-pill em res-link" href="https://campus.163.com/" target="_blank" rel="noopener">网易校园招聘</a>
+          <a class="tag-pill em res-link" href="https://join.mihoyo.com/" target="_blank" rel="noopener">米哈游招聘</a>
+          <a class="tag-pill em res-link" href="https://jobs.lilith.com/" target="_blank" rel="noopener">莉莉丝招聘</a>
+        </div>
+        <div class="tag-cluster">
+          <span class="tag-pill">叠纸 / 鹰角 / 库洛 等：搜「公司名 + 招聘」进官网，或走牛客校招汇总帖</span>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">CHANNEL_02 · 社区与爆料</span>
+          <span class="card-serial-code">NOWCODER</span>
+        </div>
+        <div class="card-headline">牛客网：校招人的情报中枢</div>
+        <div class="card-summary">
+          薪资档位爆料（白菜/SP/SSP 真实 offer）、笔面经、内推码、投递进度汇报——全部实时。校招季每天刷一刷，比任何公众号都快。
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="https://www.nowcoder.com/" target="_blank" rel="noopener">牛客网</a>
+          <span class="tag-pill">搜「游戏 getClient 校招」看同届进度</span>
+        </div>
+      </div>
+
+      <div class="article-card amber">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">CHANNEL_03 · 公众号（微信搜索关注）</span>
+          <span class="card-serial-code">WECHAT</span>
+        </div>
+        <div class="card-headline">建议置顶的公众号清单</div>
+        <div class="card-summary">
+          <ul>
+            <li><strong>招聘类</strong>：腾讯招聘、网易招聘、米哈游招聘、莉莉丝招聘——开招/截止提醒最快；</li>
+            <li><strong>行业资讯类</strong>：游戏葡萄、GameLook、手游那点事——了解哪家在盈利、哪家在扩张，投递前做功课；</li>
+            <li><strong>用法</strong>：招聘号开提醒，资讯号每周扫一眼标题即可。</li>
+          </ul>
+        </div>
+        <div class="tag-cluster">
+          <span class="tag-pill good">内推 &gt; 官网直投：找在职学长要内推码</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="takeaway-alert-box" style="margin-top: 18px;">
+      <strong>💡 投递节奏提醒</strong>
+      实习招聘全年滚动（暑期实习 3~5 月集中投）→ 秋招提前批 7~8 月 → 正式批 9~10 月 → 春招补录次年 3~4 月。<strong>大四上学期开学前，作品集必须是终稿状态</strong>——秋招不等人。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // JOBS INTEL</div>
+    <div>内容含 AI 辅助生成 · 薪资数据仅供参考 · 个人非经营性学习观察用途</div>
+    <div><a href="roadmap.html">← 返回总览</a> · <a href="ta.html">TA</a> · <a href="client.html">客户端</a> · <a href="design.html">策划</a> · <a href="engine.html">引擎</a> · <a href="art.html">美术</a> · <a href="server.html">服务端</a> · <a href="contests.html">比赛</a></div>
+  </div>
+
+</div>
+</body>
+</html>
