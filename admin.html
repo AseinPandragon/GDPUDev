@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>站长后台 · GDPU GAMEDEV HUB</title>
+<style>
+  :root {
+    --bg-page:#f1f5f9; --bg-surface:#fff; --bg-subtle:#f8fafc; --bg-dark:#0f172a;
+    --border-light:#e2e8f0; --border-strong:#cbd5e1;
+    --text-primary:#0f172a; --text-secondary:#475569; --text-muted:#64748b;
+    --accent-blue:#2563eb; --accent-blue-light:#eff6ff; --accent-blue-border:#bfdbfe;
+    --accent-rose:#e11d48; --accent-emerald:#059669; --accent-amber:#d97706; --accent-purple:#7c3aed;
+    --font-mono:'JetBrains Mono','Cascadia Code',Consolas,'Microsoft YaHei',monospace;
+    --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg-page);background-image:radial-gradient(rgba(148,163,184,.32) 1px,transparent 1px);background-size:20px 20px;color:var(--text-primary);font-family:var(--font-sans);min-height:100vh;padding:16px 20px 60px;line-height:1.6;}
+  .container{max-width:1280px;margin:0 auto;}
+  .topbar{background:#fff;border:1px solid var(--border-strong);border-radius:8px;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.05);margin-bottom:14px;flex-wrap:wrap;gap:10px;}
+  .topbar h1{font-family:var(--font-mono);font-size:16px;font-weight:800;}
+  .topbar .sub{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);}
+  .badge{font-family:var(--font-mono);font-size:10px;font-weight:800;background:var(--accent-blue-light);color:var(--accent-blue);border:1px solid var(--accent-blue-border);padding:2px 6px;border-radius:4px;}
+  .btn{border:1px solid var(--border-strong);background:#f8fafc;color:var(--text-secondary);font-family:var(--font-mono);font-size:12px;font-weight:700;padding:7px 14px;border-radius:6px;cursor:pointer;transition:.15s;}
+  .btn:hover{background:#eff6ff;color:var(--accent-blue);border-color:var(--accent-blue-border);}
+  .btn.primary{background:var(--accent-blue);color:#fff;border-color:#1d4ed8;}
+  .btn.primary:hover{background:#1d4ed8;}
+  .btn.danger{background:#fff1f2;color:var(--accent-rose);border-color:#fecdd3;}
+  .btn.danger:hover{background:var(--accent-rose);color:#fff;}
+  .btn:disabled{opacity:.5;cursor:not-allowed;}
+  .card{background:#fff;border:1px solid var(--border-strong);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .layout{display:grid;grid-template-columns:290px 1fr;gap:14px;align-items:start;}
+  @media(max-width:900px){.layout{grid-template-columns:1fr;}}
+  .side{padding:14px;}
+  .side h3{font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--text-muted);margin-bottom:10px;}
+  .file-item{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border:1px solid var(--border-light);border-radius:6px;margin-bottom:6px;cursor:pointer;font-family:var(--font-mono);font-size:12.5px;font-weight:700;transition:.15s;background:#fff;}
+  .file-item:hover{border-color:var(--accent-blue);background:var(--accent-blue-light);}
+  .file-item.active{border-color:var(--accent-blue);background:var(--accent-blue-light);color:var(--accent-blue);}
+  .state-dot{font-size:9px;padding:2px 6px;border-radius:3px;font-weight:800;}
+  .state-draft{background:#fef3c7;color:#92400e;}
+  .state-pending{background:#ffe4e6;color:#be123c;}
+  .state-clean{background:#f1f5f9;color:#64748b;}
+  .banner{display:none;border-radius:8px;padding:14px 20px;margin-bottom:14px;font-weight:700;font-size:14px;align-items:center;gap:12px;flex-wrap:wrap;}
+  .banner.show{display:flex;}
+  .banner.pending{background:#fff1f2;border:1.5px solid var(--accent-rose);color:#9f1239;}
+  .banner.draft{background:#fffbeb;border:1px solid #fde68a;color:#92400e;}
+  .banner.ok{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;}
+  .panel{padding:16px;}
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center;}
+  .meta{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:10px;display:flex;gap:14px;flex-wrap:wrap;}
+  iframe{width:100%;height:72vh;border:1px solid var(--border-strong);border-radius:6px;background:#fff;}
+  .src{width:100%;height:72vh;font-family:var(--font-mono);font-size:12px;border:1px solid var(--border-strong);border-radius:6px;padding:12px;white-space:pre;tab-size:2;display:none;}
+  .hint{font-size:12px;color:var(--text-muted);margin-top:8px;}
+  .modal-mask{display:none;position:fixed;inset:0;background:rgba(15,23,42,.6);z-index:100;align-items:center;justify-content:center;padding:20px;}
+  .modal-mask.show{display:flex;}
+  .modal{background:#fff;border-radius:10px;max-width:760px;width:100%;max-height:86vh;display:flex;flex-direction:column;overflow:hidden;border-top:4px solid var(--accent-blue);}
+  .modal.danger{border-top-color:var(--accent-rose);}
+  .modal-head{padding:16px 22px;border-bottom:1.5px solid var(--border-light);display:flex;justify-content:space-between;align-items:center;}
+  .modal-head h2{font-size:17px;font-weight:900;}
+  .modal-body{padding:18px 22px;overflow:auto;}
+  .modal-foot{padding:14px 22px;border-top:1px solid var(--border-light);display:flex;justify-content:flex-end;gap:10px;align-items:center;}
+  .diff-item{border:1px solid var(--border-light);border-radius:6px;padding:10px 14px;margin-bottom:8px;font-size:13px;}
+  .diff-item .old{color:var(--accent-rose);text-decoration:line-through;opacity:.75;}
+  .diff-item .new{color:var(--accent-emerald);font-weight:700;}
+  .commit-item{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--border-light);border-radius:6px;padding:10px 14px;margin-bottom:8px;font-size:12.5px;flex-wrap:wrap;}
+  .commit-item .msg{font-weight:700;}
+  .commit-item .sha{font-family:var(--font-mono);color:var(--accent-blue);}
+  .commit-item .time{font-family:var(--font-mono);color:var(--text-muted);font-size:11px;}
+  .gate{position:fixed;inset:0;background:linear-gradient(135deg,#0f172a,#1e293b);display:flex;align-items:center;justify-content:center;z-index:200;}
+  .gate .box{background:#fff;border-radius:12px;padding:34px 38px;width:380px;text-align:center;}
+  .gate h2{font-family:var(--font-mono);margin-bottom:6px;}
+  .gate p{font-size:12.5px;color:var(--text-muted);margin-bottom:16px;}
+  .gate input{width:100%;padding:11px 14px;border:1.5px solid var(--border-strong);border-radius:6px;font-size:14px;margin-bottom:12px;outline:none;}
+  .gate input:focus{border-color:var(--accent-blue);}
+  .gate .err{color:var(--accent-rose);font-size:12px;min-height:18px;margin-bottom:6px;}
+  .toast{position:fixed;bottom:24px;right:24px;background:var(--bg-dark);color:#fff;padding:13px 20px;border-radius:8px;font-size:13px;font-weight:700;display:none;z-index:300;box-shadow:0 10px 30px rgba(0,0,0,.3);}
+  .toast.show{display:block;}
+  .field{margin-bottom:12px;}
+  .field label{display:block;font-family:var(--font-mono);font-size:11px;font-weight:800;color:var(--text-muted);margin-bottom:4px;letter-spacing:.5px;}
+  .field input{width:100%;padding:10px 12px;border:1.5px solid var(--border-strong);border-radius:6px;font-size:13px;outline:none;font-family:var(--font-mono);}
+  .field input:focus{border-color:var(--accent-blue);}
+  .cfg-form{max-width:560px;}
+</style>
+</head>
+<body>
+
+<!-- 密码门禁 -->
+<div class="gate" id="gate">
+  <div class="box">
+    <h2>🔒 站长后台</h2>
+    <p id="gateTip">首次使用请设置管理员密码（保存在本机浏览器）</p>
+    <input type="password" id="gateInput" placeholder="管理员密码">
+    <div class="err" id="gateErr"></div>
+    <button class="btn primary" style="width:100%" onclick="gateSubmit()">进入后台</button>
+    <p style="margin-top:14px;font-size:11px;color:var(--text-subtle,#94a3b8);">软锁仅防误入 · 发布权限由 GitHub Token 控制<br>忘记密码：清除本站 localStorage 即可重设</p>
+  </div>
+</div>
+
+<div class="container" id="app" style="display:none;">
+  <div class="topbar">
+    <div>
+      <h1>⚙️ 站长后台 <span class="badge">GDPU GAMEDEV · CMS</span></h1>
+      <div class="sub">可视化编辑 → 提交审核 → 主管理员确认 → 发布（自动同步线上）</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <span class="sub" id="whoami"></span>
+      <button class="btn" onclick="openCfg()">⚙️ 仓库配置</button>
+      <button class="btn" onclick="location.reload()">刷新</button>
+    </div>
+  </div>
+
+  <!-- 待确认横幅 -->
+  <div class="banner pending" id="bannerPending">
+    <span>🔔 有 <b id="pendingCount">0</b> 项已提交的变更，等待主管理员确认发布</span>
+    <button class="btn danger" onclick="openReview()">进入确认面板 ➔</button>
+  </div>
+  <div class="banner draft" id="bannerDraft">
+    <span>📝 当前页面有未提交的编辑草稿（自动保存于本机）</span>
+    <button class="btn" onclick="submitForReview()">提交审核</button>
+    <button class="btn danger" onclick="discardDraft()">放弃草稿</button>
+  </div>
+  <div class="banner ok" id="bannerOk"><span id="okText"></span></div>
+
+  <div class="layout">
+    <!-- 文件列表 -->
+    <div class="card side">
+      <h3>📄 页面文件</h3>
+      <div id="fileList"></div>
+      <h3 style="margin-top:16px;">📌 提示</h3>
+      <p style="font-size:12px;color:var(--text-muted);" id="syncNote">
+        发布 = 自动 commit 到 GitHub 主分支 → 服务器每 30 分钟自动同步生效（急用可 SSH 手动 <span style="font-family:var(--font-mono);">git reset --hard origin/main</span>）。
+      </p>
+    </div>
+
+    <!-- 编辑区 -->
+    <div>
+      <div class="card panel" id="editorPanel">
+        <div class="meta" id="fileMeta">← 左侧选择页面开始编辑</div>
+        <div class="toolbar" id="toolbar" style="display:none;">
+          <button class="btn" id="btnVisual" onclick="setMode('visual')">🖥️ 可视化编辑</button>
+          <button class="btn" id="btnSource" onclick="setMode('source')">⌨️ 源码模式</button>
+          <button class="btn" onclick="saveDraft()">💾 保存草稿</button>
+          <button class="btn primary" onclick="submitForReview()">📤 提交审核</button>
+          <button class="btn" onclick="openHistory()">🕘 提交历史 / 回滚</button>
+          <span class="hint" id="dirtyTip" style="display:none;color:var(--accent-amber);font-weight:700;">● 有未保存修改（已自动暂存）</span>
+        </div>
+        <iframe id="editorFrame" style="display:none;"></iframe>
+        <textarea class="src" id="sourceArea" spellcheck="false"></textarea>
+        <p class="hint" id="editHint" style="display:none;">可视化模式：点击文字直接改；<b>双击图片改图片地址</b>、双击链接改跳转地址；改完点「保存草稿」或「提交审核」。源码模式：直接改 HTML。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 审核确认弹窗（主管理员） -->
+<div class="modal-mask" id="reviewMask">
+  <div class="modal danger">
+    <div class="modal-head"><h2>🔔 主管理员发布确认</h2><button class="btn" onclick="closeModal('reviewMask')">✕</button></div>
+    <div class="modal-body">
+      <p style="margin-bottom:12px;font-size:13.5px;">以下变更由编辑端提交，<b>发布后将自动 commit 到 GitHub 并在线上生效</b>（服务器 ≤30 分钟同步）。请逐条核对：</p>
+      <div id="reviewList"></div>
+      <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;margin:14px 0;"><input type="checkbox" id="reviewChecked"> 我已逐条核对以上变更，确认允许发布</label>
+      <div class="field"><label>输入「确认发布」以解锁发布按钮</label><input id="reviewPhrase" placeholder="确认发布" oninput="reviewCheckState()"></div>
+      <div class="field"><label>提交说明（commit message）</label><input id="reviewMsg" placeholder="后台更新：文本修订"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" onclick="closeModal('reviewMask')">取消</button>
+      <button class="btn primary" id="btnDoPublish" onclick="doPublish()" disabled>🚀 确认发布</button>
+    </div>
+  </div>
+</div>
+
+<!-- 历史弹窗 -->
+<div class="modal-mask" id="historyMask">
+  <div class="modal">
+    <div class="modal-head"><h2>🕘 提交历史 / 回滚</h2><button class="btn" onclick="closeModal('historyMask')">✕</button></div>
+    <div class="modal-body" id="historyList">加载中…</div>
+  </div>
+</div>
+
+<!-- 配置弹窗 -->
+<div class="modal-mask" id="cfgMask">
+  <div class="modal">
+    <div class="modal-head"><h2>⚙️ 仓库配置</h2><button class="btn" onclick="closeModal('cfgMask')">✕</button></div>
+    <div class="modal-body cfg-form">
+      <div class="field"><label>GITHUB TOKEN（需要 repo 权限 · 仅存本机）</label><input id="cfgToken" type="password" placeholder="ghp_xxxx / github_pat_xxxx"></div>
+      <div class="field"><label>OWNER</label><input id="cfgOwner" placeholder="AseinPandragon"></div>
+      <div class="field"><label>REPO</label><input id="cfgRepo" placeholder="GDPUDev"></div>
+      <div class="field"><label>分支</label><input id="cfgBranch" value="main"></div>
+      <p class="hint">Token 生成：GitHub → Settings → Developer settings → Personal access tokens（勾选 Contents 读写）。Token 只保存在本机浏览器 localStorage，不会上传。</p>
+    </div>
+    <div class="modal-foot"><button class="btn primary" onclick="saveCfg()">保存并测试连接</button></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ================= 基础配置 ================= */
+const PAGES = ["roadmap.html","ta.html","client.html","design.html","engine.html","art.html","server.html","contests.html","jobs.html"];
+const K_CFG='gdu_cfg', K_PASS='gdu_pass', K_DRAFT='gdu_draft_', K_PENDING='gdu_pending_';
+let cfg = JSON.parse(localStorage.getItem(K_CFG) || 'null');
+let current = null;           // 当前编辑文件
+let originalHtml = '';        // 服务器版本
+let draftHtml = '';           // 当前草稿
+let fileSha = '';             // 服务器版本 sha
+let dirty = false, mode = 'visual', reqSeq = 0, pendingSerialize = null;
+
+/* ================= 工具 ================= */
+const $ = id => document.getElementById(id);
+function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),3200);}
+function b64ToUtf8(b){const bin=atob(b.replace(/\s/g,''));const u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);return new TextDecoder('utf-8').decode(u);}
+function utf8ToB64(s){const u=new TextEncoder().encode(s);let bin='';for(let i=0;i<u.length;i+=0x8000){bin+=String.fromCharCode(...u.subarray(i,i+0x8000));}return btoa(bin);}
+async function sha256(s){const d=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(d)].map(b=>b.toString(16).padStart(2,'0')).join('');}
+async function api(path, opts={}){
+  const url=`https://api.github.com/repos/${cfg.owner}/${cfg.repo}/${path}`;
+  const r=await fetch(url,{...opts,headers:{Authorization:`token ${cfg.token}`,Accept:'application/vnd.github+json','Content-Type':'application/json',...(opts.headers||{})}});
+  if(!r.ok) throw new Error(`${r.status}: ${(await r.text()).slice(0,200)}`);
+  return r.json();
+}
+const getDraft = p => JSON.parse(localStorage.getItem(K_DRAFT+p)||'null');
+const getPending = p => JSON.parse(localStorage.getItem(K_PENDING+p)||'null');
+function allPending(){return PAGES.filter(p=>getPending(p));}
+
+/* ================= 门禁 ================= */
+(async function initGate(){
+  const saved = localStorage.getItem(K_PASS);
+  if(!saved){ $('gateTip').textContent='首次使用请设置管理员密码（保存在本机浏览器）'; $('gateInput').dataset.mode='set'; }
+  else { $('gateTip').textContent='请输入管理员密码'; $('gateInput').dataset.mode='check'; $('gateInput').dataset.hash=saved; }
+  $('gateInput').addEventListener('keydown',e=>{if(e.key==='Enter')gateSubmit();});
+})();
+async function gateSubmit(){
+  const v=$('gateInput').value; if(!v) return;
+  const h=await sha256(v);
+  if($('gateInput').dataset.mode==='set'){
+    localStorage.setItem(K_PASS,h); enterApp();
+  } else if(h===$('gateInput').dataset.hash){ enterApp(); }
+  else { $('gateErr').textContent='密码错误'; }
+}
+function enterApp(){
+  $('gate').style.display='none'; $('app').style.display='block';
+  if(cfg){ testConn(true); } else { openCfg(); }
+  renderFileList(); refreshBanners();
+}
+function refreshBanners(){
+  const n=allPending().length;
+  $('pendingCount').textContent=n;
+  $('bannerPending').classList.toggle('show', n>0);
+  const d = current && getDraft(current);
+  $('bannerDraft').classList.toggle('show', !!(d && current && !getPending(current)));
+}
+
+/* ================= 文件列表 ================= */
+function renderFileList(){
+  $('fileList').innerHTML = PAGES.map(p=>{
+    let st='<span class="state-dot state-clean">未改动</span>';
+    if(getPending(p)) st='<span class="state-dot state-pending">待确认</span>';
+    else if(getDraft(p)) st='<span class="state-dot state-draft">草稿</span>';
+    return `<div class="file-item ${p===current?'active':''}" onclick="openFile('${p}')"><span>${p}</span>${st}</div>`;
+  }).join('');
+}
+
+/* ================= 文件加载与编辑 ================= */
+async function openFile(p){
+  current=p;
+  $('fileMeta').textContent='加载中…';
+  try{
+    const res=await api(`contents/${p}?ref=${cfg.branch}`);
+    fileSha=res.sha;
+    originalHtml=b64ToUtf8(res.content);
+    const draft=getDraft(p);
+    draftHtml = (draft && draft.html) ? draft.html : originalHtml;
+    if(draft && draft.html && draft.baseSha && draft.baseSha!==res.sha){
+      toast('⚠️ 草稿基于旧版本，请注意对比'); }
+    $('fileMeta').innerHTML=`<span>📄 ${p}</span><span>服务器版本 sha: ${fileSha.slice(0,7)}</span><span>大小: ${(originalHtml.length/1024).toFixed(1)} KB</span>${draft&&draft.html?`<span style="color:#d97706;">本地草稿: ${new Date(draft.at).toLocaleString()}</span>`:''}`;
+    $('toolbar').style.display='flex'; $('editHint').style.display='block';
+    setMode('visual');
+    renderFileList(); refreshBanners();
+  }catch(e){ $('fileMeta').textContent='加载失败: '+e.message; }
+}
+function setMode(m){
+  mode=m;
+  $('btnVisual').style.fontWeight = m==='visual'?'800':'400';
+  $('btnSource').style.fontWeight = m==='source'?'800':'400';
+  if(m==='source'){
+    collectDraftFromFrame().then(html=>{ if(html) draftHtml=html;
+      $('editorFrame').style.display='none'; $('sourceArea').style.display='block'; $('sourceArea').value=draftHtml; });
+  } else {
+    if($('sourceArea').style.display==='block'){ draftHtml=$('sourceArea').value; }
+    $('sourceArea').style.display='none'; $('editorFrame').style.display='block';
+    buildFrame();
+  }
+}
+function buildFrame(){
+  let html=draftHtml||originalHtml;
+  const scripts=[];
+  html=html.replace(/<script\b[\s\S]*?<\/script>/gi, m=>{scripts.push(m);return `<!--GDU_SCRIPT_${scripts.length-1}-->`;});
+  const runtime=`<style id="gdu-editor-style">
+    [contenteditable=true]{outline:1.5px dashed rgba(37,99,235,.45);cursor:text;}
+    [contenteditable=true]:hover{background:rgba(37,99,235,.06);}
+    [contenteditable=true]:focus{outline:2px solid var(--accent-blue,#2563eb);background:rgba(37,99,235,.08);}
+    img[data-gdu-img]{cursor:zoom-in;outline:1.5px dashed rgba(217,119,6,.5);}
+    a[href]{cursor:alias;}
+  </style>
+  <script id="gdu-editor-runtime">(${editorRuntime.toString()})();<\/script>`;
+  html=html.replace('</body>', runtime+'\n</body>');
+  window._gduScripts = scripts;
+  const f=$('editorFrame');
+  f.srcdoc=html;
+  dirty = draftHtml!==originalHtml;
+  showDirty();
+}
+function editorRuntime(){
+  const EDITABLE=new Set(['P','H1','H2','H3','H4','H5','H6','LI','TD','TH','SPAN','STRONG','B','EM','I','SMALL','A','FIGCAPTION','LABEL']);
+  const SKIP=new Set(['SCRIPT','STYLE','NOSCRIPT','CANVAS','SVG','TEXTAREA','OPTION']);
+  function texty(el){for(const n of el.childNodes){if(n.nodeType===3&&n.textContent.trim())return true;}return false;}
+  function hasElText(el){return [...el.children].some(c=>c.textContent.trim());}
+  function mark(el){
+    el.setAttribute('contenteditable','true');el.setAttribute('data-gdu','1');
+    el.addEventListener('input',()=>parent.postMessage({type:'gdu-dirty'},'*'));
+  }
+  document.querySelectorAll('body, body *').forEach(el=>{
+    const tag=el.tagName;
+    if(SKIP.has(tag))return;
+    if(el.closest('[contenteditable=true]'))return;
+    const leafText = texty(el)&&!hasElText(el);
+    if(leafText || (EDITABLE.has(tag)&&texty(el))){
+      if(tag==='DIV'&&!leafText)return; // 容器型DIV不整块编辑
+      if(tag==='A'){mark(el);return;}
+      mark(el);
+    }
+  });
+  document.querySelectorAll('img').forEach(img=>{
+    img.setAttribute('data-gdu-img','1');
+    img.addEventListener('dblclick',e=>{e.preventDefault();
+      const src=prompt('图片地址（留空保持不变）：',img.getAttribute('src')||'');
+      if(src!==null&&src!==''){img.setAttribute('src',src);parent.postMessage({type:'gdu-dirty'},'*');}
+    });
+  });
+  document.querySelectorAll('a[href]').forEach(a=>{
+    a.addEventListener('click',e=>e.preventDefault());
+    a.addEventListener('dblclick',e=>{e.preventDefault();
+      const href=prompt('链接地址（留空保持不变）：',a.getAttribute('href')||'');
+      if(href!==null&&href!==''){a.setAttribute('href',href);parent.postMessage({type:'gdu-dirty'},'*');}
+    });
+  });
+  window.addEventListener('message',e=>{
+    const d=e.data||{};
+    if(d.type==='gdu-serialize'&&d.reqId===window.name){}
+    if(d.type==='gdu-serialize'){
+      document.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
+      document.querySelectorAll('[data-gdu]').forEach(el=>el.removeAttribute('data-gdu'));
+      document.querySelectorAll('[data-gdu-img]').forEach(el=>el.removeAttribute('data-gdu-img'));
+      const rt=document.getElementById('gdu-editor-runtime');if(rt)rt.remove();
+      const st=document.getElementById('gdu-editor-style');if(st)st.remove();
+      const out='<!DOCTYPE html>\n<html lang="zh-CN">'+document.documentElement.innerHTML+'</html>';
+      parent.postMessage({type:'gdu-html',html:out,reqId:d.reqId},'*');
+    }
+  });
+  parent.postMessage({type:'gdu-ready'},'*');
+}
+function collectDraftFromFrame(){
+  return new Promise(res=>{
+    const f=$('editorFrame');
+    if(!f.srcdoc||f.style.display==='none'){res(null);return;}
+    const id=++reqSeq;
+    const h=(e)=>{ if(e.data&&e.data.type==='gdu-html'&&e.data.reqId===id){
+      window.removeEventListener('message',h);
+      let html=e.data.html;
+      (window._gduScripts||[]).forEach((s,i)=>{ html=html.replace(`<!--GDU_SCRIPT_${i}-->`, s); });
+      res(html);
+    }};
+    window.addEventListener('message',h);
+    setTimeout(()=>{window.removeEventListener('message',h);res(null);},3000);
+    f.contentWindow.postMessage({type:'gdu-serialize',reqId:id},'*');
+  });
+}
+async function saveDraft(){
+  const html = mode==='source' ? $('sourceArea').value : (await collectDraftFromFrame());
+  if(!html){toast('未能收集编辑内容');return;}
+  draftHtml=html;
+  localStorage.setItem(K_DRAFT+current, JSON.stringify({html, at:Date.now(), baseSha:fileSha}));
+  dirty = html!==originalHtml; showDirty(); refreshBanners(); renderFileList();
+  toast('💾 草稿已保存（仅本机，未发布）');
+}
+function showDirty(){ $('dirtyTip').style.display = dirty?'inline':'none'; }
+function discardDraft(){
+  if(!confirm('确定放弃当前页面的所有未发布修改？')) return;
+  localStorage.removeItem(K_DRAFT+current); draftHtml=originalHtml; dirty=false; showDirty(); buildFrame(); refreshBanners(); renderFileList();
+  toast('草稿已放弃');
+}
+window.addEventListener('message',e=>{
+  if(e.data&&e.data.type==='gdu-dirty'){ dirty=true; showDirty();
+    clearTimeout(window._auto); window._auto=setTimeout(()=>saveDraftSilent(),2000); }
+});
+function saveDraftSilent(){ collectDraftFromFrame().then(html=>{ if(!html)return; draftHtml=html;
+  localStorage.setItem(K_DRAFT+current, JSON.stringify({html,at:Date.now(),baseSha:fileSha})); refreshBanners(); }); }
+
+/* ================= 提交审核 → 主管理员确认 → 发布 ================= */
+function textNodesDiff(oldHtml,newHtml){
+  const parse=s=>new DOMParser().parseFromString(s,'text/html');
+  const a=parse(oldHtml), b=parse(newHtml);
+  const ta=[...a.querySelectorAll('body *')].flatMap(el=>[...el.childNodes].filter(n=>n.nodeType===3&&n.textContent.trim()).map(n=>n.textContent.trim()));
+  const tb=[...b.querySelectorAll('body *')].flatMap(el=>[...el.childNodes].filter(n=>n.nodeType===3&&n.textContent.trim()).map(n=>n.textContent.trim()));
+  const setA={};ta.forEach(t=>setA[t]=(setA[t]||0)+1);
+  const setB={};tb.forEach(t=>setB[t]=(setB[t]||0)+1);
+  const changes=[];
+  ta.forEach(t=>{ if(setB[t]===undefined||setB[t]<(setA[t]||0)){ setA[t]--; changes.push({type:'del',text:t}); } });
+  tb.forEach(t=>{ if(setA[t]===undefined||setA[t]<(setB[t]||0)){ setB[t]--; changes.push({type:'add',text:t}); } });
+  return changes;
+}
+async function submitForReview(){
+  const html = mode==='source' ? $('sourceArea').value : (await collectDraftFromFrame());
+  if(!html){toast('未能收集编辑内容');return;}
+  if(html===originalHtml){toast('当前页面与线上版本一致，无需提交');return;}
+  const changes=textNodesDiff(originalHtml,html);
+  const pending={html, at:Date.now(), baseSha:fileSha, changes,
+    note:`${changes.filter(c=>c.type==='add').length} 处新增/修改 · ${changes.filter(c=>c.type==='del').length} 处删除`};
+  localStorage.setItem(K_PENDING+current, JSON.stringify(pending));
+  refreshBanners(); renderFileList();
+  toast('📤 已提交审核，等待主管理员确认发布');
+  openReview();
+}
+function openReview(){
+  const pendings=allPending();
+  if(!pendings.length){toast('当前没有待确认的变更');return;}
+  current = pendings.includes(current)?current:pendings[0];
+  $('reviewList').innerHTML = pendings.map(p=>{
+    const d=getPending(p);
+    const items=(d.changes||[]).map(c=>`<div class="diff-item"><span class="${c.type==='add'?'new':'old'}">${c.type==='add'?'➕':'➖'} ${c.text.replace(/</g,'&lt;').slice(0,160)}</span></div>`).join('')||'<div class="diff-item">（结构/图片级修改，无纯文本差异）</div>';
+    return `<div style="margin-bottom:18px;"><div style="font-family:var(--font-mono);font-weight:800;margin-bottom:8px;">📄 ${p} <span class="state-dot state-pending">${d.note||''}</span></div>${items}</div>`;
+  }).join('');
+  $('reviewMsg').value=`后台发布：${pendings.join(', ')} 文本修订`;
+  $('reviewChecked').checked=false;$('reviewPhrase').value='';reviewCheckState();
+  $('reviewMask').classList.add('show');
+}
+function reviewCheckState(){
+  $('btnDoPublish').disabled = !($('reviewChecked').checked && $('reviewPhrase').value.trim()==='确认发布');
+}
+async function doPublish(){
+  const pendings=allPending();
+  const msg=$('reviewMsg').value||'后台更新';
+  $('btnDoPublish').disabled=true;$('btnDoPublish').textContent='发布中…';
+  try{
+    for(const p of pendings){
+      const d=getPending(p);
+      const cur=await api(`contents/${p}?ref=${cfg.branch}`);
+      await api(`contents/${p}`,{method:'PUT',body:JSON.stringify({
+        message:`${msg}（${p}）`, content:utf8ToB64(d.html), sha:cur.sha, branch:cfg.branch})});
+      localStorage.removeItem(K_DRAFT+p); localStorage.removeItem(K_PENDING+p);
+    }
+    closeModal('reviewMask');
+    $('okText').textContent=`✅ 已发布 ${pendings.length} 个页面到 GitHub，服务器将在 30 分钟内自动同步生效（急用可 SSH 手动同步）`;
+    $('bannerOk').classList.add('show'); setTimeout(()=>$('bannerOk').classList.remove('show'),8000);
+    if(current&&getDraft(current)===null){ openFile(current); }
+    toast('🚀 发布成功');
+    $('btnDoPublish').textContent='🚀 确认发布';
+  }catch(e){
+    alert('发布失败：'+e.message);
+    $('btnDoPublish').disabled=false;$('btnDoPublish').textContent='🚀 确认发布';
+  }
+}
+
+/* ================= 历史 / 回滚 ================= */
+async function openHistory(){
+  if(!current) return;
+  $('historyMask').classList.add('show');
+  $('historyList').innerHTML='加载中…';
+  try{
+    const commits=await api(`commits?path=${current}&per_page=12`);
+    $('historyList').innerHTML = commits.map(c=>`
+      <div class="commit-item">
+        <div><div class="msg">${c.commit.message.replace(/</g,'&lt;').split('\n')[0]}</div>
+        <div class="time">${new Date(c.commit.author.date).toLocaleString()} · ${c.commit.author.name}</div></div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <span class="sha">${c.sha.slice(0,7)}</span>
+          <button class="btn danger" onclick="revertTo('${c.sha}')">回滚到此版</button>
+        </div>
+      </div>`).join('');
+  }catch(e){ $('historyList').innerHTML='加载失败: '+e.message; }
+}
+async function revertTo(sha){
+  if(!confirm('确认回滚？将以该版本内容创建一次新提交（历史不会丢失）')) return;
+  try{
+    const old=await api(`contents/${current}?ref=${sha}`);
+    const html=b64ToUtf8(old.content);
+    const cur=await api(`contents/${current}?ref=${cfg.branch}`);
+    await api(`contents/${current}`,{method:'PUT',body:JSON.stringify({
+      message:`后台回滚 ${current} → ${sha.slice(0,7)}`, content:utf8ToB64(html), sha:cur.sha, branch:cfg.branch})});
+    toast('✅ 已回滚并发布'); closeModal('historyMask'); openFile(current);
+  }catch(e){ alert('回滚失败：'+e.message); }
+}
+
+/* ================= 配置 ================= */
+function openCfg(){
+  if(cfg){ $('cfgToken').value=cfg.token||'';$('cfgOwner').value=cfg.owner||'';$('cfgRepo').value=cfg.repo||'';$('cfgBranch').value=cfg.branch||'main'; }
+  $('cfgMask').classList.add('show');
+}
+async function saveCfg(){
+  cfg={token:$('cfgToken').value.trim(),owner:$('cfgOwner').value.trim(),repo:$('cfgRepo').value.trim(),branch:$('cfgBranch').value.trim()||'main'};
+  localStorage.setItem(K_CFG,JSON.stringify(cfg));
+  try{
+    const u=await fetch('https://api.github.com/user',{headers:{Authorization:`token ${cfg.token}`}});
+    if(!u.ok) throw new Error('Token 无效: '+u.status);
+    const user=await u.json();
+    $('whoami').textContent=`👤 ${user.login} · ${cfg.owner}/${cfg.repo}@${cfg.branch}`;
+    closeModal('cfgMask'); toast('✅ 连接成功：'+user.login);
+    if(current) openFile(current);
+  }catch(e){ alert('保存失败：'+e.message); }
+}
+async function testConn(silent){
+  if(!cfg) return;
+  try{
+    const u=await fetch('https://api.github.com/user',{headers:{Authorization:`token ${cfg.token}`}});
+    if(u.ok){ const user=await u.json(); $('whoami').textContent=`👤 ${user.login} · ${cfg.owner}/${cfg.repo}@${cfg.branch}`; if(!silent)toast('✅ 连接正常'); }
+  }catch(e){}
+}
+function closeModal(id){ $(id).classList.remove('show'); }
+</script>
+</body>
+</html>
