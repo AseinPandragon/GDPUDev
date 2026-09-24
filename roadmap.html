@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数媒技 · 游戏方向自学路线与就业指南 · GDPU GAMEDEV</title>
+<style>
+  :root {
+    --bg-page: #f1f5f9;
+    --bg-surface: #ffffff;
+    --bg-subtle: #f8fafc;
+    --bg-dark: #0f172a;
+    --bg-slate: #1e293b;
+    --border-light: #e2e8f0;
+    --border-strong: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --accent-blue: #2563eb;
+    --accent-blue-light: #eff6ff;
+    --accent-blue-border: #bfdbfe;
+    --accent-cyan: #0891b2;
+    --accent-purple: #7c3aed;
+    --accent-amber: #d97706;
+    --accent-emerald: #059669;
+    --accent-rose: #e11d48;
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.02);
+    --font-mono: 'JetBrains Mono', 'Cascadia Code', Consolas, 'Microsoft YaHei', monospace;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background-color: var(--bg-page);
+    background-image: radial-gradient(rgba(148, 163, 184, 0.32) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    padding: 16px 20px 60px;
+    min-height: 100vh;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1080px; margin: 0 auto; }
+
+  .topbar {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .topbar .brand { font-weight: 800; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+  .topbar .brand span.mono { font-family: var(--font-mono); font-size: 12px; color: var(--accent-blue); }
+  .topbar a.home-link {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+    color: var(--accent-blue); text-decoration: none;
+    border: 1px solid var(--accent-blue-border); background: var(--accent-blue-light);
+    padding: 6px 12px; border-radius: 6px;
+  }
+  .topbar a.home-link:hover { background: #dbeafe; }
+
+  .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 30px 28px;
+    color: #e2e8f0;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(rgba(96,165,250,0.12) 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events: none;
+  }
+  .hero .kicker {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px;
+    color: #60a5fa; font-weight: 800; margin-bottom: 10px;
+  }
+  .hero h1 { font-size: 26px; font-weight: 900; line-height: 1.35; margin-bottom: 12px; }
+  .hero p { color: #94a3b8; font-size: 14px; max-width: 720px; }
+  .hero .hero-tags { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .hero .hero-tags span {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    background: rgba(37,99,235,0.18); color: #93c5fd;
+    border: 1px solid rgba(96,165,250,0.35);
+    padding: 3px 10px; border-radius: 999px;
+  }
+
+  .honesty-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13.5px;
+    color: #78350f;
+  }
+  .honesty-box strong { display: block; margin-bottom: 4px; font-size: 13.5px; }
+  .honesty-box p { margin: 0; }
+
+  .section { margin-bottom: 22px; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 10px;
+    margin-bottom: 12px; flex-wrap: wrap;
+  }
+  .section-head .sec-no {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 800;
+    color: var(--accent-blue); background: var(--accent-blue-light);
+    border: 1px solid var(--accent-blue-border);
+    padding: 2px 10px; border-radius: 4px;
+  }
+  .section-head h2 { font-size: 19px; font-weight: 900; }
+  .section-head .sec-sub { font-size: 12.5px; color: var(--text-muted); }
+
+  .card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* 岗位全景 */
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+  }
+  .role-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow-sm);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .role-card.hot { border-color: var(--accent-blue); box-shadow: 0 0 0 1px var(--accent-blue), var(--shadow-md); }
+  .role-card .role-title { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .role-card .role-title h3 { font-size: 15px; font-weight: 900; }
+  .role-pill {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 800;
+    padding: 1px 8px; border-radius: 999px;
+  }
+  .role-pill.fit { background: var(--accent-blue-light); color: var(--accent-blue); border: 1px solid var(--accent-blue-border); }
+  .role-pill.norm { background: var(--bg-subtle); color: var(--text-muted); border: 1px solid var(--border-light); }
+  .role-card p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+  .role-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
+  .role-meta span {
+    font-family: var(--font-mono); font-size: 10.5px; font-weight: 700;
+    background: var(--bg-subtle); border: 1px solid var(--border-light);
+    color: var(--text-secondary); padding: 2px 8px; border-radius: 4px;
+  }
+  .role-meta span.warn { background: #fff1f2; color: var(--accent-rose); border-color: #fecdd3; }
+  .role-meta span.good { background: #ecfdf5; color: var(--accent-emerald); border-color: #a7f3d0; }
+
+  /* 时间线 */
+  .timeline { position: relative; padding-left: 26px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px;
+    width: 2px; background: var(--border-strong); border-radius: 2px;
+  }
+  .tl-item { position: relative; margin-bottom: 14px; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -24px; top: 8px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent-blue); border: 2px solid #dbeafe;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  }
+  .tl-card {
+    background: var(--bg-surface); border: 1px solid var(--border-strong);
+    border-radius: 8px; padding: 14px 18px; box-shadow: var(--shadow-sm);
+  }
+  .tl-card .tl-stage {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 800;
+    color: var(--accent-blue); letter-spacing: 1px; margin-bottom: 4px;
+  }
+  .tl-card h3 { font-size: 15px; font-weight: 900; margin-bottom: 6px; }
+  .tl-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+  .tl-card ul { padding-left: 20px; font-size: 13px; color: var(--text-secondary); }
+  .tl-card ul li { margin-bottom: 4px; }
+  .res-pill {
+    display: inline-block;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    background: var(--bg-subtle); border: 1px solid var(--border-strong);
+    color: var(--text-primary);
+    padding: 2px 10px; border-radius: 999px; margin: 2px 4px 2px 0;
+  }
+  .res-pill.em { background: var(--accent-blue-light); color: var(--accent-blue); border-color: var(--accent-blue-border); }
+
+  /* 亲历卡 */
+  .war-card {
+    background: linear-gradient(180deg, #fdf2f8 0%, #ffffff 60%);
+    border: 1px solid #fbcfe8;
+    border-left: 4px solid var(--accent-rose);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+  }
+  .war-card .war-tag {
+    font-family: var(--font-mono); font-size: 10.5px; font-weight: 800;
+    color: var(--accent-rose); letter-spacing: 1.5px; margin-bottom: 4px;
+  }
+  .war-card h4 { font-size: 14px; font-weight: 900; margin-bottom: 6px; }
+  .war-card p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+  .war-card p + p { margin-top: 6px; }
+
+  .todo-card {
+    background: var(--bg-subtle);
+    border: 1.5px dashed var(--border-strong);
+    border-radius: 8px;
+    padding: 14px 18px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  .todo-card strong { color: var(--text-secondary); }
+
+  /* 通用建议 */
+  .advice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+  }
+  .advice-card {
+    background: var(--bg-surface); border: 1px solid var(--border-strong);
+    border-radius: 8px; padding: 16px 18px; box-shadow: var(--shadow-sm);
+  }
+  .advice-card h3 { font-size: 14px; font-weight: 900; margin-bottom: 6px; }
+  .advice-card p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+
+  .notice-box {
+    background: var(--accent-blue-light);
+    border: 1px solid var(--accent-blue-border);
+    border-radius: 8px; padding: 14px 18px;
+    font-size: 13px; color: #1e40af; margin-top: 10px;
+  }
+
+  footer {
+    margin-top: 28px;
+    border-top: 1px solid var(--border-strong);
+    padding-top: 16px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  footer .mono { font-family: var(--font-mono); font-size: 11px; }
+  footer a { color: var(--accent-blue); text-decoration: none; font-weight: 700; }
+
+  @media (max-width: 640px) {
+    body { padding: 10px 12px 40px; }
+    .hero h1 { font-size: 20px; }
+    .roles-grid, .advice-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="topbar">
+    <div class="brand">
+      🎮 数媒技自学指南 <span class="mono">GDPU GAMEDEV · ROADMAP 01</span>
+    </div>
+    <a class="home-link" href="index.html">← 返回情报中枢</a>
+  </div>
+
+  <div class="hero">
+    <div class="kicker">CAREER ROADMAP // 数媒技专业 · 游戏行业方向</div>
+    <h1>新生与大二大三，怎么自学游戏开发，<br>以及这条路最后通向哪些岗位</h1>
+    <p>这份指南来自数媒技在读学长的亲身路径整理：哪些是真走过的路，哪些是行业共识，都会分开标注。AI 能给你的通用建议网上一搜一大把，这里只保留我们真的验证过、真的踩过坑的部分。</p>
+    <div class="hero-tags">
+      <span>数媒技 DIGITAL MEDIA TECH</span>
+      <span>游戏行业岗位全景</span>
+      <span>深挖方向 01：技术美术 TA</span>
+      <span>亲历踩坑实录</span>
+    </div>
+  </div>
+
+  <div class="honesty-box">
+    <strong>⚠️ 先说清楚这份指南的读法</strong>
+    <p>标注 <strong>【亲历】</strong> 的是我们自己在项目里真实遇到的坑，信不信由你，反正我们修过；其余内容是行业普遍认知，会随年份和市场波动，请以你入行那年的实际情况为准。另外：AI（包括生成这份页面的工具）给的建议只是建议，它没有替你熬过夜、没有替你调过真机，最终适不适合你，要用你自己的项目去验证。</p>
+  </div>
+
+  <!-- ================= 岗位全景 ================= -->
+  <div class="section">
+    <div class="section-head">
+      <span class="sec-no">SEC.01</span>
+      <h2>岗位全景图：数媒技在游戏行业能去哪</h2>
+      <span class="sec-sub">数媒技的特点是"软硬都沾一点"，这决定了某些岗位对我们特别友好</span>
+    </div>
+    <div class="roles-grid">
+      <div class="role-card hot">
+        <div class="role-title"><h3>技术美术 TA</h3><span class="role-pill fit">数媒技最对口 ⭐</span></div>
+        <p>美术和程序之间的翻译官：写 Shader、搭渲染管线、做美术工具、优化性能。既要懂一点代码，又要有审美和美术常识——恰好是数媒技的课程结构。人才缺口长期存在，竞争比纯程序岗小。</p>
+        <div class="role-meta">
+          <span class="good">缺口大</span><span>渲染 / 管线 / 工具 / 绑定 四大细分</span><span>⬇ 本文深挖</span>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-title"><h3>客户端程序（Unity / UE）</h3><span class="role-pill fit">数媒技主流出路</span></div>
+        <p>用 C#（Unity）或 C++（UE）写玩法逻辑、UI、战斗系统。数媒技走这条线的人最多，门槛是"能独立做出一个完整能玩的游戏"，而不是"会用引擎拖 UI"。</p>
+        <div class="role-meta">
+          <span>岗位多、竞争也多</span><span>C# / C++</span><span class="warn">光会拖组件不够</span>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-title"><h3>引擎 / 工具开发</h3><span class="role-pill norm">进阶方向</span></div>
+        <p>给项目组造轮子：编辑器扩展、资源管线、性能工具，甚至引擎底层。通常从客户端程序转过去，C++ 功底和图形学要求更高，应届直接进的少。</p>
+        <div class="role-meta"><span>C++ 深水区</span><span class="warn">应届直招少</span></div>
+      </div>
+      <div class="role-card">
+        <div class="role-title"><h3>游戏策划（系统/关卡/数值/文案）</h3><span class="role-pill fit">技术背景加分</span></div>
+        <p>设计玩法、关卡、数值和剧情。数媒技的技术背景在"技术策划 TP"和关卡实现方向是明显加分项——能自己用引擎摆关卡、写简单脚本的策划非常吃香。纯案头策划则更卷文笔和思维。</p>
+        <div class="role-meta"><span class="good">技术策划缺口</span><span>作品=拆解报告+关卡原型</span></div>
+      </div>
+      <div class="role-card">
+        <div class="role-title"><h3>美术（原画/3D/动作/特效）</h3><span class="role-pill norm">看个人天赋投入</span></div>
+        <p>2D 原画、3D 建模、绑定动画、特效。纯美术岗拼的是作品集里画/模型的硬实力，数媒技的美术课强度通常不够，需要额外大量练习。特效（VFX Artist）介于美术和技术之间，是美术岗里对程序友好的一支。</p>
+        <div class="role-meta"><span>作品集定生死</span><span class="warn">课内训练强度不够</span></div>
+      </div>
+      <div class="role-card">
+        <div class="role-title"><h3>服务端程序 / 音频 / QA / 发行运营</h3><span class="role-pill norm">其他出口</span></div>
+        <p>服务端偏后端开发（Go/Java/C++），和数媒技课程重合度低但可转；音频岗国内坑位很少；QA 测试入门容易但天花板靠自动化测试技能；发行运营偏商务和数据，不算研发岗。都可以作为备选了解。</p>
+        <div class="role-meta"><span>备选了解即可</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 深挖 TA ================= -->
+  <div class="section">
+    <div class="section-head">
+      <span class="sec-no">SEC.02</span>
+      <h2>深挖方向 01：技术美术 TA</h2>
+      <span class="sec-sub">学习路线按"先打地基、再进引擎、边做项目边补"组织，顺序比速度重要</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-card">
+          <div class="tl-stage">STEP 01 · 地基（大二前打完最划算）</div>
+          <h3>图形学入门：GAMES 101 → 202 → 104</h3>
+          <p>这是国内图形学入门公认的起点，B站就能看，不用管它是哪年录的——图形学基础的衰减期比框架长得多。</p>
+          <ul>
+            <li><span class="res-pill em">GAMES 101</span> 现代计算机图形学入门：变换、光栅化、着色、光线追踪。作业认真写，光看不行。它决定你能不能看懂 Shader 背后的数学。</li>
+            <li><span class="res-pill em">GAMES 202</span> 高质量实时渲染：阴影、全局光、实时降噪——直接对应游戏渲染岗的日常话题。</li>
+            <li><span class="res-pill em">GAMES 104</span> 现代游戏引擎：建立"引擎全局观"，知道一个引擎由哪些系统拼起来。作业可以量力而行，但一定要看完，它会改变你看 Unity/UE 的方式。</li>
+          </ul>
+          <p style="margin-bottom:0;">配套工具书：<span class="res-pill em">《Real-Time Rendering》</span>别当教材通读，当字典查——做项目碰到 "这个效果原理是什么" 再回去翻对应章节，吸收效率高得多。</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-card">
+          <div class="tl-stage">STEP 02 · 引擎双线（与 STEP 01 并行）</div>
+          <h3>Unity 里动手写，UE 里开眼界拆</h3>
+          <p>两条线不是二选一，是分工不同：</p>
+          <ul>
+            <li><strong>Unity 线（动手）</strong>：ShaderLab / HLSL 从最简单的 Unlit 开始写起，逐个实现卡通着色、描边、溶解、billboard、屏幕后处理。每个效果录一段视频存进作品集文件夹。</li>
+            <li><strong>UE 线（拆解）</strong>：去看官方工程示例（如 Lyra、City Sample），拆解官方插件——重点不是学 UE API，而是看"一个工业级项目怎么组织材质库、后处理栈、资产管线"。见过好结构，才知道自己写的有多野。</li>
+          </ul>
+          <p style="margin-bottom:0;">图文资讯和深度分析主要靠 <span class="res-pill em">知乎</span>：搜 TA / 渲染相关专栏，遇到讲透一个效果的的文章就收藏归档，建自己的知识库。</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-card">
+          <div class="tl-stage">STEP 03 · 跟人学（穿插全程）</div>
+          <h3>关注这些 UP 主 / 作者：kerry、月神、三彩</h3>
+          <p>自学最容易死在"不知道自己不知道什么"上。跟着活跃的 TA 向作者走，他们的更新内容就是行业里当下在关心的问题，比自己闷头翻教程高效。遇到系列教程就跟着把 Demo 做一遍，光收藏不算学。</p>
+          <p style="margin-bottom:0;"><span class="res-pill">B站：kerry</span><span class="res-pill">月神</span><span class="res-pill">三彩</span><span class="res-pill">知乎 + B站双平台跟更</span></p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-card">
+          <div class="tl-stage">STEP 04 · 作品集（大三上必须启动）</div>
+          <h3>TA 的作品集长什么样</h3>
+          <ul>
+            <li>3~5 个有讲解的渲染效果 Demo：每个附"效果视频 + 实现思路 + 对比截图（开启/关闭）"，最好附 GitHub 仓库。</li>
+            <li>1 个工具型作品：编辑器扩展或美术提效小工具，展示你不只会写特效。</li>
+            <li>1 个"进过真机"的项目：哪怕是小项目，只要在真机上跑过、优化过，含金量就超过十个只在编辑器里好看的 Demo。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 亲历卡 -->
+    <div class="section-head" style="margin-top:20px;">
+      <span class="sec-no" style="color:var(--accent-rose); background:#fff1f2; border-color:#fecdd3;">亲历</span>
+      <h2 style="font-size:16px;">我们真踩过的坑（为什么"课本外"的东西更重要）</h2>
+    </div>
+
+    <div class="war-card">
+      <div class="war-tag">WAR STORY // 渲染排序</div>
+      <h4>UI 弹窗怎么调 Layer 都不生效？因为 URP 里 Layer 根本不管排序</h4>
+      <p>技能弹窗死活显示不出来/层级错误，查了半天 Layer 剔除——真相是：URP 的 Overlay 相机栈里，<strong>Layer 只管相机剔除，实际显示顺序由相机列表顺序和 Sorting Layer 决定</strong>。最后靠把弹窗挂到最上层 Canvas + 指定 Sorting Layer 才解决。GAMES 101 教你渲染原理，但这种"引擎具体怎么排"的知识，只能靠在项目里被坑一次。</p>
+    </div>
+
+    <div class="war-card">
+      <div class="war-tag">WAR STORY // 深度与遮挡</div>
+      <h4>世界空间图标被场景模型"吃"掉一半：ZTest 的教训</h4>
+      <p>给技能做箭头指示图标，按物体包围盒定位后仍然被挡——精灵枢轴和半深度都没算进去。世界空间 UI/图标必须在锚点定位之外<strong>额外考虑与相机的深度关系</strong>（沿相机方向再推一段），否则 ZTest 会替你做"正确的"遮挡，挡掉你想显示的东西。</p>
+    </div>
+
+    <div class="war-card">
+      <div class="war-tag">WAR STORY // 资源与打包</div>
+      <h4>编辑器里好好的，真机上材质全变粉色（或直接报空）</h4>
+      <p>运行时用 <span class="res-pill">Shader.Find</span> 动态建材质，编辑器一切正常，真机上直接 ArgumentNullException 中断加载——因为<strong>没被资源引用的 shader 打包时会被裁剪</strong>，真机上 Find 返回 null。正确做法是多候选查找 + 内置材质兜底 + 全失败就跳过赋值。这就是"打包管线"知识：不进项目你永远碰不到。</p>
+    </div>
+
+    <div class="war-card">
+      <div class="war-tag">WAR STORY // 粒子特效</div>
+      <h4>循环特效越叠越亮：burst 粒子的 duration 陷阱</h4>
+      <p>把循环特效 main.loop 打开后，画面上的粒子一轮比一轮多——原因是 <strong>ParticleSystem 的 duration 没有覆盖到最长粒子寿命</strong>，burst 每个周期都在叠。调 VFX 不是拖拖参数，每一条曲线和时长都要能解释。</p>
+    </div>
+
+    <div class="todo-card" style="margin-top:10px;">
+      <strong>【待补充 · 学长亲历口述区】</strong>　你自己的入坑契机、第一次写出能看的 Shader 是什么时候、被哪门课劝退/点醒——这些只有你能写。说一段，我们就填进来。
+    </div>
+
+    <div class="notice-box">
+      💡 给 TA 方向的一句话总结：<strong>TA = 图形学底子（101/202/104 + Real-Time Rendering）× 引擎实操（Unity 写 + UE 拆）× 项目毒打（真机、管线、性能）</strong>。三个因子缺一个，面试时都会露馅。
+    </div>
+  </div>
+
+  <!-- ================= 通用建议 ================= -->
+  <div class="section">
+    <div class="section-head">
+      <span class="sec-no">SEC.03</span>
+      <h2>不分方向都成立的几条</h2>
+      <span class="sec-sub">这些是行业共识里最经得起时间的部分</span>
+    </div>
+    <div class="advice-grid">
+      <div class="advice-card">
+        <h3>作品集 &gt; 绩点（但别挂科）</h3>
+        <p>游戏公司校招看的是"你做过什么"：能跑的 Demo、Play 商店/EXE 直接双击的成品、GitHub 仓库。绩点保底不挂科即可，时间要大量投给项目。</p>
+      </div>
+      <div class="advice-card">
+        <h3>参加 Game Jam，越早越好</h3>
+        <p>48 小时内做一款完整游戏，是最快暴露"你以为会、其实不会"的方法。LiGameJam / CiGA 等活动线上线下都有，大一暑假就可以开始参加。</p>
+      </div>
+      <div class="advice-card">
+        <h3>做完整的项目，别囤半成品</h3>
+        <p>十个 30% 完成度的项目不如一个 100% 的。完整意味着：能安装、有音效、有结算、能重开。我们做完整项目时学到的东西（打包、热更、真机适配）没有一样出现在教程里。</p>
+      </div>
+      <div class="advice-card">
+        <h3>英语不是加分项，是基础设施</h3>
+        <p>官方文档、引擎 release note、图形学论文、报错搜索——一手信息全是英文。靠翻译软件可以活，但速度差一截，日积月累就是差距。</p>
+      </div>
+      <div class="advice-card">
+        <h3>把 AI 当杠杆，别当拐杖</h3>
+        <p>AI 能帮你解释报错、生成模板、查 API 用法，效率翻倍；但基础概念跳过 AI 直接要答案，你就失去了建立自己理解的机会。判断标准：让 AI 写的东西，你能逐行给别人讲明白吗？</p>
+      </div>
+      <div class="advice-card">
+        <h3>实习时间线（现实版）</h3>
+        <p>大二暑假前：作品集启动 + 第一个完整项目。大三上：秋招提前批开始投（别以为秋招是"秋天"，七月就开始了）。大三暑假：日常实习。等大四再准备就晚了，这条线每年都在提前。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 现实检查 ================= -->
+  <div class="section">
+    <div class="section-head">
+      <span class="sec-no">SEC.04</span>
+      <h2>就业现实检查</h2>
+      <span class="sec-sub">不贩卖焦虑，也不画饼</span>
+    </div>
+    <div class="card" style="padding:18px 22px;">
+      <ul style="padding-left:20px; font-size:13.5px; color:var(--text-secondary);">
+        <li style="margin-bottom:8px;"><strong>行业有周期。</strong>招聘量随版号、市场波动明显，你入学时的行情和毕业时可能完全不同。所以选方向优先选"底层能力可迁移"的（图形学、C++、工程能力），而不是押注某个风口引擎。</li>
+        <li style="margin-bottom:8px;"><strong>大厂 / 中小厂 / 外包体验完全不同。</strong>大厂分工细、螺丝钉但体系化；小厂什么都干、成长快但野蛮；外包是不少人的第一跳板，不丢人，但要清楚它是一跳不是终点。</li>
+        <li style="margin-bottom:8px;"><strong>薪资不写在指南里。</strong>网上流传的数字水分大且随年份剧烈变化，建议直接去面几轮、或找在职学长要当届 offer 实况，比任何攻略都准。</li>
+        <li><strong>数媒技不是"劣势专业"。</strong>游戏行业里技术+审美复合背景的人本来就该走复合岗位（TA、TP、特效），对口的赛道你不走，非要跟科班 CS 拼 pure 程序岗才是把自己放错位置。</li>
+      </ul>
+    </div>
+    <div class="todo-card" style="margin-top:12px;">
+      <strong>【预告】下一个深挖方向：</strong>客户端程序 / 游戏策划（技术策划）…… 想先看哪个，来跟学长说一声，或者直接把你走过的路写成一段发过来。
+    </div>
+  </div>
+
+  <footer>
+    <p class="mono">GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 · 内容含 AI 辅助生成，亲历部分来自真实项目踩坑记录</p>
+    <p>个人非经营性学习观察用途 · 游戏开发技术学习交流</p>
+    <p><a href="index.html">← 返回 游戏开发情报中枢</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
