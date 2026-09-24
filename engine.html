@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>深挖 · 引擎 / 工具开发 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="roadmap-style.css">
+<script src="roadmap-common.js" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB · 四象菱形点阵核心">
+        <img src="gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>数媒技自学指南 · 引擎 / 工具 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">DEEP DIVE 04</span></h1>
+        <p>C++ 底子 → 图形学 → 编辑器扩展实战 → 入行路径 // ENGINE / TOOLS</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="index.html">← 返回情报中枢</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="roadmap.html"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="ta.html"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="client.html"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item" href="design.html"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span></a>
+    <a class="ark-nav-item active" href="engine.html"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具 · 本页</span></a>
+    <a class="ark-nav-item" href="art.html"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span></a>
+    <a class="ark-nav-item" href="server.html"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="contests.html"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+  </div>
+
+  <div class="takeaway-alert-box amber">
+    <strong>⚠️ 先认清这条路的现实</strong>
+    引擎 / 工具岗是"进阶方向"而不是"起步方向"：应届直招极少，主流路径是<strong>先拿客户端 offer、入职后内部转岗</strong>。这一页的路线照样要打，但要和客户端页（SEC.02 深挖）并行推进，别把宝全押在应届直招上。
+  </div>
+
+  <!-- ================= 深挖路线 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 深挖方向 04：引擎 / 工具开发</div>
+        <span class="section-count-badge">4 STEPS</span>
+      </div>
+      <span class="section-desc">给项目组造轮子的人 · C++ 硬功 + 图形学 + 工程化习惯</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_01 · C++ 硬功夫（一切的前提）</span>
+            <span class="card-serial-code">MODERN C++</span>
+          </div>
+          <div class="card-headline">C++ 要学到"内存模型"这一层</div>
+          <div class="card-summary">
+            工具 / 引擎岗的 C++ 门槛远高于客户端的"会用"：智能指针与所有权、移动语义、多线程与数据竞争、缓存友好的数据布局。<strong>《C++ Primer》当字典查</strong>，<strong>《Effective C++》</strong>精读，语法细节随时查 cppreference。校招笔试的算法题照刷不误（和客户端同一套）。
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill em res-link" href="https://cppreference.com/" target="_blank" rel="noopener">cppreference.com（C++ 标准库手册）</a>
+            <a class="tag-pill res-link" href="https://leetcode.cn/" target="_blank" rel="noopener">LeetCode 力扣</a>
+            <span class="tag-pill">智能指针 / 移动语义 / 多线程</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_02 · 图形学与引擎原理</span>
+            <span class="card-serial-code">GAMES 101 / 202 / 104</span>
+          </div>
+          <div class="card-headline">图形学是必修不是选修，GAMES 104 是世界观</div>
+          <div class="card-summary">
+            工具岗虽然不直接写渲染，但<strong>看不懂渲染管线就没法给美术做提效工具</strong>。GAMES 101 打底、202 进实时渲染、104 建立引擎全局观（各系统怎么拼装、资产管线怎么流转）——104 对工具岗的价值甚至比对客户端更大。
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill em res-link" href="https://www.bilibili.com/video/BV1X7411F744" target="_blank" rel="noopener">GAMES101 · B站</a>
+            <a class="tag-pill res-link" href="https://games-cn.org/intro-graphics/" target="_blank" rel="noopener">GAMES101 官网</a>
+            <a class="tag-pill res-link" href="https://games104.boomingtech.com/sc/course-list/" target="_blank" rel="noopener">GAMES104 官网（B站可看）</a>
+            <a class="tag-pill res-link" href="https://www.realtimerendering.com/" target="_blank" rel="noopener">Real-Time Rendering 官网</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_03 · 编辑器扩展实战（核心作品来源）</span>
+            <span class="card-serial-code">EDITOR TOOLING</span>
+          </div>
+          <div class="card-headline">给自己的项目写工具——这就是最好的作品集素材</div>
+          <div class="card-summary">
+            <ul>
+              <li><strong>Unity 方向</strong>：EditorGUILayout / AssetPostprocessor / 自定义 Inspector，从"批量资源重命名"做到"Excel 表格一键导入 ScriptableObject"，官方手册的 Extending the Editor 章节是主线。</li>
+              <li><strong>UE 方向</strong>：Editor Utility / Blueprint 工具 + Python 脚本批处理资产。</li>
+              <li><strong>进阶</strong>：给工具加上进度条、错误报告、可回滚——工程化细节就是"业余工具"和"专业工具"的分界线。</li>
+            </ul>
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill em res-link" href="https://docs.unity3d.com/Manual/ExtendingTheEditor.html" target="_blank" rel="noopener">Unity 官方 · 扩展编辑器手册</a>
+            <a class="tag-pill res-link" href="https://dev.epicgames.com/documentation/zh-cn/unreal-engine" target="_blank" rel="noopener">UE 官方文档</a>
+            <span class="tag-pill">批量处理 / 表格导入 / 一键检查</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_04 · 入行路径与作品集</span>
+            <span class="card-serial-code">CLIENT FIRST, THEN TRANSFER</span>
+          </div>
+          <div class="card-headline">应届怎么进工具 / 引擎岗</div>
+          <div class="card-summary">
+            <ul>
+              <li><strong>主路径</strong>：应届投客户端 / TA 岗 → 入职后主动接工具需求 → 内部转岗。入职时的"额外技能"（会写编辑器扩展）就是转岗筹码。</li>
+              <li><strong>作品集</strong>：2~3 个编辑器工具（GitHub + 演示 GIF）+ 1 个性能优化案例（Profiler 前后对比截图）。</li>
+              <li><strong>面试侧重点</strong>：C++ 八股 + 图形学基础 + "你为什么想造轮子"——工具岗面试官最怕招到只想写渲染不想做服务的人。</li>
+            </ul>
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill res-link" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <span class="tag-pill good">演示 GIF &gt; 长篇文档</span>
+            <span class="tag-pill warn">应届直招少 · 先客户端再转</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="takeaway-alert-box" style="margin-top: 18px;">
+      <strong>💡 一句话总结引擎 / 工具方向</strong>
+      引擎工具 = C++ 硬功 × 图形学（101/202/104）× 工程化工具实战。应届走"客户端 → 内部转岗"主路径，编辑器扩展作品就是你的转岗筹码。
+    </div>
+  </div>
+
+  <!-- ================= 口述区 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title" style="color: var(--accent-rose);">■ 亲历口述区 · 引擎工具篇</div>
+        <span class="section-count-badge" style="background: #fff1f2; color: #e11d48; border-color: #fecdd3;">WAITING</span>
+      </div>
+      <span class="section-desc">教程里不会写 · 只有真做过才碰得到的部分</span>
+    </div>
+    <div class="pending-box">
+      <strong>【待补充 · 学长亲历口述区】</strong>　你写过的第一个编辑器扩展解决了什么痛点、被"重复劳动"逼疯过的瞬间——说一段，我们就填进来。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // ENGINE / TOOLS DEEP DIVE</div>
+    <div>内容含 AI 辅助生成 · 个人非经营性学习观察用途</div>
+    <div><a href="roadmap.html">← 返回总览</a> · <a href="ta.html">TA</a> · <a href="client.html">客户端</a> · <a href="design.html">策划</a> · <a href="art.html">美术</a> · <a href="server.html">服务端</a> · <a href="contests.html">比赛</a></div>
+  </div>
+
+</div>
+</body>
+</html>

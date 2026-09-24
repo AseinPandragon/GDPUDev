@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>深挖 · 美术 / 特效 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="roadmap-style.css">
+<script src="roadmap-common.js" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB · 四象菱形点阵核心">
+        <img src="gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>数媒技自学指南 · 美术 / 特效 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">DEEP DIVE 05</span></h1>
+        <p>细分定位 → 基本功 → 软件链 → 引擎落地 // ART / VFX ARTIST</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="index.html">← 返回情报中枢</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="roadmap.html"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="ta.html"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="client.html"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item" href="design.html"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span></a>
+    <a class="ark-nav-item" href="engine.html"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <a class="ark-nav-item active" href="art.html"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效 · 本页</span></a>
+    <a class="ark-nav-item" href="server.html"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="contests.html"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+  </div>
+
+  <div class="takeaway-alert-box">
+    <strong>💡 先想清楚：纯美术岗拼的是作品集硬实力</strong>
+    数媒技的课内美术训练强度通常不够，走纯美术要有"课外练 3 倍"的心理准备。<strong>对数媒技最友好的细分是特效 VFX Artist</strong>——技术 + 审美复合，和 TA 路线互通，以后想转岗也顺。
+  </div>
+
+  <!-- ================= 深挖路线 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 深挖方向 05：美术（原画 / 3D / 动作 / 特效）</div>
+        <span class="section-count-badge">4 STEPS</span>
+      </div>
+      <span class="section-desc">先选细分再投入 · 不同细分拼的东西完全不同</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_01 · 选细分 + 基本功（大一开始）</span>
+            <span class="card-serial-code">PICK ONE TRACK</span>
+          </div>
+          <div class="card-headline">四个细分，四种活法</div>
+          <div class="card-summary">
+            <ul>
+              <li><strong>原画</strong>：拼造型与设计能力，内卷最重，画得不好就是不好；</li>
+              <li><strong>3D 建模</strong>（场景 / 角色）：拼软件链完整度与细节耐力；</li>
+              <li><strong>动作</strong>：拼动态审美与节奏感，懂引擎者优先；</li>
+              <li><strong>特效 VFX</strong>：拼"技术 + 审美"复合，对程序友好——<strong>数媒技首选</strong>。</li>
+            </ul>
+            无论哪个细分，基本功（速写、结构、色彩、镜头感）每周都要有固定练习量——课内强度不够就自己补，这笔账谁也替不了。
+          </div>
+          <div class="tag-cluster">
+            <span class="tag-pill good">VFX 与 TA 路线互通</span>
+            <span class="tag-pill warn">基本功每周固定量</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_02 · 软件链（跟着细分走）</span>
+            <span class="card-serial-code">TOOL CHAIN</span>
+          </div>
+          <div class="card-headline">每个细分的标配工具链</div>
+          <div class="card-summary">
+            <ul>
+              <li><strong>原画</strong>：Photoshop / Procreate（iPad 便携加分）；</li>
+              <li><strong>3D</strong>：Blender（免费，学起来零成本）→ Substance Painter（材质）→ ZBrush（高模雕刻，角色向）；</li>
+              <li><strong>动作</strong>：Maya（行业标准）+ 引擎内 Animation 视图；</li>
+              <li><strong>特效</strong>：Unity 粒子系统 → UE Niagara → Houdini（进阶必备，程序化思路）。</li>
+            </ul>
+            工具是手段不是目的，招聘看的是"用工具做出的东西"，不是"会多少软件"。
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill em res-link" href="https://www.blender.org/" target="_blank" rel="noopener">Blender 官网（免费开源）</a>
+            <span class="tag-pill">3D：Blender → Substance → ZBrush</span>
+            <span class="tag-pill">特效：Unity → Niagara → Houdini</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_03 · 引擎内落地（拉开差距的一步）</span>
+            <span class="card-serial-code">IN-ENGINE DELIVERY</span>
+          </div>
+          <div class="card-headline">作品必须"进过引擎"才算数</div>
+          <div class="card-summary">
+            游戏美术和插画 / 影视美术的分水岭就在这一步：<strong>资产要进引擎走完导入 → 材质 → 灯光 → 性能 → 录屏展示的完整流程</strong>。同一张原画，"PSD 里好看"和"引擎里好看"是两回事；同一个模型，五万面和五千面在手机上是两种命运。数媒技的程序基础在这一步全是优势——懂引擎的美术永远比纯美术稀缺。
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill res-link" href="https://docs.unity3d.com/Manual/index.html" target="_blank" rel="noopener">Unity 官方文档</a>
+            <a class="tag-pill res-link" href="https://dev.epicgames.com/documentation/zh-cn/unreal-engine" target="_blank" rel="noopener">UE 官方文档</a>
+            <span class="tag-pill good">懂引擎的美术是稀缺品</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_04 · 作品集（宁缺毋滥）</span>
+            <span class="card-serial-code">ARTSTATION FIRST</span>
+          </div>
+          <div class="card-headline">10 张精品 &gt; 50 张练习</div>
+          <div class="card-summary">
+            <ul>
+              <li><strong>平台</strong>：ArtStation 为主（国际通用），米画师 / 站酷为辅（国内接单）；</li>
+              <li><strong>3D 作品</strong>：必须附线框图 / 拓扑展示 + 引擎内渲染图，只放效果图会被当成"网上扒的"；</li>
+              <li><strong>特效作品</strong>：直接引擎录屏 + 节点图截图，讲清"这个打击感的节奏是怎么调的"；</li>
+              <li><strong>原画作品</strong>：放完整过程（草图 → 配色 → 细化），过程比结果更值钱。</li>
+            </ul>
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill em res-link" href="https://www.artstation.com/" target="_blank" rel="noopener">ArtStation</a>
+            <span class="tag-pill good">宁缺毋滥</span>
+            <span class="tag-pill">过程展示 &gt; 只有成品</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="takeaway-alert-box" style="margin-top: 18px;">
+      <strong>💡 一句话总结美术方向</strong>
+      美术 = 细分定位 × 基本功 × 引擎内落地。数媒技优先考虑特效 VFX（技术审美复合、和 TA 互通），纯原画赛道请先评估自己愿不愿意"课外练 3 倍"。
+    </div>
+  </div>
+
+  <!-- ================= 口述区 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title" style="color: var(--accent-rose);">■ 亲历口述区 · 美术篇</div>
+        <span class="section-count-badge" style="background: #fff1f2; color: #e11d48; border-color: #fecdd3;">WAITING</span>
+      </div>
+      <span class="section-desc">教程里不会写 · 只有真做过才碰得到的部分</span>
+    </div>
+    <div class="pending-box">
+      <strong>【待补充 · 学长亲历口述区】</strong>　你第一件"进过引擎"的作品、被面数 / 拓扑毒打过的经历、或者调打击感调到凌晨的记忆——说一段，我们就填进来。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // ART / VFX DEEP DIVE</div>
+    <div>内容含 AI 辅助生成 · 个人非经营性学习观察用途</div>
+    <div><a href="roadmap.html">← 返回总览</a> · <a href="ta.html">TA</a> · <a href="client.html">客户端</a> · <a href="design.html">策划</a> · <a href="engine.html">引擎</a> · <a href="server.html">服务端</a> · <a href="contests.html">比赛</a></div>
+  </div>
+
+</div>
+</body>
+</html>

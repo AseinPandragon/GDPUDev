@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>深挖 · 游戏策划（含技术策划 TP）· 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="roadmap-style.css">
+<script src="roadmap-common.js" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB · 四象菱形点阵核心">
+        <img src="gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>数媒技自学指南 · 游戏策划 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">DEEP DIVE 03</span></h1>
+        <p>思维打底 → 拆解输出 → 引擎动手 → 作品集 // GAME DESIGNER / TP</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="index.html">← 返回情报中枢</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="roadmap.html"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="ta.html"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="client.html"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item active" href="design.html"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划 · 本页</span></a>
+    <a class="ark-nav-item" href="engine.html"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <a class="ark-nav-item" href="art.html"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span></a>
+    <a class="ark-nav-item" href="server.html"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="contests.html"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+  </div>
+
+  <!-- ================= 深挖路线 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 深挖方向 03：游戏策划（含技术策划 TP）</div>
+        <span class="section-count-badge">4 STEPS</span>
+      </div>
+      <span class="section-desc">数媒技的技术背景走"技术策划 TP"是明显加分项 · 纯案头策划则更卷文笔和思维</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_01 · 思维打底（随时可开始）</span>
+            <span class="card-serial-code">READ + THINK</span>
+          </div>
+          <div class="card-headline">两本书 + 带着"框架"玩游戏</div>
+          <div class="card-summary">
+            <strong>《游戏设计艺术》</strong>（The Art of Game Design）和<strong>《体验引擎》</strong>（Designing Games）两本足够入门，前者给你设计词汇和视角，后者讲透机制与情绪的关系。读的时候对着自己玩得最深的一款游戏做验证：它的核心循环是什么？新手引导在哪一步把你留下/劝退？从"玩过"到"能说清为什么好玩"，就是策划的第一道分水岭。
+          </div>
+          <div class="tag-cluster">
+            <span class="tag-pill em">《游戏设计艺术》</span>
+            <span class="tag-pill em">《体验引擎》</span>
+            <span class="tag-pill">核心循环 / 心流 / 钩子</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_02 · 拆解输出（核心作业，每周一篇）</span>
+            <span class="card-serial-code">DECONSTRUCTION REPORT</span>
+          </div>
+          <div class="card-headline">拆解报告是策划的"代码"——它就是你的作品集主体</div>
+          <div class="card-summary">
+            每周拆一个系统或关卡（战斗节奏 / 抽卡数值 / 新手引导 / 关卡曲线），每篇 2000 字以上，固定三段式：
+            <ul>
+              <li><strong>画出来</strong>：把系统画成流程图 / 状态机，画不出来说明没拆懂；</li>
+              <li><strong>反推数值</strong>：从结果反推公式和参数区间（掉率、成长曲线、经济产出）；</li>
+              <li><strong>给出改法</strong>："如果是我来做"——这段最见功力，也是面试官最想看的。</li>
+            </ul>
+            发到知乎 / indienova 攒反馈，面策划岗时直接甩链接。
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill em res-link" href="https://indienova.com/" target="_blank" rel="noopener">indienova 独立游戏社区</a>
+            <a class="tag-pill res-link" href="https://www.gcores.com/" target="_blank" rel="noopener">机核 GCORES</a>
+            <span class="tag-pill">知乎发长文 · 攒个人专栏</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_03 · 动手实现（大二下~大三）</span>
+            <span class="card-serial-code">BUILD IT IN-ENGINE</span>
+          </div>
+          <div class="card-headline">策划也要会"造"：关卡原型 + 数值表 + TP 技能</div>
+          <div class="card-summary">
+            <ul>
+              <li><strong>关卡原型</strong>：Unity 里用基础几何体摆可玩关卡（不用美术资源），验证节奏与引导——会摆关卡的策划在面试里是降维打击。</li>
+              <li><strong>Excel 数值表</strong>：VLOOKUP、条件格式、蒙特卡洛模拟要熟练；交一份"抽卡概率模拟器"或"经济系统演算表"级别的作业。</li>
+              <li><strong>TP（技术策划）加分项</strong>：Unity C# 能写简单玩法脚本，或 UE 蓝图能跑通逻辑——技术策划岗位缺口比纯案头大，数媒技背景天然对口。</li>
+            </ul>
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill em res-link" href="https://learn.unity.com/" target="_blank" rel="noopener">Unity Learn 官方教程</a>
+            <a class="tag-pill res-link" href="https://docs.unity3d.com/Manual/index.html" target="_blank" rel="noopener">Unity 官方文档</a>
+            <span class="tag-pill good">会摆关卡 + 会写脚本 = TP 门槛</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_04 · 作品集与投递（大三上启动）</span>
+            <span class="card-serial-code">PORTFOLIO + INTERVIEW</span>
+          </div>
+          <div class="card-headline">策划的作品集长什么样，面试考什么</div>
+          <div class="card-summary">
+            <ul>
+              <li><strong>标配三件套</strong>：3~5 篇拆解报告（在线可读）+ 1 个可玩关卡原型 + 1 份数值演算表。</li>
+              <li><strong>面试必考题</strong>："拆一款你玩得最深的游戏"——答案就是你 STEP_02 攒的报告，现场讲比背模板强一百倍。</li>
+              <li><strong>投递顺序建议</strong>：技术策划 / 关卡策划优先（对口），系统策划次之，文案策划慎选（纯卷文笔）。</li>
+            </ul>
+          </div>
+          <div class="tag-cluster">
+            <span class="tag-pill good">报告可在线访问 &gt; PDF 附件</span>
+            <span class="tag-pill">知乎专栏 = 策划的 GitHub</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="takeaway-alert-box" style="margin-top: 18px;">
+      <strong>💡 一句话总结策划方向</strong>
+      策划 = 思维框架（两本书）× 持续拆解输出（每周报告）× 引擎动手（原型 + 数值 + 脚本）。纯案头卷文笔，技术策划缺人——数媒技请优先打 TP 和关卡实现。
+    </div>
+  </div>
+
+  <!-- ================= 口述区 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title" style="color: var(--accent-rose);">■ 亲历口述区 · 策划篇</div>
+        <span class="section-count-badge" style="background: #fff1f2; color: #e11d48; border-color: #fecdd3;">WAITING</span>
+      </div>
+      <span class="section-desc">教程里不会写 · 只有真做过才碰得到的部分</span>
+    </div>
+    <div class="pending-box">
+      <strong>【待补充 · 学长亲历口述区】</strong>　你拆过最上头的一款游戏、第一次被"原来数值是这样算的"震撼到的瞬间、或者帮别人看策划案时最常指出的问题——说一段，我们就填进来。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // GAME DESIGN DEEP DIVE</div>
+    <div>内容含 AI 辅助生成 · 个人非经营性学习观察用途</div>
+    <div><a href="roadmap.html">← 返回总览</a> · <a href="ta.html">TA</a> · <a href="client.html">客户端</a> · <a href="engine.html">引擎</a> · <a href="art.html">美术</a> · <a href="server.html">服务端</a> · <a href="contests.html">比赛</a></div>
+  </div>
+
+</div>
+</body>
+</html>
