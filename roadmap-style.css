@@ -177,6 +177,9 @@ body {
   overflow-x: auto;
   gap: 10px;
   -webkit-overflow-scrolling: touch;
+  position: sticky;
+  top: 8px;
+  z-index: 50;
 }
 .ark-nav-item {
   display: flex;
@@ -509,6 +512,93 @@ a.tag-pill:not(.em).res-link:hover { background: #475569; color: #ffffff; border
   font-size: 13px;
 }
 .pending-box strong { color: var(--text-secondary); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.5px; }
+
+/* ===== 数据对比表 ===== */
+.data-table-wrap { overflow-x: auto; border: 1px solid #cbd5e1; border-radius: 4px; }
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  min-width: 780px;
+  background: #ffffff;
+}
+.data-table th {
+  background: #0f172a;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+.data-table td {
+  padding: 9px 12px;
+  border-top: 1px solid #e2e8f0;
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.55;
+}
+.data-table tr:nth-child(even) td { background: #f8fafc; }
+.data-table td.name { font-weight: 800; color: var(--text-primary); white-space: nowrap; }
+.data-table .yes { color: var(--accent-emerald); font-weight: 800; font-family: var(--font-mono); font-size: 11.5px; }
+.data-table .no { color: var(--text-subtle); font-family: var(--font-mono); font-size: 11.5px; }
+
+/* ===== 全年时间轴 ===== */
+.year-timeline { padding: 4px 0 0; }
+.yt-months {
+  display: flex;
+  margin-left: 158px;
+  margin-bottom: 4px;
+}
+.yt-months span {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.yt-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.yt-label {
+  width: 150px;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-track {
+  flex: 1;
+  position: relative;
+  height: 18px;
+  background: #f1f5f9;
+  border-radius: 3px;
+  border: 1px solid #e2e8f0;
+}
+.yt-bar {
+  position: absolute;
+  top: 3px; bottom: 3px;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+.yt-bar.b-blue { background: #2563eb; }
+.yt-bar.b-emerald { background: #059669; }
+.yt-bar.b-purple { background: #7c3aed; }
+.yt-bar.b-rose { background: #e11d48; }
+.yt-bar.b-amber { background: #d97706; }
+.yt-bar.b-cyan { background: #0891b2; }
+.yt-note { font-size: 11px; color: var(--text-muted); margin-top: 8px; }
 
 /* ===== 清单 ===== */
 .reality-list { padding-left: 20px; font-size: 13.5px; color: var(--text-secondary); }
