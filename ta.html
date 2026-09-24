@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>深挖 · 技术美术 TA · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="roadmap-style.css">
+<script src="roadmap-common.js" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB · 四象菱形点阵核心">
+        <img src="gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>数媒技自学指南 · 技术美术 TA <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">DEEP DIVE 01</span></h1>
+        <p>图形学地基 → 引擎双线 → 跟人学 → 作品集 // TECHNICAL ARTIST</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="index.html">← 返回情报中枢</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="roadmap.html">
+      <span class="ark-en-label">OVERVIEW</span>
+      <span class="ark-cn-label">总览</span>
+    </a>
+    <a class="ark-nav-item active" href="ta.html">
+      <span class="ark-en-label">TA</span>
+      <span class="ark-cn-label">深挖 · 技术美术 · 本页</span>
+    </a>
+    <a class="ark-nav-item" href="client.html">
+      <span class="ark-en-label">CLIENT</span>
+      <span class="ark-cn-label">深挖 · 客户端程序</span>
+    </a>
+    <a class="ark-nav-item" href="tracks.html">
+      <span class="ark-en-label">MORE</span>
+      <span class="ark-cn-label">深挖 · 其他方向</span>
+    </a>
+    <a class="ark-nav-item" href="contests.html">
+      <span class="ark-en-label">CONTESTS</span>
+      <span class="ark-cn-label">比赛大全</span>
+    </a>
+  </div>
+
+  <!-- ================= 深挖路线 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 深挖方向 01：技术美术 TA</div>
+        <span class="section-count-badge">4 STEPS</span>
+      </div>
+      <span class="section-desc">先打地基 → 再进引擎 → 跟人学 → 作品集 · 顺序比速度重要</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_01 · 地基（大二前打完最划算）</span>
+            <span class="card-serial-code">GAMES 101 → 202 → 104</span>
+          </div>
+          <div class="card-headline">图形学三件套：GAMES 101 / 202 / 104</div>
+          <div class="card-summary">
+            国内图形学入门公认的起点，B站就能看，不用管它是哪年录的——图形学基础的衰减期比框架长得多。
+            <ul>
+              <li><strong>GAMES 101</strong> 现代计算机图形学入门：变换、光栅化、着色、光线追踪。作业认真写，光看不行。它决定你能不能看懂 Shader 背后的数学。</li>
+              <li><strong>GAMES 202</strong> 高质量实时渲染：阴影、全局光、实时降噪——直接对应游戏渲染岗的日常话题。</li>
+              <li><strong>GAMES 104</strong> 现代游戏引擎：建立"引擎全局观"，知道一个引擎由哪些系统拼起来。作业量力而行，但一定要看完，它会改变你看 Unity/UE 的方式。</li>
+            </ul>
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill em res-link" href="https://www.bilibili.com/video/BV1X7411F744" target="_blank" rel="noopener">GAMES101 · B站</a>
+            <a class="tag-pill res-link" href="https://games-cn.org/intro-graphics/" target="_blank" rel="noopener">GAMES101 官网</a>
+            <a class="tag-pill res-link" href="https://sites.cs.ucsb.edu/~lingqi/teaching/games202.html" target="_blank" rel="noopener">GAMES202 官网（B站搜 GAMES202）</a>
+            <a class="tag-pill res-link" href="https://games104.boomingtech.com/sc/course-list/" target="_blank" rel="noopener">GAMES104 官网（B站可看）</a>
+            <a class="tag-pill res-link" href="https://www.realtimerendering.com/" target="_blank" rel="noopener">Real-Time Rendering 官网</a>
+          </div>
+          <div class="tag-cluster">
+            <span class="tag-pill good">《Real-Time Rendering》别通读，当字典查</span>
+            <span class="tag-pill">碰到"这效果什么原理"再翻对应章节</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_02 · 引擎双线（与 STEP_01 并行）</span>
+            <span class="card-serial-code">UNITY: WRITE / UE: BREAK</span>
+          </div>
+          <div class="card-headline">Unity 里动手写，UE 里开眼界拆</div>
+          <div class="card-summary">
+            两条线不是二选一，是分工不同：
+            <ul>
+              <li><strong>Unity 线（动手）</strong>：ShaderLab / HLSL 从最简单的 Unlit 开始写起，逐个实现卡通着色、描边、溶解、billboard、屏幕后处理。每个效果录一段视频存进作品集文件夹。</li>
+              <li><strong>UE 线（拆解）</strong>：去看官方工程示例（如 Lyra、City Sample），拆解官方插件——重点不是学 UE API，而是看"一个工业级项目怎么组织材质库、后处理栈、资产管线"。见过好结构，才知道自己写的有多野。</li>
+            </ul>
+          </div>
+          <div class="tag-cluster">
+            <a class="tag-pill em res-link" href="https://dev.epicgames.com/documentation/zh-cn/ue/lyra-sample-game-in-unreal-engine" target="_blank" rel="noopener">UE 官方 Lyra 示例文档</a>
+            <a class="tag-pill res-link" href="https://dev.epicgames.com/community/learning" target="_blank" rel="noopener">UE 官方学习社区</a>
+            <a class="tag-pill res-link" href="https://docs.unity3d.com/Manual/index.html" target="_blank" rel="noopener">Unity 官方文档</a>
+            <span class="tag-pill em">知乎 · 图文深度分析主阵地</span>
+            <span class="tag-pill">TA / 渲染专栏 → 建自己的知识库</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_03 · 跟人学（穿插全程）</span>
+            <span class="card-serial-code">FOLLOW THE ACTIVE ONES</span>
+          </div>
+          <div class="card-headline">关注这些 UP 主 / 作者：kerry、月神、三彩</div>
+          <div class="card-summary">
+            自学最容易死在"不知道自己不知道什么"上。跟着活跃的 TA 向作者走，他们的更新内容就是行业里当下在关心的问题，比自己闷头翻教程高效。遇到系列教程就跟着把 Demo 做一遍，光收藏不算学。
+          </div>
+          <div class="tag-cluster">
+            <span class="tag-pill em">B站：kerry</span>
+            <span class="tag-pill em">月神</span>
+            <span class="tag-pill em">三彩</span>
+            <span class="tag-pill">B站 + 知乎双平台跟更</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="article-card">
+          <div class="card-tactical-header">
+            <span class="card-index-tag">STEP_04 · 作品集（大三上必须启动）</span>
+            <span class="card-serial-code">PORTFOLIO &gt; GPA</span>
+          </div>
+          <div class="card-headline">TA 的作品集长什么样</div>
+          <div class="card-summary">
+            <ul>
+              <li><strong>3~5 个有讲解的渲染效果 Demo</strong>：每个附"效果视频 + 实现思路 + 对比截图（开启/关闭）"，最好附 GitHub 仓库。</li>
+              <li><strong>1 个工具型作品</strong>：编辑器扩展或美术提效小工具，展示你不只会写特效。</li>
+              <li><strong>1 个"进过真机"的项目</strong>：哪怕是小项目，只要在真机上跑过、优化过，含金量就超过十个只在编辑器里好看的 Demo。</li>
+            </ul>
+          </div>
+          <div class="tag-cluster">
+            <span class="tag-pill good">录制视频 &gt; 截图</span>
+            <span class="tag-pill">GitHub 仓库 &gt; 网盘压缩包</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="takeaway-alert-box" style="margin-top: 18px;">
+      <strong>💡 一句话总结 TA 方向</strong>
+      TA = 图形学底子（101/202/104 + Real-Time Rendering）× 引擎实操（Unity 写 + UE 拆）× 项目毒打（真机、管线、性能）。三个因子缺一个，面试时都会露馅。
+    </div>
+  </div>
+
+  <!-- ================= 亲历踩坑 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title" style="color: var(--accent-rose);">■ 亲历踩坑实录 · TA 篇（为什么"课本外"的东西更重要）</div>
+        <span class="section-count-badge" style="background: #fff1f2; color: #e11d48; border-color: #fecdd3;">4 WAR STORIES</span>
+      </div>
+      <span class="section-desc">以下全部来自我们真实项目 · 教程里不会写 · 只有进项目才碰得到</span>
+    </div>
+
+    <div class="section-cards-grid">
+      <div class="article-card rose">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">WAR STORY_01 · 渲染排序</span>
+          <span class="card-serial-code">URP CAMERA STACK</span>
+        </div>
+        <div class="card-headline">UI 弹窗怎么调 Layer 都不生效？因为 URP 里 Layer 根本不管排序</div>
+        <div class="card-summary">
+          技能弹窗死活显示不出来/层级错误，查了半天 Layer 剔除——真相是：URP 的 Overlay 相机栈里，<strong>Layer 只管相机剔除，实际显示顺序由相机列表顺序和 Sorting Layer 决定</strong>。最后靠把弹窗挂到最上层 Canvas + 指定 Sorting Layer 才解决。
+        </div>
+        <div class="tag-cluster">
+          <span class="tag-pill warn">GAMES101 教原理</span>
+          <span class="tag-pill">"引擎具体怎么排"只能靠项目毒打</span>
+        </div>
+      </div>
+
+      <div class="article-card rose">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">WAR STORY_02 · 深度与遮挡</span>
+          <span class="card-serial-code">Z-TEST TRAP</span>
+        </div>
+        <div class="card-headline">世界空间图标被场景模型"吃"掉一半：ZTest 的教训</div>
+        <div class="card-summary">
+          给技能做箭头指示图标，按物体包围盒定位后仍然被挡——精灵枢轴和半深度都没算进去。世界空间 UI/图标必须在锚点定位之外<strong>额外考虑与相机的深度关系</strong>（沿相机方向再推一段），否则 ZTest 会替你做"正确的"遮挡，挡掉你想显示的东西。
+        </div>
+        <div class="tag-cluster">
+          <span class="tag-pill warn">ZTest 是"对的"，但不是你要的</span>
+        </div>
+      </div>
+
+      <div class="article-card rose">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">WAR STORY_03 · 资源与打包</span>
+          <span class="card-serial-code">SHADER STRIPPING</span>
+        </div>
+        <div class="card-headline">编辑器里好好的，真机上材质全变粉色（或直接报空）</div>
+        <div class="card-summary">
+          运行时用 <span class="tag-pill" style="margin: 0 2px;">Shader.Find</span> 动态建材质，编辑器一切正常，真机上直接 ArgumentNullException 中断加载——因为<strong>没被资源引用的 shader 打包时会被裁剪</strong>，真机上 Find 返回 null。正确做法是多候选查找 + 内置材质兜底 + 全失败就跳过赋值。
+        </div>
+        <div class="tag-cluster">
+          <span class="tag-pill warn">打包管线知识</span>
+          <span class="tag-pill">不进项目永远碰不到</span>
+        </div>
+      </div>
+
+      <div class="article-card rose">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">WAR STORY_04 · 粒子特效</span>
+          <span class="card-serial-code">VFX LOOP TRAP</span>
+        </div>
+        <div class="card-headline">循环特效越叠越亮：burst 粒子的 duration 陷阱</div>
+        <div class="card-summary">
+          把循环特效 main.loop 打开后，画面上的粒子一轮比一轮多——原因是 <strong>ParticleSystem 的 duration 没有覆盖到最长粒子寿命</strong>，burst 每个周期都在叠。调 VFX 不是拖拖参数，每一条曲线和时长都要能解释。
+        </div>
+        <div class="tag-cluster">
+          <span class="tag-pill warn">loop=true 时 duration ≥ 最长寿命</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pending-box" style="margin-top: 16px;">
+      <strong>【待补充 · 学长亲历口述区】</strong>　你自己的入坑契机、第一次写出能看的 Shader 是什么时候、被哪门课劝退/点醒——这些只有你能写。说一段，我们就填进来。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // TA DEEP DIVE</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="roadmap.html">← 返回总览</a> · <a href="client.html">客户端</a> · <a href="tracks.html">其他方向</a> · <a href="contests.html">比赛</a></div>
+  </div>
+
+</div>
+</body>
+</html>

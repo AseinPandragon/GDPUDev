@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>比赛大全 · GameJam / 计算机设计大赛 / 网易 / 腾讯 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="roadmap-style.css">
+<script src="roadmap-common.js" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB · 四象菱形点阵核心">
+        <img src="gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>数媒技自学指南 · 比赛大全 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">CONTESTS</span></h1>
+        <p>GameJam · 教育部4C · 网易高校赛 · 腾讯高校赛 // CONTEST INTEL</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="index.html">← 返回情报中枢</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="roadmap.html">
+      <span class="ark-en-label">OVERVIEW</span>
+      <span class="ark-cn-label">总览</span>
+    </a>
+    <a class="ark-nav-item" href="ta.html">
+      <span class="ark-en-label">TA</span>
+      <span class="ark-cn-label">深挖 · 技术美术</span>
+    </a>
+    <a class="ark-nav-item" href="client.html">
+      <span class="ark-en-label">CLIENT</span>
+      <span class="ark-cn-label">深挖 · 客户端程序</span>
+    </a>
+    <a class="ark-nav-item" href="tracks.html">
+      <span class="ark-en-label">MORE</span>
+      <span class="ark-cn-label">深挖 · 其他方向</span>
+    </a>
+    <a class="ark-nav-item active" href="contests.html">
+      <span class="ark-en-label">CONTESTS</span>
+      <span class="ark-cn-label">比赛大全 · 本页</span>
+    </a>
+  </div>
+
+  <div class="takeaway-alert-box">
+    <strong>💡 比赛的正确用法（按年级排布）</strong>
+    大一用 <strong>Game Jam 练手</strong>（输赢无所谓，练完整度和组队）→ 大二用 <strong>教育部 4C 拿"硬奖"</strong>（保研/综测/评奖评优认）→ 大二下~大三冲 <strong>网易/腾讯企业赛</strong>（目标不是奖金，是面试直通和实习转化）。两类比赛一个管校内认可、一个管行业入场券，不冲突，都要打。
+  </div>
+
+  <!-- ================= 校内硬赛 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 类别一：教育部认可赛事（保研/综测硬通货）</div>
+        <span class="section-count-badge">1 KEY CONTEST</span>
+      </div>
+      <span class="section-desc">学校认的"硬奖" · 对数媒技有直接对口的赛项</span>
+    </div>
+
+    <div class="section-cards-grid">
+      <div class="article-card emerald">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">CONTEST_01 · 教育部 A 类学科竞赛</span>
+          <span class="card-serial-code">4C · 数媒游戏与交互设计</span>
+        </div>
+        <div class="card-headline">中国大学生计算机设计大赛（4C）</div>
+        <div class="card-summary">
+          <ul>
+            <li><strong>是什么</strong>：教育部《全国普通高校大学生竞赛分析报告》竞赛目录内赛事，我国最早面向本科生的大赛之一，2008 年首届，现每年一届。</li>
+            <li><strong>对口赛项</strong>：11 个大类里有<strong>「数媒游戏与交互设计」</strong>——就是给数媒技准备的赛道，游戏 Demo 直接能报。</li>
+            <li><strong>流程与时间</strong>：校赛 → 省赛 → 国赛三级。每年上半年省赛（约 3~5 月提交），暑假国赛决赛。关注官网通知 + 本校教务处/学院的校赛通知。</li>
+            <li><strong>为什么打</strong>：保研加分、综测、评奖评优都认的"硬奖"，这是 Game Jam 和企业赛给不了的。</li>
+            <li><strong>怎么打</strong>：组队 1~3 人，按岗位分工（程序 + 美术 + 策划）；作品要完整可玩 + 文档规范，评审很看重选题立意与完成度。</li>
+          </ul>
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="http://jsjds.blcu.edu.cn/" target="_blank" rel="noopener">4C 官网</a>
+          <span class="tag-pill gold">保研 / 综测可用</span>
+          <span class="tag-pill good">数媒技直接对口赛项</span>
+          <span class="tag-pill warn">先过校赛再谈国赛</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 企业赛 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 类别二：大厂高校赛（面试直通与实习转化）</div>
+        <span class="section-count-badge">2 MAJOR</span>
+      </div>
+      <span class="section-desc">目标不是奖金 · 是让大厂 HR 在应届生池子里先看到你</span>
+    </div>
+
+    <div class="section-cards-grid">
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">CONTEST_02 · 网易</span>
+          <span class="card-serial-code">NETEASE ACADEMY</span>
+        </div>
+        <div class="card-headline">网易 · 聚光灯高校游戏开发者大赛（及 MINI-GAME 等系列）</div>
+        <div class="card-summary">
+          <ul>
+            <li><strong>是什么</strong>：网易游戏学堂面向高校的开发者赛事体系，含聚光灯高校游戏开发者大赛、MINI-GAME 大赛（曾联合《蛋仔派对》开设双赛道）、高校原画设计大赛等。</li>
+            <li><strong>为什么打</strong>：名次靠前有机会拿<strong>面试直通卡 / 实习 offer</strong>，网易的校招暑期实习转化率高，是进大厂最短的路径之一。</li>
+            <li><strong>时间线</strong>：各赛事报名期多在年初~年中，每年赛道和档期会变，盯紧游戏学堂的活动页。</li>
+            <li><strong>怎么打</strong>：企业赛看重"玩法创意 + 完成度"，评委是网易在岗制作人；比起堆美术量，一个机制立得住的可玩原型更有竞争力。</li>
+          </ul>
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="https://game.academy.163.com/activity" target="_blank" rel="noopener">网易游戏学堂 · 活动页（历年赛事入口）</a>
+          <span class="tag-pill good">面试直通 / 实习转化</span>
+          <span class="tag-pill">关注当届赛道与档期</span>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">CONTEST_03 · 腾讯</span>
+          <span class="card-serial-code">TENCENT GAME INSTITUTE</span>
+        </div>
+        <div class="card-headline">腾讯 · 高校游戏创意制作大赛（已升级：腾讯游戏创作大赛）</div>
+        <div class="card-summary">
+          <ul>
+            <li><strong>是什么</strong>：腾讯游戏学堂主办的高校游戏赛事，早年的高校创意制作大赛现已升级为面向更广泛开发者的"腾讯游戏创作大赛"（2026 届赛期约 4 月~11 月，线上）。</li>
+            <li><strong>为什么打</strong>：获奖作品团队有机会进入腾讯<strong>面试绿色通道 / 青训计划</strong>，评委来自天美、光子等工作室群。</li>
+            <li><strong>时间线</strong>：全年长周期赛事（报名→初赛→决赛横跨大半年），适合拿一个打磨过的完整项目去打，别拿 48 小时 Jam 作品硬冲。</li>
+            <li><strong>怎么打</strong>：官网历年获奖作品都公开，<strong>先拆解近三年的获奖名单和作品视频</strong>，看清腾讯评委的口味再立项。</li>
+          </ul>
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="https://gameinstitute.qq.com/" target="_blank" rel="noopener">腾讯游戏学堂 · 官网</a>
+          <a class="tag-pill res-link" href="https://gameinstitute.qq.com/yxds/collection" target="_blank" rel="noopener">高校大赛作品合集</a>
+          <span class="tag-pill good">面试绿色通道</span>
+          <span class="tag-pill warn">长周期 · 适合完整项目</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 社区赛 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 类别三：社区赛（练手与攒人，大一起步）</div>
+        <span class="section-count-badge">2 ENTRY</span>
+      </div>
+      <span class="section-desc">门槛最低 · 提升最快 · 也是队友储备库</span>
+    </div>
+
+    <div class="section-cards-grid">
+      <div class="article-card amber">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">CONTEST_04 · 48H 极限开发</span>
+          <span class="card-serial-code">GAME JAM</span>
+        </div>
+        <div class="card-headline">CiGA Game Jam / Global Game Jam 中国区</div>
+        <div class="card-summary">
+          <ul>
+            <li><strong>是什么</strong>：48 小时内按主题现场做出一款完整游戏。华语圈最大的是 CiGA（中国独立游戏联盟）主办的线下 Game Jam，每年暑期在十几个城市同时开场；Global Game Jam 中国区每年 1 月末开赛。</li>
+            <li><strong>为什么打</strong>：最快暴露"你以为会、其实不会"；顺便认识能长期组队的伙伴——很多后来的参赛队/项目组就是 Jam 现场凑出来的。</li>
+            <li><strong>怎么打</strong>：别贪大，主题出来后 1 小时内定核心玩法，剩余时间全花在"把它做完"上；美术不够就用免费素材，评审看的是完成度和主题契合。</li>
+          </ul>
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="https://www.ciga.me/gamejams" target="_blank" rel="noopener">CiGA Game Jam 报名页</a>
+          <span class="tag-pill good">大一就能打</span>
+          <span class="tag-pill">队友储备库</span>
+        </div>
+      </div>
+
+      <div class="article-card amber">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">CONTEST_05 · 线上常驻</span>
+          <span class="card-serial-code">ALWAYS ON</span>
+        </div>
+        <div class="card-headline">Booom / indienova 等线上创作活动</div>
+        <div class="card-summary">
+          <ul>
+            <li><strong>是什么</strong>：indienova 等独立游戏社区常年举办线上主题创作活动（如 Booom 接力），线上参与、无地域门槛，学期内也能打。</li>
+            <li><strong>为什么打</strong>：线下 Jam 一年只有几场，线上活动可以当"月度练手"；作品发布在社区还能直接收到玩家反馈。</li>
+          </ul>
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="https://indienova.com/" target="_blank" rel="noopener">indienova 社区</a>
+          <span class="tag-pill">学期内练手用</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="takeaway-alert-box amber" style="margin-top: 18px;">
+      <strong>⚠️ 三个提醒</strong>
+      ① 各赛事每年赛道、时间、政策都会变，报名前一律以<strong>官网当届通知</strong>为准，本页只负责帮你建立全景。② 保研/综测加分以<strong>本校教务文件</strong>认定的竞赛目录为准，打之前先确认 4C 在你们学校认不认。③ 企业赛的报名入口每年换页面，认准官方域名（163.com / qq.com），别在第三方代报名网站上浪费时间。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // CONTESTS</div>
+    <div>内容含 AI 辅助生成 · 赛事信息以各官网当届通知为准 · 个人非经营性学习观察用途</div>
+    <div><a href="roadmap.html">← 返回总览</a> · <a href="ta.html">TA</a> · <a href="client.html">客户端</a> · <a href="tracks.html">其他方向</a></div>
+  </div>
+
+</div>
+</body>
+</html>
