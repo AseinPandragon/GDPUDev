@@ -521,8 +521,13 @@ async function saveCfg(){
     const u=await fetch('https://api.github.com/user',{headers:{Authorization:`token ${cfg.token}`}});
     if(!u.ok) throw new Error('Token 无效: '+u.status);
     const user=await u.json();
+    // 自动补全：Owner 空则用当前账号，Repo 空则默认 GDPUDev
+    if(!cfg.owner) cfg.owner=user.login;
+    if(!cfg.repo) cfg.repo='GDPUDev';
+    localStorage.setItem(K_CFG,JSON.stringify(cfg));
+    $('cfgOwner').value=cfg.owner; $('cfgRepo').value=cfg.repo;
     $('whoami').textContent=`👤 ${user.login} · ${cfg.owner}/${cfg.repo}@${cfg.branch}`;
-    closeModal('cfgMask'); toast('✅ 连接成功：'+user.login);
+    closeModal('cfgMask'); toast('✅ 连接成功：'+user.login+' → '+cfg.owner+'/'+cfg.repo);
     if(current) openFile(current);
   }catch(e){ alert('保存失败：'+e.message); }
 }
