@@ -228,9 +228,21 @@ async function sha256(s){
   }
   return 'fb'+(h1>>>0).toString(16).padStart(8,'0')+(h2>>>0).toString(16).padStart(8,'0');
 }
+/* API 地址：部署在服务器上时走自家 nginx 反代（稳定），本地预览时直连 GitHub */
+function apiBase(){
+  const h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1'||h==='') return 'https://api.github.com/';
+  return '/gamedev/api/';
+}
 async function api(path, opts={}){
-  const url=`https://api.github.com/repos/${cfg.owner}/${cfg.repo}/${path}`;
-  const r=await fetch(url,{...opts,headers:{Authorization:`token ${cfg.token}`,Accept:'application/vnd.github+json','Content-Type':'application/json',...(opts.headers||{})}});
+  const url=`${apiBase()}repos/${cfg.owner}/${cfg.repo}/${path}`;
+  let r;
+  try{
+    r=await fetch(url,{...opts,headers:{Authorization:`token ${cfg.token}`,Accept:'application/vnd.github+json','Content-Type':'application/json',...(opts.headers||{})}});
+  }catch(e){
+    // 代理失败时降级直连（反代未生效前的兜底）
+    r=await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}/${path}`,{...opts,headers:{Authorization:`token ${cfg.token}`,Accept:'application/vnd.github+json','Content-Type':'application/json',...(opts.headers||{})}});
+  }
   if(!r.ok) throw new Error(`${r.status}: ${(await r.text()).slice(0,200)}`);
   return r.json();
 }
@@ -518,7 +530,7 @@ async function saveCfg(){
   cfg={token:$('cfgToken').value.trim(),owner:$('cfgOwner').value.trim(),repo:$('cfgRepo').value.trim(),branch:$('cfgBranch').value.trim()||'main'};
   localStorage.setItem(K_CFG,JSON.stringify(cfg));
   try{
-    const u=await fetch('https://api.github.com/user',{headers:{Authorization:`token ${cfg.token}`}});
+    const u=await fetch(apiBase()+'user',{headers:{Authorization:`token ${cfg.token}`}});
     if(!u.ok) throw new Error('Token 无效: '+u.status);
     const user=await u.json();
     // 自动补全：Owner 空则用当前账号，Repo 空则默认 GDPUDev
@@ -534,7 +546,7 @@ async function saveCfg(){
 async function testConn(silent){
   if(!cfg) return;
   try{
-    const u=await fetch('https://api.github.com/user',{headers:{Authorization:`token ${cfg.token}`}});
+    const u=await fetch(apiBase()+'user',{headers:{Authorization:`token ${cfg.token}`}});
     if(u.ok){ const user=await u.json(); $('whoami').textContent=`👤 ${user.login} · ${cfg.owner}/${cfg.repo}@${cfg.branch}`; if(!silent)toast('✅ 连接正常'); }
   }catch(e){}
 }
