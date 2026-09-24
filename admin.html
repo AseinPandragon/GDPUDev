@@ -17,7 +17,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--bg-page);background-image:radial-gradient(rgba(148,163,184,.32) 1px,transparent 1px);background-size:20px 20px;color:var(--text-primary);font-family:var(--font-sans);min-height:100vh;padding:16px 20px 60px;line-height:1.6;}
-  .container{max-width:1800px;margin:0 auto;}
+  .container{width:100%;max-width:none;padding:0 22px;}
   .topbar{background:#fff;border:1px solid var(--border-strong);border-radius:8px;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.05);margin-bottom:14px;flex-wrap:wrap;gap:10px;}
   .topbar h1{font-family:var(--font-mono);font-size:16px;font-weight:800;}
   .topbar .sub{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);}
@@ -362,6 +362,28 @@ function editorRuntime(){
       mark(el);
     }
   });
+  // 混排富文本兜底：未被整块标记的元素里，散落的裸文本逐段包成可编辑 span
+  function wrapStrayText(rootEl){
+    const walker=document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, {
+      acceptNode(n){
+        if(!n.textContent.trim()) return NodeFilter.FILTER_REJECT;
+        const p=n.parentElement;
+        if(!p||p.closest('[contenteditable=true]')) return NodeFilter.FILTER_REJECT;
+        if(SKIP.has(p.tagName)) return NodeFilter.FILTER_REJECT;
+        if(p.tagName==='A'||EDITABLE.has(p.tagName)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>{
+      const span=document.createElement('span');
+      span.setAttribute('contenteditable','true');
+      span.setAttribute('data-gdu-span','1');
+      n.parentNode.insertBefore(span,n); span.appendChild(n);
+      span.addEventListener('input',()=>parent.postMessage({type:'gdu-dirty'},'*'));
+    });
+  }
+  wrapStrayText(document.body);
   document.querySelectorAll('img').forEach(img=>{
     img.setAttribute('data-gdu-img','1');
     img.addEventListener('dblclick',e=>{e.preventDefault();
@@ -380,6 +402,10 @@ function editorRuntime(){
     const d=e.data||{};
     if(d.type==='gdu-serialize'&&d.reqId===window.name){}
     if(d.type==='gdu-serialize'){
+      document.querySelectorAll('[data-gdu-span]').forEach(sp=>{
+        while(sp.firstChild) sp.parentNode.insertBefore(sp.firstChild, sp);
+        sp.remove();
+      });
       document.querySelectorAll('[contenteditable]').forEach(el=>el.removeAttribute('contenteditable'));
       document.querySelectorAll('[data-gdu]').forEach(el=>el.removeAttribute('data-gdu'));
       document.querySelectorAll('[data-gdu-img]').forEach(el=>el.removeAttribute('data-gdu-img'));

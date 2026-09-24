@@ -623,6 +623,23 @@ a.tag-pill:not(.em).res-link:hover { background: #475569; color: #ffffff; border
   .top-navbar { padding: 10px 12px; flex-direction: column; align-items: stretch; gap: 10px; }
   .brand-group { width: 100%; gap: 10px; }
   .brand-text h1 { font-size: 14.5px; flex-wrap: wrap; }
+  .brand-text p { font-size: 10.5px; }
   .section-cards-grid { grid-template-columns: 1fr; }
-  .category-section-block { padding: 16px 14px 18px; }
+  .category-section-block { padding: 16px 14px 18px; margin-bottom: 18px; }
+  .section-title { font-size: 15px; }
+  .section-desc { font-size: 10.5px; }
+  .article-card { padding: 14px 14px 12px; }
+  .card-headline { font-size: 15px; }
+  .card-summary { font-size: 13px; }
+  .card-tactical-header { flex-wrap: wrap; gap: 4px; }
+  .card-bottom-actions { flex-wrap: wrap; gap: 8px; }
+  .takeaway-alert-box { padding: 12px 14px; font-size: 12.5px; }
+  .data-table { min-width: 640px; font-size: 12px; }
+  .yt-label { width: 92px; font-size: 10px; }
+  .yt-months { margin-left: 100px; }
+  .yt-months span { font-size: 8.5px; }
+  .timeline { padding-left: 20px; }
+  .tl-item::before { left: -20px; }
+  .reality-list { font-size: 13px; }
+  .page-footer { font-size: 10.5px; }
 }
