@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>动作 / 绑定 · 美术细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260925d">
+<script src="../roadmap-common.js?v=20260925d" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="../gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>美术细分 · 动作 / 绑定 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">SUB-TRACK: ANIMATION & RIG</span></h1>
+        <p>拼动态审美与节奏感 · 懂引擎者优先 · 竞争相对小 // ANIMATION & RIGGING</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="../art">← 返回美术页</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="../start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="../roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="../ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="../client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item" href="../design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span></a>
+    <a class="ark-nav-item" href="../engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <a class="ark-nav-item active" href="../art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效 · 本页</span></a>
+    <a class="ark-nav-item" href="../server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="../contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="../jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+  </div>
+
+  <div class="takeaway-alert-box">
+    <strong>💡 一句话定位</strong>
+    让模型"活"起来的岗位：骨骼绑定是搭骨架，动画是赋予表演。<strong>从业者比原画/建模少，竞争相对小</strong>——但它要求你既有美术的动势审美，又有理解引擎状态机的技术思维。
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个细分到底在拼什么</div>
+        <span class="section-count-badge">WHAT IT TAKES</span>
+      </div>
+      <span class="section-desc">先看清门槛 · 再决定要不要投入</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>动画十二法则</strong>：挤压拉伸、预备、跟随……动态审美的基本功，一本《动画师生存工具》打底；</li>
+        <li><strong>节奏与重量感</strong>：走路、跑、跳、受击——最基础的循环最能看出功力；</li>
+        <li><strong>绑定整洁度</strong>：骨骼层级、控制器命名是工程问题，乱绑定会被动画师和 TA 骂；</li>
+        <li><strong>懂引擎者优先</strong>：会接引擎状态机（Animation State Machine）的动作师明显更值钱。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 工具链 与 课内对应课程</div>
+        <span class="section-count-badge">TOOLS & COURSES</span>
+      </div>
+      <span class="section-desc">工具是手段不是目的 · 招聘看的是"用工具做出的东西"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Maya</td><td>行业标准，动画与绑定主战场（HumanIK 骨架）；</td></tr>
+          <tr><td class="name">MotionBuilder</td><td>动捕数据清理与编辑；</td></tr>
+          <tr><td class="name">引擎 Animation 视图</td><td>Unity Animator / UE 动画状态机，落地必备；</td></tr>
+          <tr><td class="name">课内：三维动画技术</td><td>大二下，入门走路循环从这里开始；</td></tr>
+          <tr><td class="name">课内：三维动作捕捉技术</td><td>大三下选修，动捕全流程体验；</td></tr>
+          <tr><td class="name">课内：游戏引擎原理</td><td>大四，把动画接进引擎状态机。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大学四年怎么走</div>
+        <span class="section-count-badge">4-YEAR PLAN</span>
+      </div>
+      <span class="section-desc">按 2024 级培养方案的课程节奏编排 · 以教务最新通知为准</span>
+    </div>
+    <div class="step-flow">
+      <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二 · 入门</span>
+          <span class="card-serial-code">START</span>
+        </div>
+        <div class="card-headline">第一个走路循环</div>
+        <div class="card-summary">
+          跟着课内《三维动画技术》做出第一个走路循环——走路是动画界的"Hello World"，改到没有滑步为止。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二暑假 · 补法则</span>
+          <span class="card-serial-code">PRINCIPLES</span>
+        </div>
+        <div class="card-headline">动画十二法则 + 基础动作包</div>
+        <div class="card-summary">
+          系统学十二法则，做跑/跳/待机/受击基础动作包，每个都录屏存档。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大三 · 战斗 + 引擎</span>
+          <span class="card-serial-code">COMBAT & ENGINE</span>
+        </div>
+        <div class="card-headline">一套战斗动作 + 引擎状态机接入</div>
+        <div class="card-summary">
+          做打斗组合动作，然后亲手在 Unity/UE 里接进状态机：待机→跑→攻击→受击→死亡的无缝切换。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大四 · Reel + 动捕</span>
+          <span class="card-serial-code">SHOWREEL</span>
+        </div>
+        <div class="card-headline">动作 reel 成片 + 动捕全流程体验</div>
+        <div class="card-summary">
+          选修《三维动作捕捉技术》，体验动捕数据清理全流程；把最好的动作剪成 showreel。
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 作品集长什么样 · 常见误区</div>
+        <span class="section-count-badge">PORTFOLIO & TRAPS</span>
+      </div>
+      <span class="section-desc">作品集定生死 · 别在错误方向上努力</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>Reel 形式</strong>：动作师的作品集是视频 reel，不是截图——每个动作配引擎内实机录屏；</li>
+        <li><strong>基础动作别省略</strong>：走路/跑/跳的循环质量是面试官第一眼看的；</li>
+        <li><strong>常见误区</strong>：只会 K 帧不会引擎状态机；动捕数据不清理直接用；</li>
+        <li><strong>冷门红利</strong>：这条线学的人少，做到中上水平就容易冒头。</li>
+      </ul>
+    </div>
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是 动作 / 绑定 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../art">美术页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // SUB-TRACK: ANIMATION & RIG</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="../art">← 返回美术页</a> · <a href="../roadmap">总览</a> · <a href="../start">新生零基础</a> · <a href="../jobs">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>

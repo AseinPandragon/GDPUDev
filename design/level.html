@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>关卡策划 · 策划细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260925d">
+<script src="../roadmap-common.js?v=20260925d" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="../gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>策划细分 · 关卡策划 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">SUB-TRACK: LEVEL DESIGN</span></h1>
+        <p>在引擎里白盒摆关卡 · 数媒技引擎课直接对口 // LEVEL DESIGNER</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="../design">← 返回策划页</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="../start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="../roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="../ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="../client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item" href="../design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划 · 本页</span></a>
+    <a class="ark-nav-item" href="../engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <a class="ark-nav-item" href="../art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span></a>
+    <a class="ark-nav-item" href="../server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="../contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="../jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+  </div>
+
+  <div class="takeaway-alert-box">
+    <strong>💡 一句话定位</strong>
+    在引擎里"盖房子"的策划：白盒摆空间、控节奏曲线、设计引导。<strong>是策划里最吃引擎熟练度的一支</strong>——能自己进引擎摆关卡、跑测试的策划非常吃香，数媒技的《三维游戏开发技术》《游戏引擎原理》直接对口。
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个细分到底在拼什么</div>
+        <span class="section-count-badge">WHAT IT TAKES</span>
+      </div>
+      <span class="section-desc">先看清门槛 · 再决定要不要投入</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>空间与节奏</strong>：一段关卡的本质是情绪曲线——紧张/放松/爆点的排布；</li>
+        <li><strong>引导设计</strong>：好关卡不用文字教学，用光线、路径和布局把玩家"推"向目标；</li>
+        <li><strong>白盒迭代</strong>：先用方块搭出可玩版本测手感，美术是最后一步；</li>
+        <li><strong>引擎熟练度</strong>：Unity/UE 编辑器操作速度就是生产力。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 工具链 与 课内对应课程</div>
+        <span class="section-count-badge">TOOLS & COURSES</span>
+      </div>
+      <span class="section-desc">工具是手段不是目的 · 招聘看的是"用工具做出的东西"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Unity / UE 编辑器</td><td>白盒搭建与测试的日常环境；</td></tr>
+          <tr><td class="name">可视化脚本</td><td>UE 蓝图 / Unity 可视化脚本，关卡逻辑不写代码也能跑；</td></tr>
+          <tr><td class="name">课内：三维游戏开发技术</td><td>大二下，第一次课内接触游戏开发，别划水；</td></tr>
+          <tr><td class="name">课内：游戏引擎原理</td><td>大四，系统化补引擎全局观；</td></tr>
+          <tr><td class="name">课内：建模与游戏实践</td><td>大三上实践课，白盒资产生产。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大学四年怎么走</div>
+        <span class="section-count-badge">4-YEAR PLAN</span>
+      </div>
+      <span class="section-desc">按 2024 级培养方案的课程节奏编排 · 以教务最新通知为准</span>
+    </div>
+    <div class="step-flow">
+      <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二 · 引擎上手</span>
+          <span class="card-serial-code">START</span>
+        </div>
+        <div class="card-headline">课内《三维游戏开发技术》认真做</div>
+        <div class="card-summary">
+          这是课表里第一次真正碰游戏开发，把课内作业当作品做，顺手熟悉编辑器全流程。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二暑假 · 拆布局</span>
+          <span class="card-serial-code">DECONSTRUCT</span>
+        </div>
+        <div class="card-headline">拆 3 个经典关卡的布局</div>
+        <div class="card-summary">
+          用俯视图/方块图把喜欢的关卡画出来：出生点在哪、战斗节奏怎么排、引导怎么做的。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大三 · 白盒原型</span>
+          <span class="card-serial-code">GREYBOX</span>
+        </div>
+        <div class="card-headline">第一个可玩白盒关卡</div>
+        <div class="card-summary">
+          用引擎自带几何体搭一章 10 分钟流程，找 5 个人试玩录屏，迭代 3 版——迭代记录就是作品集的一部分。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大四 · 原型成集</span>
+          <span class="card-serial-code">PORTFOLIO</span>
+        </div>
+        <div class="card-headline">可玩原型 + 设计意图文档</div>
+        <div class="card-summary">
+          1~2 个可玩关卡原型（白盒即可）+ 每个关卡的意图文档（为什么这么排）。
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 作品集长什么样 · 常见误区</div>
+        <span class="section-count-badge">PORTFOLIO & TRAPS</span>
+      </div>
+      <span class="section-desc">作品集定生死 · 别在错误方向上努力</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>可玩 &gt; 截图</strong>：给面试官一个能点的链接（itch.io / 网页版）胜过一切渲染图；</li>
+        <li><strong>意图文档</strong>：每个关卡配"设计目标→手段→验证"三段说明；</li>
+        <li><strong>常见误区</strong>：只有美术拼贴没有节奏设计；关卡没有引导，玩家出门就迷路；</li>
+        <li><strong>对口提示</strong>：数媒技的引擎能力在这条线是硬通货，TP 路线见技术策划页。</li>
+      </ul>
+    </div>
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是 关卡策划 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../design">策划页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // SUB-TRACK: LEVEL DESIGN</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="../design">← 返回策划页</a> · <a href="../roadmap">总览</a> · <a href="../start">新生零基础</a> · <a href="../jobs">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>

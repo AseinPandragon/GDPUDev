@@ -687,6 +687,35 @@ a.tag-pill:not(.em).res-link:hover { background: #475569; color: #ffffff; border
 .pos-child.sub-hot .pos-child-head { color: var(--accent-amber); }
 .pos-child.sub-hot.open .pos-child-head { background: var(--accent-amber); color: #ffffff; }
 
+/* ===== 细分链接框：整框可点，跳转独立细分页 ===== */
+.pos-child-link {
+  display: block;
+  background: #ffffff;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 10px 14px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.pos-child-link:hover { border-color: var(--accent-blue); background: var(--accent-blue-light); }
+.pos-child-title {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 12.5px;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+.pos-child-desc { display: block; margin-top: 3px; font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; }
+.pos-child-go {
+  display: block; margin-top: 6px;
+  font-size: 11px; font-weight: 800; color: var(--accent-blue);
+  font-family: var(--font-mono); letter-spacing: 0.5px;
+}
+.pos-child-link.sub-hot { border-color: #fcd34d; background: #fffbeb; }
+.pos-child-link.sub-hot:hover { border-color: var(--accent-amber); background: #fef3c7; }
+.pos-child-link.sub-hot .pos-child-title { color: var(--accent-amber); }
+
 /* ===== 新生零基础入口横幅 ===== */
 .takeaway-alert-box.blue.freshman-entry-box {
   background: #eff6ff;

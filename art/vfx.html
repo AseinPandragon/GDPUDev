@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>特效 VFX · 美术细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260925d">
+<script src="../roadmap-common.js?v=20260925d" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="../gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>美术细分 · 特效 VFX <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">SUB-TRACK: VFX ARTIST</span></h1>
+        <p>拼"技术 + 审美"复合 · 美术岗里技术溢价最高 · 数媒技首选 // REAL-TIME VFX</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="../art">← 返回美术页</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="../start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="../roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="../ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="../client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item" href="../design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span></a>
+    <a class="ark-nav-item" href="../engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <a class="ark-nav-item active" href="../art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效 · 本页</span></a>
+    <a class="ark-nav-item" href="../server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="../contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="../jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+  </div>
+
+  <div class="takeaway-alert-box">
+    <strong>💡 一句话定位</strong>
+    <strong>数媒技在美术岗里最对口的一支</strong>：既要有打击感与色彩审美的"美术眼"，又要懂粒子、材质、Shader 与性能的"技术脑"——正好是数媒技的课程结构，缺口大、技术溢价高。
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个细分到底在拼什么</div>
+        <span class="section-count-badge">WHAT IT TAKES</span>
+      </div>
+      <span class="section-desc">先看清门槛 · 再决定要不要投入</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>打击感</strong>：特效是为"手感"服务的，帧节奏、缩放曲线、屏幕震动比特效本身更核心；</li>
+        <li><strong>粒子与材质</strong>：粒子系统、序列帧、Shader 材质、顶点动画是四大件；</li>
+        <li><strong>性能意识</strong>：overdraw（透支填充率）是实时特效第一杀手，手机端尤其敏感；</li>
+        <li><strong>引擎原生</strong>：一切以引擎内实时表现为准，DCC 软件里好看不算数。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 工具链 与 课内对应课程</div>
+        <span class="section-count-badge">TOOLS & COURSES</span>
+      </div>
+      <span class="section-desc">工具是手段不是目的 · 招聘看的是"用工具做出的东西"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Unity 粒子系统 / Shader Graph</td><td>入门首选引擎，粒子与材质编辑器足够走完入门期；</td></tr>
+          <tr><td class="name">UE Niagara</td><td>次世代项目主流，进大厂大概率用它；</td></tr>
+          <tr><td class="name">Houdini</td><td>程序化生成，进阶必备（RBD/FLIP 模拟）；</td></tr>
+          <tr><td class="name">课内：三维特效 / 三维渲染技术</td><td>大三下选修，直接对口；</td></tr>
+          <tr><td class="name">课内：计算机图形学</td><td>大三上选修，看懂 Shader 背后的数学；</td></tr>
+          <tr><td class="name">课内：游戏引擎原理</td><td>大四，引擎落地最后一公里。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大学四年怎么走</div>
+        <span class="section-count-badge">4-YEAR PLAN</span>
+      </div>
+      <span class="section-desc">按 2024 级培养方案的课程节奏编排 · 以教务最新通知为准</span>
+    </div>
+    <div class="step-flow">
+      <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二 · 引擎入门</span>
+          <span class="card-serial-code">START</span>
+        </div>
+        <div class="card-headline">Unity 粒子系统上手，临摹经典特效</div>
+        <div class="card-summary">
+          挑 3 个喜欢的游戏特效（刀光、命中、技能爆发）逐帧拆解后临摹，目标是"看起来像"。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二暑假 · 补图形学</span>
+          <span class="card-serial-code">GRAPHICS</span>
+        </div>
+        <div class="card-headline">Shader Graph 入门 + GAMES 101 开始看</div>
+        <div class="card-summary">
+          会用材质编辑器做溶解、描边、流动；同时开看 GAMES 101（B 站），不用急，当长线投资。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大三 · 复刻 + 原创成套</span>
+          <span class="card-serial-code">RECREATE & CREATE</span>
+        </div>
+        <div class="card-headline">拆爆款游戏 VFX + 复刻 3~5 个完整效果进引擎</div>
+        <div class="card-summary">
+          每个效果配 breakdown（怎么做的、为什么这么排节奏），全部录引擎内实机视频。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大四 · Reel 成套</span>
+          <span class="card-serial-code">SHOWREEL</span>
+        </div>
+        <div class="card-headline">特效 reel 终稿 + 性能优化案例</div>
+        <div class="card-summary">
+          reel 里放 1~2 个"做了性能优化"的案例（overdraw 对比数据），这是应届生最稀缺的加分项。
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 作品集长什么样 · 常见误区</div>
+        <span class="section-count-badge">PORTFOLIO & TRAPS</span>
+      </div>
+      <span class="section-desc">作品集定生死 · 别在错误方向上努力</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>引擎内实机录屏</strong>：一切以引擎实时表现为准，DCC 软件渲染图不算数；</li>
+        <li><strong>每个效果配 breakdown</strong>：拆解图（粒子层级/贴图/曲线）比最终效果更能体现能力；</li>
+        <li><strong>性能对比数据</strong>：优化前后 overdraw/帧率对比，是 VFX 应聘的硬通货；</li>
+        <li><strong>路线互通</strong>：VFX 与 TA 路线互通，做深了可以自然转 TA（见 TA 页）。</li>
+      </ul>
+    </div>
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是 特效 VFX 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../art">美术页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // SUB-TRACK: VFX ARTIST</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="../art">← 返回美术页</a> · <a href="../roadmap">总览</a> · <a href="../start">新生零基础</a> · <a href="../jobs">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>

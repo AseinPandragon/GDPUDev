@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>UI / 界面美术 · 美术细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260925d">
+<script src="../roadmap-common.js?v=20260925d" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="../gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>美术细分 · UI / 界面美术 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">SUB-TRACK: GAME UI</span></h1>
+        <p>拼设计感 + 规范意识 · 偏平面设计的游戏化方向 // GAME UI ARTIST</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="../art">← 返回美术页</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="../start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="../roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="../ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="../client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item" href="../design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span></a>
+    <a class="ark-nav-item" href="../engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <a class="ark-nav-item active" href="../art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效 · 本页</span></a>
+    <a class="ark-nav-item" href="../server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="../contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="../jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+  </div>
+
+  <div class="takeaway-alert-box">
+    <strong>💡 一句话定位</strong>
+    给游戏"做壳"的岗位：界面、图标、HUD、动效。<strong>本质是平面设计的游戏化</strong>——设计感是上限，切图规范与实现意识是下限，数媒技的构成设计课直接对口。
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个细分到底在拼什么</div>
+        <span class="section-count-badge">WHAT IT TAKES</span>
+      </div>
+      <span class="section-desc">先看清门槛 · 再决定要不要投入</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>信息层级</strong>：界面首先解决"玩家先看哪"，其次才是好看；</li>
+        <li><strong>图标语言统一</strong>：一套图标要有统一的形体语言、描边粗细、透视规则；</li>
+        <li><strong>切图与九宫格</strong>：不懂九宫格与多分辨率适配的 UI 美术会被程序追着跑；</li>
+        <li><strong>动效</strong>：界面呼吸、弹出、转场动效已经是标配要求（AE/引擎内实现）。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 工具链 与 课内对应课程</div>
+        <span class="section-count-badge">TOOLS & COURSES</span>
+      </div>
+      <span class="section-desc">工具是手段不是目的 · 招聘看的是"用工具做出的东西"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Photoshop / Illustrator</td><td>界面与图标绘制主战场；</td></tr>
+          <tr><td class="name">Figma</td><td>协作与组件化管理，团队协作加分项；</td></tr>
+          <tr><td class="name">After Effects</td><td>界面动效设计与演示；</td></tr>
+          <tr><td class="name">引擎 UGUI / UI Toolkit 常识</td><td>知道自己的图怎么被摆进引擎、什么结构好切；</td></tr>
+          <tr><td class="name">课内：游戏视觉设计 / 构成设计</td><td>大二下 / 大三上，直接对口；</td></tr>
+          <tr><td class="name">课内：网页前端技术</td><td>大三上，理解"设计稿如何被实现"。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大学四年怎么走</div>
+        <span class="section-count-badge">4-YEAR PLAN</span>
+      </div>
+      <span class="section-desc">按 2024 级培养方案的课程节奏编排 · 以教务最新通知为准</span>
+    </div>
+    <div class="step-flow">
+      <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二 · 打构成底子</span>
+          <span class="card-serial-code">FOUNDATION</span>
+        </div>
+        <div class="card-headline">构成设计 + 第一批图标练习</div>
+        <div class="card-summary">
+          配合课内《构成设计》练形体归纳：把复杂物简化成 24×24 的图标，是最快的设计训练。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二暑假 · 补规范</span>
+          <span class="card-serial-code">SPEC</span>
+        </div>
+        <div class="card-headline">九宫格 / 切图规范 / 多分辨率适配常识</div>
+        <div class="card-summary">
+          找一套开源游戏 UI 拆开看：怎么切、怎么命名、怎么适配，理解"可实现的 UI"长什么样。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大三 · 成套界面</span>
+          <span class="card-serial-code">FULL SET</span>
+        </div>
+        <div class="card-headline">一套完整游戏界面 + 动效演示</div>
+        <div class="card-summary">
+          主界面 + 战斗 HUD + 背包/商店等二级页，统一风格，配 AE 动效演示视频。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大四 · 成集</span>
+          <span class="card-serial-code">PORTFOLIO</span>
+        </div>
+        <div class="card-headline">UI 作品集终稿</div>
+        <div class="card-summary">
+          2~3 套不同风格的完整界面成集，每套附设计说明与切图规范。
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 作品集长什么样 · 常见误区</div>
+        <span class="section-count-badge">PORTFOLIO & TRAPS</span>
+      </div>
+      <span class="section-desc">作品集定生死 · 别在错误方向上努力</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>成套 &gt; 零散</strong>：一套风格统一的完整界面 &gt; 一百个零散图标；</li>
+        <li><strong>附规范</strong>：切图规范、九宫格示意、适配说明，证明你懂实现；</li>
+        <li><strong>常见误区</strong>：只画图标不懂九宫格；只管好看不管实现成本；</li>
+        <li><strong>加分项</strong>：会用引擎把界面真的搭出来（UGUI）——数媒技做得到。</li>
+      </ul>
+    </div>
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是 UI / 界面美术 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../art">美术页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // SUB-TRACK: GAME UI</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="../art">← 返回美术页</a> · <a href="../roadmap">总览</a> · <a href="../start">新生零基础</a> · <a href="../jobs">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>

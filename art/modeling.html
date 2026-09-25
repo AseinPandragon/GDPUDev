@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>3D 建模 · 美术细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260925d">
+<script src="../roadmap-common.js?v=20260925d" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="../gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>美术细分 · 3D 建模 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">SUB-TRACK: 3D MODELING</span></h1>
+        <p>拼软件链完整度与细节耐力 · 角色 / 场景两条支线 // 3D MODELING</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="../art">← 返回美术页</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="../start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="../roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="../ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="../client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item" href="../design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span></a>
+    <a class="ark-nav-item" href="../engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <a class="ark-nav-item active" href="../art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效 · 本页</span></a>
+    <a class="ark-nav-item" href="../server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="../contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="../jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+  </div>
+
+  <div class="takeaway-alert-box">
+    <strong>💡 一句话定位</strong>
+    把二维设计变成能进引擎的三维资产。<strong>拼的不是"会软件"，是整条次世代流程的完整度</strong>：中模→高模雕刻→拓扑→UV→烘焙→PBR 材质→引擎渲染，缺一环都进不了项目。
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个细分到底在拼什么</div>
+        <span class="section-count-badge">WHAT IT TAKES</span>
+      </div>
+      <span class="section-desc">先看清门槛 · 再决定要不要投入</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>流程完整度</strong>：会雕刻只是起点，拓扑、UV、烘焙、引擎落地每环都要过关；</li>
+        <li><strong>体积与结构</strong>：雕塑感来自对结构的理解——和原画共用素描地基；</li>
+        <li><strong>细节耐力</strong>：一个道具磨一周是常态，吃不了细粮别选这条线；</li>
+        <li><strong>性能意识</strong>：面数、贴图规格是硬约束，"五千面在手机上和五万面是两种命运"。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 工具链 与 课内对应课程</div>
+        <span class="section-count-badge">TOOLS & COURSES</span>
+      </div>
+      <span class="section-desc">工具是手段不是目的 · 招聘看的是"用工具做出的东西"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Blender</td><td>免费开源，入门零成本，全流程都能走通；</td></tr>
+          <tr><td class="name">Maya</td><td>行业标准（尤其动作/影视向），进公司大概率要会；</td></tr>
+          <tr><td class="name">ZBrush</td><td>高模雕刻（角色向核心）；</td></tr>
+          <tr><td class="name">Substance Painter</td><td>PBR 材质绘制，次世代标配；</td></tr>
+          <tr><td class="name">Marmoset Toolset</td><td>烘焙与作品展示渲染；</td></tr>
+          <tr><td class="name">课内：三维建模技术（+实验）</td><td>大二上，正式入门，认真做实验作业；</td></tr>
+          <tr><td class="name">课内：三维渲染技术</td><td>大三下选修，材质与灯光进阶。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大学四年怎么走</div>
+        <span class="section-count-badge">4-YEAR PLAN</span>
+      </div>
+      <span class="section-desc">按 2024 级培养方案的课程节奏编排 · 以教务最新通知为准</span>
+    </div>
+    <div class="step-flow">
+      <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二 · 入门</span>
+          <span class="card-serial-code">START</span>
+        </div>
+        <div class="card-headline">课内《三维建模技术》+ 第一个完整道具</div>
+        <div class="card-summary">
+          跟着课把第一个道具走完全流程（建模→UV→材质→渲染），全流程跑通一次比做十个半成品有用。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二暑假 · 补软件链</span>
+          <span class="card-serial-code">PIPELINE</span>
+        </div>
+        <div class="card-headline">Blender/Maya 二选一深入 + Substance 上手</div>
+        <div class="card-summary">
+          假期跟一套完整的次世代道具教程（推荐场景向入门，角色向对结构要求更高），做出第一件能展示的作品。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大三 · 全流程作品</span>
+          <span class="card-serial-code">FULL PIPELINE</span>
+        </div>
+        <div class="card-headline">一套完整角色或场景 + 引擎渲染图</div>
+        <div class="card-summary">
+          角色向练高模雕刻+拓扑；场景向练整套小场景搭建。所有作品必须进引擎（Unity/UE）出渲染图。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大四 · 成集</span>
+          <span class="card-serial-code">PORTFOLIO</span>
+        </div>
+        <div class="card-headline">作品集成套 + 面试</div>
+        <div class="card-summary">
+          3~5 件全流程作品成集，每件附线框图、高模、引擎渲染图三件套展示。
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 作品集长什么样 · 常见误区</div>
+        <span class="section-count-badge">PORTFOLIO & TRAPS</span>
+      </div>
+      <span class="section-desc">作品集定生死 · 别在错误方向上努力</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>三件套展示</strong>：每件作品附线框（拓扑质量）、高模（雕刻能力）、引擎渲染图（落地效果）；</li>
+        <li><strong>只学 ZBrush 雕刻、不会拓扑烘焙 = 进不了项目</strong>——这是最常见的半成品状态；</li>
+        <li><strong>场景 vs 角色</strong>：场景上手友好、角色上限高更卷，大二结束前选定主攻；</li>
+        <li><strong>别囤教程</strong>：跟一套完整流程教程跑完 &gt; 囤十个雕刻速刷视频。</li>
+      </ul>
+    </div>
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是 3D 建模 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../art">美术页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // SUB-TRACK: 3D MODELING</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="../art">← 返回美术页</a> · <a href="../roadmap">总览</a> · <a href="../start">新生零基础</a> · <a href="../jobs">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>

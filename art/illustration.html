@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>2D 原画 / 插画 · 美术细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260925d">
+<script src="../roadmap-common.js?v=20260925d" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="../gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>美术细分 · 2D 原画 / 插画 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">SUB-TRACK: ILLUSTRATION</span></h1>
+        <p>拼造型与设计能力 · 角色设计 / 场景设计 / 宣传图 // 2D CONCEPT & ILLUSTRATION</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="../art">← 返回美术页</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="../start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="../roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="../ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="../client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item" href="../design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span></a>
+    <a class="ark-nav-item" href="../engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <a class="ark-nav-item active" href="../art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效 · 本页</span></a>
+    <a class="ark-nav-item" href="../server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="../contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="../jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+  </div>
+
+  <div class="takeaway-alert-box">
+    <strong>💡 一句话定位</strong>
+    游戏美术里最"卷"的一支：门槛看似低（会画画就行），实际拼的是<strong>造型、设计逻辑与出图完成度</strong>——画得不好就是不好，没有模糊地带。
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个细分到底在拼什么</div>
+        <span class="section-count-badge">WHAT IT TAKES</span>
+      </div>
+      <span class="section-desc">先看清门槛 · 再决定要不要投入</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>造型能力</strong>：速写、结构、透视——大一《造型基础》（素描课）认真画，这就是这条线的地基；</li>
+        <li><strong>设计能力</strong>：角色/道具设计要有"设计逻辑"，说得出每个元素为什么存在，而不是堆好看元素；</li>
+        <li><strong>风格适应力</strong>：项目是什么风格就画什么风格，"只会画自己喜欢的"在校招作品集里很吃亏；</li>
+        <li><strong>完成度</strong>：一张画到 90 分的作品 &gt; 十张 60 分的涂鸦。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 工具链 与 课内对应课程</div>
+        <span class="section-count-badge">TOOLS & COURSES</span>
+      </div>
+      <span class="section-desc">工具是手段不是目的 · 招聘看的是"用工具做出的东西"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Photoshop</td><td>行业标准，原画/插画主战场；</td></tr>
+          <tr><td class="name">Procreate</td><td>iPad 便携速写与练习，碎片时间积累用；</td></tr>
+          <tr><td class="name">PureRef</td><td>参考图管理，养成"先找参考再动笔"的习惯；</td></tr>
+          <tr><td class="name">课内：造型基础（素描）</td><td>大一下，造型能力地基，别翘；</td></tr>
+          <tr><td class="name">课内：人体结构学概论</td><td>画人不崩的底层知识，走原画必选；</td></tr>
+          <tr><td class="name">课内：数字绘画基础 / 构成设计</td><td>大二上，板绘入门与画面构成。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大学四年怎么走</div>
+        <span class="section-count-badge">4-YEAR PLAN</span>
+      </div>
+      <span class="section-desc">按 2024 级培养方案的课程节奏编排 · 以教务最新通知为准</span>
+    </div>
+    <div class="step-flow">
+      <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大一 · 打地基</span>
+          <span class="card-serial-code">FOUNDATION</span>
+        </div>
+        <div class="card-headline">素描认真画 + 速写每周固定量</div>
+        <div class="card-summary">
+          造型能力没有速成，大一的素描课（造型基础）就是你的专业核心课。每周额外保持 3~5 张速写/结构练习，宁慢勿断。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二 · 上板绘 + 进设计</span>
+          <span class="card-serial-code">DIGITAL PAINTING</span>
+        </div>
+        <div class="card-headline">数字绘画入门 + 第一批角色/场景设计练习</div>
+        <div class="card-summary">
+          配合课内《数字绘画基础》从纸面转到板绘。开始做"设计"而不只是"画"：同一个角色出三套不同方向的设计稿。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大三 · 成套出作品</span>
+          <span class="card-serial-code">SET-BASED WORK</span>
+        </div>
+        <div class="card-headline">风格分化 + 成套设计 + 引擎内展示</div>
+        <div class="card-summary">
+          确定 1~2 种主攻风格，做成套的角色/场景设计（三视图、表情、动作拆分）；有条件把设计稿丢进引擎里看落地效果——这是和纯插画学生拉开差距的一步。
+        </div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大四 · 作品集终稿</span>
+          <span class="card-serial-code">PORTFOLIO FINAL</span>
+        </div>
+        <div class="card-headline">作品集精选 + 面试准备</div>
+        <div class="card-summary">
+          ArtStation / 站酷成集，10~15 张精品 &gt; 50 张平庸。整理每张图的设计说明，面试时讲得出"为什么这么设计"。
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 作品集长什么样 · 常见误区</div>
+        <span class="section-count-badge">PORTFOLIO & TRAPS</span>
+      </div>
+      <span class="section-desc">作品集定生死 · 别在错误方向上努力</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>成套 &gt; 单张</strong>：一套完整角色设计（三视图/表情/动作/道具）比十张单幅插画更能证明设计能力；</li>
+        <li><strong>临摹不算作品</strong>：临摹只能放练习夹，作品集里必须是自己从零设计的东西；</li>
+        <li><strong>常见误区</strong>：只画脸不画全身、只练一种题材、只追精致度不追设计逻辑；</li>
+        <li><strong>对口比赛</strong>：各大厂原画比赛、GGAC 等，见比赛大全页。</li>
+      </ul>
+    </div>
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是 2D 原画 / 插画 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../art">美术页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // SUB-TRACK: ILLUSTRATION</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="../art">← 返回美术页</a> · <a href="../roadmap">总览</a> · <a href="../start">新生零基础</a> · <a href="../jobs">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>
