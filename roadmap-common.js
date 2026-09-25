@@ -149,3 +149,21 @@ document.addEventListener("click", function (e) {
     if (a) a.textContent = isOpen ? "−" : "+";
   }
 });
+
+// ===== 导航下拉：标记当前页 =====
+(function () {
+  function norm(p) {
+    p = (p || "").replace(/\/+$/, "").replace(/\.html$/, "").toLowerCase();
+    return p;
+  }
+  var cur = norm(window.location.pathname);
+  var links = document.querySelectorAll(".ark-nav-menu a");
+  for (var i = 0; i < links.length; i++) {
+    try {
+      var target = norm(new URL(links[i].getAttribute("href"), window.location.href).pathname);
+      if (target === cur) {
+        links[i].classList.add("dd-current");
+      }
+    } catch (err) { /* ignore */ }
+  }
+})();

@@ -676,6 +676,16 @@ a.tag-pill:not(.em).res-link:hover { background: #475569; color: #ffffff; border
 .ark-nav-menu a .dd-slug {
   font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--text-subtle);
 }
+.ark-nav-menu a.dd-current { background: var(--accent-blue); color: #ffffff; }
+.ark-nav-menu a.dd-current:hover { background: #1d4ed8; color: #ffffff; }
+.ark-nav-menu a.dd-current::after {
+  content: "当前";
+  font-size: 10px; font-weight: 800; letter-spacing: 1px;
+  color: #bfdbfe;
+  border: 1px solid rgba(191, 219, 254, 0.6);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
 @media (max-width: 768px) {
   .category-pill-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .ark-nav-menu { display: none !important; }
