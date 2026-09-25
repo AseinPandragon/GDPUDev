@@ -1,0 +1,378 @@
+- generic [ref=f25e1]:
+  - link "欢迎进入 零基础学3D次世代游戏建模该如何学习？精华都在这！ - 知乎,盲人用户使用操作智能引导，请按快捷键Ctrl+Alt+R；阅读详细操作说明请按快捷键Ctrl+Alt+问号键。":
+    - /url: javascript:void(0)
+    - img [ref=f25e2] [cursor=pointer]
+  - generic [ref=f25e4]:
+    - banner [ref=f25e6]:
+      - generic [ref=f25e7]:
+        - link "知乎" [ref=f25e8] [cursor=pointer]:
+          - /url: https://www.zhihu.com
+        - generic [ref=f25e13]:
+          - generic [ref=f25e14]:
+            - navigation [ref=f25e15]:
+              - link "关注" [ref=f25e16] [cursor=pointer]:
+                - /url: https://www.zhihu.com/signin?next=%2Ffollow
+              - link "推荐" [ref=f25e18] [cursor=pointer]:
+                - /url: https://www.zhihu.com/signin?next=%2F
+              - link "热榜" [ref=f25e20] [cursor=pointer]:
+                - /url: https://www.zhihu.com/signin?next=%2Fhot
+              - link "专栏" [ref=f25e22] [cursor=pointer]:
+                - /url: https://www.zhihu.com/signin?next=%2Fcolumn-square
+              - link "圈子" [ref=f25e24] [cursor=pointer]:
+                - /url: https://www.zhihu.com/signin?next=%2Fring-feeds
+              - link "AI Works Beta" [ref=f25e27] [cursor=pointer]:
+                - /url: https://www.zhihu.com/project-square
+                - generic [ref=f25e28]:
+                  - text: AI Works
+                  - generic: Beta
+              - link "故事" [ref=f25e30] [cursor=pointer]:
+                - /url: https://www.zhihu.com/fiore/h5/vip-web
+            - generic [ref=f25e32]:
+              - search [ref=f25e33]:
+                - generic [ref=f25e37]:
+                  - combobox "搜索" [ref=f25e38]
+                  - button "搜索" [ref=f25e39] [cursor=pointer]
+                - link "直答" [ref=f25e43] [cursor=pointer]:
+                  - /url: https://zhida.zhihu.com/
+              - generic [ref=f25e47]:
+                - generic [ref=f25e48]: 切换模式
+                - button "登录/注册" [ref=f25e51] [cursor=pointer]
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: 零基础学3D次世代游戏建模该如何学习？精华都在这！
+                        - generic:
+                          - generic:
+                            - generic: 切换模式
+                            - generic:
+                              - button
+    - main [ref=f25e53]:
+      - generic [ref=f25e54]:
+        - generic [ref=f25e55]:
+          - generic [ref=f25e57]:
+            - img "零基础学3D次世代游戏建模该如何学习？精华都在这！" [ref=f25e61]
+            - article [ref=f25e62]:
+              - generic [ref=f25e63]:
+                - heading "零基础学3D次世代游戏建模该如何学习？精华都在这！" [level=1] [ref=f25e64]
+                - generic [ref=f25e67]:
+                  - link [ref=f25e70] [cursor=pointer]:
+                    - /url: //www.zhihu.com/people/yuan-hua-jiao-cheng-jing-xuan
+                    - img "3D建模师-胡琪" [ref=f25e71]
+                  - link "3D建模师-胡琪" [ref=f25e76] [cursor=pointer]:
+                    - /url: //www.zhihu.com/people/yuan-hua-jiao-cheng-jing-xuan
+                - generic [ref=f25e78]: 12 人赞同了该文章
+              - generic [ref=f25e87]:
+                - paragraph [ref=f25e88]:
+                  - text: 现在
+                  - link "次世代游戏" [ref=f25e90] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E6%AC%A1%E4%B8%96%E4%BB%A3%E6%B8%B8%E6%88%8F&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLmrKHkuJbku6PmuLjmiI8iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.wRFSQHEGR49rE-tmgPG3RrlNi7tDxgDeR68gq6_C-Tk&zhida_source=entity
+                  - text: 建模拥有很多其他职业无法比拟的闪光点，越来越多的人开始学习建模，提升自己的竞争力，那对于小白来说，第一步应该学习什么呢？
+                - paragraph [ref=f25e93]: 从事次世代建模行业已经有好几年了，对于这个问题也来表达一下自己的真知灼见，希望对你有用！
+                - figure [ref=f25e94]
+                - paragraph [ref=f25e97]: 次世代3D建模主要从以下三个方面学：
+                - paragraph [ref=f25e98]: No.1软件的熟练度
+                - paragraph [ref=f25e99]: 一个精致的模型不可能只用到某一个软件，共同协作才能达到想要的效果，所以，很多软件都需要了解，但是精通的话，一个就行。
+                - paragraph [ref=f25e100]: 目前次世代的主流软件就是雕刻高模的ZBrush，可以从这个软件开始。
+                - paragraph [ref=f25e101]: No.2美术基础
+                - paragraph [ref=f25e102]:
+                  - text: 次世代建模中所说的美术基础，并不是意义上素描、速写，而是
+                  - generic [ref=f25e103]:
+                    - text: 一个造型能力和
+                    - link "色彩基础" [ref=f25e105] [cursor=pointer]:
+                      - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E8%89%B2%E5%BD%A9%E5%9F%BA%E7%A1%80&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLoibLlvanln7rnoYAiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.pVOEuEOPyv6iBwkx2hIkrZuTaNt4DHFDg3y7W8x1Z0M&zhida_source=entity
+                    - text: 的统称。
+                - paragraph [ref=f25e108]: 所以，我们在平时的生活中要培养我们的造型能力、审美能力、要会设计和品位。软件的熟练度决定了你的下限，而你的审美造型能力，决定了你的上限。如果想要以后走得更远，薪资更高，就扎实一下自己的美术基础。
+                - paragraph [ref=f25e109]: No.3必要的行业规范
+                - paragraph [ref=f25e110]: 只有做过资深建模师的才知道，一个项目完整的流程在行业里具体的要求，否则即使你的作品很美，但无法放进引擎里，也是徒然。
+                - paragraph [ref=f25e111]: 前面两者只要花时间自学也都能解决，而后面这个比较推荐报班或者找大佬，且硬件在升级，项目要求也时刻有变化，找有在一线的公司工作过，做过项目经验的最为靠谱。
+                - paragraph [ref=f25e112]: 我当时确实在进行学习的时候就特意找了一个大佬，请教他这方面的问题，大佬了解我确实是对这行很着迷，也是毫无保留的为了解答，大佬的联系方式放着了，自取。
+                - paragraph [ref=f25e113]: 掌握了以上3个方面就可以开始接触次世代游戏建模啦，我也把流程给大家写出来了，看看是不是能够看得懂，看不懂的可以在私信和评论区留言，我会在第一时间回复的。
+                - list [ref=f25e114]:
+                  - listitem [ref=f25e115]: • 流程一：构思
+                - paragraph [ref=f25e116]: 你要做什么模型，确定好要做的模型就可以进行下一步了！
+                - list [ref=f25e117]:
+                  - listitem [ref=f25e118]: • 流程二：建低模
+                - paragraph [ref=f25e119]:
+                  - text: 3Dmax/Maya建低模，准确的说叫
+                  - link "低模手绘" [ref=f25e121] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E4%BD%8E%E6%A8%A1%E6%89%8B%E7%BB%98&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLkvY7mqKHmiYvnu5giLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.Q3KYKoPL_7iIwYXvw4oh95_EKM5D5jmJePfk_g6bMyM&zhida_source=entity
+                  - text: ，分为
+                  - link "3D角色" [ref=f25e125] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=3D%E8%A7%92%E8%89%B2&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiIzROinkuiJsiIsInpoaWRhX3NvdXJjZSI6ImVudGl0eSIsImNvbnRlbnRfaWQiOjE2OTY1OTQyMiwiY29udGVudF90eXBlIjoiQXJ0aWNsZSIsIm1hdGNoX29yZGVyIjoxLCJ6ZF90b2tlbiI6bnVsbH0.hgLobg0GM0H7TSOms4MTe-C5CoB6iLfvk8mdCmMIMf4&zhida_source=entity
+                  - text: /3D场景，简单说就是3D建模师根据原画，通过3D制作还原3D造型，因为制作模型面数较低，主要靠
+                  - link "手绘贴图" [ref=f25e129] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E6%89%8B%E7%BB%98%E8%B4%B4%E5%9B%BE&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLmiYvnu5jotLTlm74iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.ZAt5d5_vUEdtbVy20WHVA8p8My59Iw-w-0U80fHsH5g&zhida_source=entity
+                  - text: 达到最终效果。
+                - figure [ref=f25e132]
+                - list [ref=f25e135]:
+                  - listitem [ref=f25e136]:
+                    - text: •
+                    - generic [ref=f25e137]:
+                      - text: 流程三：3Dmax/
+                      - link "maya" [ref=f25e139] [cursor=pointer]:
+                        - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=maya&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiJtYXlhIiwiemhpZGFfc291cmNlIjoiZW50aXR5IiwiY29udGVudF9pZCI6MTY5NjU5NDIyLCJjb250ZW50X3R5cGUiOiJBcnRpY2xlIiwibWF0Y2hfb3JkZXIiOjEsInpkX3Rva2VuIjpudWxsfQ.i-FJeMReuWlqZaH_VwABAjOSPiAyq5u3i4whTEAtxBI&zhida_source=entity
+                      - text: 建中模
+                - paragraph [ref=f25e142]: 中模不是严格的概念，攻守兼备。上可改高模，下可变低模。次世代的精华也就在高模的制作，当然低模和其它流程也很重要
+                - list [ref=f25e143]:
+                  - listitem [ref=f25e144]: • 流程四：进行高模的雕刻和细节的制作
+                - paragraph [ref=f25e145]:
+                  - text: 高模细节多，面数高，游戏引擎拖不动，从而产生拓补低模的概念，低模完全符合引擎要求和布线规则。而此时的
+                  - link "高模" [ref=f25e147] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=6&q=%E9%AB%98%E6%A8%A1&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLpq5jmqKEiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6NiwiemRfdG9rZW4iOm51bGx9.XglpcfFr08hZSkjiYDKgmpU3ZEPfV0yy7Jg8DwOW5nk&zhida_source=entity
+                  - text: 作用是为了把高模的细节投射到低模上达到更加极致的效果又能在引擎中运行。
+                - list [ref=f25e150]:
+                  - listitem [ref=f25e151]:
+                    - text: •
+                    - generic [ref=f25e152]:
+                      - text: 流程五：将做好的
+                      - link "高模拓扑" [ref=f25e154] [cursor=pointer]:
+                        - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E9%AB%98%E6%A8%A1%E6%8B%93%E6%89%91&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLpq5jmqKHmi5PmiZEiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.04v1ttmSfpRtdbl2j9zZ6GhUdRy7SKpMH4I90XJ-lpk&zhida_source=entity
+                      - text: 成低模
+                - paragraph [ref=f25e157]:
+                  - text: 在ZBrush中
+                  - link "拓扑低模" [ref=f25e159] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E6%8B%93%E6%89%91%E4%BD%8E%E6%A8%A1&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLmi5PmiZHkvY7mqKEiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.-if_aQQQs0QyeH2BunJcw4n9AoYS79jR6HBlGJh9Syc&zhida_source=entity
+                  - text: ，拓扑低模的目的是需要得到一个正确布线，并且可以在项目中使用的模型。
+                - paragraph [ref=f25e162]:
+                  - text: 我们之前雕刻的高精度模型，在项目中来说
+                  - link "面数" [ref=f25e164] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=3&q=%E9%9D%A2%E6%95%B0&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLpnaLmlbAiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MywiemRfdG9rZW4iOm51bGx9.mRZVTJX9QYtbXW0kaRRfJkVJJbFK63qNgw5e8GAwwFQ&zhida_source=entity
+                  - text: 太高了，尤其是将模型放到其他
+                  - link "三维软件" [ref=f25e168] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E4%B8%89%E7%BB%B4%E8%BD%AF%E4%BB%B6&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLkuInnu7Tova_ku7YiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.4qi5-m5_mstE_k0U_ayo7CgxRmmGDV8hluuHRFvveeU&zhida_source=entity
+                  - text: 中，几乎是无法继续接下来的工作的。所以，需要拓扑一个低精度的模型，然后使用贴图把高精度模型的细节显示在低精度模型上。
+                - list [ref=f25e171]:
+                  - listitem [ref=f25e172]: • 流程六：UV拆分
+                - paragraph [ref=f25e173]:
+                  - link "拆UV" [ref=f25e175] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E6%8B%86UV&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLmi4ZVViIsInpoaWRhX3NvdXJjZSI6ImVudGl0eSIsImNvbnRlbnRfaWQiOjE2OTY1OTQyMiwiY29udGVudF90eXBlIjoiQXJ0aWNsZSIsIm1hdGNoX29yZGVyIjoxLCJ6ZF90b2tlbiI6bnVsbH0.4VWxAMIekfQTLMyCzZl_bwDit4sFrGKHZpVXPr5DYXw&zhida_source=entity
+                  - text: 是方便贴图更好的贴合到3D模型中，并且贴图内容位置对应模型位置搞那更准确。
+                - paragraph [ref=f25e178]: 比如说人像，有很多面，画贴图就要把UV拆成一个平面，因为贴图是平面的，所以UV也要拆成平面。
+                - figure [ref=f25e179]
+                - list [ref=f25e182]:
+                  - listitem [ref=f25e183]: • 流程七：烘焙
+                - paragraph [ref=f25e184]: 烘焙的目的是将物体高模上的法线信息尽可能完好的记录下来。
+                - paragraph [ref=f25e185]:
+                  - text: 而做好烘焙的三要素为：
+                  - generic [ref=f25e186]:
+                    - link "平滑组" [ref=f25e188] [cursor=pointer]:
+                      - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E5%B9%B3%E6%BB%91%E7%BB%84&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLlubPmu5Hnu4QiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.pktvuACdJWVkucM4oSqKG6E2v7zqBrBCEQOjgtYCt20&zhida_source=entity
+                    - text: ，UV和Cage
+                  - text: 。烘焙的过程是将高模的细节
+                  - link "信息映射" [ref=f25e192] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E4%BF%A1%E6%81%AF%E6%98%A0%E5%B0%84&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLkv6Hmga_mmKDlsIQiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.OPF7SIRnPWe4Erak_tajVShqAztX1OqvD-SOxsu2H24&zhida_source=entity
+                  - text: 到低模上，这里所谓的细节，就是
+                  - link "法线贴图" [ref=f25e196] [cursor=pointer]:
+                    - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E6%B3%95%E7%BA%BF%E8%B4%B4%E5%9B%BE&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLms5Xnur_otLTlm74iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.Yx8JalhbJ_aPJ6UUxfYa03we6mr32oY37vkdNNqgwI0&zhida_source=entity
+                  - text: 。
+                - list [ref=f25e199]:
+                  - listitem [ref=f25e200]:
+                    - text: •
+                    - generic [ref=f25e201]:
+                      - text: 流程八：SP（substance painter）上
+                      - link "材质贴图" [ref=f25e203] [cursor=pointer]:
+                        - /url: https://zhida.zhihu.com/search?content_id=169659422&content_type=Article&match_order=1&q=%E6%9D%90%E8%B4%A8%E8%B4%B4%E5%9B%BE&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMyOTQsInEiOiLmnZDotKjotLTlm74iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoxNjk2NTk0MjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.oCfSx57Bb3QaqhP-DioRsnmGLcmYj70SY_CUQOBvlMs&zhida_source=entity
+                - paragraph [ref=f25e206]: 在SP里将烘焙出来的各种贴图贴在低模上，制作材质，调整各种材质的参数，增加贴图的脏迹，磨损，刮痕等细节，呈现出更逼真的效果。
+                - paragraph [ref=f25e207]: 以上就是完整的学习次世代游戏建模的流程，如果你现在还没有开始进入学习，可以先了解一下步骤，这样也有利于你后期的学习，若是你已经进入到系统学习阶段，在任意流程有疑问都可以咨询，我也同步整理了很多小白适用的建模方面的资料，有需要点击领取。
+                - paragraph [ref=f25e208]: 最后，之后也将分享更多3D建模的内容给大家，感谢持续关注！
+              - button "编辑于 2021-04-22 13:38" [ref=f25e209]
+              - generic [ref=f25e211]:
+                - link "次世代" [ref=f25e214] [cursor=pointer]:
+                  - /url: //www.zhihu.com/topic/19644935
+                - link "Autodesk 3ds Max" [ref=f25e218] [cursor=pointer]:
+                  - /url: //www.zhihu.com/topic/19636589
+                - link "游戏建模" [ref=f25e222] [cursor=pointer]:
+                  - /url: //www.zhihu.com/topic/19974277
+              - generic [ref=f25e227]:
+                - generic [ref=f25e228]:
+                  - button "赞同 12" [ref=f25e230] [cursor=pointer]
+                  - button "反对" [ref=f25e234] [cursor=pointer]
+                - button [ref=f25e238] [cursor=pointer]
+                - button "收藏" [ref=f25e242] [cursor=pointer]: "65"
+                - button "喜欢" [ref=f25e246] [cursor=pointer]: "21"
+                - button [ref=f25e252] [cursor=pointer]
+                - button [ref=f25e256] [cursor=pointer]
+                - button [ref=f25e262] [cursor=pointer]
+                - button [ref=f25e270] [cursor=pointer]
+            - generic [ref=f25e276]:
+              - generic [ref=f25e277]: 未登录用户
+              - generic [ref=f25e291]:
+                - generic [ref=f25e292]: 评论内容由作者筛选后展示
+                - generic [ref=f25e297]: 还没有评论，发表第一个评论吧
+          - generic [ref=f25e389]:
+            - generic "边栏锚点"
+            - generic [ref=f25e390]:
+              - complementary "关于作者" [ref=f25e391]:
+                - generic [ref=f25e395]:
+                  - link [ref=f25e398] [cursor=pointer]:
+                    - /url: //www.zhihu.com/people/yuan-hua-jiao-cheng-jing-xuan
+                    - img "3D建模师-胡琪" [ref=f25e399]
+                  - link "3D建模师-胡琪" [ref=f25e403] [cursor=pointer]:
+                    - /url: //www.zhihu.com/people/yuan-hua-jiao-cheng-jing-xuan
+                - generic [ref=f25e404]:
+                  - generic [ref=f25e406]:
+                    - link "回答" [ref=f25e407] [cursor=pointer]:
+                      - /url: //www.zhihu.com/people/yuan-hua-jiao-cheng-jing-xuan/answers
+                      - generic [ref=f25e408]:
+                        - generic [ref=f25e409]: 回答
+                        - strong
+                    - link "文章" [ref=f25e410] [cursor=pointer]:
+                      - /url: //www.zhihu.com/people/yuan-hua-jiao-cheng-jing-xuan/posts
+                      - generic [ref=f25e411]:
+                        - generic [ref=f25e412]: 文章
+                        - strong
+                    - link "关注者" [ref=f25e413] [cursor=pointer]:
+                      - /url: //www.zhihu.com/people/yuan-hua-jiao-cheng-jing-xuan/followers
+                      - generic [ref=f25e414]:
+                        - generic [ref=f25e415]: 关注者
+                        - strong
+                  - generic [ref=f25e416]:
+                    - button [ref=f25e417] [cursor=pointer]
+                    - button [ref=f25e421] [cursor=pointer]
+              - generic [ref=f25e426]:
+                - generic [ref=f25e427]:
+                  - generic [ref=f25e430]: 大家都在搜
+                  - button "换一换" [ref=f25e431] [cursor=pointer]
+                - generic [ref=f25e434]:
+                  - generic [ref=f25e435] [cursor=pointer]:
+                    - link "中秋节 376 万" [ref=f25e437]:
+                      - /url: https://www.zhihu.com/search?q=%E4%B8%AD%E7%A7%8B%E8%8A%82&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=e1eadfa2-7462-4b33-b907-188bacb8c113
+                      - generic "中秋节" [ref=f25e438]
+                      - generic [ref=f25e439]: 376 万
+                    - generic [ref=f25e440]: 热
+                  - generic [ref=f25e441] [cursor=pointer]:
+                    - link "美称中美贸易休战延至明年1月 375 万" [ref=f25e443]:
+                      - /url: https://www.zhihu.com/search?q=%E7%BE%8E%E7%A7%B0%E4%B8%AD%E7%BE%8E%E8%B4%B8%E6%98%93%E4%BC%91%E6%88%98%E5%BB%B6%E8%87%B3%E6%98%8E%E5%B9%B41%E6%9C%88&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=e1eadfa2-7462-4b33-b907-188bacb8c113
+                      - generic "美称中美贸易休战延至明年1月" [ref=f25e444]
+                      - generic [ref=f25e445]: 375 万
+                    - generic [ref=f25e446]: 热
+                  - generic [ref=f25e447] [cursor=pointer]:
+                    - link "中国女篮 80-85 韩国女篮 375 万" [ref=f25e449]:
+                      - /url: https://www.zhihu.com/search?q=%E4%B8%AD%E5%9B%BD%E5%A5%B3%E7%AF%AE+80-85+%E9%9F%A9%E5%9B%BD%E5%A5%B3%E7%AF%AE&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=e1eadfa2-7462-4b33-b907-188bacb8c113
+                      - generic "中国女篮 80-85 韩国女篮" [ref=f25e450]
+                      - generic [ref=f25e451]: 375 万
+                    - generic [ref=f25e452]: 新
+                  - generic [ref=f25e453] [cursor=pointer]:
+                    - link "国乒会师亚运会混双决赛 375 万" [ref=f25e455]:
+                      - /url: https://www.zhihu.com/search?q=%E5%9B%BD%E4%B9%92%E4%BC%9A%E5%B8%88%E4%BA%9A%E8%BF%90%E4%BC%9A%E6%B7%B7%E5%8F%8C%E5%86%B3%E8%B5%9B&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=e1eadfa2-7462-4b33-b907-188bacb8c113
+                      - generic "国乒会师亚运会混双决赛" [ref=f25e456]
+                      - generic [ref=f25e457]: 375 万
+                    - generic [ref=f25e458]: 新
+                  - generic [ref=f25e459] [cursor=pointer]:
+                    - link "看山今日一签 375 万" [ref=f25e461]:
+                      - /url: https://event.zhihu.com/kanshan-yiqian/?request_click_id=e1eadfa2-7462-4b33-b907-188bacb8c113
+                      - generic "看山今日一签" [ref=f25e462]
+                      - generic [ref=f25e463]: 375 万
+                    - generic [ref=f25e464]: 活动
+                  - generic [ref=f25e465] [cursor=pointer]:
+                    - link "中国游泳队亚运30金创历史 375 万" [ref=f25e467]:
+                      - /url: https://www.zhihu.com/search?q=%E4%B8%AD%E5%9B%BD%E6%B8%B8%E6%B3%B3%E9%98%9F%E4%BA%9A%E8%BF%9030%E9%87%91%E5%88%9B%E5%8E%86%E5%8F%B2&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=e1eadfa2-7462-4b33-b907-188bacb8c113
+                      - generic "中国游泳队亚运30金创历史" [ref=f25e468]
+                      - generic [ref=f25e469]: 375 万
+                    - generic [ref=f25e470]: 新
+                  - generic [ref=f25e471] [cursor=pointer]:
+                    - link "华天亚运会马术夺冠 375 万" [ref=f25e473]:
+                      - /url: https://www.zhihu.com/search?q=%E5%8D%8E%E5%A4%A9%E4%BA%9A%E8%BF%90%E4%BC%9A%E9%A9%AC%E6%9C%AF%E5%A4%BA%E5%86%A0&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=e1eadfa2-7462-4b33-b907-188bacb8c113
+                      - generic "华天亚运会马术夺冠" [ref=f25e474]
+                      - generic [ref=f25e475]: 375 万
+                    - generic [ref=f25e476]: 新
+                  - generic [ref=f25e477] [cursor=pointer]:
+                    - link "沃尔玛山姆中国首席采购官双双换人 375 万" [ref=f25e479]:
+                      - /url: https://www.zhihu.com/search?q=%E6%B2%83%E5%B0%94%E7%8E%9B%E5%B1%B1%E5%A7%86%E4%B8%AD%E5%9B%BD%E9%A6%96%E5%B8%AD%E9%87%87%E8%B4%AD%E5%AE%98%E5%8F%8C%E5%8F%8C%E6%8D%A2%E4%BA%BA&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=e1eadfa2-7462-4b33-b907-188bacb8c113
+                      - generic "沃尔玛山姆中国首席采购官双双换人" [ref=f25e480]
+                      - generic [ref=f25e481]: 375 万
+                    - generic [ref=f25e482]: 热
+                  - generic [ref=f25e483] [cursor=pointer]:
+                    - link "王楚钦孙颖莎组合挺进混双决赛 375 万" [ref=f25e485]:
+                      - /url: https://www.zhihu.com/search?q=%E7%8E%8B%E6%A5%9A%E9%92%A6%E5%AD%99%E9%A2%96%E8%8E%8E%E7%BB%84%E5%90%88%E6%8C%BA%E8%BF%9B%E6%B7%B7%E5%8F%8C%E5%86%B3%E8%B5%9B&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=e1eadfa2-7462-4b33-b907-188bacb8c113
+                      - generic "王楚钦孙颖莎组合挺进混双决赛" [ref=f25e486]
+                      - generic [ref=f25e487]: 375 万
+                    - generic [ref=f25e488]: 新
+                  - generic [ref=f25e489] [cursor=pointer]:
+                    - link "车企集体和宁德提分手 375 万" [ref=f25e491]:
+                      - /url: https://www.zhihu.com/search?q=%E8%BD%A6%E4%BC%81%E9%9B%86%E4%BD%93%E5%92%8C%E5%AE%81%E5%BE%B7%E6%8F%90%E5%88%86%E6%89%8B&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=e1eadfa2-7462-4b33-b907-188bacb8c113
+                      - generic "车企集体和宁德提分手" [ref=f25e492]
+                      - generic [ref=f25e493]: 375 万
+                    - generic [ref=f25e494]: 热
+        - complementary "推荐阅读" [ref=f25e496]:
+          - heading "推荐阅读" [level=3] [ref=f25e497]
+          - list [ref=f25e498]:
+            - link "游戏建模真的能自学成才吗？ 游戏建模真的能自学成才吗？ 游刃有余" [ref=f25e499] [cursor=pointer]:
+              - /url: https://zhuanlan.zhihu.com/p/555298351
+              - generic [ref=f25e500]:
+                - img "游戏建模真的能自学成才吗？" [ref=f25e501]
+                - heading "游戏建模真的能自学成才吗？" [level=1] [ref=f25e502]
+                - generic [ref=f25e503]: 游刃有余
+            - link "3d游戏建模入门基础知识 3d游戏建模入门基础知识 哒哒林" [ref=f25e505] [cursor=pointer]:
+              - /url: https://zhuanlan.zhihu.com/p/146112752
+              - generic [ref=f25e506]:
+                - img "3d游戏建模入门基础知识" [ref=f25e507]
+                - heading "3d游戏建模入门基础知识" [level=1] [ref=f25e508]
+                - generic [ref=f25e509]: 哒哒林
+            - link "游戏建模师现状如何？零基础如何学习游戏建模？有什么好的学习教程？ 游戏建模师现状如何？零基础如何学习游戏建模？有什么好的学习教程？ 曹文琪" [ref=f25e511] [cursor=pointer]:
+              - /url: https://zhuanlan.zhihu.com/p/343251146
+              - generic [ref=f25e512]:
+                - img "游戏建模师现状如何？零基础如何学习游戏建模？有什么好的学习教程？" [ref=f25e513]
+                - heading "游戏建模师现状如何？零基础如何学习游戏建模？有什么好的学习教程？" [level=1] [ref=f25e514]
+                - generic [ref=f25e515]: 曹文琪
+            - link "次世代建模怎么学，3D建模学哪些软件，零基础怎么学建模 次世代建模怎么学，3D建模学哪些软件，零基础怎么学建模 哒哒林" [ref=f25e517] [cursor=pointer]:
+              - /url: https://zhuanlan.zhihu.com/p/164606563
+              - generic [ref=f25e518]:
+                - img "次世代建模怎么学，3D建模学哪些软件，零基础怎么学建模" [ref=f25e519]
+                - heading "次世代建模怎么学，3D建模学哪些软件，零基础怎么学建模" [level=1] [ref=f25e520]
+                - generic [ref=f25e521]: 哒哒林
+            - button [ref=f25e523] [cursor=pointer]
+  - generic [ref=f25e528]:
+    - generic [ref=f25e532]:
+      - generic [ref=f25e533]:
+        - generic [ref=f25e534]:
+          - generic [ref=f25e535]:
+            - generic [ref=f25e536]: 打开知乎App
+            - generic [ref=f25e537]: 在「我的页」右上角打开扫一扫
+            - generic [ref=f25e538]: 其他扫码方式：微信
+          - generic [ref=f25e543]:
+            - button "下载知乎App" [ref=f25e545] [cursor=pointer]
+            - button "无障碍模式" [ref=f25e547] [cursor=pointer]
+        - generic [ref=f25e549]:
+          - generic [ref=f25e551]:
+            - generic [ref=f25e552]:
+              - generic [ref=f25e553]:
+                - button "验证码登录" [ref=f25e554] [cursor=pointer]
+                - button "密码登录" [ref=f25e555] [cursor=pointer]
+                - link "开通机构号" [ref=f25e556] [cursor=pointer]:
+                  - /url: /org/signup
+              - generic [ref=f25e557]:
+                - combobox [ref=f25e560] [cursor=pointer]:
+                  - generic [ref=f25e561]: 中国 +86
+                - textbox [ref=f25e567]:
+                  - /placeholder: 手机号
+              - generic [ref=f25e568]:
+                - textbox [ref=f25e571]:
+                  - /placeholder: 输入 6 位短信验证码
+                - button "获取短信验证码" [ref=f25e572] [cursor=pointer]
+              - generic [ref=f25e573]:
+                - button
+                - button "忘记密码" [ref=f25e574] [cursor=pointer]
+              - button "登录/注册" [ref=f25e576] [cursor=pointer]
+            - generic:
+              - log
+          - generic [ref=f25e577]: 其他方式登录
+          - generic [ref=f25e582]:
+            - button [ref=f25e583] [cursor=pointer]
+            - button [ref=f25e586] [cursor=pointer]
+            - button [ref=f25e589] [cursor=pointer]
+          - generic [ref=f25e592]:
+            - text: 未注册手机验证后自动登录，注册即代表同意
+            - link "《知乎协议》" [ref=f25e593] [cursor=pointer]:
+              - /url: https://www.zhihu.com/term/zhihu-terms
+            - link "《隐私保护指引》" [ref=f25e594] [cursor=pointer]:
+              - /url: https://www.zhihu.com/term/privacy
+      - generic:
+        - paragraph: 扫码下载知乎 App
+        - button "关闭二维码"
+    - button "关闭" [ref=f25e595] [cursor=pointer]
+  - combobox [ref=f25e602] [cursor=pointer]

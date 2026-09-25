@@ -1,0 +1,400 @@
+- generic [ref=f11e1]:
+  - link "欢迎进入 想知道走游戏动作设计这条路该怎么学？ - 知乎,盲人用户使用操作智能引导，请按快捷键Ctrl+Alt+R；阅读详细操作说明请按快捷键Ctrl+Alt+问号键。":
+    - /url: javascript:void(0)
+    - img [ref=f11e2] [cursor=pointer]
+  - generic [ref=f11e4]:
+    - banner [ref=f11e6]:
+      - generic [ref=f11e7]:
+        - link "知乎" [ref=f11e8] [cursor=pointer]:
+          - /url: https://www.zhihu.com
+        - generic [ref=f11e13]:
+          - generic [ref=f11e14]:
+            - navigation [ref=f11e15]:
+              - link "关注" [ref=f11e16] [cursor=pointer]:
+                - /url: https://www.zhihu.com/signin?next=%2Ffollow
+              - link "推荐" [ref=f11e18] [cursor=pointer]:
+                - /url: https://www.zhihu.com/signin?next=%2F
+              - link "热榜" [ref=f11e20] [cursor=pointer]:
+                - /url: https://www.zhihu.com/signin?next=%2Fhot
+              - link "专栏" [ref=f11e22] [cursor=pointer]:
+                - /url: https://www.zhihu.com/signin?next=%2Fcolumn-square
+              - link "圈子" [ref=f11e24] [cursor=pointer]:
+                - /url: https://www.zhihu.com/signin?next=%2Fring-feeds
+              - link "AI Works Beta" [ref=f11e27] [cursor=pointer]:
+                - /url: https://www.zhihu.com/project-square
+                - generic [ref=f11e28]:
+                  - text: AI Works
+                  - generic: Beta
+              - link "故事" [ref=f11e30] [cursor=pointer]:
+                - /url: https://www.zhihu.com/fiore/h5/vip-web
+            - generic [ref=f11e32]:
+              - search [ref=f11e33]:
+                - generic [ref=f11e37]:
+                  - combobox "搜索" [ref=f11e38]
+                  - button "搜索" [ref=f11e39] [cursor=pointer]
+                - link "直答" [ref=f11e43] [cursor=pointer]:
+                  - /url: https://zhida.zhihu.com/
+              - generic [ref=f11e47]:
+                - generic [ref=f11e48]: 切换模式
+                - button "登录/注册" [ref=f11e51] [cursor=pointer]
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - heading "想知道走游戏动作设计这条路该怎么学？" [level=1]
+                  - generic:
+                    - generic:
+                      - button "关注问题"
+                      - button "写回答"
+                      - generic:
+                        - button
+                    - generic:
+                      - generic:
+                        - button "登录/注册"
+    - main [ref=f11e53]:
+      - generic [ref=f11e55]:
+        - generic [ref=f11e56]:
+          - generic:
+            - generic:
+              - log
+            - generic:
+              - log
+          - generic [ref=f11e58]:
+            - generic [ref=f11e59]:
+              - generic [ref=f11e60]:
+                - generic [ref=f11e62]:
+                  - link "设计" [ref=f11e65] [cursor=pointer]:
+                    - /url: //www.zhihu.com/topic/19551557
+                  - link "动画制作" [ref=f11e69] [cursor=pointer]:
+                    - /url: //www.zhihu.com/topic/19554182
+                  - link "3D 建模" [ref=f11e73] [cursor=pointer]:
+                    - /url: //www.zhihu.com/topic/19630455
+                  - link "游戏特效" [ref=f11e77] [cursor=pointer]:
+                    - /url: //www.zhihu.com/topic/19847656
+                  - link "游戏动作设计师" [ref=f11e81] [cursor=pointer]:
+                    - /url: //www.zhihu.com/topic/20774654
+                - heading "想知道走游戏动作设计这条路该怎么学？" [level=1] [ref=f11e83]
+                - generic [ref=f11e88] [cursor=pointer]:
+                  - text: 现在大三，没有作品集，不会软件，不知道从何开始？
+                  - button [ref=f11e89]
+              - generic [ref=f11e96]:
+                - generic [ref=f11e98]:
+                  - generic [ref=f11e99]: 关注者
+                  - strong [ref=f11e100]: "6"
+                - generic [ref=f11e102]:
+                  - generic [ref=f11e103]: 被浏览
+                  - strong [ref=f11e104]: "736"
+            - generic [ref=f11e107]:
+              - generic [ref=f11e108]:
+                - button "关注问题" [ref=f11e109] [cursor=pointer]
+                - button [ref=f11e110] [cursor=pointer]
+              - generic [ref=f11e114]:
+                - button [ref=f11e115] [cursor=pointer]
+                - button [ref=f11e120] [cursor=pointer]
+                - button [ref=f11e125] [cursor=pointer]
+                - button [ref=f11e131] [cursor=pointer]
+                - button "更多" [ref=f11e136] [cursor=pointer]
+        - generic [ref=f11e140]:
+          - generic [ref=f11e143]:
+            - generic [ref=f11e144]:
+              - generic [ref=f11e147]:
+                - generic [ref=f11e148]:
+                  - heading "5 个回答" [level=4] [ref=f11e149]
+                  - combobox [ref=f11e153] [cursor=pointer]:
+                    - generic [ref=f11e154]: 默认排序
+                - list [ref=f11e158]:
+                  - listitem
+                  - generic [ref=f11e161]:
+                    - generic [ref=f11e162]:
+                      - generic [ref=f11e163]:
+                        - generic [ref=f11e164]:
+                          - link [ref=f11e167] [cursor=pointer]:
+                            - /url: //www.zhihu.com/org/sheng-hui-yi-dian
+                            - img "盛绘艺点" [ref=f11e168]
+                          - generic [ref=f11e169]:
+                            - generic [ref=f11e171]:
+                              - link "盛绘艺点" [ref=f11e173] [cursor=pointer]:
+                                - /url: //www.zhihu.com/org/sheng-hui-yi-dian
+                              - link "已认证机构号" [ref=f11e174] [cursor=pointer]:
+                                - /url: https://www.zhihu.com/question/48510028
+                            - generic [ref=f11e176]: 已认证机构号
+                        - button [ref=f11e179] [cursor=pointer]
+                      - link "谢邀 @西西弗里要逃亡" [ref=f11e186] [cursor=pointer]:
+                        - /url: https://www.zhihu.com/people/1fe2c5b8564194a41c7f67c974e2416b
+                    - generic [ref=f11e195]:
+                      - generic [ref=f11e200]:
+                        - paragraph [ref=f11e201]: 你这零基础，去买网课学习，只有这样。
+                        - paragraph [ref=f11e202]: 但是从你的时间线来说 我建议你去学习线下课，动作算是最难的最枯燥的一项技能活了，
+                        - paragraph [ref=f11e203]: 需要大量的时间练习。
+                        - paragraph [ref=f11e204]: 最好还是去上线下课吧！
+                        - paragraph [ref=f11e205]: 我们虽然不做动作这个方向但是若你想选择线下课推荐懿百动画
+                        - paragraph [ref=f11e206]
+                        - figure [ref=f11e207]
+                        - paragraph
+                      - link "发布于2024-11-27 10:42" [ref=f11e212] [cursor=pointer]:
+                        - /url: //www.zhihu.com/question/954640300/answer/41822466989
+                      - generic [ref=f11e213]:
+                        - generic [ref=f11e214]:
+                          - button "赞同 0" [ref=f11e216] [cursor=pointer]: 赞同
+                          - button "反对" [ref=f11e220] [cursor=pointer]
+                        - button [ref=f11e224] [cursor=pointer]
+                        - button "收藏" [ref=f11e228] [cursor=pointer]
+                        - button "喜欢" [ref=f11e232] [cursor=pointer]
+                        - button [ref=f11e238] [cursor=pointer]
+                        - button [ref=f11e242] [cursor=pointer]
+                  - generic [ref=f11e249]:
+                    - generic [ref=f11e251]:
+                      - generic [ref=f11e252]:
+                        - link [ref=f11e255] [cursor=pointer]:
+                          - /url: //www.zhihu.com/people/wang-wei-96-46-96
+                          - img "王嵬" [ref=f11e256]
+                        - generic [ref=f11e257]:
+                          - link "王嵬" [ref=f11e261] [cursor=pointer]:
+                            - /url: //www.zhihu.com/people/wang-wei-96-46-96
+                          - generic [ref=f11e262]: 无脑毛粉儿，手残游戏玩家。战斗到最后一个乌克兰人！！
+                      - button [ref=f11e265] [cursor=pointer]
+                    - generic [ref=f11e270]:
+                      - paragraph [ref=f11e276]:
+                        - text: 先找本
+                        - link "动画原理" [ref=f11e278] [cursor=pointer]:
+                          - /url: https://zhida.zhihu.com/search?content_id=701495302&content_type=Answer&match_order=1&q=%E5%8A%A8%E7%94%BB%E5%8E%9F%E7%90%86&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMwOTEsInEiOiLliqjnlLvljp_nkIYiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjo3MDE0OTUzMDIsImNvbnRlbnRfdHlwZSI6IkFuc3dlciIsIm1hdGNoX29yZGVyIjoxLCJ6ZF90b2tlbiI6bnVsbH0.yKS3JfLdaNu0boX847y92ELD8R82fk3Qk0mw8Tcoe_s&zhida_source=entity
+                        - text: 的书看～
+                      - link "发布于2024-11-27 11:52" [ref=f11e283] [cursor=pointer]:
+                        - /url: //www.zhihu.com/question/954640300/answer/41900250720
+                      - generic [ref=f11e284]:
+                        - generic [ref=f11e285]:
+                          - button "赞同 0" [ref=f11e287] [cursor=pointer]: 赞同
+                          - button "反对" [ref=f11e291] [cursor=pointer]
+                        - button [ref=f11e295] [cursor=pointer]
+                        - button "收藏" [ref=f11e299] [cursor=pointer]
+                        - button "喜欢" [ref=f11e303] [cursor=pointer]
+                        - button [ref=f11e309] [cursor=pointer]
+                        - button [ref=f11e313] [cursor=pointer]
+                        - button [ref=f11e318] [cursor=pointer]
+                  - generic [ref=f11e324]:
+                    - generic [ref=f11e325]:
+                      - generic [ref=f11e326]:
+                        - generic [ref=f11e327]:
+                          - link [ref=f11e330] [cursor=pointer]:
+                            - /url: //www.zhihu.com/people/fu-jia-yu-23-36
+                            - img "饺子设计留学" [ref=f11e331]
+                          - generic [ref=f11e332]:
+                            - link "饺子设计留学" [ref=f11e336] [cursor=pointer]:
+                              - /url: //www.zhihu.com/people/fu-jia-yu-23-36
+                            - generic [ref=f11e337]: 设计博士在读
+                        - button [ref=f11e340] [cursor=pointer]
+                      - link "谢邀 @西西弗里要逃亡" [ref=f11e347] [cursor=pointer]:
+                        - /url: https://www.zhihu.com/people/1fe2c5b8564194a41c7f67c974e2416b
+                    - generic [ref=f11e356]:
+                      - paragraph [ref=f11e362]:
+                        - text: 先软件打基础，结合审美提升，以及基础
+                        - link "人体结构" [ref=f11e364] [cursor=pointer]:
+                          - /url: https://zhida.zhihu.com/search?content_id=702311170&content_type=Answer&match_order=1&q=%E4%BA%BA%E4%BD%93%E7%BB%93%E6%9E%84&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTA1MTMwOTEsInEiOiLkurrkvZPnu5PmnoQiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjo3MDIzMTExNzAsImNvbnRlbnRfdHlwZSI6IkFuc3dlciIsIm1hdGNoX29yZGVyIjoxLCJ6ZF90b2tlbiI6bnVsbH0.jZk6TFMAKqWl1I5WVmC51VIeFSWhL1XI0LQV16YOdO8&zhida_source=entity
+                      - link "发布于2024-12-02 17:06" [ref=f11e369] [cursor=pointer]:
+                        - /url: //www.zhihu.com/question/954640300/answer/45982965181
+                      - generic [ref=f11e370]:
+                        - generic [ref=f11e371]:
+                          - button "赞同 0" [ref=f11e373] [cursor=pointer]: 赞同
+                          - button "反对" [ref=f11e377] [cursor=pointer]
+                        - button [ref=f11e381] [cursor=pointer]
+                        - button "收藏" [ref=f11e385] [cursor=pointer]
+                        - button "喜欢" [ref=f11e389] [cursor=pointer]
+                        - button [ref=f11e395] [cursor=pointer]
+                        - button [ref=f11e399] [cursor=pointer]
+                        - button [ref=f11e404] [cursor=pointer]
+                  - listitem
+              - generic [ref=f11e408] [cursor=pointer]: 查看剩余 2 条回答
+            - button [ref=f11e410] [cursor=pointer]
+          - generic [ref=f11e414]:
+            - generic "边栏锚点"
+            - generic [ref=f11e415]:
+              - link "QR Code of Downloading Zhihu App 下载知乎客户端 与世界分享知识、经验和见解" [ref=f11e417] [cursor=pointer]:
+                - /url: https://s.zhihu.com/BDXoI
+                - generic [ref=f11e418]:
+                  - img "QR Code of Downloading Zhihu App" [ref=f11e419]
+                  - generic [ref=f11e420]:
+                    - generic [ref=f11e421]: 下载知乎客户端
+                    - generic [ref=f11e422]: 与世界分享知识、经验和见解
+              - complementary "相关问题" [ref=f11e423]:
+                - generic [ref=f11e426]:
+                  - generic [ref=f11e427]:
+                    - link "想成为游戏动作设计师，该学什么专业？" [ref=f11e428] [cursor=pointer]:
+                      - /url: /question/339987176
+                    - text: 1 个回答
+                  - generic [ref=f11e429]:
+                    - link "游戏动作设计师学习应该从哪里入手，比如最基本的人物动作分析的书籍，视频教程？" [ref=f11e430] [cursor=pointer]:
+                      - /url: /question/55550041
+                    - text: 3 个回答
+                  - generic [ref=f11e431]:
+                    - link "学游戏动作设计，可行吗?" [ref=f11e432] [cursor=pointer]:
+                      - /url: /question/353295137
+                    - text: 3 个回答
+                  - generic [ref=f11e433]:
+                    - link "游戏动作设计前景怎么样？" [ref=f11e434] [cursor=pointer]:
+                      - /url: /question/266626359
+                    - text: 18 个回答
+              - generic [ref=f11e435]:
+                - generic [ref=f11e436]:
+                  - generic [ref=f11e437]:
+                    - generic [ref=f11e440]: 大家都在搜
+                    - button "换一换" [ref=f11e441] [cursor=pointer]
+                  - generic [ref=f11e444]:
+                    - generic [ref=f11e445] [cursor=pointer]:
+                      - link "中秋节 376 万" [ref=f11e447]:
+                        - /url: /search?q=%E4%B8%AD%E7%A7%8B%E8%8A%82&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=d3b42c7f-6ecb-46b8-a228-651548e19e3b
+                        - generic "中秋节" [ref=f11e448]
+                        - generic [ref=f11e449]: 376 万
+                      - generic [ref=f11e450]: 热
+                    - generic [ref=f11e451] [cursor=pointer]:
+                      - link "美称中美贸易休战延至明年1月 375 万" [ref=f11e453]:
+                        - /url: /search?q=%E7%BE%8E%E7%A7%B0%E4%B8%AD%E7%BE%8E%E8%B4%B8%E6%98%93%E4%BC%91%E6%88%98%E5%BB%B6%E8%87%B3%E6%98%8E%E5%B9%B41%E6%9C%88&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=d3b42c7f-6ecb-46b8-a228-651548e19e3b
+                        - generic "美称中美贸易休战延至明年1月" [ref=f11e454]
+                        - generic [ref=f11e455]: 375 万
+                      - generic [ref=f11e456]: 热
+                    - generic [ref=f11e457] [cursor=pointer]:
+                      - link "中国女篮 80-85 韩国女篮 375 万" [ref=f11e459]:
+                        - /url: /search?q=%E4%B8%AD%E5%9B%BD%E5%A5%B3%E7%AF%AE+80-85+%E9%9F%A9%E5%9B%BD%E5%A5%B3%E7%AF%AE&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=d3b42c7f-6ecb-46b8-a228-651548e19e3b
+                        - generic "中国女篮 80-85 韩国女篮" [ref=f11e460]
+                        - generic [ref=f11e461]: 375 万
+                      - generic [ref=f11e462]: 新
+                    - generic [ref=f11e463] [cursor=pointer]:
+                      - link "国乒会师亚运会混双决赛 375 万" [ref=f11e465]:
+                        - /url: /search?q=%E5%9B%BD%E4%B9%92%E4%BC%9A%E5%B8%88%E4%BA%9A%E8%BF%90%E4%BC%9A%E6%B7%B7%E5%8F%8C%E5%86%B3%E8%B5%9B&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=d3b42c7f-6ecb-46b8-a228-651548e19e3b
+                        - generic "国乒会师亚运会混双决赛" [ref=f11e466]
+                        - generic [ref=f11e467]: 375 万
+                      - generic [ref=f11e468]: 新
+                    - generic [ref=f11e469] [cursor=pointer]:
+                      - link "看山今日一签 375 万" [ref=f11e471]:
+                        - /url: https://event.zhihu.com/kanshan-yiqian/?request_click_id=d3b42c7f-6ecb-46b8-a228-651548e19e3b
+                        - generic "看山今日一签" [ref=f11e472]
+                        - generic [ref=f11e473]: 375 万
+                      - generic [ref=f11e474]: 活动
+                    - generic [ref=f11e475] [cursor=pointer]:
+                      - link "中国游泳队亚运30金创历史 375 万" [ref=f11e477]:
+                        - /url: /search?q=%E4%B8%AD%E5%9B%BD%E6%B8%B8%E6%B3%B3%E9%98%9F%E4%BA%9A%E8%BF%9030%E9%87%91%E5%88%9B%E5%8E%86%E5%8F%B2&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=d3b42c7f-6ecb-46b8-a228-651548e19e3b
+                        - generic "中国游泳队亚运30金创历史" [ref=f11e478]
+                        - generic [ref=f11e479]: 375 万
+                      - generic [ref=f11e480]: 新
+                    - generic [ref=f11e481] [cursor=pointer]:
+                      - link "华天亚运会马术夺冠 375 万" [ref=f11e483]:
+                        - /url: /search?q=%E5%8D%8E%E5%A4%A9%E4%BA%9A%E8%BF%90%E4%BC%9A%E9%A9%AC%E6%9C%AF%E5%A4%BA%E5%86%A0&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=d3b42c7f-6ecb-46b8-a228-651548e19e3b
+                        - generic "华天亚运会马术夺冠" [ref=f11e484]
+                        - generic [ref=f11e485]: 375 万
+                      - generic [ref=f11e486]: 新
+                    - generic [ref=f11e487] [cursor=pointer]:
+                      - link "沃尔玛山姆中国首席采购官双双换人 375 万" [ref=f11e489]:
+                        - /url: /search?q=%E6%B2%83%E5%B0%94%E7%8E%9B%E5%B1%B1%E5%A7%86%E4%B8%AD%E5%9B%BD%E9%A6%96%E5%B8%AD%E9%87%87%E8%B4%AD%E5%AE%98%E5%8F%8C%E5%8F%8C%E6%8D%A2%E4%BA%BA&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=d3b42c7f-6ecb-46b8-a228-651548e19e3b
+                        - generic "沃尔玛山姆中国首席采购官双双换人" [ref=f11e490]
+                        - generic [ref=f11e491]: 375 万
+                      - generic [ref=f11e492]: 热
+                    - generic [ref=f11e493] [cursor=pointer]:
+                      - link "王楚钦孙颖莎组合挺进混双决赛 375 万" [ref=f11e495]:
+                        - /url: /search?q=%E7%8E%8B%E6%A5%9A%E9%92%A6%E5%AD%99%E9%A2%96%E8%8E%8E%E7%BB%84%E5%90%88%E6%8C%BA%E8%BF%9B%E6%B7%B7%E5%8F%8C%E5%86%B3%E8%B5%9B&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=d3b42c7f-6ecb-46b8-a228-651548e19e3b
+                        - generic "王楚钦孙颖莎组合挺进混双决赛" [ref=f11e496]
+                        - generic [ref=f11e497]: 375 万
+                      - generic [ref=f11e498]: 新
+                    - generic [ref=f11e499] [cursor=pointer]:
+                      - link "车企集体和宁德提分手 375 万" [ref=f11e501]:
+                        - /url: /search?q=%E8%BD%A6%E4%BC%81%E9%9B%86%E4%BD%93%E5%92%8C%E5%AE%81%E5%BE%B7%E6%8F%90%E5%88%86%E6%89%8B&search_source=Trending&utm_content=search_hot&utm_medium=organic&utm_source=zhihu&type=content&request_click_id=d3b42c7f-6ecb-46b8-a228-651548e19e3b
+                        - generic "车企集体和宁德提分手" [ref=f11e502]
+                        - generic [ref=f11e503]: 375 万
+                      - generic [ref=f11e504]: 热
+                - contentinfo [ref=f11e505]:
+                  - generic [ref=f11e506]:
+                    - generic [ref=f11e507]: 帮助中心
+                    - generic [ref=f11e511]:
+                      - generic [ref=f11e512]: 服务热线：400-919-0001
+                      - link "帮助与客服" [ref=f11e513] [cursor=pointer]:
+                        - /url: /help-center
+                      - link "联系我们" [ref=f11e514] [cursor=pointer]:
+                        - /url: /contact
+                      - button "更多" [ref=f11e515] [cursor=pointer]
+                  - generic [ref=f11e516]:
+                    - generic [ref=f11e517]: 举报中心
+                    - generic [ref=f11e521]:
+                      - generic [ref=f11e522]: 违法和不良信息举报：010-82716601
+                      - link "我的举报" [ref=f11e523] [cursor=pointer]:
+                        - /url: /community?source=zhihu_default
+                      - button "更多" [ref=f11e524] [cursor=pointer]
+                  - generic [ref=f11e525]:
+                    - generic [ref=f11e526]: 关于知乎
+                    - generic [ref=f11e530]:
+                      - link "知乎个人信息保护指引" [ref=f11e531] [cursor=pointer]:
+                        - /url: /term/privacy
+                      - link "知乎协议" [ref=f11e532] [cursor=pointer]:
+                        - /url: /term/zhihu-terms
+                      - link "下载知乎" [ref=f11e533] [cursor=pointer]:
+                        - /url: https://www.zhihu.com/app/
+                      - link "Investor Relations" [ref=f11e534] [cursor=pointer]:
+                        - /url: https://ir.zhihu.com
+                      - button "网站资质信息" [ref=f11e535] [cursor=pointer]
+                      - button "更多" [ref=f11e536] [cursor=pointer]
+                  - listitem [ref=f11e537]
+                  - generic [ref=f11e538]:
+                    - link "京ICP证110745号" [ref=f11e539] [cursor=pointer]:
+                      - /url: https://tsm.miit.gov.cn/dxxzsp/
+                    - text: ·
+                    - link "京ICP备13052560号-1" [ref=f11e540] [cursor=pointer]:
+                      - /url: https://beian.miit.gov.cn/
+                    - text: ·
+                    - link "京公网安备 11010802020088 号" [ref=f11e541] [cursor=pointer]:
+                      - /url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020088
+                    - text: ·
+                    - link "京网文[2025]0422-132 号" [ref=f11e542] [cursor=pointer]:
+                      - /url: https://www.zhihu.com/certificates
+                    - text: ·
+                    - link "药品医疗器械网络信息服务备案（京）网药械信息备字（2022）第00334号" [ref=f11e543] [cursor=pointer]:
+                      - /url: https://picx.zhimg.com/80/v2-7475facab3f2d2eda6faddaca4901d20_720w.png
+                  - img "本站提供适老化无障碍服务" [ref=f11e545]
+  - generic [active] [ref=f11e548]:
+    - generic [ref=f11e551]:
+      - generic [ref=f11e552]: 登录知乎，问答干货一键收藏
+      - generic [ref=f11e566]:
+        - generic [ref=f11e567]:
+          - generic [ref=f11e568]:
+            - generic [ref=f11e569]:
+              - generic [ref=f11e570]: 打开知乎App
+              - generic [ref=f11e571]: 在「我的页」右上角打开扫一扫
+              - generic [ref=f11e572]: 其他扫码方式：微信
+            - generic [ref=f11e577]:
+              - button "下载知乎App" [ref=f11e579] [cursor=pointer]
+              - button "无障碍模式" [ref=f11e581] [cursor=pointer]
+          - generic [ref=f11e583]:
+            - generic [ref=f11e585]:
+              - generic [ref=f11e586]:
+                - generic [ref=f11e587]:
+                  - button "验证码登录" [ref=f11e588] [cursor=pointer]
+                  - button "密码登录" [ref=f11e589] [cursor=pointer]
+                  - link "开通机构号" [ref=f11e590] [cursor=pointer]:
+                    - /url: /org/signup
+                - generic [ref=f11e591]:
+                  - combobox [ref=f11e594] [cursor=pointer]:
+                    - generic [ref=f11e595]: 中国 +86
+                  - textbox [ref=f11e601]:
+                    - /placeholder: 手机号
+                - generic [ref=f11e602]:
+                  - textbox [ref=f11e605]:
+                    - /placeholder: 输入 6 位短信验证码
+                  - button "获取短信验证码" [ref=f11e606] [cursor=pointer]
+                - generic [ref=f11e607]:
+                  - button
+                  - button "忘记密码" [ref=f11e608] [cursor=pointer]
+                - button "登录/注册" [ref=f11e610] [cursor=pointer]
+              - generic:
+                - log
+            - generic [ref=f11e611]: 其他方式登录
+            - generic [ref=f11e616]:
+              - button [ref=f11e617] [cursor=pointer]
+              - button [ref=f11e620] [cursor=pointer]
+              - button [ref=f11e623] [cursor=pointer]
+            - generic [ref=f11e626]:
+              - text: 未注册手机验证后自动登录，注册即代表同意
+              - link "《知乎协议》" [ref=f11e627] [cursor=pointer]:
+                - /url: https://www.zhihu.com/term/zhihu-terms
+              - link "《隐私保护指引》" [ref=f11e628] [cursor=pointer]:
+                - /url: https://www.zhihu.com/term/privacy
+        - generic:
+          - paragraph: 扫码下载知乎 App
+          - button "关闭二维码"
+    - button "关闭" [ref=f11e629] [cursor=pointer]
