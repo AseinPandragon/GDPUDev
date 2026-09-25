@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>深挖 · 游戏策划（含技术策划 TP）· 数媒技自学指南 · GDPU GAMEDEV HUB</title>
-<link rel="stylesheet" href="roadmap-style.css?v=20260925d">
-<script src="roadmap-common.js?v=20260925d" defer></script>
+<link rel="stylesheet" href="roadmap-style.css?v=20260925e">
+<script src="roadmap-common.js?v=20260925e" defer></script>
 </head>
 <body>
 <canvas id="webgl-bg-canvas"></canvas>
@@ -32,61 +32,32 @@
     <a class="ark-nav-item" href="roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
     <a class="ark-nav-item" href="ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
     <a class="ark-nav-item" href="client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
-    <a class="ark-nav-item active" href="design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划 · 本页</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item active" href="design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划 · 本页</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="design"><span>策划页（总览）</span><span class="dd-slug">design</span></a>
+      <a href="design/system"><span>系统策划</span><span class="dd-slug">design/system</span></a>
+      <a href="design/numeric"><span>数值策划</span><span class="dd-slug">design/numeric</span></a>
+      <a href="design/level"><span>关卡策划</span><span class="dd-slug">design/level</span></a>
+      <a href="design/narrative"><span>文案 / 叙事策划</span><span class="dd-slug">design/narrative</span></a>
+      <a href="design/tech-design" class="dd-hot"><span>技术策划 TP ⭐</span><span class="dd-slug">design/tech-design</span></a>
+    </div>
+  </div>
     <a class="ark-nav-item" href="engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
-    <a class="ark-nav-item" href="art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="art"><span>美术页（总览）</span><span class="dd-slug">art</span></a>
+      <a href="art/illustration"><span>2D 原画 / 插画</span><span class="dd-slug">art/illustration</span></a>
+      <a href="art/modeling"><span>3D 建模</span><span class="dd-slug">art/modeling</span></a>
+      <a href="art/animation"><span>动作 / 绑定</span><span class="dd-slug">art/animation</span></a>
+      <a href="art/vfx" class="dd-hot"><span>特效 VFX ⭐</span><span class="dd-slug">art/vfx</span></a>
+      <a href="art/ui"><span>UI / 界面美术</span><span class="dd-slug">art/ui</span></a>
+    </div>
+  </div>
     <a class="ark-nav-item" href="server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
     <a class="ark-nav-item" href="contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
     <a class="ark-nav-item" href="jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
-  </div>
-
-  <!-- ================= 策划细分全景（置顶） ================= -->
-  <div class="category-section-block">
-    <div class="section-block-header">
-      <div class="section-title-wrap">
-        <div class="section-title">■ 策划细分全景：先点【策划】展开，再逐个看</div>
-        <span class="section-count-badge">6 BOXES</span>
-      </div>
-      <span class="section-desc">点框标题可展开 / 收起该细分的详细说明</span>
-    </div>
-
-    <div class="pos-tree">
-      <button class="pos-tree-toggle" type="button">
-        <span class="pos-tree-name">【策划】</span>
-        <span class="pos-tree-arrow">▾ 展开细分</span>
-      </button>
-      <div class="pos-tree-children">
-        <div class="pos-child open">
-          <button class="pos-child-head" type="button"><span>策划总览</span><span class="pos-child-arrow">−</span></button>
-          <div class="pos-child-body">共同点是"对游戏体验负责"，分歧点在于你负责体验的哪一层——规则（系统）、概率与曲线（数值）、空间与节奏（关卡）、还是故事（文案）。校招通常不细分死，但作品集方向要和投的细分对上。</div>
-        </div>
-        <a class="pos-child-link" href="design/system">
-          <span class="pos-child-title">系统策划</span>
-          <span class="pos-child-desc">拼逻辑拆解与规则设计，最"标准"的策划入口。</span>
-          <span class="pos-child-go">进入细分页 ➔ design/system</span>
-        </a>
-        <a class="pos-child-link" href="design/numeric">
-          <span class="pos-child-title">数值策划</span>
-          <span class="pos-child-desc">拼数学建模与曲线，最看数理功底的方向。</span>
-          <span class="pos-child-go">进入细分页 ➔ design/numeric</span>
-        </a>
-        <a class="pos-child-link" href="design/level">
-          <span class="pos-child-title">关卡策划</span>
-          <span class="pos-child-desc">在引擎里白盒摆关卡，数媒技的引擎课直接对口。</span>
-          <span class="pos-child-go">进入细分页 ➔ design/level</span>
-        </a>
-        <a class="pos-child-link" href="design/narrative">
-          <span class="pos-child-title">文案 / 叙事策划</span>
-          <span class="pos-child-desc">卷文笔与叙事结构，坑位相对少，强项才选。</span>
-          <span class="pos-child-go">进入细分页 ➔ design/narrative</span>
-        </a>
-        <a class="pos-child-link sub-hot" href="design/tech-design">
-          <span class="pos-child-title">技术策划 TP ⭐ 数媒技优势位</span>
-          <span class="pos-child-desc">用引擎 + 脚本把设计落地，程序×策划复合，缺口明显。</span>
-          <span class="pos-child-go">进入细分页 ➔ design/tech-design</span>
-        </a>
-      </div>
-    </div>
   </div>
 
   <!-- ================= 深挖路线 ================= -->

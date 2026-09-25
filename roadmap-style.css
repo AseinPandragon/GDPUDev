@@ -174,9 +174,7 @@ body {
   padding: 10px 18px;
   margin-bottom: 14px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-  overflow-x: auto;
   gap: 10px;
-  -webkit-overflow-scrolling: touch;
   position: sticky;
   top: 8px;
   z-index: 50;
@@ -642,6 +640,45 @@ a.tag-pill:not(.em).res-link:hover { background: #475569; color: #ffffff; border
   .tl-item::before { left: -20px; }
   .reality-list { font-size: 13px; }
   .page-footer { font-size: 10.5px; }
+}
+
+/* ===== 导航悬停下拉（细分页菜单） ===== */
+.ark-nav-drop { position: relative; display: flex; flex-shrink: 0; }
+.ark-nav-drop .ark-dd-caret {
+  font-size: 9px; color: #94a3b8; margin-left: 4px;
+  display: inline-block; transition: transform 0.2s;
+}
+.ark-nav-drop:hover .ark-dd-caret { transform: rotate(180deg); color: #2563eb; }
+.ark-nav-menu {
+  display: none;
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  min-width: 250px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+  padding: 6px;
+  z-index: 60;
+}
+.ark-nav-drop:hover .ark-nav-menu,
+.ark-nav-drop:focus-within .ark-nav-menu { display: block; }
+.ark-nav-menu a {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 8px 12px; border-radius: 5px; text-decoration: none;
+  font-size: 12.5px; font-weight: 700; color: var(--text-primary);
+  transition: background 0.15s;
+}
+.ark-nav-menu a:hover { background: var(--accent-blue-light); color: var(--accent-blue); }
+.ark-nav-menu a.dd-hot { color: var(--accent-amber); }
+.ark-nav-menu a.dd-hot:hover { background: #fef3c7; }
+.ark-nav-menu a .dd-slug {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--text-subtle);
+}
+@media (max-width: 768px) {
+  .category-pill-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .ark-nav-menu { display: none !important; }
 }
 
 /* ===== 岗位细分树：点【父级】展开详细框 ===== */
