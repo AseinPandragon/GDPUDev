@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>2D 原画 / 插画 · 美术细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
-<link rel="stylesheet" href="../roadmap-style.css?v=20260925f">
-<script src="../roadmap-common.js?v=20260925f" defer></script>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260926a">
+<script src="../roadmap-common.js?v=20260926a" defer></script>
 </head>
 <body>
 <canvas id="webgl-bg-canvas"></canvas>
@@ -119,10 +119,20 @@
       她的心法送给所有纠结"先学什么"的人：<strong>"更多时候都是别管，开画"——其实都是画着然后学着来的，画着就开智了（当然也是画着然后改错）。</strong>有人适合打地基再盖房子，有人缺哪补哪，两种风格都成立；她看了本页初版的模板化建议，直接点评"很应届那种"——所以下面每一步都换成了她真实走过的顺序和方法。
     </div>
 
+    <div class="year-tabs" role="tablist">
+      <span class="yt-title">你现在是：</span>
+      <button class="year-tab" type="button" data-year="all">全部</button>
+      <button class="year-tab" type="button" data-year="1">大一</button>
+      <button class="year-tab" type="button" data-year="2">大二</button>
+      <button class="year-tab" type="button" data-year="3">大三</button>
+      <button class="year-tab" type="button" data-year="4">大四</button>
+      <span class="yt-hint">选了年份后，只展开和你相关的步骤 · 选择会记住</span>
+    </div>
+
     <div class="step-flow">
       <div class="step-item">
       <div class="step-num">1</div>
-      <div class="article-card">
+      <div class="article-card" data-years="1" data-ckgroup="ill-y1">
         <div class="card-tactical-header">
           <span class="card-index-tag">大一 · 鉴赏先行 + 造型起步</span>
           <span class="card-serial-code">THEORY → FORM</span>
@@ -131,18 +141,19 @@
         <div class="card-summary">
           美术生学姐雁落依痕的亲历顺序是<strong>先理论后动手</strong>："首先，科普艺术学概论，我们大一就是纯理论"——先知道有哪些好作品、哪些艺术家哪些风格、画画分什么类型，一两节课的量就够，别纠结"学会"。然后进入造型：
           <ul class="reality-list" style="margin-top: 8px;">
-            <li><strong>素描与透视同步</strong>："造型基础，和透视空间一起上，要兼顾透视"——不是闷头排线；</li>
-            <li><strong>速写不求量求概括</strong>：抓动态先行，五分钟画不完就半小时，重点是动态不是细节；她原话："速写对透视和人体结构的理解都有帮助"；</li>
-            <li>课外保持每周 3~5 张动态速写（5~15 分钟一张）；</li>
-            <li>每天 15 分钟 ArtStation / 站酷，PureRef 建参考图库——"先知道有哪些好的作品"就是从这里持续输入。</li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="1"> <strong>素描与透视同步</strong>："造型基础，和透视空间一起上，要兼顾透视"——不是闷头排线；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="2"> <strong>速写不求量求概括</strong>：抓动态先行，五分钟画不完就半小时，重点是动态不是细节；她原话："速写对透视和人体结构的理解都有帮助"；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="3"> 课外保持每周 3~5 张动态速写（5~15 分钟一张）；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="4"> 每天 15 分钟 ArtStation / 站酷，PureRef 建参考图库——"先知道有哪些好的作品"就是从这里持续输入。</label></li>
           </ul>
+          <span class="ck-progress"></span>
         </div>
       </div>
       </div>
 
       <div class="step-item">
       <div class="step-num">2</div>
-      <div class="article-card">
+      <div class="article-card" data-years="2" data-ckgroup="ill-y2">
         <div class="card-tactical-header">
           <span class="card-index-tag">大二 · 人体 + 色彩自己补</span>
           <span class="card-serial-code">FIGURE & COLOR</span>
@@ -151,19 +162,20 @@
         <div class="card-summary">
           构成的定位是"了解一下有这玩意"即可；这一年真正的两座山是人体和色彩——课表没有色彩课，学姐的方法直接可抄：
           <ul class="reality-list" style="margin-top: 8px;">
-            <li><strong>人体：几何起形</strong>——先用方块概括清楚姿势，熟练后再加肌肉；觉得无从下手就是缺这一步；</li>
-            <li><strong>橡胶口诀</strong>："把人的腰身当橡胶，胯和胸膛是硬的"——动作一侧肌肉挤压、另一侧拉伸；记住哪里骨头突出来、哪里收进去，"这里动了，别的肌肉骨头也要跟着动"；</li>
-            <li><strong>猜颜色练法</strong>：真实照片（场景/静物）高斯模糊缩小，凭直觉用颜色概括——<strong>不要吸色</strong>，"猜着猜着就慢慢准确了"；</li>
-            <li><strong>进阶版</strong>：找一张名画/优秀作品的色卡，用那套色卡给照片写生——但最好自己重构颜色，别照抄；多练几张；</li>
-            <li>课内衔接：数字绘画基础把板绘走熟，平时多看漂亮色彩的作品（小红书搜图），训练"眼睛不骗自己"。</li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="1"> <strong>人体：几何起形</strong>——先用方块概括清楚姿势，熟练后再加肌肉；觉得无从下手就是缺这一步；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="2"> <strong>橡胶口诀</strong>："把人的腰身当橡胶，胯和胸膛是硬的"——动作一侧肌肉挤压、另一侧拉伸；记住哪里骨头突出来、哪里收进去，"这里动了，别的肌肉骨头也要跟着动"；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="3"> <strong>猜颜色练法</strong>：真实照片（场景/静物）高斯模糊缩小，凭直觉用颜色概括——<strong>不要吸色</strong>，"猜着猜着就慢慢准确了"；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="4"> <strong>进阶版</strong>：找一张名画/优秀作品的色卡，用那套色卡给照片写生——但最好自己重构颜色，别照抄；多练几张；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="5"> 课内衔接：数字绘画基础把板绘走熟，平时多看漂亮色彩的作品（小红书搜图），训练"眼睛不骗自己"。</label></li>
           </ul>
+          <span class="ck-progress"></span>
         </div>
       </div>
       </div>
 
       <div class="step-item">
       <div class="step-num">3</div>
-      <div class="article-card">
+      <div class="article-card" data-years="3" data-ckgroup="ill-y3">
         <div class="card-tactical-header">
           <span class="card-index-tag">大三 · 从临摹摸鱼到成套原创</span>
           <span class="card-serial-code">COPY → CREATE</span>
@@ -172,18 +184,19 @@
         <div class="card-summary">
           聊天里两个人都说自己"只会临摹，根本不会自己画"。学姐给的过渡方案叫<strong>摸鱼</strong>：抄动作，然后加入自己喜欢的元素——改发型、改五官、改服装；或者从改照片开始。改着改着，"自己画"的比例就上来了。有了这个能力，进入作品集节奏：
           <ul class="reality-list" style="margin-top: 8px;">
-            <li><strong>成套作品 2~3 套</strong>：每套含三视图、表情差分、动作拆分、配套道具——主美和 HR 就是这样评估设计能力的；</li>
-            <li>确定 1~2 种主攻风格（校招作品集风格统一比多样重要）；</li>
-            <li>引擎联动：把设计稿进引擎摆一摆，理解"可实现的设定"长什么样——和纯插画学生拉开差距的一步；</li>
-            <li>每件作品写 200 字设计说明，面试要原样讲出来；投 GGAC 等比赛，暑假争取实习/外包。</li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="1"> <strong>成套作品 2~3 套</strong>：每套含三视图、表情差分、动作拆分、配套道具——主美和 HR 就是这样评估设计能力的；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="2"> 确定 1~2 种主攻风格（校招作品集风格统一比多样重要）；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="3"> 引擎联动：把设计稿进引擎摆一摆，理解"可实现的设定"长什么样——和纯插画学生拉开差距的一步；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="4"> 每件作品写 200 字设计说明，面试要原样讲出来；投 GGAC 等比赛，暑假争取实习/外包。</label></li>
           </ul>
+          <span class="ck-progress"></span>
         </div>
       </div>
       </div>
 
       <div class="step-item">
       <div class="step-num">4</div>
-      <div class="article-card">
+      <div class="article-card" data-years="4" data-ckgroup="ill-y4">
         <div class="card-tactical-header">
           <span class="card-index-tag">大四 · 收敛成集 + 面试</span>
           <span class="card-serial-code">PORTFOLIO FINAL</span>
@@ -192,11 +205,12 @@
         <div class="card-summary">
           学姐的原话："如果你要干原画，肯定不止这么点"——上面所有课内内容只是地基，大四是把课外积累收敛成作品集的年份：
           <ul class="reality-list" style="margin-top: 8px;">
-            <li>从 50 张里精选 10~15 张成集，宁缺毋滥；每张配 200 字设计说明，面试讲得出"为什么这么设计"；</li>
-            <li>简历 + 作品集打包成一个链接（网页优先，PDF 备份），投递节奏见薪资招聘页；</li>
-            <li>模拟面试：练"讲设计"——讲不出来 = 还没想清楚；</li>
-            <li>实习优先：大三暑假到大四上的日常实习是转正最短路径，别等毕设结束才开始投。</li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="1"> 从 50 张里精选 10~15 张成集，宁缺毋滥；每张配 200 字设计说明，面试讲得出"为什么这么设计"；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="2"> 简历 + 作品集打包成一个链接（网页优先，PDF 备份），投递节奏见薪资招聘页；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="3"> 模拟面试：练"讲设计"——讲不出来 = 还没想清楚；</label></li>
+            <li><label><input type="checkbox" class="ck-input" data-ck="4"> 实习优先：大三暑假到大四上的日常实习是转正最短路径，别等毕设结束才开始投。</label></li>
           </ul>
+          <span class="ck-progress"></span>
         </div>
       </div>
       </div>
@@ -263,6 +277,26 @@
     </div>
     <div class="pending-box">
       <strong>【持续更新】</strong>　这页是 2D 原画 / 插画 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../art">美术页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 本页来源与置信度</div>
+        <span class="section-count-badge">SOURCES</span>
+      </div>
+      <span class="section-desc">每条关键内容都能溯源 · 等级：官方一手 &gt; 从业者亲历 &gt; 社区经验</span>
+    </div>
+    <div class="sources-box">
+      <strong>来源清单</strong><span class="src-verified">最后人工验证：2026-09-26（真实浏览器逐条打开）</span>
+      <ul class="reality-list" style="margin-top: 8px;">
+        <li><span class="src-badge exp">亲历</span>美术生学姐雁落依痕的入门路线与练习方法——2026-03-12 聊天记录整理，本站成员可随时回访核对；</li>
+        <li><span class="src-badge official">官方</span><a href="../assets/2024数媒技培养方案.pdf" target="_blank" rel="noopener">2024 级数字媒体技术培养方案（PDF）</a>——课程名称与学期以该文件为准；</li>
+        <li><span class="src-badge community">社区</span><a href="https://zhuanlan.zhihu.com/p/144163935" target="_blank" rel="noopener">入行 6 年原画师告诉你应该怎么学习（知乎专栏）</a>——六步路径与角色设计四要点；</li>
+        <li><span class="src-badge community">社区</span><a href="https://www.zhihu.com/question/33753294" target="_blank" rel="noopener">学习游戏原画应该从哪方面开始？（知乎问题）</a>——学习顺序与培训班避坑讨论。</li>
+      </ul>
+      <div style="margin-top: 8px;">置信度说明：<strong>官方一手</strong>可直接采信；<strong>从业者亲历</strong>是个人经验，方向可信、数值因人而异；<strong>社区经验</strong>保持独立判断，观点以原帖为准。链接失效或内容不符请直接说，我们当周更换。</div>
     </div>
   </div>
 

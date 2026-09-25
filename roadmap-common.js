@@ -167,3 +167,70 @@ document.addEventListener("click", function (e) {
     } catch (err) { /* ignore */ }
   }
 })();
+
+// ===== 年级选择器 + 自检打卡（localStorage 持久化） =====
+(function () {
+  var year = "all";
+  try { year = localStorage.getItem("gdpu-year") || "all"; } catch (e) {}
+
+  function applyYear() {
+    var nodes = document.querySelectorAll("[data-years]");
+    for (var i = 0; i < nodes.length; i++) {
+      var years = (nodes[i].getAttribute("data-years") || "").split(",");
+      nodes[i].classList.toggle("year-hide", !(year === "all" || years.indexOf(year) >= 0));
+    }
+    var tabs = document.querySelectorAll(".year-tab");
+    for (var j = 0; j < tabs.length; j++) {
+      tabs[j].classList.toggle("active", tabs[j].getAttribute("data-year") === year);
+    }
+  }
+
+  document.addEventListener("click", function (e) {
+    var tab = e.target.closest(".year-tab");
+    if (!tab) return;
+    year = tab.getAttribute("data-year") || "all";
+    try { localStorage.setItem("gdpu-year", year); } catch (err) {}
+    applyYear();
+  });
+
+  function pageKey() {
+    return window.location.pathname;
+  }
+  function refreshProgress(card) {
+    var boxes = card.querySelectorAll("input.ck-input");
+    var done = 0;
+    for (var i = 0; i < boxes.length; i++) { if (boxes[i].checked) done++; }
+    var bar = card.querySelector(".ck-progress");
+    if (bar) {
+      bar.textContent = "自检进度 " + done + " / " + boxes.length +
+        (boxes.length > 0 && done === boxes.length ? " ✅ 全部完成" : "");
+    }
+  }
+  function initChecks() {
+    var cards = document.querySelectorAll("[data-ckgroup]");
+    for (var i = 0; i < cards.length; i++) {
+      (function (card) {
+        var group = card.getAttribute("data-ckgroup");
+        var boxes = card.querySelectorAll("input.ck-input");
+        for (var j = 0; j < boxes.length; j++) {
+          (function (box) {
+            var key = "gdpu-ck:" + pageKey() + ":" + group + ":" + box.getAttribute("data-ck");
+            try { box.checked = localStorage.getItem(key) === "1"; } catch (e) {}
+            box.addEventListener("change", function () {
+              try { localStorage.setItem(key, box.checked ? "1" : "0"); } catch (err) {}
+              refreshProgress(card);
+            });
+          })(boxes[j]);
+        }
+        refreshProgress(card);
+      })(cards[i]);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () { applyYear(); initChecks(); });
+  } else {
+    applyYear();
+    initChecks();
+  }
+})();
