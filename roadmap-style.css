@@ -725,6 +725,42 @@ a.tag-pill:not(.em).res-link:hover { background: #475569; color: #ffffff; border
 .btn-expand-toggle:hover { background: var(--accent-blue-light); border-color: var(--accent-blue); }
 .btn-expand-toggle.open { background: #0f172a; color: #ffffff; border-color: #1e293b; }
 
+/* ===== 步骤轨道（顺序型内容竖排 stepper） ===== */
+.step-flow { position: relative; padding-left: 72px; }
+.step-flow::before {
+  content: "";
+  position: absolute;
+  left: 22px; top: 30px; bottom: 30px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-blue), var(--accent-cyan));
+  border-radius: 2px;
+  opacity: 0.4;
+}
+.step-item { position: relative; margin-bottom: 18px; }
+.step-item:last-child { margin-bottom: 0; }
+.step-num {
+  position: absolute;
+  left: -72px; top: 8px;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--accent-blue);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--accent-blue);
+  box-shadow: 0 0 0 5px var(--accent-blue-light);
+  z-index: 1;
+}
+.step-item .article-card { margin-bottom: 0; }
+
+@media (max-width: 768px) {
+  .step-flow { padding-left: 58px; }
+  .step-flow::before { left: 17px; }
+  .step-num { left: -58px; width: 38px; height: 38px; font-size: 13px; box-shadow: 0 0 0 4px var(--accent-blue-light); }
+}
+
 @media (max-width: 768px) {
   .subposition-grid { grid-template-columns: 1fr; }
   .freshman-entry-box .btn-read-dossier { margin-left: 0; }
