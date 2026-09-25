@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>总览 · 数媒技自学路线与就业指南 · GDPU GAMEDEV HUB</title>
-<link rel="stylesheet" href="roadmap-style.css?v=20260924b">
-<script src="roadmap-common.js?v=20260924b" defer></script>
+<link rel="stylesheet" href="roadmap-style.css?v=20260925a">
+<script src="roadmap-common.js?v=20260925a" defer></script>
 </head>
 <body>
 <canvas id="webgl-bg-canvas"></canvas>
@@ -28,6 +28,7 @@
   </header>
 
   <div class="category-pill-bar">
+    <a class="ark-nav-item" href="start.html"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
     <a class="ark-nav-item active" href="roadmap.html"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览 · 本页</span></a>
     <a class="ark-nav-item" href="ta.html"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
     <a class="ark-nav-item" href="client.html"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
@@ -42,6 +43,11 @@
   <div class="takeaway-alert-box amber">
     <strong>⚠️ 先说清楚这份指南的读法</strong>
     标注 <strong>【亲历】</strong> 的是我们自己在项目里真实遇到的坑，信不信由你，反正我们修过；其余内容是行业普遍认知，会随年份和市场波动，请以你入行那年的实际情况为准。<strong>更重要的是：每个人的路线不一样</strong>——本指南的时间线、自检和优先级默认按"毕业直接就业"编排，走保研/考研/考公的同学，绩点和升学的权重请自行上调，内容参考但不照搬。最后：AI（包括生成这份指南的工具）给的建议只是建议，它没有替你熬过夜、没有替你调过真机，最终适不适合你，要用你自己的项目去验证。
+  </div>
+
+  <div class="takeaway-alert-box blue freshman-entry-box">
+    <strong>🧭 刚进数媒专业，什么也不知道、很迷茫？</strong>
+    上面这些内容默认你至少摸过引擎或写过一点代码——如果你还没到那一步，别硬啃。先去<strong>「新生零基础入口」</strong>：从"跟着老师上课、认真对待大一素描课"讲起，逐门解读大一课表，再教你用三个问题找到第一扇门。<a class="btn-read-dossier" href="start.html">进入新生零基础入口 ➔</a>
   </div>
 
   <!-- ================= SEC.01 岗位全景 ================= -->
@@ -114,40 +120,68 @@
         </div>
       </div>
 
-      <div class="article-card emerald">
+      <div class="article-card emerald expandable-card">
         <div class="card-tactical-header">
           <span class="card-index-tag">POSITION_04 · 技术背景加分</span>
           <span class="card-serial-code">FIT: ★★★★</span>
         </div>
         <div class="card-headline">游戏策划（系统/关卡/数值/文案）</div>
         <div class="card-summary">
-          设计玩法、关卡、数值和剧情。数媒技的技术背景在"技术策划 TP"和关卡实现方向是明显加分项——能自己用引擎摆关卡、写简单脚本的策划非常吃香。纯案头策划则更卷文笔和思维。
+          设计玩法、关卡、数值和剧情。数媒技的技术背景在"技术策划 TP"和关卡实现方向是明显加分项——能自己用引擎摆关卡、写简单脚本的策划非常吃香。纯案头策划则更卷文笔和思维。<strong>点下方展开细分方向。</strong>
+        </div>
+        <div class="subposition-panel" data-panel="design">
+          <div class="subposition-overview">
+            <strong>【总览】</strong>策划不是一个岗位，是一组岗位的统称：共同点是"对游戏体验负责"，分歧点在于你负责体验的哪一层——规则（系统）、概率与曲线（数值）、空间与节奏（关卡）、还是故事（文案）。技术策划 TP 则是用引擎把设计落地的复合岗，是数媒技最顺的入口。校招通常不细分死，但作品集方向要和投的细分对上。
+          </div>
+          <div class="subposition-grid">
+            <div class="subposition-item"><div class="sub-name">系统策划</div><div class="sub-desc">设计玩法系统与经济循环，画流程图、写规则文档。门槛：逻辑拆解力 + Excel。</div></div>
+            <div class="subposition-item"><div class="sub-name">数值策划</div><div class="sub-desc">战斗/成长/经济公式与曲线建模。最看数理，高数概率论学好就是底子。</div></div>
+            <div class="subposition-item"><div class="sub-name">关卡策划</div><div class="sub-desc">在引擎里白盒摆关卡、控节奏曲线。数媒技的引擎课直接对口。</div></div>
+            <div class="subposition-item"><div class="sub-name">文案 / 叙事策划</div><div class="sub-desc">世界观、剧情、任务文本。卷文笔与叙事结构，坑位相对少。</div></div>
+            <div class="subposition-item sub-hot"><div class="sub-name">技术策划 TP ⭐</div><div class="sub-desc">用引擎 + 脚本把设计落地，程序×策划复合。数媒技优势位，缺口明显。</div></div>
+            <div class="subposition-item"><div class="sub-name">作品集形态</div><div class="sub-desc">拆解报告 + 关卡原型 + 一份能玩的 demo，比证书都有说服力。</div></div>
+          </div>
         </div>
         <div class="tag-cluster">
           <span class="tag-pill good">技术策划缺口</span>
           <span class="tag-pill">作品 = 拆解报告 + 关卡原型</span>
+          <span class="tag-pill warn">有完整深挖页 ⬇</span>
         </div>
         <div class="card-bottom-actions">
-          <span class="card-serial-code">// 完整版在策划页</span>
+          <button class="btn-expand-toggle" type="button" data-target="design">展开细分（6 个方向）▼</button>
           <a class="btn-read-dossier" href="design.html">进入策划页 ➔</a>
         </div>
       </div>
 
-      <div class="article-card">
+      <div class="article-card expandable-card">
         <div class="card-tactical-header">
           <span class="card-index-tag">POSITION_05 · 看天赋投入</span>
           <span class="card-serial-code">FIT: ★★★</span>
         </div>
         <div class="card-headline">美术（原画/3D/动作/特效）</div>
         <div class="card-summary">
-          2D 原画、3D 建模、绑定动画、特效。纯美术岗拼的是作品集里画/模型的硬实力，数媒技的美术课强度通常不够，需要额外大量练习。特效（VFX Artist）介于美术和技术之间，是美术岗里对程序友好的一支。
+          美术同样是"一组岗位"的统称。纯美术岗拼的是作品集里画/模型的硬实力，数媒技的美术课强度通常不够，需要额外大量练习。<strong>点下方展开细分方向。</strong>
+        </div>
+        <div class="subposition-panel" data-panel="art">
+          <div class="subposition-overview">
+            <strong>【总览】</strong>游戏美术按"生产什么资产"分工：平面的交给原画/UI，立体的交给 3D 建模，让资产动起来的是动作绑定，让画面"炸"起来的是特效。共同门槛是作品集——<strong>细分之间的差距比"美术 vs 程序"的差距还大</strong>，选错细分再努力也难。特效 VFX 介于美术和技术之间，是美术岗里对数媒技最友好的一支。
+          </div>
+          <div class="subposition-grid">
+            <div class="subposition-item"><div class="sub-name">2D 原画 / 插画</div><div class="sub-desc">角色/场景设计、宣传图。拼素描色彩基本功与风格，PS/Procreate，大一造型基础就是起点。</div></div>
+            <div class="subposition-item"><div class="sub-name">3D 建模（角色/场景）</div><div class="sub-desc">Maya/Blender/ZBrush，次世代流程：高模→拓扑→烘焙→PBR 贴图。课内《三维建模技术》是入门。</div></div>
+            <div class="subposition-item"><div class="sub-name">动作 / 绑定</div><div class="sub-desc">骨骼绑定、动画状态机、动作捕捉。课内《三维动画技术》《三维动作捕捉技术》对口。</div></div>
+            <div class="subposition-item sub-hot"><div class="sub-name">特效 VFX ⭐</div><div class="sub-desc">Unity 粒子 / UE Niagara + 少量 Shader。美术岗里技术溢价最高、最缺人的一支。</div></div>
+            <div class="subposition-item"><div class="sub-name">UI / 界面美术</div><div class="sub-desc">界面、图标、HUD、动效。设计感 + 规范意识，课内《游戏视觉设计》《构成设计》对口。</div></div>
+            <div class="subposition-item"><div class="sub-name">往 TA 走</div><div class="sub-desc">美术功底 + 程序能力交叉的顶点方向，完整路线见 TA 页。</div></div>
+          </div>
         </div>
         <div class="tag-cluster">
           <span class="tag-pill">作品集定生死</span>
           <span class="tag-pill warn">课内训练强度不够</span>
+          <span class="tag-pill warn">有完整深挖页 ⬇</span>
         </div>
         <div class="card-bottom-actions">
-          <span class="card-serial-code">// 完整版在美术特效页</span>
+          <button class="btn-expand-toggle" type="button" data-target="art">展开细分（6 个方向）▼</button>
           <a class="btn-read-dossier" href="art.html">进入美术特效页 ➔</a>
         </div>
       </div>
@@ -302,9 +336,22 @@
   <div class="page-footer">
     <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // CAREER ROADMAP</div>
     <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
-    <div><a href="index.html">← 返回 游戏开发情报中枢</a> · <a href="ta.html">TA</a> · <a href="client.html">客户端</a> · <a href="design.html">策划</a> · <a href="engine.html">引擎</a> · <a href="art.html">美术</a> · <a href="server.html">服务端</a> · <a href="contests.html">比赛</a> · <a href="jobs.html">薪资</a> · <a href="admin.html">站长后台</a></div>
+    <div><a href="index.html">← 返回 游戏开发情报中枢</a> · <a href="start.html">新生零基础</a> · <a href="ta.html">TA</a> · <a href="client.html">客户端</a> · <a href="design.html">策划</a> · <a href="engine.html">引擎</a> · <a href="art.html">美术</a> · <a href="server.html">服务端</a> · <a href="contests.html">比赛</a> · <a href="jobs.html">薪资</a> · <a href="admin.html">站长后台</a></div>
   </div>
 
 </div>
+<script>
+  // 岗位卡「总览 → 细分」展开/收起（策划 / 美术）
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.btn-expand-toggle');
+    if (!btn) return;
+    var card = btn.closest('.expandable-card');
+    var panel = card && card.querySelector('.subposition-panel');
+    if (!panel) return;
+    var open = panel.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.textContent = open ? '收起细分 ▲' : btn.getAttribute('data-label-closed') || '展开细分（6 个方向）▼';
+  });
+</script>
 </body>
 </html>

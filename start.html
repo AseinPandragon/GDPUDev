@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>新生零基础入口 · 数媒技自学路线与就业指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="roadmap-style.css?v=20260925a">
+<script src="roadmap-common.js?v=20260925a" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB · 四象菱形点阵核心">
+        <img src="gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>数媒技自学指南 · 新生零基础入口 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">START HERE</span></h1>
+        <p>什么还不知道？很迷茫？不知道看什么？从这一页开始 // ZERO-BASIS ONBOARDING</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="index.html">← 返回情报中枢</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item active" href="start.html"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础 · 本页</span></a>
+    <a class="ark-nav-item" href="roadmap.html"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="ta.html"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="client.html"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <a class="ark-nav-item" href="design.html"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span></a>
+    <a class="ark-nav-item" href="engine.html"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <a class="ark-nav-item" href="art.html"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span></a>
+    <a class="ark-nav-item" href="server.html"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="contests.html"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="jobs.html"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+  </div>
+
+  <div class="takeaway-alert-box amber">
+    <strong>⚠️ 这页是给"刚进来、什么也不知道"的你写的</strong>
+    本站其他页面默认你至少碰过引擎或写过一点代码；这一页不默认任何东西。你不需要现在就决定以后做什么，也不需要立刻学什么引擎——大一上学期该做的事，学校课表里其实都排好了，你只要别把它们浪费掉。<strong>迷茫不是你的问题，是所有人刚进大学的默认状态。</strong>
+  </div>
+
+  <!-- ================= SEC.01 跟着课走 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ SEC.01 · 先跟上学校的节奏：大一课表逐门讲</div>
+        <span class="section-count-badge">FOLLOW THE PLAN</span>
+      </div>
+      <span class="section-desc">依据：广东药科大学 2024 级数字媒体技术培养方案（本页底部可下载原文）</span>
+    </div>
+
+    <div class="takeaway-alert-box" style="margin-bottom: 14px;">
+      <strong>💡 核心建议：大一大二，跟着老师上课就是最优解</strong>
+      培养方案不是形式主义——它已经替你把"这个专业需要哪些底层能力"排好了顺序。<strong>尤其是大一的素描课（造型基础），请认真对待</strong>：它练的不是"画画"，是造型、观察和审美，这条腿决定了你以后能不能走美术/TA 方向。别翘素描课去"自学Unity"，那是捡了芝麻丢了西瓜。
+    </div>
+
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead>
+          <tr><th>课程（大一）</th><th>学期</th><th>它到底在给你练什么</th><th>怎么上才不浪费</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="name">高等数学Ⅰ / 线性代数</td><td>一上 / 一下</td><td>数理地基。以后数值策划、图形学、TA 都要回来还这笔债</td><td>该刷题刷题，保研考研也直接考它</td></tr>
+          <tr><td class="name">数字媒体技术导论</td><td>一上</td><td>认识专业全貌：这行有哪些方向、哪些岗位</td><td>听完就配合本站「岗位全景图」对号入座</td></tr>
+          <tr><td class="name">造型基础（素描）</td><td>一下</td><td>造型 / 明暗 / 观察能力——美术线的地基</td><td>认真画，别糊弄。美术和 TA 方向日后全靠它</td></tr>
+          <tr><td class="name">艺术学概论</td><td>一下</td><td>审美与艺术史常识</td><td>当"审美输入"上，别当水课上</td></tr>
+          <tr><td class="name">程序设计基础</td><td>一下</td><td>人生第一门编程课。客户端 / 服务端 / TA 的命根子</td><td>每一行代码都自己敲，别复制课本</td></tr>
+          <tr><td class="name">人体结构学概论（限选）</td><td>一下</td><td>画人物不崩的底层知识</td><td>想走美术方向必选</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="article-card" style="margin-bottom: 14px;">
+      <div class="card-tactical-header">
+        <span class="card-index-tag">培养方案速览 · 后续年级</span>
+        <span class="card-serial-code">CURRICULUM MAP</span>
+      </div>
+      <div class="card-headline">四年课程脉络（先有个全局印象，别背）</div>
+      <div class="card-summary">
+        <ul>
+          <li><strong>大二上</strong>：三维建模技术（+实验）、面向对象程序设计（+实验）、数据库原理、数字绘画基础——引擎、编程、美术三线同时开课，专业课真正开始；</li>
+          <li><strong>大二下</strong>：数据结构、三维游戏开发技术、构成设计、三维动画技术、计算机网络——<strong>《三维游戏开发技术》是你第一次在课内碰游戏开发</strong>，别划水；</li>
+          <li><strong>大三上</strong>：网页前端技术、虚拟现实技术与应用、游戏视觉设计、商业摄影摄像 + 方向选修（计算机图形学、机器学习、影视视听语言等）——<strong>从这学期开始分化，选课就是在选方向</strong>；</li>
+          <li><strong>大三下</strong>：数字影视制作技术、影视包装与制作 + 方向选修（三维渲染技术、三维特效、数字音频、前端框架、JavaWeb、算法分析与设计等）；</li>
+          <li><strong>大四</strong>：游戏引擎原理、综合课程实践、毕业实习、毕业论文（设计）。</li>
+        </ul>
+        结论：大二结束你手上会有"编程 + 引擎 + 美术"三样都沾一点的能力，<strong>方向是在大二到大三之间逐步清晰的，大一根本不用急着选</strong>。
+      </div>
+    </div>
+
+    <div class="pending-box">
+      <strong>【附件】</strong>　<a href="assets/2024数媒技培养方案.pdf" target="_blank" rel="noopener">📄 下载：2024 级数字媒体技术培养方案原文（PDF）</a>——学制 4 年、最低毕业学分 165。选课前对照原文再确认一遍本学期必修与限选，以教务最新通知为准。
+    </div>
+  </div>
+
+  <!-- ================= SEC.02 大一就干三件事 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ SEC.02 · 大一这一年，课之外只干三件事</div>
+        <span class="section-count-badge">3 TASKS</span>
+      </div>
+      <span class="section-desc">少即是多 · 这阶段做错选择的最大风险是"用力过猛"</span>
+    </div>
+
+    <div class="section-cards-grid">
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">TASK_01</span>
+          <span class="card-serial-code">GPA</span>
+        </div>
+        <div class="card-headline">别挂科，绩点别崩</div>
+        <div class="card-summary">
+          现在还不知道自己以后走就业、保研、考研还是考公——而<strong>绩点是四条路都通用的硬通货</strong>。大一课程（高数、线代）恰恰是拉分和拉垮的主战场。等大三想清楚了再补绩点，来不及。
+        </div>
+        <div class="tag-cluster">
+          <span class="tag-pill good">四条路线通用</span>
+          <span class="tag-pill">大一高数权重最高</span>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">TASK_02</span>
+          <span class="card-serial-code">ENGLISH</span>
+        </div>
+        <div class="card-headline">英语别断</div>
+        <div class="card-summary">
+          引擎文档、报错信息、教程——一手资料几乎全是英文。四级是底线，能顺便往六级推就推。不需要刷什么"技术英语"，<strong>坚持用英文界面、英文搜索</strong>，就是最省力的积累。
+        </div>
+      </div>
+
+      <div class="article-card emerald">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">TASK_03</span>
+          <span class="card-serial-code">PLAY & ANALYZE</span>
+        </div>
+        <div class="card-headline">玩透 3~5 款游戏，写拆解笔记</div>
+        <div class="card-summary">
+          这是大一性价比最高的"专业学习"：<strong>带着问题玩</strong>——这个游戏的成长线为什么停在这里？这关的失败惩罚为什么这么设计？每次玩完花 20 分钟写下来。一年后你会发现：这份笔记既是策划方向的敲门砖，也是你判断自己喜不喜欢"设计"的试纸。
+        </div>
+        <div class="tag-cluster">
+          <span class="tag-pill em">每周 20 分钟就够</span>
+          <span class="tag-pill">later 变成拆解报告 = 策划作品集素材</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SEC.03 第一次触电 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ SEC.03 · 第一次触电游戏开发（寒假做就行）</div>
+        <span class="section-count-badge">FIRST TOUCH</span>
+      </div>
+      <span class="section-desc">目标不是做出游戏 · 是消除"我能不能做这行"的未知恐惧</span>
+    </div>
+
+    <div class="section-cards-grid">
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">STEP_01 · 5 分钟</span>
+          <span class="card-serial-code">INSTALL</span>
+        </div>
+        <div class="card-headline">装一个引擎，随便哪个</div>
+        <div class="card-summary">
+          Unity 或 Godot 都行（电脑配置一般就选 Godot，免费开源、安装包小）。这一步没有任何决策成本——引擎不是信仰，是工具，以后换引擎的成本远比你想象的低。
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">STEP_02 · 2~3 天</span>
+          <span class="card-serial-code">FOLLOW ONE TUTORIAL</span>
+        </div>
+        <div class="card-headline">跟完一个官方入门教程，跑起来就行</div>
+        <div class="card-summary">
+          官方新手教程（Unity Learn 的 Essentials / Godot 官方 Your first game）足够。<strong>判定标准只有一个：屏幕里有个东西听你输入动起来了。</strong>看不懂的术语直接跳过，这阶段不需要理解，只需要"亲手摸过"。
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">STEP_03 · 寒假剩余时间</span>
+          <span class="card-serial-code">STOP & REFLECT</span>
+        </div>
+        <div class="card-headline">然后停下来，问自己两个问题</div>
+        <div class="card-summary">
+          ① 刚才那几个小时，我是兴奋还是煎熬？② 我更喜欢"调它的外观"，还是"改它的规则"，还是"让它的代码跑通"？——三个答案分别指向美术、策划、程序。不管答案是啥，<strong>带着这个体感回到 SEC.05 做方向自检</strong>。
+        </div>
+        <div class="tag-cluster">
+          <span class="tag-pill warn">不兴奋也正常 · 大一远不到下结论的时候</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SEC.04 迷茫自检 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ SEC.04 · 迷茫自检：三个问题帮你找到第一扇门</div>
+        <span class="section-count-badge">3 QUESTIONS</span>
+      </div>
+      <span class="section-desc">不需要现在就选定终身方向 · 只需要选"下一个打开哪页"</span>
+    </div>
+
+    <div class="section-cards-grid">
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">Q1 · 看到好看的画面会想"这是怎么做出来的"？</span>
+          <span class="card-serial-code">ART / TA</span>
+        </div>
+        <div class="card-headline">偏美术 → 先看美术页，顺手也看 TA 页</div>
+        <div class="card-summary">
+          如果你还会冒出"要是能让它动起来/按我的规则动起来就好了"，那 TA 可能是比纯美术更适合数媒技的方向。
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="art.html">进入美术特效页</a>
+          <a class="tag-pill em res-link" href="ta.html">进入 TA 页</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">Q2 · 玩游戏时总想"这规则为什么这么设计，换我会怎么改"？</span>
+          <span class="card-serial-code">DESIGN</span>
+        </div>
+        <div class="card-headline">偏设计 → 先看策划页</div>
+        <div class="card-summary">
+          注意：喜欢玩游戏 ≠ 喜欢做游戏设计。判据是你 SEC.02 写的拆解笔记——写了半年还乐在其中，就是真喜欢。
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="design.html">进入策划页</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">Q3 · 写程序设计作业时反而有点上头？</span>
+          <span class="card-serial-code">CLIENT / SERVER</span>
+        </div>
+        <div class="card-headline">偏代码 → 先看客户端页</div>
+        <div class="card-summary">
+          数媒技走客户端是主流出路，大一下的《程序设计基础》就是你这条线的起点，把 C语言学扎实，大二面向对象和数据结构会顺利得多。
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="client.html">进入客户端页</a>
+        </div>
+      </div>
+
+      <div class="article-card purple">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">三个都选不出来？</span>
+          <span class="card-serial-code">DEFAULT ROUTE</span>
+        </div>
+        <div class="card-headline">默认动作：按 SEC.01 课表走 + 回到总览页</div>
+        <div class="card-summary">
+          完全正常。大一的正确姿势就是"什么课都认真上 + 什么都沾一点"，等大二课程把三块能力都铺开了再选。先去总览页把岗位全景看一遍，混个眼熟就行。
+        </div>
+        <div class="tag-cluster">
+          <a class="tag-pill em res-link" href="roadmap.html">回到总览 · 岗位全景图</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SEC.05 常见误区 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ SEC.05 · 新生常见误区（每条都有人踩过）</div>
+        <span class="section-count-badge">4 TRAPS</span>
+      </div>
+      <span class="section-desc">读一遍省一年</span>
+    </div>
+
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>误区一：囤 200GB 教程 = 在学习。</strong>收藏夹不会替你写代码。教程只跟一个，跟完动手改，比囤十个都强。</li>
+        <li><strong>误区二：被"行业寒冬 / 35 岁"帖子吓到不敢动。</strong>行业周期你控制不了，你能控制的只有"四年后的你手里有什么"。把刷焦虑帖的时间拿去做 SEC.02 的三件事。</li>
+        <li><strong>误区三：觉得素描/艺术课没用，翘课去学引擎。</strong>数媒技的差异化竞争力恰恰是"技术+审美"复合。引擎哪年都能补，手上的造型功夫错过了系统训练期就很难补。</li>
+        <li><strong>误区四：大一就 ALL IN 一个方向。</strong>你连这个方向的真实工作内容都还没见过。大二的课程矩阵会帮你把方向"显影"出来，之前保持开放。</li>
+      </ul>
+    </div>
+
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是给大一新生的第一站；等你有了方向感，就去顶部导航挑对应页面深挖。哪句话你看不懂、或者你以新生视角觉得还缺什么，直接说，我们补。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // START HERE</div>
+    <div>内容含 AI 辅助生成 · 课程信息依据 2024 级培养方案，以教务最新通知为准 · 个人非经营性学习观察用途</div>
+    <div><a href="roadmap.html">← 返回总览</a> · <a href="ta.html">TA</a> · <a href="client.html">客户端</a> · <a href="design.html">策划</a> · <a href="engine.html">引擎</a> · <a href="art.html">美术</a> · <a href="server.html">服务端</a> · <a href="contests.html">比赛</a> · <a href="jobs.html">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>
