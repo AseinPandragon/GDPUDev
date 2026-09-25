@@ -129,3 +129,23 @@ function initWebGLBackground() {
 }
 
 window.addEventListener("DOMContentLoaded", initWebGLBackground);
+
+// ===== 岗位细分树交互：点父级展开详细框，点框标题展开详情 =====
+document.addEventListener("click", function (e) {
+  var toggle = e.target.closest(".pos-tree-toggle");
+  if (toggle) {
+    var children = toggle.parentElement.querySelector(".pos-tree-children");
+    if (!children) return;
+    var open = children.classList.toggle("open");
+    var arrow = toggle.querySelector(".pos-tree-arrow");
+    if (arrow) arrow.textContent = open ? "▲ 收起" : "▾ 展开细分";
+    return;
+  }
+  var head = e.target.closest(".pos-child-head");
+  if (head) {
+    var child = head.closest(".pos-child");
+    var isOpen = child.classList.toggle("open");
+    var a = head.querySelector(".pos-child-arrow");
+    if (a) a.textContent = isOpen ? "−" : "+";
+  }
+});

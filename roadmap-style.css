@@ -644,6 +644,49 @@ a.tag-pill:not(.em).res-link:hover { background: #475569; color: #ffffff; border
   .page-footer { font-size: 10.5px; }
 }
 
+/* ===== 岗位细分树：点【父级】展开详细框 ===== */
+.pos-tree { margin: 10px 0 2px; }
+.pos-tree-toggle {
+  display: flex; align-items: center; justify-content: space-between; width: 100%;
+  background: #0f172a; color: #ffffff; border: 1px solid #1e293b;
+  padding: 10px 16px; font-size: 13.5px; font-weight: 800; cursor: pointer;
+  font-family: var(--font-mono); letter-spacing: 1px; text-align: left;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+  transition: background 0.2s;
+}
+.pos-tree-toggle:hover { background: #1e293b; }
+.pos-tree-arrow { font-size: 11px; opacity: 0.85; flex-shrink: 0; margin-left: 12px; }
+.pos-tree-children { display: none; margin-top: 8px; gap: 8px; }
+.pos-tree-children.open { display: grid; }
+.pos-child {
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  background: #ffffff;
+  overflow: hidden;
+}
+.pos-child-head {
+  display: flex; align-items: center; justify-content: space-between; width: 100%;
+  background: var(--bg-subtle); border: none; padding: 9px 14px;
+  font-size: 12.5px; font-weight: 800; cursor: pointer; text-align: left;
+  font-family: var(--font-mono); color: var(--text-primary); letter-spacing: 0.5px;
+  transition: background 0.15s;
+}
+.pos-child-head:hover { background: var(--accent-blue-light); }
+.pos-child.open .pos-child-head { background: var(--accent-blue); color: #ffffff; }
+.pos-child-arrow { font-size: 12px; opacity: 0.75; flex-shrink: 0; margin-left: 10px; font-weight: 800; }
+.pos-child-body {
+  display: none;
+  padding: 11px 14px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  border-top: 1px dashed var(--border-light);
+}
+.pos-child.open .pos-child-body { display: block; }
+.pos-child-body strong { color: var(--text-primary); }
+.pos-child.sub-hot .pos-child-head { color: var(--accent-amber); }
+.pos-child.sub-hot.open .pos-child-head { background: var(--accent-amber); color: #ffffff; }
+
 /* ===== 新生零基础入口横幅 ===== */
 .takeaway-alert-box.blue.freshman-entry-box {
   background: #eff6ff;
