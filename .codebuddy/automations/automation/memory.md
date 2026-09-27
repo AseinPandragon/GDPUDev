@@ -1,9 +1,8 @@
 # 自动化执行记录：每日游戏开发技术学习观察简报
 
-## 2026-09-26（星期六）
-- 生成 data/2026-09-26.js（hero=Meta AI 游戏工具+VR 眼镜 day-one Unity 支持 + 12 条 items）。周六新闻流偏行业向：条目以 GamesIndustry.biz 9/24-25 文章为主（Build A Rocket Boy 破产管理、任天堂 450 万美元盗版判决、荷兰消保组织诉 Epic €100m、微软广告积分专利、King 瑞典集体协议、tinyBuild 财报、动视反作弊 85 亿美元、Trophy Games 收购 Playrion、Xbox 重组评论、Kickstarter 众筹指南、MobyGames 署名认领）+ VS 2026 九月更新（Microsoft Learn）。
-- URL 验证：GI.biz 文章用其 9 月归档页（web_fetch）枚举精确 slug，逐条 IWR 200；Activision 条目首猜 slug 404，搜索修正为带 69% studios 的完整 slug 后 200。og:image 来自 assetsio.gnwcdn.com（已验证 image/jpeg，写 URL 时注意 &amp; 转义）。
-- 同步 news_data.js 与 archive_list.js（09-26 置顶、09-25/09-24 保留为往期）；UTF-8 无 BOM、CRLF 校验通过。
-- 去重：与 09-24/09-25 归档无重复。
-- git commit cf8efac 已 push origin main（未手动同步服务器，由 30 分钟 cron 自取——用户此前明确要求）。
-- 经验：周六新闻流薄属正常，宁缺毋滥收 12 条；GI.biz 归档页（/archive/2026/09）是枚举本周文章 URL 的最佳来源；assetsio.gnwcdn.com 图源可外链。
+## 2026-09-27（星期日）
+- 生成 data/2026-09-27.js（hero=The Relic: First Guardian Xbox 上线+永久降价+Switch 2 版 10/9 + 4 条 items）。周日 GI.biz 无更新、稿源极薄，按宁缺毋滥收 5 条内容（含 hero）：relic 发售、Godot 基金会愿景声明（godotengine.org/article/godot-vision-statement-2026/，官方 evergreen 深读）、Game-Oracle AI 披露销量报告（GameLook）、The Games Forum Roma 官网上线、墨尔本国际游戏周 10/2-11 回归（gamesweek.melbourne）。
+- 验证升级：脚本 IWR 被 403/TLS 拦的链接（rpgamer TLS、gamesweek.melbourne 403），改用已接管的 Edge CDP 会话（playwright-cli goto + eval document.title / head.children 遍历取 og:image）逐条浏览器验证——此方法可永久复用；nintendo-insider 是 Cloudflare 盾（自动化无法过）→ 按规则弃用。
+- 同步 news_data.js 与 archive_list.js（09-27 置顶、09-26/25/24 保留）；UTF-8 无 BOM、CRLF 校验通过。去重：与近 5 天归档无重复。
+- git commit 1ed3027 已 push origin main（未手动同步服务器）。
+- 经验：①脚本验证失败≠链接死，先分清 404（真死）与 403/TLS（反爬），反爬链接用 Edge CDP 浏览器验证；②eval 里含双引号会被参数拆分——用 head.children 遍历或 IIFE+单引号规避；③周日稿源薄，5 条也可接受。
