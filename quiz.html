@@ -6,6 +6,7 @@
 <title>方向小测试 · 你适合哪个岗位？ · GDPU GAMEDEV HUB</title>
 <link rel="stylesheet" href="roadmap-style.css?v=20260928a">
 <script src="roadmap-common.js?v=20260928a" defer></script>
+<script src="quiz-bank.js?v=20260928a"></script>
 <style>
   .quiz-q { margin-bottom: 16px; }
   .quiz-q-num { font-family: var(--font-mono); font-size: 11px; color: var(--accent-blue); letter-spacing: 1px; margin-bottom: 6px; }
@@ -106,17 +107,17 @@
 
   <div class="takeaway-alert-box">
     <strong>💡 玩法说明</strong>
-    20 道情景题，凭第一直觉选，别想"哪个方向好就业"。中途有事可以直接关掉，下次再来重测——反正 5 分钟。<strong>这只是一个娱乐向的小测试，不是科学测评</strong>——它的用处是给你一个"从哪里开始试"的起点，最终答案由你动手试出来。
+    题库 100 题，每次<strong>随机抽 20 道</strong>，重测自动换题。凭第一直觉选，别想"哪个方向好就业"。<strong>这只是一个娱乐向的小测试，不是科学测评</strong>——它的用处是给你一个"从哪里开始试"的起点，最终答案由你动手试出来。
   </div>
 
   <!-- ================= 题目区 ================= -->
   <div class="category-section-block">
     <div class="section-block-header">
       <div class="section-title-wrap">
-        <div class="section-title">■ 二十道情景题</div>
-        <span class="section-count-badge">20 QUESTIONS</span>
+        <div class="section-title">■ 随机 20 题（题库共 100 题）</div>
+        <span class="section-count-badge">SAMPLE 20 / BANK 100</span>
       </div>
-      <span class="section-desc">每题必选 · 全部选完才出结果 · 想中断就关掉，下次重测</span>
+      <span class="section-desc">每题必选 · 重测自动换题 · 全部选完才出结果</span>
     </div>
     <div class="article-card" id="quizBox" style="margin-bottom: 14px;"></div>
     <div style="display:flex; gap:12px; flex-wrap:wrap;">
@@ -287,12 +288,21 @@ var QS = [
     ['一个游戏测评账号，更内容不更开发', 'media']] }
 ];
 
+// 题库 = 内置 20 题 + quiz-bank.js 80 题 = 100 题；每次随机抽 20 道
+var QBANK = (window.QUIZ_BANK || []).concat(QS);
+var SAMPLED = QBANK.slice();
+for (var i = SAMPLED.length - 1; i > 0; i--) {
+  var j = Math.floor(Math.random() * (i + 1));
+  var tmp = SAMPLED[i]; SAMPLED[i] = SAMPLED[j]; SAMPLED[j] = tmp;
+}
+SAMPLED = SAMPLED.slice(0, Math.min(20, SAMPLED.length));
+
 var picked = {};
 
 function render() {
   var box = document.getElementById('quizBox');
   var html = '';
-  QS.forEach(function(item, qi) {
+  SAMPLED.forEach(function(item, qi) {
     html += '<div class="quiz-q" id="q' + qi + '">';
     html += '<div class="quiz-q-num">Q' + (qi + 1) + ' / 20</div>';
     html += '<div class="quiz-q-title">' + item.q + '</div>';
@@ -308,7 +318,7 @@ function pick(qi, oi, key) {
   picked[qi] = key;
   var q = document.getElementById('q' + qi);
   q.style.border = '';
-  for (var i = 0; i < QS[qi].o.length; i++) {
+  for (var i = 0; i < SAMPLED[qi].o.length; i++) {
     document.getElementById('opt-' + qi + '-' + i).classList.remove('picked');
   }
   document.getElementById('opt-' + qi + '-' + oi).classList.add('picked');
@@ -316,7 +326,7 @@ function pick(qi, oi, key) {
 
 function calcResult() {
   var missing = [];
-  for (var i = 0; i < QS.length; i++) {
+  for (var i = 0; i < SAMPLED.length; i++) {
     if (!picked[i]) missing.push(i);
   }
   var warn = document.getElementById('quizWarn');
