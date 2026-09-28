@@ -234,3 +234,29 @@ document.addEventListener("click", function (e) {
     initChecks();
   }
 })();
+
+// ==== 移动端导航下拉：≤768px 时点击父项展开/收起，再次点击才跳转 ====
+(function () {
+  var mq = window.matchMedia('(max-width: 768px)');
+  document.addEventListener('click', function (e) {
+    if (!mq.matches) return;
+    var drop = e.target.closest('.ark-nav-drop');
+    if (!drop) return;
+    var trigger = e.target.closest('.ark-nav-drop > .ark-nav-item');
+    if (!trigger) return; // 菜单内的子链接正常跳转
+    if (!drop.classList.contains('mobileOpen')) {
+      e.preventDefault();
+      document.querySelectorAll('.ark-nav-drop.mobileOpen').forEach(function (d) {
+        if (d !== drop) d.classList.remove('mobileOpen');
+      });
+      drop.classList.add('mobileOpen');
+    }
+    // 已展开状态下再次点击父项 → 放行跳转到总览页
+  }, true);
+  // 点击页面其他区域收起
+  document.addEventListener('click', function (e) {
+    if (!mq.matches) return;
+    if (e.target.closest('.ark-nav-drop')) return;
+    document.querySelectorAll('.ark-nav-drop.mobileOpen').forEach(function (d) { d.classList.remove('mobileOpen'); });
+  });
+})();

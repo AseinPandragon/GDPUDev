@@ -26,6 +26,13 @@
   #barBox { max-width: 680px; margin: 0 auto; }
   #topCard { max-width: 780px; margin-left: auto; margin-right: auto; }
   .quiz-q { border: 1px solid transparent; border-radius: 8px; padding: 4px 10px; }
+  @media (max-width: 480px) {
+    .bar-row { gap: 6px; }
+    .bar-name { width: 82px; font-size: 12px; }
+    .bar-pct { width: 42px; font-size: 12px; }
+    .quiz-opt { font-size: 13px; padding: 8px 10px; }
+    .quiz-q-title { font-size: 14px; }
+  }
   /* 点击/拖动时禁止选中题目文字，避免整页被蓝色/橙色选区罩住 */
   #quizBox, #quizBox * { user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
   #quizBox label { cursor: pointer; }

@@ -942,3 +942,19 @@ a.tag-pill:not(.em).res-link:hover { background: #475569; color: #ffffff; border
   .subposition-grid { grid-template-columns: 1fr; }
   .freshman-entry-box .btn-read-dossier { margin-left: 0; }
 }
+
+/* ==== 移动端导航下拉展开态（配合 common.js 点击逻辑） ==== */
+@media (max-width: 768px) {
+  .ark-nav-drop { position: relative; }
+  .ark-nav-drop.mobileOpen .ark-nav-menu {
+    display: block !important;
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: calc(100% + 6px);
+    z-index: 80;
+    max-height: 60vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, .25);
+  }
+}
