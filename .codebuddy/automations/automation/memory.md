@@ -12,4 +12,5 @@
 - 2026-09-26：12+hero 条；GI.biz 月度归档页（/archive/2026/09）是枚举本周文章 URL 的最佳来源；周六行业流为主。
 - 2026-09-27：初版仅 5 条被用户批评（"不是要保底 30 吗"）→ 按 GI.biz 归档枚举 + RPS 特征短语反查补到 17 条重推。经验：①脚本 403/TLS ≠ 死链，先区分 404（真死）与反爬，反爬链接用已接管的 Edge CDP 浏览器（playwright-cli goto + eval）验证；②RPS slug 猜测易 404，需特征短语反查；③IWR catch 输出真实异常别写死 404。
 - 2026-09-28：16 条（hero=Hytale Chapter 1 定档 10/12 + 15 条，RPS 周末文章为主）。新增例行规则：新生内容每日质检（见上）。当日质检结果已写入《新生内容每日质检清单.md》（修 start.html 一处中英混杂；3 项待办：design 5 页扩写 / design 延伸阅读 / year-tabs 铺开）。
+- 2026-09-28（链接专项，用户指令）：全站 52 去重外链验证通过；坏链 campus.tencent.com（证书 CN 不匹配，真浏览器也报错）→ 换 join.qq.com；GameLook/手游那点事(sykong) 站点已失效保持纯文字；Maya 用 autodesk.com.cn（国际站拒绝自动化）。正文就地挂链 20+ 处（GAMES101/202/104、唐老狮、Unity Hub、GitHub、LeetCode、牛客、MySQL/Redis、Unity Learn、Godot 教程、知乎专栏、indienova、游戏葡萄、Blender/Maya/ZBrush），新增 .inline-link 样式，CSS 版本 20260928a，commit 292a081。
 - 站点背景：十页站点（start 新生入口 + roadmap/ta/client/design/engine/art/server/contests/jobs）+ art/design 各 5 个细分子页；细分子页含知乎延伸阅读（浏览器验证）与原文摘录；导航 ART/DESIGN 悬停下拉 + 当前页高亮；nginx no-cache + .html 301 已配置；全站内链无 .html 后缀。
