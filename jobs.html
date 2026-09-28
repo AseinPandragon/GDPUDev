@@ -4,8 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>薪资与招聘情报 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
-<link rel="stylesheet" href="roadmap-style.css?v=20260928a">
-<script src="roadmap-common.js?v=20260928a" defer></script>
+<link rel="stylesheet" href="roadmap-style.css?v=20260928b">
+<script src="roadmap-common.js?v=20260928b" defer></script>
+<style>
+  /* 薪资区间条形图（纯 CSS，量程 0~60k） */
+  .schart { max-width: 860px; margin: 0 auto; }
+  .schart-scale { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; color: #64748b; padding-left: 128px; margin-bottom: 4px; }
+  .schart-group { margin-bottom: 16px; }
+  .schart-title { font-weight: 700; font-size: 13.5px; margin-bottom: 6px; }
+  .schart-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+  .schart-label { width: 64px; flex-shrink: 0; font-size: 11.5px; color: #64748b; text-align: right; }
+  .schart-track { flex: 1; position: relative; height: 16px; background: #0f172a; border: 1px solid var(--border-strong); border-radius: 4px;
+    background-image: linear-gradient(to right, rgba(148,163,184,.22) 1px, transparent 1px); background-size: 16.666% 100%; }
+  .schart-range { position: absolute; top: 2px; bottom: 2px; border-radius: 3px; min-width: 6px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 10.5px; color: #fff; white-space: nowrap; }
+  .schart-none { font-size: 11px; color: #94a3b8; padding-left: 8px; }
+  .schart-bar-b { background: #3b82f6; }
+  .schart-bar-s { background: #8b5cf6; }
+  .schart-bar-j { background: #10b981; }
+  .schart-note { font-size: 12px; color: #64748b; margin-top: 6px; }
+  @media (max-width: 640px) {
+    .schart-scale { padding-left: 84px; font-size: 10px; }
+    .schart-label { width: 48px; font-size: 10.5px; }
+    .schart-range .rtext { display: none; }
+  }
+</style>
 </head>
 <body>
 <canvas id="webgl-bg-canvas"></canvas>
@@ -122,6 +144,65 @@
     </div>
     <div class="pending-box">
       <strong>数据说明</strong>　牛客网历届校招档位公开帖（白菜/SP/SSP）+ 职友集岗位薪酬统计 + 媒体报道综合；「×15」为 12 月薪 + 3 个月绩效/年终的常见结构。参考数据点：网易游戏策划实习日薪 180~500 元（<a class="inline-link" href="https://www.nowcoder.com/jobs/detail/377127" target="_blank" rel="noopener">牛客职位页</a>）；4399 官方校招帖「策划/市场运营类 25~45w+，其他岗 20~40w+」（<a class="inline-link" href="https://m.nowcoder.com/feed/main/detail/7d88410a1fdc40b6b1e6730ede6082cb" target="_blank" rel="noopener">牛客官方帖</a>）；策划校招公开月薪区间 8~25K、13~16 薪居多（爱企查 2026 汇总）。
+    </div>
+  </div>
+
+  <!-- ================= 薪资区间条形图 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 薪资区间一眼比（月薪，单位 k）</div>
+        <span class="section-count-badge">VISUAL</span>
+      </div>
+      <span class="section-desc">条的起点=区间下限 · 长度=区间跨度 · 蓝白菜 / 紫SP·SSP / 绿社招 · 量程 0~60k</span>
+    </div>
+
+    <div class="schart">
+      <div class="schart-scale"><span>0</span><span>10k</span><span>20k</span><span>30k</span><span>40k</span><span>50k</span><span>60k</span></div>
+
+      <div class="schart-group">
+        <div class="schart-title">客户端（Unity）</div>
+        <div class="schart-row"><span class="schart-label">白菜</span><div class="schart-track"><div class="schart-range schart-bar-b" style="left:30%;width:10%;"><span class="rtext">18-24</span></div></div></div>
+        <div class="schart-row"><span class="schart-label">SP/SSP</span><div class="schart-track"><div class="schart-range schart-bar-s" style="left:45%;width:5%;"><span class="rtext">27-30</span></div></div></div>
+        <div class="schart-row"><span class="schart-label">社招3-8年</span><div class="schart-track"><div class="schart-range schart-bar-j" style="left:33.3%;width:33.3%;"><span class="rtext">20-40</span></div></div></div>
+      </div>
+
+      <div class="schart-group">
+        <div class="schart-title">服务端</div>
+        <div class="schart-row"><span class="schart-label">白菜</span><div class="schart-track"><div class="schart-range schart-bar-b" style="left:33.3%;width:10%;"><span class="rtext">20-26</span></div></div></div>
+        <div class="schart-row"><span class="schart-label">SP/SSP</span><div class="schart-track"><div class="schart-range schart-bar-s" style="left:46.7%;width:6.7%;"><span class="rtext">28-32</span></div></div></div>
+        <div class="schart-row"><span class="schart-label">社招3-8年</span><div class="schart-track"><div class="schart-range schart-bar-j" style="left:41.7%;width:33.3%;"><span class="rtext">25-45</span></div></div></div>
+      </div>
+
+      <div class="schart-group">
+        <div class="schart-title">技术美术 TA</div>
+        <div class="schart-row"><span class="schart-label">白菜</span><div class="schart-track"><div class="schart-range schart-bar-b" style="left:33.3%;width:8.3%;"><span class="rtext">20-25</span></div></div></div>
+        <div class="schart-row"><span class="schart-label">SP/SSP</span><div class="schart-track"><span class="schart-none">稀缺岗·面议可谈</span></div></div>
+        <div class="schart-row"><span class="schart-label">社招3-8年</span><div class="schart-track"><div class="schart-range schart-bar-j" style="left:33.3%;width:50%;"><span class="rtext">20-50</span></div></div></div>
+      </div>
+
+      <div class="schart-group">
+        <div class="schart-title">游戏策划</div>
+        <div class="schart-row"><span class="schart-label">白菜</span><div class="schart-track"><div class="schart-range schart-bar-b" style="left:16.7%;width:13.3%;"><span class="rtext">10-18</span></div></div></div>
+        <div class="schart-row"><span class="schart-label">SP/SSP</span><div class="schart-track"><div class="schart-range schart-bar-s" style="left:33.3%;width:8.3%;"><span class="rtext">20-25</span></div></div></div>
+        <div class="schart-row"><span class="schart-label">社招3-8年</span><div class="schart-track"><div class="schart-range schart-bar-j" style="left:25%;width:33.3%;"><span class="rtext">15-35</span></div></div></div>
+      </div>
+
+      <div class="schart-group">
+        <div class="schart-title">特效 VFX</div>
+        <div class="schart-row"><span class="schart-label">白菜</span><div class="schart-track"><div class="schart-range schart-bar-b" style="left:20%;width:16.7%;"><span class="rtext">12-22</span></div></div></div>
+        <div class="schart-row"><span class="schart-label">SP/SSP</span><div class="schart-track"><span class="schart-none">紧缺·波动大</span></div></div>
+        <div class="schart-row"><span class="schart-label">社招资深</span><div class="schart-track"><div class="schart-range schart-bar-j" style="left:58.3%;width:41.7%;"><span class="rtext">35-60</span></div></div></div>
+      </div>
+
+      <div class="schart-group">
+        <div class="schart-title">QA 测试</div>
+        <div class="schart-row"><span class="schart-label">白菜</span><div class="schart-track"><div class="schart-range schart-bar-b" style="left:13.3%;width:10%;"><span class="rtext">8-14</span></div></div></div>
+        <div class="schart-row"><span class="schart-label">SP/SSP</span><div class="schart-track"><span class="schart-none">—</span></div></div>
+        <div class="schart-row"><span class="schart-label">社招3-8年</span><div class="schart-track"><div class="schart-range schart-bar-j" style="left:25%;width:16.7%;"><span class="rtext">15-25</span></div></div></div>
+      </div>
+
+      <div class="schart-note">读法示例：客户端白菜条起于 30%（=18k）、止于 40%（=24k）；TA 社招条最长（20~50k），跨度即"上限高、方差大"。实习生日薪不入此图。</div>
     </div>
   </div>
 
