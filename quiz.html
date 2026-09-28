@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>方向小测试 · 你适合哪个岗位？ · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="roadmap-style.css?v=20260928a">
+<script src="roadmap-common.js?v=20260928a" defer></script>
+<style>
+  .quiz-q { margin-bottom: 16px; }
+  .quiz-q-num { font-family: var(--font-mono); font-size: 11px; color: var(--accent-blue); letter-spacing: 1px; margin-bottom: 6px; }
+  .quiz-q-title { font-weight: 700; font-size: 15px; margin-bottom: 10px; }
+  .quiz-opt { display: block; padding: 9px 14px; border: 1px solid var(--border-strong); border-radius: 6px; margin-bottom: 8px; cursor: pointer; font-size: 13.5px; transition: all .15s; }
+  .quiz-opt:hover { border-color: var(--accent-blue); }
+  .quiz-opt.picked { border-color: var(--accent-blue); background: rgba(59,130,246,.12); }
+  .quiz-opt input { margin-right: 8px; }
+  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .bar-name { width: 120px; flex-shrink: 0; font-size: 13px; font-weight: 700; }
+  .bar-track { flex: 1; height: 16px; background: #0f172a; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+  .bar-fill { height: 100%; border-radius: 8px; background: linear-gradient(90deg,#3b82f6,#8b5cf6); transition: width .8s cubic-bezier(.16,1,.3,1); }
+  .bar-pct { width: 52px; flex-shrink: 0; font-family: var(--font-mono); font-size: 13px; text-align: right; }
+  .result-hidden { display: none; }
+</style>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>方向小测试 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">QUIZ</span></h1>
+        <p>10 道情景题 · 看你的直觉倾向哪个方向 // SELF-CHECK</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="index">← 返回情报中枢</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="quick"><span class="ark-en-label">QUICK</span><span class="ark-cn-label">3 分钟版</span></a>
+    <a class="ark-nav-item active" href="quiz"><span class="ark-en-label">QUIZ</span><span class="ark-cn-label">方向测试 · 本页</span></a>
+    <a class="ark-nav-item" href="start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="ta"><span>TA页（总览）</span></a>
+      <a href="ta/rendering"><span>渲染 TA（Shader 向）</span></a>
+      <a href="ta/tools"><span>工具 / 管线 TA</span></a>
+      <a href="ta/rigging"><span>绑定 / 动画 TA</span></a>
+      <a href="ta/perf"><span>性能优化 TA</span></a>
+    </div>
+  </div>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="client"><span>客户端页（总览）</span></a>
+      <a href="client/gameplay"><span>玩法程序（Gameplay）</span></a>
+      <a href="client/ui"><span>UI 程序</span></a>
+      <a href="client/graphics"><span>图形程序</span></a>
+      <a href="client/platform"><span>平台与工程向</span></a>
+    </div>
+  </div>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="design"><span>策划页（总览）</span></a>
+      <a href="design/system"><span>系统策划</span></a>
+      <a href="design/numeric"><span>数值策划</span></a>
+      <a href="design/level"><span>关卡策划</span></a>
+      <a href="design/narrative"><span>文案 / 叙事策划</span></a>
+      <a href="design/tech-design" class="dd-hot"><span>技术策划 TP</span></a>
+    </div>
+  </div>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="engine"><span>引擎工具页（总览）</span></a>
+      <a href="engine/editor"><span>编辑器与工具链</span></a>
+      <a href="engine/pipeline"><span>资源管线</span></a>
+      <a href="engine/runtime"><span>运行时与底层</span></a>
+      <a href="engine/graphics"><span>图形底层</span></a>
+    </div>
+  </div>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="art"><span>美术页（总览）</span></a>
+      <a href="art/illustration"><span>2D 原画 / 插画</span></a>
+      <a href="art/modeling"><span>3D 建模</span></a>
+      <a href="art/animation"><span>动作 / 绑定</span></a>
+      <a href="art/vfx" class="dd-hot"><span>特效 VFX</span></a>
+      <a href="art/ui"><span>UI / 界面美术</span></a>
+    </div>
+  </div>
+    <a class="ark-nav-item" href="server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+  </div>
+
+  <div class="takeaway-alert-box">
+    <strong>💡 玩法说明</strong>
+    10 道情景题，凭第一直觉选，别想"哪个方向好就业"。<strong>这只是一个娱乐向的小测试，不是科学测评</strong>——它的用处是给你一个"从哪里开始试"的起点，最终答案由你动手试出来。
+  </div>
+
+  <!-- ================= 题目区 ================= -->
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 十道情景题</div>
+        <span class="section-count-badge">10 QUESTIONS</span>
+      </div>
+      <span class="section-desc">每题必选 · 全部选完才出结果</span>
+    </div>
+    <div class="article-card" id="quizBox" style="margin-bottom: 14px;"></div>
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <button class="btn-read-dossier" id="btnCalc" onclick="calcResult()">算出我的方向 ▶</button>
+      <button class="btn-read-dossier" id="btnReset" style="display:none;" onclick="location.reload()">重测一次 ↺</button>
+    </div>
+    <div id="quizWarn" class="pending-box result-hidden" style="margin-top: 14px;">
+      <strong>还有题目没选完</strong>——标黄的题还没作答，往回滚一滚。
+    </div>
+  </div>
+
+  <!-- ================= 结果区 ================= -->
+  <div id="resultBox" class="category-section-block result-hidden">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 你的方向画像</div>
+        <span class="section-count-badge">RESULT</span>
+      </div>
+      <span class="section-desc">百分比 = 你的直觉在这个方向上的密度 · 参考不是判决</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <div id="barBox"></div>
+    </div>
+    <div id="topCard"></div>
+    <div class="takeaway-alert-box amber">
+      <strong>⚠️ 测试的边界</strong>
+      这个结果只代表"当下直觉"，不代表能力，更不代表未来——<strong>方向是试出来的，不是测出来的</strong>。正确用法：按第一名方向去做"本周就做"里的一件小事，做两周后问问自己想不想继续。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // SELF-CHECK QUIZ</div>
+    <div>内容含 AI 辅助生成 · 娱乐向参考非科学测评 · 个人非经营性学习观察用途</div>
+    <div><a href="quick">3 分钟版</a> · <a href="roadmap">总览</a> · <a href="start">新生入口</a> · <a href="contests">比赛</a> · <a href="jobs">薪资</a></div>
+  </div>
+
+</div>
+
+<script>
+var KEYS = {
+  design: { name: '游戏策划', color: 'linear-gradient(90deg,#10b981,#34d399)' },
+  ta:     { name: '技术美术 TA', color: 'linear-gradient(90deg,#3b82f6,#8b5cf6)' },
+  prog:   { name: '客户端程序', color: 'linear-gradient(90deg,#6366f1,#38bdf8)' },
+  art:    { name: '美术 / 特效', color: 'linear-gradient(90deg,#f59e0b,#f97316)' },
+  media:  { name: '自媒体 / 内容创作', color: 'linear-gradient(90deg,#ec4899,#f43f5e)' },
+  tech:   { name: '服务端 / 引擎底层', color: 'linear-gradient(90deg,#64748b,#94a3b8)' }
+};
+var QS = [
+  { q: '玩一款你很喜欢的游戏时，你最容易"出戏"注意到的是——', o: [
+    ['这套成长曲线和概率设计得真妙', 'design'],
+    ['这个光影/特效是怎么实现的', 'ta'],
+    ['这段操作手感为什么这么跟手', 'prog'],
+    ['这套角色服装和场景配色真讲究', 'art'],
+    ['它为什么能火成这样？营销做对了什么', 'media']] },
+  { q: '周末凭空多出 6 小时，你会选——', o: [
+    ['在脑子里给某游戏设计一个新玩法/改一个系统', 'design'],
+    ['跟着教程捣鼓一个视觉小效果', 'ta'],
+    ['写点代码，把拖了很久的功能做完', 'prog'],
+    ['画画/剪视频/做点视觉的东西', 'art'],
+    ['刷游戏区视频，研究别人怎么讲游戏', 'media']] },
+  { q: '遇到一个不会的问题，你的第一反应是——', o: [
+    ['先想清楚"这个问题到底在问什么"', 'design'],
+    ['找工具/找现成方案拼一个出来试试', 'ta'],
+    ['拆开看原理，不搞明白睡不着', 'prog'],
+    ['换个思路绕过去，先把整体做完', 'art'],
+    ['发出去问问大家的看法', 'media']] },
+  { q: '哪一件事做完会让你最有成就感？', o: [
+    ['一张规则表/方案文档被别人夸"想得真细"', 'design'],
+    ['自己调出来的画面效果被截图发群里', 'ta'],
+    ['一个功能从报错到跑通的那一刻', 'prog'],
+    ['一幅作品完成度拉满可以发动态了', 'art'],
+    ['一条内容爆了/被很多人评论转发', 'media']] },
+  { q: '小组作业里你通常自动成为——', o: [
+    ['定方案和分工的那个人', 'design'],
+    ['救火队员：哪里搞不定找你', 'ta'],
+    ['闷头把最大工作量写完的人', 'prog'],
+    ['负责让东西"好看"的人', 'art'],
+    ['上台汇报/做宣传物料的人', 'media']] },
+  { q: '数学和逻辑题给你的真实感觉是——', o: [
+    ['喜欢，尤其是"算出最优解"的过程', 'design'],
+    ['还行，能用来做出效果就学', 'ta'],
+    ['不怕，就是要磨', 'prog'],
+    ['能躲就躲，把时间花在画面上', 'art'],
+    ['考试过关就行，工作里应该用不上太多', 'media']] },
+  { q: '50 个文件要批量改名重命名，你会——', o: [
+    ['先定一套命名规则，杜绝以后再发生', 'design'],
+    ['写个脚本一键搞定', 'ta'],
+    ['当成练手题认真实现', 'prog'],
+    ['手动改，改完就行别烦我', 'art'],
+    ['发条动态吐槽一下', 'media']] },
+  { q: '你更愿意在社交平台发什么内容？', o: [
+    ['长文攻略/深度分析', 'design'],
+    ['效果对比图："我自己实现的"', 'ta'],
+    ['开发日志："这周做了什么"', 'prog'],
+    ['画作/渲染图/作品图集', 'art'],
+    ['短视频：安利/吐槽/整活', 'media']] },
+  { q: '看到一个爆款游戏上线，你的第一念头是——', o: [
+    ['它的核心循环其实很简单，我能拆出来', 'design'],
+    ['它的某种效果我大概知道怎么复现', 'ta'],
+    ['这种规模的服务器和客户端怎么架构的', 'prog'],
+    ['它的美术风格定位太聪明了', 'art'],
+    ['它的传播路径能复制吗', 'media']] },
+  { q: '五年后的工作状态，你更想要——', o: [
+    ['在会议室里讲方案、定规则，被叫"军师"', 'design'],
+    ['在管线两头穿梭，谁都离不开你', 'ta'],
+    ['写一天代码心流不断，发布自己写的功能', 'prog'],
+    ['作品署自己的名字，被同行认出风格', 'art'],
+    ['自己的账号/频道有稳定受众', 'media']] }
+];
+
+var picked = {};
+
+function render() {
+  var box = document.getElementById('quizBox');
+  var html = '';
+  QS.forEach(function(item, qi) {
+    html += '<div class="quiz-q" id="q' + qi + '">';
+    html += '<div class="quiz-q-num">Q' + (qi + 1) + ' / 10</div>';
+    html += '<div class="quiz-q-title">' + item.q + '</div>';
+    item.o.forEach(function(opt, oi) {
+      html += '<label class="quiz-opt" id="opt-' + qi + '-' + oi + '"><input type="radio" name="q' + qi + '" onclick="pick(' + qi + ',' + oi + ',\'' + opt[1] + '\')">' + opt[0] + '</label>';
+    });
+    html += '</div>';
+  });
+  box.innerHTML = html;
+}
+
+function pick(qi, oi, key) {
+  picked[qi] = key;
+  var q = document.getElementById('q' + qi);
+  q.style.border = '';
+  for (var i = 0; i < QS[qi].o.length; i++) {
+    document.getElementById('opt-' + qi + '-' + i).classList.remove('picked');
+  }
+  document.getElementById('opt-' + qi + '-' + oi).classList.add('picked');
+}
+
+function calcResult() {
+  var missing = [];
+  for (var i = 0; i < QS.length; i++) {
+    if (!picked[i]) missing.push(i);
+  }
+  var warn = document.getElementById('quizWarn');
+  if (missing.length) {
+    warn.classList.remove('result-hidden');
+    missing.forEach(function(i) { document.getElementById('q' + i).style.border = '1px solid #f59e0b'; });
+    return;
+  }
+  warn.classList.add('result-hidden');
+  var score = {}, total = 0;
+  Object.keys(KEYS).forEach(function(k) { score[k] = 0; });
+  Object.keys(picked).forEach(function(qi) { score[picked[qi]]++; total++; });
+  var list = Object.keys(KEYS).map(function(k) {
+    return { k: k, pct: Math.round(score[k] * 100 / total) };
+  }).sort(function(a, b) { return b.pct - a.pct; });
+  // 渲染条形图
+  var bars = '';
+  list.forEach(function(it) {
+    bars += '<div class="bar-row"><div class="bar-name">' + KEYS[it.k].name + '</div>'
+          + '<div class="bar-track"><div class="bar-fill" style="width:0%;" data-w="' + it.pct + ';background:' + KEYS[it.k].color + '"></div></div>'
+          + '<div class="bar-pct">' + it.pct + '%</div></div>';
+  });
+  document.getElementById('barBox').innerHTML = bars;
+  // 第一名推荐卡
+  var top = list[0];
+  var next = {
+    design: '写 800 字拆解你最近上头游戏的抽卡/成长系统，发到知乎——这就是策划作品集的第一篇。<br><a class="inline-link" href="design">→ 去策划页看完整路线</a>',
+    ta: 'Unity 里写一个让方块变色的 Shader，今晚就动手——效果不重要，写出来才重要。<br><a class="inline-link" href="ta">→ 去 TA 页看完整路线</a>',
+    prog: '给自己 30 天做一个"能打能死能结算"的最小游戏，做完导出 exe 发朋友。<br><a class="inline-link" href="client">→ 去客户端页看完整路线</a>',
+    art: '临摹一张游戏道具图标，和原图并排放，找差距。<br><a class="inline-link" href="art">→ 去美术页看完整路线</a>',
+    media: '给你最喜欢的一款游戏做一条 60 秒"为什么好玩"的短视频或一篇深度图文，连更四周看数据——自媒体方向本站暂无深挖页，先从账号第一篇内容开始，做内容的能力同时会反哺任何游戏岗位的作品集。'
+  };
+  var second = list[1];
+  var html = '<div class="article-card emerald" style="margin-bottom: 14px;">';
+  html += '<div class="card-tactical-header"><span class="card-index-tag">FIRST MATCH · ' + top.pct + '%</span><span class="card-serial-code">START HERE</span></div>';
+  html += '<div class="card-headline">你的直觉最密的方向：' + KEYS[top.k].name + '</div>';
+  html += '<div class="card-summary">不是说你该干这个一辈子，而是你的思维方式在这个方向上最"顺"。<br><strong>本周就做这一件事：</strong><br>' + next[top.k] + '</div>';
+  html += '<div class="tag-cluster"><span class="tag-pill em">第二名：' + KEYS[second.k].name + '（' + second.pct + '%）</span><span class="tag-pill">并列/接近时，用"本周就做"的实际手感定</span></div>';
+  html += '</div>';
+  document.getElementById('topCard').innerHTML = html;
+  var rb = document.getElementById('resultBox');
+  rb.classList.remove('result-hidden');
+  document.getElementById('btnReset').style.display = '';
+  rb.scrollIntoView({ behavior: 'smooth' });
+  setTimeout(function() {
+    document.querySelectorAll('.bar-fill').forEach(function(el) {
+      var cfg = el.getAttribute('data-w').split(';');
+      el.style.width = cfg[0] + '%';
+      el.style.background = cfg.slice(1).join(';');
+    });
+  }, 60);
+}
+
+render();
+</script>
+</body>
+</html>
