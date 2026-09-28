@@ -125,7 +125,7 @@
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
           <tr><td class="name">YooAsset（<a class="inline-link" href="https://github.com/tuyoogame/YooAsset" target="_blank" rel="noopener">GitHub</a> / <a class="inline-link" href="https://www.yooasset.com/docs/Introduce" target="_blank" rel="noopener">官方文档</a>）</td><td>生产级热更方案，文档站值得通读；</td></tr>
-          <tr><td class="name">Addressables（<a class="inline-link" href="https://docs.unity3d.com/Manual/Addressables.html" target="_blank" rel="noopener">官方手册</a>）/ AssetBundle（<a class="inline-link" href="https://docs.unity3d.com/Manual/AssetBundles-Introduction.html" target="_blank" rel="noopener">机制介绍</a>）</td><td>官方方案与底层机制，做对照学习；</td></tr>
+          <tr><td class="name">Addressables（<a class="inline-link" href="https://docs.unity3d.com/Manual/com.unity.addressables.html" target="_blank" rel="noopener">官方手册</a>）/ AssetBundle（<a class="inline-link" href="https://docs.unity3d.com/Manual/AssetBundlesIntro.html" target="_blank" rel="noopener">机制介绍</a>）</td><td>官方方案与底层机制，做对照学习；</td></tr>
           <tr><td class="name">Python</td><td>管线批处理脚本的通用语言；</td></tr>
           <tr><td class="name">课内：操作系统 / 计算机网络</td><td>文件 IO、下载与 CDN 的原理课。</td></tr>
         </tbody>
@@ -203,7 +203,7 @@
         </div>
         <div class="card-headline">用原生 AssetBundle 手动打包一次：依赖、冗余、加载顺序全踩一遍</div>
         <div class="card-summary">
-          <strong>做什么</strong>：不看任何封装框架，用 Unity 原生 <a class="inline-link" href="https://docs.unity3d.com/Manual/AssetBundles-Introduction.html" target="_blank" rel="noopener">AssetBundle 机制（官方手册）</a>手动完成一次完整打包：标记资源 → 构建包 → 分析依赖 → 运行时加载。把"哪个资源被重复打进几个包"的依赖关系图亲手画出来。<br>
+          <strong>做什么</strong>：不看任何封装框架，用 Unity 原生 <a class="inline-link" href="https://docs.unity3d.com/Manual/AssetBundlesIntro.html" target="_blank" rel="noopener">AssetBundle 机制（官方手册）</a>手动完成一次完整打包：标记资源 → 构建包 → 分析依赖 → 运行时加载。把"哪个资源被重复打进几个包"的依赖关系图亲手画出来。<br>
           <strong>验收标准</strong>：能指着依赖图说出"冗余是怎么产生的、三种消除手段各自的代价"。<br>
           <strong>避坑</strong>：直接上封装框架 = 永远不知道框架替你做了什么，出了问题就是黑盒。
         </div>
@@ -217,7 +217,7 @@
         </div>
         <div class="card-headline">用 YooAsset 做一套完整热更方案：版本比对、增量下载、失败回滚，全流程可演示</div>
         <div class="card-summary">
-          <strong>做什么</strong>：主方案用 <a class="inline-link" href="https://github.com/tuyoogame/YooAsset" target="_blank" rel="noopener">YooAsset（GitHub）</a> + <a class="inline-link" href="https://www.yooasset.com/docs/Introduce" target="_blank" rel="noopener">官方文档</a>：搭建远端资源服 → 打包 → 版本比对 → 增量下载 → 校验 → 回滚，全流程做一个可现场演示的 demo；对照组用 <a class="inline-link" href="https://docs.unity3d.com/Manual/Addressables.html" target="_blank" rel="noopener">Addressables（官方手册）</a>做同样的最小流程，写一篇对比笔记。<br>
+          <strong>做什么</strong>：主方案用 <a class="inline-link" href="https://github.com/tuyoogame/YooAsset" target="_blank" rel="noopener">YooAsset（GitHub）</a> + <a class="inline-link" href="https://www.yooasset.com/docs/Introduce" target="_blank" rel="noopener">官方文档</a>：搭建远端资源服 → 打包 → 版本比对 → 增量下载 → 校验 → 回滚，全流程做一个可现场演示的 demo；对照组用 <a class="inline-link" href="https://docs.unity3d.com/Manual/com.unity.addressables.html" target="_blank" rel="noopener">Addressables（官方手册）</a>做同样的最小流程，写一篇对比笔记。<br>
           <strong>验收标准</strong>：现场演示"改一个数值 → 不重装包 → 游戏内生效"，且能回答"下载中断了怎么办"。<br>
           <strong>避坑</strong>：只会调框架 API 不算懂管线——追问"框架替你做了什么"必须有答案。
         </div>
