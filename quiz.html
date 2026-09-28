@@ -26,6 +26,9 @@
   #barBox { max-width: 680px; margin: 0 auto; }
   #topCard { max-width: 780px; margin-left: auto; margin-right: auto; }
   .quiz-q { border: 1px solid transparent; border-radius: 8px; padding: 4px 10px; }
+  /* 点击/拖动时禁止选中题目文字，避免整页被蓝色/橙色选区罩住 */
+  #quizBox, #quizBox * { user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
+  #quizBox label { cursor: pointer; }
 </style>
 </head>
 <body>
