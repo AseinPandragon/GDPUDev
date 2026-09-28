@@ -115,7 +115,7 @@
 
   <div class="takeaway-alert-box">
     <strong>💡 玩法说明</strong>
-    题库 100 题，每次<strong>随机抽 20 道</strong>，重测自动换题。凭第一直觉选，别想"哪个方向好就业"。<strong>这只是一个娱乐向的小测试，不是科学测评</strong>——它的用处是给你一个"从哪里开始试"的起点，最终答案由你动手试出来。
+    题库 100 题，每次<strong>随机抽 20 道</strong>，重测自动换题。凭第一直觉选，别想"哪个方向好就业"。每题都备了一个<strong>"路人也会这么选"的选项</strong>——真实想法直接选它，不计分不扣分，测出来的才是真的你。<strong>这只是娱乐向小测试，不是科学测评</strong>。
   </div>
 
   <!-- ================= 题目区 ================= -->
@@ -144,7 +144,7 @@
         <div class="section-title">■ 你的方向画像</div>
         <span class="section-count-badge">RESULT</span>
       </div>
-      <span class="section-desc">百分比 = 你的直觉在这个方向上的密度 · 参考不是判决</span>
+      <span class="section-desc">百分比按"有倾向的回答"归一化 · 选路人选项不计分 · 参考不是判决</span>
     </div>
     <div class="article-card" style="margin-bottom: 14px;">
       <div id="barBox"></div>
@@ -296,6 +296,33 @@ var QS = [
     ['一个游戏测评账号，更内容不更开发', 'media']] }
 ];
 
+// 内置 20 题的路人选项
+var NEUTRAL = [
+  '都没有，我玩得挺投入的',
+  '补觉',
+  '上网搜，搜不到就问人',
+  '被人夸什么我都开心',
+  '打杂的那个',
+  '头大',
+  '让最闲的队友改',
+  '不怎么发',
+  '买来玩玩',
+  '稳定，别太卷',
+  '重启试试',
+  '存起来',
+  '哪里缺人去哪里',
+  '没有收藏习惯',
+  '没什么印象',
+  '算了，听大家的',
+  '忍了',
+  '能不能都不选',
+  '看别人做一遍',
+  '先玩别人的'
+];
+QS.forEach(function (q, i) {
+  if (NEUTRAL[i]) q.o.push([NEUTRAL[i], 'none']);
+});
+
 // 题库 = 内置 20 题 + quiz-bank.js 80 题 = 100 题；每次随机抽 20 道
 var QBANK = (window.QUIZ_BANK || []).concat(QS);
 var SAMPLED = QBANK.slice();
@@ -316,13 +343,14 @@ function render() {
     html += '<div class="quiz-q" id="q' + qi + '">';
     html += '<div class="quiz-q-num">Q' + (qi + 1) + ' / 20</div>';
     html += '<div class="quiz-q-title">' + item.q + '</div>';
-    // 每题 5 选 4：随机打乱后去掉一个，减少阅读量
-    var opts = item.o.slice();
-    for (var s = opts.length - 1; s > 0; s--) {
+    // 展示 4 个：路人选项必显示（普通人的真实反应永远可选）+ 岗位选项随机 3 个
+    var keyed = item.o.filter(function (o) { return o[1] !== 'none'; });
+    var neutral = item.o.filter(function (o) { return o[1] === 'none'; });
+    for (var s = keyed.length - 1; s > 0; s--) {
       var r = Math.floor(Math.random() * (s + 1));
-      var t2 = opts[s]; opts[s] = opts[r]; opts[r] = t2;
+      var t2 = keyed[s]; keyed[s] = keyed[r]; keyed[r] = t2;
     }
-    opts = opts.slice(0, 4);
+    var opts = neutral.concat(keyed.slice(0, keyed.length >= 3 ? 3 : keyed.length));
     OPTS[qi] = opts;
     opts.forEach(function(opt, oi) {
       html += '<label class="quiz-opt" id="opt-' + qi + '-' + oi + '"><input type="radio" name="q' + qi + '" onclick="pick(' + qi + ',' + oi + ',\'' + opt[1] + '\')">' + opt[0] + '</label>';
@@ -354,11 +382,15 @@ function calcResult() {
     return;
   }
   warn.classList.add('result-hidden');
-  var score = {}, total = 0;
+  // 路人选项（none）不计分；百分比按"有倾向的回答"归一化
+  var score = {}, scoredTotal = 0, neutralPicks = 0;
   Object.keys(KEYS).forEach(function(k) { score[k] = 0; });
-  Object.keys(picked).forEach(function(qi) { score[picked[qi]]++; total++; });
+  Object.keys(picked).forEach(function(qi) {
+    if (picked[qi] === 'none') { neutralPicks++; return; }
+    score[picked[qi]]++; scoredTotal++;
+  });
   var list = Object.keys(KEYS).map(function(k) {
-    return { k: k, pct: Math.round(score[k] * 100 / total) };
+    return { k: k, pct: scoredTotal ? Math.round(score[k] * 100 / scoredTotal) : 0 };
   }).sort(function(a, b) { return b.pct - a.pct; });
   // 渲染条形图
   var bars = '';
@@ -382,10 +414,20 @@ function calcResult() {
   html += '<div class="card-tactical-header"><span class="card-index-tag">FIRST MATCH · ' + top.pct + '%</span><span class="card-serial-code">START HERE</span></div>';
   html += '<div class="card-headline">你的直觉最密的方向：' + KEYS[top.k].name + '</div>';
   html += '<div class="card-summary">不是说你该干这个一辈子，而是你的思维方式在这个方向上最"顺"。<br><strong>本周就做这一件事：</strong><br>' + next[top.k] + '</div>';
-  html += '<div class="tag-cluster"><span class="tag-pill em">第二名：' + KEYS[second.k].name + '（' + second.pct + '%）</span><span class="tag-pill">并列/接近时，用"本周就做"的实际手感定</span></div>';
+  html += '<div class="tag-cluster">';
+  if (neutralPicks > 0) html += '<span class="tag-pill">路人选项选了 ' + neutralPicks + ' 次（不计分）</span>';
+  html += '<span class="tag-pill em">第二名：' + KEYS[second.k].name + '（' + second.pct + '%）</span><span class="tag-pill">并列/接近时，用"本周就做"的实际手感定</span></div>';
   html += '</div>';
   document.getElementById('topCard').innerHTML = html;
   var rb = document.getElementById('resultBox');
+  if (scoredTotal === 0) {
+    // 20 题全选了路人选项：给引导而不是空结果
+    document.getElementById('topCard').innerHTML = '<div class="article-card"><div class="card-headline">你把路人选项全选了一遍 🤣</div><div class="card-summary">说明暂时没有被任何方向勾到——这完全正常。别测了，直接去 <a class="inline-link" href="quick">3 分钟版</a> 把"本周就做"的五件小事各试一天：写一行 Shader、做一个能跳的小人、写 800 字拆解、临摹一张图、开个账号发第一条。哪件事做着不烦，答案就是哪边。</div></div>';
+    document.getElementById('btnReset').style.display = '';
+    rb.classList.remove('result-hidden');
+    rb.scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
   rb.classList.remove('result-hidden');
   document.getElementById('btnReset').style.display = '';
   rb.scrollIntoView({ behavior: 'smooth' });
