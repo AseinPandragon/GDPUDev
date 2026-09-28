@@ -124,10 +124,10 @@
       <table class="data-table">
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
-          <tr><td class="name">Unity UGUI / UI Toolkit</td><td>旧项目 UGUI 为主，新趋势 Toolkit，都练；</td></tr>
+          <tr><td class="name">UGUI（<a class="inline-link" href="https://docs.unity3d.com/Manual/UISystem.html" target="_blank" rel="noopener">官方手册</a>）</td><td>存量项目主力，必须系统学一遍；</td></tr>
+          <tr><td class="name">UI Toolkit（<a class="inline-link" href="https://docs.unity3d.com/Manual/UIToolkits.html" target="_blank" rel="noopener">官方文档</a>）</td><td>新趋势，了解思路并做一个小练习；</td></tr>
           <tr><td class="name">Figma / 即时设计</td><td>看交互稿与标注，和设计师说同一种语言；</td></tr>
-          <tr><td class="name">课内：面向对象程序设计</td><td>UI 框架本质是设计模式练习场；</td></tr>
-          <tr><td class="name">课内：数据库原理</td><td>红点系统背后是数据关系，思维相通。</td></tr>
+          <tr><td class="name">课内：面向对象程序设计 / 数据库原理</td><td>UI 框架是设计模式练习场；红点系统背后是数据关系。</td></tr>
         </tbody>
       </table>
     </div>
@@ -185,40 +185,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · C# 基础</span>
+          <span class="card-index-tag">大一 · C# 基础（和玩法线共用起点）</span>
         </div>
-        <div class="card-headline">语法与面向对象过关；</div>
-        <div class="card-summary">基础练习</div>
+        <div class="card-headline">C# 语法与面向对象过关，重点吃透"数据与界面分离"的思想</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：用<a class="inline-link" href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener">微软官方 C# 文档</a>打语法底子，写两个控制台小练习：一个"通讯录管理"、一个"商品库存表"——练习的核心不是语法，是<strong>把数据结构和操作它的逻辑分开写</strong>，这正是 UI 框架的灵魂。<br>
+          <strong>验收标准</strong>：两个练习里，改数据结构时界面代码几乎不用动。<br>
+          <strong>避坑</strong>：一开始就把数据和界面写在一起，之后学任何 UI 框架都会觉得"框架多此一举"。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · 复刻成熟 UI</span>
+          <span class="card-index-tag">大二 · 复刻成熟 UI（组件化第一次落地）</span>
         </div>
-        <div class="card-headline">复刻一套背包 + 聊天 + 设置界面，练组件化；</div>
-        <div class="card-summary">复刻 UI 套件</div>
+        <div class="card-headline">复刻一套"背包 + 聊天 + 设置"界面，重点做可复用组件而非三张独立面板</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：Unity UGUI 跟官方手册（<a class="inline-link" href="https://docs.unity3d.com/Manual/UISystem.html" target="_blank" rel="noopener">docs.unity3d.com/Manual/UISystem</a>）系统学一遍，再复刻一个成熟游戏的 UI 套件——要求是做成<strong>组件</strong>：格子复用、红点系统独立、弹窗走统一管理器，不许三张面板各写各的。顺带了解 UI Toolkit（<a class="inline-link" href="https://docs.unity3d.com/Manual/UIToolkits.html" target="_blank" rel="noopener">官方文档</a>）的新思路。<br>
+          <strong>验收标准</strong>：新增第 4 个界面（如任务列表）时，复用现有组件半天内搭完。<br>
+          <strong>避坑</strong>：拖控件谁都会——面试看的是"格子数据变了，界面怎么知道要刷新"这类问题的答案。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · 项目框架</span>
+          <span class="card-index-tag">大三 · 项目框架（从写界面到管界面）</span>
         </div>
-        <div class="card-headline">在团队项目里负责整套 UI 框架设计与落地；</div>
-        <div class="card-summary">框架级经验</div>
+        <div class="card-headline">在团队项目里设计整套 UI 框架：层级管理、弹窗队列、多分辨率适配</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：在比赛队/工作室项目里负责 UI 底座：界面打开关闭的层级管理、弹窗队列（一次只弹一个还是排队）、刘海屏与多分辨率适配方案、UI 性能（图集与重建开销）。每做一个决定就写一行"为什么"。<br>
+          <strong>验收标准</strong>：团队里别人接手你的框架，半天能上手并成功加出一个新界面。<br>
+          <strong>避坑</strong>：框架文档写在注释里等于没写——单独的接入文档是框架交付的一部分。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 讲框架</span>
+          <span class="card-index-tag">大四 · 讲框架（把设计史讲成故事）</span>
         </div>
-        <div class="card-headline">面试能把框架设计从零讲一遍，为什么这么分层。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">面试能把 UI 框架"从烂实现到好实现"的演进讲成 10 分钟故事</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：整理框架设计文档：最初版本的问题 → 每次重构的动因 → 现在的分层与取舍。面试高频题（红点系统怎么设计、UI draw call 高怎么查、多分辨率适配怎么做）对照自己的框架各写一份答案。<br>
+          <strong>验收标准</strong>：能回答"如果重做一遍，哪里会不一样"——有反思的框架才是你的框架。<br>
+          <strong>避坑</strong>：只会说"我用了 MVC"不够——面试官要听的是"哪里用了、为什么这里用、代价是什么"。
+        </div>
       </div>
       </div>
     </div>

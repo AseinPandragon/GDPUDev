@@ -124,9 +124,10 @@
       <table class="data-table">
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
-          <tr><td class="name">Android Studio / Xcode</td><td>真机调试、符号表、系统日志的标准工具；</td></tr>
-          <tr><td class="name">Jenkins / GitHub Actions</td><td>自动化打包流水线；</td></tr>
-          <tr><td class="name">Unity 打包系统</td><td>Player Settings、变体、分包这些细节全是坑；</td></tr>
+          <tr><td class="name">YooAsset（<a class="inline-link" href="https://github.com/tuyoogame/YooAsset" target="_blank" rel="noopener">GitHub</a> / <a class="inline-link" href="https://www.yooasset.com/docs/Introduce" target="_blank" rel="noopener">官方文档</a>）</td><td>资源热更方案的事实标准之一，文档站值得通读；</td></tr>
+          <tr><td class="name">Addressables（<a class="inline-link" href="https://docs.unity3d.com/Manual/Addressables.html" target="_blank" rel="noopener">官方手册</a>）</td><td>Unity 官方方案，与 YooAsset 对照着学取舍；</td></tr>
+          <tr><td class="name">Android Developer（<a class="inline-link" href="https://developer.android.com/" target="_blank" rel="noopener">developer.android.com</a>）</td><td>出包、签名、真机调试的权威文档；</td></tr>
+          <tr><td class="name">Jenkins（<a class="inline-link" href="https://www.jenkins.io/" target="_blank" rel="noopener">jenkins.io</a>）/ GitHub Actions</td><td>自动化打包流水线；</td></tr>
           <tr><td class="name">课内：计算机网络 / 操作系统</td><td>下载、CDN、进程与签名背后的原理课。</td></tr>
         </tbody>
       </table>
@@ -185,40 +186,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · 计算机基础</span>
+          <span class="card-index-tag">大一 · 计算机基础（这门线全靠它）</span>
         </div>
-        <div class="card-headline">网络与操作系统提前学，这门线全用得上；</div>
-        <div class="card-summary">基础打底</div>
+        <div class="card-headline">计算机网络与操作系统提前学：HTTP、进程线程、签名机制的本质</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：这门线的日常全是"网络 + 系统"问题——下载失败、签名冲突、进程被杀。所以课内计算机网络、操作系统认真学，课外把 HTTP 请求/响应、HTTPS 证书链、Android 包签名机制各用一篇笔记讲清楚。<br>
+          <strong>验收标准</strong>：能给别人讲清"点了一下下载按钮之后发生了什么"，从 DNS 到本地文件。<br>
+          <strong>避坑</strong>：这方向的坑都在底层——基础不牢，后面每个 SDK 文档都像天书。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · 真机出包</span>
+          <span class="card-index-tag">大二 · 真机出包（踩第一遍坑）</span>
         </div>
-        <div class="card-headline">完整打出安卓包并真机调试，踩第一遍坑；</div>
-        <div class="card-summary">第一个真机包</div>
+        <div class="card-headline">从 Unity 打出第一个安卓包，真机装上跑通，记录全部报错</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：把自己大二的游戏 demo 完整打成 APK：JDK/SDK/Gradle 配置、签名 keystore、包名与权限，装到真机跑通；iOS 逻辑同理（有 Mac 条件就做）。每个报错记进"踩坑笔记"：现象、原因、解法。<br>
+          <strong>验收标准</strong>：一份《第一次出包全记录》文档，覆盖 5 个以上真实报错及解法。<br>
+          <strong>避坑</strong>：只在编辑器里跑 ≠ 会出包——签名、权限、机型兼容的坑，只有真机给你上过课才算见过。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · SDK + 热更</span>
+          <span class="card-index-tag">大三 · SDK 与热更（离上线最近的一步）</span>
         </div>
-        <div class="card-headline">接一个完整登录 SDK + 热更方案 demo；</div>
-        <div class="card-summary">SDK/热更经验</div>
+        <div class="card-headline">接一个完整登录 SDK + 做一套热更方案 demo（YooAsset 或 Addressables）</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：①接入一个真实登录 SDK（渠道文档会过时，这本身就是练习）：初始化、登录回调、 Token 管理；②热更方案用 <a class="inline-link" href="https://github.com/tuyoogame/YooAsset" target="_blank" rel="noopener">YooAsset（GitHub）</a> 或 <a class="inline-link" href="https://docs.unity3d.com/Manual/Addressables.html" target="_blank" rel="noopener">Addressables（官方手册）</a>做一套：版本比对、增量下载、失败回滚，官方文档站 <a class="inline-link" href="https://www.yooasset.com/docs/Introduce" target="_blank" rel="noopener">yooasset.com/docs</a> 顺手通读。<br>
+          <strong>验收标准</strong>：demo 能演示"改了一个数值 → 不重新安装 → 游戏内生效"。<br>
+          <strong>避坑</strong>：SDK 文档永远有过时的部分——"文档和现实不符时相信报错日志"是这个岗位的第一课。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 工程化整理</span>
+          <span class="card-index-tag">大四 · 工程化整理（踩坑史就是作品集）</span>
         </div>
-        <div class="card-headline">把踩坑经历整理成文档，面试直接用。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">把两年的踩坑经历整理成《出包与热更工程手册》，面试当武器用</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：把大二的出包记录、大三的 SDK/热更经验整理成体系文档：出包全流程、签名与权限清单、热更方案对比（YooAsset vs Addressables 的取舍）、自动化思路（Jenkins：<a class="inline-link" href="https://www.jenkins.io/" target="_blank" rel="noopener">jenkins.io</a>）。<br>
+          <strong>验收标准</strong>：文档能给一个没做过出包的同学看，他照着能走通——能教会别人的文档才算数。<br>
+          <strong>避坑</strong>：这个方向的作品集不是游戏，是"可复现的工程能力"——文档就是你的作品本体。
+        </div>
       </div>
       </div>
     </div>

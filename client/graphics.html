@@ -124,10 +124,11 @@
       <table class="data-table">
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
-          <tr><td class="name">Unity SRP / URP</td><td>读源码：渲染流程在源码里，不在教程里；</td></tr>
-          <tr><td class="name">RenderDoc</td><td>抓帧定位渲染问题的标准工具；</td></tr>
-          <tr><td class="name">GAMES101 + Real-Time Rendering</td><td>自学图形学的两条主线，作业认真做；</td></tr>
-          <tr><td class="name">课内：线性代数 / 计算机图形学</td><td>课内能提供的直接弹药。</td></tr>
+          <tr><td class="name">GAMES101（<a class="inline-link" href="https://www.bilibili.com/video/BV1X7411F744" target="_blank" rel="noopener">B站</a> / <a class="inline-link" href="https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html" target="_blank" rel="noopener">课程主页</a>）</td><td>理论主课，作业必须做；</td></tr>
+          <tr><td class="name">LearnOpenGL（<a class="inline-link" href="https://learnopengl.com/" target="_blank" rel="noopener">learnopengl.com</a>，有中文）</td><td>动手侧主线：从画三角形到完整场景；</td></tr>
+          <tr><td class="name">3Blue1Brown 线代本质（<a class="inline-link" href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank" rel="noopener">官网免费</a>）</td><td>先建几何直觉，再回课本刷题；</td></tr>
+          <tr><td class="name">RenderDoc（<a class="inline-link" href="https://renderdoc.org/" target="_blank" rel="noopener">renderdoc.org</a>）</td><td>抓帧定位渲染问题、验证自己写的 pass；</td></tr>
+          <tr><td class="name">课内：线性代数 / 计算机图形学</td><td>课内能提供的直接弹药，成绩就是入场券。</td></tr>
         </tbody>
       </table>
     </div>
@@ -185,40 +186,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · 线代优先</span>
+          <span class="card-index-tag">大一 · 线代优先（这门课就是入场券）</span>
         </div>
-        <div class="card-headline">线性代数学到精通，比多写两个 demo 重要；</div>
-        <div class="card-summary">数学底子</div>
+        <div class="card-headline">线性代数学到"能出题考别人"的程度，期末目标 90+</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：向量、点积叉积的几何意义、矩阵乘法、齐次坐标与投影——每个概念都用几何直觉重新理解一遍，不是背公式。推荐用 <a class="inline-link" href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank" rel="noopener">3Blue1Brown《线性代数的本质》</a>（免费视频，B站有搬运）建立直觉，再回课本刷题固化。<br>
+          <strong>验收标准</strong>：能给别人讲清"为什么旋转是乘矩阵、平移为什么需要齐次坐标"。<br>
+          <strong>避坑</strong>：线代不牢直接学图形学 = 每页都在还债；这门课多花的每一小时都在给大二大三省时间。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · GAMES101</span>
+          <span class="card-index-tag">大二 · GAMES101（理论主课）</span>
         </div>
-        <div class="card-headline">跟完课程 + 所有作业，理解管线全流程；</div>
-        <div class="card-summary">课程作业全过</div>
+        <div class="card-headline">跟完 GAMES101 全部课程与作业，写出光栅器和着色器</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：闫令琪 GAMES101（<a class="inline-link" href="https://www.bilibili.com/video/BV1X7411F744" target="_blank" rel="noopener">B站全集</a> / <a class="inline-link" href="https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html" target="_blank" rel="noopener">课程主页</a>），重点是<strong>做作业</strong>——光栅化、变换、着色、光线追踪的作业全做，不做作业的掌握程度差距巨大。配套阅读 LearnOpenGL（<a class="inline-link" href="https://learnopengl.com/" target="_blank" rel="noopener">learnopengl.com</a>，有中文翻译）动手侧。<br>
+          <strong>验收标准</strong>：作业全部提交并通过，且能画出"一帧从 CPU 提交到屏幕"的完整流程图。<br>
+          <strong>避坑</strong>：只看视频不做作业 = 知识点全懂、代码全不会写。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · SRP 实践</span>
+          <span class="card-index-tag">大三 · SRP 实践（把理论接进引擎）</span>
         </div>
-        <div class="card-headline">做 URP 定制渲染小项目（自定义 pass/后处理）；</div>
-        <div class="card-summary">SRP 小项目</div>
+        <div class="card-headline">做 URP 定制渲染小项目：自定义 RenderPass + 后处理 + 至少一个手写 Shader 特性</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：在 Unity URP 里做一个小项目：自定义 RenderFeature/RenderPass（描边、马赛克、径向模糊任选）、一个完整的后处理链，并读 URP 源码里"一帧是怎么被组装起来的"。抓帧用 <a class="inline-link" href="https://renderdoc.org/" target="_blank" rel="noopener">RenderDoc</a> 验证自己画的每一帧。<br>
+          <strong>验收标准</strong>：一个可切换开/关的自定义 pass + 一篇"这个 pass 每一步在做什么"的笔记。<br>
+          <strong>避坑</strong>：只会调材质面板参数不是图形编程——从你写第一个 C# RenderPass 开始才算入场。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 专项面试</span>
+          <span class="card-index-tag">大四 · 专项面试（数学 + 管线 + 算法三线并进）</span>
         </div>
-        <div class="card-headline">图形面试题专项准备：数学、管线、经典算法。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">图形面试专项：每类题建立自己的答案模板，全部落到白板能写</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：分三类刷题——数学（MVP 变换、透视插值矫正、法线变换）、管线（一帧的完整流程、深度与透明排序）、算法（软光栅三角形填充、双边滤波），每类整理自己的答案模板并落成文档。作品集同步收口：SRP 项目 + 笔记归档。<br>
+          <strong>验收标准</strong>：模拟面试三类题各抽一道，白板能写、口头能讲。<br>
+          <strong>避坑</strong>：没读过的源码/没做过的特性别写进简历——图形面试的追问没有底线。
+        </div>
       </div>
       </div>
     </div>

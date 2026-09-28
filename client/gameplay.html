@@ -124,10 +124,11 @@
       <table class="data-table">
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
-          <tr><td class="name">Unity + C#</td><td>VS 或 Rider；UE 走蓝图 + C++，作为第二引擎了解；</td></tr>
-          <tr><td class="name">Git 协作</td><td>分支、合并、解决冲突是团队基本功；</td></tr>
-          <tr><td class="name">课内：面向对象程序设计</td><td>大二上，这门课学好了写玩法才有结构；</td></tr>
-          <tr><td class="name">课内：数据结构</td><td>对象池、状态管理背后全是数据结构选型。</td></tr>
+          <tr><td class="name">C# 官方文档（<a class="inline-link" href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener">learn.microsoft.com</a>）</td><td>免费中文，语法到进阶的主教材；</td></tr>
+          <tr><td class="name">Unity Learn（<a class="inline-link" href="https://learn.unity.com/pathway/junior-programmer" target="_blank" rel="noopener">Junior Programmer 路径</a>）</td><td>官方免费引导路径，约 12 周从零到能写玩法；</td></tr>
+          <tr><td class="name">Unity 官方手册（<a class="inline-link" href="https://docs.unity3d.com/Manual/index.html" target="_blank" rel="noopener">docs.unity3d.com</a>）</td><td>遇到不会的 API 先查手册，别在博客堆里迷路；</td></tr>
+          <tr><td class="name">Git</td><td>分支、合并、解决冲突是团队基本功；</td></tr>
+          <tr><td class="name">课内：面向对象程序设计 / 数据结构</td><td>大二上，写玩法有结构的底气；对象池、状态机背后全是数据结构选型。</td></tr>
         </tbody>
       </table>
     </div>
@@ -185,40 +186,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · C# 起步</span>
+          <span class="card-index-tag">大一 · C# 起步（语法为手感服务）</span>
         </div>
-        <div class="card-headline">C# 入门，写控制台小游戏练语法与逻辑；</div>
-        <div class="card-summary">控制台小游戏</div>
+        <div class="card-headline">跟官方路径学 C#，写出 3 个控制台小游戏而不是 30 个语法笔记</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：C# 主教材用微软官方文档（<a class="inline-link" href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener">learn.microsoft.com/dotnet/csharp</a>，免费中文），看完基础语法立刻动手：猜数字、贪吃蛇、文字冒险——三个控制台小游戏，用上类、继承、集合。想顺路入门 Unity 就跟 <a class="inline-link" href="https://learn.unity.com/pathway/junior-programmer" target="_blank" rel="noopener">Unity Learn 官方 Junior Programmer 路径</a>（免费，约 12 周）。<br>
+          <strong>验收标准</strong>：三个游戏发给同学能玩、能通关；代码里至少一处你自己重构过的痕迹（对比最初版本）。<br>
+          <strong>避坑</strong>：别陷入"收藏了 50 个教程一个没做完"——教程在精不在多，官方路径 + 一本书足够。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · 玩法 demo</span>
+          <span class="card-index-tag">大二 · 玩法 demo（第一块试金石）</span>
         </div>
-        <div class="card-headline">Unity 做完整可玩的战斗 demo（能打能死能结算）；</div>
-        <div class="card-summary">可玩战斗 demo</div>
+        <div class="card-headline">做一个"能打能死能结算"的完整战斗 demo，导出 exe 给别人玩</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：Unity 里做一个 5~10 分钟的完整战斗体验：角色移动攻击、敌人 AI（状态机）、受击与死亡、结算与重开——四样缺一不算完成。遇到不会的查 <a class="inline-link" href="https://docs.unity3d.com/Manual/index.html" target="_blank" rel="noopener">Unity 官方手册</a>，别在博客堆里迷路。进阶参考 Catlike Coding（<a class="inline-link" href="https://catlikecoding.com/unity/tutorials/" target="_blank" rel="noopener">catlikecoding.com</a>）。<br>
+          <strong>验收标准</strong>：导出 exe 发给 3 个朋友，收集"哪里不好玩"的真实反馈并改一版——反馈循环比功能数量重要。<br>
+          <strong>避坑</strong>：卡在"美术不好看"是最常见的烂尾理由——用免费素材或纯色方块，玩法 demo 不看脸。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · 团队项目</span>
+          <span class="card-index-tag">大三 · 团队项目（学协作比学 API 值钱）</span>
         </div>
-        <div class="card-headline">进比赛队伍负责玩法模块，学协作与分支管理；</div>
-        <div class="card-summary">团队项目经验</div>
+        <div class="card-headline">进比赛队伍负责玩法模块：Git 分支、代码评审、和策划当面撕需求</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：加入比赛队（见比赛大全页）或工作室，负责一个完整玩法模块。学会 Git 分支与合并、接受代码评审、和策划把模糊需求当面确认成可执行文档——这三件事学校不教，但工作天天用。<br>
+          <strong>验收标准</strong>：你负责的模块在 Demo Day/比赛现场真的被玩家玩过，且你知道玩家哪里卡住了。<br>
+          <strong>避坑</strong>：别单干——一个人包所有模块的"团队项目"，面试时一问协作细节就穿帮。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 收敛</span>
+          <span class="card-index-tag">大四 · 收敛（作品集 + 白板题双线）</span>
         </div>
-        <div class="card-headline">完整项目定稿，手写题刷熟，准备现场白板。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">完整项目定稿收口，手写代码题练到"白板也能写"</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：作品集收敛为"1 个完整可玩项目（exe 直发）+ 1 份架构说明 + 代码仓库"；面试手写高频题（单例、状态机、对象池、简易 A*）用纸笔练——白板上没有 IDE 补全。<br>
+          <strong>验收标准</strong>：架构说明里每个模块你能回答"为什么这么分层、当初还考虑过什么方案"。<br>
+          <strong>避坑</strong>：项目展示页别堆截图——放一个"下载即玩"的链接和一段 60 秒实机视频，效果差一个数量级。
+        </div>
       </div>
       </div>
     </div>
