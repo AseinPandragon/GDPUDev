@@ -739,6 +739,16 @@ a.tag-pill:not(.em).res-link:hover { background: #475569; color: #ffffff; border
   .ark-nav-menu { display: none !important; }
 }
 
+/* ===== 正文内联链接：资源名就地可点 ===== */
+.inline-link {
+  color: var(--accent-blue);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--accent-blue-border);
+  transition: color 0.15s, border-bottom-color 0.15s;
+}
+.inline-link:hover { color: var(--accent-cyan); border-bottom-color: var(--accent-cyan); border-bottom-style: solid; }
+
 /* ===== 岗位细分树：点【父级】展开详细框 ===== */
 .pos-tree { margin: 10px 0 2px; }
 .pos-tree-toggle {
