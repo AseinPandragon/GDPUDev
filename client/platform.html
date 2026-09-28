@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>平台与工程向 · 客户端程序细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260928a">
+<script src="../roadmap-common.js?v=20260928a" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="../gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>客户端程序细分 · 平台与工程向 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">SUB-TRACK: PLATFORM</span></h1>
+        <p>SDK、热更、包体与上架 · 离"游戏能上线"最近 // PLATFORM ENGINEER</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="../client">← 返回客户端程序页</a>
+    </div>
+  </header>
+
+      <a class="ark-nav-item" href="../start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="../roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="../ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item active" href="../client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序 · 本页</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../client"><span>客户端程序页（总览）</span></a>
+      <a href="../client/gameplay"><span>玩法程序（Gameplay）</span></a>
+      <a href="../client/ui"><span>UI 程序</span></a>
+      <a href="../client/graphics"><span>图形程序</span></a>
+      <a href="../client/platform"><span>平台与工程向</span></a>
+    </div>
+  </div>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="../design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../design"><span>策划页（总览）</span></a>
+      <a href="../design/system"><span>系统策划</span></a>
+      <a href="../design/numeric"><span>数值策划</span></a>
+      <a href="../design/level"><span>关卡策划</span></a>
+      <a href="../design/narrative"><span>文案 / 叙事策划</span></a>
+      <a href="../design/tech-design"><span>技术策划 TP</span></a>
+    </div>
+  </div>
+    <a class="ark-nav-item" href="../engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="../art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../art"><span>美术页（总览）</span></a>
+      <a href="../art/illustration"><span>2D 原画 / 插画</span></a>
+      <a href="../art/modeling"><span>3D 建模</span></a>
+      <a href="../art/animation"><span>动作 / 绑定</span></a>
+      <a href="../art/vfx"><span>特效 VFX</span></a>
+      <a href="../art/ui"><span>UI / 界面美术</span></a>
+    </div>
+  </div>
+    <a class="ark-nav-item" href="../server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="../contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="../jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+
+
+  <div class="takeaway-alert-box">
+    <strong>💡 一句话定位</strong>
+    处理一切"游戏本体之外"的工程问题：<strong>杂活多但不可替代</strong>，适合喜欢解决真实问题的人。
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个细分到底在拼什么</div>
+        <span class="section-count-badge">WHAT IT TAKES</span>
+      </div>
+      <span class="section-desc">先看清门槛 · 再决定要不要投入</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>构建与发布流程</strong>：Android/iOS 出包、签名、商店上架全链路；</li>
+        <li><strong>SDK 接入</strong>：登录、支付、广告、数据统计——渠道文档过时是日常；</li>
+        <li><strong>热更方案</strong>：AssetBundle / Addressables / YooAsset 的版本管理；</li>
+        <li><strong>CI/CD 基础</strong>：让"点一下出包"成为现实。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 工具链 与 课内对应课程</div>
+        <span class="section-count-badge">TOOLS & COURSES</span>
+      </div>
+      <span class="section-desc">工具是手段不是目的 · 招聘看的是"用工具做出的东西"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Android Studio / Xcode</td><td>真机调试、符号表、系统日志的标准工具；</td></tr>
+          <tr><td class="name">Jenkins / GitHub Actions</td><td>自动化打包流水线；</td></tr>
+          <tr><td class="name">Unity 打包系统</td><td>Player Settings、变体、分包这些细节全是坑；</td></tr>
+          <tr><td class="name">课内：计算机网络 / 操作系统</td><td>下载、CDN、进程与签名背后的原理课。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个岗位的一天 · 实际工作内容</div>
+        <span class="section-count-badge">A DAY IN LIFE</span>
+      </div>
+      <span class="section-desc">入职前先知道每天到底在干什么</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>上午：处理接 SDK 的坑</strong>——渠道文档过时、依赖版本冲突，每天都是新花样；</li>
+        <li><strong>主力时间：出包 / 接渠道</strong>——维护打包流水线，排查真机专属问题；</li>
+        <li><strong>真机排查</strong>——闪退、兼容性、性能异常，用符号表和日志定位；</li>
+        <li><strong>产出物</strong>：能上架的包 + 接入文档 + 自动化流水线。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 面试与校招 · 会考什么</div>
+        <span class="section-count-badge">INTERVIEW MAP</span>
+      </div>
+      <span class="section-desc">流程完整性 + 真机排查经验是核心</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>考察环节</th><th>常见形式与真题方向</th></tr></thead>
+        <tbody>
+          <tr><td class="name">流程题</td><td>从点构建到商店上架的完整流程，一步都不能漏；</td></tr>
+          <tr><td class="name">热更题</td><td>AssetBundle 依赖与版本管理怎么设计，差量更新怎么做；</td></tr>
+          <tr><td class="name">排查题</td><td>真机闪退怎么查——符号表、tombstone、日志过滤；</td></tr>
+          <tr><td class="name">工程题</td><td>CI 流水线怎么搭：构建、测试、分发、回滚。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大学四年怎么走</div>
+        <span class="section-count-badge">4-YEAR PLAN</span>
+      </div>
+      <span class="section-desc">按 2024 级培养方案的课程节奏编排 · 以教务最新通知为准</span>
+    </div>
+    <div class="step-flow">
+      <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大一 · 计算机基础</span>
+        </div>
+        <div class="card-headline">网络与操作系统提前学，这门线全用得上；</div>
+        <div class="card-summary">基础打底</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二 · 真机出包</span>
+        </div>
+        <div class="card-headline">完整打出安卓包并真机调试，踩第一遍坑；</div>
+        <div class="card-summary">第一个真机包</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大三 · SDK + 热更</span>
+        </div>
+        <div class="card-headline">接一个完整登录 SDK + 热更方案 demo；</div>
+        <div class="card-summary">SDK/热更经验</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大四 · 工程化整理</span>
+        </div>
+        <div class="card-headline">把踩坑经历整理成文档，面试直接用。</div>
+        <div class="card-summary">定稿 + 面试</div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 作品集长什么样 · 常见误区</div>
+        <span class="section-count-badge">PORTFOLIO & TRAPS</span>
+      </div>
+      <span class="section-desc">作品集定生死 · 别在错误方向上努力</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>标配</strong>：完整出包流程文档 + 热更方案 demo；</li>
+        <li><strong>踩坑记录</strong>是这个方向最独特的作品：别人没踩过的坑你都踩过；</li>
+        <li><strong>误区</strong>：只在编辑器里跑，从没碰过真机和渠道——等于没进过这个方向；</li>
+        <li><strong>加分</strong>：搭过自动化打包流水线。</li>
+      </ul>
+    </div>
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是 平台与工程向 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../client">客户端程序页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // PLATFORM ENGINEER</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="../client">← 返回客户端程序页</a> · <a href="../roadmap">总览</a> · <a href="../start">新生零基础</a> · <a href="../jobs">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>

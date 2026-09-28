@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>玩法程序（Gameplay） · 客户端程序细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260928a">
+<script src="../roadmap-common.js?v=20260928a" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="../gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>客户端程序细分 · 玩法程序（Gameplay） <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">SUB-TRACK: GAMEPLAY</span></h1>
+        <p>战斗、技能、交互逻辑 · 客户端最核心的线 // GAMEPLAY PROGRAMMER</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="../client">← 返回客户端程序页</a>
+    </div>
+  </header>
+
+      <a class="ark-nav-item" href="../start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="../roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="../ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item active" href="../client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序 · 本页</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../client"><span>客户端程序页（总览）</span></a>
+      <a href="../client/gameplay"><span>玩法程序（Gameplay）</span></a>
+      <a href="../client/ui"><span>UI 程序</span></a>
+      <a href="../client/graphics"><span>图形程序</span></a>
+      <a href="../client/platform"><span>平台与工程向</span></a>
+    </div>
+  </div>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="../design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../design"><span>策划页（总览）</span></a>
+      <a href="../design/system"><span>系统策划</span></a>
+      <a href="../design/numeric"><span>数值策划</span></a>
+      <a href="../design/level"><span>关卡策划</span></a>
+      <a href="../design/narrative"><span>文案 / 叙事策划</span></a>
+      <a href="../design/tech-design"><span>技术策划 TP</span></a>
+    </div>
+  </div>
+    <a class="ark-nav-item" href="../engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="../art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../art"><span>美术页（总览）</span></a>
+      <a href="../art/illustration"><span>2D 原画 / 插画</span></a>
+      <a href="../art/modeling"><span>3D 建模</span></a>
+      <a href="../art/animation"><span>动作 / 绑定</span></a>
+      <a href="../art/vfx"><span>特效 VFX</span></a>
+      <a href="../art/ui"><span>UI / 界面美术</span></a>
+    </div>
+  </div>
+    <a class="ark-nav-item" href="../server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="../contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="../jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+
+
+  <div class="takeaway-alert-box">
+    <strong>💡 一句话定位</strong>
+    把策划的设计变成可玩的逻辑：<strong>最缺人、最练架构</strong>，应届主攻这里最稳。
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个细分到底在拼什么</div>
+        <span class="section-count-badge">WHAT IT TAKES</span>
+      </div>
+      <span class="section-desc">先看清门槛 · 再决定要不要投入</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>C# 与面向对象</strong>：继承多态真的会用而不是背概念；</li>
+        <li><strong>状态机与事件驱动</strong>：角色状态、技能流程的标准组织方式；</li>
+        <li><strong>数据驱动思维</strong>：什么进代码、什么进配置表，边界感决定代码寿命；</li>
+        <li><strong>引擎物理与碰撞</strong>：物理回调时机、射线检测、碰撞层级。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 工具链 与 课内对应课程</div>
+        <span class="section-count-badge">TOOLS & COURSES</span>
+      </div>
+      <span class="section-desc">工具是手段不是目的 · 招聘看的是"用工具做出的东西"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Unity + C#</td><td>VS 或 Rider；UE 走蓝图 + C++，作为第二引擎了解；</td></tr>
+          <tr><td class="name">Git 协作</td><td>分支、合并、解决冲突是团队基本功；</td></tr>
+          <tr><td class="name">课内：面向对象程序设计</td><td>大二上，这门课学好了写玩法才有结构；</td></tr>
+          <tr><td class="name">课内：数据结构</td><td>对象池、状态管理背后全是数据结构选型。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个岗位的一天 · 实际工作内容</div>
+        <span class="section-count-badge">A DAY IN LIFE</span>
+      </div>
+      <span class="section-desc">入职前先知道每天到底在干什么</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>上午：过 bug 单</strong>——技能打不到人、掉落不结算，逐条修；</li>
+        <li><strong>主力时间：写玩法逻辑</strong>——新技能、新交互，先和策划把文档歧义当面问清再动手；</li>
+        <li><strong>联调</strong>——和数值、UI、音效同事把功能串成完整体验；</li>
+        <li><strong>产出物</strong>：可玩的玩法逻辑代码 + 配置表结构。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 面试与校招 · 会考什么</div>
+        <span class="section-count-badge">INTERVIEW MAP</span>
+      </div>
+      <span class="section-desc">手写代码 + 系统设计是两道主菜</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>考察环节</th><th>常见形式与真题方向</th></tr></thead>
+        <tbody>
+          <tr><td class="name">手写代码</td><td>单例、状态机、对象池是经典题，白板写出来要能跑；</td></tr>
+          <tr><td class="name">系统设计</td><td>"实现一个技能系统"讲架构：怎么组织数据、事件和扩展；</td></tr>
+          <tr><td class="name">调诉题</td><td>描述一次最难的 bug 排查——考方法论不是运气故事；</td></tr>
+          <tr><td class="name">引擎题</td><td>生命周期函数、协程、物理回调的执行时机，细节里见真伪。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大学四年怎么走</div>
+        <span class="section-count-badge">4-YEAR PLAN</span>
+      </div>
+      <span class="section-desc">按 2024 级培养方案的课程节奏编排 · 以教务最新通知为准</span>
+    </div>
+    <div class="step-flow">
+      <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大一 · C# 起步</span>
+        </div>
+        <div class="card-headline">C# 入门，写控制台小游戏练语法与逻辑；</div>
+        <div class="card-summary">控制台小游戏</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二 · 玩法 demo</span>
+        </div>
+        <div class="card-headline">Unity 做完整可玩的战斗 demo（能打能死能结算）；</div>
+        <div class="card-summary">可玩战斗 demo</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大三 · 团队项目</span>
+        </div>
+        <div class="card-headline">进比赛队伍负责玩法模块，学协作与分支管理；</div>
+        <div class="card-summary">团队项目经验</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大四 · 收敛</span>
+        </div>
+        <div class="card-headline">完整项目定稿，手写题刷熟，准备现场白板。</div>
+        <div class="card-summary">定稿 + 面试</div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 作品集长什么样 · 常见误区</div>
+        <span class="section-count-badge">PORTFOLIO & TRAPS</span>
+      </div>
+      <span class="section-desc">作品集定生死 · 别在错误方向上努力</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>标配</strong>：能玩的 demo（可执行包双击就跑）+ 代码仓库链接；</li>
+        <li><strong>代码结构</strong>：面试官会翻代码，全是 if 堆出来的没有结构直接露馅；</li>
+        <li><strong>误区</strong>：只有游戏截图没有可玩包——"能安装、能重开"才是完成；</li>
+        <li><strong>加分</strong>：README 写清架构图与扩展点，体现设计意识。</li>
+      </ul>
+    </div>
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是 玩法程序（Gameplay） 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../client">客户端程序页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // GAMEPLAY PROGRAMMER</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="../client">← 返回客户端程序页</a> · <a href="../roadmap">总览</a> · <a href="../start">新生零基础</a> · <a href="../jobs">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>

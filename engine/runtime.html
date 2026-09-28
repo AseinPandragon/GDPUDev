@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>运行时与底层 · 引擎工具细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260928a">
+<script src="../roadmap-common.js?v=20260928a" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="../gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>引擎工具细分 · 运行时与底层 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">SUB-TRACK: RUNTIME</span></h1>
+        <p>内存、调度、跨平台 · C++ 深水区 // RUNTIME & CORE</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="../engine">← 返回引擎工具页</a>
+    </div>
+  </header>
+
+      <a class="ark-nav-item" href="../start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="../roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <a class="ark-nav-item" href="../ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术</span></a>
+    <a class="ark-nav-item" href="../client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="../design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../design"><span>策划页（总览）</span></a>
+      <a href="../design/system"><span>系统策划</span></a>
+      <a href="../design/numeric"><span>数值策划</span></a>
+      <a href="../design/level"><span>关卡策划</span></a>
+      <a href="../design/narrative"><span>文案 / 叙事策划</span></a>
+      <a href="../design/tech-design"><span>技术策划 TP</span></a>
+    </div>
+  </div>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item active" href="../engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具 · 本页</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../engine"><span>引擎工具页（总览）</span></a>
+      <a href="../engine/editor"><span>编辑器与工具链</span></a>
+      <a href="../engine/pipeline"><span>资源管线</span></a>
+      <a href="../engine/runtime"><span>运行时与底层</span></a>
+      <a href="../engine/graphics"><span>图形底层</span></a>
+    </div>
+  </div>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="../art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../art"><span>美术页（总览）</span></a>
+      <a href="../art/illustration"><span>2D 原画 / 插画</span></a>
+      <a href="../art/modeling"><span>3D 建模</span></a>
+      <a href="../art/animation"><span>动作 / 绑定</span></a>
+      <a href="../art/vfx"><span>特效 VFX</span></a>
+      <a href="../art/ui"><span>UI / 界面美术</span></a>
+    </div>
+  </div>
+    <a class="ark-nav-item" href="../server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="../contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="../jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+
+
+  <div class="takeaway-alert-box">
+    <strong>💡 一句话定位</strong>
+    引擎最底层的部分：<strong>和后端共享同一套 C++ 卷法</strong>，课内 OS 课在这里最值钱。
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个细分到底在拼什么</div>
+        <span class="section-count-badge">WHAT IT TAKES</span>
+      </div>
+      <span class="section-desc">先看清门槛 · 再决定要不要投入</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>C++ 与内存管理</strong>：智能指针、内存池、移动语义，现代 C++ 要真熟；</li>
+        <li><strong>调度与架构</strong>：ECS、对象生命周期、任务系统；</li>
+        <li><strong>跨平台差异</strong>：iOS/Android 的坑与适配手段；</li>
+        <li><strong>性能底层</strong>：缓存友好、多线程、无锁结构的常识。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 工具链 与 课内对应课程</div>
+        <span class="section-count-badge">TOOLS & COURSES</span>
+      </div>
+      <span class="section-desc">工具是手段不是目的 · 招聘看的是"用工具做出的东西"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
+        <tbody>
+          <tr><td class="name">C++ + CMake</td><td>现代 C++（11/17）+ 构建系统；</td></tr>
+          <tr><td class="name">开源引擎源码</td><td>Bevy / O3DE / UE 部分模块，读源码写笔记；</td></tr>
+          <tr><td class="name">课内：操作系统 / 计算机组成</td><td>这个方向课内课最有用，认真上。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个岗位的一天 · 实际工作内容</div>
+        <span class="section-count-badge">A DAY IN LIFE</span>
+      </div>
+      <span class="section-desc">入职前先知道每天到底在干什么</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>上午：看 crash 报告</strong>——解析符号表定位崩溃栈；</li>
+        <li><strong>主力时间：改底层模块</strong>——内存、序列化、调度的小步重构；</li>
+        <li><strong>跨平台验证</strong>——同一份代码在不同设备上的行为差异排查；</li>
+        <li><strong>产出物</strong>：底层模块代码 + 基准测试数据。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 面试与校招 · 会考什么</div>
+        <span class="section-count-badge">INTERVIEW MAP</span>
+      </div>
+      <span class="section-desc">C++ 深度 + 系统原理 · 和后端面试高度重合</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>考察环节</th><th>常见形式与真题方向</th></tr></thead>
+        <tbody>
+          <tr><td class="name">C++ 题</td><td>虚函数表、移动语义、内存对齐——问到你能讲为止；</td></tr>
+          <tr><td class="name">系统题</td><td>进程/线程/协程的区别与在游戏引擎里的应用；</td></tr>
+          <tr><td class="name">调试题</td><td>野指针崩溃怎么定位——AddressSanitizer、日志、二分法；</td></tr>
+          <tr><td class="name">阅读题</td><td>读过哪些引擎源码模块、有什么心得——没读直说别编。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大学四年怎么走</div>
+        <span class="section-count-badge">4-YEAR PLAN</span>
+      </div>
+      <span class="section-desc">按 2024 级培养方案的课程节奏编排 · 以教务最新通知为准</span>
+    </div>
+    <div class="step-flow">
+      <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大一 · C 语言</span>
+        </div>
+        <div class="card-headline">C 底子打牢，指针玩明白；</div>
+        <div class="card-summary">C 语言过关</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二 · 现代 C++</span>
+        </div>
+        <div class="card-headline">C++11/17 特性 + 数据结构，写无 GUI 的小系统；</div>
+        <div class="card-summary">C++ 项目</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大三 · 读源码</span>
+        </div>
+        <div class="card-headline">挑一个开源引擎模块读透并写系列笔记；</div>
+        <div class="card-summary">源码笔记</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大四 · 专项面试</span>
+        </div>
+        <div class="card-headline">C++ 面试专项（这是后端同款卷法，题库通用）。</div>
+        <div class="card-summary">定稿 + 面试</div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 作品集长什么样 · 常见误区</div>
+        <span class="section-count-badge">PORTFOLIO & TRAPS</span>
+      </div>
+      <span class="section-desc">作品集定生死 · 别在错误方向上努力</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>标配</strong>：源码阅读笔记 + 一个小型引擎模块实现（内存池/序列化/任务系统）；</li>
+        <li><strong>误区</strong>：没读过源码只背八股——追问一句就露馅；</li>
+        <li><strong>加分</strong>：给开源引擎提过 PR 或 issue，哪怕是小的。</li>
+      </ul>
+    </div>
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是 运行时与底层 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../engine">引擎工具页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // RUNTIME & CORE</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="../engine">← 返回引擎工具页</a> · <a href="../roadmap">总览</a> · <a href="../start">新生零基础</a> · <a href="../jobs">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>

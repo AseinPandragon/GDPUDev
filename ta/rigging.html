@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>绑定 / 动画 TA · 技术美术 TA细分 · 数媒技自学指南 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="../roadmap-style.css?v=20260928a">
+<script src="../roadmap-common.js?v=20260928a" defer></script>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="../gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>技术美术 TA细分 · 绑定 / 动画 TA <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">SUB-TRACK: RIGGING</span></h1>
+        <p>让角色"活"起来 · 蒙皮骨架状态机一条龙 // RIGGING TA</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="../ta">← 返回技术美术 TA页</a>
+    </div>
+  </header>
+
+      <a class="ark-nav-item" href="../start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+    <a class="ark-nav-item" href="../roadmap"><span class="ark-en-label">OVERVIEW</span><span class="ark-cn-label">总览</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item active" href="../ta"><span class="ark-en-label">TA</span><span class="ark-cn-label">技术美术 · 本页</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../ta"><span>技术美术 TA页（总览）</span></a>
+      <a href="../ta/rendering"><span>渲染 TA（Shader 向）</span></a>
+      <a href="../ta/tools"><span>工具 / 管线 TA</span></a>
+      <a href="../ta/rigging"><span>绑定 / 动画 TA</span></a>
+      <a href="../ta/perf"><span>性能优化 TA</span></a>
+    </div>
+  </div>
+    <a class="ark-nav-item" href="../client"><span class="ark-en-label">CLIENT</span><span class="ark-cn-label">客户端程序</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="../design"><span class="ark-en-label">DESIGN</span><span class="ark-cn-label">游戏策划</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../design"><span>策划页（总览）</span></a>
+      <a href="../design/system"><span>系统策划</span></a>
+      <a href="../design/numeric"><span>数值策划</span></a>
+      <a href="../design/level"><span>关卡策划</span></a>
+      <a href="../design/narrative"><span>文案 / 叙事策划</span></a>
+      <a href="../design/tech-design"><span>技术策划 TP</span></a>
+    </div>
+  </div>
+    <a class="ark-nav-item" href="../engine"><span class="ark-en-label">ENGINE</span><span class="ark-cn-label">引擎工具</span></a>
+    <div class="ark-nav-drop">
+    <a class="ark-nav-item" href="../art"><span class="ark-en-label">ART</span><span class="ark-cn-label">美术特效</span><span class="ark-dd-caret">▼</span></a>
+    <div class="ark-nav-menu">
+      <a href="../art"><span>美术页（总览）</span></a>
+      <a href="../art/illustration"><span>2D 原画 / 插画</span></a>
+      <a href="../art/modeling"><span>3D 建模</span></a>
+      <a href="../art/animation"><span>动作 / 绑定</span></a>
+      <a href="../art/vfx"><span>特效 VFX</span></a>
+      <a href="../art/ui"><span>UI / 界面美术</span></a>
+    </div>
+  </div>
+    <a class="ark-nav-item" href="../server"><span class="ark-en-label">SERVER</span><span class="ark-cn-label">服务端等</span></a>
+    <a class="ark-nav-item" href="../contests"><span class="ark-en-label">CONTESTS</span><span class="ark-cn-label">比赛大全</span></a>
+    <a class="ark-nav-item" href="../jobs"><span class="ark-en-label">JOBS</span><span class="ark-cn-label">薪资招聘</span></a>
+
+
+  <div class="takeaway-alert-box">
+    <strong>💡 一句话定位</strong>
+    负责角色从"模型"到"能动"的全链路：<strong>Maya 技术向 + 引擎动画系统</strong>，离角色表现最近。
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个细分到底在拼什么</div>
+        <span class="section-count-badge">WHAT IT TAKES</span>
+      </div>
+      <span class="section-desc">先看清门槛 · 再决定要不要投入</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>绑定与蒙皮</strong>：骨骼搭建、蒙皮权重、约束系统，Maya 是主场；</li>
+        <li><strong>变形原理</strong>：LBS 线性混合蒙皮、BlendShape、为什么关节会体积塌陷；</li>
+        <li><strong>引擎动画系统</strong>：状态机、Blend Tree、IK、root motion；</li>
+        <li><strong>动捕数据</strong>：清理与重定向流程，商业项目绕不开。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 工具链 与 课内对应课程</div>
+        <span class="section-count-badge">TOOLS & COURSES</span>
+      </div>
+      <span class="section-desc">工具是手段不是目的 · 招聘看的是"用工具做出的东西"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Maya（绑定主力）</td><td>HumanIK、蒙皮、约束；Advanced Skeleton 等插件会用也要懂原理；</td></tr>
+          <tr><td class="name">Unity / UE 动画系统</td><td>状态机、动画分层、IK 的引擎内落地；</td></tr>
+          <tr><td class="name">课内：三维动画技术</td><td>数媒技对口课，认真做作业就是练习；</td></tr>
+          <tr><td class="name">人体结构</td><td>不知道肌肉怎么动就调不好权重，速写课的隐性价值在这里。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 这个岗位的一天 · 实际工作内容</div>
+        <span class="section-count-badge">A DAY IN LIFE</span>
+      </div>
+      <span class="section-desc">入职前先知道每天到底在干什么</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>上午：过动画单</strong>——肩膀转动变形、裙摆穿模、手指漏权重，逐条修；</li>
+        <li><strong>主力时间：改绑定 / 调权重</strong>——在"动画师好用"和"引擎性能"之间找平衡；</li>
+        <li><strong>互相拉扯</strong>——改骨架影响蒙皮、改蒙皮影响动画，与动画师来回磨合是常态；</li>
+        <li><strong>引擎内验证</strong>——动捕清理、状态机衔接手感，最终以游戏内观感为准；</li>
+        <li><strong>产出物</strong>：绑定骨架、蒙皮模型、状态机配置。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 面试与校招 · 会考什么</div>
+        <span class="section-count-badge">INTERVIEW MAP</span>
+      </div>
+      <span class="section-desc">原理题用来分辨"真会"还是"只会按按钮"</span>
+    </div>
+    <div class="data-table-wrap" style="margin-bottom: 14px;">
+      <table class="data-table">
+        <thead><tr><th>考察环节</th><th>常见形式与真题方向</th></tr></thead>
+        <tbody>
+          <tr><td class="name">原理题</td><td>LBS 是什么、关节处为什么体积塌陷、BlendShape 适用场景——答不出说明只按了按钮；</td></tr>
+          <tr><td class="name">现场实操</td><td>Maya 现场绑一段简单骨架，或修一个肩膀权重问题；</td></tr>
+          <tr><td class="name">引擎题</td><td>root motion 与 in place 的取舍、状态机怎么组织才不失控；</td></tr>
+          <tr><td class="name">协作题</td><td>动画师和绑定的需求冲突怎么权衡——考沟通与优先级判断。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 大学四年怎么走</div>
+        <span class="section-count-badge">4-YEAR PLAN</span>
+      </div>
+      <span class="section-desc">按 2024 级培养方案的课程节奏编排 · 以教务最新通知为准</span>
+    </div>
+    <div class="step-flow">
+      <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大一 · 手感</span>
+        </div>
+        <div class="card-headline">Maya 基本操作 + 人体结构理解，速写课认真画；</div>
+        <div class="card-summary">Maya 熟练度</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大二 · 手绑骨架</span>
+        </div>
+        <div class="card-headline">不靠插件手绑一套简单人形骨架，理解每个节点为什么存在；</div>
+        <div class="card-summary">手绑骨架作品</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大三 · 全链路</span>
+        </div>
+        <div class="card-headline">绑定→蒙皮→动画→引擎状态机完整链路 demo；</div>
+        <div class="card-summary">全链路 demo</div>
+      </div>
+      </div>
+      <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="article-card">
+        <div class="card-tactical-header">
+          <span class="card-index-tag">大四 · 成套定稿</span>
+        </div>
+        <div class="card-headline">一个角色从模型到引擎里动起来的完整案例进作品集。</div>
+        <div class="card-summary">定稿 + 面试</div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="category-section-block">
+    <div class="section-block-header">
+      <div class="section-title-wrap">
+        <div class="section-title">■ 作品集长什么样 · 常见误区</div>
+        <span class="section-count-badge">PORTFOLIO & TRAPS</span>
+      </div>
+      <span class="section-desc">作品集定生死 · 别在错误方向上努力</span>
+    </div>
+    <div class="article-card" style="margin-bottom: 14px;">
+      <ul class="reality-list">
+        <li><strong>标配</strong>：完整链路视频（绑定→蒙皮→动画→引擎内运行）；</li>
+        <li><strong>加分</strong>：修权重的 Before/After 对比，能讲清问题根因；</li>
+        <li><strong>误区</strong>：只会一键生成插件绑定，一问原理就穿——插件是工具不是能力。</li>
+      </ul>
+    </div>
+    <div class="pending-box">
+      <strong>【持续更新】</strong>　这页是 绑定 / 动画 TA 细分的展开；你实际入行后发现内容过时、或有亲历想写进来，随时说。返回 <a href="../ta">技术美术 TA页</a> 看其他细分与完整路线。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 数媒技自学路线与就业指南 // RIGGING TA</div>
+    <div>内容含 AI 辅助生成 · 亲历部分来自真实项目踩坑记录 · 个人非经营性学习观察用途</div>
+    <div><a href="../ta">← 返回技术美术 TA页</a> · <a href="../roadmap">总览</a> · <a href="../start">新生零基础</a> · <a href="../jobs">薪资</a></div>
+  </div>
+
+</div>
+</body>
+</html>
