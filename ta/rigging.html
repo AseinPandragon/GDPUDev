@@ -124,8 +124,8 @@
       <table class="data-table">
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
-          <tr><td class="name">Maya（绑定主力）</td><td>HumanIK、蒙皮、约束；Advanced Skeleton 等插件会用也要懂原理；</td></tr>
-          <tr><td class="name">Unity / UE 动画系统</td><td>状态机、动画分层、IK 的引擎内落地；</td></tr>
+          <tr><td class="name">Maya（绑定主力，<a class="inline-link" href="https://help.autodesk.com/view/MAYAUL/ENU/" target="_blank" rel="noopener">官方文档</a>）</td><td>HumanIK、蒙皮、约束；Advanced Skeleton 等插件会用也要懂原理；</td></tr>
+          <tr><td class="name">Unity 动画系统（<a class="inline-link" href="https://docs.unity3d.com/Manual/AnimationSection.html" target="_blank" rel="noopener">官方手册</a>）</td><td>状态机、动画分层、IK、root motion 的引擎内落地；</td></tr>
           <tr><td class="name">课内：三维动画技术</td><td>数媒技对口课，认真做作业就是练习；</td></tr>
           <tr><td class="name">人体结构</td><td>不知道肌肉怎么动就调不好权重，速写课的隐性价值在这里。</td></tr>
         </tbody>
@@ -186,40 +186,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · 手感</span>
+          <span class="card-index-tag">大一 · 手感与结构（双线打底）</span>
         </div>
-        <div class="card-headline">Maya 基本操作 + 人体结构理解，速写课认真画；</div>
-        <div class="card-summary">Maya 熟练度</div>
+        <div class="card-headline">Maya 基本操作练熟，速写课当解剖课认真画</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：①Maya 界面与基础操作练熟——官方帮助中心（<a class="inline-link" href="https://help.autodesk.com/view/MAYAUL/ENU/" target="_blank" rel="noopener">help.autodesk.com/MAYAUL</a>）的 Getting Started 系列过一遍；②速写课认真画——不知道肌肉怎么长，就调不好肩关节的权重，素描课是这个细分最被低估的课。<br>
+          <strong>验收标准</strong>：Maya 里不看教程能独立完成"建一个多边形盒子→给变形器→调动画曲线"的完整流程。<br>
+          <strong>避坑</strong>：别跳过速写课——绑定师调权重翻车，八成是因为根本不知道这块肌肉转动时皮肤应该怎么动。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · 手绑骨架</span>
+          <span class="card-index-tag">大二 · 手绑骨架（理解每个节点）</span>
         </div>
-        <div class="card-headline">不靠插件手绑一套简单人形骨架，理解每个节点为什么存在；</div>
-        <div class="card-summary">手绑骨架作品</div>
+        <div class="card-headline">不靠插件，手绑一套可用人形骨架：骨骼→约束→蒙皮权重逐层做</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：用 Maya 手绑一套人形骨架（骨盆→脊柱→四肢→手指），手动刷肩、髋、手指的蒙皮权重，再用 Advanced Skeleton 这类插件重绑一遍做对比——理解插件帮你省了什么、藏了什么。<br>
+          <strong>验收标准</strong>：手绑骨架能做出走路/抬手/下蹲三个动作，肩关节和髋关节转动无明显体积塌陷。<br>
+          <strong>避坑</strong>：只会一键生成插件绑定，面试问"LBS 是什么、关节为什么塌"就穿帮——插件是工具，原理才是能力。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · 全链路</span>
+          <span class="card-index-tag">大三 · 全链路（从 Maya 到引擎）</span>
         </div>
-        <div class="card-headline">绑定→蒙皮→动画→引擎状态机完整链路 demo；</div>
-        <div class="card-summary">全链路 demo</div>
+        <div class="card-headline">绑定→蒙皮→动画→Unity 状态机完整链路 demo，学 root motion 与引擎落地</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：给绑好的角色 K 一组基础动作（待机/走/跑/跳），导出到 Unity，用动画状态机（官方手册：<a class="inline-link" href="https://docs.unity3d.com/Manual/AnimationSection.html" target="_blank" rel="noopener">docs.unity3d.com/Manual/AnimationSection</a>）串起来，弄清 root motion 与 in place 的取舍、动画衔接的混合参数怎么调。<br>
+          <strong>验收标准</strong>：一段完整视频：Maya 里绑定 → K 动画 → 引擎里被键盘驱动跑起来，衔接自然。<br>
+          <strong>避坑</strong>：只在 Maya 里好看不算数——最终以引擎内观感为准，导出流程的坑（缩放/轴向/材质）只有真跑一遍才知道。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 成套定稿</span>
+          <span class="card-index-tag">大四 · 成套定稿（一个角色讲完整故事）</span>
         </div>
-        <div class="card-headline">一个角色从模型到引擎里动起来的完整案例进作品集。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">一个角色"从模型到引擎里动起来"的完整案例进作品集，含修权重的 Before/After</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：选一个角色案例收口：绑定思路 → 蒙皮修权重的 Before/After 对比（每个都说明根因）→ 动作演示 → 引擎内运行。面试高频原理题提前背熟：LBS 线性混合蒙皮、关节体积塌陷的原因、BlendShape 适用场景。<br>
+          <strong>验收标准</strong>：模拟面试讲这套案例 10 分钟不卡壳，每个技术决定都能回答"为什么"。<br>
+          <strong>避坑</strong>：作品集里别放不是自己做的部分——绑定追问很深，一层层问到"这根骨骼为什么这么放"就见真章。
+        </div>
       </div>
       </div>
     </div>

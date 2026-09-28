@@ -124,8 +124,9 @@
       <table class="data-table">
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
-          <tr><td class="name">Python + PySide2</td><td>写 Maya/Blender 插件与工具界面的事实标准；</td></tr>
-          <tr><td class="name">Maya / Blender 官方 SDK 文档</td><td>API 记不住没关系，会查会试就行；</td></tr>
+          <tr><td class="name">Python 入门（<a class="inline-link" href="https://www.liaoxuefeng.com/wiki/1016959663602400" target="_blank" rel="noopener">廖雪峰教程</a>，免费）</td><td>语法入门到实战的主教材，学完立刻转向"解决自己的重复劳动"；</td></tr>
+          <tr><td class="name">Python + PySide（<a class="inline-link" href="https://doc.qt.io/qtforpython/" target="_blank" rel="noopener">官方文档</a>）</td><td>写 Maya/Blender 插件与工具界面的事实标准；</td></tr>
+          <tr><td class="name">Maya / Blender 官方 API 文档（<a class="inline-link" href="https://help.autodesk.com/view/MAYAUL/ENU/" target="_blank" rel="noopener">Maya</a> / <a class="inline-link" href="https://docs.blender.org/api/current/" target="_blank" rel="noopener">Blender</a>）</td><td>API 记不住没关系，会查会试就行；</td></tr>
           <tr><td class="name">版本管理思维</td><td>美术资产也要进 Git LFS 或 Perforce——规范从你开始；</td></tr>
           <tr><td class="name">课内：Python 程序设计</td><td>多数学校大二开，认真上，这门课直接对口；</td></tr>
           <tr><td class="name">课内：数据库原理</td><td>批量数据处理的思维底子。</td></tr>
@@ -186,40 +187,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · 脚本起步</span>
+          <span class="card-index-tag">大一 · 脚本起步（从自己的麻烦开始）</span>
         </div>
-        <div class="card-headline">Python 入门，写自动化小脚本解决自己的重复劳动；</div>
-        <div class="card-summary">脚本习惯养成</div>
+        <div class="card-headline">跟完廖雪峰 Python 教程，写出 10 个解决自己重复劳动的小脚本</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：主教材用<a class="inline-link" href="https://www.liaoxuefeng.com/wiki/1016959663602400" target="_blank" rel="noopener">廖雪峰 Python 教程</a>（免费、中文、可在线运行），学完基础语法立刻转向"用起来"：批量重命名照片、整理下载文件夹、合并几十个表格——一年攒 10 个真实用过的脚本。<br>
+          <strong>验收标准</strong>：10 个脚本里至少 3 个是你现在还会反复用的。<br>
+          <strong>避坑</strong>：别从"背语法"开始，从"解决自己的麻烦"开始——工具 TA 的全部价值就长在这个习惯上。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · 第一个插件</span>
+          <span class="card-index-tag">大二 · 第一个插件（学会听需求）</span>
         </div>
-        <div class="card-headline">给同学做第一个 Maya/Blender 小插件，体会"用户提需求"是什么感觉；</div>
-        <div class="card-summary">第一个可用插件</div>
+        <div class="card-headline">做第一个 Maya/Blender 插件：先做无 UI 脚本，跑通再包界面</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：文档为主——Maya 官方 Python 命令文档（<a class="inline-link" href="https://help.autodesk.com/view/MAYAUL/ENU/" target="_blank" rel="noopener">help.autodesk.com/MAYAUL</a>）或 Blender Python API（<a class="inline-link" href="https://docs.blender.org/api/current/" target="_blank" rel="noopener">docs.blender.org/api</a>），找一个真实用户（同学/社团里的画手）提需求，做出第一个"别人真的在用"的插件。<br>
+          <strong>验收标准</strong>：插件被你自己以外的至少 1 个人用过，且你根据他的反馈改过一版。<br>
+          <strong>避坑</strong>：别先写 UI——没有核心功能的界面是玩具；先让脚本在命令行跑通，再包一层界面。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · 真实使用</span>
+          <span class="card-index-tag">大三 · 真实服役（工具是养出来的）</span>
         </div>
-        <div class="card-headline">完整工具（含 UI）+ 规范文档，最好在比赛队/工作室真实服役；</div>
-        <div class="card-summary">服役中的工具 + 文档</div>
+        <div class="card-headline">完整工具（含 UI）+ 规范文档，在比赛队/工作室真实服役并迭代</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：给比赛队或工作室做一件"每天都在被用"的工具（批量检查、命名校验、导入导出器），界面用 PySide（官方文档：<a class="inline-link" href="https://doc.qt.io/qtforpython/" target="_blank" rel="noopener">doc.qt.io/qtforpython</a>），配一份使用文档和更新记录。<br>
+          <strong>验收标准</strong>：工具被 3 人以上使用过，且你能拿出"v1 被吐槽 → v2 改进"的迭代记录——这段过程比成品更打动面试官。<br>
+          <strong>避坑</strong>：没人用的工具不算作品，算作业；需求来源一定要是真实用户的真实痛点。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 讲价值</span>
+          <span class="card-index-tag">大四 · 讲价值（用数据说话）</span>
         </div>
-        <div class="card-headline">作品集用数据说话：省了多少人时、覆盖多少资产。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">作品集量化收益：每个工具能回答"给谁用、省了多少时间、覆盖多少资产"</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：把每个工具整理成"问题 → 方案 → 使用数据"三段式：原来 2 小时的手工流程现在 5 分钟、覆盖了多少资产、迭代了几版。演示录成 gif/视频，附核心代码段。<br>
+          <strong>验收标准</strong>：面试官问"这个东西真有人用吗"，你能当场展示使用记录或用户原话。<br>
+          <strong>避坑</strong>：只放功能截图不放使用数据的工具集，在面试官眼里和课程作业没区别。
+        </div>
       </div>
       </div>
     </div>

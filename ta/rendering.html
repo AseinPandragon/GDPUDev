@@ -125,8 +125,10 @@
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
           <tr><td class="name">Unity Shader Graph / 手写 Shader</td><td>入门用 Graph，进阶必须手写；UE 走 Material + 蓝图；</td></tr>
-          <tr><td class="name">RenderDoc / 帧调试器</td><td>抓帧分析是日常：看 draw call、看纹理、定位渲染错误；</td></tr>
-          <tr><td class="name">书单</td><td>《Unity Shader 入门精要》入门，Real-Time Rendering 进阶；</td></tr>
+          <tr><td class="name">RenderDoc（<a class="inline-link" href="https://renderdoc.org/" target="_blank" rel="noopener">renderdoc.org</a>，免费）</td><td>抓帧分析是日常：看 draw call、看纹理、定位渲染错误；</td></tr>
+          <tr><td class="name">书单</td><td>《Unity Shader 入门精要》（<a class="inline-link" href="https://book.douban.com/subject/26821639/" target="_blank" rel="noopener">豆瓣</a> / <a class="inline-link" href="https://github.com/candycat1992/Unity_Shaders_Book" target="_blank" rel="noopener">配套源码</a>）入门；进阶 Real-Time Rendering（<a class="inline-link" href="http://www.realtimerendering.com/" target="_blank" rel="noopener">官网有免费章节</a>）；</td></tr>
+          <tr><td class="name">视频课</td><td>B站庄懂《技术美术入门课》（<a class="inline-link" href="https://www.bilibili.com/opus/836989448422948880" target="_blank" rel="noopener">入口</a>）+ GAMES101（<a class="inline-link" href="https://www.bilibili.com/video/BV1X7411F744" target="_blank" rel="noopener">B站</a> / <a class="inline-link" href="https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html" target="_blank" rel="noopener">课程主页</a>）；</td></tr>
+          <tr><td class="name">进阶阅读</td><td>Catlike Coding（<a class="inline-link" href="https://catlikecoding.com/unity/tutorials/" target="_blank" rel="noopener">catlikecoding.com</a>）与毛星云学习笔记（<a class="inline-link" href="https://github.com/QianMo/Game-Programmer-Study-Notes" target="_blank" rel="noopener">GitHub</a>）；</td></tr>
           <tr><td class="name">课内：线性代数</td><td>大一必修，图形学的地基，这门课的成绩约等于 shader 上手速度；</td></tr>
           <tr><td class="name">课内：计算机图形学（如开设）</td><td>没有就自学 GAMES101，作业认真做。</td></tr>
         </tbody>
@@ -186,40 +188,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · 地基</span>
+          <span class="card-index-tag">大一 · 地基（两件事，别贪多）</span>
         </div>
-        <div class="card-headline">线性代数学扎实，开始翻《Unity Shader 入门精要》；</div>
-        <div class="card-summary">线代不挂 + 第一个变色 Shader</div>
+        <div class="card-headline">线性代数拿下 85+，通读《Unity Shader 入门精要》并跑通配套源码</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：①线性代数当专业课学——向量点积叉积、矩阵变换是 Shader 的母语，期中期末目标 85 分以上；②《Unity Shader 入门精要》（冯乐乐著，<a class="inline-link" href="https://book.douban.com/subject/26821639/" target="_blank" rel="noopener">豆瓣 8.9 分</a>）通读一遍，配套源码仓库（<a class="inline-link" href="https://github.com/candycat1992/Unity_Shaders_Book" target="_blank" rel="noopener">github.com/candycat1992/Unity_Shaders_Book</a>）逐章导入 Unity 跑通。<br>
+          <strong>验收标准</strong>：合上书能说清"一个顶点从模型空间到屏幕经过了哪几次变换、每次变换用什么矩阵"。<br>
+          <strong>避坑</strong>：别一上来就抄网上炫酷效果——先手写 20 个"变色/半透明/简单描边"级别的迷你 Shader 练打字感，抄得出来不代表写得出来。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · 复现</span>
+          <span class="card-index-tag">大二 · 复现（视频课 + 理论课双线）</span>
         </div>
-        <div class="card-headline">复现经典效果：描边、卡通着色、水面、溶解，每个都写实现笔记；</div>
-        <div class="card-summary">效果复现图集 + 笔记</div>
+        <div class="card-headline">跟完庄懂 TA 入门课复现 6 个经典效果，同步刷 GAMES101 补理论，每篇写实现笔记</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：主跟 B站庄懂《技术美术入门课（美术向）》（<a class="inline-link" href="https://www.bilibili.com/opus/836989448422948880" target="_blank" rel="noopener">课程入口与作业</a>），把半兰伯特、高光、菲涅尔、描边逐个手写复现；理论跟不上就同步刷 GAMES101（闫令琪，<a class="inline-link" href="https://www.bilibili.com/video/BV1X7411F744" target="_blank" rel="noopener">B站全集</a>，<a class="inline-link" href="https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html" target="_blank" rel="noopener">课程主页</a>）。<br>
+          <strong>验收标准</strong>：描边、卡通着色、溶解、水面扰动等 6 个效果各一篇实现笔记（效果对比图 + 思路 + 踩坑），发布到知乎或 CSDN——这就是作品集的第一批存货。<br>
+          <strong>避坑</strong>：只看视频不动手等于白学，庄懂课的作业必须交；笔记里至少一段"我一开始错在哪"，这种内容面试官最爱看。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · 统一风格</span>
+          <span class="card-index-tag">大三 · 统一风格（TA 思维的分水岭）</span>
         </div>
-        <div class="card-headline">做一个统一风格化渲染的场景 demo（同套 Shader 管全场景），比零散特效值钱；</div>
-        <div class="card-summary">风格化场景 demo</div>
+        <div class="card-headline">做"同套 Shader 管全场景"的风格化渲染 demo，学会用 RenderDoc 抓帧</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：把大二的效果整合进一个完整小场景（一个角色 + 一套环境），所有材质共用你写的 Shader 体系——这是 TA 思维和"特效爱好者"的分水岭。同步学会 <a class="inline-link" href="https://renderdoc.org/" target="_blank" rel="noopener">RenderDoc</a> 抓帧：看一次 draw call、看一张贴图实际采样了什么。进阶资源：<a class="inline-link" href="https://catlikecoding.com/unity/tutorials/" target="_blank" rel="noopener">Catlike Coding 教程</a>（英文但质量顶级）与毛星云《游戏程序员学习笔记》（<a class="inline-link" href="https://github.com/QianMo/Game-Programmer-Study-Notes" target="_blank" rel="noopener">GitHub 仓库</a>）。<br>
+          <strong>验收标准</strong>：demo 有一套统一风格 + 一篇 RenderDoc 分析笔记（哪怕只分析 5 个 draw call）。<br>
+          <strong>避坑</strong>：别贪大世界——一个房间级场景打磨到位，比烂尾的开放世界值钱十倍。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 定稿</span>
+          <span class="card-index-tag">大四 · 定稿（作品集 + 面试双线收口）</span>
         </div>
-        <div class="card-headline">作品集定稿，图形学面试题（变换/管线/光照模型）过一遍。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">作品集收敛为三件套，图形学面试高频题（变换/管线/光照模型）讲两遍</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：作品集收敛为"6 篇实现笔记 + 1 个风格化场景 demo + 1 份 RenderDoc 分析"，每篇按"效果对比图 → 思路 → 踩坑"结构排版。面试高频题用 GAMES101 课件自测：MVP 变换、法线为什么用逆转置矩阵、透明物体排序、Blinn-Phong 与 PBR 的区别——每题练到能用嘴讲 3 分钟。<br>
+          <strong>验收标准</strong>：找同学当面试官模拟一轮，全程不卡壳。<br>
+          <strong>避坑</strong>：简历别写没用过的名词（比如没做过 PBR 就别写"熟悉 PBR 管线"），TA 面试官一定会追问到底。
+        </div>
       </div>
       </div>
     </div>

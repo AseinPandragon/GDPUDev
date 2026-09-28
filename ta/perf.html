@@ -124,8 +124,9 @@
       <table class="data-table">
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
-          <tr><td class="name">Unity Profiler / Frame Debugger</td><td>入门必会，自己的 demo 先跑一遍找瓶颈；</td></tr>
-          <tr><td class="name">RenderDoc / 真机工具</td><td>Android GPU Inspector、Xcode Instruments，真机才是真相；</td></tr>
+          <tr><td class="name">Unity Profiler（<a class="inline-link" href="https://docs.unity3d.com/Manual/Profiler.html" target="_blank" rel="noopener">官方手册</a>）</td><td>入门必会，自己的 demo 先跑一遍找瓶颈；</td></tr>
+          <tr><td class="name">Unity 优化最佳实践（<a class="inline-link" href="https://docs.unity3d.com/Manual/BestPracticeGuides.html" target="_blank" rel="noopener">官方手册</a>）</td><td>合批、LOD、贴图压缩的原理与前提，优化前必读；</td></tr>
+          <tr><td class="name">RenderDoc（<a class="inline-link" href="https://renderdoc.org/" target="_blank" rel="noopener">renderdoc.org</a>）/ 真机工具（<a class="inline-link" href="https://developer.android.com/games/agpi" target="_blank" rel="noopener">Android GPU Inspector</a>）</td><td>真机抓帧才是真相，编辑器数据只做参考；</td></tr>
           <tr><td class="name">课内：操作系统</td><td>进程线程、内存管理——优化的底层逻辑；</td></tr>
           <tr><td class="name">课内：计算机图形学</td><td>知道 GPU 怎么工作才知道在优化什么。</td></tr>
         </tbody>
@@ -186,40 +187,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · 习惯</span>
+          <span class="card-index-tag">大一 · 底子与意识（看不见但决定上限）</span>
         </div>
-        <div class="card-headline">计算机基础打牢，玩游戏时养成"顺手看帧率"的习惯；</div>
-        <div class="card-summary">底子 + 意识</div>
+        <div class="card-headline">操作系统课认真学 + 从第一个 demo 起就开着 Profiler</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：①操作系统课认真学——进程线程、内存管理是性能优化的底层语言，这门课学到的东西两年后全用得上；②从第一个 Unity demo 开始就养成习惯：每周打开一次 <a class="inline-link" href="https://docs.unity3d.com/Manual/Profiler.html" target="_blank" rel="noopener">Profiler（官方手册）</a> 看一眼帧时间和内存曲线。<br>
+          <strong>验收标准</strong>：能说出自己 demo 的"帧时间去哪了"——渲染占多少、脚本占多少。<br>
+          <strong>避坑</strong>：性能优化的第一戒律是"先测量再动手"——不测就改，改完大概率更慢。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · 首次实战</span>
+          <span class="card-index-tag">大二 · 首次实战（在自己的项目里练手）</span>
         </div>
-        <div class="card-headline">在自己的 demo 里主动做一次优化并完整记录数据；</div>
-        <div class="card-summary">一份优化记录</div>
+        <div class="card-headline">对自己的 demo 做一轮完整优化，并写下带数据的优化记录</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：给自己的 demo 定一个硬指标（如"低端机 30 帧"），按官方<a class="inline-link" href="https://docs.unity3d.com/Manual/BestPracticeGuides.html" target="_blank" rel="noopener">性能优化最佳实践（Unity 手册）</a>逐条对照：合批、图集、LOD、减面、贴图压缩——每改一项，记录改前改后的数据。<br>
+          <strong>验收标准</strong>：一份优化记录：3 项以上改动，每项带 Before/After 帧率或内存数据，并解释"为什么这样改有效"。<br>
+          <strong>避坑</strong>：只背优化名词（"合批""LOD"）不懂前提条件——追问"为什么合批能省"就露馅，这份记录就是防露馅的解药。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · 项目负责</span>
+          <span class="card-index-tag">大三 · 项目负责（真机才是真相）</span>
         </div>
-        <div class="card-headline">在比赛/工作室项目里负责性能，真机数据说话；</div>
-        <div class="card-summary">项目级优化经验</div>
+        <div class="card-headline">在比赛队/工作室项目里负责性能，学会真机抓帧工具链</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：在比赛或工作室项目里认领性能岗位：编辑器调好不算数，用 <a class="inline-link" href="https://renderdoc.org/" target="_blank" rel="noopener">RenderDoc</a> 抓帧分析 GPU，安卓端用 <a class="inline-link" href="https://developer.android.com/games/agpi" target="_blank" rel="noopener">Android GPU Inspector</a> 看真机瓶颈；给美术/程序开优化单，改完复测闭环。<br>
+          <strong>验收标准</strong>：项目交付时你能拿出"目标 → 瓶颈定位 → 改动 → 复测达标"的完整链条记录。<br>
+          <strong>避坑</strong>：编辑器里流畅 ≠ 真机流畅——所有结论以真机数据为准，这是初级和合格的分界线。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 数据定稿</span>
+          <span class="card-index-tag">大四 · 数据定稿（优化故事就是作品集）</span>
         </div>
-        <div class="card-headline">作品集用真实 Before/After 数据讲优化故事。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">作品集用真实 Before/After 数据讲 2~3 个优化故事，每个能讲 5 分钟</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：把大三的优化记录整理成作品集：每个故事按"现象 → 测量 → 定位 → 改动 → 复测"五段展开，配数据曲线截图。面试高频题提前练：draw call 高的排查顺序、LOD 为什么省 GPU、遮挡剔除与视锥剔除的区别。<br>
+          <strong>验收标准</strong>：随便指一条曲线，你能现场讲 5 分钟不重复不卡壳。<br>
+          <strong>避坑</strong>：全是"成功案例"反而可疑——讲一段"优化了但没用"的经历和原因，可信度更高。
+        </div>
       </div>
       </div>
     </div>
