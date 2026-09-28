@@ -34,7 +34,7 @@
       </div>
       <div class="brand-text">
         <h1>方向小测试 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">QUIZ</span></h1>
-        <p>10 道情景题 · 看你的直觉倾向哪个方向 // SELF-CHECK</p>
+        <p>20 道情景题 · 看你的直觉倾向哪个方向 // SELF-CHECK</p>
       </div>
     </div>
     <div class="nav-tools">
@@ -106,17 +106,17 @@
 
   <div class="takeaway-alert-box">
     <strong>💡 玩法说明</strong>
-    10 道情景题，凭第一直觉选，别想"哪个方向好就业"。<strong>这只是一个娱乐向的小测试，不是科学测评</strong>——它的用处是给你一个"从哪里开始试"的起点，最终答案由你动手试出来。
+    20 道情景题，凭第一直觉选，别想"哪个方向好就业"。中途有事可以直接关掉，下次再来重测——反正 5 分钟。<strong>这只是一个娱乐向的小测试，不是科学测评</strong>——它的用处是给你一个"从哪里开始试"的起点，最终答案由你动手试出来。
   </div>
 
   <!-- ================= 题目区 ================= -->
   <div class="category-section-block">
     <div class="section-block-header">
       <div class="section-title-wrap">
-        <div class="section-title">■ 十道情景题</div>
-        <span class="section-count-badge">10 QUESTIONS</span>
+        <div class="section-title">■ 二十道情景题</div>
+        <span class="section-count-badge">20 QUESTIONS</span>
       </div>
-      <span class="section-desc">每题必选 · 全部选完才出结果</span>
+      <span class="section-desc">每题必选 · 全部选完才出结果 · 想中断就关掉，下次重测</span>
     </div>
     <div class="article-card" id="quizBox" style="margin-bottom: 14px;"></div>
     <div style="display:flex; gap:12px; flex-wrap:wrap;">
@@ -224,7 +224,67 @@ var QS = [
     ['在管线两头穿梭，谁都离不开你', 'ta'],
     ['写一天代码心流不断，发布自己写的功能', 'prog'],
     ['作品署自己的名字，被同行认出风格', 'art'],
-    ['自己的账号/频道有稳定受众', 'media']] }
+    ['自己的账号/频道有稳定受众', 'media']] },
+  { q: '游戏里遇到 bug（卡墙/闪退/数值不对），你的第一反应是——', o: [
+    ['记下来，研究它的触发条件到底是什么', 'prog'],
+    ['猜是判定规则没写清楚，想帮策划补规则', 'design'],
+    ['看看是不是贴图/特效/资源加载出了问题', 'ta'],
+    ['只要不是画面崩了就无所谓', 'art'],
+    ['顺手截个梗图发群里', 'media']] },
+  { q: '给你一笔小额预算升级装备，你买——', o: [
+    ['双屏 + 机械键盘，写代码舒服最重要', 'prog'],
+    ['数位板 / 手绘屏', 'art'],
+    ['显卡，渲染和特效跑起来才爽', 'ta'],
+    ['麦克风和补光灯，做内容用', 'media'],
+    ['纸质笔记本和几本设计书', 'design']] },
+  { q: '期末小组展示，你会主动认领哪部分？', o: [
+    ['整体框架和讲解逻辑，保证别人听得懂', 'design'],
+    ['PPT 和展示视频的视觉呈现', 'art'],
+    ['现场演示环节，确保程序当众不崩', 'prog'],
+    ['加一段炫的开场动画震住全场', 'ta'],
+    ['顺手把展示录下来剪成短视频发出去', 'media']] },
+  { q: '你的浏览器收藏夹里，存得最多的是——', o: [
+    ['游戏拆解 / 设计分析的长文', 'design'],
+    ['技术文档和教程', 'prog'],
+    ['效果复现案例 / Shader 参考', 'ta'],
+    ['画师作品和参考图', 'art'],
+    ['整活视频和梗图', 'media']] },
+  { q: '朋友评价你这个人最常说的是——', o: [
+    ['"你想得多，总在琢磨为什么"', 'design'],
+    ['"你真能折腾，什么都想动手改"', 'ta'],
+    ['"你靠谱，交代的事一定有着落"', 'prog'],
+    ['"你有品味，跟着你买不会错"', 'art'],
+    ['"你讲话有意思，什么都能源成段子"', 'media']] },
+  { q: '你的玩法想法被队友当场否了，你会——', o: [
+    ['让他把反对理由讲清楚，有道理我就改', 'design'],
+    ['直接做个 10 分钟小原型，用结果说话', 'prog'],
+    ['想想有没有折中的实现方式把两边都装下', 'ta'],
+    ['不争了，回家画个示意图再来讲', 'art'],
+    ['先记下来，回头发条动态听听网友怎么说', 'media']] },
+  { q: '面对"重复劳动"，你的真实态度是——', o: [
+    ['重复说明流程没设计好，我去改流程', 'design'],
+    ['重复就是该自动化的信号，写个脚本', 'ta'],
+    ['写成函数复用掉，代码洁癖受不了复制粘贴', 'prog'],
+    ['重复练习就是练基本功，接受它', 'art'],
+    ['把重复过程拍成 vlog，反而挺有趣', 'media']] },
+  { q: '如果加入游戏团队只能做"看不见的部分"，你选——', o: [
+    ['经济与规则系统：玩家看不见，但一切都围着它转', 'design'],
+    ['网络同步与服务器逻辑：延迟卡顿都归我管', 'tech'],
+    ['性能与内存优化：让帧率稳如老狗', 'prog'],
+    ['资源管线与工具：让美术的资产自动流转', 'ta'],
+    ['数据埋点与分析报表：用数据说服所有人', 'media']] },
+  { q: '学一门新东西，你习惯的方式是——', o: [
+    ['先拆它的规则结构：它由哪几块组成、互相怎么影响', 'design'],
+    ['直接读底层文档，从原理开始', 'tech'],
+    ['打开编辑器边写边学，卡住再查', 'prog'],
+    ['找最好的案例临摹，先像再懂', 'art'],
+    ['边学边写学习笔记/视频分享出去', 'media']] },
+  { q: '一个"只给自己玩"的学期项目，你最想做的是——', o: [
+    ['一套能自循环的卡牌规则 + 数值平衡', 'design'],
+    ['一个炫技的视觉场景或渲染效果', 'ta'],
+    ['一个能多人联机的小服务（哪怕画面很糙）', 'tech'],
+    ['一套完整的角色美术（立绘到建模）', 'art'],
+    ['一个游戏测评账号，更内容不更开发', 'media']] }
 ];
 
 var picked = {};
@@ -234,7 +294,7 @@ function render() {
   var html = '';
   QS.forEach(function(item, qi) {
     html += '<div class="quiz-q" id="q' + qi + '">';
-    html += '<div class="quiz-q-num">Q' + (qi + 1) + ' / 10</div>';
+    html += '<div class="quiz-q-num">Q' + (qi + 1) + ' / 20</div>';
     html += '<div class="quiz-q-title">' + item.q + '</div>';
     item.o.forEach(function(opt, oi) {
       html += '<label class="quiz-opt" id="opt-' + qi + '-' + oi + '"><input type="radio" name="q' + qi + '" onclick="pick(' + qi + ',' + oi + ',\'' + opt[1] + '\')">' + opt[0] + '</label>';
