@@ -124,8 +124,10 @@
       <table class="data-table">
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
-          <tr><td class="name">Vulkan / OpenGL</td><td>从画三角形开始，写一个迷你渲染器；</td></tr>
-          <tr><td class="name">RenderDoc / Nsight</td><td>深度抓帧与 GPU 耗时分析；</td></tr>
+          <tr><td class="name">LearnOpenGL（<a class="inline-link" href="https://learnopengl.com/" target="_blank" rel="noopener">learnopengl.com</a>）</td><td>OpenGL 起步主线，从画三角形到完整场景；</td></tr>
+          <tr><td class="name">vkguide.dev（<a class="inline-link" href="https://vkguide.dev/" target="_blank" rel="noopener">vkguide.dev</a>）/ Scratchapixel（<a class="inline-link" href="https://www.scratchapixel.com/" target="_blank" rel="noopener">scratchapixel.com</a>）</td><td>Vulkan 路线 / 软件光栅器路线的免费教程；</td></tr>
+          <tr><td class="name">RenderDoc（<a class="inline-link" href="https://renderdoc.org/" target="_blank" rel="noopener">renderdoc.org</a>）/ Nsight</td><td>深度抓帧与 GPU 耗时分析；</td></tr>
+          <tr><td class="name">GAMES101（<a class="inline-link" href="https://www.bilibili.com/video/BV1X7411F744" target="_blank" rel="noopener">B站</a>）</td><td>理论底座，作业认真做；</td></tr>
           <tr><td class="name">课内：计算机组成 / 图形学</td><td>GPU 为什么这样设计，组成原理给你答案。</td></tr>
         </tbody>
       </table>
@@ -184,40 +186,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · 线代 + C</span>
+          <span class="card-index-tag">大一 · 双底子（数学 × C）</span>
         </div>
-        <div class="card-headline">数学与 C 双底子；</div>
-        <div class="card-summary">基础过关</div>
+        <div class="card-headline">线性代数几何直觉 + C 语言指针，两个地基同时打</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：①线代用 <a class="inline-link" href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank" rel="noopener">3Blue1Brown《线性代数的本质》</a> 建立几何直觉，再回课本刷题；②C 语言指针与内存模型玩透（同 runtime 页的大一标准：手写字符串库、画内存布局图）。<br>
+          <strong>验收标准</strong>：能解释"投影矩阵为什么把 z 值变成非线性"，能画指针数组内存图。<br>
+          <strong>避坑</strong>：图形底层的每一页教材都在用线代——这门课欠的债，后面逐页偿还还带利息。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · OpenGL 起步</span>
+          <span class="card-index-tag">大二 · OpenGL 起步（从黑屏到三角形）</span>
         </div>
-        <div class="card-headline">从画三角形到实现一个基础场景；</div>
-        <div class="card-summary">OpenGL 小项目</div>
+        <div class="card-headline">跟 LearnOpenGL 做完基础篇：窗口、三角形、纹理、变换、光照</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：跟 <a class="inline-link" href="https://learnopengl.com/" target="_blank" rel="noopener">LearnOpenGL（有中文翻译）</a>做完入门与光照章节——每章代码手打不复制，重点理解"初始化上下文→顶点数据→着色器→绘制调用"每个环节为什么存在；理论同步刷 GAMES101（<a class="inline-link" href="https://www.bilibili.com/video/BV1X7411F744" target="_blank" rel="noopener">B站</a>）。<br>
+          <strong>验收标准</strong>：不对照教程，能从空项目写出一个带纹理和 Blinn-Phong 光照的旋转立方体。<br>
+          <strong>避坑</strong>：OpenGL 报错经常一片黑屏无提示——学会用 glGetError 和调试输出，排查能力从这里开始练。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · 迷你渲染器</span>
+          <span class="card-index-tag">大三 · 迷你渲染器（图形底层的硬通货）</span>
         </div>
-        <div class="card-headline">Vulkan 小项目或软件光栅器（更硬核更推荐）；</div>
-        <div class="card-summary">迷你渲染器</div>
+        <div class="card-headline">写一个 CPU 软件光栅器（推荐）或 Vulkan 小渲染器，全程自己实现</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：二选一——①软件光栅器（更推荐）：纯 CPU 实现 MVP 变换、三角形光栅化、深度缓冲、纹理采样，参考 <a class="inline-link" href="https://www.scratchapixel.com/" target="_blank" rel="noopener">Scratchapixel（免费图形学教程）</a>；②Vulkan 路线：跟 <a class="inline-link" href="https://vkguide.dev/" target="_blank" rel="noopener">vkguide.dev</a> 做一个最小渲染器。<br>
+          <strong>验收标准</strong>：软件光栅器能加载一个 obj 模型并正确渲染带纹理旋转动画；每一行都能解释用途。<br>
+          <strong>避坑</strong>：这是图形底层方向最有说服力的作品——但只有全程自己写（不抄模板）才有效，面试官会让你现场改一行看结果。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 专项面试</span>
+          <span class="card-index-tag">大四 · 专项面试（API + 硬件 + 实现三层）</span>
         </div>
-        <div class="card-headline">图形面试专项：管线、同步、经典算法。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">图形底层面试专项：同步原语、GPU 硬件模型、手写渲染管线口述</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：分三层准备——API（Vulkan 的 synchronization、validation layer 报错怎么读）、硬件（为什么带宽是移动端瓶颈、TBDR 架构常识）、实现（口述手写渲染管线全步骤，对应你的光栅器）。作品集收口：光栅器传 GitHub + 每阶段 README。<br>
+          <strong>验收标准</strong>：模拟面试：让你现场给自己的光栅器加一个特性，你能说出改哪里。<br>
+          <strong>避坑</strong>：这个方向面试必问你的渲染器细节——不是自己写的部分千万别放。
+        </div>
       </div>
       </div>
     </div>

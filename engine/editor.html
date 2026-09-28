@@ -124,8 +124,9 @@
       <table class="data-table">
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
-          <tr><td class="name">Unity Editor Scripting</td><td>EditorWindow、PropertyDrawer、菜单项，入门三件套；</td></tr>
-          <tr><td class="name">UE Slate / Editor Utility</td><td>UE 路线的编辑器扩展方案；</td></tr>
+          <tr><td class="name">Unity Editor 扩展（<a class="inline-link" href="https://docs.unity3d.com/Manual/ExtendingTheEditor.html" target="_blank" rel="noopener">官方手册</a>）</td><td>EditorWindow、PropertyDrawer、菜单项，入门三件套；</td></tr>
+          <tr><td class="name">UI Toolkit（<a class="inline-link" href="https://docs.unity3d.com/Manual/UIToolkits.html" target="_blank" rel="noopener">官方文档</a>）</td><td>给工具做界面，替代老旧 IMGUI 的新方案；</td></tr>
+          <tr><td class="name">UE Editor Utility（<a class="inline-link" href="https://dev.epicgames.com/documentation/en-us/unreal-engine" target="_blank" rel="noopener">UE 官方文档</a>）</td><td>UE 路线的编辑器扩展方案，走 UE 线再看；</td></tr>
           <tr><td class="name">课内：面向对象 / 软件工程</td><td>工具开发就是小型软件工程。</td></tr>
         </tbody>
       </table>
@@ -184,40 +185,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · C# 底子</span>
+          <span class="card-index-tag">大一 · C# 底子（和玩法线共用起点）</span>
         </div>
-        <div class="card-headline">面向对象过关；</div>
-        <div class="card-summary">基础练习</div>
+        <div class="card-headline">面向对象真正过关：写得出、讲得清、改得动</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：用<a class="inline-link" href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener">微软官方 C# 文档</a>打底，做一个 200~500 行的小系统（如"任务管理器"：任务类、优先级、持久化到文件），刻意练习封装与接口。<br>
+          <strong>验收标准</strong>：能不看代码向别人解释"为什么这个类长这样、换个设计会怎样"。<br>
+          <strong>避坑</strong>：编辑器工具的本质是"给人用的软件"——面向对象学不牢，工具就会长成一坨 if。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · 第一个工具</span>
+          <span class="card-index-tag">大二 · 第一个 EditorWindow（官方文档起步）</span>
         </div>
-        <div class="card-headline">给自己写第一个 EditorWindow 工具；</div>
-        <div class="card-summary">第一个工具</div>
+        <div class="card-headline">跟 Unity 官方手册写出第一个 EditorWindow 工具，解决自己的一件烦事</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：读 <a class="inline-link" href="https://docs.unity3d.com/Manual/ExtendingTheEditor.html" target="_blank" rel="noopener">Extending the Editor（官方手册）</a>，做一个解决自己真实麻烦的 EditorWindow（如批量改名器、场景物体清单导出器），再用 UI Toolkit（<a class="inline-link" href="https://docs.unity3d.com/Manual/UIToolkits.html" target="_blank" rel="noopener">官方文档</a>）把界面做好看一点。<br>
+          <strong>验收标准</strong>：工具每周至少被你自己用一次，持续一个月。<br>
+          <strong>避坑</strong>：为写工具而写工具没有意义——先有真实烦事，再有工具。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · 团队服役</span>
+          <span class="card-index-tag">大三 · 团队服役（收真实反馈）</span>
         </div>
-        <div class="card-headline">给团队做真实服役的工作流工具，收真实反馈；</div>
-        <div class="card-summary">服役工具 + 文档</div>
+        <div class="card-headline">给比赛队/工作室做工作流工具：接入文档 + 迭代记录 + 至少 3 个真实用户</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：把大二的自用工具升级成团队工具：批量检查器（资源命名/缺失引用）、关卡批量摆放辅助等；写接入文档，收集吐槽，迭代 v2、v3。<br>
+          <strong>验收标准</strong>：3 人以上真实使用过 + 你能展示"v1 被吐槽 → v2 改进"的完整迭代链。<br>
+          <strong>避坑</strong>：工具的敌人不是技术难度，是"没人用"——发布时要主动找用户、主动收集反馈。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 讲价值</span>
+          <span class="card-index-tag">大四 · 讲价值（迭代故事 > 成品截图）</span>
         </div>
-        <div class="card-headline">作品集讲效率收益与迭代过程。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">作品集讲"效率收益 + 迭代过程"，每个工具三段式：问题 → 方案 → 数据</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：每个工具整理成三段式：当时的痛点（多具体）、方案与关键设计、使用数据（多少人、多久、省了多少时间）。演示录视频，附核心代码与接入文档链接。<br>
+          <strong>验收标准</strong>：面试官问"真有人用吗"，你能拿出使用记录或用户原话。<br>
+          <strong>避坑</strong>：成品截图谁都有——迭代记录和使用数据才是编辑器方向的硬通货。
+        </div>
       </div>
       </div>
     </div>

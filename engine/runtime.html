@@ -124,8 +124,8 @@
       <table class="data-table">
         <thead><tr><th>工具 / 课程</th><th>作用 / 对应环节</th></tr></thead>
         <tbody>
-          <tr><td class="name">C++ + CMake</td><td>现代 C++（11/17）+ 构建系统；</td></tr>
-          <tr><td class="name">开源引擎源码</td><td>Bevy / O3DE / UE 部分模块，读源码写笔记；</td></tr>
+          <tr><td class="name">C++（<a class="inline-link" href="https://learn.microsoft.com/cpp/cpp/" target="_blank" rel="noopener">Microsoft C++ 参考</a>）</td><td>现代 C++（11/17）+ CMake 构建系统；</td></tr>
+          <tr><td class="name">开源引擎（<a class="inline-link" href="https://docs.o3de.org/" target="_blank" rel="noopener">O3DE 文档</a> / <a class="inline-link" href="https://bevyengine.org/learn/" target="_blank" rel="noopener">Bevy Learn</a> / <a class="inline-link" href="https://dev.epicgames.com/documentation/en-us/unreal-engine" target="_blank" rel="noopener">UE 文档</a>）</td><td>读源码写笔记，宁深勿广；</td></tr>
           <tr><td class="name">课内：操作系统 / 计算机组成</td><td>这个方向课内课最有用，认真上。</td></tr>
         </tbody>
       </table>
@@ -184,40 +184,56 @@
       <div class="step-num">1</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大一 · C 语言</span>
+          <span class="card-index-tag">大一 · C 语言（指针不过关不算过关）</span>
         </div>
-        <div class="card-headline">C 底子打牢，指针玩明白；</div>
-        <div class="card-summary">C 语言过关</div>
+        <div class="card-headline">C 语言指针、内存布局玩到能给别人讲明白</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：C 语言课的目标不是 90 分，是<strong>指针和内存模型彻底想通</strong>：写一个不依赖库函数的字符串库（strlen/strcpy/strcmp 自己实现）、一个简单的动态数组——报错全自己调。<br>
+          <strong>验收标准</strong>：能画出一维指针、二维指针、数组与指针在内存里的真实布局图，并解释段错误是怎么发生的。<br>
+          <strong>避坑</strong>：C 是这门方向唯一的"必修语言"——C 没过关，后面 C++ 的每一页都在还债。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">2</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大二 · 现代 C++</span>
+          <span class="card-index-tag">大二 · 现代 C++（11/17 特性落地）</span>
         </div>
-        <div class="card-headline">C++11/17 特性 + 数据结构，写无 GUI 的小系统；</div>
-        <div class="card-summary">C++ 项目</div>
+        <div class="card-headline">用现代 C++ 写一个 1000 行级的无 GUI 小系统 + 手撕数据结构</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：学 <a class="inline-link" href="https://learn.microsoft.com/cpp/cpp/" target="_blank" rel="noopener">C++ 官方文档（Microsoft C++ 参考）</a>的现代特性（智能指针、移动语义、RAII），做一个 1000 行级小系统（如日志库：分级写入、异步落盘、轮转），同步手撕常用数据结构（vector/map 的简化版）。<br>
+          <strong>验收标准</strong>：日志库被你的其他练习项目真实引用；手撕结构能讲清每种操作的复杂度取舍。<br>
+          <strong>避坑</strong>：只会背"智能指针防泄漏"，说不出"什么时候 shared_ptr 反而有害"——现代 C++ 的面试就是这么问的。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">3</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大三 · 读源码</span>
+          <span class="card-index-tag">大三 · 读源码（挑一个模块读透）</span>
         </div>
-        <div class="card-headline">挑一个开源引擎模块读透并写系列笔记；</div>
-        <div class="card-summary">源码笔记</div>
+        <div class="card-headline">读一个开源引擎/框架的完整模块并写系列笔记，宁深勿广</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：选一个够得着的开源项目深入：C++ 方向读 O3DE（<a class="inline-link" href="https://docs.o3de.org/" target="_blank" rel="noopener">docs.o3de.org</a>）或 UE 某模块（<a class="inline-link" href="https://dev.epicgames.com/documentation/en-us/unreal-engine" target="_blank" rel="noopener">UE 官方文档</a>）；Rust 方向读 <a class="inline-link" href="https://bevyengine.org/learn/" target="_blank" rel="noopener">Bevy（官方 Learn）</a> 的 ECS 实现——目标是一个模块（如日志、序列化、调度），从入口到每条分支全部读懂，写 5~8 篇系列笔记。<br>
+          <strong>验收标准</strong>：系列笔记发到知乎/CSDN，收到至少一条有质量的讨论或指正。<br>
+          <strong>避坑</strong>：从主函数开始通读是读源码最差的方式——从一个你好奇的行为（"这行日志是谁打的"）倒着追进去。
+        </div>
       </div>
       </div>
       <div class="step-item">
       <div class="step-num">4</div>
       <div class="article-card">
         <div class="card-tactical-header">
-          <span class="card-index-tag">大四 · 专项面试</span>
+          <span class="card-index-tag">大四 · 专项面试（与后端同卷，题库通用）</span>
         </div>
-        <div class="card-headline">C++ 面试专项（这是后端同款卷法，题库通用）。</div>
-        <div class="card-summary">定稿 + 面试</div>
+        <div class="card-headline">C++ 面试专项：虚函数表、移动语义、内存对齐、多线程，全部落到白板</div>
+        <div class="card-summary">
+          <strong>做什么</strong>：分块刷题——语言（虚函数机制、移动语义、智能指针实现）、系统（进程线程协程、内存管理）、手写（智能指针简化版、线程安全队列）；每块整理自己的答案文档，源码笔记作为"实战证据"附在简历后。<br>
+          <strong>验收标准</strong>：模拟面试三轮，追问三层不倒。<br>
+          <strong>避坑</strong>：八股 + 源码笔记要配套——只背八股的，一句"你读过哪个项目的这块代码"就破防。
+        </div>
       </div>
       </div>
     </div>
