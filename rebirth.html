@@ -354,7 +354,7 @@ var S = null;
 function newState() {
   return { phase: 'title', day: 1, stats: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
     hp: 40, hmax: 40, trained: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
-    buffs: [], idleDays: 0, kills: 0, speed: 1, runEvents: [], evPtr: 0, pick: null, dayPlan: [], logPtr: 0, logEntries: [], pendingChoice: false };
+    buffs: [], idleDays: 0, kills: 0, speed: 1, runEvents: [], evPtr: 0, dayPlan: [], logPtr: 0, logEntries: [], pendingChoice: false, inBattle: false, dayDone: false };
 }
 function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} }
 function load() { try { var s = localStorage.getItem(SAVE_KEY); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
@@ -422,7 +422,7 @@ function startPrologue() {
   S.runEvents = idx.slice(0, Math.min(14, idx.length)); S.evPtr = 0;
   screenDay();
 }
-function resume() { var s = load(); if (s) { S = s; screenDay(); } }
+function resume() { var s = load(); if (s) { S = s; S.inBattle = false; screenDay(); } }
 function screenDay() {
   var st = DAY_STORY[S.day - 1];
   show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">DAY ' + S.day + ' · ' + st[0] + '</div><div class="rb-story">' + st[1] + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="advanceDay()">开始这一天 ▶</button></div>');
@@ -440,7 +440,8 @@ function startDayPlan() {
     var avail = S.runEvents.length - S.evPtr;
     var nChoice = Math.min(Math.floor(Math.random() * 3), avail);
     for (var c = 0; c < nChoice; c++) S.dayPlan.splice(1 + Math.floor(Math.random() * (S.dayPlan.length + 1)), 0, -1);
-    S.dayPlan.push(-2); /* 行动抉择：时间轴最后一个条目 */
+    S.dayPlan.push(-2); /* 行动抉择 */
+    S.dayPlan.push(-3, -4); /* 夜幕宣告 → 开战（战斗画面嵌在时间轴下方） */
     S.logPtr = 0; S.logEntries = []; save();
   }
   renderDayLog();
@@ -457,6 +458,7 @@ function renderDayLog() {
   h += '<div id="logBox" style="max-height:420px;min-height:160px;overflow-y:auto;font-size:13.5px;line-height:2.1;color:#cfe0d4">' + (S.logEntries || []).join('') + '</div>';
   h += '<div id="rlogHint" style="margin-top:8px;font-family:var(--font-mono);font-size:12px;color:#55665f"></div>';
   h += '<div style="margin-top:6px"><button class="rb-btn" style="display:inline-block;width:auto;padding:5px 14px;font-size:12px" onclick="skipLog(event)">跳过今天 ▸▸</button></div></div>';
+  h += '<div id="battleSlot"></div>';
   show(h);
   updateLogHint();
 }
@@ -478,15 +480,31 @@ function rebuildLogBox() {
 function updateLogHint() {
   var hint = document.getElementById('rlogHint');
   if (!hint) return;
-  if (S.pendingChoice) hint.innerHTML = '▲ 作出你的选择（点选项，点背景无效）';
+  if (S.inBattle) hint.innerHTML = '⚔ 战斗进行中（画面在下方）……';
+  else if (S.pendingChoice) hint.innerHTML = '▲ 作出你的选择（点选项，点背景无效）';
+  else if (S.dayDone) hint.innerHTML = '— 点击任意处睡下 → 第 ' + (S.day + 1) + ' 天 —';
   else if (S.logPtr >= S.dayPlan.length) hint.innerHTML = '— 点击任意处，夜幕降临 —';
   else hint.innerHTML = '· 点击任意处继续 ▸';
 }
 function nextLog() {
   if (S.pendingChoice) return; /* 选择没做完，点背景无效 */
+  if (S.inBattle) return; /* 战斗进行中，时间轴暂停 */
   if (S.logPtr >= S.dayPlan.length) { finishDayLog(); return; }
   var item = S.dayPlan[S.logPtr];
   S.logPtr++;
+  if (item === -3) {
+    /* 夜幕宣告：内嵌在时间轴里 */
+    var mon = S.day === 7 ? BOSS : MONSTERS[S.day - 1];
+    var builds = unlockedBuilds();
+    var lst = builds.length
+      ? builds.map(function (o) { return '<span style="color:' + CLASSES[o.c].color + '">' + CLASSES[o.c].builds[o.i].name + '</span>'; }).join(' / ')
+      : '<span style="color:#f0b8ac">赤手空拳（没修炼过任何职业——今晚凶多吉少）</span>';
+    pushLog('<div style="margin:10px 0 4px;color:#f0b8ac;font-weight:900;letter-spacing:2px">—— 夜幕降临 ——</div>');
+    pushLog('<div style="margin-bottom:8px"><span style="font-family:var(--font-mono);color:#6b8a7c">NIGHT</span>　' + mon.emoji + ' <b style="color:#f0b8ac">' + mon.name + '</b>' + mon.desc + '<br>耐久 <b>' + mon.hp + '</b> · 攻击 <b>' + mon.dmg + '/发</b>（你不用躲，扛着打）<br>今晚你把攒下的本事全带上了（不用选，全部自动释放）：' + lst + '<br><span style="color:#9fd3b8">' + humanBuffs() + '</span></div>');
+    updateLogHint();
+    return;
+  }
+  if (item === -4) { startBattle(); return; }
   if (item === -2) {
     /* 白天行动：内嵌在流水账末尾 */
     var html = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px">';
@@ -529,6 +547,12 @@ function resolveEvent(e, i) {
   var ev = EVENTS[S.runEvents[S.evPtr]];
   var res = ev.c[i].go();
   S.evPtr++;
+  /* 收起：把抉择块折叠成「已选」状态，未选的选项不再显示 */
+  var picked = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px">';
+  picked += '<b style="color:#edbe5c">▶ ' + ev.t + '</b><br><span style="color:#e8e4d4">' + ev.s + '</span><br>';
+  picked += '<button class="rb-btn" disabled style="margin-top:6px;padding:8px 12px;border-color:#edbe5c;color:#edbe5c">✓ ' + ev.c[i].t + '</button></div>';
+  S.logEntries[S.logEntries.length - 1] = picked;
+  rebuildLogBox();
   pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#f5e6bd;background:rgba(237,190,92,.05);border-radius:6px">' + res + '</div>');
   updateLogHint();
 }
@@ -546,7 +570,7 @@ function skipLog(e) {
   if (S.logPtr >= S.dayPlan.length) finishDayLog();
   else { rebuildLogBox(); updateLogHint(); }
 }
-function finishDayLog() { screenPrep(); }
+function finishDayLog() { if (S.dayDone) nextDay(); else startBattle(); }
 function doAction(e, i) {
   if (e && e.stopPropagation) e.stopPropagation();
   if (!S.pendingChoice) return;
@@ -563,10 +587,15 @@ function doAction(e, i) {
     txt = a.d + '。' + CLASSES[a.k].name.split(' ')[0] + ' +3。';
     if (S.trained[a.k] <= 3) txt += '（当晚解锁 ' + CLASSES[a.k].name + ' Build ' + S.trained[a.k] + '：' + CLASSES[a.k].builds[S.trained[a.k] - 1].name + '）';
   }
+  /* 收起行动抉择块：只保留已选项 */
+  var picked = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px">';
+  picked += '<b style="color:#edbe5c">▶ 白天 · 今天怎么过？</b><br>';
+  picked += '<button class="rb-btn" disabled style="margin-top:6px;padding:8px 12px;border-color:#edbe5c;color:#edbe5c">✓ ' + a.t + '</button></div>';
+  S.logEntries[S.logEntries.length - 1] = picked;
+  rebuildLogBox();
   pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#f5e6bd;background:rgba(237,190,92,.05);border-radius:6px">' + txt + '</div>');
   updateLogHint(); save();
 }
-function currentClass() { return S.pick ? S.pick.c : topClass(); }
 function unlockedBuilds() {
   var opts = [];
   for (var k in CLASSES) {
@@ -575,69 +604,66 @@ function unlockedBuilds() {
   }
   return opts;
 }
-function estDmg(c) {
-  return Math.round((3 + 0.55 * (S.stats[c] || 0)) * (1 + 0.25 * buff('dmg')));
-}
-function screenPrep() {
-  var isBoss = S.day === 7;
-  var mon = isBoss ? BOSS : MONSTERS[S.day - 1];
-  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">夜幕 · ' + (isBoss ? '降临日决战' : '遭遇战') + '</div>';
-  h += '<div class="rb-monname">' + mon.emoji + ' ' + mon.name + '</div><div style="color:#9fb3aa;font-size:13px;line-height:1.9;margin-top:6px">' + mon.desc + '</div>';
-  h += '<div class="rb-monhp"><i style="width:100%"></i></div><div class="rb-hud" style="margin-top:8px"><span>怪物耐久 <b>' + mon.hp + '</b></span><span>怪物攻击 <b>' + mon.dmg + '/发</b>（你不用躲，扛着打）</span></div>';
-  h += '<div style="margin-top:12px"><div class="rb-tag">你攒下的碎片（已自动生效，不用操作）</div><div class="rb-buffline">' + humanBuffs() + '</div></div>';
-  var opts = unlockedBuilds();
-  if (!S.pick || !opts.some(function (o) { return o.c === S.pick.c && o.i === S.pick.i; })) S.pick = opts[0] || { c: 'idle', i: 0 };
-  h += '<div style="margin-top:12px"><div class="rb-tag">今晚用什么打架？（随便选，你说了算）</div><div class="rb-choices" id="buildPick">';
-  if (!opts.length) {
-    h += '<button class="rb-btn active"><b>赤手空拳</b><span class="sub">还没修炼过任何职业：没有技能，只有一把趁手的键盘。今晚大概率凶多吉少。</span></button>';
-  }
-  opts.forEach(function (o) {
-    var b = CLASSES[o.c].builds[o.i];
-    var act = S.pick.c === o.c && S.pick.i === o.i ? ' active' : '';
-    h += '<button class="rb-btn' + act + '" onclick="pickBuild(this,\'' + o.c + '\',' + o.i + ')"><span style="color:' + CLASSES[o.c].color + '">[' + CLASSES[o.c].name + ']</span> ' + b.name + '<span class="sub">' + b.desc + '。用「' + CLASSES[o.c].name.split(' ')[0] + '」属性（当前 ' + (S.stats[o.c] || 0) + ' 点），预计一击约 ' + estDmg(o.c) + ' 伤害。</span></button>';
-  });
-  h += '</div></div>';
-  h += '<button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="startBattle()">⚔ 开战（自动战斗）</button>';
-  h += '<div class="rb-buffline" style="color:#55665f">战斗全自动：扔弹和技能都由 Build 自己放，你只需要在战前选好打法。打不过就死——死了会有结局，但本局进度清空。</div></div>';
-  show(h); S.phase = 'prep'; save();
-}
-function pickBuild(el, c, i) {
-  S.pick = { c: c, i: i };
-  var btns = document.querySelectorAll('#buildPick button');
-  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
-  el.classList.add('active');
-}
-/* ---- 自动战斗引擎（canvas） ---- */
+/* Build 技能效果表（全部已解锁的 Build 在战斗中同时自动释放） */
+var BUILD_ACTIVES = {
+  prog1: { cd: 6, mul: 4, label: '⌨ 重锤!' },
+  prog2: { cd: 6, mul: 2, label: '👥 分身!' },
+  design1: { cd: 8, mul: 5, stun: 1.5, label: '📋 百页方案!' },
+  design2: { cd: 2, mul: 1.2 },
+  ta0: { cd: 5, mul: 3.5, label: '✨ Ray!' },
+  ta1: { cd: 4, mul: 1.6, label: '🎯 蜂群!' },
+  ta2: { cd: 10, mul: 8, label: '💥 光追爆发!' },
+  art0: { cd: 5, mul: 2, label: '🎨 泼溅!' },
+  art1: { cd: 9, mul: 6, label: '🖌 入魂!' },
+  art2: { cd: 2, mul: 0.6 },
+  media0: { cd: 1.5, mul: 0.8 },
+  media2: { cd: 12, mul: 10, label: '👍 一键三连!' },
+  tech0: { cd: 7, mul: 2, clear: true, label: '🔧 GC!' },
+  tech1: { cd: 12, hyper: 10, label: '⚡ 超频!' },
+  tech2: { cd: 5, mul: 4, self: 3, label: '🌀 野指针!' }
+};
+/* ---- 自动战斗引擎（canvas，嵌入时间轴下方） ---- */
 var B = null, RAF = null;
 function startBattle() {
+  if (S.inBattle) return;
+  S.inBattle = true;
   var isBoss = S.day === 7;
   var mon = isBoss ? BOSS : MONSTERS[S.day - 1];
-  var cls = S.pick.c;
-  var stat = S.stats[cls] || 0;
+  var mc = topClass();
+  var stat = S.stats[mc] || 0;
+  var skills = unlockedBuilds();
+  var keys = {};
+  skills.forEach(function (o) { keys[o.c + o.i] = true; });
   B = {
-    mon: mon, cls: cls, isBoss: isBoss,
-    clsName: cls === 'idle' ? '路人玩家' : CLASSES[cls].name.split(' ')[0],
+    mon: mon, isBoss: isBoss,
+    clsName: CLASSES[mc].name.split(' ')[0],
     mhp: mon.hp, mmax: mon.hp,
     php: S.hp, pmax: S.hmax,
     dmg: (3 + 0.55 * stat) * (1 + 0.25 * buff('dmg')),
-    interval: 0.8 / (1 + 0.2 * buff('spd')),
     crit: 0.15 * buff('crit'),
     vamp: buff('vamp') > 0 ? 0.05 + 0.05 * buff('vamp') : 0,
     regen: 0.5 * buff('regen'),
     skillDmg: 1 + 0.4 * buff('skill'),
     cdMul: Math.max(0.3, 1 - 0.15 * buff('cdr')),
-    build: cls === 'idle' ? { name: '赤手空拳', desc: '没有 Build' } : CLASSES[cls].builds[S.pick.i], buildIdx: S.pick.i,
-    ammo: cls === 'idle' ? ['⌨', '✊', '📚'] : CLASSES[cls].ammo,
-    t: 0, lastThrow: 0, lastSkill: 0, mLast: 0,
+    ammo: CLASSES[mc].ammo,
+    hasProg0: !!keys['prog0'], hasDesign0: !!keys['design0'],
+    mVuln: keys['media1'] ? 1.3 : 1,
+    actives: skills.filter(function (o) { return BUILD_ACTIVES[o.c + o.i]; })
+      .map(function (o) { return { key: o.c + o.i, last: -999 }; }),
+    t: 0, lastThrow: 0, mLast: 0,
     mInterval: 1.4 + 0.25 * buff('sup'), shield: 12 * buff('shield'),
-    shots: [], mshots: [], floats: [], dead: false, over: false, speed: 1, stun: 0, mVuln: 1, mDots: [], summons: 0, hyper: 0
+    shots: [], mshots: [], floats: [], over: false, speed: 1, stun: 0, hyper: 0
   };
-  show('<div class="rb-panel"><div class="rb-tag">遭遇战 · ' + mon.name + '</div><div class="rb-speed"><button onclick="cycleSpeed()" id="spdBtn">速度 ×' + B.speed + '</button></div><div id="cvWrap" style="position:relative"><canvas id="battleCanvas" width="720" height="420"></canvas></div><div class="rb-buffline" style="text-align:center">你的 Build：' + B.build.name + ' —— 战斗全自动，看戏就好</div></div>');
+  var slot = document.getElementById('battleSlot');
+  if (slot) {
+    slot.innerHTML = '<div class="rb-panel"><div class="rb-tag">⚔ 遭遇战 · ' + mon.name + '<span style="float:right"><button onclick="cycleSpeed(event)" id="spdBtn" style="cursor:pointer;background:rgba(0,0,0,.5);color:#9fd3b8;border:1px solid #3d6b52;border-radius:8px;padding:4px 10px;font-family:var(--font-mono);font-size:12px">速度 ×' + B.speed + '</button></span></div><canvas id="battleCanvas" width="720" height="380" style="width:100%;display:block;background:radial-gradient(at 50% 20%, #1c2b33 0%, #0d141b 70%);border:1px solid var(--border-strong);border-radius:12px"></canvas><div class="rb-buffline" style="text-align:center">全部已解锁的 Build 技能都在自动释放——看戏就好，打完回到上面的时间轴</div></div>';
+  }
   B.cv = document.getElementById('battleCanvas');
   B.ctx = B.cv.getContext('2d');
   B.last = performance.now();
   RAF = requestAnimationFrame(loop);
 }
+function cycleSpeed(e) { if (e && e.stopPropagation) e.stopPropagation(); B.speed = B.speed === 1 ? 2 : B.speed === 2 ? 4 : 1; document.getElementById('spdBtn').textContent = '速度 ×' + B.speed; }
 function cycleSpeed() { B.speed = B.speed === 1 ? 2 : B.speed === 2 ? 4 : 1; document.getElementById('spdBtn').textContent = '速度 ×' + B.speed; }
 function floatText(x, y, txt, color) { B.floats.push({ x: x, y: y, txt: txt, c: color, t: 0 }); }
 function loop(now) {
@@ -646,15 +672,18 @@ function loop(now) {
   B.last = now; B.t += dt;
   var W = B.cv.width, H = B.cv.height;
   var px = W / 2, py = H - 70, mx = W / 2, my = 80;
-  /* 玩家扔弹 */
-  if (B.t - B.lastThrow >= B.interval) {
+  /* 玩家扔弹（基础攻击） */
+  var iv = 0.8 / (1 + 0.2 * buff('spd'));
+  if (B.hasProg0) iv /= 1.4;
+  if (B.hyper > 0) iv *= 0.5;
+  if (B.t - B.lastThrow >= iv) {
     B.lastThrow = B.t;
     var dmg = B.dmg * (Math.random() < B.crit ? 2 : 1);
-    if (B.buildIdx === 0 && B.cls === 'design') dmg = B.dmg * (0.5 + Math.random() * 2.5);
+    if (B.hasDesign0) dmg = B.dmg * (0.5 + Math.random() * 2.5);
     B.shots.push({ x: px, y: py - 24, vy: -430, dmg: dmg, glyph: B.ammo[Math.floor(Math.random() * B.ammo.length)] });
   }
-  /* Build 技能（自动释放） */
-  var sk = skillTick(dt, px, py, mx, my);
+  /* Build 技能（全部自动释放） */
+  skillTick(dt, mx, my);
   /* 怪物攻击（不被躲，纯数值对轰） */
   if (B.stun <= 0 && B.t - B.mLast >= B.mInterval) {
     B.mLast = B.t;
@@ -677,47 +706,20 @@ function loop(now) {
   render(px, py, mx, my);
   RAF = requestAnimationFrame(loop);
 }
-function skillTick(dt, px, py, mx, my) {
-  var c = B.cls, bi = B.buildIdx, base = B.dmg * B.skillDmg;
-  var fire = function (d, extra) {
-    var dmg = d * (1 + (B.mVuln > 1 ? B.mVuln - 1 : 0));
-    hitMonster(dmg, mx, my + 20);
-  };
-  if (c === 'prog') {
-    if (bi === 0) { B.interval = 0.8 / (1 + 0.2 * buff('spd')) / 1.4; }
-    else if (bi === 1 && B.t - B.lastSkill >= 6 * B.cdMul) { B.lastSkill = B.t; fire(base * 4); floatText(mx, my + 60, '⌨ 重锤!', '#6366f1'); }
-    else if (bi === 2 && B.t - B.lastSkill >= 6 * B.cdMul) { B.lastSkill = B.t; B.summons = 2; }
-  } else if (c === 'design') {
-    if (bi === 1 && B.t - B.lastSkill >= 8 * B.cdMul) { B.lastSkill = B.t; fire(base * 5); B.stun = 1.5; floatText(mx, my + 60, '📋 眩晕!', '#34d399'); }
-    else if (bi === 2) { B.mhp -= base * 1.2 * dt; }
-  } else if (c === 'ta') {
-    if (bi === 0 && B.t - B.lastSkill >= 5 * B.cdMul) { B.lastSkill = B.t; fire(base * 3.5); floatText(mx, my + 60, '✨ Ray!', '#8b5cf6'); }
-    else if (bi === 1 && B.t - B.lastSkill >= 4 * B.cdMul) { B.lastSkill = B.t; fire(base * 1.5); fire(base * 1.5); }
-    else if (bi === 2 && B.t - B.lastSkill >= 10 * B.cdMul) { B.lastSkill = B.t; fire(base * 8); floatText(mx, my + 60, '💥 光追爆发!', '#8b5cf6'); }
-  } else if (c === 'art') {
-    if (bi === 0 && B.t - B.lastSkill >= 5 * B.cdMul) { B.lastSkill = B.t; fire(base * 2); }
-    else if (bi === 1 && B.t - B.lastSkill >= 9 * B.cdMul) { B.lastSkill = B.t; fire(base * 6); floatText(mx, my + 60, '🖌 入魂!', '#f59e0b'); }
-    else if (bi === 2) { B.mhp -= base * 0.25 * dt; }
-  } else if (c === 'media') {
-    if (bi === 0) { B.mhp -= base * 0.8 * dt; }
-    else if (bi === 1) { B.mVuln = 1.3; }
-    else if (bi === 2 && B.t - B.lastSkill >= 12 * B.cdMul) { B.lastSkill = B.t; fire(base * 10); floatText(mx, my + 60, '👍 一键三连!', '#ec4899'); }
-  } else if (c === 'tech') {
-    if (bi === 0 && B.t - B.lastSkill >= 7 * B.cdMul) { B.lastSkill = B.t; B.mshots = []; fire(base * 2); floatText(mx, my + 60, '🔧 GC!', '#94a3b8'); }
-    else if (bi === 1 && B.t - B.lastSkill >= 12 * B.cdMul) { B.lastSkill = B.t; B.hyper = 10; floatText(px, py - 40, '⚡ 超频!', '#94a3b8'); }
-  }
-  /* tech B3 指针流（独立计时） */
-  if (c === 'tech' && bi === 2 && B.t - (B.lastPtr || 0) >= 5 * B.cdMul) {
-    B.lastPtr = B.t; hitMonster(B.dmg * B.skillDmg * 4, mx, my + 20); hitPlayer(3);
-  }
-  if (c === 'prog' && B.summons > 0 && B.t - B.lastThrow >= B.interval * 2) {
-    fire(B.dmg * 0.3 * B.summons);
-  }
-  /* 持续伤害 */
-  var dotTotal = 0;
-  B.mDots.forEach(function (d) { dotTotal += d.dps * dt; });
-  if (dotTotal > 0) { B.mhp -= dotTotal * (B.mVuln > 1 ? B.mVuln : 1); }
-  if (B.hyper > 0) { B.hyper -= dt; B.interval = 0.8 / (1 + 0.2 * buff('spd')) / (B.cls === 'prog' && B.buildIdx === 0 ? 1.4 : 1) * 0.5; }
+function skillTick(dt, mx, my) {
+  var base = B.dmg * B.skillDmg;
+  B.actives.forEach(function (a) {
+    var def = BUILD_ACTIVES[a.key];
+    if (B.t - a.last < def.cd * B.cdMul) return;
+    a.last = B.t;
+    hitMonster(base * (def.mul || 1) * B.mVuln, mx, my + 20);
+    if (def.label) floatText(mx, my + 55, def.label, '#edbe5c');
+    if (def.stun) B.stun = Math.max(B.stun, def.stun);
+    if (def.clear) B.mshots = [];
+    if (def.hyper) B.hyper = def.hyper;
+    if (def.self) hitPlayer(def.self);
+  });
+  if (B.hyper > 0) B.hyper -= dt;
 }
 function hitMonster(dmg, x, y) {
   if (B.over || B.mhp <= 0) return;
@@ -745,7 +747,7 @@ function render(px, py, mx, my) {
   /* 主角 */
   ctx.font = '40px serif'; ctx.fillText('🧑‍💻', px, py + 14);
   ctx.font = '700 13px sans-serif'; ctx.fillStyle = '#9fd3b8';
-  ctx.fillText(B.clsName + ' · ' + B.build.name, px, py + 38);
+  ctx.fillText(B.clsName + ' · ' + B.actives.length + ' Build 全开', px, py + 38);
   ctx.fillStyle = '#10151c'; ctx.fillRect(px - 130, H - 18, 260, 10);
   ctx.fillStyle = '#7ed696'; ctx.fillRect(px - 130, H - 18, 260 * Math.max(0, B.php / B.pmax), 10);
   ctx.font = '11px monospace'; ctx.fillStyle = '#9fb3aa';
@@ -762,56 +764,54 @@ function render(px, py, mx, my) {
   }
 }
 function endBattleWin() {
-  B.over = true; cancelAnimationFrame(RAF);
+  B.over = true; cancelAnimationFrame(RAF); S.inBattle = false;
   S.hp = Math.max(1, Math.min(B.pmax, B.php)); S.kills++;
-  if (B.cls !== 'idle') S.stats[B.cls] += 1;
+  var mc = topClass(); S.stats[mc] += 1;
   if (B.isBoss) { screenBossWin(); return; }
-  screenRogue();
+  pushLog('<div style="margin:10px 0 4px;color:#7ed696;font-weight:900;letter-spacing:2px">—— 战斗胜利 ——</div>');
+  pushLog('<div style="margin-bottom:8px">' + B.mon.emoji + ' ' + B.mon.name + ' 化作了数据尘埃。实战经验：' + CLASSES[mc].name.split(' ')[0] + ' +1。掉落了三块「引擎碎片」——只能拿一块：</div>');
+  var pool = ROGUE_POOL.slice();
+  var cands = [];
+  for (var k in S.trained) if (S.trained[k] >= 1 && S.trained[k] < 3) cands.push(k);
+  if (cands.length) pool.push({ id: 'buildup', t: 'Build 设计图', d: '立刻把一个已修炼职业的 Build 升到下一层' });
+  var picks = [];
+  while (picks.length < 3 && pool.length) picks.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+  var html = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px"><b style="color:#edbe5c">▶ 战利品 · 三选一（可叠加）</b><br>';
+  picks.forEach(function (p) {
+    html += '<button class="rb-btn" style="margin-top:6px;padding:8px 12px" onclick="pickRogue(event,\'' + p.id + '\')"><b style="color:#7ed696">' + p.t + '</b>　' + p.d + '</button>';
+  });
+  html += '</div>';
+  S.pendingChoice = true;
+  pushLog(html);
+  updateLogHint(); save();
 }
 function endBattleDeath() {
-  B.over = true; cancelAnimationFrame(RAF);
+  B.over = true; cancelAnimationFrame(RAF); S.inBattle = false;
   if (S.idleDays >= 7) { showEnding('E_idle'); return; }
   showEnding(B.isBoss ? 'BOSS' : B.mon.dex);
 }
-function screenRogue() {
-  var pool = ROGUE_POOL.slice();
-  /* Build 设计图：任何已修炼未满级的职业都可以进阶 */
-  var cands = [];
-  for (var k in S.trained) if (S.trained[k] >= 1 && S.trained[k] < 3) cands.push(k);
-  if (cands.length) pool.push({ id: 'buildup', t: 'Build 设计图', d: '立刻把一个已修炼职业的 Build 升到下一层（选哪个由你决定）' });
-  var picks = [];
-  while (picks.length < 3 && pool.length) picks.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
-  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">战利品 · 三选一（可叠加）</div>';
-  h += '<div class="rb-story" style="margin-bottom:10px">' + MONSTERS[S.day - 1].emoji + ' ' + MONSTERS[S.day - 1].name + ' 化作了数据尘埃。掉落了三块「引擎碎片」——只能拿一块。</div>';
-  picks.forEach(function (p, i) {
-    h += '<div class="rb-rogue" onclick="pickRogue(\'' + p.id + '\')"><b>▲ ' + p.t + '</b><div class="sub">' + p.d + '</div></div>';
-  });
-  h += '</div>';
-  show(h); S.phase = 'rogue'; save();
-}
-function pickRogue(id) {
-  if (id === 'buildup') { screenBuildup(); return; }
-  S.buffs.push(id);
-  if (id === 'hp') { S.hmax += 8; S.hp = Math.min(S.hmax, S.hp + 8); }
-  screenDayEnd();
-}
-function screenBuildup() {
-  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">Build 设计图 · 选一个职业进阶</div>';
-  for (var k in S.trained) {
-    if (S.trained[k] < 1 || S.trained[k] >= 3) continue;
-    var nxt = CLASSES[k].builds[S.trained[k]];
-    h += '<div class="rb-rogue" onclick="applyBuildup(\'' + k + '\')"><b style="color:' + CLASSES[k].color + '">' + CLASSES[k].name + ' → Build ' + (S.trained[k] + 1) + '</b><div class="sub">解锁：' + nxt.name + '（' + nxt.desc + '）</div></div>';
+function pickRogue(e, id) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  if (!S.pendingChoice) return;
+  S.pendingChoice = false;
+  var label;
+  if (id === 'buildup') {
+    var cands = [];
+    for (var k in S.trained) if (S.trained[k] >= 1 && S.trained[k] < 3) cands.push(k);
+    var pickK = cands[Math.floor(Math.random() * cands.length)];
+    S.trained[pickK] = Math.min(3, S.trained[pickK] + 1);
+    label = 'Build 设计图——' + CLASSES[pickK].name + ' 进阶到 Build ' + S.trained[pickK] + '（' + CLASSES[pickK].builds[S.trained[pickK] - 1].name + '）';
+  } else {
+    S.buffs.push(id);
+    label = '「' + BUFF_HUMAN[id][0] + '」已生效。';
+    if (id === 'hp') { S.hmax += 8; S.hp = Math.min(S.hmax, S.hp + 8); }
   }
-  h += '</div>';
-  show(h);
+  pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#f5e6bd;background:rgba(237,190,92,.05);border-radius:6px">你拿走了' + label + '</div>');
+  pushLog('<div style="margin:10px 0 4px;color:#9fb3aa">—— 深夜 · 第 ' + S.day + ' 天结束 ——</div><div style="margin-bottom:8px">你把今天学到的东西存进记忆。<span style="color:#edbe5c">【距离大降临还剩 ' + (7 - S.day) + ' 天】进度已自动保存。</span></div>');
+  S.dayDone = true;
+  updateLogHint(); save();
 }
-function applyBuildup(k) { S.trained[k] = Math.min(3, S.trained[k] + 1); screenDayEnd(); }
-function screenDayEnd() {
-  if (S.day >= 7) { screenBossWin(); return; }
-  show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">深夜 · 第 ' + S.day + ' 天结束</div><div class="rb-story">你把今天学到的东西存进记忆，把意志留给明天。<span class="sys">【距离大降临还剩 ' + (7 - S.day) + ' 天】进度已自动保存。</span></div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="nextDay()">睡下 → 第 ' + (S.day + 1) + ' 天 ▶</button></div>');
-  S.phase = 'dayend'; save();
-}
-function nextDay() { S.day++; S.dayPlan = []; S.logPtr = 0; screenDay(); }
+function nextDay() { S.day++; S.dayPlan = []; S.logPtr = 0; S.logEntries = []; S.dayDone = false; screenDay(); }
 function screenBossWin() {
   /* 通关：职业结局 + 评级 */
   var c = topClass();
