@@ -676,8 +676,8 @@ function nextLog() {
     return;
   }
   if (item === -3) {
-    /* 夜幕宣告：内嵌在时间轴里 */
-    var mon = S.day === 7 ? BOSS : MONSTERS[S.day - 1];
+    /* 夜幕宣告：内嵌在时间轴里（数值为缩放后的实际战斗值） */
+    var mon = battleMon();
     var lst = [];
     for (var k3 in SKILLS) {
       var st4 = statStage(k3);
@@ -781,12 +781,21 @@ function unlockedBuilds() {
   return opts;
 }
 /* ---- 自动战斗引擎（canvas，嵌入时间轴下方） ---- */
+/* 当前夜晚的怪物：血量/攻击随玩家战力成长缩放，避免越练越秒 */
+function battleMon() {
+  var m = S.day === 7 ? BOSS : MONSTERS[S.day - 1];
+  return {
+    name: m.name, emoji: m.emoji, desc: m.desc, dex: m.dex,
+    hp: Math.round(m.hp * (1 + power() / 50)),
+    dmg: Math.round(m.dmg * (1 + power() / 90))
+  };
+}
 var B = null, RAF = null;
 function startBattle() {
   if (S.inBattle) return;
   S.inBattle = true;
   var isBoss = S.day === 7;
-  var mon = isBoss ? BOSS : MONSTERS[S.day - 1];
+  var mon = battleMon();
   var mc = topClass();
   var stat = S.stats[mc] || 0;
   var skills = unlockedBuilds();
@@ -810,11 +819,15 @@ function startBattle() {
       var arr = [];
       for (var k2 in SKILLS) {
         var st3 = statStage(k2);
-        if (st3 >= 1 && SKILL_ACTIVES[k2 + st3]) arr.push({ key: k2 + st3, def: SKILL_ACTIVES[k2 + st3], last: -999 });
+        if (st3 >= 1 && SKILL_ACTIVES[k2 + st3]) {
+          var def = SKILL_ACTIVES[k2 + st3];
+          /* 开场错开：首个技能在前半段冷却内随机时刻释放，避免开局齐射秒杀 */
+          arr.push({ key: k2 + st3, def: def, last: -(def.cd * (0.15 + Math.random() * 0.85)) });
+        }
       }
       S.specials.forEach(function (id3) {
         var sp3 = SPECIALS.filter(function (x) { return x.id === id3; })[0];
-        if (sp3) arr.push({ key: 'sp-' + id3, def: sp3.skill.act, last: -999 });
+        if (sp3) arr.push({ key: 'sp-' + id3, def: sp3.skill.act, last: -(sp3.skill.act.cd * (0.15 + Math.random() * 0.85)) });
       });
       return arr;
     })(),
