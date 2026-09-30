@@ -8,6 +8,8 @@
 <script src="roadmap-common.js?v=20260928a" defer></script>
 <style>
   #gameWrap { max-width: 780px; margin: 0 auto; }
+  /* 连点防选中：整个游戏区域禁用文字选择 */
+  #gameWrap, #gameWrap * { user-select: none !important; -webkit-user-select: none !important; -webkit-tap-highlight-color: transparent; }
   .rb-panel { background: rgba(12,18,24,.9); border: 1px solid var(--border-strong); border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; }
   .rb-tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; color: #edbe5c; margin-bottom: 10px; }
   .rb-story { font-size: 14.5px; line-height: 2.05; color: #e8e4d4; }
@@ -607,7 +609,7 @@ function startDayPlan() {
     var noon = picked.length;
     for (var i2 = 0; i2 < picked.length; i2++) if (AUTO_EVENTS[picked[i2]].h >= '12:00') { noon = i2; break; }
     var plan = [-5].concat(picked.slice(0, noon));
-    plan.push(-2);
+    plan.push(-7); /* 下午行动：自动发生，命运决定 */
     plan = plan.concat(picked.slice(noon));
     /* 特殊邀请：轮到它的那天，插入夜战之前 */
     while (S.spPtr < S.specialOffers.length && S.specialDays[S.spPtr] === S.day) { plan.push(-6); S.spPtr++; }
@@ -712,19 +714,22 @@ function nextLog() {
     startBattle();
     return;
   }
-  if (item === -2) {
-    /* 白天行动：内嵌在流水账末尾 */
-    var html = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px">';
-    html += '<b style="color:#edbe5c">▶ 中午 · 下午怎么过？</b><br><span style="color:#9fb3aa">选一个，你的下午（和你的 Build）就长成什么样。</span><br>';
-    ACTIONS.forEach(function (a, i) {
-      html += '<button class="rb-btn" style="margin-top:6px;padding:8px 12px" onclick="doAction(event,' + i + ')">' + a.t + ' <span style="color:#9fd3b8">『' + a.s + '』</span></button>';
-    });
-    html += '</div>';
-    S.pendingChoice = true;
-    S.guardUntil = Date.now() + 1000; /* 1 秒误触保护 */
-    pushLog(html);
-    updateLogHint();
-    save();
+  if (item === -7) {
+    /* 下午行动：自动发生，命运决定 */
+    if (S.afternoonAct === undefined || S.afternoonAct === null) S.afternoonAct = Math.floor(Math.random() * ACTIONS.length);
+    var a = ACTIONS[S.afternoonAct];
+    var fxTxt;
+    if (a.k === 'idle') {
+      S.hp = S.hmax; S.idleDays++;
+      var kk = randomKey(); addStat(kk, 2);
+      fxTxt = '你打了一下午游戏，理直气壮。意志回满，灵感：' + CLASSES[kk].name + ' +2';
+    } else {
+      addStat(a.k, 3);
+      fxTxt = '你' + a.t + '。' + CLASSES[a.k].name.split(' ')[0] + ' +3';
+    }
+    pushLog('<div style="margin-bottom:6px"><span style="font-family:var(--font-mono);color:#6b8a7c">14:00</span>　下午，' + fxTxt + '</div>');
+    checkStageUps();
+    updateLogHint(); save();
     return;
   }
   if (item === -1) {
@@ -767,29 +772,6 @@ function resolveEvent(e, i) {
   updateLogHint();
 }
 function finishDayLog() { if (S.dayDone) nextDay(); else startBattle(); }
-function doAction(e, i) {
-  if (e && e.stopPropagation) e.stopPropagation();
-  if (!S.pendingChoice || Date.now() < (S.guardUntil || 0)) return;
-  S.pendingChoice = false;
-  var a = ACTIONS[i];
-  var txt;
-  if (a.k === 'idle') {
-    S.hp = S.hmax; S.idleDays++;
-    var k = randomKey(); addStat(k, 2);
-    txt = '你理直气壮地玩了一天游戏，意志回满。睡前灵感随机降临：' + CLASSES[k].name + ' +2。';
-  } else {
-    addStat(a.k, 3);
-    txt = a.d + '。' + CLASSES[a.k].name.split(' ')[0] + ' +3。';
-  }
-  /* 收起行动抉择块：只保留已选项 */
-  var picked = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px">';
-  picked += '<b style="color:#edbe5c">▶ 白天 · 今天怎么过？</b><br>';
-  picked += '<button class="rb-btn" disabled style="margin-top:6px;padding:8px 12px;border-color:#edbe5c;color:#edbe5c">✓ ' + a.t + '</button></div>';
-  S.logEntries[S.logEntries.length - 1] = picked;
-  rebuildLogBox();
-  pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#f5e6bd;background:rgba(237,190,92,.05);border-radius:6px">' + txt + '</div>');
-  updateLogHint(); save();
-}
 function unlockedBuilds() {
   var opts = [];
   for (var k in CLASSES) {
@@ -1049,7 +1031,7 @@ function declineSpecial(e, id) {
   pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#9fb3aa;background:rgba(255,255,255,.03);border-radius:6px">' + sp.no + '</div>');
   updateLogHint(); save();
 }
-function nextDay() { S.day++; S.dayPlan = []; S.logPtr = 0; S.dayDone = false; screenDay(); }
+function nextDay() { S.day++; S.dayPlan = []; S.logPtr = 0; S.dayDone = false; S.hp = Math.min(S.hmax, S.hp + 15); screenDay(); }
 function screenBossWin() {
   /* 通关：职业结局 + 评级 */
   var c = topClass();
