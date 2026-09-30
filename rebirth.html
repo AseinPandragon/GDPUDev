@@ -354,7 +354,7 @@ var S = null;
 function newState() {
   return { phase: 'title', day: 1, stats: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
     hp: 40, hmax: 40, trained: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
-    buffs: [], idleDays: 0, kills: 0, speed: 1, runEvents: [], evPtr: 0, pick: null, dayPlan: [], logPtr: 0 };
+    buffs: [], idleDays: 0, kills: 0, speed: 1, runEvents: [], evPtr: 0, pick: null, dayPlan: [], logPtr: 0, logEntries: [], pendingChoice: false };
 }
 function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} }
 function load() { try { var s = localStorage.getItem(SAVE_KEY); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
@@ -440,7 +440,7 @@ function startDayPlan() {
     var avail = S.runEvents.length - S.evPtr;
     var nChoice = Math.min(Math.floor(Math.random() * 3), avail);
     for (var c = 0; c < nChoice; c++) S.dayPlan.splice(1 + Math.floor(Math.random() * (S.dayPlan.length + 1)), 0, -1);
-    S.logPtr = 0; save();
+    S.logPtr = 0; S.logEntries = []; save();
   }
   renderDayLog();
 }
@@ -450,54 +450,80 @@ function applyFx(ev) {
   if (ev.rand) { var k = randomKey(); S.stats[k] += ev.rand; parts.push(CLASSES[k].name.split(' ')[0] + '+' + ev.rand); }
   return parts.join('，');
 }
+/* 流水账：常驻大框，所有条目累加保留；点击流水账任意位置 = 下一条（文字人生式） */
 function renderDayLog() {
-  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">第 ' + S.day + ' 天 · 时间轴</div><div id="logBox" style="max-height:380px;overflow-y:auto;font-size:13.5px;line-height:2.1;color:#cfe0d4"></div><div style="margin-top:10px"><button class="rb-btn" style="display:inline-block;width:auto;padding:7px 16px" onclick="skipLog()">跳过今天 ▸▸</button></div></div>';
+  var h = hudHtml() + '<div class="rb-panel" id="logPanel" style="cursor:pointer" onclick="logTap(event)"><div class="rb-tag">第 ' + S.day + ' 天 · 时间轴 <span style="color:#55665f">（点击任意处继续）</span></div>';
+  h += '<div id="logBox" style="max-height:420px;min-height:160px;overflow-y:auto;font-size:13.5px;line-height:2.1;color:#cfe0d4">' + (S.logEntries || []).join('') + '</div>';
+  h += '<div id="rlogHint" style="margin-top:8px;font-family:var(--font-mono);font-size:12px;color:#55665f"></div>';
+  h += '<div style="margin-top:6px"><button class="rb-btn" style="display:inline-block;width:auto;padding:5px 14px;font-size:12px" onclick="skipLog(event)">跳过今天 ▸▸</button></div></div>';
   show(h);
-  setTimeout(tickLog, 400);
+  updateLogHint();
 }
-function tickLog() {
+function logTap(e) {
+  if (e && e.target && e.target.closest && e.target.closest('button')) return; /* 按钮自己处理 */
+  nextLog();
+}
+function pushLog(html) {
+  S.logEntries = S.logEntries || [];
+  S.logEntries.push(html);
   var box = document.getElementById('logBox');
-  if (!box) return;
+  if (box) { box.insertAdjacentHTML('beforeend', html); box.scrollTop = box.scrollHeight; }
+  save();
+}
+function updateLogHint() {
+  var hint = document.getElementById('rlogHint');
+  if (!hint) return;
+  if (S.pendingChoice) hint.innerHTML = '▲ 作出你的选择（点选项，点背景无效）';
+  else if (S.logPtr >= S.dayPlan.length) hint.innerHTML = '— 这一天过完了 · 点击任意处进入白天 —';
+  else hint.innerHTML = '· 点击任意处继续 ▸';
+}
+function nextLog() {
+  if (S.pendingChoice) return; /* 选择没做完，点背景无效 */
   if (S.logPtr >= S.dayPlan.length) { finishDayLog(); return; }
   var item = S.dayPlan[S.logPtr];
+  S.logPtr++;
   if (item === -1) {
-    /* 选择事件：时间轴暂停，弹出抉择 */
-    S.logPtr++; save();
-    box.insertAdjacentHTML('beforeend', '<div style="margin-bottom:6px;color:#edbe5c">▶ 这时候，需要你来决定……</div>');
-    box.scrollTop = box.scrollHeight;
-    setTimeout(showEvent, 600);
+    /* 选择事件：内嵌在流水账里，必须点选项 */
+    var ev = EVENTS[S.runEvents[S.evPtr]];
+    var html = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px">';
+    html += '<b style="color:#edbe5c">▶ ' + ev.t + '</b><br><span style="color:#e8e4d4">' + ev.s + '</span><br>';
+    ev.c.forEach(function (c2, i) {
+      html += '<button class="rb-btn" style="margin-top:6px;padding:8px 12px" onclick="resolveEvent(event,' + i + ')">' + c2.t + '</button>';
+    });
+    html += '</div>';
+    S.pendingChoice = true;
+    pushLog(html);
+    updateLogHint();
+    save();
     return;
   }
-  var ev = AUTO_EVENTS[item];
-  var fx = applyFx(ev);
-  S.logPtr++; save();
+  var aev = AUTO_EVENTS[item];
+  var fx = applyFx(aev);
   var cls = fx.indexOf('-') >= 0 ? '#f0b8ac' : '#7ed696';
-  box.insertAdjacentHTML('beforeend', '<div style="margin-bottom:6px"><span style="font-family:var(--font-mono);color:#6b8a7c">' + ev.h + '</span>　' + ev.s + (fx ? ' <b style="color:' + cls + '">(' + fx + ')</b>' : '') + '</div>');
-  box.scrollTop = box.scrollHeight;
-  setTimeout(tickLog, 620);
+  pushLog('<div style="margin-bottom:6px"><span style="font-family:var(--font-mono);color:#6b8a7c">' + aev.h + '</span>　' + aev.s + (fx ? ' <b style="color:' + cls + '">(' + fx + ')</b>' : '') + '</div>');
+  updateLogHint();
 }
-function skipLog() {
-  while (S.logPtr < S.dayPlan.length) { applyFx(AUTO_EVENTS[S.dayPlan[S.logPtr]]); S.logPtr++; }
+function resolveEvent(e, i) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  if (!S.pendingChoice) return;
+  S.pendingChoice = false;
+  var ev = EVENTS[S.runEvents[S.evPtr]];
+  var res = ev.c[i].go();
+  S.evPtr++;
+  pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#f5e6bd;background:rgba(237,190,92,.05);border-radius:6px">' + res + '</div>');
+  updateLogHint();
+}
+function skipLog(e) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  S.pendingChoice = false;
+  while (S.logPtr < S.dayPlan.length) {
+    var item = S.dayPlan[S.logPtr]; S.logPtr++;
+    if (item === -1) S.evPtr++; /* 跳过今天 = 连选择一起跳过 */
+    else applyFx(AUTO_EVENTS[item]);
+  }
   save(); finishDayLog();
 }
 function finishDayLog() { screenAction(); }
-function showEvent() {
-  var ev = EVENTS[S.runEvents[S.evPtr]];
-  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">突发事件 · ' + ev.t + '</div><div class="rb-story">' + ev.s + '</div><div style="margin-top:12px">';
-  ev.c.forEach(function (c2, i) { h += '<button class="rb-btn" onclick="resolveEvent(' + i + ')">' + c2.t + '</button>'; });
-  h += '</div></div>';
-  show(h); S.phase = 'event'; save();
-}
-function resolveEvent(i) {
-  var ev = EVENTS[S.runEvents[S.evPtr]];
-  var res = ev.c[i].go();
-  S.evPtr++; save();
-  show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">突发事件 · ' + ev.t + '</div><div class="rb-story">' + ev.s + '</div><div class="rb-story" style="margin-top:10px;color:#f5e6bd;border-left:3px solid #edbe5c;padding-left:12px">' + res + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="resumeDayLog()">继续这一天 ▶</button></div>');
-}
-function resumeDayLog() {
-  if (S.logPtr < S.dayPlan.length) { renderDayLog(); }
-  else screenAction();
-}
 function screenAction() {
   var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">白天 · 今天怎么肝？</div>';
   ACTIONS.forEach(function (a, i) {
