@@ -147,9 +147,12 @@ var ROGUE_POOL = [
   { id: 'hp', t: '意志上限', d: '意志上限 +8，并立即回复 8 点' },
   { id: 'crit', t: '会心一击', d: '暴击率 +15%（暴击 ×2 伤害）' },
   { id: 'vamp', t: '残光吸取', d: '造成伤害的 10% 转化为意志（可叠加）' },
-  { id: 'skill', t: '技能强化', d: 'Build 技能伤害 +40%' },
+  { id: 'skill', t: '技能强化', d: 'Build 技能伤害 +40%（可叠加）' },
   { id: 'cdr', t: '冷却缩减', d: 'Build 技能冷却 -15%' },
-  { id: 'regen', t: '意志之泉', d: '战斗中每秒回复 0.5 意志' }
+  { id: 'regen', t: '意志之泉', d: '战斗中每秒回复 0.5 意志' },
+  { id: 'sup', t: '火力压制', d: '怪物攻击间隔 +0.25 秒（它出手更慢了）' },
+  { id: 'combo', t: '连击惯性', d: '战斗时间越长伤害越高：每 5 秒 +8%（上限 +48%）' },
+  { id: 'shield', t: '备用弹药箱', d: '每场战斗开始时获得 12 点护盾（先于意志扣除，可叠加）' }
 ];
 var ENDINGS = {
   E_design: { t: '规则之主', got: 'win' },
@@ -187,14 +190,112 @@ var ENDING_TEXT = {
   },
   idle: '你七天都在打游戏。降临那天，你正打到排位晋级赛。怪物踩进房间时，你头也没抬——反正这局马上就赢了。系统评价：快乐，但毫无胜算。这是唯一一个你没有输给怪物的结局——你输给了期限。'
 };
-var SAVE_KEY = 'rebirth_save_v1', DEX_KEY = 'rebirth_endings_v1';
+var EVENTS = [
+  { t: '室友的邀请', s: '室友推门进来：「开黑吗？就一把。」屏幕里好友头像在闪。', c: [
+    { t: '打！就一把！', go: function () { S.hp = Math.min(S.hmax, S.hp + 6); return '就一把，一把之后又一把。凌晨一点你关掉游戏，意志莫名回满了——快乐有时候就是意志本身。'; } },
+    { t: '「不了，我在改变世界。」', go: function () { var k = randomKey(); S.stats[k] += 2; return '室友：「行行行，卷王。」你关上门，多出的两小时换来 ' + CLASSES[k].name + ' +2。'; } },
+    { t: '真就一把，打完就学', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); var k = randomKey(); S.stats[k] += 1; return '说到做到，一把之后真的退了游戏。意志 +2，' + CLASSES[k].name + ' +1，谁也没耽误。'; } }] },
+  { t: '饭堂阿姨的手', s: '阿姨舀菜的手悬在你餐盘上方，抖了一下。', c: [
+    { t: '微笑说谢谢', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '阿姨手一稳，肉多了两块。被人善意对待的一天，意志 +3。'; } },
+    { t: ' strategic 装作没看见', go: function () { var k = randomKey(); S.stats[k] += 1; return '你利用这三十秒在脑子里过一遍今天要学的东西。' + CLASSES[k].name + ' +1。'; } }] },
+  { t: '图书馆的旧书', s: '书架最深处压着一本《游戏设计艺术》，借书卡上的名字停在七年前。', c: [
+    { t: '借走，读它', go: function () { S.stats.design += 3; return '一读就停不下来。原来你前世想不明白的问题，有人早就写成了书。策划脑 +3。'; } },
+    { t: '放回去，太厚了', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '七天读不完的书，先欠着。你选择保存意志。'; } }] },
+  { t: '蓝屏', s: '写代码写到一半，屏幕猛地一蓝——UNEXPECTED_STORE_EXCEPTION。', c: [
+    { t: '重装系统，今晚必须修好', go: function () { S.stats.prog += 2; S.hp = Math.max(1, S.hp - 3); return '凌晨三点你修好了它。顺便看懂了半本《Windows 内部原理》。代码力 +2，意志 -3。'; } },
+    { t: '算了，明天再说', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '你关掉电源去睡觉。有些问题睡一觉就会自己消失——电脑问题除外。意志 +3。'; } }] },
+  { t: '亲戚的灵魂拷问', s: '家族群弹出语音：「听说你在搞游戏？那玩意能当饭吃吗？」', c: [
+    { t: '认真解释游戏行业', go: function () { S.stats.media += 2; return '你发了六十秒语音，条理清晰。讲到一半你自己都信了更狠的：你真的要做这行。声量 +2。'; } },
+    { t: '「能，还能救世界。」', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '群里安静了。你笑出声——这是只有你知道的实话。意志 +2。'; } },
+    { t: '反问他股票怎么样了', go: function () { S.stats.tech += 2; return '话题成功转移。你在转移话题的过程中顺便理清了服务器架构的思路（?）。底层根骨 +2。'; } }] },
+  { t: '神仙教程', s: '刷到一个游戏开发教程，讲的正是你卡了两天的地方。', c: [
+    { t: '三连收藏，跟着做', go: function () { S.hp = Math.max(1, S.hp - 3); var k = randomKey(); S.stats[k] += 3; return '一口气跟到凌晨。' + CLASSES[k].name + ' +3，意志 -3——学东西是要花力气的。'; } },
+    { t: '收藏 = 学会，下一个', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '你收藏了它，并且再也不打算打开。收藏夹 +1，人生 +0。意志 +1。'; } }] },
+  { t: '网吧通宵的诱惑', s: '路过网吧，朋友在里面朝你招手：「来啊，五连坐缺一个！」', c: [
+    { t: '进！通宵！', go: function () { S.hp = Math.max(1, S.hp - 4); var k = randomKey(); S.stats[k] += 3; return '打到早上六点。但这一夜你全程在研究对面的技能循环——灵感这种东西，来的时候不讲道理。意志 -4，' + CLASSES[k].name + ' +3。'; } },
+    { t: '门口看两把就走', go: function () { S.stats.design += 2; return '你站着看完了整局，脑子里拆完了他们的团战节奏。策划脑 +2。'; } },
+    { t: '头也不回地走开', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '大丈夫有所不为。意志 +2。'; } }] },
+  { t: '前世的记忆闪回', s: '过马路等红灯时，你毫无征兆地想起了前世的死亡瞬间——就是这条路。', c: [
+    { t: '站着，把细节看完', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '你看清了它攻击前的抬手动作。恐惧被笔记替代的那天，你就已经变强了。意志 +3。'; } },
+    { t: '别看了，走', go: function () { var k = randomKey(); S.stats[k] += 1; return '你把回忆压回心底，顺手把刚才想到的一个优化记进了手机。' + CLASSES[k].name + ' +1。'; } }] },
+  { t: '停电的夜晚', s: '宿舍片区跳闸，整栋楼陷入黑暗，手机还剩 30% 电。', c: [
+    { t: '睡觉，天赐的早睡理由', go: function () { S.hp = Math.min(S.hmax, S.hp + 5); return '没有屏幕的夜晚睡得格外沉。意志 +5。'; } },
+    { t: '打手电看底层文档', go: function () { S.stats.tech += 2; return '手电筒照着 PDF，一页页啃。你怀疑自己有病，但底层根骨 +2。'; } }] },
+  { t: '降温了', s: '冷空气到了，你嗓子有点痒。', c: [
+    { t: '硬扛，时间不够', go: function () { S.hp = Math.max(1, S.hp - 3); var k = randomKey(); S.stats[k] += 2; return '鼻子堵着也能学，就是效率打八折。意志 -3，' + CLASSES[k].name + ' +2。'; } },
+    { t: '去校医院拿药', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '医生说多喝水。你听了，还多睡了两小时。意志 +2。'; } }] },
+  { t: '游戏开发交流群', s: '你被拉进一个三百人的游戏开发群，群里大佬们聊的东西你一半看不懂。', c: [
+    { t: '潜水，疯狂记笔记', go: function () { var k = randomKey(); S.stats[k] += 2; return '看大佬吵架都能学到东西。' + CLASSES[k].name + ' +2。'; } },
+    { t: '冒泡提问', go: function () { S.hp = Math.max(1, S.hp - 2); var k = randomKey(); S.stats[k] += 3; return '有人嘲讽你问题基础，但也有人写了三百字认真回答。' + CLASSES[k].name + ' +3，意志 -2（被怼的）。'; } }] },
+  { t: '前世的路口', s: '你特意绕到前世死去的那条街。空的，安静，商业街的音响还在放促销广告。', c: [
+    { t: '在原地站十分钟', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '十分钟里你把前世的七十二小时想了一遍。有些东西必须先想明白，才能跑得快。意志 +3。'; } },
+    { t: '拍张照当锁屏', go: function () { var k = randomKey(); S.stats[k] += 2; return '从此每次解锁手机都是一次提醒。' + CLASSES[k].name + ' +2。'; } }] },
+  { t: '捡到五十块', s: '路边一张50元，风吹得它贴在你鞋上。', c: [
+    { t: '买参考书', go: function () { var k = randomKey(); S.stats[k] += 2; return '二手书五折，正好。' + CLASSES[k].name + ' +2。'; } },
+    { t: '请自己吃顿好的', go: function () { S.hp = Math.min(S.hmax, S.hp + 5); return '双拼饭加例汤加鸡腿。人对自己的好，都是意志。意志 +5。'; } }] },
+  { t: '朋友圈的远方', s: '高中同学在三亚潜水、在雪山脚下打卡。你盯着天花板看了十分钟。', c: [
+    { t: '不酸。肝。', go: function () { var k = randomKey(); S.stats[k] += 2; return '别人晒的是假期，你攒的是底牌。' + CLASSES[k].name + ' +2。'; } },
+    { t: '承认，有点酸', go: function () { S.hp = Math.max(1, S.hp - 2); return '酸完继续学，但效率确实低了点。意志 -2。'; } }] },
+  { t: '收费墙', s: '教程看到最关键一步：解锁完整版，仅需 299 元。', c: [
+    { t: '氪！知识值得付费', go: function () { var k = randomKey(); S.stats[k] += 3; return '确实有用。' + CLASSES[k].name + ' +3。'; } },
+    { t: '白嫖路线自己拼', go: function () { S.hp = Math.max(1, S.hp - 2); S.stats.tech += 2; return '东拼西凑耗了一整天，但拼出来的理解格外扎实。底层根骨 +2，意志 -2。'; } }] },
+  { t: '通关的梦', s: '你梦见自己做出了一个游戏，很多人在玩，你在梦里笑出了声。', c: [
+    { t: '醒来把它写下来', go: function () { S.stats.design += 2; return '梦里那个玩法真的有点东西。策划脑 +2。'; } },
+    { t: '再睡会儿，把梦做完', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); return '梦的结局是有人催你交房租。但你休息够了。意志 +4。'; } }] },
+  { t: '家里的电话', s: '「国庆回来吗？给你做了排骨。」', c: [
+    { t: '「回不去，学校有事。」', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '挂了电话你鼻子酸了一下，然后把这份酸变成了专注。意志 +3。'; } },
+    { t: '说了实话：在学做游戏', go: function () { var k = randomKey(); S.stats[k] += 2; return '家里那头沉默两秒，说：「那……饭给你寄过来？」意外地被支持了。' + CLASSES[k].name + ' +2。'; } }] },
+  { t: '40G 的更新包', s: '你期待很久的游戏今晚更新，进度条慢得像重生前的日子。', c: [
+    { t: '等下载的时候学习', go: function () { var k = randomKey(); S.stats[k] += 2; return '进度条 40%，你的笔记 20 页。' + CLASSES[k].name + ' +2。'; } },
+    { t: '下完先玩为敬', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '玩的时候你在拆它的引导设计——玩也玩得很有职业素养。意志 +3。'; } }] },
+  { t: '校园采访', s: '校媒扛着相机在路边拦住你：「同学，假期都在做什么？」', c: [
+    { t: '接受采访，大谈游戏开发', go: function () { S.stats.media += 3; return '你讲了三分钟「中国学生为什么该学做游戏」，采访视频在校内小范围刷屏。声量 +3。'; } },
+    { t: '摆手跑路', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '社恐保平安。意志 +2。'; } }] },
+  { t: '深夜 EMO', s: '凌晨的emo时刻：「七天，真的够吗？」', c: [
+    { t: '把恐惧写成设计文档', go: function () { S.stats.design += 2; return '你把「七天」拆成了里程碑表——恐惧一旦被量化，就只是待办事项。策划脑 +2。'; } },
+    { t: '打开引擎，继续肝', go: function () { S.hp = Math.max(1, S.hp - 2); S.stats.prog += 2; return 'EMO 的唯一解法是进度条。代码力 +2，意志 -2。'; } }] },
+  { t: '一块旧键盘', s: '楼下垃圾桶旁边躺着一块旧机械键盘，只坏了一个键。', c: [
+    { t: '捡走，修好它', go: function () { S.stats.prog += 2; return '换轴二十分钟，敲字的手感回来了。代码力 +2。'; } },
+    { t: '爱惜形象，不捡', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '你大方地走过去了。然后想了一晚上那块键盘。意志 +1。'; } }] },
+  { t: '新闻推送', s: '「黄金周出行人数创历史新高」——你盯着这行字看了很久。人多。降临那天，怪物也会多。', c: [
+    { t: '把这个洞察记下来', go: function () { S.stats.design += 2; return '人口密度、地形、撤离路线——你已经在做降临日的关卡设计了。策划脑 +2。'; } },
+    { t: '关掉推送，专注当下', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '焦虑没有用，属性点才有用。意志 +1。'; } }] },
+  { t: '速成班广告', s: '群里有人发「游戏开发 21 天速成班，原价 4999 现价 99」。', c: [
+    { t: '点进去研究它的割韭菜话术', go: function () { S.stats.media += 1; S.stats.design += 1; return '看完销售页你写了一条拆解：它把「焦虑→希望→付费」做成了漏斗。声量 +1，策划脑 +1。'; } },
+    { t: '举报，然后继续学', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '世界上没有速成，只有你今天多写的三行代码。意志 +2。'; } }] },
+  { t: '难得的好太阳', s: '秋天的太阳晒在宿舍阳台，被子、猫、你，都适合出去。', c: [
+    { t: '搬小桌板出去学习', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); var k = randomKey(); S.stats[k] += 1; return '阳光下的学习效率意外地高。意志 +4，' + CLASSES[k].name + ' +1。'; } },
+    { t: '拉上窗帘，与世隔绝', go: function () { var k = randomKey(); S.stats[k] += 2; return '房间越暗，屏幕越亮。' + CLASSES[k].name + ' +2。'; } }] },
+  { t: '室友的文学 radar', s: '室友瞟到你手机备忘录：「重生是什么感觉？」——他以为你在写小说。', c: [
+    { t: '顺势聊了两个小时', go: function () { S.stats.media += 2; return '你把「如果游戏降临」讲成了一段设定，室友听得后背发凉。声量 +2。'; } },
+    { t: '「天机不可泄露。」', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '秘密让你感到安全。意志 +2。'; } }] },
+  { t: '便利店的关东煮', s: '深夜十一点半，便利店玻璃上全是雾气，关东煮在锅里咕嘟。', c: [
+    { t: '吃！加两个鱼蛋', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); return '热汤下肚的瞬间，你觉得七天什么的也不是不能打。意志 +4。'; } },
+    { t: '买杯咖啡就走', go: function () { S.hp = Math.max(1, S.hp - 1); var k = randomKey(); S.stats[k] += 2; return '咖啡因到位，回宿舍又肝了三小时。' + CLASSES[k].name + ' +2，意志 -1（咖啡因的债）。'; } }] },
+  { t: '扭到脚', s: '下楼梯看手机（在看引擎文档），脚踝一软。', c: [
+    { t: '去校医院', go: function () { S.hp = Math.max(1, S.hp - 2); return '没大碍，但医生勒令今天不许乱跑。意志 -2。'; } },
+    { t: '坐着学，正好不出去', go: function () { S.hp = Math.max(1, S.hp - 3); var k = randomKey(); S.stats[k] += 2; return '因祸得福的宅家学习日。意志 -3，' + CLASSES[k].name + ' +2。'; } }] },
+  { t: '广场上的猫', s: '一只三花猫蹲在广场中央，盯着你走过的方向，目光像认识你。', c: [
+    { t: '蹲下来对视', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '它冲你眨了下眼。你也眨了。两个穿越者达成了某种默契。意志 +3。'; } },
+    { t: '分它一半火腿肠', go: function () { var k = randomKey(); S.stats[k] += 3; return '它吃完在前面走，你鬼使神差跟着，走到了一个你从没去过的自习角。' + CLASSES[k].name + ' +3。'; } },
+    { t: '拍下来发帖：「校园猫の凝视」', go: function () { S.stats.media += 2; return '帖子火了。评论区都在问后续。声量 +2。'; } }] },
+  { t: '早八的闹钟没响', s: '睁眼已经十点半， sunlight 晒在键盘上。', c: [
+    { t: '又躺了十分钟', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '人生难得，回笼觉更难得。意志 +3。'; } },
+    { t: '弹射起步，追赶进度', go: function () { S.hp = Math.max(1, S.hp - 2); var k = randomKey(); S.stats[k] += 2; return '半小时完成洗漱早餐和计划。' + CLASSES[k].name + ' +2，意志 -2。'; } }] },
+  { t: '前世的聊天记录', s: '翻手机翻到前世今天发的朋友圈：「七天假！开摆！」评论区一片「+1」。', c: [
+    { t: '看着看着就哭了', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); return '哭完你发现自己更清醒了。上一次的摆，是这一次的债。意志 +4。'; } },
+    { t: '编辑这条还没发的朋友圈', go: function () { S.stats.media += 2; return '你重新发了一条：「这个假期，做点以后不会后悔的事。」声量 +2。'; } }] },
+  { t: '神秘的路人', s: '自习室里一个人一直盯着你看，忽然起身在你桌上放了张纸条就走：「你也是……回来的？」', c: [
+    { t: '追出去', go: function () { var k = randomKey(); S.stats[k] += 3; return '走廊空无一人，只有一句留在墙上的粉笔字：「第七天，小心版本号。」' + CLASSES[k].name + ' +3。'; } },
+    { t: '打开纸条背面', go: function () { S.stats.design += 2; return '背面画着 BOSS 的攻击前摇示意图。有人替你踩过坑。策划脑 +2。'; } }] }
+];
 
 /* ============ 状态 ============ */
 var S = null;
 function newState() {
   return { phase: 'title', day: 1, stats: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
     hp: 40, hmax: 40, trained: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
-    buffs: [], idleDays: 0, kills: 0, speed: 1 };
+    buffs: [], idleDays: 0, kills: 0, speed: 1, runEvents: [], evPtr: 0, pick: null };
 }
 function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} }
 function load() { try { var s = localStorage.getItem(SAVE_KEY); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
@@ -209,6 +310,28 @@ function topClass() {
 function power() { var t = 0; for (var k in S.stats) t += S.stats[k]; return t; }
 function rating() { var p = power(); return p >= 50 ? 'S · 开发者之魂' : p >= 40 ? 'A · 出师' : p >= 28 ? 'B · 入门' : 'C · 火种未熄'; }
 function buff(id) { var n = 0; S.buffs.forEach(function (b) { if (b === id) n++; }); return n; }
+function randomKey() { var ks = Object.keys(S.stats); return ks[Math.floor(Math.random() * ks.length)]; }
+var BUFF_HUMAN = {
+  dmg: ['弹药增粗', '你扔出去的东西更重更实在，每层伤害 +25%'],
+  spd: ['射速提升', '你扔得更快了，每层攻速 +20%'],
+  hp: ['意志上限', '更能扛打了：意志上限 +8'],
+  crit: ['会心一击', '有概率打出双倍伤害，每层 +15%'],
+  vamp: ['残光吸取', '打出去的伤害有一部分变成你的意志，每层 5%'],
+  skill: ['技能强化', 'Build 技能砸得更疼，每层 +40%'],
+  cdr: ['冷却缩减', 'Build 技能转得更快，冷却 -15%'],
+  regen: ['意志之泉', '战斗中每秒自动回复 0.5 意志'],
+  sup: ['火力压制', '怪物被你打得抬不起手：它的攻击间隔每层 +0.25 秒'],
+  combo: ['连击惯性', '打得越久越疼：开战每过 5 秒，伤害 +8%（最多 +48%）'],
+  shield: ['备用弹药箱', '每场战斗开始时多一层护盾，能替你挡 12 点伤害']
+};
+function humanBuffs() {
+  if (!S.buffs.length) return '还没有碎片——打赢今晚的遭遇战就会掉落，自动生效不用管。';
+  var counts = {};
+  S.buffs.forEach(function (b) { counts[b] = (counts[b] || 0) + 1; });
+  var lines = [];
+  for (var id in counts) { var r = BUFF_HUMAN[id]; lines.push('<b>' + r[0] + '</b>' + (counts[id] > 1 ? ' ×' + counts[id] : '') + '：' + r[1]); }
+  return lines.join('<br>');
+}
 function wrap() { return document.getElementById('gameWrap'); }
 function show(html) { wrap().innerHTML = html; window.scrollTo(0, 0); }
 
@@ -232,12 +355,36 @@ function screenTitle() {
   h += '</div></div></div>';
   show(h);
 }
-function startPrologue() { S = newState(); screenDay(); }
+function startPrologue() {
+  S = newState();
+  var idx = [];
+  for (var i = 0; i < EVENTS.length; i++) idx.push(i);
+  for (var j = idx.length - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var t2 = idx[j]; idx[j] = idx[r]; idx[r] = t2; }
+  S.runEvents = idx.slice(0, Math.min(14, idx.length)); S.evPtr = 0;
+  screenDay();
+}
 function resume() { var s = load(); if (s) { S = s; screenDay(); } }
 function screenDay() {
   var st = DAY_STORY[S.day - 1];
-  show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">DAY ' + S.day + ' · ' + st[0] + '</div><div class="rb-story">' + st[1] + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="screenAction()">开始这一天 ▶</button></div>');
+  show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">DAY ' + S.day + ' · ' + st[0] + '</div><div class="rb-story">' + st[1] + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="advanceDay()">开始这一天 ▶</button></div>');
   S.phase = 'day'; save();
+}
+function advanceDay() {
+  if (S.evPtr < S.runEvents.length) showEvent();
+  else screenAction();
+}
+function showEvent() {
+  var ev = EVENTS[S.runEvents[S.evPtr]];
+  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">突发事件 · ' + ev.t + '</div><div class="rb-story">' + ev.s + '</div><div style="margin-top:12px">';
+  ev.c.forEach(function (c2, i) { h += '<button class="rb-btn" onclick="resolveEvent(' + i + ')">' + c2.t + '</button>'; });
+  h += '</div></div>';
+  show(h); S.phase = 'event'; save();
+}
+function resolveEvent(i) {
+  var ev = EVENTS[S.runEvents[S.evPtr]];
+  var res = ev.c[i].go();
+  S.evPtr++; save();
+  show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">突发事件 · ' + ev.t + '</div><div class="rb-story">' + ev.s + '</div><div class="rb-story" style="margin-top:10px;color:#f5e6bd;border-left:3px solid #edbe5c;padding-left:12px">' + res + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="advanceDay()">继续这一天 ▶</button></div>');
 }
 function screenAction() {
   var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">白天 · 今天怎么肝？</div>';
@@ -255,34 +402,43 @@ function doAction(i) {
   else { S.stats[a.k] += 3; S.trained[a.k] = Math.min(3, S.trained[a.k] + 1); }
   screenPrep();
 }
-function currentClass() { return topClass(); }
-function unlockedBuildIdx(cls) { return Math.min(3, S.trained[cls] || 1); }
+function currentClass() { return S.pick ? S.pick.c : topClass(); }
+function unlockedBuilds() {
+  var opts = [];
+  for (var k in CLASSES) {
+    var n = S.trained[k] ? Math.min(3, S.trained[k]) : 0;
+    for (var i = 0; i < n; i++) opts.push({ c: k, i: i });
+  }
+  return opts;
+}
+function estDmg(c) {
+  return Math.round((3 + 0.55 * (S.stats[c] || 0)) * (1 + 0.25 * buff('dmg')));
+}
 function screenPrep() {
   var isBoss = S.day === 7;
   var mon = isBoss ? BOSS : MONSTERS[S.day - 1];
-  var cls = currentClass();
-  var nb = unlockedBuildIdx(cls);
   var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">夜幕 · ' + (isBoss ? '降临日决战' : '遭遇战') + '</div>';
   h += '<div class="rb-monname">' + mon.emoji + ' ' + mon.name + '</div><div style="color:#9fb3aa;font-size:13px;line-height:1.9;margin-top:6px">' + mon.desc + '</div>';
-  h += '<div class="rb-monhp"><i style="width:100%"></i></div><div class="rb-hud" style="margin-top:8px"><span>怪物耐久 <b>' + mon.hp + '</b></span><span>怪物攻击 <b>' + mon.dmg + '/发</b></span></div>';
-  h += '<div class="rb-buffline">你的加成：' + (S.buffs.length ? S.buffs.map(function (b) { var r = ROGUE_POOL.filter(function (p) { return p.id === b; })[0]; return r ? r.t : b; }).join(' / ') : '暂无（赢下遭遇战可获得）') + '</div>';
-  if (nb > 1) {
-    h += '<div class="rb-tag" style="margin-top:14px">选择今晚的 Build（' + CLASSES[cls].name + '）</div><div class="rb-choices" id="buildPick">';
-    for (var i = 0; i < nb; i++) {
-      var b = CLASSES[cls].builds[i];
-      h += '<button class="rb-btn' + (i === nb - 1 ? ' active' : '') + '" data-i="' + i + '" onclick="pickBuild(this,' + i + ')">' + b.name + '<span class="sub">' + b.desc + '</span></button>';
-    }
-    h += '</div>';
-  } else {
-    h += '<div class="rb-buffline" style="margin-top:10px">Build：' + CLASSES[cls].builds[0].name + '（' + CLASSES[cls].builds[0].desc + '）</div>';
+  h += '<div class="rb-monhp"><i style="width:100%"></i></div><div class="rb-hud" style="margin-top:8px"><span>怪物耐久 <b>' + mon.hp + '</b></span><span>怪物攻击 <b>' + mon.dmg + '/发</b>（你不用躲，扛着打）</span></div>';
+  h += '<div style="margin-top:12px"><div class="rb-tag">你攒下的碎片（已自动生效，不用操作）</div><div class="rb-buffline">' + humanBuffs() + '</div></div>';
+  var opts = unlockedBuilds();
+  if (!S.pick || !opts.some(function (o) { return o.c === S.pick.c && o.i === S.pick.i; })) S.pick = opts[0] || { c: 'idle', i: 0 };
+  h += '<div style="margin-top:12px"><div class="rb-tag">今晚用什么打架？（随便选，你说了算）</div><div class="rb-choices" id="buildPick">';
+  if (!opts.length) {
+    h += '<button class="rb-btn active"><b>赤手空拳</b><span class="sub">还没修炼过任何职业：没有技能，只有一把趁手的键盘。今晚大概率凶多吉少。</span></button>';
   }
+  opts.forEach(function (o) {
+    var b = CLASSES[o.c].builds[o.i];
+    var act = S.pick.c === o.c && S.pick.i === o.i ? ' active' : '';
+    h += '<button class="rb-btn' + act + '" onclick="pickBuild(this,\'' + o.c + '\',' + o.i + ')"><span style="color:' + CLASSES[o.c].color + '">[' + CLASSES[o.c].name + ']</span> ' + b.name + '<span class="sub">' + b.desc + '。用「' + CLASSES[o.c].name.split(' ')[0] + '」属性（当前 ' + (S.stats[o.c] || 0) + ' 点），预计一击约 ' + estDmg(o.c) + ' 伤害。</span></button>';
+  });
+  h += '</div></div>';
   h += '<button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="startBattle()">⚔ 开战（自动战斗）</button>';
-  h += '<div class="rb-buffline" style="color:#55665f">战斗全自动：扔弹与技能由 Build 自动释放，打不过就死——死了会有结局，但本局进度清空。</div></div>';
-  show(h); S.phase = 'prep';
-  S.pendingBuild = nb - 1; save();
+  h += '<div class="rb-buffline" style="color:#55665f">战斗全自动：扔弹和技能都由 Build 自己放，你只需要在战前选好打法。打不过就死——死了会有结局，但本局进度清空。</div></div>';
+  show(h); S.phase = 'prep'; save();
 }
-function pickBuild(el, i) {
-  S.pendingBuild = i;
+function pickBuild(el, c, i) {
+  S.pick = { c: c, i: i };
   var btns = document.querySelectorAll('#buildPick button');
   for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
   el.classList.add('active');
@@ -292,10 +448,11 @@ var B = null, RAF = null;
 function startBattle() {
   var isBoss = S.day === 7;
   var mon = isBoss ? BOSS : MONSTERS[S.day - 1];
-  var cls = currentClass();
-  var stat = S.stats[cls];
+  var cls = S.pick.c;
+  var stat = S.stats[cls] || 0;
   B = {
     mon: mon, cls: cls, isBoss: isBoss,
+    clsName: cls === 'idle' ? '路人玩家' : CLASSES[cls].name.split(' ')[0],
     mhp: mon.hp, mmax: mon.hp,
     php: S.hp, pmax: S.hmax,
     dmg: (3 + 0.55 * stat) * (1 + 0.25 * buff('dmg')),
@@ -305,8 +462,10 @@ function startBattle() {
     regen: 0.5 * buff('regen'),
     skillDmg: 1 + 0.4 * buff('skill'),
     cdMul: Math.max(0.3, 1 - 0.15 * buff('cdr')),
-    build: CLASSES[cls].builds[S.pendingBuild || 0], buildIdx: S.pendingBuild || 0,
+    build: cls === 'idle' ? { name: '赤手空拳', desc: '没有 Build' } : CLASSES[cls].builds[S.pick.i], buildIdx: S.pick.i,
+    ammo: cls === 'idle' ? ['⌨', '✊', '📚'] : CLASSES[cls].ammo,
     t: 0, lastThrow: 0, lastSkill: 0, mLast: 0,
+    mInterval: 1.4 + 0.25 * buff('sup'), shield: 12 * buff('shield'),
     shots: [], mshots: [], floats: [], dead: false, over: false, speed: 1, stun: 0, mVuln: 1, mDots: [], summons: 0, hyper: 0
   };
   show('<div class="rb-panel"><div class="rb-tag">遭遇战 · ' + mon.name + '</div><div class="rb-speed"><button onclick="cycleSpeed()" id="spdBtn">速度 ×' + B.speed + '</button></div><div id="cvWrap" style="position:relative"><canvas id="battleCanvas" width="720" height="420"></canvas></div><div class="rb-buffline" style="text-align:center">你的 Build：' + B.build.name + ' —— 战斗全自动，看戏就好</div></div>');
@@ -328,12 +487,12 @@ function loop(now) {
     B.lastThrow = B.t;
     var dmg = B.dmg * (Math.random() < B.crit ? 2 : 1);
     if (B.buildIdx === 0 && B.cls === 'design') dmg = B.dmg * (0.5 + Math.random() * 2.5);
-    B.shots.push({ x: px, y: py - 24, vy: -430, dmg: dmg, glyph: CLASSES[B.cls].ammo[Math.floor(Math.random() * 3)] });
+    B.shots.push({ x: px, y: py - 24, vy: -430, dmg: dmg, glyph: B.ammo[Math.floor(Math.random() * B.ammo.length)] });
   }
   /* Build 技能（自动释放） */
   var sk = skillTick(dt, px, py, mx, my);
   /* 怪物攻击（不被躲，纯数值对轰） */
-  if (B.stun <= 0 && B.t - B.mLast >= 1.4) {
+  if (B.stun <= 0 && B.t - B.mLast >= B.mInterval) {
     B.mLast = B.t;
     B.mshots.push({ x: mx + (Math.random() * 120 - 60), y: my + 30, vy: 260, dmg: B.mon.dmg, glyph: '❓' });
   }
@@ -398,14 +557,16 @@ function skillTick(dt, px, py, mx, my) {
 }
 function hitMonster(dmg, x, y) {
   if (B.over || B.mhp <= 0) return;
+  dmg *= 1 + Math.min(0.48, 0.08 * Math.floor(B.t / 5)); /* 连击惯性：越打越疼 */
   B.mhp -= dmg;
   if (B.vamp > 0) B.php = Math.min(B.pmax, B.php + dmg * B.vamp);
   B.floats.push({ x: x, y: y, txt: '-' + Math.round(dmg), c: '#f07a70', t: 0 });
 }
 function hitPlayer(dmg) {
   if (B.over) return;
-  B.php -= dmg;
-  B.floats.push({ x: 360 + (Math.random() * 80 - 40), y: 340, txt: '-' + Math.round(dmg), c: '#f0b8ac', t: 0 });
+  if (B.shield > 0) { var ab = Math.min(B.shield, dmg); B.shield -= ab; dmg -= ab; }
+  if (dmg > 0) B.php -= dmg;
+  B.floats.push({ x: 360 + (Math.random() * 80 - 40), y: 340, txt: dmg > 0 ? '-' + Math.round(dmg) : '🛡 抵挡', c: dmg > 0 ? '#f0b8ac' : '#9fd3b8', t: 0 });
 }
 function render(px, py, mx, my) {
   var ctx = B.ctx, W = B.cv.width, H = B.cv.height;
@@ -420,7 +581,7 @@ function render(px, py, mx, my) {
   /* 主角 */
   ctx.font = '40px serif'; ctx.fillText('🧑‍💻', px, py + 14);
   ctx.font = '700 13px sans-serif'; ctx.fillStyle = '#9fd3b8';
-  ctx.fillText(CLASSES[B.cls].name + ' · ' + B.build.name, px, py + 38);
+  ctx.fillText(B.clsName + ' · ' + B.build.name, px, py + 38);
   ctx.fillStyle = '#10151c'; ctx.fillRect(px - 130, H - 18, 260, 10);
   ctx.fillStyle = '#7ed696'; ctx.fillRect(px - 130, H - 18, 260 * Math.max(0, B.php / B.pmax), 10);
   ctx.font = '11px monospace'; ctx.fillStyle = '#9fb3aa';
@@ -439,7 +600,7 @@ function render(px, py, mx, my) {
 function endBattleWin() {
   B.over = true; cancelAnimationFrame(RAF);
   S.hp = Math.max(1, Math.min(B.pmax, B.php)); S.kills++;
-  S.stats[B.cls] += 1;
+  if (B.cls !== 'idle') S.stats[B.cls] += 1;
   if (B.isBoss) { screenBossWin(); return; }
   screenRogue();
 }
@@ -449,7 +610,12 @@ function endBattleDeath() {
   showEnding(B.isBoss ? 'BOSS' : B.mon.dex);
 }
 function screenRogue() {
-  var pool = ROGUE_POOL.slice(), picks = [];
+  var pool = ROGUE_POOL.slice();
+  /* Build 设计图：任何已修炼未满级的职业都可以进阶 */
+  var cands = [];
+  for (var k in S.trained) if (S.trained[k] >= 1 && S.trained[k] < 3) cands.push(k);
+  if (cands.length) pool.push({ id: 'buildup', t: 'Build 设计图', d: '立刻把一个已修炼职业的 Build 升到下一层（选哪个由你决定）' });
+  var picks = [];
   while (picks.length < 3 && pool.length) picks.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
   var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">战利品 · 三选一（可叠加）</div>';
   h += '<div class="rb-story" style="margin-bottom:10px">' + MONSTERS[S.day - 1].emoji + ' ' + MONSTERS[S.day - 1].name + ' 化作了数据尘埃。掉落了三块「引擎碎片」——只能拿一块。</div>';
@@ -460,10 +626,22 @@ function screenRogue() {
   show(h); S.phase = 'rogue'; save();
 }
 function pickRogue(id) {
+  if (id === 'buildup') { screenBuildup(); return; }
   S.buffs.push(id);
   if (id === 'hp') { S.hmax += 8; S.hp = Math.min(S.hmax, S.hp + 8); }
   screenDayEnd();
 }
+function screenBuildup() {
+  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">Build 设计图 · 选一个职业进阶</div>';
+  for (var k in S.trained) {
+    if (S.trained[k] < 1 || S.trained[k] >= 3) continue;
+    var nxt = CLASSES[k].builds[S.trained[k]];
+    h += '<div class="rb-rogue" onclick="applyBuildup(\'' + k + '\')"><b style="color:' + CLASSES[k].color + '">' + CLASSES[k].name + ' → Build ' + (S.trained[k] + 1) + '</b><div class="sub">解锁：' + nxt.name + '（' + nxt.desc + '）</div></div>';
+  }
+  h += '</div>';
+  show(h);
+}
+function applyBuildup(k) { S.trained[k] = Math.min(3, S.trained[k] + 1); screenDayEnd(); }
 function screenDayEnd() {
   if (S.day >= 7) { screenBossWin(); return; }
   show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">深夜 · 第 ' + S.day + ' 天结束</div><div class="rb-story">你把今天学到的东西存进记忆，把意志留给明天。<span class="sys">【距离大降临还剩 ' + (7 - S.day) + ' 天】进度已自动保存。</span></div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="nextDay()">睡下 → 第 ' + (S.day + 1) + ' 天 ▶</button></div>');
