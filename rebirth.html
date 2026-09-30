@@ -114,6 +114,79 @@ var CLASSES = {
       { name: '超频流 · Overclock', desc: '周期性进入超频：攻速翻倍', },
       { name: '指针流 · 高危高伤', desc: '扔出野指针：超高伤害，但会伤到自己', }] }
 };
+/* ============ 技能系统：属性点达到阈值 → 觉醒/进化 ============ */
+var THRESH = [3, 7, 12];
+var SKILLS = {
+  design: [
+    { name: '概率骰 · I', desc: '扔出去的伤害随机 0.5~3 倍，赌起来', act: { cd: 3, mul: 1.5, rand: [0.5, 3] } },
+    { name: '百页方案 · II', desc: '砸出一本方案：大伤害并让怪物眩晕', act: { cd: 8, mul: 5, stun: 1.5, label: '📋 百页方案!' } },
+    { name: '规则改写 · III', desc: '改写局部规则：超高等伤害', act: { cd: 12, mul: 9, label: '📜 规则改写!' } }],
+  prog: [
+    { name: '键帽机枪 · I', desc: '被动：扔弹攻速 +40%', passive: 'spd' },
+    { name: '机械重锤 · II', desc: '周期性砸下键盘：范围重击', act: { cd: 6, mul: 4, label: '⌨ 重锤!' } },
+    { name: '分身调试 · III', desc: '周期性召唤分身一起扔', act: { cd: 6, mul: 3, label: '👥 分身!' } }],
+  ta: [
+    { name: '微光弹 · I', desc: '高频微光弹持续骚扰', act: { cd: 4, mul: 1.5 } },
+    { name: 'Ray 射线 · II', desc: '贯穿射线：高额伤害', act: { cd: 5, mul: 3.5, label: '✨ Ray!' } },
+    { name: '光追爆发 · III', desc: '低频但毁天灭地的全屏爆发', act: { cd: 10, mul: 8, label: '💥 光追爆发!' } }],
+  art: [
+    { name: '涂鸦小人 · I', desc: '高频涂鸦攻击', act: { cd: 2, mul: 0.8 } },
+    { name: '颜料泼溅 · II', desc: '多方向泼溅', act: { cd: 5, mul: 2.5, label: '🎨 泼溅!' } },
+    { name: '一击入魂 · III', desc: '蓄力巨大一击', act: { cd: 9, mul: 7, label: '🖌 入魂!' } }],
+  media: [
+    { name: '弹幕雨 · I', desc: '持续弹幕磨血', act: { cd: 1.5, mul: 0.8 } },
+    { name: '顶上热搜 · II', desc: '被动：怪物受到伤害 +25%', passive: 'vuln' },
+    { name: '一键三连 · III', desc: '攒力终结一击', act: { cd: 12, mul: 10, label: '👍 三连!' } }],
+  tech: [
+    { name: '内存清理 · I', desc: '清空怪物弹幕并造成伤害', act: { cd: 7, mul: 2, clear: true, label: '🔧 GC!' } },
+    { name: '超频 · II', desc: '攻速翻倍一段时间', act: { cd: 12, hyper: 10, label: '⚡ 超频!' } },
+    { name: '野指针 · III', desc: '高伤害但会反伤自己', act: { cd: 5, mul: 4, self: 3, label: '🌀 野指针!' } }]
+};
+var SKILL_ACTIVES = {
+  design1: { cd: 3, mul: 1.5, rand: [0.5, 3] },
+  design2: { cd: 8, mul: 5, stun: 1.5, label: '📋 百页方案!' },
+  design3: { cd: 12, mul: 9, label: '📜 规则改写!' },
+  prog2: { cd: 6, mul: 4, label: '⌨ 重锤!' },
+  prog3: { cd: 6, mul: 3, label: '👥 分身!' },
+  ta1: { cd: 4, mul: 1.5 },
+  ta2: { cd: 5, mul: 3.5, label: '✨ Ray!' },
+  ta3: { cd: 10, mul: 8, label: '💥 光追爆发!' },
+  art1: { cd: 2, mul: 0.8 },
+  art2: { cd: 5, mul: 2.5, label: '🎨 泼溅!' },
+  art3: { cd: 9, mul: 7, label: '🖌 入魂!' },
+  media1: { cd: 1.5, mul: 0.8 },
+  media3: { cd: 12, mul: 10, label: '👍 一键三连!' },
+  tech1: { cd: 7, mul: 2, clear: true, label: '🔧 GC!' },
+  tech2: { cd: 12, hyper: 10, label: '⚡ 超频!' },
+  tech3: { cd: 5, mul: 4, self: 3, label: '🌀 野指针!' }
+};
+var SKILL_PASSIVE = { prog1: 'spd', media2: 'vuln' };
+function statStage(k) { var v = S.stats[k] || 0; return v >= THRESH[2] ? 3 : v >= THRESH[1] ? 2 : v >= THRESH[0] ? 1 : 0; }
+function addStat(k, n) { S.stats[k] = Math.max(0, (S.stats[k] || 0) + n); }
+function checkStageUps() {
+  for (var k in SKILLS) {
+    var st = statStage(k), seen = S.stageSeen[k] || 0;
+    if (st > seen) {
+      S.stageSeen[k] = st;
+      var sk = SKILLS[k][st - 1];
+      var word = st === 1 ? '觉醒' : '进化';
+      pushLog('<div style="margin:6px 0;padding:9px 13px;background:rgba(59,130,246,.12);border-left:3px solid #3b82f6;border-radius:6px"><b style="color:#8fb2ff">⭐ ' + word + '！' + CLASSES[k].name.split(' ')[0] + '之力 ' + word + '了——</b>获得技能 <b style="color:#8fb2ff">' + sk.name + '</b>：' + sk.desc + '（战斗中自动释放）</div>');
+    }
+  }
+}
+
+/* ============ 特殊 Build：八个次元来挖人，每局随机出现两个 ============ */
+var SPECIALS = [
+  { id: 'ultra', who: '光之巨人', emoji: '🔵', invite: '一道巨大的光落在你面前：「少年，愿意成为光吗？」', skill: { name: '斯派修姆光线', act: { cd: 9, mul: 12, label: '〰 斯派修姆光线——!' } }, cg: '【CG】十字手刀挥下的瞬间，整个世界都是白色的。怪物的剪影在光里碎成星屑。', yes: '你举起右手，光涌进身体。血管里像装了太阳。', no: '你摆摆手：「等我七天后再说。」光沉默地暗了下去。' },
+  { id: 'ninja', who: '木叶忍者', emoji: '🌀', invite: '一个护额少年倒挂在树上：「要不要学查克拉？现在报名送分身。」', skill: { name: '影分身之术', act: { cd: 4, mul: 2.5, label: '🌀 影分身!' } }, cg: '【CG】砰——三个「你」同时坐在电脑前写代码，其中一个还在打哈欠。', yes: '你结了一个不太标准的印。分身出现了，先揉了揉腰。', no: '「不打紧，」他消失前说，「你本来就在修行，只是没有护额。」' },
+  { id: 'pkm', who: '宝可梦博士', emoji: '⚡', invite: '白胡子老博士拦住你：「就决定是你了——要这只吗？它会电人。」', skill: { name: '十万伏特', act: { cd: 7, mul: 6, label: '⚡ 十万伏特!' } }, cg: '【CG】电气囊蓄能的蓝光，把怪物的剪影打在了整面墙上。', yes: '你接过精灵球。里面传来一声理直气壮的叫声。', no: '博士把球收回去：「那这只就留给下一个孩子。」' },
+  { id: 'gundam', who: '高达驾驶员', emoji: '🤖', invite: '机库的门为你打开：「驾驶舱一直留着你的位置。」', skill: { name: '光束军刀', act: { cd: 6, mul: 5, label: '🗡 光束军刀!' } }, cg: '【CG】驾驶舱合拢，HUD 全亮，点火声像心跳一样撞进胸腔。', yes: '你扣上安全带，推下节流阀。地面离你远去。', no: '你退出来：「我先把自己的机体练好。」驾驶员点点头，很欣赏。' },
+  { id: 'dbz', who: '龟仙人', emoji: '🐉', invite: '白胡子老头凑过来：「集齐七颗龙珠太慢，不如先学个气功波？」', skill: { name: '龟派气功', act: { cd: 11, mul: 11, label: '〰 龟——派——气功——!' } }, cg: '【CG】双手合拢推出光波的瞬间，地面被犁开了一道笔直的沟。', yes: '「卡——美——哈——美——」你练了一下午发音，邻居报了警。', no: '「也行，」老头笑眯眯，「气要从日常里养，你养的方式不错。」' },
+  { id: 'moon', who: '月之骑士', emoji: '🌙', invite: '一只会说话的黑猫递来胸针：「变身吗？代表月亮消灭它。」', skill: { name: '月光净化', act: { cd: 8, mul: 4.5, label: '🌙 月光净化!' } }, cg: '【CG】光带缠绕全身，怪物的嘶吼在光里变成了闪耀的剪影。', yes: '你举起胸针。变身的过程没法描述，反正很闪，也很贵。', no: '黑猫耸耸肩：「猫都比你勇敢。」然后优雅地走了。' },
+  { id: 'conan', who: '眼镜侦探', emoji: '🕵', invite: '眼镜少年推了推镜框：「需要支援吗？真相只有一个。」', skill: { name: '麻醉手表', act: { cd: 6, mul: 2, stun: 2, label: '🕵 麻醉针!' } }, cg: '【CG】怪物在麻醉针下缓缓跪倒，仿佛终于听到了真相。', yes: '你和眼镜少年击了个掌。推理时间，开始。', no: '「理解，」他推推眼镜，「证据链还没闭合的话，不勉强。」' },
+  { id: 'slam', who: '红发王牌', emoji: '🏀', invite: '红发少年把篮球砸给你：「我们缺个能写战术的！顺便打个球？」', skill: { name: '灌篮重击', act: { cd: 7, mul: 6.5, label: '🏀 灌篮!' } }, cg: '【CG】篮球砸进怪物头顶的闷响，像一次完美压哨扣篮。', yes: '你运球过了三只史莱姆。手感，回来了。', no: '「切，」他捡回球，「天才不差你一个。」但你总觉得他在等。' }
+];
+
 var MONSTERS = [
   { name: '空指针史莱姆', emoji: '🫠', desc: '一滩会弹出 NullReferenceException 的黏液，新手村特产。', hp: 26, dmg: 3, dex: 'D1' },
   { name: '紫黑棋盘格犬', emoji: '🐕', desc: '浑身闪着 Missing Texture 的紫黑格子，咬人之前先咬贴图。', hp: 40, dmg: 4, dex: 'D2' },
@@ -306,7 +379,52 @@ var EVENTS = [
   { t: '广场上的猫', s: '一只三花猫蹲在广场中央，盯着你走过的方向，目光像认识你。', c: [
     { t: '蹲下来对视', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '它冲你眨了下眼。你也眨了。两个穿越者达成了某种默契。意志 +3。'; } },
     { t: '分它一半火腿肠', go: function () { var k = randomKey(); S.stats[k] += 3; return '它吃完在前面走，你鬼使神差跟着，走到了一个从没去过的自习角。' + CLASSES[k].name + ' +3。'; } },
-    { t: '拍下来发帖：「校园猫の凝视」', go: function () { S.stats.media += 2; return '帖子火了，评论区都在问后续。声量 +2。'; } }] }
+    { t: '拍下来发帖：「校园猫の凝视」', go: function () { S.stats.media += 2; return '帖子火了，评论区都在问后续。声量 +2。'; } }] },
+  { t: '耳机一边不响了', s: '左耳没声音了。你拍了拍，它时好时坏。', c: [
+    { t: '再拍两下，好了', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '玄学维修成功。意志 +1。'; } },
+    { t: '单声道凑合用', go: function () { return '世界只剩左半边，但歌还是那首歌。'; } },
+    { t: '记到购物清单最顶上', go: function () { return '理性人。清单 +1。'; } }] },
+  { t: '楼上深夜的歌声', s: '楼上有人唱歌，跑调跑得很有勇气。', c: [
+    { t: '听完全程', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '听着听着居然有点感动。意志 +2。'; } },
+    { t: '录下来发群里', go: function () { return '群里笑了十分钟。快乐是会传染的。'; } },
+    { t: '戴上耳机隔绝世界', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '你的世界只有你和正在做的事。意志 +1。'; } }] },
+  { t: '该晒被子了', s: '抱着被子站在阳台，阳光正好。', c: [
+    { t: '晒！拍两下再抱回来', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '晚上钻被窝的时候有太阳的味道。意志 +3。'; } },
+    { t: '算了，明天再晒', go: function () { return '明天的你会有明天的太阳。'; } }] },
+  { t: '半夜的大更新', s: '游戏弹出更新：12G。你的网速：感人。', c: [
+    { t: '挂着下载，直接睡', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '明早起来它就好了，像圣诞礼物。意志 +2。'; } },
+    { t: '盯着进度条等它', go: function () { S.hp = Math.max(1, S.hp - 1); return '你盯着它爬了一小时，像在看着自己的耐心死亡。意志 -1。'; } }] },
+  { t: '奶茶店买一送一', s: '楼下奶茶店买一送一，队排到了马路牙子。', c: [
+    { t: '排！带一杯', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '三十分钟换来一杯三分糖。值。意志 +2。'; } },
+    { t: '排！第二杯冻起来', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '今天的快乐和明天的快乐一起到手。意志 +3。'; } },
+    { t: '看看队伍长度，撤退', go: function () { return '你计算了一下时间成本，理性地走了。'; } }] },
+  { t: '数据线失踪', s: '充电数据线不见了。它昨天还在的。', c: [
+    { t: '翻箱倒柜找它', go: function () { S.hp = Math.max(1, S.hp - 1); var k = randomKey(); S.stats[k] += 1; return '在枕头套里找到了它（？）。顺便整理了床。意志 -1，' + CLASSES[k].name + ' +1。'; } },
+    { t: '借室友的', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '友情的力量，充电速度 +100%。意志 +1。'; } },
+    { t: '用坏的那根凑合', go: function () { return '接触不良的线像极了人生，但你习惯了。'; } }] },
+  { t: '好久没动了', s: '你忽然意识到，这几天最远的路程是床到饭堂。', c: [
+    { t: '去操场跑两圈', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '跑完的第二天腿会酸，但当晚睡得特别香。意志 +3。'; } },
+    { t: '出去走一圈就好', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '散步是跑步的礼貌版本。意志 +1。'; } },
+    { t: '明天，明天一定', go: function () { return '你把这句话加进了和「明天开始早睡」同一个收藏夹。'; } }] },
+  { t: '敲门的陌生人', s: '咚咚咚。「同学，了解一下……」', c: [
+    { t: '听他把话说完', go: function () { return '是卖考研网课的。你礼貌道别，门关上的瞬间长舒一口气。'; } },
+    { t: '委婉拒绝', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '「不用了谢谢——」一气呵成。意志 +1。'; } },
+    { t: '不出声，装不在', go: function () { return '你无声地趴下。门外的人等了十秒走了。'; } }] },
+  { t: '年度报告', s: 'APP 弹出你的年度报告：你今年最晚的一次睡是早上六点。', c: [
+    { t: '看完，还挺准', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '数据不会说谎，但它可以委婉一点。意志 +1。'; } },
+    { t: '截图发群里', go: function () { return '大家互相展示了彼此的堕落程度。'; } },
+    { t: '关掉，不想面对', go: function () { return '有些数据，眼不见为净。'; } }] },
+  { t: '半夜饿了', s: '十一点半，胃发出明确抗议。', c: [
+    { t: '泡面，加蛋', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '深夜的泡面是这世上最诚实的食物。意志 +2。'; } },
+    { t: '睡觉，睡着了就不饿', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '你用睡眠欺骗了胃。暂时。意志 +1。'; } },
+    { t: '扛到天亮', go: function () { S.hp = Math.max(1, S.hp - 1); return '你赢了饿，输了睡眠。意志 -1。'; } }] },
+  { t: '降温预警', s: '天气预报：明天断崖式降温 10 度。', c: [
+    { t: '翻出厚衣服放床头', go: function () { return '未雨绸缪的人，明天早上会感谢今晚的自己。'; } },
+    { t: '无所谓，风华正茂', go: function () { S.hp = Math.max(1, S.hp - 1); return '年轻人的体温是拿来挥霍的。意志 -1。'; } }] },
+  { t: '会员到期', s: '视频网站提示：会员已于今日到期。广告，来了。', c: [
+    { t: '续一个月', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '十五秒的广告时间省下来，够你多看两集。意志 +2。'; } },
+    { t: '忍着看广告', go: function () { S.hp = Math.max(1, S.hp - 1); return '你背下来了广告的全部台词。意志 -1。'; } },
+    { t: '换一个白嫖平台', go: function () { return '你有六个视频网站会员，其中四个是蹭的。这是技能。'; } }] }
 ];
 var SAVE_KEY = 'rebirth_save_v1', DEX_KEY = 'rebirth_endings_v1';
 /* 时间轴自动事件：不用选，自动结算。h=时刻 s=内容 hp/rand=效果 */
@@ -346,7 +464,31 @@ var AUTO_EVENTS = [
   { h: '23:40', s: '电脑风扇的声音今晚格外像引擎轰鸣。' },
   { h: '23:55', s: '睡前你检查了一遍明天的计划。踏实。', hp: 1 },
   { h: '12:10', s: '奶茶洒了。擦得快，键盘毫发无损。虚惊一场。', hp: -1 },
-  { h: '14:10', s: '一场雨毫无预兆地砸下来。你庆幸自己带了伞。' }
+  { h: '14:10', s: '一场雨毫无预兆地砸下来。你庆幸自己带了伞。' },
+  { h: '08:00', s: '楼下早餐摊的煎饼果子多加了个蛋，今天运气从早晨开始。', hp: 1 },
+  { h: '10:00', s: '阳台晾的衣服在风里晃，晃得很有节奏。' },
+  { h: '10:30', s: '楼上装修的电钻响了十分钟，忽然停了。世界安静得可疑。', hp: -1 },
+  { h: '11:00', s: '你研究了二十分钟怎么让电脑开机更快。有进步。', rand: 1 },
+  { h: '11:20', s: '校群有人出二手显卡，评论区已经盖到一百多层。' },
+  { h: '13:10', s: '午后的风把窗帘吹起来，又放下。', },
+  { h: '13:40', s: '你打了一个很长的哈欠。', hp: 1 },
+  { h: '14:20', s: '楼下有小孩在放假期的风筝，线放得很高。' },
+  { h: '15:10', s: '你把一首 BGM 循环了半小时，越听越对味。', rand: 1 },
+  { h: '15:50', s: '笔记本提示电量不足，你慢悠悠摸出充电器。' },
+  { h: '16:10', s: '外卖小哥在楼下喊错了三个名字。第三个是你的。', hp: 1 },
+  { h: '16:40', s: '你把桌面图标按颜色排好了。强迫症得到抚慰。', rand: 1 },
+  { h: '17:10', s: '晚霞是橙紫色的。你拍了一张，没发出去，就自己留着。' },
+  { h: '17:40', s: '宿舍楼道一盏灯坏了，一闪一闪的像恐怖片开场。', hp: -1 },
+  { h: '18:00', s: '你认真思考了十分钟晚饭吃什么。这是今天最难的决定。' },
+  { h: '18:20', s: '有孩子在楼下背古诗，背到第七句卡住了。你在心里替他接上了。', hp: 1 },
+  { h: '19:10', s: '你把浏览器里三十个标签页关掉了二十八个。断舍离。', rand: 1 },
+  { h: '20:10', s: '楼上椅子拖动的声音，一下，又一下。' },
+  { h: '20:40', s: '你给未来的自己写了一句话，存在备忘录最顶上。', rand: 2 },
+  { h: '21:20', s: '窗外有人拍夜景，快门声轻轻的，咔哒，咔哒。' },
+  { h: '21:50', s: '你翻出上学期的教材，发现当时画的重点毫无意义。', hp: -1 },
+  { h: '22:10', s: '楼下便利店的灯还亮着，像一座小灯塔。' },
+  { h: '22:35', s: '你伸了个懒腰，肩膀咔哒一声。声音很爽。', hp: 1 },
+  { h: '09:05', s: '你发现昨天的水杯忘在教室了。默哀三秒。', hp: -1 }
 ];
 
 /* ============ 状态 ============ */
@@ -354,7 +496,8 @@ var S = null;
 function newState() {
   return { phase: 'title', day: 1, stats: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
     hp: 40, hmax: 40, trained: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
-    buffs: [], idleDays: 0, kills: 0, speed: 1, runEvents: [], evPtr: 0, dayPlan: [], logPtr: 0, logEntries: [], pendingChoice: false, inBattle: false, dayDone: false };
+    buffs: [], idleDays: 0, kills: 0, speed: 1, runEvents: [], evPtr: 0, dayPlan: [], logPtr: 0, logEntries: [], pendingChoice: false, inBattle: false, dayDone: false,
+    stageSeen: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 }, specials: [], specialOffers: [], specialDays: [], spPtr: 0 };
 }
 function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} }
 function load() { try { var s = localStorage.getItem(SAVE_KEY); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
@@ -416,6 +559,14 @@ function screenTitle() {
 }
 function startPrologue() {
   S = newState();
+  /* 每局随机 2 个特殊职业邀请，出现在第 3~5 天 */
+  var sidx = [];
+  for (var si = 0; si < SPECIALS.length; si++) sidx.push(si);
+  for (var sj = sidx.length - 1; sj > 0; sj--) { var sr = Math.floor(Math.random() * (sj + 1)); var st2 = sidx[sj]; sidx[sj] = sidx[sr]; sidx[sr] = st2; }
+  S.specialOffers = sidx.slice(0, 2).map(function (i) { return SPECIALS[i].id; });
+  var days = [2, 3, 4];
+  for (var dj = days.length - 1; dj > 0; dj--) { var dr = Math.floor(Math.random() * (dj + 1)); var dt = days[dj]; days[dj] = days[dr]; days[dr] = dt; }
+  S.specialDays = days;
   var idx = [];
   for (var i = 0; i < EVENTS.length; i++) idx.push(i);
   for (var j = idx.length - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var t2 = idx[j]; idx[j] = idx[r]; idx[r] = t2; }
@@ -423,36 +574,38 @@ function startPrologue() {
   screenDay();
 }
 function resume() { var s = load(); if (s) { S = s; S.inBattle = false; screenDay(); } }
-function screenDay() {
-  var st = DAY_STORY[S.day - 1];
-  show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">DAY ' + S.day + ' · ' + st[0] + '</div><div class="rb-story">' + st[1] + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="advanceDay()">开始这一天 ▶</button></div>');
-  S.phase = 'day'; save();
-}
+function screenDay() { startDayPlan(); }
 function advanceDay() { startDayPlan(); }
 function startDayPlan() {
   if (!S.dayPlan || !S.dayPlan.length) {
     var idx = [];
     for (var i = 0; i < AUTO_EVENTS.length; i++) idx.push(i);
     for (var j = idx.length - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var t = idx[j]; idx[j] = idx[r]; idx[r] = t; }
-    var n = 5 + Math.floor(Math.random() * 2);
+    var n = 6 + Math.floor(Math.random() * 3);
     var picked = idx.slice(0, n);
     /* 按时刻排序：一天从早读到深夜，顺序不能乱 */
     picked.sort(function (a, b) { var ta = AUTO_EVENTS[a].h, tb = AUTO_EVENTS[b].h; return ta > tb ? 1 : (ta < tb ? -1 : 0); });
-    S.dayPlan = picked;
-    /* 选择事件数量随机（0~2），且不超过事件池余量 */
+    /* 剧情开场 → 上午事件 → 中午决定下午怎么过 → 下午/夜晚事件 → 随机抉择穿插 → 夜战 */
+    var noon = picked.length;
+    for (var i2 = 0; i2 < picked.length; i2++) if (AUTO_EVENTS[picked[i2]].h >= '12:00') { noon = i2; break; }
+    var plan = [-5].concat(picked.slice(0, noon));
+    plan.push(-2);
+    plan = plan.concat(picked.slice(noon));
+    /* 特殊邀请：轮到它的那天，插入夜战之前 */
+    while (S.spPtr < S.specialOffers.length && S.specialDays[S.spPtr] === S.day) { plan.push(-6); S.spPtr++; }
     var avail = S.runEvents.length - S.evPtr;
     var nChoice = Math.min(Math.floor(Math.random() * 3), avail);
-    for (var c = 0; c < nChoice; c++) S.dayPlan.splice(1 + Math.floor(Math.random() * (S.dayPlan.length + 1)), 0, -1);
-    S.dayPlan.push(-2); /* 行动抉择 */
-    S.dayPlan.push(-3, -4); /* 夜幕宣告 → 开战（战斗画面嵌在时间轴下方） */
-    S.logPtr = 0; S.logEntries = []; save();
+    for (var c = 0; c < nChoice; c++) plan.splice(2 + Math.floor(Math.random() * (plan.length - 2)), 0, -1);
+    plan.push(-3, -4);
+    S.dayPlan = plan; S.logPtr = 0; S.logEntries = []; save();
   }
   renderDayLog();
 }
 function applyFx(ev) {
   var parts = [];
   if (ev.hp) { S.hp = Math.max(1, Math.min(S.hmax, S.hp + ev.hp)); parts.push('意志' + (ev.hp > 0 ? '+' : '') + ev.hp); }
-  if (ev.rand) { var k = randomKey(); S.stats[k] += ev.rand; parts.push(CLASSES[k].name.split(' ')[0] + '+' + ev.rand); }
+  if (ev.rand) { var k = randomKey(); addStat(k, ev.rand); parts.push(CLASSES[k].name.split(' ')[0] + '+' + ev.rand); }
+  checkStageUps();
   return parts.join('，');
 }
 /* 流水账：常驻大框，所有条目累加保留；点击流水账任意位置 = 下一条（文字人生式） */
@@ -461,7 +614,6 @@ function renderDayLog() {
   h += '<div id="logBox" style="max-height:420px;min-height:160px;overflow-y:auto;font-size:13.5px;line-height:2.1;color:#cfe0d4">' + (S.logEntries || []).join('') + '</div>';
   h += '<div id="rlogHint" style="margin-top:8px;font-family:var(--font-mono);font-size:12px;color:#55665f"></div>';
   h += '</div>';
-  h += '<div id="battleSlot"></div>';
   show(h);
   updateLogHint();
 }
@@ -495,28 +647,62 @@ function nextLog() {
   if (S.logPtr >= S.dayPlan.length) { finishDayLog(); return; }
   var item = S.dayPlan[S.logPtr];
   S.logPtr++;
-  if (item === -3) {
-    /* 夜幕宣告：内嵌在时间轴里 */
-    var mon = S.day === 7 ? BOSS : MONSTERS[S.day - 1];
-    var builds = unlockedBuilds();
-    var lst = builds.length
-      ? builds.map(function (o) { return '<span style="color:' + CLASSES[o.c].color + '">' + CLASSES[o.c].builds[o.i].name + '</span>'; }).join(' / ')
-      : '<span style="color:#f0b8ac">赤手空拳（没修炼过任何职业——今晚凶多吉少）</span>';
-    pushLog('<div style="margin:10px 0 4px;color:#f0b8ac;font-weight:900;letter-spacing:2px">—— 夜幕降临 ——</div>');
-    pushLog('<div style="margin-bottom:8px"><span style="font-family:var(--font-mono);color:#6b8a7c">NIGHT</span>　' + mon.emoji + ' <b style="color:#f0b8ac">' + mon.name + '</b>' + mon.desc + '<br>耐久 <b>' + mon.hp + '</b> · 攻击 <b>' + mon.dmg + '/发</b>（你不用躲，扛着打）<br>今晚你把攒下的本事全带上了（不用选，全部自动释放）：' + lst + '<br><span style="color:#9fd3b8">' + humanBuffs() + '</span></div>');
+  if (item === -5) {
+    /* 晨间剧情：时间轴第一条 */
+    var st = DAY_STORY[S.day - 1];
+    pushLog('<div style="margin:4px 0 10px"><div style="color:#edbe5c;font-weight:900;letter-spacing:2px">DAY ' + S.day + ' · ' + st[0] + '</div><div style="color:#e8e4d4;line-height:2">' + st[1] + '</div></div>');
     updateLogHint();
     return;
   }
-  if (item === -4) { startBattle(); return; }
+  if (item === -3) {
+    /* 夜幕宣告：内嵌在时间轴里 */
+    var mon = S.day === 7 ? BOSS : MONSTERS[S.day - 1];
+    var lst = [];
+    for (var k3 in SKILLS) {
+      var st4 = statStage(k3);
+      if (st4 >= 1) lst.push('<span style="color:' + CLASSES[k3].color + '">' + SKILLS[k3][st4 - 1].name + '</span>');
+    }
+    S.specials.forEach(function (id4) {
+      var sp4 = SPECIALS.filter(function (x) { return x.id === id4; })[0];
+      if (sp4) lst.push('<span style="color:#c4b5fd">' + sp4.skill.name + '（特殊）</span>');
+    });
+    if (!lst.length) lst.push('<span style="color:#f0b8ac">赤手空拳（一项技能都没觉醒——今晚凶多吉少）</span>');
+    pushLog('<div style="margin:10px 0 4px;color:#f0b8ac;font-weight:900;letter-spacing:2px">—— 夜幕降临 ——</div>');
+    pushLog('<div style="margin-bottom:8px"><span style="font-family:var(--font-mono);color:#6b8a7c">NIGHT</span>　' + mon.emoji + ' <b style="color:#f0b8ac">' + mon.name + '</b>' + mon.desc + '<br>耐久 <b>' + mon.hp + '</b> · 攻击 <b>' + mon.dmg + '/发</b>（你不用躲，扛着打）<br>今晚自动释放的技能：' + lst.join(' / ') + '<br><span style="color:#9fd3b8">' + humanBuffs() + '</span></div>');
+    updateLogHint();
+    return;
+  }
+  if (item === -6) {
+    /* 特殊邀请：内嵌抉择 */
+    var sp = SPECIALS.filter(function (x) { return x.id === S.specialOffers[S.spPtr]; })[0];
+    S.spPtr++;
+    var sh = '<div style="margin:10px 0;padding:12px 14px;background:rgba(139,92,246,.12);border:2px solid #8b5cf6;border-radius:10px">';
+    sh += '<b style="color:#c4b5fd;font-size:16px">' + sp.emoji + ' 特殊邀请 · ' + sp.who + '</b><br><span style="color:#e8e4d4;line-height:2">' + sp.invite + '</span><br>';
+    sh += '<button class="rb-btn" style="margin-top:8px;padding:8px 12px;border-color:#8b5cf6;color:#c4b5fd" onclick="acceptSpecial(event,\'' + sp.id + '\')">✦ 接受邀请（获得特殊技能 + 专属剧情）</button>';
+    sh += '<button class="rb-btn" style="margin-top:6px;padding:8px 12px" onclick="declineSpecial(event,\'' + sp.id + '\')">✕ 婉拒</button></div>';
+    S.pendingChoice = true;
+    S.guardUntil = Date.now() + 1000;
+    pushLog(sh);
+    updateLogHint();
+    return;
+  }
+  if (item === -4) {
+    /* 战斗画面 = 流水账里的一条 */
+    var bmon = S.day === 7 ? BOSS : MONSTERS[S.day - 1];
+    pushLog('<div style="margin:8px 0"><div class="rb-tag" style="margin-bottom:6px">⚔ 遭遇战 · ' + bmon.name + '<span style="float:right"><button onclick="cycleSpeed(event)" id="spdBtn" style="cursor:pointer;background:rgba(0,0,0,.5);color:#9fd3b8;border:1px solid #3d6b52;border-radius:8px;padding:4px 10px;font-family:var(--font-mono);font-size:12px">速度 ×1</button></span></div><canvas id="battleCanvas" width="720" height="360" style="width:100%;display:block;background:radial-gradient(at 50% 20%, #1c2b33 0%, #0d141b 70%);border:1px solid var(--border-strong);border-radius:12px"></canvas><div class="rb-buffline" style="text-align:center;margin-top:4px">战斗全自动——打完会折叠成一行战报</div></div>');
+    startBattle();
+    return;
+  }
   if (item === -2) {
     /* 白天行动：内嵌在流水账末尾 */
     var html = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px">';
-    html += '<b style="color:#edbe5c">▶ 白天 · 今天怎么过？</b><br><span style="color:#9fb3aa">选一个，你的一天（和你的 Build）就长成什么样。</span><br>';
+    html += '<b style="color:#edbe5c">▶ 中午 · 下午怎么过？</b><br><span style="color:#9fb3aa">选一个，你的下午（和你的 Build）就长成什么样。</span><br>';
     ACTIONS.forEach(function (a, i) {
       html += '<button class="rb-btn" style="margin-top:6px;padding:8px 12px" onclick="doAction(event,' + i + ')">' + a.t + ' <span style="color:#9fd3b8">『' + a.s + '』</span></button>';
     });
     html += '</div>';
     S.pendingChoice = true;
+    S.guardUntil = Date.now() + 1000; /* 1 秒误触保护 */
     pushLog(html);
     updateLogHint();
     save();
@@ -532,6 +718,7 @@ function nextLog() {
     });
     html += '</div>';
     S.pendingChoice = true;
+    S.guardUntil = Date.now() + 1000; /* 1 秒误触保护 */
     pushLog(html);
     updateLogHint();
     save();
@@ -545,11 +732,12 @@ function nextLog() {
 }
 function resolveEvent(e, i) {
   if (e && e.stopPropagation) e.stopPropagation();
-  if (!S.pendingChoice) return;
+  if (!S.pendingChoice || Date.now() < (S.guardUntil || 0)) return;
   S.pendingChoice = false;
   var ev = EVENTS[S.runEvents[S.evPtr]];
   var res = ev.c[i].go();
   S.evPtr++;
+  checkStageUps();
   /* 收起：把抉择块折叠成「已选」状态，未选的选项不再显示 */
   var picked = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px">';
   picked += '<b style="color:#edbe5c">▶ ' + ev.t + '</b><br><span style="color:#e8e4d4">' + ev.s + '</span><br>';
@@ -562,19 +750,17 @@ function resolveEvent(e, i) {
 function finishDayLog() { if (S.dayDone) nextDay(); else startBattle(); }
 function doAction(e, i) {
   if (e && e.stopPropagation) e.stopPropagation();
-  if (!S.pendingChoice) return;
+  if (!S.pendingChoice || Date.now() < (S.guardUntil || 0)) return;
   S.pendingChoice = false;
   var a = ACTIONS[i];
   var txt;
   if (a.k === 'idle') {
     S.hp = S.hmax; S.idleDays++;
-    var k = randomKey(); S.stats[k] += 2;
+    var k = randomKey(); addStat(k, 2);
     txt = '你理直气壮地玩了一天游戏，意志回满。睡前灵感随机降临：' + CLASSES[k].name + ' +2。';
   } else {
-    S.stats[a.k] += 3;
-    S.trained[a.k] = Math.min(3, S.trained[a.k] + 1);
+    addStat(a.k, 3);
     txt = a.d + '。' + CLASSES[a.k].name.split(' ')[0] + ' +3。';
-    if (S.trained[a.k] <= 3) txt += '（当晚解锁 ' + CLASSES[a.k].name + ' Build ' + S.trained[a.k] + '：' + CLASSES[a.k].builds[S.trained[a.k] - 1].name + '）';
   }
   /* 收起行动抉择块：只保留已选项 */
   var picked = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px">';
@@ -593,24 +779,6 @@ function unlockedBuilds() {
   }
   return opts;
 }
-/* Build 技能效果表（全部已解锁的 Build 在战斗中同时自动释放） */
-var BUILD_ACTIVES = {
-  prog1: { cd: 6, mul: 4, label: '⌨ 重锤!' },
-  prog2: { cd: 6, mul: 2, label: '👥 分身!' },
-  design1: { cd: 8, mul: 5, stun: 1.5, label: '📋 百页方案!' },
-  design2: { cd: 2, mul: 1.2 },
-  ta0: { cd: 5, mul: 3.5, label: '✨ Ray!' },
-  ta1: { cd: 4, mul: 1.6, label: '🎯 蜂群!' },
-  ta2: { cd: 10, mul: 8, label: '💥 光追爆发!' },
-  art0: { cd: 5, mul: 2, label: '🎨 泼溅!' },
-  art1: { cd: 9, mul: 6, label: '🖌 入魂!' },
-  art2: { cd: 2, mul: 0.6 },
-  media0: { cd: 1.5, mul: 0.8 },
-  media2: { cd: 12, mul: 10, label: '👍 一键三连!' },
-  tech0: { cd: 7, mul: 2, clear: true, label: '🔧 GC!' },
-  tech1: { cd: 12, hyper: 10, label: '⚡ 超频!' },
-  tech2: { cd: 5, mul: 4, self: 3, label: '🌀 野指针!' }
-};
 /* ---- 自动战斗引擎（canvas，嵌入时间轴下方） ---- */
 var B = null, RAF = null;
 function startBattle() {
@@ -635,30 +803,45 @@ function startBattle() {
     skillDmg: 1 + 0.4 * buff('skill'),
     cdMul: Math.max(0.3, 1 - 0.15 * buff('cdr')),
     ammo: CLASSES[mc].ammo,
-    hasProg0: !!keys['prog0'], hasDesign0: !!keys['design0'],
-    mVuln: keys['media1'] ? 1.3 : 1,
-    actives: skills.filter(function (o) { return BUILD_ACTIVES[o.c + o.i]; })
-      .map(function (o) { return { key: o.c + o.i, last: -999 }; }),
+    hasProg0: statStage('prog') >= 1, hasDesign0: statStage('design') >= 1,
+    mVuln: statStage('media') >= 2 ? 1.25 : 1,
+    actives: (function () {
+      var arr = [];
+      for (var k2 in SKILLS) {
+        var st3 = statStage(k2);
+        if (st3 >= 1 && SKILL_ACTIVES[k2 + st3]) arr.push({ key: k2 + st3, def: SKILL_ACTIVES[k2 + st3], last: -999 });
+      }
+      S.specials.forEach(function (id3) {
+        var sp3 = SPECIALS.filter(function (x) { return x.id === id3; })[0];
+        if (sp3) arr.push({ key: 'sp-' + id3, def: sp3.skill.act, last: -999 });
+      });
+      return arr;
+    })(),
     t: 0, lastThrow: 0, mLast: 0,
     mInterval: 1.4 + 0.25 * buff('sup'), shield: 12 * buff('shield'),
-    shots: [], mshots: [], floats: [], over: false, speed: 1, stun: 0, hyper: 0
+    shots: [], mshots: [], floats: [], over: false, speed: 1, stun: 0, hyper: 0,
+    entryIdx: S.logEntries.length - 1 /* 战斗所在的流水账条目，打完折叠 */
   };
-  var slot = document.getElementById('battleSlot');
-  if (slot) {
-    slot.innerHTML = '<div class="rb-panel"><div class="rb-tag">⚔ 遭遇战 · ' + mon.name + '<span style="float:right"><button onclick="cycleSpeed(event)" id="spdBtn" style="cursor:pointer;background:rgba(0,0,0,.5);color:#9fd3b8;border:1px solid #3d6b52;border-radius:8px;padding:4px 10px;font-family:var(--font-mono);font-size:12px">速度 ×' + B.speed + '</button></span></div><canvas id="battleCanvas" width="720" height="380" style="width:100%;display:block;background:radial-gradient(at 50% 20%, #1c2b33 0%, #0d141b 70%);border:1px solid var(--border-strong);border-radius:12px"></canvas><div class="rb-buffline" style="text-align:center">全部已解锁的 Build 技能都在自动释放——看戏就好，打完回到上面的时间轴</div></div>';
-  }
   B.cv = document.getElementById('battleCanvas');
   B.ctx = B.cv.getContext('2d');
   B.last = performance.now();
   RAF = requestAnimationFrame(loop);
 }
 function cycleSpeed(e) { if (e && e.stopPropagation) e.stopPropagation(); B.speed = B.speed === 1 ? 2 : B.speed === 2 ? 4 : 1; document.getElementById('spdBtn').textContent = '速度 ×' + B.speed; }
+/* 把战斗那条折叠成一行战报 */
+function collapseBattle(resultHtml) {
+  var summary = '<div style="margin:8px 0;padding:9px 13px;background:rgba(12,18,24,.7);border:1px solid var(--border-strong);border-radius:8px"><b>⚔ 遭遇战 · ' + B.mon.name + '</b> —— ' + resultHtml + '<span style="color:#55665f">（用时 ' + B.t.toFixed(1) + ' 秒）</span></div>';
+  S.logEntries[B.entryIdx] = summary;
+  rebuildLogBox();
+}
 function cycleSpeed() { B.speed = B.speed === 1 ? 2 : B.speed === 2 ? 4 : 1; document.getElementById('spdBtn').textContent = '速度 ×' + B.speed; }
 function floatText(x, y, txt, color) { B.floats.push({ x: x, y: y, txt: txt, c: color, t: 0 }); }
 function loop(now) {
   if (!B || B.over) return;
+  RAF = requestAnimationFrame(loop); /* 先续帧：即使本帧抛异常，战斗也不会停摆 */
   var dt = Math.min(0.05, (now - B.last) / 1000) * B.speed;
   B.last = now; B.t += dt;
+  try {
   var W = B.cv.width, H = B.cv.height;
   var px = W / 2, py = H - 70, mx = W / 2, my = 80;
   /* 玩家扔弹（基础攻击） */
@@ -693,15 +876,17 @@ function loop(now) {
   if (B.mhp <= 0 && !B.over) { endBattleWin(); return; }
   if (B.php <= 0 && !B.over) { endBattleDeath(); return; }
   render(px, py, mx, my);
-  RAF = requestAnimationFrame(loop);
+  } catch (err) { if (window.console) console.error('[battle]', err); } /* 单帧出错不停摆 */
 }
 function skillTick(dt, mx, my) {
   var base = B.dmg * B.skillDmg;
   B.actives.forEach(function (a) {
-    var def = BUILD_ACTIVES[a.key];
+    var def = a.def;
     if (B.t - a.last < def.cd * B.cdMul) return;
     a.last = B.t;
-    hitMonster(base * (def.mul || 1) * B.mVuln, mx, my + 20);
+    var d = base * (def.mul || 1);
+    if (def.rand) d = base * (def.rand[0] + Math.random() * (def.rand[1] - def.rand[0]));
+    hitMonster(d * B.mVuln, mx, my + 20);
     if (def.label) floatText(mx, my + 55, def.label, '#edbe5c');
     if (def.stun) B.stun = Math.max(B.stun, def.stun);
     if (def.clear) B.mshots = [];
@@ -756,13 +941,13 @@ function endBattleWin() {
   B.over = true; cancelAnimationFrame(RAF); S.inBattle = false;
   S.hp = Math.max(1, Math.min(B.pmax, B.php)); S.kills++;
   var mc = topClass(); S.stats[mc] += 1;
+  collapseBattle('<span style="color:#7ed696">胜利</span>');
   if (B.isBoss) { screenBossWin(); return; }
-  pushLog('<div style="margin:10px 0 4px;color:#7ed696;font-weight:900;letter-spacing:2px">—— 战斗胜利 ——</div>');
   pushLog('<div style="margin-bottom:8px">' + B.mon.emoji + ' ' + B.mon.name + ' 化作了数据尘埃。实战经验：' + CLASSES[mc].name.split(' ')[0] + ' +1。掉落了三块「引擎碎片」——只能拿一块：</div>');
   var pool = ROGUE_POOL.slice();
   var cands = [];
   for (var k in S.trained) if (S.trained[k] >= 1 && S.trained[k] < 3) cands.push(k);
-  if (cands.length) pool.push({ id: 'buildup', t: 'Build 设计图', d: '立刻把一个已修炼职业的 Build 升到下一层' });
+  if (cands.length) pool.push({ id: 'essence', t: '经验精华', d: '随机一项属性 +3——点数够的话，当场觉醒/进化新技能' });
   var picks = [];
   while (picks.length < 3 && pool.length) picks.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
   var html = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px"><b style="color:#edbe5c">▶ 战利品 · 三选一（可叠加）</b><br>';
@@ -771,33 +956,63 @@ function endBattleWin() {
   });
   html += '</div>';
   S.pendingChoice = true;
+  S.guardUntil = Date.now() + 1000; /* 1 秒误触保护 */
   pushLog(html);
   updateLogHint(); save();
 }
 function endBattleDeath() {
   B.over = true; cancelAnimationFrame(RAF); S.inBattle = false;
+  collapseBattle('<span style="color:#f0b8ac">你倒下了</span>');
   if (S.idleDays >= 7) { showEnding('E_idle'); return; }
   showEnding(B.isBoss ? 'BOSS' : B.mon.dex);
 }
 function pickRogue(e, id) {
   if (e && e.stopPropagation) e.stopPropagation();
-  if (!S.pendingChoice) return;
+  if (!S.pendingChoice || Date.now() < (S.guardUntil || 0)) return;
   S.pendingChoice = false;
   var label;
-  if (id === 'buildup') {
-    var cands = [];
-    for (var k in S.trained) if (S.trained[k] >= 1 && S.trained[k] < 3) cands.push(k);
-    var pickK = cands[Math.floor(Math.random() * cands.length)];
-    S.trained[pickK] = Math.min(3, S.trained[pickK] + 1);
-    label = 'Build 设计图——' + CLASSES[pickK].name + ' 进阶到 Build ' + S.trained[pickK] + '（' + CLASSES[pickK].builds[S.trained[pickK] - 1].name + '）';
+  if (id === 'essence') {
+    var k6 = randomKey(); addStat(k6, 3);
+    label = '经验精华——' + CLASSES[k6].name + ' +3。';
   } else {
     S.buffs.push(id);
     label = '「' + BUFF_HUMAN[id][0] + '」已生效。';
     if (id === 'hp') { S.hmax += 8; S.hp = Math.min(S.hmax, S.hp + 8); }
   }
+  /* 收起战利品块：只保留已选 */
+  var chosen = ROGUE_POOL.filter(function (p) { return p.id === id; })[0];
+  var picked = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px"><b style="color:#edbe5c">▶ 战利品 · 三选一</b><br>';
+  picked += '<button class="rb-btn" disabled style="margin-top:6px;padding:8px 12px;border-color:#edbe5c;color:#edbe5c">✓ ' + (chosen ? chosen.t : label) + '</button></div>';
+  S.logEntries[S.logEntries.length - 1] = picked;
+  rebuildLogBox();
   pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#f5e6bd;background:rgba(237,190,92,.05);border-radius:6px">你拿走了' + label + '</div>');
+  checkStageUps();
   pushLog('<div style="margin:10px 0 4px;color:#9fb3aa">—— 深夜 · 第 ' + S.day + ' 天结束 ——</div><div style="margin-bottom:8px">你把今天学到的东西存进记忆。<span style="color:#edbe5c">【距离大降临还剩 ' + (7 - S.day) + ' 天】进度已自动保存。</span></div>');
   S.dayDone = true;
+  updateLogHint(); save();
+}
+function acceptSpecial(e, id) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  if (!S.pendingChoice || Date.now() < (S.guardUntil || 0)) return;
+  S.pendingChoice = false;
+  var sp = SPECIALS.filter(function (x) { return x.id === id; })[0];
+  S.specials.push(id);
+  var picked = '<div style="margin:10px 0;padding:12px 14px;background:rgba(139,92,246,.12);border:2px solid #8b5cf6;border-radius:10px"><b style="color:#c4b5fd">' + sp.emoji + ' 特殊邀请 · ' + sp.who + '</b><br><span style="color:#e8e4d4">' + sp.invite + '</span><br><button class="rb-btn" disabled style="margin-top:8px;border-color:#8b5cf6;color:#c4b5fd">✦ 接受了邀请</button></div>';
+  S.logEntries[S.logEntries.length - 1] = picked;
+  rebuildLogBox();
+  pushLog('<div style="margin:6px 0;padding:12px 14px;color:#0b1210;background:linear-gradient(135deg,#c4b5fd,#8b5cf6);border-radius:10px;font-weight:700;line-height:1.9">' + sp.cg + '</div>');
+  pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#f5e6bd;background:rgba(237,190,92,.05);border-radius:6px">' + sp.yes + '　<b style="color:#c4b5fd">特殊技能获得：' + sp.skill.name + '</b>（战斗中自动释放，不受属性阈值限制）</div>');
+  updateLogHint(); save();
+}
+function declineSpecial(e, id) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  if (!S.pendingChoice || Date.now() < (S.guardUntil || 0)) return;
+  S.pendingChoice = false;
+  var sp = SPECIALS.filter(function (x) { return x.id === id; })[0];
+  var picked = '<div style="margin:10px 0;padding:12px 14px;background:rgba(139,92,246,.12);border:2px solid #8b5cf6;border-radius:10px"><b style="color:#c4b5fd">' + sp.emoji + ' 特殊邀请 · ' + sp.who + '</b><br><span style="color:#e8e4d4">' + sp.invite + '</span><br><button class="rb-btn" disabled style="margin-top:8px">✕ 婉拒了</button></div>';
+  S.logEntries[S.logEntries.length - 1] = picked;
+  rebuildLogBox();
+  pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#9fb3aa;background:rgba(255,255,255,.03);border-radius:6px">' + sp.no + '</div>');
   updateLogHint(); save();
 }
 function nextDay() { S.day++; S.dayPlan = []; S.logPtr = 0; S.logEntries = []; S.dayDone = false; screenDay(); }
