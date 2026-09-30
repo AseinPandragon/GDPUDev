@@ -440,6 +440,7 @@ function startDayPlan() {
     var avail = S.runEvents.length - S.evPtr;
     var nChoice = Math.min(Math.floor(Math.random() * 3), avail);
     for (var c = 0; c < nChoice; c++) S.dayPlan.splice(1 + Math.floor(Math.random() * (S.dayPlan.length + 1)), 0, -1);
+    S.dayPlan.push(-2); /* 行动抉择：时间轴最后一个条目 */
     S.logPtr = 0; S.logEntries = []; save();
   }
   renderDayLog();
@@ -470,11 +471,15 @@ function pushLog(html) {
   if (box) { box.insertAdjacentHTML('beforeend', html); box.scrollTop = box.scrollHeight; }
   save();
 }
+function rebuildLogBox() {
+  var box = document.getElementById('logBox');
+  if (box) { box.innerHTML = (S.logEntries || []).join(''); box.scrollTop = box.scrollHeight; }
+}
 function updateLogHint() {
   var hint = document.getElementById('rlogHint');
   if (!hint) return;
   if (S.pendingChoice) hint.innerHTML = '▲ 作出你的选择（点选项，点背景无效）';
-  else if (S.logPtr >= S.dayPlan.length) hint.innerHTML = '— 这一天过完了 · 点击任意处进入白天 —';
+  else if (S.logPtr >= S.dayPlan.length) hint.innerHTML = '— 点击任意处，夜幕降临 —';
   else hint.innerHTML = '· 点击任意处继续 ▸';
 }
 function nextLog() {
@@ -482,6 +487,20 @@ function nextLog() {
   if (S.logPtr >= S.dayPlan.length) { finishDayLog(); return; }
   var item = S.dayPlan[S.logPtr];
   S.logPtr++;
+  if (item === -2) {
+    /* 白天行动：内嵌在流水账末尾 */
+    var html = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px">';
+    html += '<b style="color:#edbe5c">▶ 白天 · 今天怎么过？</b><br><span style="color:#9fb3aa">选一个，你的一天（和你的 Build）就长成什么样。</span><br>';
+    ACTIONS.forEach(function (a, i) {
+      html += '<button class="rb-btn" style="margin-top:6px;padding:8px 12px" onclick="doAction(event,' + i + ')">' + a.t + ' <span style="color:#9fd3b8">『' + a.s + '』</span></button>';
+    });
+    html += '</div>';
+    S.pendingChoice = true;
+    pushLog(html);
+    updateLogHint();
+    save();
+    return;
+  }
   if (item === -1) {
     /* 选择事件：内嵌在流水账里，必须点选项 */
     var ev = EVENTS[S.runEvents[S.evPtr]];
@@ -517,28 +536,35 @@ function skipLog(e) {
   if (e && e.stopPropagation) e.stopPropagation();
   S.pendingChoice = false;
   while (S.logPtr < S.dayPlan.length) {
-    var item = S.dayPlan[S.logPtr]; S.logPtr++;
+    var item = S.dayPlan[S.logPtr];
+    if (item === -2) break; /* 行动抉择必须玩家自己选 */
+    S.logPtr++;
     if (item === -1) S.evPtr++; /* 跳过今天 = 连选择一起跳过 */
     else applyFx(AUTO_EVENTS[item]);
   }
-  save(); finishDayLog();
+  save();
+  if (S.logPtr >= S.dayPlan.length) finishDayLog();
+  else { rebuildLogBox(); updateLogHint(); }
 }
-function finishDayLog() { screenAction(); }
-function screenAction() {
-  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">白天 · 今天怎么肝？</div>';
-  ACTIONS.forEach(function (a, i) {
-    var trained = a.k !== 'idle' ? S.trained[a.k] : 0;
-    var buildNote = a.k !== 'idle' && trained < 3 ? '<span class="sub">当晚解锁 ' + CLASSES[a.k].name + ' Build ' + (trained + 1) + '：' + CLASSES[a.k].builds[trained].name + '</span>' : (a.k !== 'idle' ? '<span class="sub">该职业 Build 已全部解锁</span>' : '<span class="sub">打游戏不算虚度：你在研究优秀设计</span>');
-    h += '<button class="rb-btn" onclick="doAction(' + i + ')">' + a.t + ' <span style="color:' + (CLASSES[a.k] ? CLASSES[a.k].color : '#7ed696') + '">『' + a.s + '』</span><span class="sub">' + a.d + '</span>' + buildNote + '</button>';
-  });
-  h += '</div>';
-  show(h); S.phase = 'action'; save();
-}
-function doAction(i) {
+function finishDayLog() { screenPrep(); }
+function doAction(e, i) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  if (!S.pendingChoice) return;
+  S.pendingChoice = false;
   var a = ACTIONS[i];
-  if (a.k === 'idle') { S.hp = S.hmax; S.idleDays++; var ks = Object.keys(S.stats); S.stats[ks[Math.floor(Math.random() * ks.length)]] += 2; }
-  else { S.stats[a.k] += 3; S.trained[a.k] = Math.min(3, S.trained[a.k] + 1); }
-  screenPrep();
+  var txt;
+  if (a.k === 'idle') {
+    S.hp = S.hmax; S.idleDays++;
+    var k = randomKey(); S.stats[k] += 2;
+    txt = '你理直气壮地玩了一天游戏，意志回满。睡前灵感随机降临：' + CLASSES[k].name + ' +2。';
+  } else {
+    S.stats[a.k] += 3;
+    S.trained[a.k] = Math.min(3, S.trained[a.k] + 1);
+    txt = a.d + '。' + CLASSES[a.k].name.split(' ')[0] + ' +3。';
+    if (S.trained[a.k] <= 3) txt += '（当晚解锁 ' + CLASSES[a.k].name + ' Build ' + S.trained[a.k] + '：' + CLASSES[a.k].builds[S.trained[a.k] - 1].name + '）';
+  }
+  pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#f5e6bd;background:rgba(237,190,92,.05);border-radius:6px">' + txt + '</div>');
+  updateLogHint(); save();
 }
 function currentClass() { return S.pick ? S.pick.c : topClass(); }
 function unlockedBuilds() {
