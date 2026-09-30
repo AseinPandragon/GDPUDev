@@ -192,102 +192,161 @@ var ENDING_TEXT = {
 };
 var EVENTS = [
   { t: '室友的邀请', s: '室友推门进来：「开黑吗？就一把。」屏幕里好友头像在闪。', c: [
-    { t: '打！就一把！', go: function () { S.hp = Math.min(S.hmax, S.hp + 6); return '就一把，一把之后又一把。凌晨一点你关掉游戏，意志莫名回满了——快乐有时候就是意志本身。'; } },
-    { t: '「不了，我在改变世界。」', go: function () { var k = randomKey(); S.stats[k] += 2; return '室友：「行行行，卷王。」你关上门，多出的两小时换来 ' + CLASSES[k].name + ' +2。'; } },
-    { t: '真就一把，打完就学', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); var k = randomKey(); S.stats[k] += 1; return '说到做到，一把之后真的退了游戏。意志 +2，' + CLASSES[k].name + ' +1，谁也没耽误。'; } }] },
+    { t: '来！就一把！', go: function () { S.hp = Math.min(S.hmax, S.hp + 6); return '一把之后又一把，凌晨一点你心满意足地关掉游戏。快乐有时候就是意志本身。意志 +6。'; } },
+    { t: '不了，困了', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '你早早躺下，室友的键盘声响到两点。你睡得像块石头。意志 +3。'; } },
+    { t: '你们打，我旁边看会儿', go: function () { var k = randomKey(); S.stats[k] += 2; return '看别人打比自己打轻松，顺便还看懂了点什么。灵感来了：' + CLASSES[k].name + ' +2。'; } }] },
+  { t: '深夜 EMO', s: '凌晨的 emo 时刻：「七天，真的够吗？」', c: [
+    { t: '蒙头睡觉，明天再说', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); return '有些问题睡一觉就会变小。意志 +4。'; } },
+    { t: '戴上耳机听歌，随机循环', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); var k = randomKey(); S.stats[k] += 1; return '第三首歌的间隙，你忽然想通了一件小事。' + CLASSES[k].name + ' +1，意志 +2。'; } },
+    { t: '坐回电脑前，接着干', go: function () { S.hp = Math.max(1, S.hp - 2); var k = randomKey(); S.stats[k] += 2; return 'EMO 的唯一解法是进度条。' + CLASSES[k].name + ' +2，意志 -2。'; } },
+    { t: '给朋友发消息聊聊', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '朋友说：「你已经比上周厉害多了。」你信了一半，睡了个好觉。意志 +3。'; } }] },
   { t: '饭堂阿姨的手', s: '阿姨舀菜的手悬在你餐盘上方，抖了一下。', c: [
-    { t: '微笑说谢谢', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '阿姨手一稳，肉多了两块。被人善意对待的一天，意志 +3。'; } },
-    { t: ' strategic 装作没看见', go: function () { var k = randomKey(); S.stats[k] += 1; return '你利用这三十秒在脑子里过一遍今天要学的东西。' + CLASSES[k].name + ' +1。'; } }] },
-  { t: '图书馆的旧书', s: '书架最深处压着一本《游戏设计艺术》，借书卡上的名字停在七年前。', c: [
-    { t: '借走，读它', go: function () { S.stats.design += 3; return '一读就停不下来。原来你前世想不明白的问题，有人早就写成了书。策划脑 +3。'; } },
-    { t: '放回去，太厚了', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '七天读不完的书，先欠着。你选择保存意志。'; } }] },
-  { t: '蓝屏', s: '写代码写到一半，屏幕猛地一蓝——UNEXPECTED_STORE_EXCEPTION。', c: [
-    { t: '重装系统，今晚必须修好', go: function () { S.stats.prog += 2; S.hp = Math.max(1, S.hp - 3); return '凌晨三点你修好了它。顺便看懂了半本《Windows 内部原理》。代码力 +2，意志 -3。'; } },
-    { t: '算了，明天再说', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '你关掉电源去睡觉。有些问题睡一觉就会自己消失——电脑问题除外。意志 +3。'; } }] },
+    { t: '微笑说谢谢', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '阿姨手一稳，肉多了两块。被善意对待的一天。意志 +3。'; } },
+    { t: '换个窗口排队', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '新窗口的糖醋排骨意外地好吃。意志 +1。'; } },
+    { t: '拍照发帖吐槽', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '帖子在墙群小火了一把，你收获了一批同病相怜的饭搭子。意志 +1。'; } }] },
+  { t: '蓝屏', s: '干着干着活，屏幕猛地一蓝——UNEXPECTED_STORE_EXCEPTION。', c: [
+    { t: '今晚必须修好它', go: function () { S.stats.prog += 2; S.hp = Math.max(1, S.hp - 3); return '凌晨三点你修好了它，顺便看懂了半本系统原理。代码力 +2，意志 -3。'; } },
+    { t: '关机，明天再说', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '你选择放过自己。意志 +3。'; } },
+    { t: '抱着电脑去找懂行的同学', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '十分钟修好，你们顺便聊了半小时游戏。意志 +2。'; } }] },
   { t: '亲戚的灵魂拷问', s: '家族群弹出语音：「听说你在搞游戏？那玩意能当饭吃吗？」', c: [
-    { t: '认真解释游戏行业', go: function () { S.stats.media += 2; return '你发了六十秒语音，条理清晰。讲到一半你自己都信了更狠的：你真的要做这行。声量 +2。'; } },
-    { t: '「能，还能救世界。」', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '群里安静了。你笑出声——这是只有你知道的实话。意志 +2。'; } },
-    { t: '反问他股票怎么样了', go: function () { S.stats.tech += 2; return '话题成功转移。你在转移话题的过程中顺便理清了服务器架构的思路（?）。底层根骨 +2。'; } }] },
-  { t: '神仙教程', s: '刷到一个游戏开发教程，讲的正是你卡了两天的地方。', c: [
-    { t: '三连收藏，跟着做', go: function () { S.hp = Math.max(1, S.hp - 3); var k = randomKey(); S.stats[k] += 3; return '一口气跟到凌晨。' + CLASSES[k].name + ' +3，意志 -3——学东西是要花力气的。'; } },
-    { t: '收藏 = 学会，下一个', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '你收藏了它，并且再也不打算打开。收藏夹 +1，人生 +0。意志 +1。'; } }] },
-  { t: '网吧通宵的诱惑', s: '路过网吧，朋友在里面朝你招手：「来啊，五连坐缺一个！」', c: [
-    { t: '进！通宵！', go: function () { S.hp = Math.max(1, S.hp - 4); var k = randomKey(); S.stats[k] += 3; return '打到早上六点。但这一夜你全程在研究对面的技能循环——灵感这种东西，来的时候不讲道理。意志 -4，' + CLASSES[k].name + ' +3。'; } },
-    { t: '门口看两把就走', go: function () { S.stats.design += 2; return '你站着看完了整局，脑子里拆完了他们的团战节奏。策划脑 +2。'; } },
+    { t: '发六十秒语音认真解释', go: function () { S.stats.media += 2; return '讲到一半你自己都更信了。声量 +2。'; } },
+    { t: '发个笑脸打哈哈', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '家族话题成功拐去了房价。意志 +2。'; } },
+    { t: '把你做的东西发进群里', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '小侄子回了六个「牛」表情。意外地爽。意志 +3。'; } }] },
+  { t: '神仙教程', s: '刷到一个教程，讲的正是你卡了两天的地方。', c: [
+    { t: '一口气跟着做完', go: function () { S.hp = Math.max(1, S.hp - 3); var k = randomKey(); S.stats[k] += 3; return '跟到凌晨，卡点全通。' + CLASSES[k].name + ' +3，意志 -3。'; } },
+    { t: '收藏，明天看', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '你和你的收藏夹都心知肚明：不会再打开了。意志 +1。'; } },
+    { t: '转发给同样在学的朋友', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '朋友回你：「你是我的嘴替。」意志 +2。'; } }] },
+  { t: '网吧五连坐', s: '路过网吧，朋友在里面朝你招手：「来啊，缺一个！」', c: [
+    { t: '上！通宵！', go: function () { S.hp = Math.max(1, S.hp - 4); var k = randomKey(); S.stats[k] += 3; return '打到早上六点，全程研究对面技能循环——灵感不讲道理。意志 -4，' + CLASSES[k].name + ' +3。'; } },
+    { t: '站着看两把就走', go: function () { var k = randomKey(); S.stats[k] += 2; return '看别人打比自己打轻松，还看出了门道。' + CLASSES[k].name + ' +2。'; } },
     { t: '头也不回地走开', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '大丈夫有所不为。意志 +2。'; } }] },
-  { t: '前世的记忆闪回', s: '过马路等红灯时，你毫无征兆地想起了前世的死亡瞬间——就是这条路。', c: [
-    { t: '站着，把细节看完', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '你看清了它攻击前的抬手动作。恐惧被笔记替代的那天，你就已经变强了。意志 +3。'; } },
-    { t: '别看了，走', go: function () { var k = randomKey(); S.stats[k] += 1; return '你把回忆压回心底，顺手把刚才想到的一个优化记进了手机。' + CLASSES[k].name + ' +1。'; } }] },
   { t: '停电的夜晚', s: '宿舍片区跳闸，整栋楼陷入黑暗，手机还剩 30% 电。', c: [
     { t: '睡觉，天赐的早睡理由', go: function () { S.hp = Math.min(S.hmax, S.hp + 5); return '没有屏幕的夜晚睡得格外沉。意志 +5。'; } },
-    { t: '打手电看底层文档', go: function () { S.stats.tech += 2; return '手电筒照着 PDF，一页页啃。你怀疑自己有病，但底层根骨 +2。'; } }] },
+    { t: '躺着刷手机到没电', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '刷到手机自动关机，反而获得了解脱。意志 +2。'; } },
+    { t: '摸黑坐着发呆', go: function () { var k = randomKey(); S.stats[k] += 2; return '黑暗里你把最近的思路顺了一遍，居然顺通了一个卡点。' + CLASSES[k].name + ' +2。'; } }] },
   { t: '降温了', s: '冷空气到了，你嗓子有点痒。', c: [
-    { t: '硬扛，时间不够', go: function () { S.hp = Math.max(1, S.hp - 3); var k = randomKey(); S.stats[k] += 2; return '鼻子堵着也能学，就是效率打八折。意志 -3，' + CLASSES[k].name + ' +2。'; } },
-    { t: '去校医院拿药', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '医生说多喝水。你听了，还多睡了两小时。意志 +2。'; } }] },
-  { t: '游戏开发交流群', s: '你被拉进一个三百人的游戏开发群，群里大佬们聊的东西你一半看不懂。', c: [
-    { t: '潜水，疯狂记笔记', go: function () { var k = randomKey(); S.stats[k] += 2; return '看大佬吵架都能学到东西。' + CLASSES[k].name + ' +2。'; } },
-    { t: '冒泡提问', go: function () { S.hp = Math.max(1, S.hp - 2); var k = randomKey(); S.stats[k] += 3; return '有人嘲讽你问题基础，但也有人写了三百字认真回答。' + CLASSES[k].name + ' +3，意志 -2（被怼的）。'; } }] },
-  { t: '前世的路口', s: '你特意绕到前世死去的那条街。空的，安静，商业街的音响还在放促销广告。', c: [
-    { t: '在原地站十分钟', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '十分钟里你把前世的七十二小时想了一遍。有些东西必须先想明白，才能跑得快。意志 +3。'; } },
-    { t: '拍张照当锁屏', go: function () { var k = randomKey(); S.stats[k] += 2; return '从此每次解锁手机都是一次提醒。' + CLASSES[k].name + ' +2。'; } }] },
-  { t: '捡到五十块', s: '路边一张50元，风吹得它贴在你鞋上。', c: [
-    { t: '买参考书', go: function () { var k = randomKey(); S.stats[k] += 2; return '二手书五折，正好。' + CLASSES[k].name + ' +2。'; } },
-    { t: '请自己吃顿好的', go: function () { S.hp = Math.min(S.hmax, S.hp + 5); return '双拼饭加例汤加鸡腿。人对自己的好，都是意志。意志 +5。'; } }] },
+    { t: '硬扛，别耽误事', go: function () { S.hp = Math.max(1, S.hp - 3); var k = randomKey(); S.stats[k] += 2; return '鼻子堵着也能干活，就是效率打八折。意志 -3，' + CLASSES[k].name + ' +2。'; } },
+    { t: '去校医院拿药', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '医生说多喝水。你听了，还多睡了两小时。意志 +2。'; } },
+    { t: '奶茶续命，去冰三分糖', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return ' scientific 快乐水。意志 +3。'; } }] },
+  { t: '前世的路口', s: '你特意绕到前世死去的那条街。空的，安静，音响还在放促销广告。', c: [
+    { t: '在原地站十分钟', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '你把前世那七十二小时想了一遍。有些东西想明白了，才跑得快。意志 +3。'; } },
+    { t: '拍张照片设成锁屏', go: function () { var k = randomKey(); S.stats[k] += 2; return '从此每次解锁手机都是一次提醒。' + CLASSES[k].name + ' +2。'; } },
+    { t: '快步离开，别回头', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '有些地方不适合多待。意志 +1。'; } }] },
+  { t: '捡到五十块', s: '路边一张 50 元，风吹得它贴在你鞋上。', c: [
+    { t: '请自己吃顿好的', go: function () { S.hp = Math.min(S.hmax, S.hp + 5); return '双拼饭加例汤加鸡腿。人对自己的好，都是意志。意志 +5。'; } },
+    { t: '买本一直想看的书', go: function () { var k = randomKey(); S.stats[k] += 2; return '二手书五折，正好。' + CLASSES[k].name + ' +2。'; } },
+    { t: '放回原地，不是你的', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '你心安理得地走了，走得特别直。意志 +2。'; } }] },
   { t: '朋友圈的远方', s: '高中同学在三亚潜水、在雪山脚下打卡。你盯着天花板看了十分钟。', c: [
-    { t: '不酸。肝。', go: function () { var k = randomKey(); S.stats[k] += 2; return '别人晒的是假期，你攒的是底牌。' + CLASSES[k].name + ' +2。'; } },
-    { t: '承认，有点酸', go: function () { S.hp = Math.max(1, S.hp - 2); return '酸完继续学，但效率确实低了点。意志 -2。'; } }] },
+    { t: '点个赞，继续刷', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '刷着刷着就麻了。意志 +2。'; } },
+    { t: '关手机，拉窗帘', go: function () { var k = randomKey(); S.stats[k] += 2; return '世界与你无关的两小时。' + CLASSES[k].name + ' +2。'; } },
+    { t: '把酸变成燃料', go: function () { S.hp = Math.max(1, S.hp - 2); var k = randomKey(); S.stats[k] += 2; return '「他们晒的是假期，我攒的是底牌。」' + CLASSES[k].name + ' +2，意志 -2。'; } }] },
   { t: '收费墙', s: '教程看到最关键一步：解锁完整版，仅需 299 元。', c: [
-    { t: '氪！知识值得付费', go: function () { var k = randomKey(); S.stats[k] += 3; return '确实有用。' + CLASSES[k].name + ' +3。'; } },
-    { t: '白嫖路线自己拼', go: function () { S.hp = Math.max(1, S.hp - 2); S.stats.tech += 2; return '东拼西凑耗了一整天，但拼出来的理解格外扎实。底层根骨 +2，意志 -2。'; } }] },
+    { t: '氪！知识值得付费', go: function () { var k = randomKey(); S.stats[k] += 3; return '确实有用，钱花在了刀刃上。' + CLASSES[k].name + ' +3。'; } },
+    { t: '自己东拼西凑', go: function () { S.hp = Math.max(1, S.hp - 2); S.stats.tech += 2; return '耗了一整天，但拼出来的理解格外扎实。底层根骨 +2，意志 -2。'; } },
+    { t: '跳过这段，后面总有免费版', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return ' Internet 会记住一切，三天后你真找到了免费讲得更好的。意志 +1。'; } }] },
   { t: '通关的梦', s: '你梦见自己做出了一个游戏，很多人在玩，你在梦里笑出了声。', c: [
-    { t: '醒来把它写下来', go: function () { S.stats.design += 2; return '梦里那个玩法真的有点东西。策划脑 +2。'; } },
-    { t: '再睡会儿，把梦做完', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); return '梦的结局是有人催你交房租。但你休息够了。意志 +4。'; } }] },
+    { t: '醒来把它记下来', go: function () { S.stats.design += 2; return '梦里那个玩法真的有点东西。策划脑 +2。'; } },
+    { t: '再睡会儿，把梦做完', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); return '梦的结局是有人催你交房租。但你休息够了。意志 +4。'; } },
+    { t: '醒了直接开工', go: function () { S.hp = Math.max(1, S.hp - 2); var k = randomKey(); S.stats[k] += 2; return '趁着梦的热乎劲干了一早上。' + CLASSES[k].name + ' +2，意志 -2。'; } }] },
   { t: '家里的电话', s: '「国庆回来吗？给你做了排骨。」', c: [
-    { t: '「回不去，学校有事。」', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '挂了电话你鼻子酸了一下，然后把这份酸变成了专注。意志 +3。'; } },
-    { t: '说了实话：在学做游戏', go: function () { var k = randomKey(); S.stats[k] += 2; return '家里那头沉默两秒，说：「那……饭给你寄过来？」意外地被支持了。' + CLASSES[k].name + ' +2。'; } }] },
+    { t: '「回不去，学校有事。」', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '挂了电话鼻子酸了一下，然后把它变成了专注。意志 +3。'; } },
+    { t: '说实话：在学做游戏', go: function () { var k = randomKey(); S.stats[k] += 2; return '那头沉默两秒：「那……饭给你寄过来？」意外被支持了。' + CLASSES[k].name + ' +2。'; } },
+    { t: '干脆聊了四十分钟', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); return '从排骨聊到表弟成绩再聊回来。挂掉电话整个人是满的。意志 +4。'; } }] },
   { t: '40G 的更新包', s: '你期待很久的游戏今晚更新，进度条慢得像重生前的日子。', c: [
-    { t: '等下载的时候学习', go: function () { var k = randomKey(); S.stats[k] += 2; return '进度条 40%，你的笔记 20 页。' + CLASSES[k].name + ' +2。'; } },
-    { t: '下完先玩为敬', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '玩的时候你在拆它的引导设计——玩也玩得很有职业素养。意志 +3。'; } }] },
-  { t: '校园采访', s: '校媒扛着相机在路边拦住你：「同学，假期都在做什么？」', c: [
-    { t: '接受采访，大谈游戏开发', go: function () { S.stats.media += 3; return '你讲了三分钟「中国学生为什么该学做游戏」，采访视频在校内小范围刷屏。声量 +3。'; } },
-    { t: '摆手跑路', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '社恐保平安。意志 +2。'; } }] },
-  { t: '深夜 EMO', s: '凌晨的emo时刻：「七天，真的够吗？」', c: [
-    { t: '把恐惧写成设计文档', go: function () { S.stats.design += 2; return '你把「七天」拆成了里程碑表——恐惧一旦被量化，就只是待办事项。策划脑 +2。'; } },
-    { t: '打开引擎，继续肝', go: function () { S.hp = Math.max(1, S.hp - 2); S.stats.prog += 2; return 'EMO 的唯一解法是进度条。代码力 +2，意志 -2。'; } }] },
+    { t: '等下载的时候干点别的', go: function () { var k = randomKey(); S.stats[k] += 2; return '进度条 40%，你的笔记 20 页。' + CLASSES[k].name + ' +2。'; } },
+    { t: '下完先玩为敬', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '玩的时候你在拆它的引导设计——玩都玩得很有职业素养。意志 +3。'; } },
+    { t: '不管了，睡觉，明早再说', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '明早更新好了，游戏和你都是新的。意志 +3。'; } }] },
+  { t: '校园采访', s: '校媒扛着相机拦住你：「同学，假期都在做什么？」', c: [
+    { t: '接受采访', go: function () { S.stats.media += 3; return '你讲了三分钟自己在做的事，视频在校内小范围刷屏。声量 +3。'; } },
+    { t: '摆手跑路', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '社恐保平安。意志 +2。'; } },
+    { t: '接受采访，但全程安利你的社团朋友', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); S.stats.media += 1; return '视频剪出来人人有镜头，你落了个好名声。声量 +1，意志 +2。'; } }] },
   { t: '一块旧键盘', s: '楼下垃圾桶旁边躺着一块旧机械键盘，只坏了一个键。', c: [
     { t: '捡走，修好它', go: function () { S.stats.prog += 2; return '换轴二十分钟，敲字的手感回来了。代码力 +2。'; } },
     { t: '爱惜形象，不捡', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '你大方地走过去了。然后想了一晚上那块键盘。意志 +1。'; } }] },
-  { t: '新闻推送', s: '「黄金周出行人数创历史新高」——你盯着这行字看了很久。人多。降临那天，怪物也会多。', c: [
-    { t: '把这个洞察记下来', go: function () { S.stats.design += 2; return '人口密度、地形、撤离路线——你已经在做降临日的关卡设计了。策划脑 +2。'; } },
-    { t: '关掉推送，专注当下', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '焦虑没有用，属性点才有用。意志 +1。'; } }] },
+  { t: '新闻推送', s: '「黄金周出行人数创历史新高」——人多。降临那天，怪物也会多。', c: [
+    { t: '关掉推送，别自己吓自己', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '焦虑没有用，过好今天才有用。意志 +1。'; } },
+    { t: '盯着这行字想了很久', go: function () { S.stats.design += 2; return '人口密度、地形、撤离路线——你已经在脑内做降临日的关卡设计。策划脑 +2。'; } },
+    { t: '转发给朋友：「你说会来多少？」', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '朋友：「你最近总发这些怪东西。」你们聊到十二点。意志 +2。'; } }] },
   { t: '速成班广告', s: '群里有人发「游戏开发 21 天速成班，原价 4999 现价 99」。', c: [
-    { t: '点进去研究它的割韭菜话术', go: function () { S.stats.media += 1; S.stats.design += 1; return '看完销售页你写了一条拆解：它把「焦虑→希望→付费」做成了漏斗。声量 +1，策划脑 +1。'; } },
-    { t: '举报，然后继续学', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '世界上没有速成，只有你今天多写的三行代码。意志 +2。'; } }] },
+    { t: '点进去研究它的话术', go: function () { S.stats.design += 1; S.stats.media += 1; return '看完销售页你写了一条拆解：它把「焦虑→希望→付费」做成了漏斗。策划脑 +1，声量 +1。'; } },
+    { t: '举报，然后该干嘛干嘛', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '世界上没有速成，只有今天多写的三行代码。意志 +2。'; } },
+    { t: '笑一笑，划走', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '生活需要一点看猴戏的乐趣。意志 +1。'; } }] },
   { t: '难得的好太阳', s: '秋天的太阳晒在宿舍阳台，被子、猫、你，都适合出去。', c: [
-    { t: '搬小桌板出去学习', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); var k = randomKey(); S.stats[k] += 1; return '阳光下的学习效率意外地高。意志 +4，' + CLASSES[k].name + ' +1。'; } },
-    { t: '拉上窗帘，与世隔绝', go: function () { var k = randomKey(); S.stats[k] += 2; return '房间越暗，屏幕越亮。' + CLASSES[k].name + ' +2。'; } }] },
-  { t: '室友的文学 radar', s: '室友瞟到你手机备忘录：「重生是什么感觉？」——他以为你在写小说。', c: [
+    { t: '搬小桌板出去待着', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); var k = randomKey(); S.stats[k] += 1; return '阳光下的效率意外地高，猫在你脚边睡了一下午。意志 +4，' + CLASSES[k].name + ' +1。'; } },
+    { t: '拉上窗帘，与世隔绝', go: function () { var k = randomKey(); S.stats[k] += 2; return '房间越暗，屏幕越亮。' + CLASSES[k].name + ' +2。'; } },
+    { t: '纯散步，什么都不带', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '绕 campus 三圈，脑子清空了一圈半。意志 +3。'; } }] },
+  { t: '室友的文学雷达', s: '室友瞟到你手机备忘录：「重生是什么感觉？」——他以为你在写小说。', c: [
     { t: '顺势聊了两个小时', go: function () { S.stats.media += 2; return '你把「如果游戏降临」讲成了一段设定，室友听得后背发凉。声量 +2。'; } },
-    { t: '「天机不可泄露。」', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '秘密让你感到安全。意志 +2。'; } }] },
+    { t: '「天机不可泄露。」', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '秘密让你感到安全。意志 +2。'; } },
+    { t: '拉着室友一起写设定', go: function () { S.stats.design += 2; return '两个人越写越上头，室友贡献的反派设定意外地好。策划脑 +2。'; } }] },
   { t: '便利店的关东煮', s: '深夜十一点半，便利店玻璃上全是雾气，关东煮在锅里咕嘟。', c: [
     { t: '吃！加两个鱼蛋', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); return '热汤下肚的瞬间，你觉得七天什么的也不是不能打。意志 +4。'; } },
-    { t: '买杯咖啡就走', go: function () { S.hp = Math.max(1, S.hp - 1); var k = randomKey(); S.stats[k] += 2; return '咖啡因到位，回宿舍又肝了三小时。' + CLASSES[k].name + ' +2，意志 -1（咖啡因的债）。'; } }] },
-  { t: '扭到脚', s: '下楼梯看手机（在看引擎文档），脚踝一软。', c: [
-    { t: '去校医院', go: function () { S.hp = Math.max(1, S.hp - 2); return '没大碍，但医生勒令今天不许乱跑。意志 -2。'; } },
-    { t: '坐着学，正好不出去', go: function () { S.hp = Math.max(1, S.hp - 3); var k = randomKey(); S.stats[k] += 2; return '因祸得福的宅家学习日。意志 -3，' + CLASSES[k].name + ' +2。'; } }] },
+    { t: '买杯咖啡就走', go: function () { S.hp = Math.max(1, S.hp - 1); var k = randomKey(); S.stats[k] += 2; return '咖啡因到位，回去又干了三小时。' + CLASSES[k].name + ' +2，意志 -1（咖啡因的债）。'; } },
+    { t: '什么都不买，就走走', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '夜风、路灯、空无一人的街。意志 +2。'; } }] },
+  { t: '早八的闹钟没响', s: '睁眼已经十点半，阳光晒在键盘上。', c: [
+    { t: '回笼觉，天大地大睡觉最大', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '人生难得，回笼觉更难得。意志 +3。'; } },
+    { t: '弹射起步，追赶进度', go: function () { S.hp = Math.max(1, S.hp - 2); var k = randomKey(); S.stats[k] += 2; return '半小时完成洗漱早餐和计划。' + CLASSES[k].name + ' +2，意志 -2。'; } },
+    { t: '躺着刷会儿手机再起', go: function () { S.hp = Math.min(S.hmax, S.hp + 1); return '一刷一小时。起都起了，就不骂你了。意志 +1。'; } }] },
+  { t: '前世的聊天记录', s: '翻到前世今天发的朋友圈：「七天假！开摆！」评论区一片「+1」。', c: [
+    { t: '看着看着就哭了', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); return '哭完你更清醒了。上一次的摆，是这一次的债。意志 +4。'; } },
+    { t: '编辑一条还没发的朋友圈', go: function () { S.stats.media += 2; return '你重新写了一条：「这个假期，做点以后不会后悔的事。」声量 +2。'; } },
+    { t: '截图存进「别忘记」相册', go: function () { var k = randomKey(); S.stats[k] += 2; return '那个相册是你的燃料库。' + CLASSES[k].name + ' +2。'; } }] },
+  { t: '神秘的路人', s: '自习室里一个人一直盯着你看，忽然起身在你桌上放了张纸条就走：「你也是……回来的？」', c: [
+    { t: '追出去', go: function () { var k = randomKey(); S.stats[k] += 3; return '走廊空无一人，只有墙上的一行粉笔字：「第七天，小心版本号。」' + CLASSES[k].name + ' +3。'; } },
+    { t: '翻纸条背面', go: function () { S.stats.design += 2; return '背面画着 BOSS 的攻击前摇示意图。有人替你踩过坑。策划脑 +2。'; } },
+    { t: '当没看见，收好纸条', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '时机未到的东西，先收进口袋。意志 +2。'; } }] },
+  { t: '图书馆的旧书', s: '书架最深处压着一本《游戏设计艺术》，借书卡上的名字停在七年前。', c: [
+    { t: '借走，读它', go: function () { S.stats.design += 3; return '一读就停不下来。前世想不明白的问题，有人早就写成了书。策划脑 +3。'; } },
+    { t: '拍下目录，改天再说', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '目录已经够你消化一晚。意志 +2。'; } },
+    { t: '放回去，回来路上买了杯奶茶', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '书是好书，奶茶是好奶茶，今天先当好一个活人。意志 +3。'; } }] },
+  { t: '交流群的三百人', s: '你被拉进一个游戏开发群，大佬们聊的东西你一半看不懂。', c: [
+    { t: '潜水，疯狂记笔记', go: function () { var k = randomKey(); S.stats[k] += 2; return '看大佬吵架都能学到东西。' + CLASSES[k].name + ' +2。'; } },
+    { t: '冒泡提问', go: function () { S.hp = Math.max(1, S.hp - 2); var k = randomKey(); S.stats[k] += 3; return '有人嘲讽你问题基础，但也有人写了三百字认真回答。' + CLASSES[k].name + ' +3，意志 -2。'; } },
+    { t: '退群，眼不见心不烦', go: function () { S.hp = Math.min(S.hmax, S.hp + 2); return '群里一天几百条，退了之后世界安静了。意志 +2。'; } }] },
   { t: '广场上的猫', s: '一只三花猫蹲在广场中央，盯着你走过的方向，目光像认识你。', c: [
     { t: '蹲下来对视', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '它冲你眨了下眼。你也眨了。两个穿越者达成了某种默契。意志 +3。'; } },
-    { t: '分它一半火腿肠', go: function () { var k = randomKey(); S.stats[k] += 3; return '它吃完在前面走，你鬼使神差跟着，走到了一个你从没去过的自习角。' + CLASSES[k].name + ' +3。'; } },
-    { t: '拍下来发帖：「校园猫の凝视」', go: function () { S.stats.media += 2; return '帖子火了。评论区都在问后续。声量 +2。'; } }] },
-  { t: '早八的闹钟没响', s: '睁眼已经十点半， sunlight 晒在键盘上。', c: [
-    { t: '又躺了十分钟', go: function () { S.hp = Math.min(S.hmax, S.hp + 3); return '人生难得，回笼觉更难得。意志 +3。'; } },
-    { t: '弹射起步，追赶进度', go: function () { S.hp = Math.max(1, S.hp - 2); var k = randomKey(); S.stats[k] += 2; return '半小时完成洗漱早餐和计划。' + CLASSES[k].name + ' +2，意志 -2。'; } }] },
-  { t: '前世的聊天记录', s: '翻手机翻到前世今天发的朋友圈：「七天假！开摆！」评论区一片「+1」。', c: [
-    { t: '看着看着就哭了', go: function () { S.hp = Math.min(S.hmax, S.hp + 4); return '哭完你发现自己更清醒了。上一次的摆，是这一次的债。意志 +4。'; } },
-    { t: '编辑这条还没发的朋友圈', go: function () { S.stats.media += 2; return '你重新发了一条：「这个假期，做点以后不会后悔的事。」声量 +2。'; } }] },
-  { t: '神秘的路人', s: '自习室里一个人一直盯着你看，忽然起身在你桌上放了张纸条就走：「你也是……回来的？」', c: [
-    { t: '追出去', go: function () { var k = randomKey(); S.stats[k] += 3; return '走廊空无一人，只有一句留在墙上的粉笔字：「第七天，小心版本号。」' + CLASSES[k].name + ' +3。'; } },
-    { t: '打开纸条背面', go: function () { S.stats.design += 2; return '背面画着 BOSS 的攻击前摇示意图。有人替你踩过坑。策划脑 +2。'; } }] }
+    { t: '分它一半火腿肠', go: function () { var k = randomKey(); S.stats[k] += 3; return '它吃完在前面走，你鬼使神差跟着，走到了一个从没去过的自习角。' + CLASSES[k].name + ' +3。'; } },
+    { t: '拍下来发帖：「校园猫の凝视」', go: function () { S.stats.media += 2; return '帖子火了，评论区都在问后续。声量 +2。'; } }] }
+];
+var SAVE_KEY = 'rebirth_save_v1', DEX_KEY = 'rebirth_endings_v1';
+/* 时间轴自动事件：不用选，自动结算。h=时刻 s=内容 hp/rand=效果 */
+var AUTO_EVENTS = [
+  { h: '07:30', s: '食堂的豆浆今天是甜的。有人抱怨，你觉得还行。', hp: 1 },
+  { h: '08:00', s: '图书馆占了靠窗的位置。窗外有人打羽毛球。', hp: 1 },
+  { h: '09:15', s: '手机推送：一款十年前的老游戏宣布重制。', hp: 1 },
+  { h: '09:40', s: '你把昨天的笔记翻出来重读了一遍，思路清晰了一点。', rand: 1 },
+  { h: '10:20', s: '快递到了——是提前买好的参考书。', rand: 1 },
+  { h: '11:00', s: '楼下的广场舞音乐准时响起。你戴上耳机，把它当成了 BGM。', rand: 1 },
+  { h: '11:40', s: '饭堂出了新菜。你排到了最后一勺。', hp: 2 },
+  { h: '12:30', s: '趴桌午睡二十分钟，梦里有代码在跑。', hp: 2 },
+  { h: '13:50', s: '醒来时手边的水杯倒了，运气好，没洒在键盘上。', hp: 1 },
+  { h: '14:30', s: '你盯着一个效果看了很久，忽然反应过来它是怎么实现的。', rand: 2 },
+  { h: '15:00', s: '前世的你这个时候在打排位。这次不亏。', hp: 2 },
+  { h: '15:40', s: '群里水了半小时，收获两个表情包和一个冷知识。', hp: 1 },
+  { h: '16:10', s: '灵感突袭：你赶紧记在备忘录里，字迹潦草得只有你能看懂。', rand: 2 },
+  { h: '16:45', s: '手滑删了一个文件。冷汗三十秒，回收站里捞回来了。', hp: -1 },
+  { h: '17:20', s: '夕阳照进房间，你发呆了五分钟，不算浪费。', hp: 2 },
+  { h: '17:55', s: '食堂阿姨今天认出了你：「又来啦。」', hp: 2 },
+  { h: '18:30', s: '新闻推送：黄金周返程票开售即空。你多看了两眼。', hp: -1 },
+  { h: '19:00', s: '楼下有人放烟花，国庆的气氛推到了最浓。', hp: 2 },
+  { h: '19:30', s: '蚊子进了帐子。半夜它还会来第二趟。', hp: -1 },
+  { h: '20:00', s: '耳机随机到一首很多年前的歌。你跟着哼完了副歌。', hp: 2 },
+  { h: '20:30', s: '室友开黑语音很吵。你把窗户关上，世界清净了一半。', hp: 1 },
+  { h: '21:00', s: '你重新排列了桌上的东西——整理桌面就是整理脑子。', rand: 1 },
+  { h: '21:30', s: '感冒好像重了一点。你多喝了热水。', hp: -2 },
+  { h: '22:00', s: '你把今天的成果截图发了出去，收到了三个赞。', hp: 2 },
+  { h: '22:20', s: '有人在墙上贴了张「国庆快乐」的海报，边角翘起来了。', hp: 1 },
+  { h: '22:50', s: '泡面的三分钟里你都在想一个没解决的问题。面好了，思路也通了。', rand: 2 },
+  { h: '23:00', s: '隔壁楼传来吉他声，有人在小声唱歌。', hp: 2 },
+  { h: '23:20', s: '你看到一条评论：「做游戏的人，都是给世界做梦的人。」', rand: 1 },
+  { h: '23:40', s: '电脑风扇的声音今晚格外像引擎轰鸣。', rand: 1 },
+  { h: '23:55', s: '睡前你检查了一遍明天的计划。踏实。', hp: 2 },
+  { h: '10:05', s: '网课老师突然点名，你社死了一分钟。', hp: -1 },
+  { h: '12:10', s: '奶茶洒了，擦得快，键盘毫发无损。虚惊一场。', hp: -1 },
+  { h: '14:00', s: '一场雨毫无预兆地砸下来，你庆幸自己带了伞。', hp: 1 },
+  { h: '15:30', s: '你顺手帮同学修了个小问题，被夸「专业」。', hp: 2 },
+  { h: '16:30', s: '你刷到一条视频，正好演示了你昨天想不通的知识点。', rand: 2 },
+  { h: '21:10', s: '楼道的声控灯为你亮了一路。今晚运气不错。', hp: 1 }
 ];
 
 /* ============ 状态 ============ */
@@ -295,7 +354,7 @@ var S = null;
 function newState() {
   return { phase: 'title', day: 1, stats: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
     hp: 40, hmax: 40, trained: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
-    buffs: [], idleDays: 0, kills: 0, speed: 1, runEvents: [], evPtr: 0, pick: null };
+    buffs: [], idleDays: 0, kills: 0, speed: 1, runEvents: [], evPtr: 0, pick: null, dayPlan: [], logPtr: 0 };
 }
 function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} }
 function load() { try { var s = localStorage.getItem(SAVE_KEY); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
@@ -369,7 +428,46 @@ function screenDay() {
   show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">DAY ' + S.day + ' · ' + st[0] + '</div><div class="rb-story">' + st[1] + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="advanceDay()">开始这一天 ▶</button></div>');
   S.phase = 'day'; save();
 }
-function advanceDay() {
+function advanceDay() { startDayPlan(); }
+function startDayPlan() {
+  if (!S.dayPlan || !S.dayPlan.length) {
+    var idx = [];
+    for (var i = 0; i < AUTO_EVENTS.length; i++) idx.push(i);
+    for (var j = idx.length - 1; j > 0; j--) { var r = Math.floor(Math.random() * (j + 1)); var t = idx[j]; idx[j] = idx[r]; idx[r] = t; }
+    var n = 6 + Math.floor(Math.random() * 2);
+    S.dayPlan = idx.slice(0, n).map(function (i) { return i; });
+    S.logPtr = 0; save();
+  }
+  renderDayLog();
+}
+function applyFx(ev) {
+  var parts = [];
+  if (ev.hp) { S.hp = Math.max(1, Math.min(S.hmax, S.hp + ev.hp)); parts.push('意志' + (ev.hp > 0 ? '+' : '') + ev.hp); }
+  if (ev.rand) { var k = randomKey(); S.stats[k] += ev.rand; parts.push(CLASSES[k].name.split(' ')[0] + '+' + ev.rand); }
+  return parts.join('，');
+}
+function renderDayLog() {
+  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">第 ' + S.day + ' 天 · 时间轴</div><div id="logBox" style="max-height:380px;overflow-y:auto;font-size:13.5px;line-height:2.1;color:#cfe0d4"></div><div style="margin-top:10px"><button class="rb-btn" style="display:inline-block;width:auto;padding:7px 16px" onclick="skipLog()">跳过今天 ▸▸</button></div></div>';
+  show(h);
+  setTimeout(tickLog, 400);
+}
+function tickLog() {
+  var box = document.getElementById('logBox');
+  if (!box) return;
+  if (S.logPtr >= S.dayPlan.length) { finishDayLog(); return; }
+  var ev = AUTO_EVENTS[S.dayPlan[S.logPtr]];
+  var fx = applyFx(ev);
+  S.logPtr++; save();
+  var cls = fx.indexOf('-') >= 0 ? '#f0b8ac' : '#7ed696';
+  box.insertAdjacentHTML('beforeend', '<div style="margin-bottom:6px"><span style="font-family:var(--font-mono);color:#6b8a7c">' + ev.h + '</span>　' + ev.s + (fx ? ' <b style="color:' + cls + '">(' + fx + ')</b>' : '') + '</div>');
+  box.scrollTop = box.scrollHeight;
+  setTimeout(tickLog, 620);
+}
+function skipLog() {
+  while (S.logPtr < S.dayPlan.length) { applyFx(AUTO_EVENTS[S.dayPlan[S.logPtr]]); S.logPtr++; }
+  save(); finishDayLog();
+}
+function finishDayLog() {
   if (S.evPtr < S.runEvents.length) showEvent();
   else screenAction();
 }
@@ -384,7 +482,7 @@ function resolveEvent(i) {
   var ev = EVENTS[S.runEvents[S.evPtr]];
   var res = ev.c[i].go();
   S.evPtr++; save();
-  show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">突发事件 · ' + ev.t + '</div><div class="rb-story">' + ev.s + '</div><div class="rb-story" style="margin-top:10px;color:#f5e6bd;border-left:3px solid #edbe5c;padding-left:12px">' + res + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="advanceDay()">继续这一天 ▶</button></div>');
+  show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">突发事件 · ' + ev.t + '</div><div class="rb-story">' + ev.s + '</div><div class="rb-story" style="margin-top:10px;color:#f5e6bd;border-left:3px solid #edbe5c;padding-left:12px">' + res + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="screenAction()">继续这一天 ▶</button></div>');
 }
 function screenAction() {
   var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">白天 · 今天怎么肝？</div>';
@@ -647,7 +745,7 @@ function screenDayEnd() {
   show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">深夜 · 第 ' + S.day + ' 天结束</div><div class="rb-story">你把今天学到的东西存进记忆，把意志留给明天。<span class="sys">【距离大降临还剩 ' + (7 - S.day) + ' 天】进度已自动保存。</span></div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="nextDay()">睡下 → 第 ' + (S.day + 1) + ' 天 ▶</button></div>');
   S.phase = 'dayend'; save();
 }
-function nextDay() { S.day++; screenDay(); }
+function nextDay() { S.day++; S.dayPlan = []; S.logPtr = 0; screenDay(); }
 function screenBossWin() {
   /* 通关：职业结局 + 评级 */
   var c = topClass();
