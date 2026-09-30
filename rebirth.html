@@ -225,7 +225,16 @@ var ROGUE_POOL = [
   { id: 'regen', t: '意志之泉', d: '战斗中每秒回复 0.5 意志' },
   { id: 'sup', t: '火力压制', d: '怪物攻击间隔 +0.25 秒（它出手更慢了）' },
   { id: 'combo', t: '连击惯性', d: '战斗时间越长伤害越高：每 5 秒 +8%（上限 +48%）' },
-  { id: 'shield', t: '备用弹药箱', d: '每场战斗开始时获得 12 点护盾（先于意志扣除，可叠加）' }
+  { id: 'shield', t: '备用弹药箱', d: '每场战斗开始时获得 12 点护盾（先于意志扣除，可叠加）' },
+  { id: 'critdmg', t: '会心重击', d: '暴击伤害从两倍变三倍（配合暴击率食用）' },
+  { id: 'adr', t: '肾上腺素', d: '意志低于三成时，伤害 +60%——绝境反杀专用' },
+  { id: 'thorn', t: '反击装甲', d: '被怪物击中时反弹 3 点伤害（可叠加）' },
+  { id: 'split', t: '弹药分裂', d: '普攻有 20% 概率分裂成两发（可叠加）' },
+  { id: 'burst', t: '开场风暴', d: '每场战斗的前 5 秒，攻速快到看不清' },
+  { id: 'big', t: '巨人化', d: '你变大了：伤害 +40%，攻速 -10%（有得必有失）' },
+  { id: 'healwin', t: '战后喘息', d: '每场战斗胜利后回复 15 点意志' },
+  { id: 'revive', t: '★ 不死鸟羽', d: '每场战斗可抵挡一次致命伤害，保留 1 点意志（每层一次）' },
+  { id: 'lucky', t: '★ 幸运星', d: '此后所有战利品三选一变成四选一（贪婪之选）' }
 ];
 var ENDINGS = {
   E_design: { t: '规则之主', got: 'win' },
@@ -524,7 +533,16 @@ var BUFF_HUMAN = {
   regen: ['意志之泉', '战斗中每秒自动回复 0.5 意志'],
   sup: ['火力压制', '怪物被你打得抬不起手：它的攻击间隔每层 +0.25 秒'],
   combo: ['连击惯性', '打得越久越疼：开战每过 5 秒，伤害 +8%（最多 +48%）'],
-  shield: ['备用弹药箱', '每场战斗开始时多一层护盾，能替你挡 12 点伤害']
+  shield: ['备用弹药箱', '每场战斗开始时多一层护盾，能替你挡 12 点伤害'],
+  critdmg: ['会心重击', '暴击造成的伤害变成三倍'],
+  adr: ['肾上腺素', '意志越低越凶：低于三成时伤害 +60%'],
+  thorn: ['反击装甲', '怪物打你会被扎：每次被击中反弹 3 点伤害'],
+  split: ['弹药分裂', '普攻有概率裂成两发，每层 +20% 概率'],
+  burst: ['开场风暴', '每场战斗开头 5 秒攻速极快'],
+  big: ['巨人化', '你变大了：伤害 +40%，出手稍慢'],
+  healwin: ['战后喘息', '每场胜利后回复 15 点意志'],
+  revive: ['不死鸟羽', '每场战斗挡住一次死：致命伤只把你打到 1 点意志'],
+  lucky: ['幸运星', '战利品三选一变四选一']
 };
 function humanBuffs() {
   if (!S.buffs.length) return '还没有碎片——打赢今晚的遭遇战就会掉落，自动生效不用管。';
@@ -597,7 +615,7 @@ function startDayPlan() {
     var nChoice = Math.min(Math.floor(Math.random() * 3), avail);
     for (var c = 0; c < nChoice; c++) plan.splice(2 + Math.floor(Math.random() * (plan.length - 2)), 0, -1);
     plan.push(-3, -4);
-    S.dayPlan = plan; S.logPtr = 0; S.logEntries = []; save();
+    S.dayPlan = plan; S.logPtr = 0; save();
   }
   renderDayLog();
 }
@@ -611,10 +629,11 @@ function applyFx(ev) {
 /* 流水账：常驻大框，所有条目累加保留；点击流水账任意位置 = 下一条（文字人生式） */
 function renderDayLog() {
   var h = hudHtml() + '<div class="rb-panel" id="logPanel" style="cursor:pointer" onclick="logTap(event)"><div class="rb-tag">第 ' + S.day + ' 天 · 时间轴 <span style="color:#55665f">（点击任意处继续）</span></div>';
-  h += '<div id="logBox" style="max-height:420px;min-height:160px;overflow-y:auto;font-size:13.5px;line-height:2.1;color:#cfe0d4">' + (S.logEntries || []).join('') + '</div>';
+  h += '<div id="logBox" style="font-size:13.5px;line-height:2.1;color:#cfe0d4">' + (S.logEntries || []).join('') + '</div>';
   h += '<div id="rlogHint" style="margin-top:8px;font-family:var(--font-mono);font-size:12px;color:#55665f"></div>';
   h += '</div>';
   show(h);
+  window.scrollTo(0, document.body.scrollHeight);
   updateLogHint();
 }
 function logTap(e) {
@@ -625,12 +644,12 @@ function pushLog(html) {
   S.logEntries = S.logEntries || [];
   S.logEntries.push(html);
   var box = document.getElementById('logBox');
-  if (box) { box.insertAdjacentHTML('beforeend', html); box.scrollTop = box.scrollHeight; }
+  if (box) { box.insertAdjacentHTML('beforeend', html); window.scrollTo(0, document.body.scrollHeight); }
   save();
 }
 function rebuildLogBox() {
   var box = document.getElementById('logBox');
-  if (box) { box.innerHTML = (S.logEntries || []).join(''); box.scrollTop = box.scrollHeight; }
+  if (box) { box.innerHTML = (S.logEntries || []).join(''); window.scrollTo(0, document.body.scrollHeight); }
 }
 function updateLogHint() {
   var hint = document.getElementById('rlogHint');
@@ -819,6 +838,9 @@ function startBattle() {
     })(),
     t: 0, lastThrow: 0, mLast: 0,
     mInterval: 1.4 + 0.25 * buff('sup'), shield: 12 * buff('shield'),
+    critMul: 2 + buff('critdmg'), adr: buff('adr') > 0, thorn: 3 * buff('thorn'),
+    split: 0.2 * buff('split'), burst: buff('burst') > 0, big: buff('big') > 0,
+    healwin: buff('healwin') > 0, revive: buff('revive'), throwCount: 0,
     shots: [], mshots: [], floats: [], over: false, speed: 1, stun: 0, hyper: 0,
     entryIdx: S.logEntries.length - 1 /* 战斗所在的流水账条目，打完折叠 */
   };
@@ -848,11 +870,17 @@ function loop(now) {
   var iv = 0.8 / (1 + 0.2 * buff('spd'));
   if (B.hasProg0) iv /= 1.4;
   if (B.hyper > 0) iv *= 0.5;
+  if (B.big) iv *= 1.1;
+  if (B.burst && B.t < 5) iv *= 0.35;
   if (B.t - B.lastThrow >= iv) {
     B.lastThrow = B.t;
-    var dmg = B.dmg * (Math.random() < B.crit ? 2 : 1);
+    B.throwCount++;
+    var dmg = B.dmg * ((Math.random() < B.crit) ? B.critMul : 1);
     if (B.hasDesign0) dmg = B.dmg * (0.5 + Math.random() * 2.5);
+    if (B.adr && B.php < B.pmax * 0.3) dmg *= 1.6;
+    if (B.big) dmg *= 1.4;
     B.shots.push({ x: px, y: py - 24, vy: -430, dmg: dmg, glyph: B.ammo[Math.floor(Math.random() * B.ammo.length)] });
+    if (B.split > 0 && Math.random() < B.split) B.shots.push({ x: px + (Math.random() * 40 - 20), y: py - 24, vy: -430, dmg: dmg * 0.6, glyph: B.ammo[Math.floor(Math.random() * B.ammo.length)] });
   }
   /* Build 技能（全部自动释放） */
   skillTick(dt, mx, my);
@@ -906,8 +934,12 @@ function hitPlayer(dmg) {
   if (B.over) return;
   if (B.shield > 0) { var ab = Math.min(B.shield, dmg); B.shield -= ab; dmg -= ab; }
   if (dmg > 0) B.php -= dmg;
+  if (B.thorn > 0) hitMonster(B.thorn, mx0(), my0());
+  if (B.php <= 0 && B.revive > 0) { B.revive--; B.php = 1; B.floats.push({ x: 360, y: 340, txt: '★ 不死鸟羽！', c: '#edbe5c', t: 0 }); return; }
   B.floats.push({ x: 360 + (Math.random() * 80 - 40), y: 340, txt: dmg > 0 ? '-' + Math.round(dmg) : '🛡 抵挡', c: dmg > 0 ? '#f0b8ac' : '#9fd3b8', t: 0 });
 }
+function mx0() { return B.cv ? B.cv.width / 2 : 360; }
+function my0() { return B.cv ? 80 : 80; }
 function render(px, py, mx, my) {
   var ctx = B.ctx, W = B.cv.width, H = B.cv.height;
   ctx.clearRect(0, 0, W, H);
@@ -940,6 +972,7 @@ function render(px, py, mx, my) {
 function endBattleWin() {
   B.over = true; cancelAnimationFrame(RAF); S.inBattle = false;
   S.hp = Math.max(1, Math.min(B.pmax, B.php)); S.kills++;
+  if (B.healwin) S.hp = Math.min(B.pmax, S.hp + 15);
   var mc = topClass(); S.stats[mc] += 1;
   collapseBattle('<span style="color:#7ed696">胜利</span>');
   if (B.isBoss) { screenBossWin(); return; }
@@ -949,8 +982,9 @@ function endBattleWin() {
   for (var k in S.trained) if (S.trained[k] >= 1 && S.trained[k] < 3) cands.push(k);
   if (cands.length) pool.push({ id: 'essence', t: '经验精华', d: '随机一项属性 +3——点数够的话，当场觉醒/进化新技能' });
   var picks = [];
-  while (picks.length < 3 && pool.length) picks.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
-  var html = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px"><b style="color:#edbe5c">▶ 战利品 · 三选一（可叠加）</b><br>';
+  var want = 3 + (buff('lucky') > 0 ? 1 : 0);
+  while (picks.length < want && pool.length) picks.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+  var html = '<div style="margin:8px 0;padding:10px 13px;background:rgba(237,190,92,.07);border-left:3px solid #edbe5c;border-radius:6px"><b style="color:#edbe5c">▶ 战利品 · ' + (want > 3 ? '四' : '三') + '选一（可叠加）</b><br>';
   picks.forEach(function (p) {
     html += '<button class="rb-btn" style="margin-top:6px;padding:8px 12px" onclick="pickRogue(event,\'' + p.id + '\')"><b style="color:#7ed696">' + p.t + '</b>　' + p.d + '</button>';
   });
@@ -1015,7 +1049,7 @@ function declineSpecial(e, id) {
   pushLog('<div style="margin:4px 0 8px;padding:8px 12px;color:#9fb3aa;background:rgba(255,255,255,.03);border-radius:6px">' + sp.no + '</div>');
   updateLogHint(); save();
 }
-function nextDay() { S.day++; S.dayPlan = []; S.logPtr = 0; S.logEntries = []; S.dayDone = false; screenDay(); }
+function nextDay() { S.day++; S.dayPlan = []; S.logPtr = 0; S.dayDone = false; screenDay(); }
 function screenBossWin() {
   /* 通关：职业结局 + 评级 */
   var c = topClass();
