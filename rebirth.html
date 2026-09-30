@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>重生：游戏降临前的七天 · GDPU GAMEDEV HUB</title>
+<link rel="stylesheet" href="roadmap-style.css?v=20260930b">
+<script src="roadmap-common.js?v=20260928a" defer></script>
+<style>
+  #gameWrap { max-width: 780px; margin: 0 auto; }
+  .rb-panel { background: rgba(12,18,24,.9); border: 1px solid var(--border-strong); border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; }
+  .rb-tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; color: #edbe5c; margin-bottom: 10px; }
+  .rb-story { font-size: 14.5px; line-height: 2.05; color: #e8e4d4; }
+  .rb-story em { color: #edbe5c; font-style: normal; font-weight: 700; }
+  .rb-story .sys { display:block; margin: 10px 0; padding: 9px 13px; background: rgba(237,190,92,.08); border-left: 3px solid #edbe5c; color: #f5e6bd; font-family: var(--font-mono); font-size: 13px; line-height: 1.9; }
+  .rb-hud { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: #9fb3aa; font-family: var(--font-mono); margin-bottom: 12px; }
+  .rb-hud b { color: #e8e4d4; }
+  .rb-btn { display: block; width: 100%; text-align: left; cursor: pointer; color: #e8e4d4; background: #16221e; border: 1px solid var(--border-strong); border-radius: 10px; padding: 12px 15px; margin-bottom: 9px; font-size: 14px; font-weight: 700; transition: all .15s; }
+  .rb-btn:hover:not(:disabled) { border-color: #edbe5c; transform: translateY(-1px); }
+  .rb-btn:disabled { opacity: .45; cursor: default; }
+  .rb-btn .sub { display: block; font-size: 12px; font-weight: 400; color: #9fb3aa; margin-top: 3px; line-height: 1.6; }
+  .rb-btn.gold { background: linear-gradient(160deg,#3d3316,#241f0e); border-color: #8a6a1f; }
+  .rb-stat { display: inline-block; margin: 3px 6px 3px 0; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; color: #0b1210; }
+  .rb-monname { font-size: 20px; font-weight: 900; color: #f0b8ac; letter-spacing: 2px; }
+  .rb-monhp { height: 16px; background: #10151c; border: 1px solid var(--border-strong); border-radius: 8px; overflow: hidden; margin-top: 6px; }
+  .rb-monhp i { display: block; height: 100%; background: linear-gradient(90deg,#c9453e,#f07a70); transition: width .2s; }
+  .rb-buffline { font-family: var(--font-mono); font-size: 12px; color: #9fd3b8; line-height: 2; }
+  #battleCanvas { width: 100%; display: block; background: radial-gradient(at 50% 20%, #1c2b33 0%, #0d141b 70%); border: 1px solid var(--border-strong); border-radius: 12px; touch-action: manipulation; }
+  .rb-rogue { cursor: pointer; background: #16221e; border: 1px solid #3d6b52; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; transition: all .15s; }
+  .rb-rogue:hover { border-color: #edbe5c; transform: translateY(-2px); }
+  .rb-rogue b { color: #7ed696; font-size: 15px; }
+  .rb-rogue .sub { color: #9fb3aa; font-size: 12.5px; margin-top: 4px; line-height: 1.7; }
+  .rb-endcard { text-align: center; padding: 26px 18px; }
+  .rb-endcard .t { font-size: 26px; font-weight: 900; color: #f0e6c8; letter-spacing: 4px; margin-bottom: 12px; }
+  .rb-endcard .d { font-size: 14px; line-height: 2.1; color: #cfe0d4; text-align: left; }
+  .rb-dex { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+  .rb-dex div { font-size: 12px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border-strong); color: #55665f; background: #0d1418; }
+  .rb-dex div.got { color: #f0e6c8; border-color: #3d6b52; background: #12211a; }
+  .rb-float { position: absolute; font-weight: 900; pointer-events: none; text-shadow: 0 2px 6px #000; animation: rbfloat 1s ease-out forwards; font-size: 17px; }
+  @keyframes rbfloat { 0% { opacity: 1; margin-top: 0; } 100% { opacity: 0; margin-top: -34px; } }
+  .rb-speed { position: absolute; right: 10px; top: 10px; z-index: 5; }
+  .rb-speed button { cursor: pointer; background: rgba(0,0,0,.5); color: #9fd3b8; border: 1px solid #3d6b52; border-radius: 8px; padding: 4px 10px; font-family: var(--font-mono); font-size: 12px; }
+  .rb-choices button.active { border-color: #edbe5c; background: #2a2410; }
+</style>
+</head>
+<body>
+<canvas id="webgl-bg-canvas"></canvas>
+
+<div class="container">
+
+  <header class="top-navbar magic-border-beam">
+    <div class="brand-group">
+      <div class="brand-logo-canvas-wrap" title="广药 GDPU GAMEDEV HUB">
+        <img src="gdpu_gamedev_logo.jpg" alt="GDPU GAMEDEV LOGO">
+      </div>
+      <div class="brand-text">
+        <h1>重生：游戏降临前的七天 <span style="font-size: 13.5px; color: var(--accent-blue); font-weight: 700; margin-left: 6px; font-family: var(--font-mono);">GDPU GAMEDEV HUB</span> <span class="brand-badge">REBIRTH</span></h1>
+        <p>文字 × 自动战斗 × Roguelike · 七天一局 // 7 DAYS BEFORE THE DESCENT</p>
+      </div>
+    </div>
+    <div class="nav-tools">
+      <a class="btn-home-link" href="index">← 返回情报中枢</a>
+    </div>
+  </header>
+
+  <div class="category-pill-bar">
+    <a class="ark-nav-item" href="quick"><span class="ark-en-label">QUICK</span><span class="ark-cn-label">3 分钟版</span></a>
+    <a class="ark-nav-item" href="quiz"><span class="ark-en-label">QUIZ</span><span class="ark-cn-label">方向测试</span></a>
+    <a class="ark-nav-item active" href="rebirth"><span class="ark-en-label">REBIRTH</span><span class="ark-cn-label">重生七日 · 本页</span></a>
+    <a class="ark-nav-item" href="start"><span class="ark-en-label">START</span><span class="ark-cn-label">新生零基础</span></a>
+  </div>
+
+  <div id="gameWrap"></div>
+
+  <div class="page-footer">
+    <div>GDPU GAMEDEV HUB · 重生：游戏降临前的七天 // REBIRTH</div>
+    <div>内容含 AI 辅助生成 · 娱乐向文字游戏 · 进度存于本机浏览器 · 个人非经营性学习观察用途</div>
+    <div><a href="quiz">方向测试</a> · <a href="roadmap">总览</a> · <a href="start">新生入口</a> · <a href="contests">比赛</a> · <a href="jobs">薪资</a></div>
+  </div>
+
+</div>
+
+<script>
+/* ============ 基础数据 ============ */
+var CLASSES = {
+  design: { name: '游戏策划', color: '#34d399', glyph: '✍', ammo: ['📄', '📋', '✍'],
+    builds: [
+      { name: '概率骰 · 赌狗流', desc: '每次扔伤害随机 0.5~3 倍，期望更高，全看命', },
+      { name: '百页方案 · 镇压流', desc: '周期性砸出一本方案书：大伤害并让怪物眩晕停火', },
+      { name: '辩论波 · 稳态流', desc: '持续灼烧光波，稳定不吃运气', }] },
+  prog: { name: '客户端程序', color: '#6366f1', glyph: '⌨', ammo: ['⌨', '{}', 'BUG'],
+    builds: [
+      { name: '连点流 · 键帽机枪', desc: '攻速大幅提升，单发不变', },
+      { name: '重锤流 · 机械键盘', desc: '周期性砸下键盘：范围重击', },
+      { name: '召唤流 · 分身调试', desc: '周期性召唤分身帮你一起扔', }] },
+  ta: { name: '技术美术 TA', color: '#8b5cf6', glyph: '✨', ammo: ['✨', '🎯', 'Shader'],
+    builds: [
+      { name: 'Ray 射线 · 穿透流', desc: '周期性贯穿射线：高额伤害', },
+      { name: '蜂群流 · 追踪弹', desc: '高频追踪弹，永远命中', },
+      { name: '光追爆发 · 蓄能流', desc: '低频但毁天灭地的全屏爆发', }] },
+  art: { name: '美术 / 特效', color: '#f59e0b', glyph: '🎨', ammo: ['🎨', '🖌', '⭐'],
+    builds: [
+      { name: '乱舞流 · 颜料泼溅', desc: '周期性多方向泼溅，总伤可观', },
+      { name: '入魂流 · 一击入魂', desc: '蓄力后扔出巨大一击', },
+      { name: '涂鸦流 · 画里有人', desc: '常驻涂鸦小人持续补伤害', }] },
+  media: { name: '自媒体 / 内容', color: '#ec4899', glyph: '🔥', ammo: ['💬', '👍', '🔥'],
+    builds: [
+      { name: '弹幕雨 · 刷屏流', desc: '持续弹幕雨不断磨血', },
+      { name: '热搜流 · 顶上去', desc: '怪物被顶上热搜：受到伤害增加', },
+      { name: '三连流 · 终结技', desc: '攒满能量释放超大终结一击', }] },
+  tech: { name: '服务端 / 引擎底层', color: '#94a3b8', glyph: '🔧', ammo: ['🔧', '01', '💾'],
+    builds: [
+      { name: '清内存 · GC 流', desc: '周期性清理：中伤并短暂压制怪物', },
+      { name: '超频流 · Overclock', desc: '周期性进入超频：攻速翻倍', },
+      { name: '指针流 · 高危高伤', desc: '扔出野指针：超高伤害，但会伤到自己', }] }
+};
+var MONSTERS = [
+  { name: '空指针史莱姆', emoji: '🫠', desc: '一滩会弹出 NullReferenceException 的黏液，新手村特产。', hp: 26, dmg: 3, dex: 'D1' },
+  { name: '紫黑棋盘格犬', emoji: '🐕', desc: '浑身闪着 Missing Texture 的紫黑格子，咬人之前先咬贴图。', hp: 40, dmg: 4, dex: 'D2' },
+  { name: '内存泄漏水蛭', emoji: '🪱', desc: '吸走你的性能，越打越长，从来没有 free 过。', hp: 58, dmg: 5, dex: 'D3' },
+  { name: '死循环衔尾蛇', emoji: '🐍', desc: 'while(true) 的化身，它咬住尾巴的那一刻，你回到了第一天。', hp: 80, dmg: 7, dex: 'D4' },
+  { name: '碰撞箱错位妖', emoji: '📦', desc: '明明没碰到你，你却掉了血。判定不对齐的东西最不讲道理。', hp: 108, dmg: 9, dex: 'D5' },
+  { name: '需求变更魔王 · 影', emoji: '😈', desc: '它不攻击，它只是微笑着说：这个玩法，再改一版。', hp: 145, dmg: 11, dex: 'D6' },
+];
+var BOSS = { name: '降临级 1.0.0 · 黄金周吞噬者', emoji: '👑', desc: '大降临的先遣之王。版本号 1.0.0——本版本尚无通关者。', hp: 260, dmg: 13, dex: 'BOSS' };
+var DAY_STORY = [
+  ['10 月 1 日 · 国庆第一天', '前世今天，你打了整整一天排位。这次，你盯着电脑桌面上那个从没打开过的引擎图标，看了很久。<em>还有 7 天。</em>'],
+  ['10 月 2 日 · 表弟来了', '表弟趴在你肩膀上看你屏幕：「哥你在写啥？」「在写你以后要躲着走的东西。」你第一次觉得，学习这件事有点热血。'],
+  ['10 月 3 日 · 同学聚会', '饭桌上有人晒大厂工牌，有人劝你「玩游戏没前途」。你笑笑没说话——你比在座所有人都清楚，五天后这个世界的规则会怎么改写。'],
+  ['10 月 4 日 · 它跑起来了', '凌晨两点，你的第一个 demo 跑起来了。画面很丑，操作很烂，但<em>它动了</em>。你忽然明白前世死掉的时候，为什么那么不甘心。'],
+  ['10 月 5 日 · 梦里的弱点', '你梦到了前世那只杀死你的怪物。这次你没有跑，你凑近看清了它身上的纹路——醒来时枕头上写满了笔记。你开始有了「职业」的样子。'],
+  ['10 月 6 日 · 陌生的转发', '你随手发的内容第一次被陌生人转发。窗外地铁路况播报着「返程高峰」——前世，死亡就是从返程那晚开始的。<em>还剩 2 天。</em>'],
+  ['10 月 7 日 · 最后一夜', '你把七天攒下的所有东西摊在桌上。明天早上 8 点，它们会走进现实。今晚不是复习夜——<em>今晚是决战前夜。</em>']
+];
+var ACTIONS = [
+  { k: 'design', t: '写一份策划案', s: '策划脑 +3', d: '拆一个你最喜欢的玩法系统，写成规则表。' },
+  { k: 'prog', t: '肝一个 demo', s: '代码力 +3', d: '把昨天想的功能真的写出来，报错也写。' },
+  { k: 'art', t: '临摹练习', s: '美术手 +3', d: '找一张喜欢的图，一笔一笔抠。' },
+  { k: 'ta', t: '研究渲染效果', s: '渲染眼 +3', d: '让一个方块发光这件事，你能玩一下午。' },
+  { k: 'media', t: '发一条开发日志', s: '声量 +3', d: '把今天学的东西讲给别人听。' },
+  { k: 'tech', t: '啃底层文档', s: '底层根骨 +3', d: '别人当睡前故事读的东西，你当功法练。' },
+  { k: 'idle', t: '打一天游戏 🎮', s: '意志回满 + 随机灵感 +2', d: '理直气壮地玩：你是去「研究优秀设计」的。' }
+];
+var ROGUE_POOL = [
+  { id: 'dmg', t: '弹药增粗', d: '伤害 +25%（可叠加）' },
+  { id: 'spd', t: '射速提升', d: '攻速 +20%（可叠加）' },
+  { id: 'hp', t: '意志上限', d: '意志上限 +8，并立即回复 8 点' },
+  { id: 'crit', t: '会心一击', d: '暴击率 +15%（暴击 ×2 伤害）' },
+  { id: 'vamp', t: '残光吸取', d: '造成伤害的 10% 转化为意志（可叠加）' },
+  { id: 'skill', t: '技能强化', d: 'Build 技能伤害 +40%' },
+  { id: 'cdr', t: '冷却缩减', d: 'Build 技能冷却 -15%' },
+  { id: 'regen', t: '意志之泉', d: '战斗中每秒回复 0.5 意志' }
+];
+var ENDINGS = {
+  E_design: { t: '规则之主', got: 'win' },
+  E_prog: { t: '手中有码', got: 'win' },
+  E_ta: { t: '画面之下', got: 'win' },
+  E_art: { t: '造像者', got: 'win' },
+  E_media: { t: '声量', got: 'win' },
+  E_tech: { t: '底层之根', got: 'win' },
+  D1: { t: '新手村的坑', got: '死' },
+  D2: { t: '紫黑的狗', got: '死' },
+  D3: { t: '越打越长', got: '死' },
+  D4: { t: '走不出去', got: '死' },
+  D5: { t: '差一个身位', got: '死' },
+  D6: { t: '再改一版', got: '死' },
+  BOSS: { t: '1.0.0 无人通关', got: '死' },
+  E_idle: { t: '娱乐玩家', got: '隐' }
+};
+var ENDING_TEXT = {
+  win: {
+    design: '降临日清晨，你在天台摊开七天写满的策划案。怪物踏进城的第一步，踩进了你设计的领域——它们发现，这个世界的规则，也有人类能改。',
+    prog: '你敲下最后一行代码，天亮了。怪物逼近，你的 demo 第一次连上服务器——屏幕亮起的那一刻，你听见了加载音。现实，被你打上了补丁。',
+    ta: '众人眼里的怪物是恐怖的，你眼里它们只是没渲染完的 mesh。你抬手改了它们的 Shader——降临之物第一次在人类面前，变成了半透明。',
+    art: '你把七天画的设定图贴满整条街。怪物停在一幅画前不动了——那幅画画着它被击败的样子。它信了。美术，就是让不存在之物存在的职业。',
+    media: '你七天发的开发日志在降临夜冲上热搜第一。全城的人按你视频里说的躲进了安全屋。你没能打死怪物，但你让十万人活了下来——声量，也是一种战力。',
+    tech: '降临的核心是一台巨大的服务器，而你读过它的文档。你把手按上去，敲下第一行指令——这个世界的 root 权限，这次在人类手里。'
+  },
+  death: {
+    D1: '前世你死在它手里，这次还是。临死前你终于看清了它弹出的报错——你压根没初始化。',
+    D2: '贴图丢失兽咬住你的瞬间，你看到自己身上也是紫黑棋盘格。原来在它们眼里，没准备好的你，才是没加载出来的那个。',
+    D3: '内存泄漏水蛭吸走了你的意志。你的七天，像没 free 的内存一样被它一点点占满。',
+    D4: '死循环衔尾蛇咬住尾巴的那一刻，你睁眼回到了第一天早上。你开始怀疑，这已经是第 N 个七天了。',
+    D5: '碰撞箱错位妖明明没碰到你，你却掉了血。判定没对齐的东西，杀起人来最不讲道理。',
+    D6: '需求变更魔王没有杀你。它只是把你的七天改成了别的版本。你死在自己删掉的代码里。',
+    BOSS: '黄金周吞噬者把你吞下去的时候，空中弹出一行字：【1.0.0 · 本版本尚无通关者】。它在等一个把版本号推进到 1.0.1 的人。'
+  },
+  idle: '你七天都在打游戏。降临那天，你正打到排位晋级赛。怪物踩进房间时，你头也没抬——反正这局马上就赢了。系统评价：快乐，但毫无胜算。这是唯一一个你没有输给怪物的结局——你输给了期限。'
+};
+var SAVE_KEY = 'rebirth_save_v1', DEX_KEY = 'rebirth_endings_v1';
+
+/* ============ 状态 ============ */
+var S = null;
+function newState() {
+  return { phase: 'title', day: 1, stats: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
+    hp: 40, hmax: 40, trained: { design: 0, prog: 0, ta: 0, art: 0, media: 0, tech: 0 },
+    buffs: [], idleDays: 0, kills: 0, speed: 1 };
+}
+function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} }
+function load() { try { var s = localStorage.getItem(SAVE_KEY); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
+function clearSave() { try { localStorage.removeItem(SAVE_KEY); } catch (e) {} }
+function getDex() { try { return JSON.parse(localStorage.getItem(DEX_KEY) || '[]'); } catch (e) { return []; } }
+function markEnding(id) { try { var d = getDex(); if (d.indexOf(id) < 0) { d.push(id); localStorage.setItem(DEX_KEY, JSON.stringify(d)); } } catch (e) {} }
+function topClass() {
+  var best = 'design';
+  for (var k in S.stats) if (S.stats[k] > S.stats[best]) best = k;
+  return best;
+}
+function power() { var t = 0; for (var k in S.stats) t += S.stats[k]; return t; }
+function rating() { var p = power(); return p >= 50 ? 'S · 开发者之魂' : p >= 40 ? 'A · 出师' : p >= 28 ? 'B · 入门' : 'C · 火种未熄'; }
+function buff(id) { var n = 0; S.buffs.forEach(function (b) { if (b === id) n++; }); return n; }
+function wrap() { return document.getElementById('gameWrap'); }
+function show(html) { wrap().innerHTML = html; window.scrollTo(0, 0); }
+
+/* ============ 画面 ============ */
+function hudHtml() {
+  var c = topClass(), s = '';
+  for (var k in S.stats) s += '<span class="rb-stat" style="background:' + CLASSES[k].color + '">' + CLASSES[k].name.split(' ')[0] + ' ' + S.stats[k] + '</span>';
+  return '<div class="rb-panel"><div class="rb-hud"><span>第 ' + S.day + ' / 7 天</span><span>意志 <b>' + Math.ceil(S.hp) + '/' + S.hmax + '</b></span><span>战力 <b>' + power() + '</b></span><span>主修 <b>' + CLASSES[c].name + '</b></span><span>击杀 <b>' + S.kills + '</b></span></div>' + s + '</div>';
+}
+function screenTitle() {
+  S = newState(); S.phase = 'title';
+  var hasSave = !!load();
+  var dex = getDex();
+  var h = '<div class="rb-panel rb-endcard">';
+  h += '<div class="t">重 生</div><div class="rb-tag" style="text-align:center">游戏降临前的七天 · SEVEN DAYS BEFORE THE DESCENT</div>';
+  h += '<div class="d" style="margin-bottom:16px">2026 年 10 月 8 日凌晨，「大降临」——所有游戏里的怪物走进了现实。只有亲手<em>做过游戏</em>的人，才能看见它们的血条与弱点。<br><br>你是个只会玩游戏的学生。前世你躲了三天，死在一只怪物的碰撞箱下。<br><br>再睁眼：<b style="color:#edbe5c">9 月 30 日 23:47，国庆前夜。</b><span class="sys">【开发者系统已激活】距离大降临还有 7 天。<br>把你自己，练成一个游戏开发者。</span></div>';
+  h += '<button class="rb-btn gold" style="text-align:center" onclick="startPrologue()">▶ 开始七天</button>';
+  if (hasSave) h += '<button class="rb-btn" style="text-align:center" onclick="resume()">↻ 继续上次的进度（第 ' + load().day + ' 天）</button>';
+  h += '<div style="margin-top:14px"><div class="rb-tag">结局图鉴 · ' + dex.length + ' / 14</div><div class="rb-dex">';
+  for (var id in ENDINGS) h += '<div class="' + (dex.indexOf(id) >= 0 ? 'got' : '') + '">' + (dex.indexOf(id) >= 0 ? ENDINGS[id].got + ' · ' + ENDINGS[id].t : '？？？') + '</div>';
+  h += '</div></div></div>';
+  show(h);
+}
+function startPrologue() { S = newState(); screenDay(); }
+function resume() { var s = load(); if (s) { S = s; screenDay(); } }
+function screenDay() {
+  var st = DAY_STORY[S.day - 1];
+  show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">DAY ' + S.day + ' · ' + st[0] + '</div><div class="rb-story">' + st[1] + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="screenAction()">开始这一天 ▶</button></div>');
+  S.phase = 'day'; save();
+}
+function screenAction() {
+  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">白天 · 今天怎么肝？</div>';
+  ACTIONS.forEach(function (a, i) {
+    var trained = a.k !== 'idle' ? S.trained[a.k] : 0;
+    var buildNote = a.k !== 'idle' && trained < 3 ? '<span class="sub">当晚解锁 ' + CLASSES[a.k].name + ' Build ' + (trained + 1) + '：' + CLASSES[a.k].builds[trained].name + '</span>' : (a.k !== 'idle' ? '<span class="sub">该职业 Build 已全部解锁</span>' : '<span class="sub">打游戏不算虚度：你在研究优秀设计</span>');
+    h += '<button class="rb-btn" onclick="doAction(' + i + ')">' + a.t + ' <span style="color:' + (CLASSES[a.k] ? CLASSES[a.k].color : '#7ed696') + '">『' + a.s + '』</span><span class="sub">' + a.d + '</span>' + buildNote + '</button>';
+  });
+  h += '</div>';
+  show(h); S.phase = 'action'; save();
+}
+function doAction(i) {
+  var a = ACTIONS[i];
+  if (a.k === 'idle') { S.hp = S.hmax; S.idleDays++; var ks = Object.keys(S.stats); S.stats[ks[Math.floor(Math.random() * ks.length)]] += 2; }
+  else { S.stats[a.k] += 3; S.trained[a.k] = Math.min(3, S.trained[a.k] + 1); }
+  screenPrep();
+}
+function currentClass() { return topClass(); }
+function unlockedBuildIdx(cls) { return Math.min(3, S.trained[cls] || 1); }
+function screenPrep() {
+  var isBoss = S.day === 7;
+  var mon = isBoss ? BOSS : MONSTERS[S.day - 1];
+  var cls = currentClass();
+  var nb = unlockedBuildIdx(cls);
+  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">夜幕 · ' + (isBoss ? '降临日决战' : '遭遇战') + '</div>';
+  h += '<div class="rb-monname">' + mon.emoji + ' ' + mon.name + '</div><div style="color:#9fb3aa;font-size:13px;line-height:1.9;margin-top:6px">' + mon.desc + '</div>';
+  h += '<div class="rb-monhp"><i style="width:100%"></i></div><div class="rb-hud" style="margin-top:8px"><span>怪物耐久 <b>' + mon.hp + '</b></span><span>怪物攻击 <b>' + mon.dmg + '/发</b></span></div>';
+  h += '<div class="rb-buffline">你的加成：' + (S.buffs.length ? S.buffs.map(function (b) { var r = ROGUE_POOL.filter(function (p) { return p.id === b; })[0]; return r ? r.t : b; }).join(' / ') : '暂无（赢下遭遇战可获得）') + '</div>';
+  if (nb > 1) {
+    h += '<div class="rb-tag" style="margin-top:14px">选择今晚的 Build（' + CLASSES[cls].name + '）</div><div class="rb-choices" id="buildPick">';
+    for (var i = 0; i < nb; i++) {
+      var b = CLASSES[cls].builds[i];
+      h += '<button class="rb-btn' + (i === nb - 1 ? ' active' : '') + '" data-i="' + i + '" onclick="pickBuild(this,' + i + ')">' + b.name + '<span class="sub">' + b.desc + '</span></button>';
+    }
+    h += '</div>';
+  } else {
+    h += '<div class="rb-buffline" style="margin-top:10px">Build：' + CLASSES[cls].builds[0].name + '（' + CLASSES[cls].builds[0].desc + '）</div>';
+  }
+  h += '<button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="startBattle()">⚔ 开战（自动战斗）</button>';
+  h += '<div class="rb-buffline" style="color:#55665f">战斗全自动：扔弹与技能由 Build 自动释放，打不过就死——死了会有结局，但本局进度清空。</div></div>';
+  show(h); S.phase = 'prep';
+  S.pendingBuild = nb - 1; save();
+}
+function pickBuild(el, i) {
+  S.pendingBuild = i;
+  var btns = document.querySelectorAll('#buildPick button');
+  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
+  el.classList.add('active');
+}
+/* ---- 自动战斗引擎（canvas） ---- */
+var B = null, RAF = null;
+function startBattle() {
+  var isBoss = S.day === 7;
+  var mon = isBoss ? BOSS : MONSTERS[S.day - 1];
+  var cls = currentClass();
+  var stat = S.stats[cls];
+  B = {
+    mon: mon, cls: cls, isBoss: isBoss,
+    mhp: mon.hp, mmax: mon.hp,
+    php: S.hp, pmax: S.hmax,
+    dmg: (3 + 0.55 * stat) * (1 + 0.25 * buff('dmg')),
+    interval: 0.8 / (1 + 0.2 * buff('spd')),
+    crit: 0.15 * buff('crit'),
+    vamp: buff('vamp') > 0 ? 0.05 + 0.05 * buff('vamp') : 0,
+    regen: 0.5 * buff('regen'),
+    skillDmg: 1 + 0.4 * buff('skill'),
+    cdMul: Math.max(0.3, 1 - 0.15 * buff('cdr')),
+    build: CLASSES[cls].builds[S.pendingBuild || 0], buildIdx: S.pendingBuild || 0,
+    t: 0, lastThrow: 0, lastSkill: 0, mLast: 0,
+    shots: [], mshots: [], floats: [], dead: false, over: false, speed: 1, stun: 0, mVuln: 1, mDots: [], summons: 0, hyper: 0
+  };
+  show('<div class="rb-panel"><div class="rb-tag">遭遇战 · ' + mon.name + '</div><div class="rb-speed"><button onclick="cycleSpeed()" id="spdBtn">速度 ×' + B.speed + '</button></div><div id="cvWrap" style="position:relative"><canvas id="battleCanvas" width="720" height="420"></canvas></div><div class="rb-buffline" style="text-align:center">你的 Build：' + B.build.name + ' —— 战斗全自动，看戏就好</div></div>');
+  B.cv = document.getElementById('battleCanvas');
+  B.ctx = B.cv.getContext('2d');
+  B.last = performance.now();
+  RAF = requestAnimationFrame(loop);
+}
+function cycleSpeed() { B.speed = B.speed === 1 ? 2 : B.speed === 2 ? 4 : 1; document.getElementById('spdBtn').textContent = '速度 ×' + B.speed; }
+function floatText(x, y, txt, color) { B.floats.push({ x: x, y: y, txt: txt, c: color, t: 0 }); }
+function loop(now) {
+  if (!B || B.over) return;
+  var dt = Math.min(0.05, (now - B.last) / 1000) * B.speed;
+  B.last = now; B.t += dt;
+  var W = B.cv.width, H = B.cv.height;
+  var px = W / 2, py = H - 70, mx = W / 2, my = 80;
+  /* 玩家扔弹 */
+  if (B.t - B.lastThrow >= B.interval) {
+    B.lastThrow = B.t;
+    var dmg = B.dmg * (Math.random() < B.crit ? 2 : 1);
+    if (B.buildIdx === 0 && B.cls === 'design') dmg = B.dmg * (0.5 + Math.random() * 2.5);
+    B.shots.push({ x: px, y: py - 24, vy: -430, dmg: dmg, glyph: CLASSES[B.cls].ammo[Math.floor(Math.random() * 3)] });
+  }
+  /* Build 技能（自动释放） */
+  var sk = skillTick(dt, px, py, mx, my);
+  /* 怪物攻击（不被躲，纯数值对轰） */
+  if (B.stun <= 0 && B.t - B.mLast >= 1.4) {
+    B.mLast = B.t;
+    B.mshots.push({ x: mx + (Math.random() * 120 - 60), y: my + 30, vy: 260, dmg: B.mon.dmg, glyph: '❓' });
+  }
+  B.stun = Math.max(0, B.stun - dt);
+  if (B.regen > 0) B.php = Math.min(B.pmax, B.php + B.regen * dt);
+  /* 弹道推进与命中 */
+  for (var i = B.shots.length - 1; i >= 0; i--) {
+    var s = B.shots[i]; s.y += s.vy * dt;
+    if (s.y <= my + 30) { hitMonster(s.dmg, s.x, my + 20); B.shots.splice(i, 1); }
+  }
+  for (var i2 = B.mshots.length - 1; i2 >= 0; i2--) {
+    var m = B.mshots[i2]; m.y += m.vy * dt;
+    if (m.y >= py - 20) { hitPlayer(m.dmg); B.mshots.splice(i2, 1); }
+  }
+  /* 胜负 */
+  if (B.mhp <= 0 && !B.over) { endBattleWin(); return; }
+  if (B.php <= 0 && !B.over) { endBattleDeath(); return; }
+  render(px, py, mx, my);
+  RAF = requestAnimationFrame(loop);
+}
+function skillTick(dt, px, py, mx, my) {
+  var c = B.cls, bi = B.buildIdx, base = B.dmg * B.skillDmg;
+  var fire = function (d, extra) {
+    var dmg = d * (1 + (B.mVuln > 1 ? B.mVuln - 1 : 0));
+    hitMonster(dmg, mx, my + 20);
+  };
+  if (c === 'prog') {
+    if (bi === 0) { B.interval = 0.8 / (1 + 0.2 * buff('spd')) / 1.4; }
+    else if (bi === 1 && B.t - B.lastSkill >= 6 * B.cdMul) { B.lastSkill = B.t; fire(base * 4); floatText(mx, my + 60, '⌨ 重锤!', '#6366f1'); }
+    else if (bi === 2 && B.t - B.lastSkill >= 6 * B.cdMul) { B.lastSkill = B.t; B.summons = 2; }
+  } else if (c === 'design') {
+    if (bi === 1 && B.t - B.lastSkill >= 8 * B.cdMul) { B.lastSkill = B.t; fire(base * 5); B.stun = 1.5; floatText(mx, my + 60, '📋 眩晕!', '#34d399'); }
+    else if (bi === 2) { B.mhp -= base * 1.2 * dt; }
+  } else if (c === 'ta') {
+    if (bi === 0 && B.t - B.lastSkill >= 5 * B.cdMul) { B.lastSkill = B.t; fire(base * 3.5); floatText(mx, my + 60, '✨ Ray!', '#8b5cf6'); }
+    else if (bi === 1 && B.t - B.lastSkill >= 4 * B.cdMul) { B.lastSkill = B.t; fire(base * 1.5); fire(base * 1.5); }
+    else if (bi === 2 && B.t - B.lastSkill >= 10 * B.cdMul) { B.lastSkill = B.t; fire(base * 8); floatText(mx, my + 60, '💥 光追爆发!', '#8b5cf6'); }
+  } else if (c === 'art') {
+    if (bi === 0 && B.t - B.lastSkill >= 5 * B.cdMul) { B.lastSkill = B.t; fire(base * 2); }
+    else if (bi === 1 && B.t - B.lastSkill >= 9 * B.cdMul) { B.lastSkill = B.t; fire(base * 6); floatText(mx, my + 60, '🖌 入魂!', '#f59e0b'); }
+    else if (bi === 2) { B.mhp -= base * 0.25 * dt; }
+  } else if (c === 'media') {
+    if (bi === 0) { B.mhp -= base * 0.8 * dt; }
+    else if (bi === 1) { B.mVuln = 1.3; }
+    else if (bi === 2 && B.t - B.lastSkill >= 12 * B.cdMul) { B.lastSkill = B.t; fire(base * 10); floatText(mx, my + 60, '👍 一键三连!', '#ec4899'); }
+  } else if (c === 'tech') {
+    if (bi === 0 && B.t - B.lastSkill >= 7 * B.cdMul) { B.lastSkill = B.t; B.mshots = []; fire(base * 2); floatText(mx, my + 60, '🔧 GC!', '#94a3b8'); }
+    else if (bi === 1 && B.t - B.lastSkill >= 12 * B.cdMul) { B.lastSkill = B.t; B.hyper = 10; floatText(px, py - 40, '⚡ 超频!', '#94a3b8'); }
+  }
+  /* tech B3 指针流（独立计时） */
+  if (c === 'tech' && bi === 2 && B.t - (B.lastPtr || 0) >= 5 * B.cdMul) {
+    B.lastPtr = B.t; hitMonster(B.dmg * B.skillDmg * 4, mx, my + 20); hitPlayer(3);
+  }
+  if (c === 'prog' && B.summons > 0 && B.t - B.lastThrow >= B.interval * 2) {
+    fire(B.dmg * 0.3 * B.summons);
+  }
+  /* 持续伤害 */
+  var dotTotal = 0;
+  B.mDots.forEach(function (d) { dotTotal += d.dps * dt; });
+  if (dotTotal > 0) { B.mhp -= dotTotal * (B.mVuln > 1 ? B.mVuln : 1); }
+  if (B.hyper > 0) { B.hyper -= dt; B.interval = 0.8 / (1 + 0.2 * buff('spd')) / (B.cls === 'prog' && B.buildIdx === 0 ? 1.4 : 1) * 0.5; }
+}
+function hitMonster(dmg, x, y) {
+  if (B.over || B.mhp <= 0) return;
+  B.mhp -= dmg;
+  if (B.vamp > 0) B.php = Math.min(B.pmax, B.php + dmg * B.vamp);
+  B.floats.push({ x: x, y: y, txt: '-' + Math.round(dmg), c: '#f07a70', t: 0 });
+}
+function hitPlayer(dmg) {
+  if (B.over) return;
+  B.php -= dmg;
+  B.floats.push({ x: 360 + (Math.random() * 80 - 40), y: 340, txt: '-' + Math.round(dmg), c: '#f0b8ac', t: 0 });
+}
+function render(px, py, mx, my) {
+  var ctx = B.ctx, W = B.cv.width, H = B.cv.height;
+  ctx.clearRect(0, 0, W, H);
+  /* 怪物 */
+  ctx.font = '52px serif'; ctx.textAlign = 'center';
+  ctx.fillText(B.mon.emoji, mx, my + 20);
+  ctx.font = '700 15px sans-serif'; ctx.fillStyle = '#f0b8ac';
+  ctx.fillText(B.mon.name, mx, my - 44);
+  ctx.fillStyle = '#10151c'; ctx.fillRect(mx - 130, my - 38, 260, 10);
+  ctx.fillStyle = '#c9453e'; ctx.fillRect(mx - 130, my - 38, 260 * Math.max(0, B.mhp / B.mmax), 10);
+  /* 主角 */
+  ctx.font = '40px serif'; ctx.fillText('🧑‍💻', px, py + 14);
+  ctx.font = '700 13px sans-serif'; ctx.fillStyle = '#9fd3b8';
+  ctx.fillText(CLASSES[B.cls].name + ' · ' + B.build.name, px, py + 38);
+  ctx.fillStyle = '#10151c'; ctx.fillRect(px - 130, H - 18, 260, 10);
+  ctx.fillStyle = '#7ed696'; ctx.fillRect(px - 130, H - 18, 260 * Math.max(0, B.php / B.pmax), 10);
+  ctx.font = '11px monospace'; ctx.fillStyle = '#9fb3aa';
+  ctx.fillText('意志 ' + Math.max(0, Math.ceil(B.php)) + '/' + B.pmax, px, H - 24);
+  /* 弹药 */
+  B.shots.forEach(function (s) { ctx.font = '20px serif'; ctx.fillText(s.glyph, s.x, s.y); });
+  B.mshots.forEach(function (m) { ctx.font = '18px serif'; ctx.fillText('❗', m.x, m.y); });
+  /* 飘字 */
+  for (var i = B.floats.length - 1; i >= 0; i--) {
+    var f = B.floats[i]; f.t += 0.016 * B.speed;
+    if (f.t > 1) { B.floats.splice(i, 1); continue; }
+    ctx.font = '900 16px sans-serif'; ctx.fillStyle = f.c; ctx.globalAlpha = 1 - f.t;
+    ctx.fillText(f.txt, f.x, f.y - f.t * 30); ctx.globalAlpha = 1;
+  }
+}
+function endBattleWin() {
+  B.over = true; cancelAnimationFrame(RAF);
+  S.hp = Math.max(1, Math.min(B.pmax, B.php)); S.kills++;
+  S.stats[B.cls] += 1;
+  if (B.isBoss) { screenBossWin(); return; }
+  screenRogue();
+}
+function endBattleDeath() {
+  B.over = true; cancelAnimationFrame(RAF);
+  if (S.idleDays >= 7) { showEnding('E_idle'); return; }
+  showEnding(B.isBoss ? 'BOSS' : B.mon.dex);
+}
+function screenRogue() {
+  var pool = ROGUE_POOL.slice(), picks = [];
+  while (picks.length < 3 && pool.length) picks.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+  var h = hudHtml() + '<div class="rb-panel"><div class="rb-tag">战利品 · 三选一（可叠加）</div>';
+  h += '<div class="rb-story" style="margin-bottom:10px">' + MONSTERS[S.day - 1].emoji + ' ' + MONSTERS[S.day - 1].name + ' 化作了数据尘埃。掉落了三块「引擎碎片」——只能拿一块。</div>';
+  picks.forEach(function (p, i) {
+    h += '<div class="rb-rogue" onclick="pickRogue(\'' + p.id + '\')"><b>▲ ' + p.t + '</b><div class="sub">' + p.d + '</div></div>';
+  });
+  h += '</div>';
+  show(h); S.phase = 'rogue'; save();
+}
+function pickRogue(id) {
+  S.buffs.push(id);
+  if (id === 'hp') { S.hmax += 8; S.hp = Math.min(S.hmax, S.hp + 8); }
+  screenDayEnd();
+}
+function screenDayEnd() {
+  if (S.day >= 7) { screenBossWin(); return; }
+  show(hudHtml() + '<div class="rb-panel"><div class="rb-tag">深夜 · 第 ' + S.day + ' 天结束</div><div class="rb-story">你把今天学到的东西存进记忆，把意志留给明天。<span class="sys">【距离大降临还剩 ' + (7 - S.day) + ' 天】进度已自动保存。</span></div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="nextDay()">睡下 → 第 ' + (S.day + 1) + ' 天 ▶</button></div>');
+  S.phase = 'dayend'; save();
+}
+function nextDay() { S.day++; screenDay(); }
+function screenBossWin() {
+  /* 通关：职业结局 + 评级 */
+  var c = topClass();
+  markEnding('E_' + c);
+  var dex = getDex();
+  show(hudHtml() + '<div class="rb-panel rb-endcard"><div class="rb-tag">10 月 8 日 · 大降临</div><div class="rb-monname" style="margin-bottom:10px">👑 黄金周吞噬者 · 已被击退</div><div class="d rb-story" style="text-align:left">' + ENDING_TEXT.win[c] + '</div><div style="margin-top:14px"><span class="rb-stat" style="background:#edbe5c">结局 · ' + ENDINGS['E_' + c].t + '</span><span class="rb-stat" style="background:#7ed696">战力评级 ' + rating() + '</span><span class="rb-stat" style="background:#9fd3b8">总战力 ' + power() + '</span></div><div class="rb-tag" style="margin-top:14px">你的方向画像</div><div>' + (function () { var s = ''; for (var k in S.stats) s += '<span class="rb-stat" style="background:' + CLASSES[k].color + '">' + CLASSES[k].name.split(' ')[0] + ' ' + S.stats[k] + '</span>'; return s; })() + '</div><div class="rb-tag" style="margin-top:14px">结局图鉴 · ' + dex.length + ' / 14</div><div class="rb-dex">' + dexHtml() + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="restart()">↻ 再来一世（新的一局）</button><button class="rb-btn" style="text-align:center" onclick="location.href=\'quiz\'">想看正式的方向测试？去 QUIZ 页</button></div>');
+  clearSave();
+}
+function showEnding(id) {
+  markEnding(id);
+  var isIdle = id === 'E_idle';
+  var dex = getDex();
+  var body = isIdle ? ENDING_TEXT.idle : ENDING_TEXT.death[id];
+  var mon = id === 'BOSS' ? BOSS : MONSTERS[parseInt(id.slice(1)) - 1];
+  show(hudHtml() + '<div class="rb-panel rb-endcard"><div class="rb-tag">' + (isIdle ? '隐藏结局' : '你死了 · 死于第 ' + S.day + ' 天') + '</div><div class="t">' + ENDINGS[id].t + '</div><div style="font-size:34px;margin-bottom:10px">' + (isIdle ? '🎮' : mon.emoji) + '</div><div class="d">' + body + '</div><div class="rb-tag" style="margin-top:16px">结局图鉴 · ' + dex.length + ' / 14（死了也有收获——这就是多结局的意义）</div><div class="rb-dex">' + dexHtml() + '</div><button class="rb-btn gold" style="text-align:center;margin-top:12px" onclick="restart()">↻ 再重生一次（从第一天开始）</button><button class="rb-btn" style="text-align:center" onclick="location.href=\'quiz\'">不想打了？去做正经方向测试</button></div>');
+  clearSave();
+}
+function dexHtml() {
+  var dex = getDex(), h = '';
+  for (var id in ENDINGS) h += '<div class="' + (dex.indexOf(id) >= 0 ? 'got' : '') + '">' + (dex.indexOf(id) >= 0 ? ENDINGS[id].got + ' · ' + ENDINGS[id].t : '？？？') + '</div>';
+  return h;
+}
+function restart() { clearSave(); S = newState(); screenDay(); }
+screenTitle();
+</script>
+</body>
+</html>
