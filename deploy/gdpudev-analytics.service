@@ -1,0 +1,14 @@
+[Unit]
+Description=GDPUDev anonymous analytics collector (self-hosted beacon)
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/gdpudev-analytics/analytics_server.py
+Restart=always
+RestartSec=3
+User=nobody
+Group=nobody
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
