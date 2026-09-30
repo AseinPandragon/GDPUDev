@@ -784,10 +784,12 @@ function unlockedBuilds() {
 /* 当前夜晚的怪物：血量/攻击随玩家战力成长缩放，避免越练越秒 */
 function battleMon() {
   var m = S.day === 7 ? BOSS : MONSTERS[S.day - 1];
+  var hpM = (1 + power() / 12) * (S.day === 7 ? 2.2 : 1);
+  var dmM = (1 + power() / 150) * (S.day === 7 ? 1.0 : 1);
   return {
     name: m.name, emoji: m.emoji, desc: m.desc, dex: m.dex,
-    hp: Math.round(m.hp * (1 + power() / 50)),
-    dmg: Math.round(m.dmg * (1 + power() / 90))
+    hp: Math.round(m.hp * hpM),
+    dmg: Math.max(1, Math.round(m.dmg * dmM))
   };
 }
 var B = null, RAF = null;
