@@ -106,6 +106,78 @@ window.DAILY_NEWS_DATA = {
     { id: "queens-domain-indie-rpg", category: "games", subcategory: "独立观察", title: "《Queen's Domain》：一把飞行剑 + 无限飞刀，孤身闯『美人怪岛』的第一人称 RPG", summary: "RPS 眼中本周最有个性的独立新作：《Queen's Domain》——第一人称 RPG，玩家只凭一把可遥控的飞行剑和无限飞刀，挑战一座住满『华丽怪胎』的岛屿。武器系统一句话就能讲清，气质拉满。", source: "Rock Paper Shotgun", date: "2026-09-30", url: "https://www.rockpapershotgun.com/first-person-rpg-queens-domain-pitches-you-against-an-island-of-gorgeous-freaks-with-naught-but-a-flying-sword-and-infinite-throwing-daggers", image: "https://assetsio.gnwcdn.com/queens-domain.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp", badge: "独立观察", badgeType: "games", readTime: "4 分钟", hotScore: 69, tags: ["Queen's Domain", "独立RPG", "武器设计", "第一人称"], content: [
       { title: "作品要点", type: "list", items: ["第一人称视角的动作 RPG；", "武器组合极简：可遥控飞行剑 + 无限飞刀；", "美术与敌人设计走『华丽怪胎』的怪奇路线。"] },
       { title: "笔者观察", type: "text", text: "『无限飞刀 + 可遥控主武器』是典型的资源极简设计：弹药管理被砍掉后，玩家的全部决策集中在空间与时机上——这种减法在小体量 RPG 里反而比堆系统更出效果。加上『怪岛美人』这种一句话立住美术方向的设定，又是一个概念先行的小队样本。参考来源：Rock Paper Shotgun。" }
+    ] },
+{ id: "gta-hacker-arrest", category: "industry", subcategory: "安全事件", title: "GTA Online 日收入泄露案告破：嫌疑人被捕，数据安全不再是『别人的事』", summary: "GamesIndustry.biz 报道：泄露 GTA Online 每日营收数据的嫌疑人已被逮捕。一份内部数据足以撼动 R 星的商业机密防线——游戏公司的数据安全预算，该加了吗？", source: "GamesIndustry.biz", date: "2026-10-01", url: "https://www.gamesindustry.biz/alleged-hacker-arrested-over-leak-that-exposed-gta-onlines-daily-revenue", image: "https://assetsio.gnwcdn.com/gta-5-next-gen-update.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp", badge: "安全事件", badgeType: "business", readTime: "4 分钟", hotScore: 85, tags: ["GTA", "数据安全", "R星", "行业事件"], content: [
+      { title: "事件要点", type: "list", items: ["泄露 GTA Online 每日营收数据的嫌疑人已被捕；", "涉案数据包含未经公开的营收细节；", "对全行业：内部数据的访问与审计该重新审视。"] },
+      { title: "笔者观察", type: "text", text: "营收数据为什么敏感？因为它能反推一款游戏的真实健康度——这是上市公司最不想被提前看到的底牌。做游戏的同学容易觉得『安全是运维的事』，但管线里的每一份导出表都是泄露面。参考来源：GamesIndustry.biz。" }
+    ] },
+    { id: "global-game-revenue-2030", category: "industry", subcategory: "数据预测", title: "2030 年全球游戏内容收入将达 2291 亿美元：一份预测报告的三个信号", summary: "GamesIndustry.biz 援引最新预测：2030 年全球游戏内容收入将增长 2.3% 至 2291 亿美元，PC 与亚太市场是主要引擎——增长放缓但仍在增长，这本身就是信号。", source: "GamesIndustry.biz", date: "2026-10-01", url: "https://www.gamesindustry.biz/global-game-content-revenue-forecast-to-rise-23-to-2291bn-in-2030-supported-by-pc-and-asia-pacific-market", image: "", badge: "数据预测", badgeType: "business", readTime: "5 分钟", hotScore: 80, tags: ["市场数据", "行业预测", "PC", "亚太"], content: [
+      { title: "报告要点", type: "list", items: ["2030 年全球游戏内容收入预计 2291 亿美元；", "年增速 2.3%：大盘还在涨，但进入低速稳增期；", "PC 与亚太市场是核心支撑。"] },
+      { title: "笔者观察", type: "text", text: "2.3% 这个数字对求职者是好消息也是警告：行业不缩，但『随便进』的时代结束了。选方向时看结构性机会（PC 复兴、亚太出海）比看大盘有用得多。参考来源：GamesIndustry.biz。" }
+    ] },
+    { id: "engine-choice-2026-guide", category: "engine", subcategory: "选型指南", title: "Unity / Godot / Unreal / Cave：一篇 2026 引擎选型对比的冷静读法", summary: "2026 年选引擎比以往任何时候都难：三巨头之外 Cave 等新势力出现。这篇对比文的价值不在答案，而在它给出的选维度——授权模式、团队规模、目标平台，一个都不能少。", source: "Uniday Studio", date: "2026-10-01", url: "https://uniday.studio/zh/blog/5-unity-vs-godot-vs-unreal-vs-cave2026%E5%B9%B4%E4%BD%A0%E5%BA%94%E8%AF%A5%E9%80%89%E6%8B%A9%E5%93%AA%E4%B8%AA%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E", image: "https://uniday.studio/static/uploads/08dde2db-abd5-495a-8340-6b7bd8b63ce9.jpg", badge: "选型指南", badgeType: "engine", readTime: "8 分钟", hotScore: 75, tags: ["引擎选型", "Unity", "Godot", "Unreal"], content: [
+      { title: "文章要点", type: "list", items: ["四大引擎从授权、平台、团队规模多维对比；", "Cave 等新势力开始进入新人视野；", "结论不是『哪个最好』而是『哪个适合你』。"] },
+      { title: "笔者观察", type: "text", text: "选型焦虑的解药是『先做小样』：同一玩法用两个引擎各做一周，手感会告诉你答案。选型帖的正确用法是核对维度清单，不是背结论。参考来源：Uniday Studio。" }
+    ] },
+    { id: "unity-duo-patch-release", category: "engine", subcategory: "版本动态", title: "Unity 6000.6.3f1 与 LTS 补丁同日上线：两个分支各修各的", summary: "Unity 同日发布 6000.6.3f1 正式版与 6000.3.25f1 LTS 补丁：双分支并行维护的策略再次确认——升级前先看修复清单，别盲目追新。", source: "Unity 官方 Release Notes", date: "2026-10-01", url: "https://unity.com/releases/editor/whats-new/6000.6.3", image: "https://cdn.sanity.io/images/fuvbjjlp/production/e863fe90cd5c7b3fab240e5f3e06f979aa89af1b-1536x864.png", badge: "版本动态", badgeType: "engine", readTime: "4 分钟", hotScore: 74, tags: ["Unity", "补丁", "LTS", "版本管理"], content: [
+      { title: "版本要点", type: "list", items: ["6000.6.3f1 与 6000.3.25f1（LTS）同日发布；", "以稳定性修复为主，无破坏性变更；", "LTS 用户可按需跟进，新分支用户建议直接升。"] },
+      { title: "笔者观察", type: "text", text: "『同日双发』是 Unity 分支策略成熟的标志：追新的人吃修复，求稳的人吃安心。学生项目我永远建议钉在 LTS 上——除非你需要的那个 bugfix 恰好只在新分支里。参考来源：Unity 官方 Release Notes。" }
+    ] },
+    { id: "unity-essentials-pathway", category: "tutorials", subcategory: "官方路径", title: "Unity 官方新手路径 Unity Essentials：从零到第一个能跑的项目", summary: "Unity 官方为纯新手设计的免费学习路径：编辑器界 面、核心概念、第一个小项目一气呵成——如果你不知道第一天该点什么，就点这个。", source: "Unity Learn 官方", date: "2026-10-01", url: "https://learn.unity.com/pathway/unity-essentials", image: "", badge: "官方路径", badgeType: "tutorial", readTime: "20 小时课程", hotScore: 76, tags: ["Unity", "官方教程", "零基础", "免费"], content: [
+      { title: "路径要点", type: "list", items: ["官方免费，面向完全零基础；", "编辑器、核心概念、第一个项目三段式；", "完成即可获得官方徽章与简历可写的项目。"] },
+      { title: "笔者观察", type: "text", text: "国庆七天刚好够走完这条路径的前三分之一——别贪多，把编辑器玩熟比收藏十个教程有用。参考来源：Unity Learn。" }
+    ] },
+    { id: "gdquest-learn-gdscript", category: "tutorials", subcategory: "交互课程", title: "GDQuest 免费交互式 GDScript 课程：在浏览器里学 Godot 的第一门语言", summary: "GDQuest 推出的免费交互式 GDScript 学习工具：不用装引擎，浏览器里边写边练，把 Godot 的官方语言变成第一门『游戏编程语言』。", source: "GDQuest 官方", date: "2026-10-01", url: "https://gdquest.github.io/learn-gdscript/", image: "", badge: "交互课程", badgeType: "tutorial", readTime: "10 小时课程", hotScore: 78, tags: ["Godot", "GDScript", "免费", "交互学习"], content: [
+      { title: "课程要点", type: "list", items: ["浏览器内交互式练习，零安装；", "GDQuest 是 Godot 社区最知名的教学团队；", "完全免费开源，配合官方文档食用。"] },
+      { title: "笔者观察", type: "text", text: "『先写代码还是先开引擎』是 Godot 新手最大的坑——这门课的答案是从浏览器开始，把语法焦虑降到零。配合引擎官方文档，一周可入门。参考来源：GDQuest。" }
+    ] },
+    { id: "mdn-games-zone", category: "tutorials", subcategory: "官方文档", title: "MDN 游戏开发专区：被低估的 Web 游戏官方教科书", summary: "MDN 的 Game development 区是 Web 游戏开发最系统的免费教材：从 Canvas 基础到 2D 游戏完整案例，全部由 Mozilla 官方维护——纯前端做游戏的正规军路线。", source: "MDN Web Docs", date: "2026-10-01", url: "https://developer.mozilla.org/en-US/docs/Games", image: "", badge: "官方文档", badgeType: "tutorial", readTime: "自学", hotScore: 74, tags: ["MDN", "Web游戏", "JavaScript", "免费"], content: [
+      { title: "资源要点", type: "list", items: ["2D 游戏（Canvas）与 3D（WebGL/WebGPU）双线；", "官方维护、例子可直接运行；", "配合『2D breakout game』系列实操最佳。"] },
+      { title: "笔者观察", type: "text", text: "想做小游戏又怕引擎太重的同学，MDN 这条路线被严重低估：纯浏览器、零安装、学完直接能发网页。它教的不只是 API，是『游戏循环』这个一切游戏的底层心智模型。参考来源：MDN。" }
+    ] },
+    { id: "phaser-first-game", category: "tutorials", subcategory: "官方教程", title: "Phaser 官方第一课：一个下午做出你的第一个 Web 游戏", summary: "Phaser 官方入门教程『Making your first Phaser 3 game』：收集星星、躲 bomb，十几页把游戏循环、物理、输入全部讲完——Web 小游戏最快的一条上线路径。", source: "Phaser 官方", date: "2026-10-01", url: "https://phaser.io/tutorials/making-your-first-phaser-3-game", image: "", badge: "官方教程", badgeType: "tutorial", readTime: "3 小时", hotScore: 75, tags: ["Phaser", "Web游戏", "JavaScript", "官方教程"], content: [
+      { title: "教程要点", type: "list", items: ["官方维护、随版本更新；", "一个完整小游戏贯穿全部核心概念；", "成品可直接部署到网页分享给朋友。"] },
+      { title: "笔者观察", type: "text", text: "如果国庆七天你想『做出一个能发给朋友玩的东西』，Phaser 这条官方教程加半天部署是最短路径——比从零学引擎快得多。做完再决定要不要深入引擎。参考来源：Phaser 官网。" }
+    ] },
+    { id: "nvidia-openshell", category: "opensource", subcategory: "AI 运行时", title: "NVIDIA 开源 OpenShell：给 AI 智能体一个安全的『家』", summary: "NVIDIA 开源 OpenShell（Rust）：面向自主 AI 智能体的安全私有运行时环境，本周登上 GitHub 热榜——大厂开始为『智能体住在哪』这个问题修房子了。", source: "GitHub: NVIDIA/OpenShell", date: "2026-10-01", url: "https://github.com/NVIDIA/OpenShell", image: "https://opengraph.githubassets.com/1/NVIDIA/OpenShell", badge: "AI 运行时", badgeType: "hot", readTime: "4 分钟", hotScore: 82, tags: ["NVIDIA", "开源", "AI Agent", "Rust"], content: [
+      { title: "项目看点", type: "list", items: ["Rust 编写的 AI 智能体安全运行时；", "主打私有化与安全隔离；", "本周 GitHub 热榜，今日新增 star 过千。"] },
+      { title: "笔者观察", type: "text", text: "当智能体开始替你执行任务，『它能在哪里安全地跑』就成了基础设施问题——NVIDIA 亲自下场说明这个判断已是共识。关注 AI 方向的同学，运行时层是下一个值得押注的岗位带。参考来源：GitHub。" }
+    ] },
+    { id: "dbx-25mb-database", category: "opensource", subcategory: "开发工具", title: "dbx：25MB 装下 100 种数据库的 Rust 客户端，本周热榜黑马", summary: "开源项目 dbx 本周冲上 GitHub 热榜：仅 25MB 的跨平台数据库客户端，支持 MySQL/PostgreSQL/SQLite/Redis 等 100+ 数据库，内置 AI 助手与 MCP Server——后端工具链的『轻量化』信号。", source: "GitHub: t8y2/dbx", date: "2026-10-01", url: "https://github.com/t8y2/dbx", image: "https://repository-images.githubusercontent.com/1224172037/32bdb2d1-cbb6-4a47-8743-150c311fbb1b", badge: "开发工具", badgeType: "hot", readTime: "4 分钟", hotScore: 78, tags: ["GitHub", "数据库", "Rust", "开源"], content: [
+      { title: "项目看点", type: "list", items: ["25MB 支持 100+ 数据库的跨平台客户端；", "内置 AI 助手与 MCP Server；", "本周新增 star 超 1100。"] },
+      { title: "笔者观察", type: "text", text: "做游戏服务端的同学迟早要和数据库打交道——这类『一个工具连所有库』的轻量客户端，是搭建私服与后台调试的性价比之选。顺带观察：Rust 正在吃掉桌面工具链。参考来源：GitHub。" }
+    ] },
+    { id: "pageindex-rag-index", category: "opensource", subcategory: "AI 基建", title: "PageIndex：不要向量库的 RAG 文档索引，本周 +1097 星", summary: "VectifyAI 开源的 PageIndex（Python）本周新增 star 过千：面向『无向量、基于推理』的 RAG 文档索引——用推理代替向量检索，是 RAG 路线上一次有想法的反叛。", source: "GitHub: VectifyAI/PageIndex", date: "2026-10-01", url: "https://github.com/VectifyAI/PageIndex", image: "https://opengraph.githubassets.com/1/VectifyAI/PageIndex", badge: "AI 基建", badgeType: "hot", readTime: "4 分钟", hotScore: 79, tags: ["GitHub", "RAG", "AI", "开源"], content: [
+      { title: "项目看点", type: "list", items: ["无向量、基于推理的文档索引方案；", "Python 生态，本周 star +1097；", "对文档结构化知识问答场景友好。"] },
+      { title: "笔者观察", type: "text", text: "RAG 领域『向量不是唯一解』的声音越来越多——PageIndex 用文档树结构 + 推理导航走了一条新路。想做 AI 策划工具、知识库的同学可以试试把项目文档喂给它。参考来源：GitHub。" }
+    ] },
+    { id: "voicestudio-local-tts", category: "opensource", subcategory: "语音 AI", title: "VoiceStudio：完全本地的语音克隆工具，本周 GitHub 增星 3483", summary: "开源项目 VoiceStudio 本周爆发（总 star 5 万+）：完全本地运行，支持语音克隆、配音、转录与 646 种语言——对独立游戏来说，这是一条零成本角色配音的新路。", source: "GitHub: debpalash/VoiceStudio", date: "2026-10-01", url: "https://github.com/debpalash/VoiceStudio", image: "https://repository-images.githubusercontent.com/1206390571/fd6851a0-4e36-4541-a76c-2ad84935d0bc", badge: "语音 AI", badgeType: "hot", readTime: "4 分钟", hotScore: 83, tags: ["GitHub", "语音AI", "配音", "开源"], content: [
+      { title: "项目看点", type: "list", items: ["完全本地运行，无需联网与 API 费用；", "语音克隆、设计、配音、转录一条龙；", "支持 646 种语言，本周 star +3483。"] },
+      { title: "笔者观察", type: "text", text: "独立游戏的配音成本一直是『有声音』和『没声音』的分界线——本地 TTS/克隆工具把这条线抹掉了。用 AI 配音 NPC 临时语音、再用真人录制关键剧情，是独立团队的现实混合方案。参考来源：GitHub。" }
+    ] },
+    { id: "moneyprinter-turbo", category: "opensource", subcategory: "内容工具", title: "MoneyPrinterTurbo：一键 AI 生成短视频，自媒体方向的开源弹药库", summary: "开源项目 MoneyPrinterTurbo（总 star 12.7 万+）：输入主题即可用 AI 大模型自动生成高清短视频——对走自媒体方向的游戏学生，这是一个值得研究的工作流样本。", source: "GitHub: Harry0703/MoneyPrinterTurbo", date: "2026-10-01", url: "https://github.com/Harry0703/MoneyPrinterTurbo", image: "https://opengraph.githubassets.com/1/Harry0703/MoneyPrinterTurbo", badge: "内容工具", badgeType: "hot", readTime: "4 分钟", hotScore: 77, tags: ["GitHub", "短视频", "AI工作流", "开源"], content: [
+      { title: "项目看点", type: "list", items: ["主题/关键词 → 自动生成高清短视频；", "文案、素材、字幕、配音全流程自动化；", "总 star 12.7 万，长期霸榜。"] },
+      { title: "笔者观察", type: "text", text: "把它当『自动印钱机』你会失望，把它当『工作流教学样本』你会赚到：它是研究『AI 内容管线怎么搭』的完整开源实现。拆它的管线比用它更有价值。参考来源：GitHub。" }
+    ] },
+    { id: "gemini4-posttraining", category: "ai", subcategory: "大模型", title: "Gemini 4 进入后训练阶段：谷歌跳过 3.5，直压年底前发布", summary: "Google DeepMind 新掌门 Koray Kavukcuoglu 确认：Gemini 4 已进入后训练早期阶段，目标『远早于年底』发布——谷歌实际跳过了原计划的 3.5 Pro，把资源全部押向 4。", source: "财联社 / The Information", date: "2026-09-24", url: "https://www.cls.cn/detail/2491924", image: "", badge: "大模型", badgeType: "ai", readTime: "5 分钟", hotScore: 88, tags: ["Google", "Gemini 4", "大模型", "AI竞争"], content: [
+      { title: "动态要点", type: "list", items: ["Gemini 4 正式进入后训练早期阶段；", "谷歌跳过原计划的 Gemini 3.5 Pro；", "目标『远早于 2026 年底』发布，先发后迭代。"] },
+      { title: "笔者观察", type: "text", text: "『跳过 3.5』是个危险又迷人的决策：砍掉中间版本意味着把迭代风险一次性押到大版本上。对开发者，真正该关注的是它的多模态与 Agent 能力会不会原生进引擎工具链——那才是影响游戏开发方式的部分。参考来源：财联社援引 The Information。" }
+    ] },
+    { id: "openrig-multiagent", category: "ai", subcategory: "智能体", title: "OpenRig：把 Claude Code 和 Codex 拧成一股绳的多智能体框架", summary: "开源项目 OpenRig 登上 GitHub 热榜：将 Claude Code 与 Codex 作为统一系统协同运行的多智能体框架——两大编码智能体不再二选一，而是组队打工。", source: "GitHub: mvschwarz/OpenRig", date: "2026-10-01", url: "https://github.com/mvschwarz/OpenRig", image: "https://repository-images.githubusercontent.com/1198124295/1af4015a-ccfc-48e2-9d75-81ff3f15e3a1", badge: "智能体", badgeType: "ai", readTime: "4 分钟", hotScore: 80, tags: ["GitHub", "AI Agent", "Claude Code", "Codex"], content: [
+      { title: "项目看点", type: "list", items: ["统一调度 Claude Code 与 Codex 两家智能体；", "多智能体协作框架，今日热榜 +624 星；", "TypeScript 实现，面向个人开发者。"] },
+      { title: "笔者观察", type: "text", text: "『让两家 AI 互相 review』是很多开发者在手动干的事——OpenRig 把它产品化了。游戏团队可以试的玩法：让 A 写功能、B 做代码审查，冲突点往往就是真正的风险点。参考来源：GitHub。" }
+    ] },
+    { id: "codegraph-knowledge-map", category: "ai", subcategory: "智能体", title: "CodeGraph：给 AI 一张预索引的代码知识图谱，省 token 又省工具调用", summary: "开源项目 CodeGraph（C，总 star 7.2 万+）：预索引的代码知识图谱，代码变更自动同步，支持 Claude Code、Codex、Gemini、Cursor 等多家智能体，100% 本地运行。", source: "GitHub: colbymchenry/CodeGraph", date: "2026-10-01", url: "https://github.com/colbymchenry/CodeGraph", image: "https://opengraph.githubassets.com/1/colbymchenry/CodeGraph", badge: "智能体", badgeType: "ai", readTime: "4 分钟", hotScore: 79, tags: ["GitHub", "AI Agent", "代码索引", "本地运行"], content: [
+      { title: "项目看点", type: "list", items: ["预索引代码知识图谱，变更自动同步；", "支持 Claude Code、Codex、Gemini、Cursor；", "100% 本地运行，更少 token 与工具调用。"] },
+      { title: "笔者观察", type: "text", text: "AI 编码的质量瓶颈正在从『模型』转向『上下文』——CodeGraph 这类本地知识图谱让 AI 不再靠 grep 猜代码结构。大型 Unity 项目接一套，AI 改错的概率会肉眼可见地下降。参考来源：GitHub。" }
+    ] },
+    { id: "context-mode-agent", category: "ai", subcategory: "智能体", title: "context-mode：给 AI 编程智能体『省着点用脑子』的上下文优化器", summary: "开源项目 context-mode（总 star 2.4 万+）：沙箱化工具输出（减少 98% token）、持久化会话记忆，并通过 MCP + hooks 在 17 个平台间强制路由——AI 编程的『内存管理』赛道开始内卷。", source: "GitHub: mksglu/context-mode", date: "2026-10-01", url: "https://github.com/mksglu/context-mode", image: "https://opengraph.githubassets.com/1/mksglu/context-mode", badge: "智能体", badgeType: "ai", readTime: "4 分钟", hotScore: 77, tags: ["GitHub", "MCP", "上下文优化", "AI Agent"], content: [
+      { title: "项目看点", type: "list", items: ["沙箱化工具输出，token 减少 98%；", "持久化会话记忆 + MCP/hooks 多平台路由；", "总 star 2.4 万，支持 17 个平台。"] },
+      { title: "笔者观察", type: "text", text: "AI 编程的下一个战场是上下文经济学：同样的模型，会管理上下文的人产出高一截。游戏项目里最该优化的就是构建日志与资源列表这类『上下文黑洞』。参考来源：GitHub。" }
+    ] },
+    { id: "openclaw-391k", category: "ai", subcategory: "智能体", title: "OpenClaw：39 万 star 的『真正能干活的 AI』，开源智能体的顶流", summary: "开源项目 OpenClaw 总 star 已达 39.1 万：定位『真正能干活的 AI，任何操作系统任何平台』——它已经不只是工具，而是开源 AI 智能体生态的门面。", source: "GitHub: OpenClaw/OpenClaw", date: "2026-10-01", url: "https://github.com/OpenClaw/OpenClaw", image: "https://opengraph.githubassets.com/1/OpenClaw/OpenClaw", badge: "智能体", badgeType: "ai", readTime: "4 分钟", hotScore: 84, tags: ["GitHub", "AI Agent", "开源", "跨平台"], content: [
+      { title: "项目看点", type: "list", items: ["总 star 39.1 万，开源智能体顶流；", "跨操作系统、跨平台运行；", "『龙虾之道 🦞』——社区文化浓厚。"] },
+      { title: "笔者观察", type: "text", text: "39 万 star 意味着什么？它已经是『AI 智能体』这个类目的事实入门入口。游戏开发者的正确打开方式：把它当跨平台自动化底座试一试，感受一下『AI 替你操作电脑』的边界在哪。参考来源：GitHub。" }
     ] }
   ]
 }
