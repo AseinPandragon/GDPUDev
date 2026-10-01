@@ -1427,13 +1427,14 @@
     { id: "opensource", en: "WORLD", name: "开源宝库", desc: "GitHub 精选开源项目 / 工具链 / 框架库" },
     { id: "tutorials", en: "MEDIA", name: "实战教程", desc: "架构设计 / 性能调优 / 工业化实战指南" },
     { id: "ai", en: "AI LAB", name: "AI前沿", desc: "AI Agent / 智能NPC / 自动化管线 / MCP" },
+    { id: "contest", en: "ARENA", name: "竞赛·GameJam", desc: "Game Jam / 高校赛事 / 独立游戏大赛 / 报名与截止日历" },
     { id: "bookmarks", en: "ARCHIVE", name: "战术收藏", desc: "我星标的技术文章与重点情报" },
     { id: "about", en: "ABOUT", name: "关于我们", desc: "广药游戏开发情报中枢 · 公益宗旨与点阵全息设定" }
   ];
 
   const KNOWN_SUBTAGS = [
     "全部子项", "Unreal / 虚幻", "Unity", "团结引擎", "Godot", "科隆展", "GTA6", 
-    "巫师3", "国产3A", "开源工具", "图形渲染", "AI Agent", "性能优化", "大厂动向"
+    "巫师3", "国产3A", "开源工具", "图形渲染", "AI Agent", "性能优化", "大厂动向", "GameJam"
   ];
 
   const SUBTAG_ALIAS_MAP = {
@@ -1449,7 +1450,8 @@
     "图形渲染": ["渲染", "render", "shader", "lumen", "光追", "ray tracing", "rtx", "urp"],
     "AI Agent": ["ai", "agent", "npc", "mcp", "智能体", "大模型", "llm"],
     "性能优化": ["优化", "profiler", "draw call", "合批", "gc", "lods", "lod", "batch"],
-    "大厂动向": ["腾讯", "网易", "索尼", "微软", "育碧", "ea", "marvelous", "投融资", "财报"]
+    "大厂动向": ["腾讯", "网易", "索尼", "微软", "育碧", "ea", "marvelous", "投融资", "财报"],
+    "GameJam": ["gamejam", "game jam", "jam", "ludum", "gmtk", "ciga", "globalgamejam", "比赛", "大赛", "竞赛", "报名", "截止"]
   };
 
   function matchesSubTag(article, tag) {

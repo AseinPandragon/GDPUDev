@@ -1,0 +1,56 @@
+[
+ {
+  "url": "https://itch.io/jams",
+  "status": "ERR",
+  "og": "",
+  "title": "<urlopen error [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，"
+ },
+ {
+  "url": "https://ldjam.com/",
+  "status": 200,
+  "og": "",
+  "title": ""
+ },
+ {
+  "url": "https://globalgamejam.org/",
+  "status": "ERR",
+  "og": "",
+  "title": "HTTP Error 403: Forbidden"
+ },
+ {
+  "url": "https://www.ciga.me/gamejams",
+  "status": 200,
+  "og": "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/1489174/293987_970995.png",
+  "title": "GameJams - CiGA中国独立游戏联盟"
+ },
+ {
+  "url": "https://www.ciga.me/",
+  "status": 200,
+  "og": "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/1489174/293987_970995.png",
+  "title": "CiGA中国独立游戏联盟"
+ },
+ {
+  "url": "https://gameinstitute.qq.com/yxds/collection",
+  "status": 200,
+  "og": "",
+  "title": "高校游戏创意制作大赛-腾讯游戏学堂"
+ },
+ {
+  "url": "https://www.ncda.org.cn/",
+  "status": 200,
+  "og": "",
+  "title": "未来设计师·全国高校数字艺术设计大赛（NCDA）"
+ },
+ {
+  "url": "http://jsjds.blcu.edu.cn/",
+  "status": 200,
+  "og": "",
+  "title": "中国大学生计算机设计大赛"
+ },
+ {
+  "url": "https://indienova.com/",
+  "status": 200,
+  "og": "",
+  "title": "独立精神 | indienova 独立游戏"
+ }
+]

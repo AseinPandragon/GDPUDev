@@ -1,7 +1,7 @@
 # 自动化执行记录：每日游戏开发技术学习观察简报
 
 ## 例行规则（每次执行都要做）
-0. **数量硬性验收（用户 2026-09-28 要求，2026-09-30 放宽口径，最高优先级，不得打折）**：items 总数 **≥30 条**（可超过 30，不可少于 30，hero 之外），且 **engine / industry / games / opensource / tutorials / ai 六个分类各 ≥5 条**。生成后必须逐分类清点并把清点结果写进执行摘要；同日条目互不重复（同 URL 或同事件只留一条），并与近 5 天归档去重。某分类穷尽多轮搜索（≥3 组关键词）确实凑不齐 5 条时，在摘要中说明缺哪个分类、差几条、找过什么渠道——严禁用低质或重复条目凑数。详见《定时任务_游戏开发技术学习观察简报.md》第六节。
+0. **数量硬性验收（用户 2026-09-28 要求，2026-09-30 放宽口径，最高优先级，不得打折）**：items 总数 **≥30 条**（可超过 30，不可少于 30，hero 之外），且 **engine / industry / games / opensource / tutorials / ai 六个分类各 ≥5 条**，另有 **contest（竞赛·GameJam，2026-10-01 用户要求新增）分类每日 ≥3 条**。生成后必须逐分类清点并把清点结果写进执行摘要；同日条目互不重复（同 URL 或同事件只留一条），并与近 5 天归档去重。某分类穷尽多轮搜索（≥3 组关键词）确实凑不齐时，在摘要中说明缺哪个分类、差几条、找过什么渠道——严禁用低质或重复条目凑数。详见《定时任务_游戏开发技术学习观察简报.md》第六节。
 1. 生成当日 data/日期.js 并同步 news_data.js / archive_list.js（UTF-8 无 BOM、CRLF；archive_list 顶部插当天、原顶部改「往期技术归档」；与近 5 天归档去重）。
 2. URL 逐条验 200；配图 og:image / Steam header 验证 image/*，失败留空 image:""。
 3. **新生内容每日质检**（用户 2026-09-28 要求新增）：按《新生内容每日质检清单.md》走查新生阅读动线（start.html → roadmap 横幅 → art/design 及细分页），检查①人工撰写感（反 AI 腔：无空洞排比、有立场取舍、有亲历锚点与具体数字）②可读性（术语有解释、建议有下一步、错别字与编号引用）③归纳完整性（细分页五要素齐备、来源可访问、与培养方案一致）。发现问题当次修复，结果追加到质检清单的「检查日志」。当前待办：design/ 下 5 页四年路线扩写（P2）、design 延伸阅读补充、year-tabs/打卡铺开（仅 art/illustration 已打样）。
@@ -10,7 +10,7 @@
 6. **易缺分类优先搜集（2026-10-01 教训，最高频翻车点）**：opensource / ai / tutorials 是最容易为 0 或 1 的三个分类（10-01 自动化分别给了 0/0/1）——每天开工**先搜这三类**（GitHub 每日热榜 / 大模型与 AI 智能体动态 / 官方教程与学习资源），再补 games 与 industry（后两者从 gamesindustry.biz 首页、rockpapershotgun 极易拿满）。
 7. **AI 分类内容要求（用户 2026-10-01 点名）**：ai 分类必须覆盖当日或近几日的大模型 / AI 智能体 / AI 游戏工具动态（如 Gemini 4 训练进展、OpenAI DevDay、AI 游戏开发工具发布等）。写法严格按可验证事实——「训练中 / 未发布」不得写成「已发布」（例：Gemini 4 截至 09-24 仅官方确认进入后训练阶段，不得写成当日发布）。
 8. **hero 不占六分类名额**：hero 归入某分类时，items 里该分类仍须独立凑满 5 条（10-01 hero=engine，items 内 engine 实际只有 4 条但被误判达标——清点时必须把 hero 排除后单独数）。
-9. **category 字段必须用英文枚举值**：只能是 engine / industry / games / opensource / tutorials / ai，中文词（如「大厂动向」「数据预测」）一律放 subcategory 字段——中文 category 会被站点的分类过滤直接忽略。
+9. **category 字段必须用英文枚举值**：只能是 engine / industry / games / opensource / tutorials / ai / contest，中文词（如「大厂动向」「数据预测」「GameJam」）一律放 subcategory 字段——中文 category 会被站点的分类过滤直接忽略。contest 分类（2026-10-01 新增，≥3 条/日）素材源：CiGA（www.ciga.me，GameJams 页与 indiePlay 大赛）、Ludum Dare（ldjam.com，每年 4 月/10 月，SPA 无 og 属正常）、Global Game Jam（每年 1 月，urllib 403 反爬属正常）、indienova BOOOM、itch.io/jams、腾讯高校游戏创意制作大赛（gameinstitute.qq.com/yxds/collection）、中国大学生计算机设计大赛（jsjds.blcu.edu.cn，4A 类）、NCDA（ncda.org.cn）；赛程/截止日期必须以官方页当前内容为准，不得凭历史节奏编造「正在报名」，无当期日期的写成「赛事入口/历届回顾/赛程日历」性质条目。
 10. **常青补位库（某分类穷尽搜索仍不足 5 条时的合规来源，逐个验证 HTTP 200 后使用）**：MDN Game development 区（developer.mozilla.org/en-US/docs/Games）、Phaser 官方入门教程（phaser.io/tutorials）、Unity Learn「Unity Essentials」路径（learn.unity.com/pathway/unity-essentials）、GDQuest 交互式 GDScript（gdquest.github.io/learn-gdscript）、GitHub 每日/每周热榜仓库（AI 工具类常驻）、引擎选型对比长文（如 Uniday 2026 引擎对比）。GitHub 配图一律 opengraph.githubassets.com/1/&lt;owner&gt;/&lt;repo&gt;。
 11. **交差前自查闭环**：生成 / 补条后必须跑分类清点（核对 items 总数 ≥30 且六分类各 ≥5、并核对 hero 是否占了名额），不达标继续补；达标后才允许 commit push；执行摘要必须附「总数 + 六分类逐个数字」。
 
@@ -25,3 +25,4 @@
 - 2026-10-01：15 条（hero=GTA6 动态天气系统：飓风/彩虹/持久动态云，RPS）。⚠️ SSH 事故与修复：当日 push 被拒（GitHub 识别为旧账号 Assassin0740）——~/.ssh/config 的 github.com 段 IdentityFile 被人改成 id_rsa（旧账号钥匙），且 id_ed25519_github.pub 公钥内容与用户 9/28 提供的 gdpudev-github.pub 相同（同一把钥匙，属 AseinPandragon）。修复：config 改回 IdentityFile ~/.ssh/id_ed25519_github（原 config 备份为 config.bak-20261001），ssh -T 验证恢复 AseinPandragon 后推送成功。后续 push 失败先跑 ssh -T git@github.com 看身份。经验：GI.biz/RPS 均可脚本直读 og:image；候选 15 条全部 og 可用，零浏览器操作。commit 90bc14e。
 - 站点背景：十页站点（start 新生入口 + roadmap/ta/client/design/engine/art/server/contests/jobs）+ art/design 各 5 个细分子页；细分子页含知乎延伸阅读（浏览器验证）与原文摘录；导航 ART/DESIGN 悬停下拉 + 当前页高亮；nginx no-cache + .html 301 已配置；全站内链无 .html 后缀。
 - 2026-10-01（不达标被用户发现后人工修复）：07:00 自动化仅 15 条（opensource=0、ai=0、tutorials=1、industry=3，engine 因 hero=engine 实际只 4 条）→ 用户点名批评并要求 AI 分类必须收录当日 AI 动态 → 人工补 17 条至 32 条：industry+2（GTA 泄露案告破 / 2030 全球收入预测 2291 亿美元）、engine+2（Unity 双分支补丁 / 2026 引擎选型对比）、tutorials+4（Unity Essentials 路径 / GDQuest GDScript / MDN Games / Phaser 官方第一课）、opensource+5（NVIDIA OpenShell / dbx / PageIndex / VoiceStudio / MoneyPrinterTurbo）、ai+5（Gemini 4 后训练【按事实：09-24 仅确认进入后训练，未发布】/ OpenRig / CodeGraph / context-mode / OpenClaw 391k star）。全部 URL 200、全部与近 5 天 FRESH。教训已固化为例行规则 6-11。commit 23e2523。
+- 2026-10-01（新增 contest 分类，用户指令）：站内新增「竞赛·GameJam」分类（index.html 的 CATEGORY_DEFINITIONS + GameJam 子标签别名 + 数据文件 categories），当日补 5 条赛事条目（Ludum Dare 60 定档 10-16 / CiGA Game Jam / indiePlay 大赛 / 腾讯高校游戏创意制作大赛 / 计算机设计大赛数媒赛道），总数 37、七分类达标。后续日常执行：contest ≥3 条/日，素材源与写法要求见规则 9。
