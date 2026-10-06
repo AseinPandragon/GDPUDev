@@ -81,6 +81,24 @@
   .field input{width:100%;padding:10px 12px;border:1.5px solid var(--border-strong);border-radius:6px;font-size:13px;outline:none;font-family:var(--font-mono);}
   .field input:focus{border-color:var(--accent-blue);}
   .cfg-form{max-width:560px;}
+  /* 访问数据面板 */
+  .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;}
+  .kpi{flex:1;min-width:140px;border:1px solid var(--border-light);border-radius:8px;padding:12px 14px;background:var(--bg-subtle);}
+  .kpi b{display:block;font-size:22px;font-family:var(--font-mono);}
+  .kpi span{font-size:11px;color:var(--text-muted);font-weight:700;}
+  .ana-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  @media(max-width:900px){.ana-grid{grid-template-columns:1fr;}}
+  .ana-card{border:1px solid var(--border-light);border-radius:8px;padding:12px 14px;background:#fff;}
+  .ana-card h4{font-size:12.5px;margin-bottom:8px;color:var(--text-secondary);font-family:var(--font-mono);letter-spacing:.5px;}
+  .ana-card table{width:100%;border-collapse:collapse;font-size:12px;font-family:var(--font-mono);}
+  .ana-card td{padding:4px 6px;border-bottom:1px dashed var(--border-light);word-break:break-all;}
+  .ana-card td:last-child{text-align:right;color:var(--accent-blue);font-weight:800;white-space:nowrap;}
+  .bar{display:inline-block;height:10px;background:var(--accent-blue);border-radius:2px;vertical-align:middle;margin-right:6px;}
+  .ana-full{border:1px solid var(--border-light);border-radius:8px;padding:12px 14px;background:#fff;margin-bottom:14px;}
+  .ana-full h4{font-size:12.5px;margin-bottom:8px;color:var(--text-secondary);font-family:var(--font-mono);}
+  .ana-full table{width:100%;border-collapse:collapse;font-size:12px;font-family:var(--font-mono);}
+  .ana-full th{text-align:left;padding:5px 6px;border-bottom:1.5px solid var(--border-strong);font-size:11px;color:var(--text-muted);}
+  .ana-full td{padding:5px 6px;border-bottom:1px dashed var(--border-light);}
 </style>
 </head>
 <body>
@@ -127,6 +145,8 @@
     <div class="card side">
       <h3>📄 页面文件</h3>
       <div id="fileList"></div>
+      <h3 style="margin-top:16px;">📊 数据</h3>
+      <div class="file-item" id="navAnalytics" onclick="openAnalytics()"><span>📈 访问统计</span><span class="state-dot state-clean">visits</span></div>
       <h3 style="margin-top:16px;">📌 提示</h3>
       <p style="font-size:12px;color:var(--text-muted);" id="syncNote">
         发布 = 自动 commit 到 GitHub 主分支 → 服务器每 30 分钟自动同步生效（急用可 SSH 手动 <span style="font-family:var(--font-mono);">git reset --hard origin/main</span>）。
@@ -148,6 +168,21 @@
         <iframe id="editorFrame" style="display:none;"></iframe>
         <textarea class="src" id="sourceArea" spellcheck="false"></textarea>
         <p class="hint" id="editHint" style="display:none;">可视化模式：点击文字直接改；<b>双击图片改图片地址</b>、双击链接改跳转地址；改完点「保存草稿」或「提交审核」。源码模式：直接改 HTML。</p>
+      </div>
+
+      <!-- 访问数据面板 -->
+      <div class="card panel" id="analyticsPanel" style="display:none;">
+        <div class="meta" id="anaMeta"></div>
+        <div class="toolbar">
+          <button class="btn" onclick="anaLoad()">🔄 刷新数据</button>
+          <span class="hint">数据源：服务器匿名访问日志（无 cookie、无个人信息）· 接口需账号密码（与 /mayfly/ 相同）</span>
+        </div>
+        <div id="anaCred" style="display:none;border:1px solid var(--border-light);border-radius:8px;padding:14px;max-width:420px;margin-bottom:14px;background:var(--bg-subtle);">
+          <div class="field"><label>账号（默认 mayfly）</label><input id="anaUser" placeholder="mayfly"></div>
+          <div class="field"><label>密码</label><input id="anaPass" type="password" onkeydown="if(event.key==='Enter')anaSaveCred()"></div>
+          <button class="btn primary" onclick="anaSaveCred()">保存并加载</button>
+        </div>
+        <div id="anaBody"><p class="hint">点击「刷新数据」加载。</p></div>
       </div>
     </div>
   </div>
@@ -293,6 +328,9 @@ function renderFileList(){
 /* ================= 文件加载与编辑 ================= */
 async function openFile(p){
   current=p;
+  $('analyticsPanel').style.display='none';
+  $('editorPanel').style.display='block';
+  const nav=$('navAnalytics'); if(nav) nav.classList.remove('active');
   $('fileMeta').textContent='加载中…';
   try{
     const res=await api(`contents/${p}?ref=${cfg.branch}`);
@@ -579,6 +617,75 @@ async function testConn(silent){
   }catch(e){}
 }
 function closeModal(id){ $(id).classList.remove('show'); }
+
+/* ================= 访问数据面板 ================= */
+const K_ANA='gdu_ana_cred';
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function fmtDwell(s){s=Number(s)||0;return s>=60?Math.floor(s/60)+'分'+Math.round(s%60)+'秒':Math.round(s)+'秒';}
+function openAnalytics(){
+  current=null; dirty=false;
+  $('editorPanel').style.display='none';
+  $('analyticsPanel').style.display='block';
+  $('fileMeta').textContent='📈 访问统计 · 匿名数据（path / 来源 / 停留 / 视口宽度）';
+  $('anaMeta').textContent='';
+  renderFileList();
+  const nav=$('navAnalytics'); if(nav) nav.classList.add('active');
+  anaLoad();
+}
+async function anaLoad(){
+  const cred=JSON.parse(localStorage.getItem(K_ANA)||'null')||{u:'mayfly',p:''};
+  $('anaBody').innerHTML='<p class="hint">加载中…</p>';
+  let r;
+  try{
+    r=await fetch('/gamedev/analytics/summary',{headers:{Authorization:'Basic '+btoa(cred.u+':'+cred.p)},cache:'no-store'});
+  }catch(e){ $('anaBody').innerHTML='<p class="hint" style="color:var(--accent-rose);">请求失败：'+esc(e.message)+'（本地预览时此接口不可用，请访问线上后台）</p>'; return; }
+  if(r.status===401){
+    $('anaCred').style.display='block';
+    $('anaUser').value=cred.u;
+    $('anaBody').innerHTML='<p class="hint" style="color:var(--accent-rose);">⛔ 账号或密码不对（与 /mayfly/ 的账号密码相同）。</p>';
+    return;
+  }
+  if(!r.ok){ $('anaBody').innerHTML='<p class="hint" style="color:var(--accent-rose);">HTTP '+r.status+'</p>'; return; }
+  $('anaCred').style.display='none';
+  localStorage.setItem(K_ANA,JSON.stringify(cred));
+  let d; try{ d=await r.json(); }catch(e){ $('anaBody').textContent='数据解析失败'; return; }
+  anaRender(d);
+}
+function anaSaveCred(){
+  const u=($('anaUser').value.trim()||'mayfly'), p=$('anaPass').value;
+  localStorage.setItem(K_ANA,JSON.stringify({u,p}));
+  anaLoad();
+}
+function anaRender(d){
+  $('anaMeta').innerHTML=`<span>数据范围: ${esc(d.first_ts||'-')} 起</span><span>生成于: ${esc(d.generated_at)}</span>`;
+  const t=d.totals||{};
+  const dev=d.devices||{mobile:0,desktop:0};
+  const devPct=t.views?Math.round(dev.mobile*100/t.views):0;
+  const maxDaily=Math.max(1,...(d.daily||[]).map(x=>x.views));
+  let h='';
+  h+=`<div class="kpis">
+    <div class="kpi"><b>${t.views||0}</b><span>总浏览（view）</span></div>
+    <div class="kpi"><b>${t.unique_ips||0}</b><span>独立 IP</span></div>
+    <div class="kpi"><b>${(d.daily||[]).slice(-1).map(x=>x.views)[0]||0}</b><span>最近一天浏览</span></div>
+    <div class="kpi"><b>${devPct}%</b><span>手机端占比</span></div>
+  </div>`;
+  const dailyRows=(d.daily||[]).map(x=>`<tr><td>${esc(x.date)}</td><td><span class="bar" style="width:${Math.round(x.views*60/maxDaily)}px;"></span>${x.views}</td></tr>`).join('');
+  const pathRows=(d.top_paths||[]).map(x=>`<tr><td>${esc(x.k)}</td><td>${x.v}</td></tr>`).join('');
+  const refRows=(d.top_refs||[]).map(x=>`<tr><td>${esc(x.k)}</td><td>${x.v}</td></tr>`).join('');
+  const dwellRows=(d.dwell_avg||[]).map(x=>`<tr><td>${esc(x.k)}</td><td>${fmtDwell(x.v)}</td></tr>`).join('');
+  const ipRows=(d.top_ips||[]).map(x=>`<tr><td>${esc(x.k)}</td><td>${x.v}</td></tr>`).join('');
+  h+=`<div class="ana-grid">
+    <div class="ana-card"><h4>📅 每日浏览</h4><table>${dailyRows}</table></div>
+    <div class="ana-card"><h4>📄 页面 TOP</h4><table>${pathRows}</table></div>
+    <div class="ana-card"><h4>🔗 来源 TOP</h4><table>${refRows}</table></div>
+    <div class="ana-card"><h4>⏱️ 平均停留（按页面）</h4><table>${dwellRows}</table></div>
+  </div>`;
+  const sess=(d.recent_sessions||[]).map(s=>`<tr><td>${esc(s.ts)}</td><td>${esc(s.ip)}</td><td>${esc(s.path)}</td><td>${fmtDwell(s.dwell)}</td></tr>`).join('');
+  h+=`<div class="ana-full"><h4>🕒 最近访问（谁 · 什么时候 · 看了多久）</h4>
+    <table><tr><th>时间</th><th>IP（匿名）</th><th>页面</th><th>停留</th></tr>${sess||'<tr><td colspan="4">暂无</td></tr>'}</table></div>`;
+  h+=`<div class="ana-full"><h4>🌐 IP 榜 TOP${(d.top_ips||[]).length}</h4><table>${ipRows}</table></div>`;
+  $('anaBody').innerHTML=h;
+}
 </script>
 </body>
 </html>
