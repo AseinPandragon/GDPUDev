@@ -1,5 +1,6 @@
 window.NEWS_ARCHIVE_LIST = [
-    { date: "2026-10-11", title: "2026-10-11 每日情报：Anthropic断网自曝 · 机械迷城外周末观察 · js13k获奖公布", desc: "今日最新情报" },
+    { date: "2026-10-12", title: "2026-10-12 每日情报：Capcom RE引擎引入AI · PAX Aus落幕 · js13k余温", desc: "今日最新情报" },
+    { date: "2026-10-11", title: "2026-10-11 每日情报：Anthropic断网自曝 · 机械迷城外周末观察 · js13k获奖公布", desc: "往期技术归档" },
     { date: "2026-10-10", title: "2026-10-10 每日情报：机械迷城2官宣 · Capcom开源REDox · 索尼VR专利转Meta", desc: "往期技术归档" },
     { date: "2026-10-09", title: "2026-10-09 每日情报：赛博朋克2077影视化 · Bevy 0.20 正式版 · Xbox XP 跨媒介部门", desc: "往期技术归档" },
 
