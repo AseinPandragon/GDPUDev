@@ -1,5 +1,6 @@
 window.NEWS_ARCHIVE_LIST = [
-    { date: "2026-10-15", weekday: "星期四", file: "data/2026-10-15.js", title: "2026-10-15 每日情报：时之笛Switch2重制预览 · 堡垒之夜登陆Linux · 育碧关停RedLynx", desc: "今日最新情报"},
+    { date: "2026-10-16", weekday: "星期五", file: "data/2026-10-16.js", title: "2026-10-16 每日情报：Godot 4.8-beta1发布 · Dean Hall开源Brutal · 雾锁王国1.0", desc: "今日最新情报"},
+    { date: "2026-10-15", weekday: "星期四", file: "data/2026-10-15.js", title: "2026-10-15 每日情报：时之笛Switch2重制预览 · 堡垒之夜登陆Linux · 育碧关停RedLynx", desc: "往期技术归档"},
     { date: "2026-10-14", weekday: "星期三", file: "data/2026-10-14.js", title: "2026-10-14 每日情报：Meta发布Muse Wonder · Xbox Labs成立 · 六大监管风险指南", desc: "往期技术归档" },
     { date: "2026-10-13", weekday: "星期二", file: "data/2026-10-13.js", title: "2026-10-13 每日情报：Epic强推AI优先 · Tarn Adams反对 · Valve公开CAD文件", desc: "往期技术归档" },
     { date: "2026-10-12", weekday: "星期一", file: "data/2026-10-12.js", title: "2026-10-12 每日情报：Capcom RE引擎引入AI · PAX Aus落幕 · js13k余温", desc: "往期技术归档" },
