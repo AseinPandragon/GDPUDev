@@ -1,5 +1,7 @@
 window.NEWS_ARCHIVE_LIST = [
-    { date: "2026-10-17", weekday: "星期六", file: "data/2026-10-17.js", title: "2026-10-17 每日情报：Meta开源816B Muse Spark Open · Steam成就集beta · 叠纸2027秋招启动", desc: "今日最新情报"},
+    { date: "2026-10-19", weekday: "星期一", file: "data/2026-10-19.js", title: "2026-10-19 每日情报：Gemini四智能体击败末影龙 · PS6内存成本破680美元 · Next Fest今日开幕", desc: "今日最新情报"},
+    { date: "2026-10-18", weekday: "星期日", file: "data/2026-10-18.js", title: "2026-10-18 每日情报（补位）：科乐美「做游戏最重要的还是人」 · Liquid Swords破产 · indiePlay入围", desc: "往期技术归档"},
+    { date: "2026-10-17", weekday: "星期六", file: "data/2026-10-17.js", title: "2026-10-17 每日情报：Meta开源816B Muse Spark Open · Steam成就集beta · 叠纸2027秋招启动", desc: "往期技术归档"},
     { date: "2026-10-16", weekday: "星期五", file: "data/2026-10-16.js", title: "2026-10-16 每日情报：Godot 4.8-beta1发布 · Dean Hall开源Brutal · 雾锁王国1.0", desc: "往期技术归档"},
     { date: "2026-10-15", weekday: "星期四", file: "data/2026-10-15.js", title: "2026-10-15 每日情报：时之笛Switch2重制预览 · 堡垒之夜登陆Linux · 育碧关停RedLynx", desc: "往期技术归档"},
     { date: "2026-10-14", weekday: "星期三", file: "data/2026-10-14.js", title: "2026-10-14 每日情报：Meta发布Muse Wonder · Xbox Labs成立 · 六大监管风险指南", desc: "往期技术归档" },
