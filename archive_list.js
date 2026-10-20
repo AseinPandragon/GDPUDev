@@ -1,5 +1,6 @@
 window.NEWS_ARCHIVE_LIST = [
-    { date: "2026-10-19", weekday: "星期一", file: "data/2026-10-19.js", title: "2026-10-19 每日情报：Gemini四智能体击败末影龙 · PS6内存成本破680美元 · Next Fest今日开幕", desc: "今日最新情报"},
+    { date: "2026-10-20", weekday: "星期二", file: "data/2026-10-20.js", title: "2026-10-20 每日情报：VAST开源EdenLive世界模型 · Anthropic 5%股份公益基金 · Unity EDM/Grok/Spark三连发 · GDCA 2027开放直投", desc: "今日最新情报" },
+    { date: "2026-10-19", weekday: "星期一", file: "data/2026-10-19.js", title: "2026-10-19 每日情报：Gemini四智能体击败末影龙 · PS6内存成本破680美元 · Next Fest今日开幕", desc: "往期技术归档"},
     { date: "2026-10-18", weekday: "星期日", file: "data/2026-10-18.js", title: "2026-10-18 每日情报（补位）：科乐美「做游戏最重要的还是人」 · Liquid Swords破产 · indiePlay入围", desc: "往期技术归档"},
     { date: "2026-10-17", weekday: "星期六", file: "data/2026-10-17.js", title: "2026-10-17 每日情报：Meta开源816B Muse Spark Open · Steam成就集beta · 叠纸2027秋招启动", desc: "往期技术归档"},
     { date: "2026-10-16", weekday: "星期五", file: "data/2026-10-16.js", title: "2026-10-16 每日情报：Godot 4.8-beta1发布 · Dean Hall开源Brutal · 雾锁王国1.0", desc: "往期技术归档"},
