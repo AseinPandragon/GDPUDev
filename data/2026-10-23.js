@@ -366,7 +366,7 @@ window.DAILY_NEWS_DATA = {
           "text": "KV 缓存压缩对游戏场景很关键：NPC 对话、剧情分支、批量本地化都要反复喂长上下文，缓存越小账单越友好。做内网自托管 AI 的同学可以把它和 vLLM 一起列为候选。参考来源：DeepSeek 官方博客。"
         }
       ],
-      "image": ""
+      "image": "https://www.deepseek.com/images/blog/deepseek-v4-1-flash/cover.webp"
     },
     {
       "id": "ai-frontier-cadence",
@@ -440,7 +440,7 @@ window.DAILY_NEWS_DATA = {
           "text": "「开放权重 + 商用阈值条款」正在成为大厂开放模型的标准姿态。做独立游戏若想接大模型做剧情/本地化，这类模型能跑内网，但一旦做成付费服务就要留意许可里的收入红线。参考来源：Artifocial 周报。"
         }
       ],
-      "image": ""
+      "image": "https://artifocial.com/images/blog/ai-news-2026-oct-12-18-cover.jpeg"
     },
     {
       "id": "ai-nemotron-35-bolt",
@@ -477,7 +477,7 @@ window.DAILY_NEWS_DATA = {
           "text": "「大模型能跑在笔记本上」对独立开发者是质变：你不必为每次 AI 调用付云账单，也能在本地做原型验证。配合 vLLM，把智能体压到消费级硬件是今年最值得跟的趋势。参考来源：NVIDIA。"
         }
       ],
-      "image": ""
+      "image": "https://build.nvidia.com/opengraph-image.jpg?opengraph-image.0y-0ix58xknbk.jpg"
     },
     {
       "id": "ai-reflection-beam",
@@ -514,7 +514,7 @@ window.DAILY_NEWS_DATA = {
           "text": "Apache-2.0 意味着你不用在「用不用」和「会不会踩许可雷」之间纠结——直接内网架起来做本地化/NPC 原型即可。对怕合规风险的独立团队，这类干净许可的开放模型比闭源 API 更省心。参考来源：Reflection AI。"
         }
       ],
-      "image": ""
+      "image": "https://cdn.sanity.io/images/sp40emik/production/003c45d4755800ad7e2b4c81076e43eff6e7cdf8-1200x630.png"
     },
     {
       "id": "en-unity-6000-6-8f1",
@@ -736,7 +736,7 @@ window.DAILY_NEWS_DATA = {
           "text": "《Hypnos》把「尺度感」当成核心体验——巨型结构带来的渺小与敬畏，是它区别于普通步行模拟器的地方。做叙事向毕设时，这种「用空间尺度讲情绪」的手法值得借鉴。参考来源：RPS。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/hypnos-launch.jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
     },
     {
       "id": "ga-wolverine-us-charts",
@@ -847,7 +847,7 @@ window.DAILY_NEWS_DATA = {
           "text": "授权 IP 改编最怕「既想还原又想创新」导致两头不靠。Revival 的口碑分化恰好说明：风格决策的一致性，比堆砌原作彩蛋更能决定玩家买不买账。参考来源：Daily Game Wire 汇总。"
         }
       ],
-      "image": ""
+      "image": "https://dailygamewire.com/assets/img/dgw-og.png"
     },
     {
       "id": "ga-penguin-colony",
@@ -1069,7 +1069,7 @@ window.DAILY_NEWS_DATA = {
           "text": "休闲赛道看似「低技术」，却是现金流最稳的蛋糕——大厂持续收编成熟小团队，本质是在买「已被验证的品类经验」与「本地工程产能」。对想进游戏行业的同学，别只盯着 3A，休闲大厂的并购逻辑同样值得研究。参考来源：GI.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/eipix.jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
     },
     {
       "id": "tu-godot-docs",
@@ -1143,7 +1143,7 @@ window.DAILY_NEWS_DATA = {
           "text": "常青补位库成员。建议路径：先跑通「窗口+按键移动方块」，再逐步加碰撞、相机、音频——raylib 让你看得见每一行代码对画面的直接影响，比黑盒引擎更练内功。参考来源：raylib.com。"
         }
       ],
-      "image": ""
+      "image": "https://www.raylib.com/common/img/raylib_logo_card.png"
     },
     {
       "id": "tu-threejs-docs",
@@ -1217,7 +1217,7 @@ window.DAILY_NEWS_DATA = {
           "text": "常青补位库成员。提醒一句：Aseprite 对标准人形最稳，非人形角色（四足/怪物）容易翻车。演示视频里一个能走的小人，比十个灰色方块有说服力十倍。参考来源：aseprite.org。"
         }
       ],
-      "image": ""
+      "image": "https://www.aseprite.org/assets/images/og-image.png"
     },
     {
       "id": "tu-pygame-docs",
@@ -1328,7 +1328,7 @@ window.DAILY_NEWS_DATA = {
           "text": "想进游戏行业的同学，CiGA 是性价比最高的「赛事雷达」：很多工作室校招都看 indiePlay/GameJam 经历。把它和你的作品集节奏对齐，比海投简历更有针对性。参考来源：ciga.me。"
         }
       ],
-      "image": ""
+      "image": "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/1489174/293987_970995.png"
     },
     {
       "id": "co-netease-leihuo-campus",
