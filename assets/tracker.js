@@ -26,6 +26,22 @@
       if (type === 'leave') leaveSent = true;
     } catch (e) { /* 统计失败不影响页面 */ }
   }
+  // 分类/文章点击埋点（供新闻个性化实时调整）：复用 /gamedev/collect，
+  // 把分类/文章归属编码进 path 的 query，聚合脚本按 cat=/art= 参数统计各分类参与度。
+  window.__track = function (kind, value) {
+    try {
+      var base = location.pathname + (location.search || '');
+      var sep = base.indexOf('?') >= 0 ? '&' : '?';
+      var p = base + sep + (kind === 'cat' ? 'cat=' : 'art=') + encodeURIComponent(value || '');
+      var payload = JSON.stringify({
+        t: 'view', p: p, r: document.referrer || '', d: 0,
+        w: window.innerWidth || 0, h: window.innerHeight || 0
+      });
+      if (navigator.sendBeacon) navigator.sendBeacon('/gamedev/collect', payload);
+      else { var x = new XMLHttpRequest(); x.open('POST', '/gamedev/collect', true); x.send(payload); }
+    } catch (e) { /* 统计失败不影响页面 */ }
+  };
+
   send('view');
   window.addEventListener('pagehide', function () { send('leave'); });
   document.addEventListener('visibilitychange', function () {

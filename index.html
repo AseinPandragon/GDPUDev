@@ -2432,6 +2432,7 @@
   }
 
   function onCategorySelect(catId, btn) {
+    if (window.__track) window.__track('cat', catId);
     activeCategory = catId;
     activeSubTag = "all";
     document.querySelectorAll(".ark-nav-item").forEach(b => b.classList.remove("active"));
@@ -2551,6 +2552,7 @@
       article = heroData;
     }
     if (!article) return;
+    if (window.__track && article.category) window.__track('art', article.category);
 
     let contentHtml = `<p style="margin-bottom: 16px; line-height: 1.8; font-size: 14.5px;">${article.summary}</p>`;
     if (article.content && Array.isArray(article.content)) {
