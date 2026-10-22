@@ -1,30 +1,30 @@
 window.DAILY_NEWS_DATA = {
   "meta": {
-    "date": "2026-10-22",
-    "weekday": "星期四",
+    "date": "2026-10-23",
+    "weekday": "星期五",
     "title": "广药 游戏开发情报中枢 · 每日技术情报",
     "subtitle": "个人学习观察与评述 · 附参考来源外部链接",
-    "updateTime": "2026-10-22 09:36",
+    "updateTime": "2026-10-23 07:40",
     "editor": "广药技术中枢 & CodeBuddy",
     "highlights": [
-      "BioWare 在成立 30 年后被 EA 关闭、《质量效应 5》取消，约 400 岗位受影响——3A 工作室兴衰最沉重的注脚",
-      "OpenAI 与 Google Cloud 达成合作：GPT-6.1 Astra/Sol/Luna 入驻 Model Garden（企业私有预览）",
-      "DeepSeek 开源支撑 V4.1-Flash 的生产级推理框架 DeepInfer（Apache 2.0），一天星标破万",
-      "Unity 双分支推进：6000.6.7f1 生产补丁 + 6000.7.0b6 Beta；Babylon 9.31.3 / Defold 1.14.1-alpha / Flax 1.13.7012 同日更新",
-      "米哈游 2027 秋招网申 10-31 截止倒计时；Paris Game Biz 与 GIC 2026 本周接连开幕"
+      "《Fortnite》重返澳大利亚 iOS：法院裁定 Apple 违反竞争法，侧载围墙再开一道口",
+      "DeepSeek V4.1 Flash 发布：552B MoE、KV 缓存压到初代 1/437，Agent 成本大降",
+      "Xbox 公布云游戏限免档定价 $3.99/10h；AMD FSR 4.1 超分将登陆 Xbox Series X|S",
+      "Godot 4.8-beta1 / Unity 6000.6.8f1+6000.7.0b7 / Babylon 9.31.4 / Defold 1.14.1-stable 同日推进",
+      "Zoud×GGJ 金融素养 Game Jam 奖池 $140K（10/15-11/15）；网易雷火 2027 秋招进行中"
     ],
     "engineStatus": [
       {
         "name": "Unity 6.7",
         "type": "unity",
-        "status": "6000.6.7f1 补丁·生产推荐",
+        "status": "6000.6.8f1 补丁·生产推荐",
         "badge": "推荐生产",
         "color": "indigo"
       },
       {
-        "name": "Unity 6.7 Beta 6",
+        "name": "Unity 6.7 Beta 7",
         "type": "unity",
-        "status": "6000.7.0b6·Beta推进中",
+        "status": "6000.7.0b7·Beta推进中",
         "badge": "测试中",
         "color": "blue"
       },
@@ -52,47 +52,48 @@ window.DAILY_NEWS_DATA = {
       {
         "name": "Godot 4.8-beta1",
         "type": "godot",
-        "status": "10/15发布·Beta推进中",
+        "status": "10/23发布·Beta推进中",
         "badge": "新版发布",
         "color": "pink"
       }
     ]
   },
   "hero": {
-    "id": "bioware-closing-30y",
+    "id": "fortnite-ios-australia-hero",
     "category": "industry",
     "categoryName": "行业热点 · 头条",
-    "tag": "工作室兴衰",
-    "title": "BioWare 在成立 30 年后关闭：《质量效应 5》取消，EA 约裁 400 人",
-    "summary": "GamesIndustry.biz 与 Eurogamer 同步确认：EA 正在关闭 BioWare，并砍掉未公布的《质量效应 5》，本轮约裁减 400 个岗位、其中约 50 个在 BioWare。从《博德之门》《质量效应》《龙腾世纪》的黄金时代到被砍，BioWare 的结局是近年来 3A 工作室兴衰最沉重的注脚，也把「大厂如何处置 legacy 工作室」推到了台前。",
-    "source": "GamesIndustry.biz / Eurogamer",
-    "date": "2026-10-22",
-    "url": "https://www.gamesindustry.biz/bioware-is-closing-after-30-years",
+    "tag": "平台与监管",
+    "title": "《Fortnite》重返澳大利亚 iOS：法院裁定 Apple 违反竞争法，侧载围墙再开一道口",
+    "summary": "澳大利亚联邦法院裁定 Apple 限制第三方应用商店与支付方式违反竞争法后，《Fortnite》随之重返澳大利亚 iOS。这是 Epic 诉 Apple 全球战线的最新一环，也意味着「侧载 + 替代支付」在不同司法辖区正以不同节奏松动。从学习视角看，最值得记住的是：同一家平台，在不同国家被不同判决切开——海外发行必须按司法辖区逐国梳理政策，而不能套用一套全球模板。",
+    "source": "GamesIndustry.biz",
+    "date": "2026-10-23",
+    "url": "https://www.gamesindustry.biz/fortnite-returns-to-ios-in-australia",
     "readTime": "6 分钟深度",
     "hotScore": 95,
     "tags": [
-      "BioWare",
-      "EA",
-      "工作室关停",
-      "质量效应"
+      "Fortnite",
+      "Apple",
+      "侧载",
+      "竞争法",
+      "平台治理"
     ],
     "content": [
       {
         "title": "要点",
         "type": "list",
         "items": [
-          "EA 确认关闭 BioWare，并取消未公布的《质量效应 5》，约 400 个岗位受影响，BioWare 约占 50 人；",
-          "BioWare 此前已被并入 EA 的《质量效应》单一系列轨道，近年代表作口碑与销量双双承压；",
-          "消息由 GI.biz 与 Eurogamer 同日报道，Eurogamer 标题直指「Mass Effect 5 取消」。"
+          "澳联邦法院裁定 Apple 限制第三方商店/支付违反竞争法；",
+          "《Fortnite》据此重返澳大利亚 iOS，Epic v. Apple 全球战线再下一城；",
+          "侧载与替代支付在不同司法辖区正以不同节奏松动。"
         ]
       },
       {
         "title": "笔者观察",
         "type": "text",
-        "text": "BioWare 的落幕对在校生最现实的提醒是：3A 大厂的光环不等于职业稳定，能力要长在自己身上。这家公司教过行业怎么写角色、怎么做叙事，但资本不会为情怀续命——把引擎、管线、项目管理这些可迁移的硬技能练扎实，比赌某家工作室长青更靠谱。参考来源：GI.biz / Eurogamer 10-22 报道。"
+        "text": "对游戏开发者，这条最有价值的是「同一平台、不同国家被不同判决切开」的现实：做海外发行时，侧载/支付政策要按司法辖区逐国梳理，不能套用一套全球模板。同时它也提示独立团队：未来触达玩家的方式可能更分散，分发渠道的议价权正在缓慢转移。参考来源：GI.biz。"
       }
     ],
-    "image": "https://assetsio.gnwcdn.com/Mass-Effect-3-2795540643.jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
+    "image": ""
   },
   "categories": [
     {
@@ -146,391 +147,391 @@ window.DAILY_NEWS_DATA = {
   ],
   "items": [
     {
-      "id": "project-helix-2028",
-      "category": "industry",
-      "subcategory": "下一代主机",
-      "title": "Project Helix 据报 2028 年末发售、预算 12-18 亿美元，Xbox 还有掌机计划",
-      "summary": "Fortune 援引消息称，代号 Project Helix 的 Xbox 第一方大作计划 2028 年末发售，预算区间高达 12-18 亿美元，并透露微软还在筹备次世代掌机设备。在 BioWare 关停、EA 裁员的同一周，这条「 Xbox 押注超大型独占」的消息，恰好构成大厂战略的一体两面：一边收缩，一边把筹码压到更大更强的单点上。",
-      "source": "GamesIndustry.biz",
-      "date": "2026-10-22",
-      "url": "https://www.gamesindustry.biz/project-helix-reportedly-launching-in-late-2028-projected-to-cost-between-1200-and-1800",
-      "badge": "大厂动向",
-      "badgeType": "business",
-      "readTime": "5 分钟",
-      "hotScore": 89,
-      "tags": [
-        "Xbox",
-        "Project Helix",
-        "次世代掌机",
-        "预算"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Fortune 报道：Project Helix 计划 2028 年末发售，预算 12-18 亿美元，属 Xbox 第一方超大作；",
-            "同篇提到微软还在准备次世代掌机设备，延续 Series X|S 之后的硬件节奏；",
-            "消息与当日 BioWare 关停同框，呈现「收缩中台 + 重注单点大作」的组合拳。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "12-18 亿美元的预算意味着 Xbox 把身家压在「一个能打穿 GTA6 周期」的独占上。对求职同学的信号：第一方大厂未来几年会更集中资源到少数旗舰，中层项目反而更不稳。参考来源：GI.biz 10-22 引 Fortune。"
-        }
-      ],
-      "image": "https://assetsio.gnwcdn.com/xbox-controller-aronpw-unsplash-(1).jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
-    },
-    {
-      "id": "gta6-launch-risk",
-      "category": "industry",
-      "subcategory": "市场数据",
-      "title": "Open World 数据：GTA6 发售期，COD 与 EA Sports FC 最易流失玩家",
-      "summary": "游戏咨询公司 Open World 的最新分析指出，GTA6 发售窗口会虹吸大量玩家时间，其中《使命召唤》与《EA Sports FC》这类年货最危险——它们的核心受众与 GTA6 高度重叠。报告还给开发商列了应对清单：提前错峰、强化社交粘性、用限时活动留住人。",
-      "source": "GamesIndustry.biz",
-      "date": "2026-10-22",
-      "url": "https://www.gamesindustry.biz/games-like-call-of-duty-and-ea-sports-fc-most-at-risk-of-losing-players-during-gta-6-launch-according-to-new-data",
-      "badge": "市场数据",
-      "badgeType": "business",
-      "readTime": "5 分钟",
-      "hotScore": 87,
-      "tags": [
-        "GTA6",
-        "COD",
-        "EA Sports FC",
-        "用户流失"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Open World 评估：年货型长线游戏在 GTA6 窗口最易被抽走玩家；",
-            "COD 与 EA Sports FC 因受众重叠度最高被列为头号风险；",
-            "报告建议错峰排期、强化社交与限时活动以留住盘子里的人。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "这条和前几天 Sensor Tower「断层」数据连读：GTA6 不只是卖得多，还会改变别人的发行节奏。做长线运营的同学该把「竞品超级大作窗口」写进你自己的留存模型，而不是只盯自己的 DAU。参考来源：GI.biz 10-22。"
-        }
-      ],
-      "image": "https://assetsio.gnwcdn.com/gta-6_S2BF1hr.jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
-    },
-    {
-      "id": "indie-ip-blew-up",
-      "category": "industry",
-      "subcategory": "市场数据",
-      "title": "2026 年独立与原创 IP 大爆发：首月 50 万+ 销量新作过半是新系列、43% 是独立游戏",
-      "summary": "GI.biz 长文盘点 2026 年市场结构：首月销量超过 50 万份的新作里，超过一半是全新系列的起点，43% 来自独立团队。原创 IP 与独立游戏在 3A 成本失控、周期拉长的反衬下，正成为发行与玩家两端共同的增量池。",
-      "source": "GamesIndustry.biz",
-      "date": "2026-10-22",
-      "url": "https://www.gamesindustry.biz/indies-and-original-ip-blew-up-in-2026",
-      "badge": "市场数据",
-      "badgeType": "business",
-      "readTime": "6 分钟",
-      "hotScore": 86,
-      "tags": [
-        "独立游戏",
-        "原创IP",
-        "市场结构",
-        "2026"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "首月 50 万+ 销量的新作中，过半是新系列起点，43% 为独立游戏；",
-            "背景：3A 成本与周期持续走高，原创与独立在性价比上显得更亮眼；",
-            "对发行商的意义：押注新 IP 的风险收益比正在改善。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "对想做独立/原创的同学，这是十年一遇的好风向：玩家与渠道都在给新东西机会。但「原创」不等于「小众」——报道里的赢家大多有清晰的品类定位与社区打法，盲目原创反而最容易被淹没。参考来源：GI.biz 10-22 专题。"
-        }
-      ],
-      "image": "https://assetsio.gnwcdn.com/Sensor-Tower-header.png?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
-    },
-    {
-      "id": "unions-hr-summit",
-      "category": "industry",
-      "subcategory": "劳工与工会",
-      "title": "GI 人力资源峰会复盘：游戏公司该懂的工会常识",
-      "summary": "GamesIndustry.biz 整理本月 HR 峰会上工会代表的发言，给游戏公司管理者上了一堂「如何与工会共处」的课：从集体谈判的基本流程、到裁员沟通、再到独立团队的劳工权益盲区。在 BioWare 关停、动视 QA 罢工、日本声优指南接连出现的节点，这类内容正从边缘话题变成管理者的必修课。",
-      "source": "GamesIndustry.biz",
-      "date": "2026-10-22",
-      "url": "https://www.gamesindustry.biz/demystifying-unions-what-games-leaders-need-to-know",
-      "badge": "行业治理",
-      "badgeType": "business",
-      "readTime": "5 分钟",
-      "hotScore": 82,
-      "tags": [
-        "工会",
-        "HR",
-        "劳工权益",
-        "管理"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "文章梳理集体谈判流程、裁员沟通与独立团队权益盲区；",
-            "背景：动视 QA 工会、日本声优 AI 指南让劳工议题持续升温；",
-            "面向人群：首次面对工会的游戏公司管理者。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "应届生很少在面试前想「这家公司的劳资关系如何」。但在工会化加速的当下，它直接关系到你试用期稳不稳、加班有没有边界。把「有没有工会、近年有没有劳资纠纷」加进你的公司尽调清单，不丢人。参考来源：GI.biz 10-22。"
-        }
-      ],
-      "image": "https://assetsio.gnwcdn.com/IWGB_members_with_banner.jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
-    },
-    {
-      "id": "lucasfilm-small-sw",
-      "category": "industry",
-      "subcategory": "发行策略",
-      "title": "Lucasfilm 想要更多小体量星战游戏：Galactic Racer 与 Zero Company 的成功给了底气",
-      "summary": "Rock Paper Shotgun 报道，Lucasfilm 在《Galactic Racer》与《Star Wars Zero Company》两款中小体量星战游戏成功后，明确想做更多「不必总是 3A」的星战作品。官方口径转变背后，是 IP 方开始承认：高频、可控风险的中小项目，比一年一部的巨型制作更能维持 IP 热度与团队健康。",
-      "source": "Rock Paper Shotgun",
-      "date": "2026-10-22",
-      "url": "https://www.rockpapershotgun.com/it-doesnt-have-to-always-be-triple-a-galactic-racer-and-zero-companys-success-has-lucasfilms-wanting-more-smaller-scale-star-wars-games",
-      "badge": "发行策略",
-      "badgeType": "business",
-      "readTime": "5 分钟",
-      "hotScore": 83,
-      "tags": [
-        "Lucasfilm",
-        "星战",
-        "中小体量",
-        "发行策略"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Lucasfilm 表示将推进更多中小体量星战游戏，不再只押 3A；",
-            "《Galactic Racer》与《Star Wars Zero Company》是导火索；",
-            "IP 方逻辑：高频中小项目比年度巨型制作更利于维持热度与团队健康。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "这条和 Indie IP 爆发的报道是同一枚硬币：大 IP 都在学会「下凡」做小项目。对学生团队这是好消息——你未必能拿到星战 IP，但「用更小成本做更聚焦的玩法」正被大厂亲自验证为可行路线。参考来源：RPS 10-22。"
-        }
-      ],
-      "image": "https://assetsio.gnwcdn.com/Galactic-Racer.jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
-    },
-    {
-      "id": "openai-gcp-models",
-      "category": "ai",
-      "subcategory": "大模型",
-      "title": "OpenAI 模型将登陆 Google Cloud：GPT-6.1 Astra/Sol/Luna 进 Model Garden",
-      "summary": "OpenAI 与 Google 于 10-21 宣布，GPT-6.1 的 Astra、Sol、Luna 等模型将运行在 Google Cloud 的 Model Garden 中，先以私有预览形式向企业客户开放，计费走 Google Cloud Marketplace，微软仍是其主云伙伴。这是两大 AI 对手在云基础设施上的罕见合作，也意味着模型层与云层的绑定正在松动。",
-      "source": "Google Cloud Blog",
-      "date": "2026-10-21",
-      "url": "https://cloud.google.com/blog/products/ai-machine-learning/openai-models-google-cloud",
-      "badge": "模型合作",
-      "badgeType": "ai",
-      "readTime": "5 分钟",
-      "hotScore": 92,
-      "tags": [
-        "OpenAI",
-        "Google Cloud",
-        "GPT-6.1",
-        "Model Garden"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "OpenAI 与 Google 10-21 宣布 GPT-6.1 Astra/Sol/Luna 入驻 Google Cloud Model Garden；",
-            "先以私有预览面向企业客户，计费经 Google Cloud Marketplace；",
-            "OpenAI 称微软仍为主云伙伴，但模型不再被单一云锁死。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "从游戏开发视角看，这条最有价值的是「模型可移植」——做 AI NPC / 本地化 / 文案批处理时，你不必赌某一家云的可用性。多云可选会压低价格、抬高稳定性，对要接 AI 的中小团队是实打实的好事。参考来源：Google Cloud Blog 10-21。"
-        }
-      ],
-      "image": ""
-    },
-    {
-      "id": "gemini-argon-cyber",
-      "category": "ai",
-      "subcategory": "智能体安全",
-      "title": "Gemini 4 Argon 首次向网络防御者开放：把「自动狩猎威胁」交给智能体",
-      "summary": "Google 宣布 Gemini 4 Argon 版本优先开放给网络防御场景，让安全团队用智能体自动化威胁狩猎与事件分诊。注意口径：这是 Argon 能力在特定垂直领域的首批落地，并非面向消费者的通用版本——按事实写，目前仍是受限开放，而非全面公测。",
-      "source": "Google Cloud Blog",
-      "date": "2026-10-21",
-      "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-cyber-defenders",
-      "badge": "智能体落地",
-      "badgeType": "ai",
-      "readTime": "5 分钟",
-      "hotScore": 88,
-      "tags": [
-        "Gemini 4",
-        "Argon",
-        "网络防御",
-        "智能体"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Google 将 Gemini 4 Argon 先开放给网络防御者，用于自动化威胁狩猎；",
-            "定位：垂直领域首批落地，非面向消费者的通用版本；",
-            "按事实：目前为受限开放，尚无全面公测时间表。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "「AI 智能体进安全运营」和前几天微软 Guardian Agents、OpenAI 事故披露是同一周的三连：智能体正从聊天框走向有授权的执行岗。对做联机游戏的同学，这条线值得盯——你未来的反作弊/反外挂后台，很可能也要接智能体。参考来源：Google Cloud Blog 10-21。"
-        }
-      ],
-      "image": ""
-    },
-    {
-      "id": "deepseek-deepinfer",
-      "category": "ai",
-      "subcategory": "推理框架",
-      "title": "DeepSeek 开源 DeepInfer：支撑 V4.1-Flash 的生产级推理框架，Apache 2.0",
-      "summary": "DeepSeek 于 10-21 开源其生产环境推理框架 DeepInfer（Apache 2.0），并一并放出 deepseek-recipe（请求解析组件）。它从 vLLM 起步但已大幅重写，整合了 FlashMLA、DeepGEMM、DeepEP 等内核，支持 NVIDIA SM100 与华为 Ascend 950，首发仅覆盖离线推理。一天内 GitHub 星标破万，是近期最受关注的开源 AI 基础设施。",
-      "source": "GitHub: deepseek-ai/DeepInfer",
-      "date": "2026-10-21",
-      "url": "https://github.com/deepseek-ai/DeepInfer",
-      "badge": "开源推理",
-      "badgeType": "ai",
-      "readTime": "5 分钟",
-      "hotScore": 90,
-      "tags": [
-        "DeepSeek",
-        "DeepInfer",
-        "开源",
-        "推理框架"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "DeepSeek 开源生产级推理框架 DeepInfer（Apache 2.0），含 deepseek-recipe 请求解析；",
-            "整合 FlashMLA/DeepGEMM/DeepEP 等内核，支持 NVIDIA SM100 与华为 Ascend 950；",
-            "首发仅离线推理，KV 缓存、预填充分离等核心组件仍保留；上线一天星标破万。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "对本地跑大模型的游戏团队，DeepInfer 的意义在于「国产卡 + 国产模型」的推理闭环更完整了。做 NPC 对话、批量本地化这类要碰玩家数据的场景，能自托管就少一层合规焦虑。参考来源：DeepSeek GitHub 10-21。"
-        }
-      ],
-      "image": "https://opengraph.githubassets.com/1/deepseek-ai/DeepInfer"
-    },
-    {
-      "id": "ornith-122b",
-      "category": "ai",
-      "subcategory": "开放权重",
-      "title": "Ornith 发布 1.5-122B：MIT 许可的 122B MoE 开放权重模型",
-      "summary": "Ornith 发布 Ornith-1.5-122B，采用 MoE 架构、每次请求只激活部分参数以降低算力需求，以 MIT 许可开放权重。官方称在代码与智能体基准上具备竞争力，但基准多为自报。对需要可商用、可自托管的团队，MIT 许可的开放大模型又多了一个备选。",
-      "source": "Hugging Face: Ornith-AI",
-      "date": "2026-10-21",
-      "url": "https://huggingface.co/Ornith-AI/Ornith-1.5-122B",
-      "badge": "开放权重",
-      "badgeType": "ai",
-      "readTime": "4 分钟",
-      "hotScore": 85,
-      "tags": [
-        "Ornith",
-        "开放权重",
-        "MoE",
-        "MIT"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Ornith-1.5-122B 为 MoE 架构，按请求激活部分参数以省算力；",
-            "以 MIT 许可开放权重，可商用、可自托管；",
-            "官方称代码/智能体基准有竞争力，但基准多为自报，需独立验证。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "MIT 许可的开放大模型对游戏公司尤其友好——你能在内网用玩家数据做本地化、剧情生成而不触合规红线。但「自报基准」几个字要记牢：真要上生产，先在自己的评测集上跑一遍再信。参考来源：Hugging Face 模型卡 10-21。"
-        }
-      ],
-      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/ornith-ai/Ornith-1.5-122B.png"
-    },
-    {
-      "id": "vivrato-ai-adoption",
-      "category": "ai",
-      "subcategory": "AI 与从业者",
-      "title": "Vivrato 调研：欧盟与北美 97% 工作室负责人已在开发中用某种形式的 AI",
-      "summary": "Vivrato 的最新调研显示，欧盟与北美约 97% 的游戏工作室负责人已在开发的九个生产阶段中的某些环节使用 AI，94% 在多个阶段部署。数据把「游戏行业用不用 AI」的争论从立场变成了占比——剩下的问题不再是「用不用」，而是「怎么用得合规、用得有边界」。",
-      "source": "GamesIndustry.biz",
-      "date": "2026-10-22",
-      "url": "https://www.gamesindustry.biz/vivrato-97-of-studio-leaders-use-ai-in-some-form-during-development-in-eu-and-north-america",
-      "badge": "AI 采用度",
+      "id": "os-awesome-gamedev-skills",
+      "category": "opensource",
+      "subcategory": "智能体工具",
+      "title": "awesome-gamedev-agent-skills：按引擎与任务路由的「游戏开发智能体技能」合集",
+      "summary": "GitHub 新晋热榜仓库 gamedev-skills/awesome-gamedev-agent-skills 把 200+ 游戏开发 Agent Skills 编成可路由的合集：输入你的引擎（Godot/Bevy/pygame/LÖVE/Roblox）与任务，路由器自动加载对的技能，兼容 Claude Code、Cursor、Kiro、Codex、Copilot、Gemini CLI 等。对想用 AI 辅助做游戏的同学，这是把零散提示词变成「即插即用工具箱」的现成清单。",
+      "source": "GitHub: gamedev-skills/awesome-gamedev-agent-skills",
+      "date": "2026-10-23",
+      "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
+      "badge": "新仓库",
       "badgeType": "ai",
       "readTime": "4 分钟",
       "hotScore": 84,
       "tags": [
-        "AI 采用",
-        "Vivrato",
-        "生产管线",
-        "调研"
+        "Agent Skills",
+        "智能体",
+        "游戏开发",
+        "路由"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "Vivrato 调研：欧盟与北美 97% 工作室负责人已在开发中用 AI；",
-            "94% 在九个生产阶段中的多个阶段部署；",
-            "结论转向：争议从「用不用」变为「怎么合规、怎么设边界」。"
+            "合集收录 200+ 游戏开发 Agent Skills，按引擎/任务维度组织；",
+            "提供路由器：给定引擎+任务即加载对应技能，而不是手动翻提示词；",
+            "跨 CLI 兼容：Claude Code / Cursor / Kiro / Codex / Copilot / Gemini CLI。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "97% 这个数字对还在犹豫要不要学 AI 工具的同学几乎是「最后通牒」：你未来的同事已经在用。但注意前提是「用在非核心、可验证、不侵权」的环节——把 AI 当草稿与校对，而不是当署名作者，才是这条数据鼓励的姿势。参考来源：GI.biz 10-22。"
+          "text": "把「怎么让 AI 帮我写 Godot 代码」这种模糊需求，变成一个可被检索和路由的技能库，是 Agent 工具链成熟的标志。做毕设时与其每次重写提示词，不如维护一份自己的技能清单。参考来源：GitHub 仓库页。"
         }
       ],
-      "image": "https://assetsio.gnwcdn.com/fotis-fotopoulos-DuHKoV44prg-unsplash-(1).jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
+      "image": "https://opengraph.githubassets.com/1/gamedev-skills/awesome-gamedev-agent-skills"
     },
     {
-      "id": "unity-6000-6-7f1",
+      "id": "os-sprite-gen",
+      "category": "opensource",
+      "subcategory": "AI 美术",
+      "title": "sprite-gen：一张原图批量产出游戏可用的 2D 精灵图集与循环动画",
+      "summary": "GitHub 热榜仓库 aldegad/sprite-gen 把一张基础图自动扩展成游戏就绪的 2D 精灵图集（sprite atlas）或带透明通道的循环动作动画，既可作为 Codex/Claude 编码智能体的技能，也有独立 Python CLI。对独立团队，这意味着角色/怪物动作素材的产能门槛被进一步拉低——前提是原图本身质量过关。",
+      "source": "GitHub: aldegad/sprite-gen",
+      "date": "2026-10-23",
+      "url": "https://github.com/aldegad/sprite-gen",
+      "badge": "新仓库",
+      "badgeType": "ai",
+      "readTime": "3 分钟",
+      "hotScore": 83,
+      "tags": [
+        "sprite-gen",
+        "精灵图集",
+        "像素动画",
+        "AI 美术"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "sprite-gen 将单张原图转为 sprite atlas 或透明循环动画；",
+            "同时提供 Codex/Claude 技能包与独立 Python CLI 两种用法；",
+            "面向 2D 游戏，降低角色/怪物动作素材的生产成本。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "这类工具的真实价值不在「取代美术」，而在让程序系同学用一张好原图就能跑出可演示的动作。但提醒一句：自动生成的帧之间容易抖动，正式项目仍需人工 keyframe 修形。参考来源：GitHub 仓库页。"
+        }
+      ],
+      "image": "https://opengraph.githubassets.com/1/aldegad/sprite-gen"
+    },
+    {
+      "id": "os-godogen",
+      "category": "opensource",
+      "subcategory": "AI 工程",
+      "title": "godogen：为 Godot/Bevy/Babylon 生成极简起始仓库，交给 AI 智能体自主建游戏",
+      "summary": "GitHub 仓库 htdt/godogen 是一个「起始仓库生成器」：它先产出 Godot、Bevy 或 Babylon.js 的极简 starter repo，再由 Claude Code / Codex 这类编码智能体根据一句话提示从零把游戏搭出来——写代码、生成资源、跑引擎、用实机画面或录屏自我验证。它把「一句话做游戏」的闭环又往前推了一步。",
+      "source": "GitHub: htdt/godogen",
+      "date": "2026-10-23",
+      "url": "https://github.com/htdt/godogen",
+      "badge": "新仓库",
+      "badgeType": "ai",
+      "readTime": "4 分钟",
+      "hotScore": 84,
+      "tags": [
+        "godogen",
+        "starter",
+        "AI 建游戏",
+        "Godot"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "godogen 为 Godot/Bevy/Babylon.js 生成极简起始仓库；",
+            "随后由编码智能体按提示自主写代码、生成资源、运行并验证；",
+            "核心是把「脚手架 + 智能体」组合成可复现的做游戏流水线。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "它的意义在于把「AI 做游戏」从 demo 玩具变成可重复的工程方法：先有干净脚手架，再让智能体填充。想练手的同学可以用它生成空工程，再自己接管——比从零配置引擎省下不少环境时间。参考来源：GitHub 仓库页。"
+        }
+      ],
+      "image": "https://opengraph.githubassets.com/1/htdt/godogen"
+    },
+    {
+      "id": "os-rsigame",
+      "category": "opensource",
+      "subcategory": "AI 工程",
+      "title": "RSIGame：会自我迭代的游戏框架，首玩版本后持续探索—诊断—改进",
+      "summary": "GitHub 仓库 WenyiWU0111/RSIGame 是一个自主式智能体游戏开发框架：它先产出第一个可玩版本，然后跑「探索—诊断—改进」循环，不断修复并验证游戏，直到改进收益饱和。对研究「AI 能否闭环做完整游戏」的同学，这是一手可跑的实验场，也提醒我们自动迭代需要明确的验收标准。",
+      "source": "GitHub: WenyiWU0111/RSIGame",
+      "date": "2026-10-23",
+      "url": "https://github.com/WenyiWU0111/RSIGame",
+      "badge": "新仓库",
+      "badgeType": "ai",
+      "readTime": "3 分钟",
+      "hotScore": 82,
+      "tags": [
+        "RSIGame",
+        "自主智能体",
+        "游戏框架",
+        "自我迭代"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "RSIGame 先生成首玩版本，再循环探索-诊断-改进；",
+            "每轮都尝试修复并验证，直到改进饱和；",
+            "是观察「AI 闭环做游戏」的一手可运行框架。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "自动迭代最难的不是「改」，而是「知道改得好不好」——它需要可量化的验收。这个框架把评估回路显式化，正好对应你做项目时该写的那份验收清单。参考来源：GitHub 仓库页。"
+        }
+      ],
+      "image": "https://opengraph.githubassets.com/1/WenyiWU0111/RSIGame"
+    },
+    {
+      "id": "os-claude-code-game-studios",
+      "category": "opensource",
+      "subcategory": "AI 工程",
+      "title": "Claude-Code-Game-Studios：把 Claude Code 变成 49 智能体 / 72 工作流的游戏工作室",
+      "summary": "GitHub 仓库 Donchitos/Claude-Code-Game-Studios 把 Claude Code 组织成一座完整虚拟游戏工作室：49 个 AI 智能体、72 个工作流技能，镜像真实工作室的层级与协作。它更像「如何用智能体编排一个开发团队」的方法论样本，适合想理解多智能体协作的人拆解学习。",
+      "source": "GitHub: Donchitos/Claude-Code-Game-Studios",
+      "date": "2026-10-23",
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "badge": "新仓库",
+      "badgeType": "ai",
+      "readTime": "4 分钟",
+      "hotScore": 83,
+      "tags": [
+        "智能体编排",
+        "虚拟工作室",
+        "工作流",
+        "Claude Code"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "项目用 49 个智能体 + 72 个工作流技能模拟游戏工作室；",
+            "层级与分工镜像真实开发团队；",
+            "核心价值在「多智能体协作编排」的方法论，而非单个技能。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "把工作室拆成智能体角色，本质是逼着你把「策划/程序/美术/QA」的职责边界想清楚——这恰恰是学校项目最缺的。拿它当模板梳理你自己的分工，比直接抄代码更有用。参考来源：GitHub 仓库页。"
+        }
+      ],
+      "image": "https://opengraph.githubassets.com/1/Donchitos/Claude-Code-Game-Studios"
+    },
+    {
+      "id": "ai-deepseek-v41-flash",
+      "category": "ai",
+      "subcategory": "大模型",
+      "title": "DeepSeek V4.1 Flash 发布：552B MoE、KV 缓存压到初代 1/437",
+      "summary": "DeepSeek 正式发布 V4.1 Flash 模型：552B 参数的 MoE 结构，采用全新的 Causal-Encoder-Decoder，输入仅激活 8B、输出 16B。官方称在 Agentic Benchmark 上超越包括 V4 Pro 在内的旗舰；新结构把 KV Cache 需求压到初代的 1/437，Agent 类任务成本大幅下降。对做游戏 AI 的团队，这意味着本地化 NPC 对话/批量本地化的推理账单更可控。",
+      "source": "DeepSeek 官方博客",
+      "date": "2026-10-23",
+      "url": "https://deepseek.com/news/deepseek-v4-1-flash",
+      "badge": "模型发布",
+      "badgeType": "ai",
+      "readTime": "5 分钟",
+      "hotScore": 91,
+      "tags": [
+        "DeepSeek",
+        "V4.1 Flash",
+        "MoE",
+        "KV Cache"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "V4.1 Flash 为 552B MoE，输入激活 8B、输出 16B；",
+            "官方称 Agentic Benchmark 超越 V4 Pro 等旗舰模型；",
+            "KV Cache 降至初代 1/437，Agent 任务成本显著降低。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "KV 缓存压缩对游戏场景很关键：NPC 对话、剧情分支、批量本地化都要反复喂长上下文，缓存越小账单越友好。做内网自托管 AI 的同学可以把它和 vLLM 一起列为候选。参考来源：DeepSeek 官方博客。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "ai-frontier-cadence",
+      "category": "ai",
+      "subcategory": "行业观察",
+      "title": "2026 前沿大模型发布节奏：12 家实验室已 120+ 次发布，开放权重成新主线",
+      "summary": "Mehmet Baykar 维护的「前沿大模型发布追踪器」汇总了 OpenAI、Anthropic、Google、Meta、DeepSeek、Mistral 等 12 家实验室的公开发布：2026 年迄今已 120+ 次，最新包括 DeepSeek-V4.1-Flash-1017、NVIDIA Nemotron 3.5、Meta Muse Spark Open 等。结构性信号是——开放权重模型的频次与质量都在追赶闭源，许可条款正成为选型关键因素。",
+      "source": "Frontier LLMs Release Tracker",
+      "date": "2026-10-23",
+      "url": "https://www.mehmetbaykar.com/posts/top-frontier-llms-release-tracker/",
+      "badge": "发布追踪",
+      "badgeType": "ai",
+      "readTime": "4 分钟",
+      "hotScore": 86,
+      "tags": [
+        "发布节奏",
+        "开放权重",
+        "许可",
+        "追踪器"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "追踪器覆盖 12 家实验室，2026 年已 120+ 次公开发布；",
+            "最新批次含 DeepSeek-V4.1-Flash-1017、Nemotron 3.5、Muse Spark Open；",
+            "开放权重模型在频次与质量上追赶闭源，许可条款成选型关键。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "对游戏团队，这条追踪器比任何单条发布都实用：它能让你一眼看清「哪家的开放模型能自托管、什么许可能商用」。选型别只看 benchmark，先看 licence 能不能上生产。参考来源：Mehmet Baykar 发布追踪器。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "ai-muse-spark-open",
+      "category": "ai",
+      "subcategory": "开放权重",
+      "title": "Meta 开源 816B Muse Spark Open：1M 上下文多模态开放权重",
+      "summary": "Meta 发布 Muse Spark Open（816B 总参数、42B 激活、1M token 上下文的多模态 MoE），以「Muse Model License（有限商业条款）」开放权重，被多家媒体称为「迄今最强美国开放权重模型」。对游戏团队，它代表「超大上下文 + 多模态」的自托管新选项，但商业服务超过年收入阈值需与 Meta 另签协议，落地前要算清合规边界。",
+      "source": "Artifocial 周报 / Meta",
+      "date": "2026-10-23",
+      "url": "https://artifocial.com/blog/ai-news-2026-oct-12-18",
+      "badge": "开放权重",
+      "badgeType": "ai",
+      "readTime": "5 分钟",
+      "hotScore": 88,
+      "tags": [
+        "Meta",
+        "Muse Spark",
+        "开放权重",
+        "多模态"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "Muse Spark Open 为 816B MoE、42B 激活、1M 上下文多模态；",
+            "以 Muse Model License（有限商业条款）开放权重；",
+            "媒体称其为迄今最强美国开放权重模型，但商用有收入阈值条款。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "「开放权重 + 商用阈值条款」正在成为大厂开放模型的标准姿态。做独立游戏若想接大模型做剧情/本地化，这类模型能跑内网，但一旦做成付费服务就要留意许可里的收入红线。参考来源：Artifocial 周报。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "ai-nemotron-35-bolt",
+      "category": "ai",
+      "subcategory": "推理模型",
+      "title": "NVIDIA Nemotron 3.5 Bolt 74B-A9B：单卡/笔记本可跑的智能体模型",
+      "summary": "NVIDIA 推出 Nemotron 3.5 Bolt（74B 总参数、A9B 激活），定位为可在单张 GPU 甚至笔记本上运行的智能体模型，配合同系的 Nemotron 3.5 Super VL（视觉语言）构成「端侧/自托管智能体」组合。对游戏团队，这意味着把 NPC 决策、QA 巡检这类智能体放到本地硬件上跑变得更现实。",
+      "source": "NVIDIA",
+      "date": "2026-10-23",
+      "url": "https://build.nvidia.com/nvidia/nemotron-3-5-bolt",
+      "badge": "智能体模型",
+      "badgeType": "ai",
+      "readTime": "4 分钟",
+      "hotScore": 85,
+      "tags": [
+        "NVIDIA",
+        "Nemotron",
+        "智能体",
+        "端侧"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "Nemotron 3.5 Bolt 为 74B 总参数、A9B 激活的紧凑智能体模型；",
+            "定位单 GPU / 笔记本可运行，与 Super VL 组成自托管组合；",
+            "面向 NPC 决策、QA 巡检等可落地的游戏智能体场景。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "「大模型能跑在笔记本上」对独立开发者是质变：你不必为每次 AI 调用付云账单，也能在本地做原型验证。配合 vLLM，把智能体压到消费级硬件是今年最值得跟的趋势。参考来源：NVIDIA。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "ai-reflection-beam",
+      "category": "ai",
+      "subcategory": "开放权重",
+      "title": "Reflection Beam 开源：501B Apache-2.0 权重 + 开源智能体工具 Mirror CLI",
+      "summary": "Reflection AI 放出 Beam 的开放权重（501B 总参数、23B 激活，提供 BF16/FP8/NVFP4），并同步开源智能体工具 Mirror CLI，许可证为 Apache-2.0。相比带商业门槛的开放模型，Apache-2.0 对游戏团队最友好——可自由自托管与商用，是「开放权重阵营」里许可最干净的选手之一。",
+      "source": "Reflection AI",
+      "date": "2026-10-23",
+      "url": "https://www.reflection.ai/blog/beam",
+      "badge": "开放权重",
+      "badgeType": "ai",
+      "readTime": "4 分钟",
+      "hotScore": 86,
+      "tags": [
+        "Reflection",
+        "Beam",
+        "Apache-2.0",
+        "Mirror CLI"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "Beam 开放权重 501B 总参数、23B 激活，多精度提供；",
+            "同步开源智能体工具 Mirror CLI；",
+            "许可证 Apache-2.0，可自由自托管与商用。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "Apache-2.0 意味着你不用在「用不用」和「会不会踩许可雷」之间纠结——直接内网架起来做本地化/NPC 原型即可。对怕合规风险的独立团队，这类干净许可的开放模型比闭源 API 更省心。参考来源：Reflection AI。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "en-unity-6000-6-8f1",
       "category": "engine",
       "subcategory": "Unity",
-      "title": "Unity 6000.6.7f1 补丁上线：生产分支常规稳定性迭代",
-      "summary": "Unity 官方发行说明页挂出 6000.6.7f1（生产推荐分支 6000.6 线最新补丁），延续 LTS 线约两周一更的节奏。生产分支补丁以缺陷修复与稳定性为主，不含新 API——出项目/毕设时跟着 6000.6.x 打补丁仍是风险最低的姿势。",
+      "title": "Unity 6000.6.8f1 补丁上线：生产分支稳定迭代继续",
+      "summary": "Unity 官方发行说明挂出 6000.6.8f1（生产推荐分支 6000.6 线最新补丁），延续约两周一更的节奏。生产分支以缺陷修复与稳定性为主、不含新 API——出毕设/项目时跟着 6000.6.x 打补丁仍是风险最低的姿势，建议在定版前迁到当前生产分支最新 f1 并锁死版本号。",
       "source": "Unity 官方发行说明",
-      "date": "2026-10-22",
-      "url": "https://unity.com/releases/editor/whats-new/6000.6.7f1",
+      "date": "2026-10-23",
+      "url": "https://unity.com/releases/editor/whats-new/6000.6.8f1",
       "badge": "版本更新",
       "badgeType": "engine",
       "readTime": "3 分钟",
       "hotScore": 80,
       "tags": [
         "Unity",
-        "6000.6.7f1",
+        "6000.6.8f1",
         "LTS",
         "补丁"
       ],
@@ -539,7 +540,7 @@ window.DAILY_NEWS_DATA = {
           "title": "要点",
           "type": "list",
           "items": [
-            "6000.6.7f1 为生产分支 6000.6 最新补丁，注意 URL 是 6000.6.7（不是 6000.6.6，后者已发布）；",
+            "6000.6.8f1 为生产分支 6000.6 最新补丁，注意 URL 是 6000.6.8；",
             "生产分支补丁以修复与稳定性为主，无新 API；",
             "约两周一更，符合 6000.6 线既定节奏。"
           ]
@@ -547,27 +548,27 @@ window.DAILY_NEWS_DATA = {
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "老规矩：出毕设/出项目不追 Beta。6000.6.x 已走到 .7，意味着这条 LTS 线相对成熟，定版前迁到当前生产分支最新 f1 并锁死版本号，是成本最低的「不做后期惊喜」策略。参考来源：Unity 官方发行说明。"
+          "text": "老规矩：出毕设不追 Beta。6000.6 线已走到 .8，意味着这条 LTS 线相对成熟，迁到当前生产分支最新 f1 并锁死版本号，是成本最低的「不做后期惊喜」策略。参考来源：Unity 官方发行说明。"
         }
       ],
       "image": "https://cdn.sanity.io/images/fuvbjjlp/production/b9385c095d1c8c58f48fc7d4fc8ae257395169c8-266x98.png"
     },
     {
-      "id": "unity-6000-7-0b6",
+      "id": "en-unity-6000-7-0b7",
       "category": "engine",
       "subcategory": "Unity",
-      "title": "Unity 6000.7.0b6 开测：下一特性分支按周推进",
-      "summary": "Unity Beta 分支推进到 6000.7.0b6（前一圈为 b5，已于 10-21 收录），延续约一周一个 Beta 的节奏。6000.7 承载下一轮特性集合，适合前瞻验证而非生产使用；想预研新特性的同学可在独立分支小工程试水，主线项目继续留在 6000.6.x。",
+      "title": "Unity 6000.7.0b7 开测：下一特性分支按周推进",
+      "summary": "Unity Beta 分支推进到 6000.7.0b7（前一圈为 b6，已于 10-22 收录），延续约一周一个 Beta 的节奏。6000.7 承载下一轮特性集合，适合前瞻验证而非生产使用；想预研新特性的同学可在独立分支小工程试水，主线项目继续留在 6000.6.x。",
       "source": "Unity 官方发行说明",
-      "date": "2026-10-22",
-      "url": "https://unity.com/releases/editor/beta/6000.7.0b6",
+      "date": "2026-10-23",
+      "url": "https://unity.com/releases/editor/beta/6000.7.0b7",
       "badge": "Beta 推进",
       "badgeType": "engine",
       "readTime": "3 分钟",
       "hotScore": 80,
       "tags": [
         "Unity",
-        "6000.7.0b6",
+        "6000.7.0b7",
         "Beta",
         "特性分支"
       ],
@@ -576,7 +577,7 @@ window.DAILY_NEWS_DATA = {
           "title": "要点",
           "type": "list",
           "items": [
-            "6000.7.0b6 为 Beta 分支最新构建，b5 已于 10-21 收录；",
+            "6000.7.0b7 为 Beta 分支最新构建，b6 已于 10-22 收录；",
             "6000.7 含下一轮特性，API 可能变动，不建议用于在途项目；",
             "试水建议：用空工程 + 版本控制单独分支验证目标特性。"
           ]
@@ -590,14 +591,14 @@ window.DAILY_NEWS_DATA = {
       "image": "https://cdn.sanity.io/images/fuvbjjlp/production/b9385c095d1c8c58f48fc7d4fc8ae257395169c8-266x98.png"
     },
     {
-      "id": "babylon-9-31-3",
+      "id": "en-babylon-9-31-4",
       "category": "engine",
       "subcategory": "Web 引擎",
-      "title": "Babylon.js 9.31.3 发布：Web 3D 引擎小步快跑再修一轮",
-      "summary": "Babylon.js 发布 9.31.3（10-22），距 9.31.2 仅两天，延续 Web 3D 引擎小步修复的节奏。对游戏开发者，Babylon.js 是「浏览器里能跑多远」的天花板样本——WebGPU、物理、GUI 三条线都由官方一手维护，看它的 changelog 就能估算 Web 游戏的能力边界。",
+      "title": "Babylon.js 9.31.4 发布：Web 3D 引擎小步快跑再修一轮",
+      "summary": "Babylon.js 发布 9.31.4，距 9.31.3 仅两天，延续 Web 3D 引擎小步修复的节奏。对游戏开发者，Babylon.js 是「浏览器里能跑多远」的天花板样本——WebGPU、物理、GUI 三条线都由官方一手维护，看它的 changelog 就能估算 Web 游戏的能力边界。",
       "source": "GitHub: BabylonJS/Babylon.js",
-      "date": "2026-10-22",
-      "url": "https://github.com/BabylonJS/Babylon.js/releases/tag/9.31.3",
+      "date": "2026-10-23",
+      "url": "https://github.com/BabylonJS/Babylon.js/releases/tag/9.31.4",
       "badge": "版本更新",
       "badgeType": "engine",
       "readTime": "3 分钟",
@@ -606,16 +607,16 @@ window.DAILY_NEWS_DATA = {
         "Babylon.js",
         "WebGPU",
         "Web 游戏",
-        "9.31.3"
+        "9.31.4"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "9.31.3 于 10-22 发布，为 9.31.2 之后的常规修复版本；",
+            "9.31.4 为 9.31.3 之后的常规修复版本；",
             "Babylon.js 是浏览器 3D 能力的一手风向标：WebGPU、物理、GUI 全官方维护；",
-            "与 three.js、PlayCanvas 构成 Web 游戏三种取舍：全家桶 vs 轻量 vs 编辑器。"
+            "与 three.js、PlayCanvas 构成 Web 游戏三种取舍。"
           ]
         },
         {
@@ -627,14 +628,51 @@ window.DAILY_NEWS_DATA = {
       "image": "https://opengraph.githubassets.com/1/BabylonJS/Babylon.js"
     },
     {
-      "id": "defold-1-14-1-alpha",
+      "id": "en-godot-4-8-beta1",
+      "category": "engine",
+      "subcategory": "Godot",
+      "title": "Godot 4.8-beta1 发布：特性冻结，Beta 推进中",
+      "summary": "Godot 发布 4.8-beta1（特性冻结后的首个 Beta），延续 4.x 的稳健节奏。对开发者，4.8 线意味着又一轮渲染与编辑器改进进入可测试窗口；想提前验证新特性的同学可在独立工程试水，正式项目仍建议等稳定版或沿用当前稳定线。",
+      "source": "Godot 官方",
+      "date": "2026-10-23",
+      "url": "https://godotengine.org/article/godot-4-8-beta1/",
+      "badge": "版本更新",
+      "badgeType": "engine",
+      "readTime": "3 分钟",
+      "hotScore": 82,
+      "tags": [
+        "Godot",
+        "4.8-beta1",
+        "开源引擎",
+        "Beta"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "Godot 4.8-beta1 为特性冻结后的首个 Beta；",
+            "4.x 线持续在渲染与编辑器上迭代；",
+            "建议独立工程试水，正式项目等稳定版。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "Godot 的 Beta 节奏很适合当「引擎架构对照教材」：你能直接在它的 release notes 里看到开源社区把哪些能力排进优先级。想读懂引擎黑盒的同学，盯 Godot 的 changelog 比追任何教程都直观。参考来源：Godot 官方。"
+        }
+      ],
+      "image": "https://opengraph.githubassets.com/1/godotengine/godot"
+    },
+    {
+      "id": "en-defold-1-14-1-stable",
       "category": "engine",
       "subcategory": "跨平台引擎",
-      "title": "Defold 1.14.1-alpha 发布：轻量 2D/3D 引擎持续迭代",
-      "summary": "Defold 发布 1.14.1-alpha（10-22），在 1.14.0 之后继续推进其轻量跨平台引擎路线。Defold 以零授权费、内置编辑器与 Lua 脚本著称，仍是独立团队做 2D 与轻 3D 项目的高性价比选项，尤其适合移动与桌面小体量游戏。",
+      "title": "Defold 1.14.1-stable 发布：轻量 2D/3D 引擎稳定线推进",
+      "summary": "Defold 在 1.14.1-alpha 之后推出 1.14.1-stable，在轻量跨平台引擎路线上继续推进。Defold 以零授权费、内置编辑器与 Lua 脚本著称，仍是独立团队做 2D 与轻 3D 项目的高性价比选项，尤其适合移动与桌面小体量游戏。",
       "source": "GitHub: defold/defold",
-      "date": "2026-10-22",
-      "url": "https://github.com/defold/defold/releases/tag/1.14.1-alpha",
+      "date": "2026-10-23",
+      "url": "https://github.com/defold/defold/releases/tag/1.14.1-stable",
       "badge": "版本更新",
       "badgeType": "engine",
       "readTime": "3 分钟",
@@ -650,9 +688,9 @@ window.DAILY_NEWS_DATA = {
           "title": "要点",
           "type": "list",
           "items": [
-            "Defold 发布 1.14.1-alpha（10-22），为 1.14.0 之后的 alpha 迭代；",
+            "Defold 1.14.1-stable 为 1.14.1-alpha 之后的稳定版本；",
             "定位：零授权费、内置编辑器、Lua 脚本的轻量跨平台引擎；",
-            "适用：独立团队做 2D 与轻 3D 小体量游戏，移动/桌面通吃。"
+            "适用：独立团队做 2D 与轻 3D 小体量游戏。"
           ]
         },
         {
@@ -664,170 +702,170 @@ window.DAILY_NEWS_DATA = {
       "image": "https://opengraph.githubassets.com/1/defold/defold"
     },
     {
-      "id": "flax-engine-1-13-7012",
-      "category": "engine",
-      "subcategory": "跨平台引擎",
-      "title": "Flax Engine 1.13.7012 发布：C++/C# 双脚本的现代引擎补位精读",
-      "summary": "Flax Engine 发布 1.13.7012（10-22），这是一款支持 C++ 与 C# 双脚本、主打现代渲染与可视化编辑的开源引擎。对想跳出 Unity/Unreal 默认路线的团队，Flax 提供了「源码可见 + 轻量运行时」的折中，适合教学与原型场景做引擎架构对照阅读。",
-      "source": "GitHub: FlaxEngine/FlaxEngine",
-      "date": "2026-10-22",
-      "url": "https://github.com/FlaxEngine/FlaxEngine/releases/tag/1.13.7012",
-      "badge": "开源引擎",
-      "badgeType": "engine",
-      "readTime": "4 分钟",
-      "hotScore": 81,
-      "tags": [
-        "Flax Engine",
-        "C++",
-        "C#",
-        "开源引擎"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Flax Engine 1.13.7012 发布（10-22），C++/C# 双脚本、现代渲染管线；",
-            "开源、源码可见、运行时轻量，定位介于 Unity 与自研之间；",
-            "适用：教学对照、原型验证、对引擎架构有阅读需求的团队。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "把 Flax 当「引擎架构对照教材」比当「生产主力」更划算：你能在它的源码里看到现代引擎怎么组织渲染、脚本与编辑器，这种阅读对理解 Unity/Unreal 的黑盒很有帮助。参考来源：GitHub releases。"
-        }
-      ],
-      "image": "https://opengraph.githubassets.com/1/FlaxEngine/FlaxEngine"
-    },
-    {
-      "id": "subnautica2-2-0",
-      "category": "games",
-      "subcategory": "版本更新",
-      "title": "Subnautica 2 下一大更新：迄今最吓人的区域 + 青蛙机甲 + 冲刺手感优化",
-      "summary": "Rock Paper Shotgun 报道，未知深海生存续作 Subnautica 2 的下一轮重大更新将加入「迄今最吓人的区域」、青蛙机甲，以及对冲刺手感的实用优化。作为抢先体验 2.0 阶段的内容扩充，Unknown Worlds 继续用「新区域 + 新载具」的配方维持热度。",
-      "source": "Rock Paper Shotgun",
-      "date": "2026-10-22",
-      "url": "https://www.rockpapershotgun.com/subnautica-2s-next-major-update-adds-the-scariest-region-weve-ever-done-together-with-frog-mechs-and-a-very-welcome-tweak-for-dashing",
-      "badge": "版本更新",
-      "badgeType": "game",
-      "readTime": "4 分钟",
-      "hotScore": 86,
-      "tags": [
-        "Subnautica 2",
-        "Unknown Worlds",
-        "抢先体验",
-        "深海生存"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "更新加入「迄今最吓人的区域」、可操作的青蛙机甲；",
-            "对冲刺手感做了玩家呼吁已久的优化；",
-            "属 EA 2.0 阶段内容扩充，延续新区域 + 新载具的热度维持配方。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "「最吓人的区域 + 新载具」是最稳的内容更新公式：恐惧感靠新环境设计，黏性靠新移动方式。做生存/探索类毕设时，把「新区域 + 新载具」当版本节奏模板，比堆数值便宜且有效。参考来源：RPS。"
-        }
-      ],
-      "image": "https://assetsio.gnwcdn.com/Screenshot-2026-10-21-082915.png?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
-    },
-    {
-      "id": "mycopunk-1-0",
+      "id": "ga-hypnos-1-0",
       "category": "games",
       "subcategory": "正式发售",
-      "title": "Mycopunk 1.0 正式发售：真菌掠夺射击，从抢先体验毕业",
-      "summary": "RPS 报道，真菌题材掠夺射击游戏 Mycopunk 结束抢先体验、推出 1.0 正式版。游戏以「蘑菇」为核心视觉与玩法母题，靠怪诞美术与爽快射击手感切入拥挤的 looter-shooter 赛道——这类题材差异化正是中小团队在红海里找位置的方式。",
+      "title": "《Hypnos》10/29 脱离抢先体验推出 1.0：宇宙巨构第一人称冒险",
+      "summary": "Rock Paper Shotgun 报道，第一人称探索冒险游戏《Hypnos》将于 10 月 29 日结束抢先体验、推出 1.0 正式版。游戏以「巨构（megastructure）」世界为舞台，玩家扮演名为 Chrono 的少年，通过对话选择解开城市谜题、直面统治远疆的 Monarchs。对喜欢氛围叙事的同学，这是把环境叙事做到极致的样本。",
       "source": "Rock Paper Shotgun",
-      "date": "2026-10-21",
-      "url": "https://www.rockpapershotgun.com/i-know-you-probably-dont-have-mushroom-in-your-backlog-but-fungus-looter-shooter-mycopunk-is-now-out-in-10-and-looks-like-the-opposite-of-a-shiitake-time",
+      "date": "2026-10-23",
+      "url": "https://www.rockpapershotgun.com/captivating-cosmic-megastructure-adventure-game-hypnos-leaves-early-access-next-week-offering-up-a-world-im-desperate-to-dig-into-further",
       "badge": "正式发售",
       "badgeType": "game",
-      "readTime": "3 分钟",
-      "hotScore": 82,
+      "readTime": "4 分钟",
+      "hotScore": 84,
       "tags": [
-        "Mycopunk",
-        "looter-shooter",
-        "1.0",
-        "美术差异化"
+        "Hypnos",
+        "巨构",
+        "第一人称",
+        "氛围叙事"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "Mycopunk 结束 EA、推出 1.0 正式版，题材为真菌掠夺射击；",
-            "靠怪诞美术与爽快射击切入 looter-shooter 红海；",
-            "差异化思路：用强母题视觉在拥挤赛道里找位置。"
+            "《Hypnos》10/29 结束 EA、推出 1.0 正式版；",
+            "第一人称探索冒险，舞台为「巨构」世界；",
+            "玩家扮演 Chrono，靠对话选择解谜、直面 Monarchs。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "中小团队做射击游戏最难的不是枪感，是「凭什么让人记住」。Mycopunk 选了蘑菇这个几乎没人占的视觉母题——品类差异化往往就藏在题材选择里，而不是技术堆料上。参考来源：RPS。"
+          "text": "《Hypnos》把「尺度感」当成核心体验——巨型结构带来的渺小与敬畏，是它区别于普通步行模拟器的地方。做叙事向毕设时，这种「用空间尺度讲情绪」的手法值得借鉴。参考来源：RPS。"
         }
       ],
-      "image": "https://assetsio.gnwcdn.com/mycopunk-launch.jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
+      "image": ""
     },
     {
-      "id": "star-wars-zero-company-review",
+      "id": "ga-wolverine-us-charts",
+      "category": "games",
+      "subcategory": "市场数据",
+      "title": "《Marvel's Wolverine》登顶美国 9 月销量榜，成索尼自《Helldivers 2》后最高单月美元销售额",
+      "summary": "Circana 数据显示，《Marvel's Wolverine》领跑美国 9 月游戏销量榜，创下索尼自《Helldivers 2》以来单月美元销售额最高的第一方作品；同期 PlayStation 5 支出同比增长 43%、销量增 22%。对关注平台格局的同学，这条数据说明独占大作对主机硬件与软件的双拉动依然强劲。",
+      "source": "GamesIndustry.biz",
+      "date": "2026-10-23",
+      "url": "https://www.gamesindustry.biz/marvels-wolverine-leads-us-september-charts",
+      "badge": "市场数据",
+      "badgeType": "game",
+      "readTime": "4 分钟",
+      "hotScore": 85,
+      "tags": [
+        "Wolverine",
+        "Circana",
+        "销量榜",
+        "PS5"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "《Marvel's Wolverine》登顶美国 9 月销量榜；",
+            "成索尼自《Helldivers 2》后单月美元销售额最高第一方作；",
+            "PS5 支出同比 +43%、销量 +22%。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "独占大作对主机的拉动在 2026 年依然成立——这与「所有人都在转跨平台」的叙事形成对照。做发行向研究的同学可以把这条和 GTA6 预售数据一起看：强者愈强，但窗口期也被超级大作挤压。参考来源：GI.biz / Circana。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "ga-gears-e-day-review",
       "category": "games",
       "subcategory": "评测",
-      "title": "《Star Wars Zero Company》评测：回合制星战，把 IP 交给了策略玩家",
-      "summary": "Eurogamer 评测 Lucasfilm 旗下回合制策略新作《Star Wars Zero Company》，认为它把星战 IP 稳妥地落到了战术玩法上，而非靠情怀硬撑。在 Lucasfilm 表态想做更多中小体量星战游戏的同一天，这款作品的口碑恰好是那句话的注脚：小体量也能站得住。",
+      "title": "《Gears of War: E-Day》评测：回望过去也能让人向前看",
+      "summary": "Eurogamer 给出《Gears of War: E-Day》4/5 评价：尽管仍有大量腰射掩体、火力交替与老派硬汉味，但前传把系列原点讲出了新意，证明「回望」也能推动系列向前。对叙事设计同学，这部前传如何处理「已知结局的角色」是值得拆解的样本。",
       "source": "Eurogamer",
-      "date": "2026-10-21",
-      "url": "https://www.eurogamer.net/star-wars-zero-company-review",
+      "date": "2026-10-23",
+      "url": "https://www.eurogamer.net/gears-of-war-e-day-review",
       "badge": "评测",
       "badgeType": "game",
       "readTime": "5 分钟",
       "hotScore": 84,
       "tags": [
-        "星战",
-        "回合制",
-        "策略",
-        "Lucasfilm"
+        "战争机器",
+        "E-Day",
+        "前传",
+        "Eurogamer"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "Eurogamer 评测《Star Wars Zero Company》：星战 IP 落到回合制战术玩法；",
-            "评价：靠玩法而非情怀立住；",
-            "与 Lucasfilm「多做中小体量星战」表态同日，互相印证。"
+            "Eurogamer 评《Gears of War: E-Day》4/5；",
+            "保留掩体射击与老派硬汉基调，前传讲出新意；",
+            "主题：回望过去也能帮助系列向前看。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "IP 改编游戏最怕「换皮圈钱」，Zero Company 的评测说明：只要玩法骨架够硬，小体量改编反而比巨型制作更被宽容。这对你做课程项目的启示是——先有好玩法，再挂 IP，顺序别反。参考来源：Eurogamer。"
+          "text": "前传最难的是「观众早知道结局，如何还让人投入」。E-Day 的解法是把情绪重心放到角色关系而非悬念——这对写游戏剧本的同学是直接可抄的叙事课。参考来源：Eurogamer。"
         }
       ],
-      "image": "https://assetsio.gnwcdn.com/star-wars-zero-company-review-4.jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
+      "image": ""
     },
     {
-      "id": "valor-mortis-profit",
+      "id": "ga-hellraiser-revival",
       "category": "games",
-      "subcategory": "运营动态",
-      "title": "类魂《Valor Mortis》上线七天即盈利：小团队也走通了「首发即回本」",
-      "summary": "Eurogamer 报道，第一人称类魂游戏 Valor Mortis 在上线七天内即实现盈利，尽管直面一批强势竞品。对独立/中小团队，这条「首发周即回本」的案例比任何融资故事都更有参考价值——它证明精准定位的类魂细分仍有付费空间。",
-      "source": "Eurogamer",
-      "date": "2026-10-21",
-      "url": "https://www.eurogamer.net/soulslike-valor-mortis-making-profit-seven-days",
-      "badge": "运营动态",
+      "subcategory": "发售动态",
+      "title": "《Clive Barker's Hellraiser: Revival》发售：媒体评价两极分化",
+      "summary": "Saber Interactive 的《Hellraiser: Revival》10 月发售，首批媒体评分跨度极大：Eurogamer 称其是「凌乱而不均匀的致敬」，PCGamesN 偏正面，IGN 则直言除 Pinhead 形象忠实外执行欠佳。对开发者，这再次说明「高概念授权恐怖」比技术更依赖创意取舍的一致。",
+      "source": "Daily Game Wire / Eurogamer",
+      "date": "2026-10-23",
+      "url": "https://dailygamewire.com/articles/hellraiser-revival-launches-to-polarised-critical-reception.html",
+      "badge": "发售动态",
       "badgeType": "game",
       "readTime": "4 分钟",
-      "hotScore": 83,
+      "hotScore": 82,
       "tags": [
-        "Valor Mortis",
+        "Hellraiser",
+        "Saber",
+        "授权恐怖",
+        "口碑分化"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "《Hellraiser: Revival》10 月发售，媒体评分两极；",
+            "Eurogamer 评「凌乱而不均匀的致敬」，IGN 偏负面；",
+            "分歧集中在创意取舍而非技术瑕疵。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "授权 IP 改编最怕「既想还原又想创新」导致两头不靠。Revival 的口碑分化恰好说明：风格决策的一致性，比堆砌原作彩蛋更能决定玩家买不买账。参考来源：Daily Game Wire 汇总。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "ga-penguin-colony",
+      "category": "games",
+      "subcategory": "评测",
+      "title": "《Penguin Colony》评测：最出乎意料的类魂，也是对克苏鲁帝国的绝妙戏仿",
+      "summary": "Rock Paper Shotgun 评测《Penguin Colony》：把类魂框架套在企鹅殖民帝国题材上，结果意外地好——既保留类魂的硬核手感，又用荒诞幽默消解了严肃感。对独立团队，这是「老玩法 + 强母题反转」制造记忆点的又一案例。",
+      "source": "Rock Paper Shotgun",
+      "date": "2026-10-23",
+      "url": "https://www.rockpapershotgun.com/penguin-colony-review",
+      "badge": "评测",
+      "badgeType": "game",
+      "readTime": "4 分钟",
+      "hotScore": 82,
+      "tags": [
+        "Penguin Colony",
         "类魂",
-        "盈利",
+        "戏仿",
         "独立游戏"
       ],
       "content": [
@@ -835,533 +873,496 @@ window.DAILY_NEWS_DATA = {
           "title": "要点",
           "type": "list",
           "items": [
-            "Valor Mortis 上线七天即盈利，且处竞争激烈的类魂赛道；",
-            "第一人称 + 类魂的组合形成差异化定位；",
-            "对中小团队的启示：精准细分仍有付费空间。"
+            "《Penguin Colony》用类魂框架承载企鹅殖民帝国题材；",
+            "RPS 评其硬核手感与荒诞幽默并存；",
+            "是「老玩法 + 强母题反转」的差异化样本。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "类魂赛道被说「卷」了无数次，但 Valor Mortis 用「第一人称 + 七天回本」打了脸：卷的是泛化作品，精准切口永远有空间。做毕设选品类时，别被「赛道拥挤」吓退，先看你能不能切出别人没占的角度。参考来源：Eurogamer。"
+          "text": "类魂赛道被说卷了无数次，但 Penguin Colony 用「企鹅+帝国戏仿」切出了新记忆点。做毕设选品类时，别被「赛道拥挤」吓退，先看你能不能给熟悉玩法套一个别人没占的母题。参考来源：RPS。"
         }
       ],
-      "image": "https://assetsio.gnwcdn.com/Valor-Mortis_nqM7WPG.jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
+      "image": ""
     },
     {
-      "id": "stranger-than-heaven-preview",
-      "category": "games",
-      "subcategory": "新作前瞻",
-      "title": "如龙工作室新作《Stranger Than Heaven》前瞻：有灵魂，但可能两极分化",
-      "summary": "Eurogamer 在试玩数小时后给出《Stranger Than Heaven》（如龙工作室新作）前瞻：称其「有灵魂」，但预判它会是一款评价两极分化的游戏。工作室从《如龙》的喧闹转向更内省、更叙事驱动的基调，本身就是一次值得观察的方向冒险。",
-      "source": "Eurogamer",
-      "date": "2026-10-22",
-      "url": "https://www.eurogamer.net/stranger-than-heaven-preview",
-      "badge": "新作前瞻",
-      "badgeType": "game",
-      "readTime": "5 分钟",
-      "hotScore": 83,
-      "tags": [
-        "如龙工作室",
-        "Stranger Than Heaven",
-        "新作",
-        "叙事驱动"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Eurogamer 试玩后评价「有灵魂」，但预判口碑会两极分化；",
-            "工作室从《如龙》的喧闹转向更内省、叙事驱动的基调；",
-            "被视作一次方向冒险：离开舒适区做不同气质的新 IP。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "知名工作室敢离开舒适区做气质不同的新作，本身就是内容创作的一课：重复自己最安全也最容易疲软。做个人作品集时，与其再做一个「安全但雷同」的项目，不如赌一次自己真正想表达的东西。参考来源：Eurogamer。"
-        }
-      ],
-      "image": "https://assetsio.gnwcdn.com/stranger-than-heaven-header-2.jpg?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
-    },
-    {
-      "id": "headroom-agent-tokens",
-      "category": "opensource",
-      "subcategory": "智能体工具",
-      "title": "Headroom：把工具输出/日志/RAG 块压缩后再喂给 LLM，省 20%-95% token",
-      "summary": "GitHub 热榜新仓库 Headroom（77k★）：在工具输出、日志、文件与 RAG 分块到达 LLM 之前先压缩，编码智能体省约 20% token、JSON 类省 60-95%，且答案质量不掉。以库、代理与 MCP server 三种形态提供，直击「上下文爆炸」这个智能体开发的最大成本痛点。",
-      "source": "GitHub: headroomlabs-ai/headroom",
-      "date": "2026-10-22",
-      "url": "https://github.com/headroomlabs-ai/headroom",
-      "badge": "新仓库",
-      "badgeType": "ai",
-      "readTime": "3 分钟",
-      "hotScore": 84,
-      "tags": [
-        "Headroom",
-        "token 压缩",
-        "智能体",
-        "MCP"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Headroom 在上下文进 LLM 前压缩：编码省约 20%、JSON 省 60-95% token；",
-            "以库、代理、MCP server 三种形态提供；",
-            "击中智能体开发的「上下文爆炸」成本痛点。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "用 Claude Code 类智能体写游戏代码时，最贵的是被塞满的上下文。Headroom 这类压缩层对毕设阶段「想用 AI 但不想烧钱」的同学很实用——先把日志和工具输出压一压，账单会好看很多。参考来源：GitHub 仓库页。"
-        }
-      ],
-      "image": "https://opengraph.githubassets.com/1/headroomlabs-ai/headroom"
-    },
-    {
-      "id": "graphify-codebase-kg",
-      "category": "opensource",
-      "subcategory": "智能体工具",
-      "title": "Graphify：把代码库+文档+SQL+PDF 变成可查询知识图谱，本地确定性解析",
-      "summary": "GitHub 热榜新仓库 Graphify（131k★）：把任意代码库连同其文档、SQL schema、配置与 PDF 变成可查询知识图谱，并以 /graphify 技能形式提供给 Claude Code、Cursor、Codex 与 Gemini CLI。采用本地确定性 AST 解析，每条边都可解释，不依赖向量库。",
-      "source": "GitHub: Graphify-Labs/graphify",
-      "date": "2026-10-22",
-      "url": "https://github.com/Graphify-Labs/graphify",
-      "badge": "新仓库",
-      "badgeType": "ai",
+      "id": "in-xbox-cloud-pricing",
+      "category": "industry",
+      "subcategory": "平台策略",
+      "title": "Xbox 公布云游戏限免档定价：10 小时 $3.99 起",
+      "summary": "Xbox 披露了 Game Pass 云游戏限免档的定价：以 $3.99 / 10 小时起步的「云游戏时长包」提供无广告串流、更短排队与高质量画质。对平台格局，这是微软把云游戏从「订阅附赠」拆成「按量付费」的试探，也影响玩家在多设备上游玩的门槛。",
+      "source": "GamesIndustry.biz",
+      "date": "2026-10-23",
+      "url": "https://www.gamesindustry.biz/xbox-reveals-pricing-for-cloud-gaming-limits",
+      "badge": "平台策略",
+      "badgeType": "business",
       "readTime": "4 分钟",
       "hotScore": 85,
       "tags": [
-        "Graphify",
-        "代码知识图谱",
-        "AST",
-        "智能体技能"
+        "Xbox",
+        "云游戏",
+        "Game Pass",
+        "按量付费"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "Graphify 把代码库+文档+SQL+PDF 转成可查询知识图谱；",
-            "以 /graphify 技能供给 Claude Code/Cursor/Codex/Gemini CLI；",
-            "本地确定性 AST 解析，边可解释，无向量库。"
+            "Xbox 云游戏限免档定价 $3.99 / 10 小时起；",
+            "提供无广告串流、更短排队与高画质；",
+            "是云游戏从「订阅附赠」拆为「按量付费」的试探。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "给智能体装「代码库地图」比让它每次重新读文件聪明得多。做中大型课程项目时，先用 Graphify 这类工具把工程结构化，AI 助手的回答会更贴你的代码，而不是泛泛而谈。参考来源：GitHub 仓库页。"
+          "text": "把云游戏单独计价，意味着微软在为「不买主机也能玩」这件事定价。对想做跨端游戏的同学，这条信号提醒你：未来发行要考虑「串流体验」作为独立卖点，而不只是主机/PC 的附属。参考来源：GI.biz。"
         }
       ],
-      "image": "https://opengraph.githubassets.com/1/Graphify-Labs/graphify"
+      "image": ""
     },
     {
-      "id": "comfyui-diffusion",
-      "category": "opensource",
-      "subcategory": "AI 美术",
-      "title": "ComfyUI 再登热榜：节点式扩散模型 GUI，仍是本地 AI 美术的默认入口",
-      "summary": "Comfy-Org/ComfyUI（141k★，当日热榜）是最强大的模块化扩散模型 GUI/后端，以图状节点编排生图/视频流水线，被称为「本地推理最快的引擎」。对游戏美术管线，ComfyUI 是接 Stable Diffusion / Flux 类模型做概念图、贴图与素材生成的标配入口。",
-      "source": "GitHub: Comfy-Org/ComfyUI",
-      "date": "2026-10-22",
-      "url": "https://github.com/Comfy-Org/ComfyUI",
-      "badge": "开源美术",
-      "badgeType": "ai",
+      "id": "in-fortnite-ios-australia",
+      "category": "industry",
+      "subcategory": "平台与监管",
+      "title": "《Fortnite》重返澳大利亚 iOS：法院裁定 Apple 违反竞争法",
+      "summary": "澳大利亚联邦法院裁定 Apple 限制第三方应用商店与支付方式违反竞争法后，《Fortnite》随之重返澳大利亚 iOS。对平台治理，这是 Epic 诉 Apple 全球战线的最新一环，也提示开发者：侧载与替代支付在不同司法辖区正以不同节奏松动。",
+      "source": "GamesIndustry.biz",
+      "date": "2026-10-23",
+      "url": "https://www.gamesindustry.biz/fortnite-returns-to-ios-in-australia",
+      "badge": "平台与监管",
+      "badgeType": "business",
       "readTime": "4 分钟",
-      "hotScore": 83,
+      "hotScore": 88,
       "tags": [
-        "ComfyUI",
-        "扩散模型",
-        "AI 美术",
-        "节点编辑"
+        "Fortnite",
+        "Apple",
+        "侧载",
+        "竞争法"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "ComfyUI 是模块化扩散模型 GUI/后端，节点式编排生图与视频；",
-            "自称本地推理最快的引擎，社区生态庞大；",
-            "游戏美术侧：接 SD/Flux 做概念图、贴图、素材生成。"
+            "澳联邦法院裁定 Apple 限制第三方商店/支付违反竞争法；",
+            "《Fortnite》据此重返澳大利亚 iOS；",
+            "是 Epic v. Apple 全球战线的最新进展。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "做独立游戏最实用的 AI 落点就是 ComfyUI：你把美术风格的节点连好，就能稳定产出统一调性的概念图，而不是每次手调提示词。它不替代美术，但能让一个人顶半个素材组。参考来源：GitHub 仓库页。"
+          "text": "从学习视角看，这条最有价值的是「同一家平台，在不同国家被不同判决切开」——做海外发行的同学要把侧载/支付政策按司法辖区逐国梳理，不能套用一套全球模板。参考来源：GI.biz。"
         }
       ],
-      "image": "https://opengraph.githubassets.com/1/Comfy-Org/ComfyUI"
+      "image": ""
     },
     {
-      "id": "ai-memory-agent",
-      "category": "opensource",
-      "subcategory": "智能体记忆",
-      "title": "ai-memory：给编码智能体做长期记忆，跨厂商交接上下文",
-      "summary": "GitHub 热榜新仓库 ai-memory（12k★）：为 Claude Code、Codex 等编码 CLI 提供长期记忆方案，并支持在不同智能体厂商之间交接上下文。在「智能体 amnesia」被视为最大可用性bug的当下，这类记忆层正成为智能体工具链的标配组件。",
-      "source": "GitHub: akitaonrails/ai-memory",
-      "date": "2026-10-22",
-      "url": "https://github.com/akitaonrails/ai-memory",
-      "badge": "新仓库",
-      "badgeType": "ai",
-      "readTime": "3 分钟",
-      "hotScore": 82,
-      "tags": [
-        "ai-memory",
-        "长期记忆",
-        "编码智能体",
-        "上下文交接"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "ai-memory 为编码 CLI 提供长期记忆，并支持跨厂商交接；",
-            "Rust 实现，定位智能体「健忘症」的可用性问题；",
-            "与 ai-memory/Claude Code 记忆类项目同处一条工具链主线。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "智能体每次新会话从零开始，是它最劝退的地方。给 AI 助手接一份长期记忆（就像 SOUL.md + 活动日志），你的项目上下文能跨会话保留——独立开发者的「私人项目经理」就这么搭起来了。参考来源：GitHub 仓库页。"
-        }
-      ],
-      "image": "https://opengraph.githubassets.com/1/akitaonrails/ai-memory"
-    },
-    {
-      "id": "vllm-serving",
-      "category": "opensource",
-      "subcategory": "AI 基础设施",
-      "title": "vLLM 登热榜：高吞吐大模型推理引擎，本地/云端跑游戏 AI 的基石",
-      "summary": "vllm-project/vllm（94k★，当日热榜）是高吞吐、省显存的大模型推理与服务引擎，被大量本地与云端部署采用。对游戏团队，vLLM 是把开源大模型（如 DeepInfer、Ornith）落地成内部 NPC 对话/本地化服务的现实基础设施——开源模型 + 开源推理引擎的组合正在把 AI 自托管门槛打下来。",
-      "source": "GitHub: vllm-project/vllm",
-      "date": "2026-10-22",
-      "url": "https://github.com/vllm-project/vllm",
-      "badge": "开源推理",
-      "badgeType": "ai",
+      "id": "in-roblox-h1-2026",
+      "category": "industry",
+      "subcategory": "市场数据",
+      "title": "Roblox 成 H1 2026 总时长最高游戏：年长玩家付费意愿更高",
+      "summary": "Newzoo 与 GEEIQ 数据显示，Roblox 在 2026 上半年以 40.5 亿小时 PC+主机时长成为「总时长最高游戏」；其年长玩家中有 80% 过去半年在游戏内消费，高于非 Roblox 玩家的 59%。对 UGC 平台方，这条说明「留住大龄用户」正在成为增长新引擎。",
+      "source": "GamesIndustry.biz",
+      "date": "2026-10-23",
+      "url": "https://www.gamesindustry.biz/report-explores-how-roblox-can-maintain-older-players",
+      "badge": "市场数据",
+      "badgeType": "business",
       "readTime": "4 分钟",
       "hotScore": 84,
       "tags": [
-        "vLLM",
-        "推理引擎",
-        "大模型",
-        "自托管"
+        "Roblox",
+        "UGC",
+        "Newzoo",
+        "留存"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "vLLM 是高吞吐、显存友好的大模型推理与服务引擎；",
-            "被本地与云端部署广泛采用，社区成熟；",
-            "与 DeepInfer/Ornith 等开源模型配合，构成游戏 AI 自托管底座。"
+            "Roblox H1 2026 总时长 40.5 亿小时，居全游戏之首；",
+            "年长 Roblox 玩家 80% 半年内消费，高于非用户 59%；",
+            "留住大龄用户正成为 UGC 平台增长新引擎。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "「开源模型 + 开源推理引擎」这条线，正是前面 DeepInfer/Ornith 能落地的物理基础。做游戏 AI 的中小团队，与其月月给 API 付费，不如用 vLLM 把模型架在内网——尤其要碰玩家数据时，自托管是唯一合规解。参考来源：GitHub 仓库页。"
-        }
-      ],
-      "image": "https://opengraph.githubassets.com/1/vllm-project/vllm"
-    },
-    {
-      "id": "gi-indie-studio-part4",
-      "category": "tutorials",
-      "subcategory": "创业经营",
-      "title": "GI 学院第四讲：如何运营独立工作室——设定并击中季度「里程碑石」",
-      "summary": "GamesIndustry.biz Academy 连载第四篇，商业教练 Martijn van Zwieten 讲「如何设定并击中季度目标（rocks）」：把长期愿景拆成每季度可验证的里程碑，让工作室不偏离航向。对想做独立游戏/毕设长期项目的同学，这是把「愿望」翻译成「可执行节奏」的实操框架。",
-      "source": "GamesIndustry.biz Academy",
-      "date": "2026-10-22",
-      "url": "https://www.gamesindustry.biz/how-to-run-an-indie-game-studio-part-4-setting-and-hitting-quarterly-rocks",
-      "badge": "常青教程",
-      "badgeType": "event",
-      "readTime": "3 分钟",
-      "hotScore": 80,
-      "tags": [
-        "独立工作室",
-        "季度目标",
-        "运营管理",
-        "GI Academy"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "第四讲主题：把长期愿景拆成每季度可验证的「rocks」；",
-            "方法：用里程碑约束方向，避免团队在运营噪声里漂移；",
-            "来源：GI.biz Academy 独立工作室运营连载（Part 1-4）。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "这套「季度里程碑」框架对毕业设计同样成立：把毕设当成一家 mini 工作室，给每个季度设一个可验收的 rock（如「可玩 demo」「美术定调」），比「我要做完一个游戏」这种口号靠谱十倍。参考来源：GI.biz Academy。"
-        }
-      ],
-      "image": "https://assetsio.gnwcdn.com/firm-framework.png?width=1200&amp;height=630&amp;fit=crop&amp;enable=upscale&amp;auto=webp"
-    },
-    {
-      "id": "pikuma-courses",
-      "category": "tutorials",
-      "subcategory": "数学与架构",
-      "title": "Pikuma：游戏数学与引擎架构的免费系统课程",
-      "summary": "Pikuma 是面向游戏开发者的免费系统课程站，覆盖游戏数学（线性代数、向量、矩阵）、物理与自研引擎架构等主题，以「从原理到实现」的路线著称。对想理解 Unity/Unreal 黑盒背后那套数学与架构的同学，这是比零散教程更成体系的一手学习材料。",
-      "source": "pikuma.com（开发者课程站）",
-      "date": "2026-10-22",
-      "url": "https://pikuma.com/",
-      "badge": "常青教程",
-      "badgeType": "event",
-      "readTime": "3 分钟",
-      "hotScore": 80,
-      "tags": [
-        "游戏数学",
-        "引擎架构",
-        "线性代数",
-        "免费课程"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Pikuma 提供游戏数学（向量/矩阵/物理）与引擎架构系统课程；",
-            "路线：从原理推导到代码实现，强调「为什么」；",
-            "适合想读懂引擎黑盒、而非只调 API 的学习者。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "常青补位库新入库成员。建议路径：先学它的数学与物理，再回头看 Unity 的 Transform/碰撞——你会从「会用」升级到「知道它为什么这样算」。参考来源：pikuma.com。"
-        }
-      ],
-      "image": "https://pikuma.com/images/og/home.png"
-    },
-    {
-      "id": "mixamo-rigging",
-      "category": "tutorials",
-      "subcategory": "美术与动画",
-      "title": "Mixamo：Adobe 免费自动绑定与动作库，程序系也能秒出角色动画",
-      "summary": "Mixamo（Adobe）提供免费的自动骨骼绑定与海量动作库：上传角色模型即自动绑骨，再套用现成动作即可导出。对没有动画队友的程序系学生，它是从「灰色方块」升级到「能走能跑的角色」的免费捷径——动画门槛被一键拉平。",
-      "source": "Mixamo（Adobe）",
-      "date": "2026-10-22",
-      "url": "https://www.mixamo.com/",
-      "badge": "常青资源",
-      "badgeType": "event",
-      "readTime": "3 分钟",
-      "hotScore": 80,
-      "tags": [
-        "Mixamo",
-        "自动绑骨",
-        "动作库",
-        "免费"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Mixamo 提供免费自动绑骨与现成动作库，上传模型即绑定；",
-            "支持导出带骨骼的角色与动画，直接进 Unity/Blender；",
-            "门槛：零动画基础也能产出可走的角色。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "常青补位库新入库。提醒一句：Mixamo 的自动绑骨对标准人形最稳，非人形角色（四足/怪物）容易翻车。演示视频里一个能走的小人，比十个灰色方块有说服力十倍。参考来源：mixamo.com。"
+          "text": "Roblox 的故事对想做 UGC/社交平台的同学很关键：它证明「低龄起家」的平台也能靠内容与社交黏住成年人。做社区产品别只盯新用户，老用户的终身价值才是护城河。参考来源：GI.biz / Newzoo·GEEIQ。"
         }
       ],
       "image": ""
     },
     {
-      "id": "blender-manual",
+      "id": "in-amd-fsr-41-xbox",
+      "category": "industry",
+      "subcategory": "硬件与渲染",
+      "title": "AMD FSR 4.1 超分将登陆 Xbox Series X|S：机器学习时域重建",
+      "summary": "微软与 AMD 宣布 FSR 4.1 超分技术将登陆当前 Xbox 主机，由机器学习驱动做时域重建（低分辨率渲染再重建到高分辨率）。虽未给具体日期，但 Xbox CTO 确认该计划，并提及双方也在合作次世代 Xbox（Project Helix）。对主机开发者，这是画质/帧率权衡工具箱的新增项。",
+      "source": "GamesIndustry.biz",
+      "date": "2026-10-23",
+      "url": "https://www.gamesindustry.biz/amds-fsr-41-upscaling-is-coming-to-xbox-series-x-s",
+      "badge": "硬件与渲染",
+      "badgeType": "business",
+      "readTime": "4 分钟",
+      "hotScore": 86,
+      "tags": [
+        "AMD",
+        "FSR 4.1",
+        "Xbox",
+        "超分"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "微软与 AMD 宣布 FSR 4.1 将登陆 Xbox Series X|S；",
+            "为机器学习驱动的时域超分（低分辨率渲染后重建）；",
+            "Xbox CTO 确认计划，并与 Project Helix 联动。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "主机端终于吃到机器学习超分，意味着中端硬件也能更接近高画质。做主机/跨端游戏的同学可以把 FSR 4.1 列入画质档位设计——但发布前务必在真机上验帧，别只看参数。参考来源：GI.biz。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "in-playrix-eipix",
+      "category": "industry",
+      "subcategory": "并购",
+      "title": "Playrix 收购 Eipix Entertainment：休闲隐藏对象老厂并入塞尔维亚子公司",
+      "summary": "《Homescapes》《Gardenscapes》开发商 Playrix 宣布收购成立于 2005 年的塞尔维亚工作室 Eipix Entertainment（以隐藏对象类休闲游戏见长，代表作 Dark Parables）。Eipix 将并入 Playrix RS 塞尔维亚子公司，继续做休闲、移动、免费游戏。对关注行业整合的同学，这是大厂在休闲赛道持续收编成熟团队、补强本地开发生态的又一案。",
+      "source": "GamesIndustry.biz",
+      "date": "2026-10-23",
+      "url": "https://gamesindustry.biz/playrix-acquires-eipix-entertainment",
+      "badge": "并购",
+      "badgeType": "business",
+      "readTime": "3 分钟",
+      "hotScore": 82,
+      "tags": [
+        "Playrix",
+        "Eipix",
+        "并购",
+        "休闲游戏"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "Playrix 收购 2005 年成立的塞尔维亚工作室 Eipix；",
+            "Eipix 以隐藏对象类休闲游戏见长（代表作 Dark Parables）；",
+            "将并入 Playrix RS 子公司，继续做休闲/移动/免费游戏。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "休闲赛道看似「低技术」，却是现金流最稳的蛋糕——大厂持续收编成熟小团队，本质是在买「已被验证的品类经验」与「本地工程产能」。对想进游戏行业的同学，别只盯着 3A，休闲大厂的并购逻辑同样值得研究。参考来源：GI.biz。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "tu-godot-docs",
       "category": "tutorials",
-      "subcategory": "3D 建模",
-      "title": "Blender 官方手册：从建模到渲染的权威自学入口",
-      "summary": "Blender 官方手册（docs.blender.org）是这套开源 3D 套件的权威文档，覆盖建模、雕刻、材质、渲染、动画全流程。对需要用 Blender 做游戏资产却卡在界面与术语的新手，手册比视频课更便于检索与回查，是 3D 美术自学的可靠起点。",
-      "source": "Blender 官方手册",
-      "date": "2026-10-22",
-      "url": "https://docs.blender.org/manual/en/latest/",
+      "subcategory": "引擎入门",
+      "title": "Godot 官方文档：从编辑器到 GDScript 的权威自学入口",
+      "summary": "Godot 官方文档（docs.godotengine.org）覆盖编辑器、场景树、GDScript、物理、渲染与导出全流程，是这套开源引擎最权威的自学材料。对零基础同学，文档比视频课更便于检索与回查，是 3D/2D 美术与程序自学的可靠起点。",
+      "source": "Godot 官方文档",
+      "date": "2026-10-23",
+      "url": "https://docs.godotengine.org/en/stable/getting_started/",
       "badge": "常青教程",
       "badgeType": "event",
       "readTime": "3 分钟",
       "hotScore": 80,
       "tags": [
-        "Blender",
-        "3D 建模",
+        "Godot",
         "官方文档",
-        "开源"
+        "GDScript",
+        "自学"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "Blender 手册覆盖建模/雕刻/材质/渲染/动画全流程；",
-            "优势：权威、可检索、便于回查，胜过一次性视频课；",
-            "适合被界面与术语劝退的 3D 新手。"
+            "Godot 文档覆盖编辑器/场景树/GDScript/物理/渲染/导出；",
+            "优势：权威、可检索、便于回查；",
+            "适合零基础程序与美术自学。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "常青补位库新入库。学习建议：别从第一章线性啃，先带着「我要做一把武器/一栋房子」的目标去查对应章节，手册是字典不是小说。参考来源：docs.blender.org。"
+          "text": "常青补位库成员。学习建议：别从第一章线性啃，先带着「我要做一个可移动角色」的目标去查对应章节，文档是字典不是小说。参考来源：docs.godotengine.org。"
+        }
+      ],
+      "image": "https://godotengine.org/assets/press/logo_large.png"
+    },
+    {
+      "id": "tu-raylib-examples",
+      "category": "tutorials",
+      "subcategory": "编程基础",
+      "title": "raylib 官方示例库：用极简 C 上手游戏编程",
+      "summary": "raylib 官方示例页（raylib.com/examples）汇集数百个从窗口、输入、音频到 3D 的最小可运行范例，以极简 C 语言（C99）编写，是理解「游戏循环 + 图形/输入/音频」底层机制的优质入口。对想打牢编程底子的同学，raylib 比大型引擎更透明。",
+      "source": "raylib 官方",
+      "date": "2026-10-23",
+      "url": "https://www.raylib.com/examples.html",
+      "badge": "常青教程",
+      "badgeType": "event",
+      "readTime": "3 分钟",
+      "hotScore": 80,
+      "tags": [
+        "raylib",
+        "C 语言",
+        "最小范例",
+        "游戏循环"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "raylib 示例覆盖窗口/输入/音频/3D 等数百个最小范例；",
+            "以极简 C99 编写，依赖少；",
+            "适合理解游戏循环与底层图形/输入机制。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "常青补位库成员。建议路径：先跑通「窗口+按键移动方块」，再逐步加碰撞、相机、音频——raylib 让你看得见每一行代码对画面的直接影响，比黑盒引擎更练内功。参考来源：raylib.com。"
         }
       ],
       "image": ""
     },
     {
-      "id": "piskel-pixel",
+      "id": "tu-threejs-docs",
+      "category": "tutorials",
+      "subcategory": "Web 图形",
+      "title": "three.js 官方文档：WebGL/WebGPU 3D 的权威参考",
+      "summary": "three.js 官方文档（threejs.org/docs）系统讲解场景、相机、几何体、材质、灯光与后处理，是 Web 3D 开发的一手参考。对想做浏览器游戏/H5 营销页的同学，three.js 的文档配合示例能让你快速搭出可交互的 3D 场景。",
+      "source": "three.js 官方文档",
+      "date": "2026-10-23",
+      "url": "https://threejs.org/docs/",
+      "badge": "常青教程",
+      "badgeType": "event",
+      "readTime": "3 分钟",
+      "hotScore": 80,
+      "tags": [
+        "three.js",
+        "WebGL",
+        "WebGPU",
+        "3D"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "three.js 文档覆盖场景/相机/几何体/材质/灯光/后处理；",
+            "是 Web 3D 开发的一手权威参考；",
+            "配合示例可快速搭出可交互 3D 场景。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "常青补位库成员。学 three.js 别只抄 demo，要搞懂「场景图 + 渲染循环」这条主干，其余都是挂在这条主干上的节点。做微信小游戏/H5 的同学尤其该掌握它。参考来源：threejs.org。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "tu-aseprite-docs",
       "category": "tutorials",
       "subcategory": "像素美术",
-      "title": "Piskel：浏览器里的免费像素动画编辑器，做复古游戏素材零门槛",
-      "summary": "Piskel 是一款免费、浏览器内运行的像素画与像素动画编辑器，支持图层、洋葱皮与一键导出 spritesheet。对做像素风游戏/GameJam 原型，它无需安装即可上手，是比 Photoshop 轻得多的入门工具——2D 美术的第一块砖可以从这里开始。",
-      "source": "Piskel（在线像素编辑器）",
-      "date": "2026-10-22",
-      "url": "https://www.piskelapp.com/",
+      "title": "Aseprite 官方文档：从像素画到动画的实用手册",
+      "summary": "Aseprite 官方文档（aseprite.org/docs）讲解图层、帧、洋葱皮、调色板与时间轴动画，是像素美术从静态图到循环动画的实用手册。对程序系同学，它是把「灰色方块」升级成「会动的角色」的免费利器——动画门槛被一键拉平。",
+      "source": "Aseprite 官方文档",
+      "date": "2026-10-23",
+      "url": "https://www.aseprite.org/docs/",
       "badge": "常青资源",
       "badgeType": "event",
       "readTime": "3 分钟",
       "hotScore": 80,
       "tags": [
-        "Piskel",
+        "Aseprite",
         "像素画",
-        "像素动画",
-        "免费"
+        "帧动画",
+        "美术"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "Piskel 是浏览器内免费像素画/像素动画编辑器；",
-            "支持图层、洋葱皮、导出 spritesheet；",
-            "零安装，适合像素风游戏与 GameJam 原型。"
+            "Aseprite 文档讲解图层/帧/洋葱皮/调色板/时间轴；",
+            "覆盖从静态像素画到循环动画；",
+            "是程序系同学做角色动画的免费利器。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "常青补位库新入库。做 2D/像素风毕设时，Piskel 配 Quaternius 的低模/像素资产，能快速拼出有手感的演示——但记得像素画讲究「少而准」，别一股脑堆细节。参考来源：piskelapp.com。"
+          "text": "常青补位库成员。提醒一句：Aseprite 对标准人形最稳，非人形角色（四足/怪物）容易翻车。演示视频里一个能走的小人，比十个灰色方块有说服力十倍。参考来源：aseprite.org。"
         }
       ],
       "image": ""
     },
     {
-      "id": "mihoyo-2027-campus",
+      "id": "tu-pygame-docs",
+      "category": "tutorials",
+      "subcategory": "Python 游戏",
+      "title": "pygame 官方文档：用 Python 快速原型 2D 游戏",
+      "summary": "pygame 官方文档（pygame.org/docs）讲解事件循环、精灵、碰撞、音效与字体渲染，是 Python 开发者做 2D 游戏原型的最低门槛入口。对想用熟悉语言快速验证玩法创意的同学，pygame 能让你几小时内跑出可玩 demo。",
+      "source": "pygame 官方文档",
+      "date": "2026-10-23",
+      "url": "https://www.pygame.org/docs/",
+      "badge": "常青教程",
+      "badgeType": "event",
+      "readTime": "3 分钟",
+      "hotScore": 80,
+      "tags": [
+        "pygame",
+        "Python",
+        "2D 原型",
+        "事件循环"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "pygame 文档覆盖事件循环/精灵/碰撞/音效/字体；",
+            "是 Python 做 2D 游戏原型的最低门槛入口；",
+            "适合用熟悉语言快速验证玩法。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "常青补位库成员。学 pygame 的价值不在它能不能做 3A，而在「用你最熟的语言把玩法跑起来」——很多好点子死在「搭环境太麻烦」。先有可玩 demo，再谈换引擎。参考来源：pygame.org。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "co-zoud-gamelab",
+      "category": "contest",
+      "subcategory": "展会·活动",
+      "title": "Zoud × Global Game Jam 金融素养 Game Jam：$140K 奖池（10/15-11/15）",
+      "summary": "Global Game Jam 与阿布扎比 Zoud 发起 Zoud GameLab：一场为期一个月的虚拟 Game Jam（10/15-11/15），号召全球开发者围绕「金融素养」做游戏，奖池与扶持金最高 $140K，含最佳游戏、区域视角、玩法质量等多个奖项，并要求头部参赛者提交项目预算。对想练「严肃游戏/教育游戏」的同学，这是带真实命题与资金的实战场。",
+      "source": "PocketGamer.biz",
+      "date": "2026-10-23",
+      "url": "https://www.pocketgamer.biz/global-game-jam-and-zoud-launch-financial-literacy-jam-with-140k-prize-pool",
+      "badge": "Game Jam",
+      "badgeType": "event",
+      "readTime": "3 分钟",
+      "hotScore": 82,
+      "tags": [
+        "Global Game Jam",
+        "Zoud",
+        "金融素养",
+        " serious game"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "Zoud GameLab 为 10/15-11/15 的虚拟月度 Game Jam；",
+            "主题「金融素养」，奖池与扶持金最高 $140K；",
+            "要求头部参赛者提交项目预算，强调可落地。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "这类「带命题+资金」的 Jam 对毕设同学极友好：它逼你把抽象议题变成可玩机制，还要求写预算——正好是作品集里缺的「设计+落地」证据。参考来源：PocketGamer.biz。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "co-ciga-gamejams",
+      "category": "contest",
+      "subcategory": "独立游戏",
+      "title": "CiGA 中国独立游戏联盟：GameJams 与 indiePlay 大赛常驻入口",
+      "summary": "CiGA（中国独立游戏联盟）的 GameJams 页面是中文独立游戏圈参与 jam、了解 indiePlay 中国独立游戏大赛的常驻入口。对国内同学，这是接住「比赛→作品集→行业」链条的第一站；页面持续更新近期 Jam 与赛事日程，建议设为每周打卡页。",
+      "source": "CiGA 中国独立游戏联盟",
+      "date": "2026-10-23",
+      "url": "https://www.ciga.me/gamejams",
+      "badge": "独立游戏",
+      "badgeType": "event",
+      "readTime": "3 分钟",
+      "hotScore": 80,
+      "tags": [
+        "CiGA",
+        "独立游戏",
+        "GameJam",
+        "indiePlay"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "CiGA GameJams 页汇总国内 Jam 与 indiePlay 大赛信息；",
+            "是中文独立游戏圈参与赛事的常驻入口；",
+            "页面持续更新近期 Jam 与赛事日程。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "想进游戏行业的同学，CiGA 是性价比最高的「赛事雷达」：很多工作室校招都看 indiePlay/GameJam 经历。把它和你的作品集节奏对齐，比海投简历更有针对性。参考来源：ciga.me。"
+        }
+      ],
+      "image": ""
+    },
+    {
+      "id": "co-netease-leihuo-campus",
       "category": "contest",
       "subcategory": "招聘·校招",
-      "title": "米哈游 2027 届秋招网申倒计时：10-31 截止，127 个岗位仍可投",
-      "summary": "米哈游 2027 届秋季校园招聘网申进入倒计时（官方校招门户 campus.mihoyo.com，网申 10-31 截止），覆盖技术、美术、策划、运营等类别，工作地集中在上海等地。对游戏专业同学，这是每年最值得卡点的校招窗口之一——距截止仅剩约一周，建议优先把作品集与游戏经历陈述备齐。",
-      "source": "米哈游校招官网",
-      "date": "2026-10-22",
-      "url": "https://campus.mihoyo.com/",
+      "title": "网易雷火 2027 届秋招网申进行中：技术/美术/策划多岗，截止临近",
+      "summary": "网易雷火 2027 届秋季校园招聘网申正在进行（官方招聘门户 leihuo.163.com，技术/美术/策划/运营多类岗位），工作地以杭州为主。对游戏专业同学，雷火是每届最值得卡点的中厂校招窗口之一——建议优先备齐作品集与项目经历陈述，注意在截止前完成投递。",
+      "source": "网易雷火招聘官网",
+      "date": "2026-10-23",
+      "url": "https://leihuo.163.com/campus",
       "badge": "招聘·校招",
       "badgeType": "event",
       "readTime": "3 分钟",
       "hotScore": 83,
       "tags": [
-        "米哈游",
+        "网易雷火",
         "2027秋招",
         "校招",
-        "倒计时"
+        "杭州"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "投递入口：官方校招门户 campus.mihoyo.com，网申 10-31 截止；",
-            "岗位覆盖技术/美术/策划/运营，多地可选；",
-            "节奏提醒：距截止约一周，作品集与游戏经历陈述应优先备齐。"
+            "投递入口：网易雷火官方招聘门户 leihuo.163.com；",
+            "岗位覆盖技术/美术/策划/运营，工作地以杭州为主；",
+            "节奏提醒：秋招窗口临近收官，作品集应优先备齐。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "秋招窗口进入收官周——米哈游、网易、莉莉丝、叠纸、鹰角、库洛、完美世界等大厂中厂网申陆续关闭中，但仍有像米哈游这样窗口长到 10 月底的补投位。策略：把截止早的投完，用同一份简历主干改投窗口长的。参考来源：米哈游校招官网。"
-        }
-      ],
-      "image": ""
-    },
-    {
-      "id": "paris-game-biz-2026",
-      "category": "contest",
-      "subcategory": "展会·活动",
-      "title": "Paris Game Biz 2026 正在举行（10/20-21，巴黎）：游戏 B2B 与合作对接",
-      "summary": "Paris Game Biz 2026 于 10 月 20-21 日在巴黎举行，定位游戏行业 B2B 合作与对接展会，提供赞助方匹配与商务约见服务。对想了解海外发发行业务、找国际合作机会的团队，这类区域性 B2B 展会是 GDC/科隆之外的务实替代。",
-      "source": "Paris Game Biz 官网",
-      "date": "2026-10-21",
-      "url": "https://parisgamebiz.com/",
-      "badge": "展会",
-      "badgeType": "event",
-      "readTime": "3 分钟",
-      "hotScore": 80,
-      "tags": [
-        "Paris Game Biz",
-        "B2B",
-        "巴黎",
-        "出海"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "Paris Game Biz 2026 于 10/20-21 在巴黎举行，游戏 B2B 合作与对接展；",
-            "提供赞助方匹配与商务约见，聚焦战略合作；",
-            "定位：GDC/科隆之外的区域性务实 B2B 替代。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "对想出海的国内中小团队，这类区域 B2B 展会比盲目冲 GDC 性价比更高——人少、对接密度高、成本低。学生若暑期想找海外实习/观察行业，巴黎这场是比硅谷更近的窗口。参考来源：parisgamebiz.com。"
-        }
-      ],
-      "image": "https://2026.parisgamebiz.com/api/media/file/Paris%20Game%20Biz%202026_white_vert-Oq9SOG84QQTFYW4T8uHMJpu55Ypfzj.webp"
-    },
-    {
-      "id": "gic-2026-poznan",
-      "category": "contest",
-      "subcategory": "展会·活动",
-      "title": "Game Industry Conference 2026 正在举行（10/21-24，波兰波兹南）：近百场分享",
-      "summary": "Game Industry Conference（GIC）2026 于 10 月 21-24 日在波兰波兹南举行，已公布近 100 场议程，嘉宾来自 Walt Disney Imagineering、Ubisoft、Activision、CD Projekt Red、Techland 等。中欧最大的游戏行业会议之一，对想听一线制作分享、拓展欧洲视野的同学是低成本高密度的机会。",
-      "source": "GIC 官网",
-      "date": "2026-10-21",
-      "url": "https://gic.gd/tickets/",
-      "badge": "展会",
-      "badgeType": "event",
-      "readTime": "3 分钟",
-      "hotScore": 81,
-      "tags": [
-        "GIC",
-        "波兹南",
-        "行业会议",
-        "欧洲"
-      ],
-      "content": [
-        {
-          "title": "要点",
-          "type": "list",
-          "items": [
-            "GIC 2026 于 10/21-24 在波兹南举行，已公布近 100 场议程；",
-            "嘉宾横跨 Disney Imagineering、Ubisoft、Activision、CDPR、Techland 等；",
-            "定位：中欧最大游戏行业会议之一，低成本高密度。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "中欧 game conference 的票价通常比北美友好，而分享密度不低——学生党想「花小钱听大厂怎么干活」，GIC 这类区域会议是首选。参考来源：gic.gd。"
+          "text": "秋招窗口进入收官周——米哈游、完美世界等大厂中厂网申陆续关闭，但仍有雷火这类窗口可投。策略：把截止早的投完，用同一份简历主干改投窗口长的。参考来源：网易雷火招聘官网。"
         }
       ],
       "image": ""
