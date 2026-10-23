@@ -15,3 +15,7 @@ _attach_*
 *股票*
 .playwright-cli/
 _zhihu_*
+
+# 同步服务管理口令（本地）
+sync-server/.admin-token
+sync-server/.testwl/

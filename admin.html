@@ -147,6 +147,7 @@
       <div id="fileList"></div>
       <h3 style="margin-top:16px;">📊 数据</h3>
       <div class="file-item" id="navAnalytics" onclick="openAnalytics()"><span>📈 访问统计</span><span class="state-dot state-clean">visits</span></div>
+      <div class="file-item" id="navWhitelist" onclick="openWhitelist()"><span>🔐 同步白名单</span><span class="state-dot state-clean" id="wlNavDot">计时器</span></div>
       <h3 style="margin-top:16px;">📌 提示</h3>
       <p style="font-size:12px;color:var(--text-muted);" id="syncNote">
         发布 = 自动 commit 到 GitHub 主分支 → 服务器每 30 分钟自动同步生效（急用可 SSH 手动 <span style="font-family:var(--font-mono);">git reset --hard origin/main</span>）。
@@ -183,6 +184,21 @@
           <button class="btn primary" onclick="anaSaveCred()">保存并加载</button>
         </div>
         <div id="anaBody"><p class="hint">点击「刷新数据」加载。</p></div>
+      </div>
+
+      <!-- 同步白名单面板（专注计时器账号注册） -->
+      <div class="card panel" id="whitelistPanel" style="display:none;">
+        <div class="meta" id="wlMeta">🔐 同步白名单 · 只有名单里的邮箱才能在「专注计时器」注册账号</div>
+        <div class="toolbar">
+          <button class="btn" onclick="wlLoad()">🔄 刷新</button>
+          <button class="btn" onclick="wlToggleToken()">🔑 管理口令</button>
+          <span class="hint">接口：<span style="font-family:var(--font-mono);">https://www.gdpudev.cn/sync/api/admin/whitelist</span> · 改完立即生效，不用重启服务</span>
+        </div>
+        <div id="wlTokenBox" style="display:none;border:1px solid var(--border-light);border-radius:8px;padding:14px;max-width:520px;margin-bottom:14px;background:var(--bg-subtle);">
+          <div class="field"><label>管理口令（服务器 /opt/gdpudev-sync/data/admin.token · 仅存本机）</label><input id="wlTokenInput" type="password" placeholder="粘贴管理口令"></div>
+          <button class="btn primary" onclick="wlSaveToken()">保存并加载</button>
+        </div>
+        <div id="wlBody"><p class="hint">加载中…</p></div>
       </div>
     </div>
   </div>
@@ -233,7 +249,7 @@
 
 <script>
 /* ================= 基础配置 ================= */
-const PAGES = ["roadmap.html","ta.html","client.html","design.html","engine.html","art.html","server.html","contests.html","jobs.html"];
+const PAGES = ["start.html","roadmap.html","ta.html","client.html","design.html","engine.html","art.html","server.html","contests.html","jobs.html"];
 const K_CFG='gdu_cfg', K_PASS='gdu_pass', K_DRAFT='gdu_draft_', K_PENDING='gdu_pending_';
 let cfg = JSON.parse(localStorage.getItem(K_CFG) || 'null');
 let current = null;           // 当前编辑文件
@@ -329,6 +345,7 @@ function renderFileList(){
 async function openFile(p){
   current=p;
   $('analyticsPanel').style.display='none';
+  $('whitelistPanel').style.display='none';
   $('editorPanel').style.display='block';
   const nav=$('navAnalytics'); if(nav) nav.classList.remove('active');
   $('fileMeta').textContent='加载中…';
@@ -625,11 +642,13 @@ function fmtDwell(s){s=Number(s)||0;return s>=60?Math.floor(s/60)+'分'+Math.rou
 function openAnalytics(){
   current=null; dirty=false;
   $('editorPanel').style.display='none';
+  $('whitelistPanel').style.display='none';
   $('analyticsPanel').style.display='block';
   $('fileMeta').textContent='📈 访问统计 · 匿名数据（path / 来源 / 停留 / 视口宽度）';
   $('anaMeta').textContent='';
   renderFileList();
   const nav=$('navAnalytics'); if(nav) nav.classList.add('active');
+  const nav2=$('navWhitelist'); if(nav2) nav2.classList.remove('active');
   anaLoad();
 }
 async function anaLoad(){
@@ -685,6 +704,126 @@ function anaRender(d){
     <table><tr><th>时间</th><th>IP（匿名）</th><th>页面</th><th>停留</th></tr>${sess||'<tr><td colspan="4">暂无</td></tr>'}</table></div>`;
   h+=`<div class="ana-full"><h4>🌐 IP 榜 TOP${(d.top_ips||[]).length}</h4><table>${ipRows}</table></div>`;
   $('anaBody').innerHTML=h;
+}
+
+/* ================= 同步白名单面板（专注计时器的账号注册闸门） ================= */
+const K_WL='gdu_sync_admin';
+const SYNC_BASE='https://www.gdpudev.cn/sync';
+let wlData=null;
+
+function wlToken(){ try{ return (JSON.parse(localStorage.getItem(K_WL)||'{}').token)||''; }catch(e){ return ''; } }
+function wlToggleToken(){ const b=$('wlTokenBox'); b.style.display = b.style.display==='none'?'block':'none'; if(b.style.display==='block'){ $('wlTokenInput').value=wlToken(); $('wlTokenInput').focus(); } }
+function wlSaveToken(){
+  const t=$('wlTokenInput').value.trim();
+  if(!t) return toast('先填管理口令');
+  localStorage.setItem(K_WL, JSON.stringify({token:t}));
+  $('wlTokenBox').style.display='none';
+  wlLoad();
+}
+window.openWhitelist=function(){
+  current=null; dirty=false;
+  $('editorPanel').style.display='none';
+  $('analyticsPanel').style.display='none';
+  $('whitelistPanel').style.display='block';
+  $('fileMeta').textContent='🔐 同步白名单 · 决定谁能在「专注计时器」里注册账号';
+  renderFileList();
+  const nav=$('navAnalytics'); if(nav) nav.classList.remove('active');
+  const nav2=$('navWhitelist'); if(nav2) nav2.classList.add('active');
+  wlLoad();
+};
+async function wlApi(method, body){
+  const t=wlToken();
+  if(!t) throw new Error('请先填管理口令（点右上「🔑 管理口令」）');
+  let r;
+  try{
+    r=await fetch(SYNC_BASE+'/api/admin/whitelist',{method,headers:{'Content-Type':'application/json','X-Admin-Token':t},body:body?JSON.stringify(body):undefined,cache:'no-store'});
+  }catch(e){ throw new Error('连不上同步服务：'+e.message); }
+  const d=await r.json().catch(()=>({}));
+  if(r.status===401){ $('wlTokenBox').style.display='block'; $('wlTokenInput').value=t; throw new Error(d.message||'管理口令不对'); }
+  if(!r.ok) throw new Error(d.message||d.error||('HTTP '+r.status));
+  return d;
+}
+async function wlLoad(){
+  const box=$('wlBody');
+  if(!wlToken()){ box.innerHTML='<p class="hint">还没有配置管理口令。口令在服务器 <span style="font-family:var(--font-mono);">/opt/gdpudev-sync/data/admin.token</span>，复制后点右上「🔑 管理口令」填进来（只存本机浏览器）。</p>'; $('wlTokenBox').style.display='block'; return; }
+  box.innerHTML='<p class="hint">加载中…</p>';
+  try{ wlData=await wlApi('GET'); wlRender(); const dot=$('wlNavDot'); if(dot) dot.textContent=(wlData.allowAll?'全开':'已启用'); }
+  catch(e){ box.innerHTML='<p class="hint" style="color:var(--accent-rose);">⛔ '+esc(e.message)+'</p>'; }
+}
+function wlRender(){
+  const d=wlData||{}; const emails=d.emails||[]; const users=d.users||[]; const domains=d.domains||[];
+  const regEmails=new Set(users.map(u=>String(u.email||'').toLowerCase()));
+  let h='';
+  h+=`<div class="kpis">
+    <div class="kpi"><b>${d.allowAll?'关闭':'开启'}</b><span>白名单校验</span></div>
+    <div class="kpi"><b>${emails.length}</b><span>允许的邮箱</span></div>
+    <div class="kpi"><b>${domains.length}</b><span>允许的域名</span></div>
+    <div class="kpi"><b>${users.length}</b><span>已注册账号</span></div>
+  </div>`;
+
+  h+=`<div class="ana-full" style="margin-bottom:14px;">
+    <h4>➕ 添加可注册的邮箱</h4>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+      <input id="wlAddInput" placeholder="someone@qq.com（多个用空格或逗号分开）" style="flex:1;min-width:260px;padding:8px 10px;border:1px solid var(--border-strong);border-radius:6px;font-family:var(--font-mono);font-size:12.5px;">
+      <button class="btn primary" onclick="wlAdd()">加入白名单</button>
+      <button class="btn" onclick="wlPromptDomain()">🌐 整个域名放行</button>
+    </div>
+    <p class="hint">加入后对方就能在计时器里注册；已注册的账号即使被移出也能继续登录。</p>
+  </div>`;
+
+  const rows=emails.map((e,i)=>{
+    const reg=regEmails.has(e);
+    return `<tr><td style="font-family:var(--font-mono);">${esc(e)}</td>
+      <td>${reg?'<span class="state-dot" style="background:#ecfdf5;color:var(--accent-emerald);">已注册</span>':'<span class="state-dot" style="background:var(--bg-subtle);color:var(--text-muted);">未注册</span>'}</td>
+      <td style="text-align:right;"><button class="btn danger" style="padding:3px 9px;font-size:11px;" onclick="wlRemoveAt(${i})">移出</button></td></tr>`;
+  }).join('');
+  h+=`<div class="ana-full" style="margin-bottom:14px;"><h4>📋 允许注册的邮箱（${emails.length}）</h4>
+    <table>${rows||'<tr><td colspan="3">还没有，添加一个再试。</td></tr>'}</table></div>`;
+
+  if(domains.length){
+    h+=`<div class="ana-full" style="margin-bottom:14px;"><h4>🌐 放行的域名（${domains.length}，含子域）</h4>
+      ${domains.map(x=>`<span class="state-dot" style="background:var(--accent-blue-light);color:var(--accent-blue);margin:0 6px 6px 0;display:inline-block;padding:4px 9px;">@${esc(x)}</span>`).join('')}
+      <div style="margin-top:8px;"><button class="btn" onclick="wlPromptDomain(true)">修改域名名单</button></div></div>`;
+  }
+
+  h+=`<div class="ana-full" style="margin-bottom:14px;"><h4>👥 已注册账号（${users.length}）</h4>
+    <table><tr><th>邮箱</th><th>注册时间</th></tr>${users.map(u=>`<tr><td style="font-family:var(--font-mono);">${esc(u.email)}</td><td>${u.createdAt?esc(new Date(u.createdAt).toLocaleString('zh-CN')):'-'}</td></tr>`).join('')||'<tr><td colspan="2">暂无</td></tr>'}</table></div>`;
+
+  h+=`<div class="ana-full"><h4>⚙️ 开关</h4>
+    <label style="display:flex;gap:8px;align-items:center;font-size:13px;">
+      <input type="checkbox" ${d.allowAll?'checked':''} onchange="wlSetAllowAll(this.checked)">
+      临时关闭校验（勾上=任何人都能注册，只在自己测试时用）
+    </label></div>`;
+
+  $('wlBody').innerHTML=h;
+}
+async function wlAdd(){
+  const raw=($('wlAddInput')||{}).value||'';
+  const list=raw.split(/[\s,，;；]+/).map(s=>s.trim().toLowerCase()).filter(Boolean);
+  if(!list.length) return toast('先填邮箱');
+  try{ wlData=await wlApi('POST',{add:list}); wlRender(); toast('✅ 已加入：'+list.join(', ')); }
+  catch(e){ toast('❌ '+e.message); }
+}
+function wlRemoveAt(i){
+  const email=(wlData&&wlData.emails||[])[i];
+  if(email) wlRemove(email);
+}
+async function wlRemove(email){
+  if(!confirm('把 '+email+' 移出白名单？\n（已注册的账号仍可登录，只是不能再注册新账号）')) return;
+  try{ wlData=await wlApi('POST',{remove:[email]}); wlRender(); toast('已移出：'+email); }
+  catch(e){ toast('❌ '+e.message); }
+}
+async function wlPromptDomain(force){
+  const cur=(wlData&&wlData.domains||[]).join(' ');
+  const v=prompt('允许哪些域名下的人注册？（留空=不放行任何域名）\n例：qq.com 会放行 a@qq.com、b@mail.qq.com', cur);
+  if(v===null) return;
+  const domains=v.split(/[\s,，;；]+/).map(s=>s.replace(/^@/,'').trim().toLowerCase()).filter(Boolean);
+  try{ wlData=await wlApi('POST',{domains}); wlRender(); toast(domains.length?'✅ 域名名单已更新':'已清空域名名单'); }
+  catch(e){ toast('❌ '+e.message); }
+}
+async function wlSetAllowAll(on){
+  try{ wlData=await wlApi('POST',{allowAll:!!on}); wlRender(); toast(on?'⚠ 已临时关闭校验：任何人都能注册':'✅ 已恢复白名单校验'); }
+  catch(e){ toast('❌ '+e.message); wlLoad(); }
 }
 </script>
 </body>
