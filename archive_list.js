@@ -1,6 +1,7 @@
 window.NEWS_ARCHIVE_LIST = [
 
-    { date: "2026-10-23", weekday: "星期五", file: "data/2026-10-23.js", title: "2026-10-23 每日情报：Fortnite 重返澳区 iOS · DeepSeek V4.1 Flash · Godot 4.8-beta1 · Zoud×GGJ 金融素养 Jam · 网易雷火2027秋招", desc: "今日最新情报" },
+    { date: "2026-10-24", weekday: "星期六", file: "data/2026-10-24.js", title: "2026-10-24 每日情报：Babylon 9.32/O3DE 2605/RayLib 6.2 · GameMaker GMRT 免费 · Capcom 1.17亿账户泄露 · Epic AI优先/Unity Spark · 吉比特校招·盛趣社招·LD58", desc: "今日最新情报" },
+    { date: "2026-10-23", weekday: "星期五", file: "data/2026-10-23.js", title: "2026-10-23 每日情报：Fortnite 重返澳区 iOS · DeepSeek V4.1 Flash · Godot 4.8-beta1 · Zoud×GGJ 金融素养 Jam · 网易雷火2027秋招", desc: "往期技术归档" },
 
     { date: "2026-10-22", weekday: "星期四", file: "data/2026-10-22.js", title: "2026-10-22 每日情报：BioWare 30年落幕 · Unity 6.7 发布 · Subnautica 2 2.0 · 米哈游2027秋招 · DeepSeek DeepInfer", desc: "往期技术归档" },
     { date: "2026-10-21", weekday: "星期三", file: "data/2026-10-21.js", title: "2026-10-21 每日情报：MIT荒岛智能体实验 · 微软Guardian Agents · MiniMax M3.1 Flash · 赛博朋克2.5更新 · 完美世界2027秋招", desc: "往期技术归档" },
