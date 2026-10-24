@@ -4,11 +4,12 @@ window.DAILY_NEWS_DATA = {
     "weekday": "星期六",
     "title": "广药 游戏开发情报中枢 · 每日技术情报",
     "subtitle": "个人学习观察与评述 · 附参考来源外部链接",
-    "updateTime": "2026-10-24 07:40",
+    "updateTime": "2026-10-24 11:30",
     "editor": "广药技术中枢 & CodeBuddy",
     "highlights": [
+      "月之暗面发布 Kimi K3.1 Pro（3 万亿参数开源旗舰），长程编码与 3D 游戏创作能力跃升（今日头条）",
       "Babylon.js 9.32.0 / O3DE 2605.0 / RayLib 6.2 / GDevelop 5.6.285 / MonoGame 3.8.6 同日推进引擎更新",
-      "GameMaker 下一代运行时 GMRT 将于 2027 年 1 月商用免费：独立开发成本围墙再被推倒（头条）",
+      "GameMaker 下一代运行时 GMRT 将于 2027 年 1 月商用免费：独立开发成本围墙再被推倒",
       "Capcom 遭遇数据泄露，超 1.17 亿条 Capcom ID 账户信息可能受影响",
       "Epic 全面推行 AI 优先生产模型；谷歌+Unity 推出 Playground/Spark「一句话生成游戏」",
       "Ludum Dare 58 进行中（主题 Collector）；吉比特 2027 校招、盛趣社招开放"
@@ -59,41 +60,42 @@ window.DAILY_NEWS_DATA = {
     ]
   },
   "hero": {
-    "id": "gamemaker-gmrt-free-hero",
-    "category": "industry",
-    "categoryName": "行业热点 · 头条",
-    "tag": "引擎与独立开发",
-    "title": "GameMaker 下一代运行时 GMRT 将于 2027 年 1 月商用免费：独立开发者的成本围墙再被推倒",
-    "summary": "GamesIndustry.biz 报道，GameMaker 将在 2027 年 1 月把下一代运行时 GMRT 对商业用途免费开放。这意味着中小团队与个人开发者无需再为引擎授权费犹豫，被授权成本劝退的很多创意项目，可能因此有了起跑资格。",
-    "source": "GamesIndustry.biz",
+    "id": "kimi-k3-1-pro-hero",
+    "category": "ai",
+    "categoryName": "AI 前沿 · 头条",
+    "tag": "开源大模型 / 1024 程序员节",
+    "title": "月之暗面发布 Kimi K3.1 Pro：3 万亿参数开源旗舰，长程编码与 3D 游戏创作能力跃升",
+    "summary": "10 月 24 日凌晨（恰逢 1024 程序员节），月之暗面发布新一代开源模型 Kimi K3.1 Pro：3 万亿参数、100 万词元上下文，继续是全球参数规模最大的开源模型。官方称其在代码、长程 Agent、3D 创作与金融研究上显著提升，且能直接编写并运行 Blender / CAD 脚本完成游戏 3D 资产构建。笔者观察：对游戏开发者而言，这意味着「用一句话生成可编辑 3D 场景 / 游戏原型」的门槛又低了一截。",
+    "source": "Kimi 官方博客（月之暗面）",
     "date": "2026-10-24",
-    "url": "https://www.gamesindustry.biz/gamemaker-to-make-its-next-generation-runtime-gmrt-free-for-commercial-use-in-january-2027",
-    "readTime": "5 分钟深度",
+    "url": "https://www.kimi.com/blog/kimi-k3",
+    "readTime": "6 分钟深度",
     "hotScore": 95,
     "tags": [
-      "GameMaker",
-      "GMRT",
-      "免费",
-      "独立开发",
-      "引擎授权"
+      "Kimi K3.1 Pro",
+      "开源大模型",
+      "AI 编程",
+      "3D 创作",
+      "1024"
     ],
     "content": [
       {
         "title": "要点",
         "type": "list",
         "items": [
-          "GameMaker 下一代运行时 GMRT 将于 2027 年 1 月商用免费；",
-          "此前商业使用需付费授权，如今门槛被直接取消；",
-          "对中、小团队与个人开发者是实质性的成本减负。"
+          "3 万亿参数、100 万词元上下文，全球最大开源模型；",
+          "代码 / 长程 Agent / 3D 创作 / 金融研究能力显著提升；",
+          "可直接编写并运行 Blender、CAD 等专业建模工具脚本，端到端产出 3D 模型与交互场景；",
+          "同步推出高速版 K3.1 Pro Highspeed；完整权重将于 11 月 4 日前开源。"
         ]
       },
       {
         "title": "笔者观察",
         "type": "text",
-        "text": "对在校生和独立开发者，引擎授权费从来不是大钱，真正贵的是「试错成本」。GMRT 免费的意义，是让更多人在不必先交「门票」的情况下把想法做出来、摔跟头、再迭代。工具越普惠，拼的就越是设计与执行力。参考来源：GamesIndustry.biz。"
+        "text": "从游戏开发视角看，K3.1 Pro 的官方案例里专门展示了开放世界、GBA 模拟器、赛博朋克网页交互、体素斗兽场、格斗游戏等「用自然语言做游戏」的样本。对独立开发者，这类模型最实用的不是替你写完整个游戏，而是把美术资产原型、关卡草模、交互 Demo 的生成成本压到极低——想法验证阶段的速度会被显著拉高。参考来源：Kimi 官方博客。"
       }
     ],
-    "image": ""
+    "image": "https://statics.kimi.ai/kimi-blogs/kimi-k3/game-cases/01-open-world.png"
   },
   "categories": [
     {
@@ -147,6 +149,44 @@ window.DAILY_NEWS_DATA = {
   ],
   "items": [
     {
+      "id": "ai-kimi-k3-1-pro",
+      "category": "ai",
+      "subcategory": "开源大模型",
+      "title": "Kimi K3.1 Pro 发布：能直接驱动 Blender/CAD 做游戏 3D 资产的开源旗舰",
+      "summary": "月之暗面 10/24 发布 K3.1 Pro（3 万亿参数、100 万上下文），官方展示其可用自然语言直接操作 Blender、FreeCAD 产出可用 3D 模型与交互场景，并覆盖从游戏到金融的多步复杂任务。对游戏开发者，这是「文本→可编辑 3D 资产」链路的一次明显前移。",
+      "source": "Kimi 官方博客（月之暗面）",
+      "date": "2026-10-24",
+      "url": "https://www.kimi.com/blog/kimi-k3",
+      "badge": "今日首发",
+      "badgeType": "ai",
+      "readTime": "5 分钟",
+      "hotScore": 94,
+      "tags": [
+        "Kimi K3.1 Pro",
+        "开源大模型",
+        "3D 生成",
+        "AI 编程"
+      ],
+      "content": [
+        {
+          "title": "要点",
+          "type": "list",
+          "items": [
+            "3 万亿参数、100 万词元上下文，全球最大开源模型；",
+            "强调长程编码与工具调用，可直接编写运行 Blender/CAD 脚本；",
+            "官方案例含开放世界、格斗游戏、体素场景等游戏向样本；",
+            "高速版 Highspeed 同步推出，权重 11/4 前开源。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "过去「AI 做 3D」多是图片级幻想，K3.1 Pro 的演示把落点放在可编辑的工程文件（Blender/FreeCAD 脚本）上，这一点对游戏生产更实在：原型阶段能用自然语言先拉出可改的草模，再人工精修。值得持续跟踪它在 Unity/Godot 工作流里的实际衔接。参考来源：Kimi 官方博客。"
+        }
+      ],
+      "image": "https://statics.kimi.ai/kimi-blogs/kimi-k3/game-cases/05-voxel-colosseum.jpg"
+    },
+    {
       "id": "os-entt",
       "category": "opensource",
       "subcategory": "ECS 框架",
@@ -154,7 +194,7 @@ window.DAILY_NEWS_DATA = {
       "summary": "skypjack/entt 是 C++ 游戏架构里最流行的 ECS 实现之一，以零依赖、高性能和易嵌入著称。它把实体、组件、系统拆成清晰的数据驱动模型，适合想理解「为什么大厂爱用 ECS 组织游戏状态」的同学做源码级学习。",
       "source": "GitHub: skypjack/entt",
       "date": "2026-10-24",
-      "url": "https://opengraph.githubassets.com/1/skypjack/entt",
+      "url": "https://github.com/skypjack/entt",
       "badge": "核心库",
       "badgeType": "opensource",
       "readTime": "4 分钟",
@@ -181,7 +221,7 @@ window.DAILY_NEWS_DATA = {
           "text": "ECS 是很多商业引擎底层组织玩法的核心思想。从 entt 读起，比直接啃商业引擎源码更轻量，对毕设或自研小引擎都很有参考价值。参考来源：GitHub 仓库页。"
         }
       ],
-      "image": ""
+      "image": "https://opengraph.githubassets.com/1/skypjack/entt"
     },
     {
       "id": "os-unitask",
@@ -191,7 +231,7 @@ window.DAILY_NEWS_DATA = {
       "summary": "Cysharp/UniTask 用 ValueTask 思路给 Unity 提供了无 GC 压力的异步编程模型，写加载、延迟、等待网络时不写回调地狱。对常被 coroutine 内存与取消逻辑折磨的 Unity 新手，它是更现代、更可组合的替代。",
       "source": "GitHub: Cysharp/UniTask",
       "date": "2026-10-24",
-      "url": "https://opengraph.githubassets.com/1/Cysharp/UniTask",
+      "url": "https://github.com/Cysharp/UniTask",
       "badge": "工具库",
       "badgeType": "opensource",
       "readTime": "4 分钟",
@@ -218,7 +258,7 @@ window.DAILY_NEWS_DATA = {
           "text": "Unity 新手常被 coroutine 的取消与嵌套搞晕。UniTask 把异步写成同步风格的 await，可读性和可维护性明显更好，建议作为首选异步方案学习。参考来源：GitHub 仓库页。"
         }
       ],
-      "image": ""
+      "image": "https://opengraph.githubassets.com/1/Cysharp/UniTask"
     },
     {
       "id": "os-imgui",
@@ -228,7 +268,7 @@ window.DAILY_NEWS_DATA = {
       "summary": "ocornut/imgui 是即时模式（immediate-mode）UI 的代表作，几乎是所有自研引擎、调试器、DCC 工具里画面板的首选。它不接管事件循环，每帧重绘，逻辑简单可控，是理解「工具 UI 为何如此设计」的最佳样本。",
       "source": "GitHub: ocornut/imgui",
       "date": "2026-10-24",
-      "url": "https://opengraph.githubassets.com/1/ocornut/imgui",
+      "url": "https://github.com/ocornut/imgui",
       "badge": "GUI 库",
       "badgeType": "opensource",
       "readTime": "4 分钟",
@@ -255,7 +295,7 @@ window.DAILY_NEWS_DATA = {
           "text": "做毕设最容易被忽略的是「调试体验」。给自己的小引擎挂一个 ImGui 面板看实体/数值，效率会质的提升。它也是学习 GUI 架构反模式的绝佳教材。参考来源：GitHub 仓库页。"
         }
       ],
-      "image": ""
+      "image": "https://opengraph.githubassets.com/1/ocornut/imgui"
     },
     {
       "id": "os-egui",
@@ -265,7 +305,7 @@ window.DAILY_NEWS_DATA = {
       "summary": "emilk/egui 是 Rust 生态里最易上手的即时模式 GUI，能编译到 WASM 直接在浏览器跑。它和 Bevy 等 Rust 引擎天然适配，也适合写跨平台小工具。想用 Rust 做游戏或工具的同学，egui 是低门槛入口。",
       "source": "GitHub: emilk/egui",
       "date": "2026-10-24",
-      "url": "https://opengraph.githubassets.com/1/emilk/egui",
+      "url": "https://github.com/emilk/egui",
       "badge": "GUI 库",
       "badgeType": "opensource",
       "readTime": "4 分钟",
@@ -292,7 +332,7 @@ window.DAILY_NEWS_DATA = {
           "text": "如果你在学 Bevy 又想要调试 UI，egui 几乎是默认答案。它的即时模式思想和 ImGui 一脉相承，学会一个另一个触类旁通。参考来源：GitHub 仓库页。"
         }
       ],
-      "image": ""
+      "image": "https://opengraph.githubassets.com/1/emilk/egui"
     },
     {
       "id": "os-glfw",
@@ -302,7 +342,7 @@ window.DAILY_NEWS_DATA = {
       "summary": "glfw/glfw 封装了 OpenGL/Vulkan 程序最头疼的窗口创建、OpenGL 上下文、键鼠输入与多显示器处理，是无数图形与游戏原型项目的起点。想从零写一个渲染器，GLFW 帮你把平台差异先挡在门外。",
       "source": "GitHub: glfw/glfw",
       "date": "2026-10-24",
-      "url": "https://opengraph.githubassets.com/1/glfw/glfw",
+      "url": "https://github.com/glfw/glfw",
       "badge": "底层库",
       "badgeType": "opensource",
       "readTime": "4 分钟",
@@ -329,7 +369,7 @@ window.DAILY_NEWS_DATA = {
           "text": "想真正理解「一帧画面是怎么被画到屏幕上的」，从 GLFW + OpenGL 起手比直接上引擎更接近本质。它会逼你关心上下文、双缓冲这些被引擎藏起来的细节。参考来源：GitHub 仓库页。"
         }
       ],
-      "image": ""
+      "image": "https://opengraph.githubassets.com/1/glfw/glfw"
     },
     {
       "id": "os-sdl",
@@ -339,7 +379,7 @@ window.DAILY_NEWS_DATA = {
       "summary": "libsdl-org/SDL 是老牌跨平台多媒体库，SDL3 继续强化对多后端、手柄、音频与高 DPI 的支持。从《茶杯头》到各类模拟器，许多独立作品都站在 SDL 肩膀上，是「一次编写、多端运行」的经典答案。",
       "source": "GitHub: libsdl-org/SDL",
       "date": "2026-10-24",
-      "url": "https://opengraph.githubassets.com/1/libsdl-org/SDL",
+      "url": "https://github.com/libsdl-org/SDL",
       "badge": "SDK",
       "badgeType": "opensource",
       "readTime": "4 分钟",
@@ -366,7 +406,7 @@ window.DAILY_NEWS_DATA = {
           "text": "SDL 的价值在于「别再重复造平台轮子」。当你想把原型从桌面搬到掌机或主机类环境，一个干净的抽象层能省下几个月适配时间。参考来源：GitHub 仓库页。"
         }
       ],
-      "image": ""
+      "image": "https://opengraph.githubassets.com/1/libsdl-org/SDL"
     },
     {
       "id": "ai-aibriefing",
@@ -403,7 +443,7 @@ window.DAILY_NEWS_DATA = {
           "text": "看这类日报别只记名词，重点想「它解决了哪类工程问题」。Decisions API 这类能力，本质是把 Agent 的决策步骤标准化，对做游戏 AI 行为编排也很有启发。参考来源：AI Briefing。"
         }
       ],
-      "image": ""
+      "image": "https://aibriefing.dev/og.png"
     },
     {
       "id": "ai-byobot",
@@ -440,7 +480,7 @@ window.DAILY_NEWS_DATA = {
           "text": "模型之争正在从「谁更大」转向「谁能进我的工作流」。对游戏开发，真正有用的不是又一个聊天框，而是能读懂工程上下文、跑在 CI 里的编码智能体。参考来源：byobot。"
         }
       ],
-      "image": ""
+      "image": "https://byobot.ai/ai-news/img/ai-daily-newsstand-october-23-2026.jpg"
     },
     {
       "id": "ai-epic-ai-first",
@@ -477,7 +517,7 @@ window.DAILY_NEWS_DATA = {
           "text": "「不再手写代码」听着吓人，但更可能的现实是：底层样板被吞掉，上层设计与判断力更值钱。对在校生，这意味着要尽早练「指挥 AI 产出并鉴别好坏」的能力，而不只是会写语法。参考来源：80.lv。"
         }
       ],
-      "image": ""
+      "image": "https://cdn.80.lv/api/upload/meta/50608/images/6acd63151eb73/contain_1200x630.png"
     },
     {
       "id": "ai-tripo",
@@ -514,7 +554,7 @@ window.DAILY_NEWS_DATA = {
           "text": "对缺美术同学，这类工具能让你先有「能用的白模」去验证玩法，而不是卡在资产上。但要记住：自动拓扑常常需要人工修形，正式项目里 AI 是加速器不是免死金牌。参考来源：80.lv。"
         }
       ],
-      "image": ""
+      "image": "https://cdn.80.lv/api/upload/meta/50386/images/6ada9dc6ed2d2/contain_1200x630.jpg"
     },
     {
       "id": "ai-ludo-cli",
@@ -588,7 +628,7 @@ window.DAILY_NEWS_DATA = {
           "text": "「一句话生成游戏」的演示很香，但现实是：它先把原型门槛打下来，真正的护城河仍在玩法设计与后期打磨。对学习者，这类平台是练「把想法说清楚」的好沙盒。参考来源：腾讯新闻。"
         }
       ],
-      "image": ""
+      "image": "https://inews.gtimg.com/om_ls/OjLKNISahO4xI_9Yooaqe4SCpF9e3XGfZMSxs3rQxn648AA_640330/0"
     },
     {
       "id": "tu-mdn-games",
@@ -625,7 +665,7 @@ window.DAILY_NEWS_DATA = {
           "text": "浏览器是最低门槛的发布平台。先用 MDN 把「一帧一帧更新画面」的游戏循环吃透，再去学引擎会轻松很多——很多引擎概念不过是这些基础的高级封装。参考来源：MDN。"
         }
       ],
-      "image": ""
+      "image": "https://developer.mozilla.org/mdn-social-image.46ac2375.png"
     },
     {
       "id": "tu-phaser",
@@ -662,7 +702,7 @@ window.DAILY_NEWS_DATA = {
           "text": "毕设最怕「想做的太大、demo 出不来」。Phaser 能让你先把核心循环跑起来，再谈扩展。它会逼你理解场景切换与游戏状态，这些是跨引擎通用的基本功。参考来源：Phaser 官方教程。"
         }
       ],
-      "image": ""
+      "image": "https://cdn.phaser.io/news/2026/10/riggy-header.png"
     },
     {
       "id": "tu-unity-essentials",
@@ -699,7 +739,7 @@ window.DAILY_NEWS_DATA = {
           "text": "自学最大的敌人是「不知道下一步学啥」。官方路径的价值就在把路线图画好。跟完 Essentials，你至少能判断自己该深挖渲染、玩法还是工具，而不是在视频里乱跳。参考来源：Unity Learn。"
         }
       ],
-      "image": ""
+      "image": "https://cdn.sanity.io/images/fuvbjjlp/learn-production/72c34c0b6bcdceda1f0d9944e6b1196b069a983c-600x600.png"
     },
     {
       "id": "tu-gdquest",
@@ -736,7 +776,7 @@ window.DAILY_NEWS_DATA = {
           "text": "GDScript 语法接近 Python，是新手写代码的最佳过渡之一。GDQuest 把「练」放在前面，正好治「看了很多教程却写不出东西」的毛病。参考来源：GDQuest。"
         }
       ],
-      "image": ""
+      "image": "https://opengraph.githubassets.com/1/gdquest/learn-gdscript"
     },
     {
       "id": "tu-godot-docs",
@@ -810,7 +850,7 @@ window.DAILY_NEWS_DATA = {
           "text": "氛围感不是堆特效，而是美术、关卡节奏与敌人设计共同作用的结果。看这类前瞻时，建议重点拆解它如何用有限资源把「压迫感」做出来。参考来源：Eurogamer。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/eurogamer-wallpaper.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "ga-ff7-revelation",
@@ -847,7 +887,7 @@ window.DAILY_NEWS_DATA = {
           "text": "好难度不是「数值堆高」，而是「逼你用对机制」。FF7 这类设计值得做设计向拆解：它如何在前十分钟教会玩家后续几十小时要用的策略。参考来源：Eurogamer。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/final-fantasy-7-revelation-sephiroth.png?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "ga-cod-mw4",
@@ -884,7 +924,7 @@ window.DAILY_NEWS_DATA = {
           "text": "大厂续作的本质是「在确定性里求一点新鲜」。读媒体共识时，重点看它如何评价「创新幅度」——这对理解商业游戏的风险管理很有帮助。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/cd-(1).webp?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "ga-landfall-peak",
@@ -921,7 +961,7 @@ window.DAILY_NEWS_DATA = {
           "text": "《Peak》的启示是：能让朋友拉朋友玩的机制，比买量更持久。对独立开发者，早期就该把「可分享、可一起玩」写进设计目标，而不是做完再想推广。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/Game-Republic-15-10-26-84.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "ga-star-wars-racer",
@@ -958,7 +998,7 @@ window.DAILY_NEWS_DATA = {
           "text": "「小核心 + 分布式」对在校生团队很有借鉴意义：别一上来拉几十人，先把核心三人组磨合好，再按需外扩。可持续的节奏比短暂冲刺更能决定项目生死。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/Star-Wars_-Galactic-Racer-Launch-Screenshot-2.png?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "ga-indienova-picks",
@@ -1032,7 +1072,7 @@ window.DAILY_NEWS_DATA = {
           "text": "对将来要做联网游戏的开发者，这条是警钟：账户、Token、密码存储（加盐哈希、限流、监控）是基本功，不是上线后补的选修课。安全债爆起来比功能债贵得多。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/monster-hunter_YYPxbEk.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "in-miyamoto-award",
@@ -1069,7 +1109,7 @@ window.DAILY_NEWS_DATA = {
           "text": "这则新闻对在校生是种鼓励：把游戏当成正经的创作与文化去打磨，是被社会认可的。设计能力、叙事能力、系统思维，都是能拿得出手的真本事。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/Screenshot-2026-10-23-140341.png?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "in-gdc2027",
@@ -1106,7 +1146,7 @@ window.DAILY_NEWS_DATA = {
           "text": "GDC 的议程里藏着行业一年的技术风向（渲染、工具、AI、生产）。即使去不了现场，会后流出的演讲 slides 也是免费的高质量学习资料，建议每年跟进。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/GDC_Header.webp?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "in-activision-strike",
@@ -1143,7 +1183,7 @@ window.DAILY_NEWS_DATA = {
           "text": "很多同学将来第一份工作可能就是 QA 或外包岗。了解行业劳资结构，能帮你在签 offer 时更清楚自己在链条里的位置与权益边界，不至于稀里糊涂。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/Activision.webp?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "in-hardware-freeze",
@@ -1180,7 +1220,7 @@ window.DAILY_NEWS_DATA = {
           "text": "对开发者，平台周期失速意味着「等下一代主机」不再是可靠计划。跨平台、长线运营、云与 PC 权重上升，会是更稳的应对。做技术选型时少赌单一平台。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/julian-hochgesang-jtPSdmlEOjk-unsplash.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "in-gamescom-asia",
@@ -1217,7 +1257,7 @@ window.DAILY_NEWS_DATA = {
           "text": "东南亚是离我们最近的高增长市场，且文化相近、渠道集中。想做出海的同学，建议把泰国、印尼、马来列为优先调研对象，关注本地发行与支付习惯。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/2_0r2ct4G.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "in-game-republic",
@@ -1254,7 +1294,7 @@ window.DAILY_NEWS_DATA = {
           "text": "地方社群的活跃度，往往比大厂新闻更能预示一个地区独立游戏的长期健康。想做日系风格或考虑赴日发展的同学，这类区域活动值得长期跟踪。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/Game-Republic-15-10-26-84-(1).jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "in-uk-best-places",
@@ -1291,7 +1331,7 @@ window.DAILY_NEWS_DATA = {
           "text": "选第一份工作别只看薪资和名气，成长空间与文化适配更决定你前三年能长多快。这类榜单虽是英国视角，但判断维度（成长、文化、公平）是通用的。参考来源：GamesIndustry.biz。"
         }
       ],
-      "image": ""
+      "image": "https://assetsio.gnwcdn.com/maverick-games_lzyeJjS.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
     },
     {
       "id": "co-gbits-campus",
@@ -1550,7 +1590,7 @@ window.DAILY_NEWS_DATA = {
           "text": "RayLib 的教学价值在于「没有魔法」：你能看清每一帧是怎么清屏、画形、处理输入的。对被高级引擎惯坏、却说不清渲染流程的同学，它是极好的补课材料。参考来源：GitHub 发布页。"
         }
       ],
-      "image": "https://opengraph.githubassets.com/1/raysan5/raylib"
+      "image": "https://opengraph.githubassets.com/798187c690a58a9c77b7e3c17c59a50ab6ef27815e63e9b9410be2701abc0c1e/raysan5/raylib/releases/tag/6.2"
     },
     {
       "id": "en-gdevelop-56285",
