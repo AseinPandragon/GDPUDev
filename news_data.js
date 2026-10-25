@@ -95,7 +95,7 @@ window.DAILY_NEWS_DATA = {
         "text": "对独立开发者和小团队，这波开源浪潮最大的价值不是「又一个更聪明的模型」，而是把 AI 工作流的控制权交回自己手里：可本地跑、可看源码、可针对项目微调。游戏开发中，用它做关卡草模脚本、批量资源命名、自动化构建与测试用例，是立刻能落地的场景。建议先从 OpenCode 这类开源 Agent 试起，把它接进你现有的仓库，再逐步让 AI 参与机械性劳动。参考来源：AI Front Page、OpenCode 官方。"
       }
     ],
-    "image": ""
+    "image": "https://aifront-page.com/wp-content/uploads/2026/10/Open-Weight-Coding-Agents-and-Battle-for-Cheaper-AI-Model-Launches-in-October-2026-1.webp"
   },
   "categories": [
     {
@@ -849,7 +849,7 @@ window.DAILY_NEWS_DATA = {
           "text": "把 Agent 接进游戏工程，最先可受益的是「机械性劳动」：批量重命名资源、生成构建脚本、写单元测试骨架。让它做脏活，你留时间去设计玩法，这才是务实的人机协作。参考来源：OpenCode 官方。"
         }
       ],
-      "image": ""
+      "image": "https://opencode.ai/social-share.png"
     },
     {
       "id": "ai-gemini",
@@ -923,7 +923,7 @@ window.DAILY_NEWS_DATA = {
           "text": "对独立开发者，我的建议一向是：先用托管 API 跑通产品逻辑，等对时延、成本、隐私有明确要求了，再评估本地开源模型。盲目上本地不一定省，关键看场景。参考来源：CSuite 博客。"
         }
       ],
-      "image": ""
+      "image": "https://storage.googleapis.com/csuite-storage/public/blog/ai-models-roundup-october-2026/cover.jpg"
     },
     {
       "id": "ai-moe",
@@ -997,7 +997,7 @@ window.DAILY_NEWS_DATA = {
           "text": "多模态 Agent 对游戏最有想象力的落点是 QA：让模型看运行截图、读报错日志、对照设计稿找不一致。这比纯文本 Agent 更贴近真实开发流程。参考来源：NVIDIA 开发者博客。"
         }
       ],
-      "image": ""
+      "image": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/10/Nemotron-3-5-Super-VL-e1792075881894.webp"
     },
     {
       "id": "in-vivrato",
@@ -1034,7 +1034,7 @@ window.DAILY_NEWS_DATA = {
           "text": "这份报告最值得记的一句话是：「用没用 AI」已经不是问题，「用在哪里、用得有多深」才是。对想入行的同学，这意味着「会用 AI 工具」正在变成基础能力，而「懂得把 AI 嵌进真实生产流程」才是稀缺竞争力。参考来源：Inven Global。"
         }
       ],
-      "image": ""
+      "image": "https://static.invenglobal.com/upload/image/2026/10/21/r1792622338223480.jpeg"
     },
     {
       "id": "in-amd-fsr",
@@ -1071,7 +1071,7 @@ window.DAILY_NEWS_DATA = {
           "text": "超分技术现在几乎是「性能预算」的默认杠杆。理解 FSR / XeSS / DLSS 的差异与取舍，是性能优化里性价比最高的一课——很多时候不用重写逻辑，换条超分管线就能救回帧率。参考来源：AMD 新闻室。"
         }
       ],
-      "image": ""
+      "image": "https://newsroom.amd.com/images/2026/10/c8ae6eb8-7e83-45fb-bfce-243c8959c5bb.jpg"
     },
     {
       "id": "in-japan-actors",
@@ -1182,7 +1182,7 @@ window.DAILY_NEWS_DATA = {
           "text": "如果主机真的迈入「千元美元」区间，对开发者的含义是：目标硬件的性能天花板更高，但玩家换机更谨慎、装机量爬升更慢。做跨代作品时，得把「长尾旧机型」的生命周期算得更长。参考来源：SaveGameVault（引述 Fortune）。"
         }
       ],
-      "image": ""
+      "image": "https://savegamevault.com/wp-content/uploads/2026/10/nouvelle-xbox-concept-2-1024x576.jpg.webp"
     },
     {
       "id": "in-pegI",
@@ -1256,7 +1256,7 @@ window.DAILY_NEWS_DATA = {
           "text": "「第一人称魂」是个有意思的视角实验：它把距离感、格挡时机变成了全新的阅读方式。做战斗设计时，视角不只是镜头，更是信息呈现与紧张感的来源。参考来源：Game Rant。"
         }
       ],
-      "image": ""
+      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2828710/e729c7f909db5c52ea780923d9b258517162866a/header.jpg?t=1792608118"
     },
     {
       "id": "ga-silverpines",
@@ -1293,7 +1293,7 @@ window.DAILY_NEWS_DATA = {
           "text": "小团队做出有辨识度的美术，靠的是「风格」而非「堆料」。Silver Pines 用手绘转描 + 新黑色电影气质，在恐怖赛道里找到了自己的声音。对独立开发者，这是很实在的启发：先定义调性，再谈产量。参考来源：Games Press。"
         }
       ],
-      "image": ""
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2333000/header.jpg"
     },
     {
       "id": "ga-arcraiders",
@@ -1330,7 +1330,7 @@ window.DAILY_NEWS_DATA = {
           "text": "《Arc Raiders》的「把大更新当第二次发售」思路值得做服务型游戏的同学琢磨：与其被日常补丁拖垮，不如集中火力做能重新唤回玩家的里程碑。节奏管理本身就是一种设计。参考来源：Kill Bait。"
         }
       ],
-      "image": ""
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1808500/header.jpg"
     },
     {
       "id": "ga-hellraiser",
@@ -1367,7 +1367,7 @@ window.DAILY_NEWS_DATA = {
           "text": "经典 IP 改编游戏的难点，从来不是「还原美术」，而是「还原那种让人不安的氛围」。Hellraiser 这种强风格 IP，给恐怖品类开发者上了如何把设定转化为玩法机制的一课。参考来源：Games Press。"
         }
       ],
-      "image": ""
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1551980/header.jpg"
     },
     {
       "id": "ga-umamusume",
@@ -1404,7 +1404,7 @@ window.DAILY_NEWS_DATA = {
           "text": "游戏不止存在于屏幕里。把 IP 延伸到演出、赛事、线下体验时，签证、场地、物流这些「非技术」环节同样会决定成败。做产品运营的同学，视野要超出代码与美术。参考来源：Cygames 官方公告。"
         }
       ],
-      "image": ""
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3224770/header.jpg"
     },
     {
       "id": "ga-planetzoo2",
@@ -1441,7 +1441,7 @@ window.DAILY_NEWS_DATA = {
           "text": "模拟经营品类最迷人的，是「让一堆互相影响的系统自己讲故事」。研究这类游戏的反馈闭环（玩家行为→系统反应→新目标），对做任何带养成/经营要素的游戏都有帮助。参考来源：Frontier Store。"
         }
       ],
-      "image": ""
+      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3219030/a5131aa4b84d04a55e3b9c561d7c886cc22bbe1c/header.jpg?t=1792660647"
     },
     {
       "id": "co-ld59",
@@ -1552,7 +1552,7 @@ window.DAILY_NEWS_DATA = {
           "text": "盛趣明确把「AI 应用」写进岗位能力要求，和前面 Vivrato 报告里「会用 AI 是基础能力」的结论互相印证。准备面试时，不妨准备一个你用 AI 提效的真实例子。参考来源：盛趣游戏招聘。"
         }
       ],
-      "image": ""
+      "image": "https://acc.niuqizp.com/post/coverpic/202608/shengquyouxiqiuzhaozhengshiqidongyiqi_0c4e8835.jpg"
     },
     {
       "id": "co-indieplay",
