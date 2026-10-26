@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-10-02",
     weekday: "星期五",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-10-02 11:30",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "Capcom 不愁生化危机『没得重制』：时间线交汇的神秘 crossover 已在筹划",
       "欧盟消费者保护网络对 9 家公司就游戏内货币问题发起联合行动",

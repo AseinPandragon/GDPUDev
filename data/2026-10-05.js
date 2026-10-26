@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-10-05",
     weekday: "星期一",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-10-05 07:40",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "《战争机器：E-Day》战役评测解禁：Eurogamer 称『老 Cogs 也能教出新把戏』",
       "E-Day 开发组谈血浆设计：『粉丝对暴力已经脱敏』——加大投入反而奏效",

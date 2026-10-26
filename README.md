@@ -1,4 +1,4 @@
-# GDPU GAMEDEV HUB · 广药 游戏开发情报中枢
+# Glimmer Digital Poetry Universe · GDPUDev 个人数字创作展示
 
 全生态游戏开发与工业化技术情报中枢 (GDPU GAME DEV & TECH INTELLIGENCE)  
 公益性质 · 零商业化 · 每日自动聚合

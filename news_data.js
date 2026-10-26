@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   "meta": {
     "date": "2026-10-26",
     "weekday": "星期一",
-    "title": "广药 游戏开发情报中枢 · 每日技术情报",
+    "title": "GDPUDev 个人数字创作展示 · 每日技术情报",
     "subtitle": "个人学习观察与评述 · 附参考来源外部链接",
     "updateTime": "2026-10-26 07:40",
-    "editor": "广药技术中枢 & CodeBuddy",
+    "editor": "GDPUDev技术中枢 & CodeBuddy",
     "highlights": [
       "《最终幻想：共鸣》Steam 解锁即好评如潮，HD-2D 回合制证明「回归原点」仍是 3A JRPG 的有效策略",
       "开源智能体赛道升温：DeepSeek Harness、微软 Agent Framework、OpenAI Agents SDK 同周都有新动向",

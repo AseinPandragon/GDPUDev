@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   "meta": {
     "date": "2026-10-24",
     "weekday": "星期六",
-    "title": "广药 游戏开发情报中枢 · 每日技术情报",
+    "title": "GDPUDev 个人数字创作展示 · 每日技术情报",
     "subtitle": "个人学习观察与评述 · 附参考来源外部链接",
     "updateTime": "2026-10-24 11:30",
-    "editor": "广药技术中枢 & CodeBuddy",
+    "editor": "GDPUDev技术中枢 & CodeBuddy",
     "highlights": [
       "月之暗面发布 Kimi K3.1 Pro（3 万亿参数开源旗舰），长程编码与 3D 游戏创作能力跃升（今日头条）",
       "Babylon.js 9.32.0 / O3DE 2605.0 / RayLib 6.2 / GDevelop 5.6.285 / MonoGame 3.8.6 同日推进引擎更新",

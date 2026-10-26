@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-10-09",
     weekday: "星期五",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-10-09 07:40",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "《赛博朋克 2077》官宣真人影视化：Paramount 出品，与昨日派拉蒙-华纳合并案无缝联动",
       "Bevy 0.20.0 正式版发布：Rust ECS 引擎完成 rc 打磨",

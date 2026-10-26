@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   "meta": {
     "date": "2026-10-22",
     "weekday": "星期四",
-    "title": "广药 游戏开发情报中枢 · 每日技术情报",
+    "title": "GDPUDev 个人数字创作展示 · 每日技术情报",
     "subtitle": "个人学习观察与评述 · 附参考来源外部链接",
     "updateTime": "2026-10-22 09:36",
-    "editor": "广药技术中枢 & CodeBuddy",
+    "editor": "GDPUDev技术中枢 & CodeBuddy",
     "highlights": [
       "BioWare 在成立 30 年后被 EA 关闭、《质量效应 5》取消，约 400 岗位受影响——3A 工作室兴衰最沉重的注脚",
       "OpenAI 与 Google Cloud 达成合作：GPT-6.1 Astra/Sol/Luna 入驻 Model Garden（企业私有预览）",

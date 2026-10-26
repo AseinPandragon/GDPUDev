@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-09-30",
     weekday: "星期三",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-09-30 10:16",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "Valve 把 Steam 首页折扣与活动区块交给算法推荐：平台分发逻辑生变",
       "独立游戏要不要躲 GTA6 的 11 月？GI.biz 发起档期大讨论",

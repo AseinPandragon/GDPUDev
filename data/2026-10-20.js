@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   "meta": {
     "date": "2026-10-20",
     "weekday": "星期二",
-    "title": "广药 游戏开发情报中枢 · 每日技术情报",
+    "title": "GDPUDev 个人数字创作展示 · 每日技术情报",
     "subtitle": "个人学习观察与评述 · 附参考来源外部链接",
     "updateTime": "2026-10-20 10:30",
-    "editor": "广药技术中枢 & CodeBuddy",
+    "editor": "GDPUDev技术中枢 & CodeBuddy",
     "highlights": ["VAST 开源实时世界模型 EdenLive：单卡 5090、720P 超 24FPS，权重/代码/报告全开放", "Anthropic 宣布 5% 股份注入公共利益基金；Claude 自主重设计量子电路刷新七项纪录", "Unity 连发三招：EDM 官方依赖管理包（EDM4U 将于 10-26 弃用）、Grok Build 插件、浏览器创作 Unity Spark", "GDCA 2027 首次开放厂商自主投稿（11-01 截止零报名费）；GitHub Game Off 2026 定档 11 月", "PEGI 开始把含战利品箱的数字游戏上调至 16 评级，10 月内滚动更新"],
     "engineStatus": [
       {

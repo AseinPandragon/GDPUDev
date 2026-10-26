@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-10-08",
     weekday: "星期四",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-10-08 07:40",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "Claude Haiku 5.5 发布：运行成本较 4.5 降约 75%，Sonnet 5.5 缓存读取价同步下调 50%",
       "Google × Unity 官宣战略合作：Unity Spark 把 AI 游戏创作搬进浏览器",

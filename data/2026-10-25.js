@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   "meta": {
     "date": "2026-10-25",
     "weekday": "星期日",
-    "title": "广药 游戏开发情报中枢 · 每日技术情报",
+    "title": "GDPUDev 个人数字创作展示 · 每日技术情报",
     "subtitle": "个人学习观察与评述 · 附参考来源外部链接",
     "updateTime": "2026-10-25 11:30",
-    "editor": "广药技术中枢 & CodeBuddy",
+    "editor": "GDPUDev技术中枢 & CodeBuddy",
     "highlights": [
       "开源大模型 10 月密集发布：OpenCode 等开源 AI 编程智能体走向成熟，开发者可本地接管工程",
       "Stride 4.4.0 / Bevy 0.17 / Cocos Creator / OpenMW / wgpu / Filament 多引擎同日有新动静",

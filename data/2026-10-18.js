@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-10-18",
     weekday: "星期日",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-10-18 09:30",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "科乐美社长表态：行业追捧 genAI 之时，「做游戏最重要的还是人」",
       "《Samson》开发商 Liquid Swords 发售半年后申请破产：瑞典 3A 梦碎样本",

@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   "meta": {
     "date": "2026-10-23",
     "weekday": "星期五",
-    "title": "广药 游戏开发情报中枢 · 每日技术情报",
+    "title": "GDPUDev 个人数字创作展示 · 每日技术情报",
     "subtitle": "个人学习观察与评述 · 附参考来源外部链接",
     "updateTime": "2026-10-23 07:40",
-    "editor": "广药技术中枢 & CodeBuddy",
+    "editor": "GDPUDev技术中枢 & CodeBuddy",
     "highlights": [
       "《Fortnite》重返澳大利亚 iOS：法院裁定 Apple 违反竞争法，侧载围墙再开一道口",
       "DeepSeek V4.1 Flash 发布：552B MoE、KV 缓存压到初代 1/437，Agent 成本大降",

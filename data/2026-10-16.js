@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-10-16",
     weekday: "星期五",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-10-16 07:40",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "Godot 4.8-beta1 发布（10/15）：4.8 进入 Beta 阶段，特性冻结正式推进",
       "DayZ 作者 Dean Hall 开源游戏开发框架 Brutal：单人 3A 野心的工程答案",

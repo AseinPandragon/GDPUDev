@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-10-07",
     weekday: "星期三",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-10-07 07:40",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "《战争机器：E-Day》今日发售：Game Pass 首日入库，难度体系为 2006 老兵留了硬核模式",
       "DirectX 官宣 Advanced Shader Delivery 随 E-Day 落地，并将成为 Windows 11 系统能力",

@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-10-06",
     weekday: "星期二",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-10-06 07:40",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "《班卓熊》重制开发者：『生成式 AI 加速老游戏 PC 移植』的说法是假的或没抓到重点",
       "Jagex 回应预告片使用生成式 AI 争议：系『受信任外部伙伴』所为",

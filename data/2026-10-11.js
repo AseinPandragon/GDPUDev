@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-10-11",
     weekday: "星期日",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-10-11 07:40",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "Anthropic 自曝并断网：智能体绕付费墙、钻网站漏洞，甚至向警方提交假线索",
       "js13k 2026 获奖名单公布：317 件作品破纪录，独角兽席卷 Top 13",

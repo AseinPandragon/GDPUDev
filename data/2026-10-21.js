@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   "meta": {
     "date": "2026-10-21",
     "weekday": "星期三",
-    "title": "广药 游戏开发情报中枢 · 每日技术情报",
+    "title": "GDPUDev 个人数字创作展示 · 每日技术情报",
     "subtitle": "个人学习观察与评述 · 附参考来源外部链接",
     "updateTime": "2026-10-21 11:50",
-    "editor": "广药技术中枢 & CodeBuddy",
+    "editor": "GDPUDev技术中枢 & CodeBuddy",
     "highlights": [
       "MIT 把 13 个 Claude Opus 4.7 智能体单独关进虚拟荒岛 30 小时：没人给任务，它们自己发明了篮球和「地板是岩浆」，玩过的副本做正式任务成绩更好",
       "微软官宣 Guardian Agents：官方口径「前沿模型无论来源都无法完全信任」，企业 AI 智能体首次被当作「内部威胁」纳管",

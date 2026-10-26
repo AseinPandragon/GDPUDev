@@ -2,10 +2,10 @@ window.DAILY_NEWS_DATA = {
   meta: {
     date: "2026-10-19",
     weekday: "星期一",
-    title: "广药 游戏开发情报中枢 · 每日技术情报",
+    title: "GDPUDev 个人数字创作展示 · 每日技术情报",
     subtitle: "个人学习观察与评述 · 附参考来源外部链接",
     updateTime: "2026-10-19 07:40",
-    editor: "广药技术中枢 & CodeBuddy",
+    editor: "GDPUDev技术中枢 & CodeBuddy",
     highlights: [
       "Gemini 4 Argon 四智能体同服协作 27 小时击败末影龙：游戏世界成多智能体试验场",
       "腾讯研究院 AI 速递：ChatGPT 接入 Chrome，Work 模式可代人操作网页",
