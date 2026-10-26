@@ -682,12 +682,41 @@ function anaRender(d){
   const devPct=t.views?Math.round(dev.mobile*100/t.views):0;
   const maxDaily=Math.max(1,...(d.daily||[]).map(x=>x.views));
   let h='';
+  const eng = d.engagement || {};
+  const et = eng.today || {landing:0,cat:0,art:0,unique_ips:0,cat_breakdown:[],art_breakdown:[]};
+  const etrend = eng.trend || [];
+  const maxArt = Math.max(1, ...etrend.map(x=>x.art));
+  const engRows = etrend.slice(-30).reverse().map(function(x){
+    return '<tr><td>'+esc(x.date)+'</td><td>'+x.landing+'</td><td>'+x.cat+'</td><td><span class="bar" style="width:'+Math.round(x.art*60/maxArt)+'px;"></span>'+x.art+'</td><td>'+x.unique_ips+'</td></tr>';
+  }).join('');
+  const catRows = (et.cat_breakdown||[]).map(function(x){
+    return '<tr><td>'+esc(x[0])+'</td><td>'+x[1]+'</td></tr>';
+  }).join('');
+  const artRows = (et.art_breakdown||[]).map(function(x){
+    return '<tr><td>'+esc(x[0])+'</td><td>'+x[1]+'</td></tr>';
+  }).join('');
+  const eh = '<div class="ana-full" style="margin-bottom:14px;border-top:3px solid var(--accent-blue);">'
+    + '<h4>📰 新闻点开情况（落地 → 选分类 → 点文章）</h4>'
+    + '<div class="kpis" style="margin-top:8px;">'
+    + '<div class="kpi"><b>'+et.landing+'</b><span>今日落地浏览</span></div>'
+    + '<div class="kpi"><b>'+et.cat+'</b><span>今日选了分类</span></div>'
+    + '<div class="kpi"><b>'+et.art+'</b><span>今日点开文章</span></div>'
+    + '<div class="kpi"><b>'+et.unique_ips+'</b><span>今日独立访客</span></div>'
+    + '</div>'
+    + '<p class="hint" style="margin:8px 0;">💡 文章阅读时长尚未埋点，目前只能看到「打开了几次」；要统计「看了多久」需再补 tracker（可后续加）。</p>'
+    + '<h4 style="margin-top:10px;">📈 近 30 天趋势（点文章数 = 真正往下看的人）</h4>'
+    + '<table><tr><th>日期</th><th>落地</th><th>选分类</th><th>点文章</th><th>独立IP</th></tr>'+(engRows||'<tr><td colspan="5">暂无数据</td></tr>')+'</table>'
+    + '<div class="ana-grid" style="margin-top:10px;">'
+    + '<div class="ana-card"><h4>🗂️ 今日选的分类 TOP</h4><table>'+(catRows||'<tr><td colspan="2">今天还没人选分类</td></tr>')+'</table></div>'
+    + '<div class="ana-card"><h4>📄 今日点开的文章 TOP</h4><table>'+(artRows||'<tr><td colspan="2">今天还没人点开文章</td></tr>')+'</table></div>'
+    + '</div></div>';
   h+=`<div class="kpis">
     <div class="kpi"><b>${t.views||0}</b><span>总浏览（view）</span></div>
     <div class="kpi"><b>${t.unique_ips||0}</b><span>独立 IP</span></div>
     <div class="kpi"><b>${(d.daily||[]).slice(-1).map(x=>x.views)[0]||0}</b><span>最近一天浏览</span></div>
     <div class="kpi"><b>${devPct}%</b><span>手机端占比</span></div>
   </div>`;
+  h += eh;
   const dailyRows=(d.daily||[]).map(x=>`<tr><td>${esc(x.date)}</td><td><span class="bar" style="width:${Math.round(x.views*60/maxDaily)}px;"></span>${x.views}</td></tr>`).join('');
   const pathRows=(d.top_paths||[]).map(x=>`<tr><td>${esc(x.k)}</td><td>${x.v}</td></tr>`).join('');
   const refRows=(d.top_refs||[]).map(x=>`<tr><td>${esc(x.k)}</td><td>${x.v}</td></tr>`).join('');
