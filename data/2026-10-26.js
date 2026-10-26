@@ -60,42 +60,42 @@ window.DAILY_NEWS_DATA = {
     ]
   },
   "hero": {
-    "id": "hero-ff-resonance",
+    "id": "hero-baldursgate3",
     "category": "games",
     "categoryName": "热门游戏 · 头条",
-    "tag": "HD-2D / 系列回归原点",
-    "title": "《最终幻想：共鸣》解锁即好评如潮：Square Enix 用 HD-2D 把 FF 拉回经典回合制",
-    "summary": "《最终幻想：共鸣》10 月 23 日在 Steam 解锁，以「如果 FF 一直以像素风进化至今」为概念，用 HD-2D 呈现、回合制指令战斗配合可装备历代角色的 Vision 系统，发售后迅速拿下约 97% 好评。从开发视角看，它证明在 3A JRPG 普遍追逐开放世界与实时化的当下，「回归原点」仍是有效策略。",
-    "source": "Steam / Square Enix",
+    "tag": "系统驱动 / 叙事标杆",
+    "title": "《博德之门 3》：用「可被系统反噬的选择」重新定义 CRPG 的沉浸上限",
+    "summary": "Larian Studios 的《博德之门 3》自 2023 年发售以来长期被视为 RPG 设计的标杆：它把 D&D 5e 规则转译成一套「玩家做什么都会留下痕迹」的涌现系统，并用高完成度演出让选择具备重量。从开发视角看，它的核心经验不是堆内容，而是把规则、演出与关卡耦合到让玩家相信自己真的在塑造世界。",
+    "source": "Steam / Larian Studios",
     "date": "2026-10-26",
-    "url": "https://store.steampowered.com/app/3259780/",
-    "readTime": "5 分钟深度",
+    "url": "https://store.steampowered.com/app/1086940/",
+    "readTime": "6 分钟深度",
     "hotScore": 95,
     "tags": [
-      "最终幻想",
-      "HD-2D",
-      "回合制",
-      "JRPG",
-      "Square Enix"
+      "博德之门3",
+      "CRPG",
+      "系统设计",
+      "Larian",
+      "叙事"
     ],
     "content": [
       {
         "title": "要点",
         "type": "list",
         "items": [
-          "《最终幻想：共鸣》是系列首款 HD-2D 作品，10 月 23 日登陆 Steam 并获约 97% 好评；",
-          "战斗为回合制指令系统，Vision 机制可装备历代角色能力（光之战士、蒂娜、克劳德等）；",
-          "支持 Steam Deck，已通过 Valve 兼容性验证，被玩家称为「回归 FF 本源」；",
-          "差评集中在 PC 优化与手柄震动缺失等工程层面，而非玩法本身。"
+          "基于 D&D 5e 规则，把掷骰与情境奖励做成可被玩家「算计」的透明系统；",
+          "几乎每段对话都接分支演出，选择会改动后续关卡与 NPC 命运；",
+          "战斗、探索、对话共享同一套状态机，鼓励「非战斗解法」；",
+          "长线更新与 Mod 生态延长了生命周期，是系统性设计的范本。"
         ]
       },
       {
         "title": "笔者观察",
         "type": "text",
-        "text": "这几年 JRPG 圈有个有意思的反差：一边是厂商拼命堆开放世界与即时演出，另一边玩家却在为一份扎实的回合制与像素演出买单。对学习者来说，《共鸣》的价值不在技术多炫，而在它重新验证了「把经典系统做精」依然有市场。做毕业设计或小项目时，与其硬上实时大世界，不如先把一个玩法循环打磨到让人愿意反复玩。参考来源：Steam 商店页、腾讯新闻转述的玩家口碑数据。"
+        "text": "很多同学做 RPG 时把「分支剧情」理解成多写几段文本，但《博德之门 3》揭示的是另一回事：分支必须连回系统，否则玩家一眼看穿这是「伪选择」。对毕业设计或小项目，先别追求剧情长度，试着做一个「玩家的行为会真实改变世界状态」的最小闭环，比十个花瓶选项更有说服力。参考来源：Steam 商店页与开发者访谈。"
       }
     ],
-    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3259780/header.jpg"
+    "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg"
   },
   "categories": [
     {
@@ -188,43 +188,43 @@ window.DAILY_NEWS_DATA = {
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1203620/header.jpg"
     },
     {
-      "id": "games-penguin",
+      "id": "games-hollowknight",
       "category": "games",
-      "subcategory": "独立恐怖",
-      "title": "《Penguin Colony》用企鹅重讲克苏鲁：荒诞外壳下是对 Lovecraft 的真诚重构",
-      "summary": "Origame Digital 的《Penguin Colony》10 月 16 日发售，把《疯狂山脉》搬进一只企鹅的视角，用附身不同企鹅的机制做恐怖解谜。媒体评价它敢在万圣节档拿出极具作者性的怪谈，尽管平台跳跃略显笨拙，但氛围与叙事足以外溢。",
-      "source": "Amploweb",
+      "subcategory": "银河恶魔城",
+      "title": "《空洞骑士》：用手感、关卡与留白把「小体量」做成教科书级 Metroidvania",
+      "summary": "Team Cherry 三人团队用六年做出的《空洞骑士》（2017）至今仍是银河恶魔城品类的设计范本：它用克制的叙事留白、精确到帧的移动手感，以及「探索即教学」的关卡结构，证明了小团队也能在玩法深度上压倒 3A。从学习视角看，它是理解「游戏感」与「环境叙事」的绝佳样本。",
+      "source": "Steam / Team Cherry",
       "date": "2026-10-26",
-      "url": "https://amploweb.com/penguin-colony-review",
-      "badge": "独立佳作",
+      "url": "https://store.steampowered.com/app/367520/",
+      "badge": "设计范本",
       "badgeType": "game",
       "readTime": "4 分钟",
       "hotScore": 85,
       "tags": [
-        "Penguin Colony",
-        "克苏鲁",
-        "恐怖",
-        "独立游戏",
-        "附身机制"
+        "空洞骑士",
+        "Metroidvania",
+        "游戏手感",
+        "环境叙事",
+        "独立游戏"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "游戏以企鹅视角重述《疯狂山脉》，附身不同物种利用其特性解谜；",
-            "旁白由 Lenval Brown（《极乐迪斯科》声线）担纲，文学化恐怖氛围拉满；",
-            "平台跳跃被评价为「故意笨拙」，反而强化了企鹅的脆弱感；",
-            "售价约 15 美元，被多家媒体列为年度值得一试的怪谈实验。"
+            "移动、冲刺、下劈的帧数据与判定经过反复打磨，构成核心「游戏感」；",
+            "地图分区用能力门控做软性引导，探索过程本身承担教学；",
+            "几乎不靠文本交代世界观，靠美术与场景细节做环境叙事；",
+            "三人团队的产出规模，是独立开发上限的有力证据。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "独立恐怖最怕「为了吓人而吓人」。《Penguin Colony》聪明的地方是用荒诞外壳做情绪缓冲，再用严肃叙事收束，这种「反差调度」很值得做叙事向项目的同学研究。参考来源：Amploweb 评测。"
+          "text": "《空洞骑士》最值得学的不是美术风格，而是「克制」：它敢于不解释，把理解交给玩家。做平台跳跃或探索类项目的同学，建议把它的移动手感逐帧拆解一遍，再对照自己的项目找差距——手感差一两帧，体验就是两个游戏。参考来源：Steam 商店页与开发者访谈。"
         }
       ],
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3695930/header.jpg"
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg"
     },
     {
       "id": "games-tape",
@@ -266,43 +266,43 @@ window.DAILY_NEWS_DATA = {
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1566200/header.jpg"
     },
     {
-      "id": "games-gonefishing",
+      "id": "games-stardew",
       "category": "games",
-      "subcategory": "合作恐怖",
-      "title": "《Gone Fishing》把垂钓做成合作恐怖：Lethal Company 遇上星露谷",
-      "summary": "GONE Studios 的《Gone Fishing》10 月 20 日发售，是一款 1-8 人合作生存恐怖游戏——唯一的生存之道是不断喂饱湖中饥饿之物。媒体形容它是「和朋友一起的荒诞恐怖」，Steam 约 93% 好评，尽管仍处早期访问、Bug 不少。",
-      "source": "Boiling Steam",
+      "subcategory": "模拟经营",
+      "title": "《星露谷物语》：一人开发如何把「系统密度」与「长期可玩」同时做满",
+      "summary": "ConcernedApe（Eric Barone）单人开发的《星露谷物语》（2016）用 farming、社交、采矿、战斗的多系统耦合，成为模拟经营长青树。它说明：即便没有大厂资源，把一组相互咬合的日常循环设计到位，也能撑起数百小时的留存。对想做系统向小游戏或毕业设计的同学，它是「系统策划」的活教材。",
+      "source": "Steam / ConcernedApe",
       "date": "2026-10-26",
-      "url": "https://boilingsteam.com/new-steam-games-playable-on-the-steam-deck-2026-10-24-edition/",
-      "badge": "合作新作",
+      "url": "https://store.steampowered.com/app/413150/",
+      "badge": "长线范本",
       "badgeType": "game",
       "readTime": "4 分钟",
       "hotScore": 84,
       "tags": [
-        "Gone Fishing",
-        "合作恐怖",
-        "生存",
-        "早期访问",
-        "Steam Deck"
+        "星露谷物语",
+        "模拟经营",
+        "系统策划",
+        "单人开发",
+        "留存"
       ],
       "content": [
         {
           "title": "要点",
           "type": "list",
           "items": [
-            "1-8 人合作，靠「钓鱼喂湖」避免被湖吞噬；",
-            "被玩家称为 Lethal Company 与星露谷的结合体，荒诞幽默是核心吸引力；",
-            "开发者活跃、更新频繁，但也坦言仍处粗糙的早期访问阶段；",
-            "教程与部分视觉被指略显混乱，是主要差评来源。"
+            "种田、钓鱼、矿洞、社区中心等多条循环相互奖励，形成正反馈；",
+            "季节与节日制造节奏，避免日常变成纯重复劳动；",
+            "单人开发却能持续多年更新，是「长线运营」的反直觉样本；",
+            "数值曲线平缓但目标密度高，留人靠的是「总有下一件小事」。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "合作恐怖这两年从 Lethal Company 起形成了清晰品类，《Gone Fishing》用「钓鱼」换皮做出差异点。做 multiplayer 项目的同学可以留意它的「一个简单规则 + 朋友间的混乱」设计骨架。参考来源：Boiling Steam 新作盘点、Steam 评测页。"
+          "text": "很多同学做模拟经营容易堆功能却留不住人，《星露谷》的答案是「系统咬合 + 节奏感」。它提醒我们：留存不来自某个大系统，而来自无数个小目标彼此勾连。做课程项目时，与其加十个互不相关的玩法，不如先确保已有的循环能互相奖励。参考来源：Steam 商店页与开发者访谈。"
         }
       ],
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3645890/header.jpg"
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg"
     },
     {
       "id": "games-grifford",
