@@ -3,7 +3,6 @@ import socketserver
 import os
 import sys
 import threading
-from auto_sync_pipeline import AutoSyncWatcher, scan_and_rebuild_archives
 
 PORT = 8000
 DIRECTORY = r"C:\Users\Administrator\Doubao\chats\2026-08-27\new-chat"
@@ -39,14 +38,13 @@ if __name__ == '__main__':
     print(f" cpolar 控制台: http://127.0.0.1:9200")
     print("=" * 60)
 
-    # 启动后台自动文件监听与实时同步管道（零人工干预）
-    watcher = AutoSyncWatcher(watch_dir=os.path.join(DIRECTORY, "data"), interval_sec=2.0)
-    watcher.start()
+    # 注意：原 AutoSyncWatcher 监听的是豆包对话目录（C:\...\Doubao\...\new-chat\data，
+    # 数据仅到 2026-09-24）并会把过时的 archive_list.js / news_data.js / index.html
+    # 强行写回本仓库，已移除（见 2026-10-27 复盘）。本仓库归档由每日简报任务直接维护。
 
     with ThreadingHTTPServer(('0.0.0.0', PORT), Handler) as httpd:
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:
             print("\nServer stopping...")
-            watcher.stop()
             print("Server stopped.")
