@@ -1,6 +1,6 @@
 window.NEWS_ARCHIVE_LIST = [
 
-    { date: "2026-10-27", weekday: "星期二", file: "data/2026-10-27.js", title: "2026-10-27 每日情报：UE5.7(PCG/Nanite植被/AI助手) · 工会化与AI保护成常态(GDC超三成受裁员) · Bevy0.16/Defold/MonoGame/Diligent/Fyrox · 开源Jolt/bgfx/PlayCanvas/PixiJS/AnvilWiki/OpenSpeedy · DeepSeek V4 Pro/Gemini3/Mistral3/gpt-oss · 数媒国赛/NCDA/网易高校赛/完美校招", desc: "今日最新情报" },
+    { date: "2026-10-27", weekday: "星期二", file: "data/2026-10-27.js", title: "2026-10-27 每日情报：UE5.7(PCG/Nanite植被/AI助手) · 工会化与AI保护成常态(GDC超三成受裁员) · Bevy0.16/Defold/MonoGame/Diligent/Fyrox · 开源Jolt/bgfx/PlayCanvas/PixiJS/AnvilWiki/OpenSpeedy · DeepSeek-V4.1-Flash-1017/Gemini4 Argon/Mistral3/gpt-oss · 数媒国赛/NCDA/网易高校赛/完美校招", desc: "今日最新情报" },
     { date: "2026-10-26", weekday: "星期一", file: "data/2026-10-26.js", title: "2026-10-26 每日情报：FF共鸣HD-2D好评如潮 · 开源智能体(DeepSeek Harness/微软Agent Framework/OpenAI Agents SDK) · 引擎百花齐放(WickedEngine/LittleJS/Lumix/estella/Godot4.8) · 行业震荡(Arkane寻求出售/Nerial关张/Razer收StreamElements/Bose收FMOD) · 莉莉丝2027秋招·腾讯高校大赛·itch.io Jam", desc: "往期技术归档" },
     { date: "2026-10-25", weekday: "星期日", file: "data/2026-10-25.js", title: "2026-10-25 每日情报：Stride4.4/Bevy0.17/Cocos/OpenMW/wgpu/Filament · Vivrato 97%用AI · FSR4.1·Helix 1200-1800$ · PEGI开箱16+ · 多益/盛趣校招·LD59·indiePlay", desc: "往期技术归档" },
     { date: "2026-10-24", weekday: "星期六", file: "data/2026-10-24.js", title: "2026-10-24 每日情报：Babylon 9.32/O3DE 2605/RayLib 6.2 · GameMaker GMRT 免费 · Capcom 1.17亿账户泄露 · Epic AI优先/Unity Spark · 吉比特校招·盛趣社招·LD58", desc: "往期技术归档" },

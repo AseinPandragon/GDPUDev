@@ -11,7 +11,7 @@ window.DAILY_NEWS_DATA = {
       "游戏行业工会化成常态：AI 保护、召回权被写进合同，GDC 报告称超三成从业者受裁员影响",
       "引擎生态活跃：Bevy 0.16 GPU 驱动渲染、Defold WebGPU 实验、MonoGame/Diligent/Fyrox 持续维护",
       "开源精选：Jolt 物理、bgfx 渲染抽象、PlayCanvas/PixiJS 的 Web 路线、AnvilWiki 技术档案",
-      "AI 模型竞争提速：DeepSeek V4 Pro、Gemini 3、Mistral 3 开源、OpenAI gpt-oss 开放权重",
+      "AI 模型竞争提速：DeepSeek-V4.1-Flash-1017、Gemini 4 Argon、Mistral 3 开源、OpenAI gpt-oss 开放权重",
       "面向新生：数媒国赛、NCDA、网易高校赛与完美世界校招，多条参赛/求职通道并行"
     ],
     "engineStatus": [
@@ -1089,13 +1089,13 @@ window.DAILY_NEWS_DATA = {
       ]
     },
     {
-      "id": "ai-deepseekv4pro",
+      "id": "ai-deepseekv41flash",
       "category": "ai",
       "categoryName": "AI前沿",
       "subcategory": "大模型",
       "tag": "DeepSeek",
-      "title": "DeepSeek V4 Pro 发布：强化智能体能力并支持 Responses API 与 Codex 集成",
-      "summary": "DeepSeek 官方更新显示 V4 Pro 已全面开放，强化了智能体（agent）能力，并接入 Responses API 与 Codex 集成。对做 AI 辅助开发的同学，这类'能调用工具、跑长任务'的模型值得跟踪。",
+      "title": "DeepSeek-V4.1-Flash-1017 更新：性能-费用帕累托改进，自研搜索 API 开放",
+      "summary": "DeepSeek 官方 10-17 更新日志：V4.1 Flash 升级至 -1017 版本，各基准显著提升的同时任务更快、输出更省，网页端与 APP 已同步；同日还开放了自研搜索 API。对做 AI 辅助开发的同学，这种'更强且更省'的迭代节奏值得跟踪。",
       "image": "https://api-docs.deepseek.com/zh-cn/img/deepseek-social-card.jpeg",
       "source": "DeepSeek 官方文档",
       "date": "2026-10-27",
@@ -1113,15 +1113,15 @@ window.DAILY_NEWS_DATA = {
           "title": "关注点",
           "type": "list",
           "items": [
-            "V4 Pro 强化 agent 能力，更适合多步工具调用；",
-            "接入 Responses API，统一对话与工具返回；",
-            "与 Codex 集成，向'能改代码、跑任务'的助手演进。"
+            "V4.1 Flash 升级至 -1017，API 调用方式与价格不变（model=deepseek-flash）；",
+            "各基准显著提升（HLE 42.6、Terminal-Bench 4.0 42.3、DeepSWE 77.0），且任务运行时间与输出长度同步缩短；",
+            "同日开放自研搜索 API：AI 原生搜索引擎，索引千亿级网页并过滤低质内容。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "模型竞争的焦点已经从'谁分数高'转向'谁更好当生产力底座'。对开发者，重点不是追新模型本身，而是把'模型可插拔'做成架构习惯——哪天换模型，工作流不必重写。"
+          "text": "这轮更新比'又发新模型'更值得看的是思路：不追参数规模，而是在同一价格下把性能、速度、输出长度一起往前推，官方称之为帕累托改进。对开发者，选型的标准正在变成'单位成本干完多少活'——把这条曲线纳入评估，比只看榜单名次更实用。"
         }
       ]
     },
@@ -1200,39 +1200,39 @@ window.DAILY_NEWS_DATA = {
       ]
     },
     {
-      "id": "ai-gemini3",
+      "id": "ai-gemini4argon",
       "category": "ai",
       "categoryName": "AI前沿",
       "subcategory": "大模型",
       "tag": "Gemini",
-      "title": "Gemini 3 发布：在主流榜单全面领先，竞争节奏再度提速",
-      "summary": "Google 发布 Gemini 3，官方称其在多数核心基准上取得领先，并强调多模态与长上下文。笔者观察到，前沿模型之间'几周内易主'的节奏，正倒逼开发者把模型切换做成可插拔。",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3_model-blog_meta-dark.width-1300.jpg",
+      "title": "Gemini 4 Argon 开放开发者使用：面向长程复杂工作流的前沿模型",
+      "summary": "Google 正式开放 Gemini 4 Argon（10-13 GA）给开发者，定位是真实软件工程、企业知识与安全防御等长程复杂任务的旗舰模型，输出上限扩到 100 万 token。笔者观察到，前沿模型'几周内易主'的节奏，正倒逼开发者把模型切换做成可插拔。",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-argon_key-art_4_neutral_16-9.max-1440x810.png",
       "source": "Google Blog",
       "date": "2026-10-27",
-      "url": "https://blog.google/products/gemini/gemini-3/",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/",
       "readTime": "5 分钟",
       "hotScore": 89,
       "tags": [
         "Gemini",
         "Google",
-        "多模态",
-        "基准"
+        "智能体",
+        "编程"
       ],
       "content": [
         {
           "title": "值得注意",
           "type": "list",
           "items": [
-            "官方称在多数核心基准上取得领先；",
-            "强化多模态与长上下文能力；",
-            "与谷歌生态（搜索、Workspace）深度打通。"
+            "面向真实软件工程、企业知识与网络安全防御等长程任务设计；",
+            "输出 token 上限从此前 64K 扩到行业领先的 100 万；",
+            "发布价每百万输入 $2 / 输出 $10，可在 Gemini API 付费档与 Antigravity 中使用。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "模型'王座'轮换越来越快，对个人开发者的启示很实在：不要把产品绑死在某一家 API 上。把 prompt 与工具调用抽象成接口，模型替换只是换一个实现——这才是稳健的工程姿势。"
+          "text": "Argon 的卖点不是榜单分数，而是'把长活干完'：Google 用它数周内完成了 Chromium 数百万行代码的架构拆分，这类长程任务正是 Agent 编程的下一站。对个人开发者的启示很实在：不要把产品绑死在某一家 API 上，把 prompt 与工具调用抽象成接口，模型替换只是换一个实现。"
         }
       ]
     },
