@@ -1,6 +1,7 @@
 window.NEWS_ARCHIVE_LIST = [
+    { date: "2026-10-30", weekday: "星期五", file: "data/2026-10-30.js", title: "2026-10-30 每日情报：《影之刃零》正式发售 · Undead Labs 自述曾把《腐烂国度3》重写成 MMO 再推倒重来——裁剪勇气的一课 · AI 基建三连 · Claude-Code-Game-Studios 登顶热榜 · 校招进行时", desc: "今日最新情报" },
 
-    { date: "2026-10-29", weekday: "星期四", file: "data/2026-10-29.js", title: "2026-10-29 每日情报：Epic把genAI写进UE6产线 · Godot4.7.2/Bevy0.20.1/Defold1.14.0/OGRE14.6.2 · Don't Nod濒临破产/Capcom财报/Kutaragi谈现状 · Gemini沉浸式探索/Genie4/微软Copilot Harness · 米哈游/网易雷火/叠纸2027校招", desc: "今日最新情报" },
+    { date: "2026-10-29", weekday: "星期四", file: "data/2026-10-29.js", title: "2026-10-29 每日情报：Epic把genAI写进UE6产线 · Godot4.7.2/Bevy0.20.1/Defold1.14.0/OGRE14.6.2 · Don't Nod濒临破产/Capcom财报/Kutaragi谈现状 · Gemini沉浸式探索/Genie4/微软Copilot Harness · 米哈游/网易雷火/叠纸2027校招", desc: "往期技术归档" },
 
     { date: "2026-10-28", weekday: "星期三", file: "data/2026-10-28.js", title: "2026-10-28 每日情报：Unity6000.6.7/Defold1.14(Xbox)/PlayCanvas v2.35(MCP)/OpenXR容器/CocosXR · 行业交锋(Epic批Steam AI披露/Sucker Punch裁员/Warhorse遭攻击) · Hypnos 1.0/Pokémon Unite停服 · 开源SFML/SpacetimeDB/three.js · Anthropic S-1/Claude Duet · 多益/4399校招·LD56", desc: "往期技术归档" },
     { date: "2026-10-27", weekday: "星期二", file: "data/2026-10-27.js", title: "2026-10-27 每日情报：UE5.7(PCG/Nanite植被/AI助手) · 工会化与AI保护成常态(GDC超三成受裁员) · Bevy0.16/Defold/MonoGame/Diligent/Fyrox · 开源Jolt/bgfx/PlayCanvas/PixiJS/AnvilWiki/OpenSpeedy · DeepSeek-V4.1-Flash-1017/Gemini4 Argon/Mistral3/gpt-oss · 数媒国赛/NCDA/网易高校赛/完美校招", desc: "往期技术归档" },
