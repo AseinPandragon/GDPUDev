@@ -703,7 +703,7 @@ function anaRender(d){
     + '<div class="kpi"><b>'+et.art+'</b><span>今日点开文章</span></div>'
     + '<div class="kpi"><b>'+et.unique_ips+'</b><span>今日独立访客</span></div>'
     + '</div>'
-    + '<p class="hint" style="margin:8px 0;">💡 文章阅读时长尚未埋点，目前只能看到「打开了几次」；要统计「看了多久」需再补 tracker（可后续加）。</p>'
+    + '<p class="hint" style="margin:8px 0;">💡 分类页（?cat=）与文章（?art=）的停留时长已由 tracker v2 统计：切换或离开页面时会补发对应虚拟路径的 leave，后台可据 dwell 看出「每个分类/文章看了多久」。</p>'
     + '<h4 style="margin-top:10px;">📈 近 30 天趋势（点文章数 = 真正往下看的人）</h4>'
     + '<table><tr><th>日期</th><th>落地</th><th>选分类</th><th>点文章</th><th>独立IP</th></tr>'+(engRows||'<tr><td colspan="5">暂无数据</td></tr>')+'</table>'
     + '<div class="ana-grid" style="margin-top:10px;">'
