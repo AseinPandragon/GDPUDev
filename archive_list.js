@@ -1,5 +1,7 @@
 window.NEWS_ARCHIVE_LIST = [
-    { date: "2026-10-30", weekday: "星期五", file: "data/2026-10-30.js", title: "2026-10-30 每日情报：《影之刃零》正式发售 · Undead Labs 自述曾把《腐烂国度3》重写成 MMO 再推倒重来——裁剪勇气的一课 · AI 基建三连 · Claude-Code-Game-Studios 登顶热榜 · 校招进行时", desc: "今日最新情报" },
+    { date: "2026-10-31", weekday: "星期六", file: "data/2026-10-31.js", title: "2026-10-31 每日情报：《Hypnos》1.0正式发售 · Gemini 4 Carbon登顶/ GPT-6.1 Terra砍半单价 · 昆仑开源Matrix-Game 4.0 · BRUTAL与RE:Dox开源 · 盛趣/畅游/腾讯2027校招", desc: "今日最新情报" },
+
+    { date: "2026-10-30", weekday: "星期五", file: "data/2026-10-30.js", title: "2026-10-30 每日情报：《影之刃零》正式发售 · Undead Labs 自述曾把《腐烂国度3》重写成 MMO 再推倒重来——裁剪勇气的一课 · AI 基建三连 · Claude-Code-Game-Studios 登顶热榜 · 校招进行时", desc: "往期技术归档" },
 
     { date: "2026-10-29", weekday: "星期四", file: "data/2026-10-29.js", title: "2026-10-29 每日情报：Epic把genAI写进UE6产线 · Godot4.7.2/Bevy0.20.1/Defold1.14.0/OGRE14.6.2 · Don't Nod濒临破产/Capcom财报/Kutaragi谈现状 · Gemini沉浸式探索/Genie4/微软Copilot Harness · 米哈游/网易雷火/叠纸2027校招", desc: "往期技术归档" },
 
