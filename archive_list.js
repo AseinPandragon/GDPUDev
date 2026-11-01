@@ -1,5 +1,7 @@
 window.NEWS_ARCHIVE_LIST = [
-    { date: "2026-11-01", weekday: "星期日", file: "data/2026-11-01.js", title: "2026-11-01 每日情报：Gemini 4 Carbon 登顶 AI 指数 · Godot4.8β2/Babylon.js9.0/O3DE/Cocos 引擎更新 · Hades II/Silksong/KCD II 设计观察 · Phaser/libGDX/ImGui/Box2D/EnTT/Filament 开源精读 · Mistral/OpenAI DevDay/DeepSeek/Qwen · 英雄游戏/网易互娱 2027 校招 · GitHub Game Off 2026 开赛", desc: "今日最新情报" },
+    { date: "2026-11-02", weekday: "星期一", file: "data/2026-11-02.js", title: "2026-11-02 每日情报：Skydance完成1110亿并购·Paramount/WB Games并入 · Raylib/Heaps/FNA/Flax/wgpu/Piston 开源引擎精读 · Enshrouded 1.0/Stupid Never Dies 评测 · llama.cpp/web-llm/Semantic Kernel/ML-Agents 开源AI · SHIFT/Craftalog Jam·多益/灵犀2027校招", desc: "今日最新情报" },
+
+    { date: "2026-11-01", weekday: "星期日", file: "data/2026-11-01.js", title: "2026-11-01 每日情报：Gemini 4 Carbon 登顶 AI 指数 · Godot4.8β2/Babylon.js9.0/O3DE/Cocos 引擎更新 · Hades II/Silksong/KCD II 设计观察 · Phaser/libGDX/ImGui/Box2D/EnTT/Filament 开源精读 · Mistral/OpenAI DevDay/DeepSeek/Qwen · 英雄游戏/网易互娱 2027 校招 · GitHub Game Off 2026 开赛", desc: "往期技术归档" },
     { date: "2026-10-31", weekday: "星期六", file: "data/2026-10-31.js", title: "2026-10-31 每日情报：《Hypnos》1.0正式发售 · Gemini 4 Carbon登顶/ GPT-6.1 Terra砍半单价 · 昆仑开源Matrix-Game 4.0 · BRUTAL与RE:Dox开源 · 盛趣/畅游/腾讯2027校招", desc: "往期技术归档" },
 
     { date: "2026-10-30", weekday: "星期五", file: "data/2026-10-30.js", title: "2026-10-30 每日情报：《影之刃零》正式发售 · Undead Labs 自述曾把《腐烂国度3》重写成 MMO 再推倒重来——裁剪勇气的一课 · AI 基建三连 · Claude-Code-Game-Studios 登顶热榜 · 校招进行时", desc: "往期技术归档" },
