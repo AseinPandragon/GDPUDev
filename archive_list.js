@@ -1,5 +1,7 @@
 window.NEWS_ARCHIVE_LIST = [
-    { date: "2026-11-02", weekday: "星期一", file: "data/2026-11-02.js", title: "2026-11-02 每日情报：Skydance完成1110亿并购·Paramount/WB Games并入 · Raylib/Heaps/FNA/Flax/wgpu/Piston 开源引擎精读 · Enshrouded 1.0/Stupid Never Dies 评测 · llama.cpp/web-llm/Semantic Kernel/ML-Agents 开源AI · SHIFT/Craftalog Jam·多益/灵犀2027校招", desc: "今日最新情报" },
+    { date: "2026-11-03", weekday: "星期二", file: "data/2026-11-03.js", title: "2026-11-03 每日情报：EA关闭BioWare·GTA VI定档11/19 · Cocos/LÖVE/A-Frame/Kaplay/Excalibur 开源引擎精读 · p5.js/OpenTK/JSON/Hazel/Sokol/Vulkan 开源宝库 · HuggingFace/PyTorch/AutoGen AI · Ludum Dare 61·淘米/三七2027校招", desc: "今日最新情报" },
+
+    { date: "2026-11-02", weekday: "星期一", file: "data/2026-11-02.js", title: "2026-11-02 每日情报：Skydance完成1110亿并购·Paramount/WB Games并入 · Raylib/Heaps/FNA/Flax/wgpu/Piston 开源引擎精读 · Enshrouded 1.0/Stupid Never Dies 评测 · llama.cpp/web-llm/Semantic Kernel/ML-Agents 开源AI · SHIFT/Craftalog Jam·多益/灵犀2027校招", desc: "往期技术归档" },
 
     { date: "2026-11-01", weekday: "星期日", file: "data/2026-11-01.js", title: "2026-11-01 每日情报：Gemini 4 Carbon 登顶 AI 指数 · Godot4.8β2/Babylon.js9.0/O3DE/Cocos 引擎更新 · Hades II/Silksong/KCD II 设计观察 · Phaser/libGDX/ImGui/Box2D/EnTT/Filament 开源精读 · Mistral/OpenAI DevDay/DeepSeek/Qwen · 英雄游戏/网易互娱 2027 校招 · GitHub Game Off 2026 开赛", desc: "往期技术归档" },
     { date: "2026-10-31", weekday: "星期六", file: "data/2026-10-31.js", title: "2026-10-31 每日情报：《Hypnos》1.0正式发售 · Gemini 4 Carbon登顶/ GPT-6.1 Terra砍半单价 · 昆仑开源Matrix-Game 4.0 · BRUTAL与RE:Dox开源 · 盛趣/畅游/腾讯2027校招", desc: "往期技术归档" },
