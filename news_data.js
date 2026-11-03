@@ -1,834 +1,232 @@
 window.DAILY_NEWS_DATA = {
   "meta": {
-    "date": "2026-11-03",
-    "weekday": "星期二",
+    "date": "2026-11-04",
+    "weekday": "星期三",
     "title": "GDPUDev 个人数字创作展示・每日技术情报",
     "subtitle": "个人学习观察与评述・附参考来源外部链接",
-    "updateTime": "2026-11-03 07:30",
+    "updateTime": "2026-11-04 07:30",
     "editor": "GDPUDev 技术中枢 & CodeBuddy",
     "highlights": [
-      "EA 关闭 BioWare、取消下一部《质量效应》：31 年传奇 RPG 工作室落幕，大厂成本重构继续",
-      "开源引擎矩阵更新：Cocos Creator / LÖVE / A-Frame / Kaplay / Excalibur 值得精读",
-      "《GTA VI》定档 11 月 19 日：年末最大发布拉开序幕，多款大作同期扎堆",
-      "AI 工具链开源化：Hugging Face Transformers / PyTorch / AutoGen 等值得上手",
-      "Game Jam 与校招双线：Ludum Dare 61 开赛，淘米 / 三七互娱 2027 校招进行中"
+      "Tripledot 4000 万美元收购 Unity 旗下 Supersonic：移动发行权成新稀缺资源",
+      "开源引擎矩阵精读：Godot / Three.js / PlayCanvas / Urho3D / macroquad / Panda3D",
+      "开源游戏样板：Veloren / OpenRA / Thrive / Endless Sky / Luanti / Unvanquished",
+      "AI 工具链：Ollama / vLLM / ComfyUI / OpenHands / LangGraph 与 Kimi 游戏 Agent",
+      "Game Jam 双线：Ludum Dare 62 与 Global Game Jam 开页，FunPlus 社招进行中"
     ],
     "engineStatus": [
       {
-        "name": "Cocos Creator",
-        "type": "cocos",
-        "status": "跨平台小游戏",
+        "name": "Godot 4.8 beta",
+        "type": "godot",
+        "status": "特性冻结后修 bug",
         "badge": "开源引擎",
         "color": "cyan"
       },
       {
-        "name": "LÖVE",
-        "type": "love2d",
-        "status": "纯 Lua 2D",
-        "badge": "轻量框架",
-        "color": "orange"
-      },
-      {
-        "name": "A-Frame",
-        "type": "aframe",
-        "status": "WebXR 入门",
+        "name": "Babylon.js 9.x",
+        "type": "babylon",
+        "status": "WebGPU 强化",
         "badge": "Web3D",
         "color": "blue"
       },
       {
-        "name": "Kaplay",
-        "type": "kaplay",
-        "status": "TS 原型库",
-        "badge": "2D 引擎",
+        "name": "O3DE",
+        "type": "o3de",
+        "status": "工业化开源",
+        "badge": "3A 引擎",
+        "color": "emerald"
+      },
+      {
+        "name": "Raylib 5.x",
+        "type": "raylib",
+        "status": "轻量 C 引擎",
+        "badge": "教学友好",
+        "color": "orange"
+      },
+      {
+        "name": "Flax Engine",
+        "type": "flax",
+        "status": "C# 现代化",
+        "badge": "开源引擎",
         "color": "violet"
       },
       {
-        "name": "Excalibur",
-        "type": "excalibur",
-        "status": "TS 2D 结构化",
-        "badge": "2D 引擎",
-        "color": "emerald"
+        "name": "Bevy 0.20",
+        "type": "bevy",
+        "status": "Rust ECS",
+        "badge": "现代引擎",
+        "color": "red"
       }
     ]
   },
   "hero": {
-    "id": "ind-ea-bioware-hero",
+    "id": "ind-tripledot-hero",
     "category": "industry",
     "categoryName": "行业热点",
-    "tag": "BioWare 关闭",
-    "title": "EA 关闭 BioWare、取消下一部《质量效应》：31 年传奇 RPG 工作室落幕",
-    "summary": "笔者注意到，EA 在 10 月 21 日宣布关闭旗下 BioWare 工作室，并取消仍处于早期开发的下一部《质量效应》。这一决定与公司整体战略收缩、聚焦核心 IP 与体育业务直接相关，也与 8 月完成、背负约 180 亿美元债务的私有化交易后的降本计划一脉相承。对学习者而言，这是观察「大厂如何在财务压力与项目风险之间取舍」的鲜活样本——即便手握定义过一个品类的传奇工作室，也会被重新估值。",
-    "image": "https://drop-assets.ea.com/images/1HZCdDmXw5qAxhLTi3wCq3/558f97428f5b4fe69a06ab91a0882fa6/eacom-news-featured-image-shapes-inverted.png?im=AspectCrop=(16,9),xPosition=0.5,yPosition=0.5",
-    "source": "EA 官方公告（一手）",
-    "date": "2026-11-03",
-    "url": "https://www.ea.com/zh-hans/news/building-eas-next-chapter",
+    "tag": "Tripledot × Supersonic",
+    "title": "Tripledot 以 4000 万美元从 Unity 手中收购 Supersonic，移动发行格局再洗牌",
+    "summary": "笔者注意到，Tripledot Studios 以 4000 万美元从 Unity 手中收购移动发行商 Supersonic，后者将继续作为独立公司运营。对学习者而言，这是观察「AI 降低开发门槛后，发行与买量能力成为稀缺资源」的鲜活样本——当人人都能做游戏，谁能把游戏送到玩家面前才值钱。",
+    "image": "https://assetsio.gnwcdn.com/tripledot-supersonic.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+    "source": "GamesIndustry.biz 一手报道",
+    "date": "2026-11-04",
+    "url": "https://gamesindustry.biz/tripledot-studios-acquires-supersonic-from-unity-for-40m",
     "readTime": "6 分钟",
     "hotScore": 95,
     "tags": [
-      "EA",
-      "BioWare",
-      "质量效应",
-      "工作室关闭"
+      "Tripledot",
+      "Supersonic",
+      "Unity"
     ],
     "content": [
       {
         "title": "本次要点",
         "type": "list",
         "items": [
-          "EA 关闭 BioWare 及埃德蒙顿办公室，下一部《质量效应》早期开发终止；",
-          "约 400 个岗位受影响（约 3%），其中 BioWare 约 50 人；",
-          "公司转向聚焦 EA SPORTS、战地与 Respawn/DICE 的星战项目等核心增长盘。"
+          "Tripledot 4000 万美元收购 Supersonic；",
+          "Supersonic 继续独立运营；",
+          "Unity 早前已计划剥离该业务。"
         ]
       },
       {
         "title": "笔者观察",
         "type": "text",
-        "text": "BioWare 的落幕离「做游戏」看似很远，其实很近：它提醒新人，一款游戏能否活到发售、一个团队能否存续，常常不取决于作品本身，而取决于母公司当季的资产负债表与战略优先级。读懂行业，不只是读懂玩法，更要读懂资本如何为内容资产重新定价。"
+        "text": "AI 把做游戏的门槛砍下来后，真正的稀缺资源变成了发行与获客。Tripledot 接手 Supersonic，本质是买一张把小团队游戏送进亿级用户视野的门票。新人看行业别只盯玩法创新，也要看懂酒香也怕巷子深这门生意。"
       }
     ]
   },
   "items": [
     {
-      "id": "en-cocos-creator",
+      "id": "en-godot",
       "category": "engine",
       "categoryName": "引擎前沿",
-      "subcategory": "框架·TS/Cocos",
-      "tag": "Cocos Creator",
-      "title": "Cocos Creator：用一套工作流同时打到小游戏、H5 与原生",
-      "summary": "笔者观察到，cocos-creator/engine 作为 Cocos Creator 的底层开源引擎，把 2D/3D、粒子、动画、物理与跨平台发布打包在同一套编辑器驱动的工作流里。对新人来说，它中国生态成熟、文档中文友好，是做微信/抖音小游戏与 H5 试水的低摩擦入口。",
-      "source": "cocos-creator/engine 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/cocos-creator/engine",
-      "image": "https://opengraph.githubassets.com/1/cocos-creator/engine",
+      "subcategory": "引擎·官方",
+      "tag": "Godot",
+      "title": "Godot 引擎本体：把开源、零授权、全功能三个词真正落进一个仓库",
+      "summary": "笔者观察到，Godot 把整套引擎（编辑器+运行时+文档源）都开源在单一仓库，MIT 许可、无 royalty。对想从源码层面理解引擎、又不想被商业授权绑住的新人，它是少有的全透明样本。",
+      "source": "Godot 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/godotengine/godot",
+      "image": "https://opengraph.githubassets.com/1/godotengine/godot",
       "badge": "引擎",
       "badgeType": "engine",
-      "readTime": "6 分钟",
+      "readTime": "7 分钟",
       "hotScore": 88,
       "tags": [
-        "Cocos",
-        "跨平台",
-        "小游戏"
+        "Godot",
+        "开源引擎",
+        "C#/GDScript"
       ],
       "content": [
         {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "底层开源引擎，编辑器驱动、跨平台发布；",
-            "2D/3D、粒子、动画、物理一体化；",
-            "中文生态成熟，适合小游戏与 H5 试水。"
+            "整库开源、MIT 许可、无版税；",
+            "编辑器与运行时同源可改；",
+            "适合读源码理解架构。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "很多新人纠结先学哪个引擎。Cocos 的价值在于它把「发布到哪」这件事变得几乎无感——你写完一套逻辑，就能推到多个平台。先做出能分发的小东西，比在引擎间反复横跳更有复利。"
+          "text": "很多新人把「用引擎」和「懂引擎」混为一谈。Godot 的好处是它不藏私：你遇到的每个按钮背后都是可读的代码。先把编辑器源码翻一遍，再去用商业引擎，你会知道哪些是黑盒帮你做了。"
         }
       ]
     },
     {
-      "id": "en-love2d",
+      "id": "en-three",
       "category": "engine",
       "categoryName": "引擎前沿",
-      "subcategory": "框架·Lua",
-      "tag": "LÖVE",
-      "title": "LÖVE：用纯 Lua 写 2D 游戏，零黑盒、可完全自控",
-      "summary": "笔者注意到，love2d/love 是一套极简的 2D 游戏框架，几乎只给你「窗口+循环+绘图+输入」的最小集合，用 Lua 表达全部逻辑。它不替你管理场景树，却因此让新手真正理解一帧是怎么跑起来的——先手写游戏循环，再回头看大引擎，你会更懂那些「自动帮你做的事」。",
-      "source": "love2d/love 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/love2d/love",
-      "image": "https://opengraph.githubassets.com/1/love2d/love",
+      "subcategory": "框架·Web",
+      "tag": "Three.js",
+      "title": "Three.js：用不到百行代码，把 Web 浏览器变成 3D 画布",
+      "summary": "笔者注意到，Three.js 把 WebGL 包成直观的场景/相机/网格 API，让前端也能在浏览器里搭 3D。对想做 Web3D、可视化、轻量游戏原型的人，它是事实上的入口。",
+      "source": "mrdoob/three.js 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/mrdoob/three.js",
+      "image": "https://opengraph.githubassets.com/1/mrdoob/three.js",
       "badge": "引擎",
       "badgeType": "engine",
       "readTime": "6 分钟",
       "hotScore": 86,
       "tags": [
-        "LÖVE",
-        "Lua",
-        "2D"
+        "Three.js",
+        "WebGL",
+        "Web3D"
       ],
       "content": [
         {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "极简 2D 框架，最小 API 集合；",
-            "Lua 表达全部逻辑，无场景树黑盒；",
-            "适合理解游戏循环与渲染本质。"
+            "封装 WebGL 为场景图 API；",
+            "前端背景者的 3D 捷径；",
+            "生态与示例极丰富。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "LÖVE 的克制很珍贵：它不替你做架构决策，逼你理解每一帧。新手最该有的体感，不是「引擎帮我跑了」，而是「我知道它为什么这么跑」。"
+          "text": "WebGL 原生写法劝退很多人。Three.js 的价值是把画一个三角形升级成放一个相机、打一盏灯、加载一个模型。新人从它入手，能快速建立 3D 直觉，再回头啃底层也不迟。"
         }
       ]
     },
     {
-      "id": "en-aframe",
+      "id": "en-playcanvas",
       "category": "engine",
       "categoryName": "引擎前沿",
-      "subcategory": "框架·WebXR",
-      "tag": "A-Frame",
-      "title": "A-Frame：写几行 HTML 标签就能在浏览器里跑 VR/AR",
-      "summary": "笔者观察到，aframevr/aframe 用声明式的 HTML 标签（<a-scene>、<a-box>）把 WebXR 门槛压到极低，配合任何头显的浏览器即可运行。对想试水沉浸式内容、又不想先啃一整套 3D 引擎的新人，它是「当天就能看到立体画面」的入口。",
-      "source": "aframevr/aframe 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/aframevr/aframe",
-      "image": "https://opengraph.githubassets.com/1/aframevr/aframe",
+      "subcategory": "引擎·Web",
+      "tag": "PlayCanvas",
+      "title": "PlayCanvas 引擎：把浏览器里跑 3D 游戏做成可协作的云编辑器",
+      "summary": "笔者观察到，PlayCanvas 以 WebGL/WebGPU 为底，提供开源引擎加云端可视化编辑器，团队协作改场景即时同步。它示范了引擎即服务如何降低小团队的起步门槛。",
+      "source": "PlayCanvas 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/playcanvas/engine",
+      "image": "https://opengraph.githubassets.com/1/playcanvas/engine",
       "badge": "引擎",
       "badgeType": "engine",
       "readTime": "6 分钟",
       "hotScore": 84,
       "tags": [
-        "A-Frame",
-        "WebXR",
-        "VR"
+        "PlayCanvas",
+        "WebGPU",
+        "云编辑器"
       ],
       "content": [
         {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "声明式 HTML 标签搭 3D/VR 场景；",
-            "浏览器即运行时，免安装；",
-            "适合低成本试水沉浸式内容。"
+            "开源引擎+云编辑器一体；",
+            "WebGL/WebGPU 双后端；",
+            "团队协作与即时预览。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "VR/AR 常被当成高门槛领域。A-Frame 的反例说明：先把立体画面跑起来，再谈优化，比先补完一堆图形学理论更容易坚持。"
+          "text": "小团队最贵的不是算力，是协作摩擦。PlayCanvas 把编辑器搬上云，意味着美术和策划能在同一份场景上同时改。这种减少等待的思路，比单纯堆渲染特性更值得新人学习。"
         }
       ]
     },
     {
-      "id": "en-kaplay",
+      "id": "en-urho3d",
       "category": "engine",
       "categoryName": "引擎前沿",
-      "subcategory": "框架·TS/JS",
-      "tag": "Kaplay",
-      "title": "Kaplay（原 Kaboom.js）：几分钟搭出一个可玩原型",
-      "summary": "笔者注意到，kaplayjs/kaplay 是面向原型与教学的类型安全 2D 游戏库，API 直观、报错友好，内置场景、精灵、物理与音效。它不追求工业级复杂度，而是让新手在「写几行就出画面」的正反馈里把游戏循环、碰撞与状态机跑通。",
-      "source": "kaplayjs/kaplay 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/kaplayjs/kaplay",
-      "image": "https://opengraph.githubassets.com/1/kaplayjs/kaplay",
+      "subcategory": "引擎·C++",
+      "tag": "Urho3D",
+      "title": "Urho3D：用 C++ 重写一份小而全的跨平台引擎，看清模块边界",
+      "summary": "笔者注意到，Urho3D 以相对精简的 C++ 代码覆盖渲染、物理、UI、网络与脚本，跨桌面与移动端。它适合想读一份完整但不臃肿的引擎实现、理解各子系统如何解耦的人。",
+      "source": "Urho3D 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/urho3d/Urho3D",
+      "image": "https://opengraph.githubassets.com/1/urho3d/Urho3D",
       "badge": "引擎",
       "badgeType": "engine",
-      "readTime": "6 分钟",
-      "hotScore": 85,
-      "tags": [
-        "Kaplay",
-        "TypeScript",
-        "原型"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "类型安全的 2D 游戏库，API 直观；",
-            "内置场景、精灵、物理、音效；",
-            "低门槛快速产出可玩原型。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "原型阶段要的是速度，不是完备。Kaplay 这种「写几行就出画面」的库，最适合用来验证一个玩法点子值不值得继续投入。"
-        }
-      ]
-    },
-    {
-      "id": "en-excalibur",
-      "category": "engine",
-      "categoryName": "引擎前沿",
-      "subcategory": "框架·TypeScript",
-      "tag": "Excalibur",
-      "title": "Excalibur：用 TypeScript 写结构清晰的 2D 游戏",
-      "summary": "笔者观察到，excaliburjs/Excalibur 是一套为 TypeScript 而生的 2D 引擎，自带场景管理、资源加载、碰撞与相机系统，约定清晰、类型完备。对已经会前端、想把工程化习惯带进游戏开发的人，它比手写 canvas 更接近「正经项目」的写法。",
-      "source": "excaliburjs/Excalibur 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/excaliburjs/Excalibur",
-      "image": "https://opengraph.githubassets.com/1/excaliburjs/Excalibur",
-      "badge": "引擎",
-      "badgeType": "engine",
-      "readTime": "6 分钟",
-      "hotScore": 83,
-      "tags": [
-        "Excalibur",
-        "TypeScript",
-        "2D"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "TypeScript 原生 2D 引擎；",
-            "场景、资源、碰撞、相机系统齐备；",
-            "类型完备，适合工程化习惯。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "会前端的人常被引擎的「另一种语言」劝退。Excalibur 用你熟悉的类型系统搭起游戏结构，是把既有工程习惯平移进游戏开发的平滑过渡。"
-        }
-      ]
-    },
-    {
-      "id": "ind-turn10-playground",
-      "category": "industry",
-      "categoryName": "行业热点",
-      "subcategory": "大厂重组",
-      "tag": "Xbox 工作室合并",
-      "title": "微软将 Turn 10 与 Playground Games 合并，《极限竞速》主创 Dan Greenawalt 离职",
-      "summary": "笔者注意到，微软将《极限竞速》开发商 Turn 10 与《极限竞速：地平线》开发商 Playground Games 合并为同一工作室，主创 Dan Greenawalt 在任职近 27 年后离开。对学习者而言，这是观察「大厂如何用项目制重组研发资源」的样本——即便手握王牌 IP，团队结构也会随战略重写。",
-      "source": "IT之家 / 今日头条 报道",
-      "date": "2026-11-03",
-      "url": "https://www.toutiao.com/article/7702973975311303204",
-      "image": "",
-      "badge": "行业",
-      "badgeType": "industry",
-      "readTime": "5 分钟",
-      "hotScore": 90,
-      "tags": [
-        "微软",
-        "Xbox",
-        "Turn 10"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "Turn 10 与 Playground Games 合并为一家工作室；",
-            "《极限竞速》主创 Dan Greenawalt 任职近 27 年后离开；",
-            "延续 Xbox 年内大规模重组节奏。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "工作室合并常发生在战略换挡期。新人看这条新闻，重点不在谁走谁留，而在「平台方如何用组织重组把资源重新导向增长盘」——这决定了哪些方向会被持续投入。"
-        }
-      ]
-    },
-    {
-      "id": "ind-asgc-layoffs",
-      "category": "industry",
-      "categoryName": "行业热点",
-      "subcategory": "行业数据",
-      "tag": "裁员追踪",
-      "title": "2026 游戏行业裁员已达 10977 人，超过 2025 全年",
-      "summary": "笔者观察到，ASGC 游戏行业裁员追踪数据显示，截至 11 月 2 日，2026 年已削减 10977 个岗位、超过 2025 全年（9197），预计年底约 13077 人。数字背后是约 35 家工作室关停、161 家遭遇裁员。新人看行业别只盯神作，要看资本与组织如何决定项目生死。",
-      "source": "腾讯新闻 / ASGC 数据",
-      "date": "2026-11-03",
-      "url": "https://news.qq.com/rain/a/20261102A098UI00",
-      "image": "",
-      "badge": "行业",
-      "badgeType": "industry",
-      "readTime": "5 分钟",
-      "hotScore": 92,
-      "tags": [
-        "裁员",
-        "ASGC",
-        "行业数据"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "2026 年已削减 10977 个岗位，超 2025 全年；",
-            "约 35 家工作室关停、161 家遭遇裁员；",
-            "预计年底全行业约 13077 人。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "这组数字是行业最冷的底色。它提醒想入行的人：选择方向时，除了热爱，也要看赛道是否在扩张——逆水行舟的项目，留给新人的位置更少。"
-        }
-      ]
-    },
-    {
-      "id": "ind-arkane-lyon",
-      "category": "industry",
-      "categoryName": "行业热点",
-      "subcategory": "工作室关停",
-      "tag": "Arkane 里昂",
-      "title": "微软拟 11 月关闭 Arkane 里昂，《漫威：刀锋战士》推迟至 2027",
-      "summary": "笔者注意到，微软计划于 11 月 13 日关闭 Arkane 里昂工作室（影响约 217 人），其《漫威：刀锋战士》已接近完成却推迟到 2027 年底，微软正寻合作伙伴推进商业化。这是「项目未停、团队先散」的又一例，提醒新人：工作室命运与单款产品进度未必同步。",
-      "source": "电玩巴士 报道",
-      "date": "2026-11-03",
-      "url": "https://tgbus.com/news/246017",
-      "image": "",
-      "badge": "行业",
-      "badgeType": "industry",
-      "readTime": "5 分钟",
-      "hotScore": 89,
-      "tags": [
-        "Arkane",
-        "微软",
-        "工作室关闭"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "微软计划 11 月 13 日关闭 Arkane 里昂；",
-            "影响约 217 个岗位；",
-            "《漫威：刀锋战士》接近完成却推迟至 2027 年底。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "项目临近完工却团队解散，是最让人唏嘘的组合。它说明在集团视角里，单款产品的进度未必能决定团队去留——预算与战略优先级才是。"
-        }
-      ]
-    },
-    {
-      "id": "ind-suckerpunch-layoff",
-      "category": "industry",
-      "categoryName": "行业热点",
-      "subcategory": "工作室裁员",
-      "tag": "Sucker Punch",
-      "title": "《羊蹄山之魂》开发商 Sucker Punch 据报道裁员 24 人",
-      "summary": "笔者观察到，Ghost of Yōtei 开发商 Sucker Punch 据报道裁减 24 人，内部信称是在评估市场挑战与下一项目人力需求后的决定。即便《羊蹄山之魂》首月卖出 330 万份、提振了索尼 Q3 数字收入，商业成功也不再能担保团队稳定——这是当下行业最冷的注脚。",
-      "source": "GamesIndustry.biz 报道（一手）",
-      "date": "2026-11-03",
-      "url": "https://www.gamesindustry.biz/sucker-punch-productions-reportedly-lays-off-24-employees-following-launch-of-ghost-of-yotei-complete-edition",
-      "image": "https://assetsio.gnwcdn.com/Discover-Japans-Natural-Beauty-Virtually-Through-Ghost-of-Yotei-hero.webp?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
-      "badge": "行业",
-      "badgeType": "industry",
-      "readTime": "5 分钟",
-      "hotScore": 88,
-      "tags": [
-        "Sucker Punch",
-        "索尼",
-        "裁员"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "Ghost of Yōtei 开发商据报裁员 24 人；",
-            "《羊蹄山之魂》首月 330 万份、提振索尼 Q3；",
-            "内部信称因市场挑战与下一项目人力需求。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "商业成绩亮眼却仍裁员，是这一年最反复出现的故事。它给新人的现实课是：项目成功不等于团队安全，组织结构与成本模型的影响往往更大。"
-        }
-      ]
-    },
-    {
-      "id": "ind-schell-games",
-      "category": "industry",
-      "categoryName": "行业热点",
-      "subcategory": "工作室裁员",
-      "tag": "Schell Games",
-      "title": "《Among Us VR》联合开发商 Schell Games 年内第二轮裁员",
-      "summary": "笔者注意到，以《I Expect You To Die》系列和《Among Us VR》联合开发闻名的 Schell Games 宣布年内第二轮裁员，涉及工程、美术、设计、声音、市场、IT、研究与 QA。这家曾公开主张「不把岗位置于风险中」的工作室也未能幸免，说明行业性收缩已越过单款产品的成败边界。",
-      "source": "腾讯新闻 报道",
-      "date": "2026-11-03",
-      "url": "https://news.qq.com/rain/a/20261102A0CD8900",
-      "image": "",
-      "badge": "行业",
-      "badgeType": "industry",
-      "readTime": "5 分钟",
-      "hotScore": 86,
-      "tags": [
-        "Schell Games",
-        "VR",
-        "裁员"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "Schell Games 年内第二轮裁员；",
-            "涉及工程、美术、设计、声音、市场、IT、研究与 QA；",
-            "曾公开主张避免裁员的立场被打破。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "当一家以「不裁人」为信条的工作室也低头，说明行业性逆风已经越过个体选择。新人要建立的，是对周期的判断力，而不只是对某一家的信任。"
-        }
-      ]
-    },
-    {
-      "id": "ga-gta6",
-      "category": "games",
-      "categoryName": "热门游戏",
-      "subcategory": "大作首发",
-      "tag": "GTA VI",
-      "title": "《GTA VI》定档 11 月 19 日：重返 Vice City，年末最大发布拉开序幕",
-      "summary": "笔者观察到，Rockstar 将《GTA VI》定档 11 月 19 日登陆 PS5 / Xbox Series，讲述 Jason 与 Lucia 在 Leonida 州的故事。它不只是年度大作，更是观察「开放世界叙事、技术表现与发行节奏」的标杆样本——服务器表现、销量与后续计划都将定义这一世代的发行范式。",
-      "source": "Rockstar 官方（一手）",
-      "date": "2026-11-03",
-      "url": "https://www.rockstargames.com/VI",
-      "image": "https://www.rockstargames.com/VI/_next/static/media/meta.0t8ty~nlmxq2s.jpg?nrpYjD-X9qCVdRWtREDg1",
-      "badge": "游戏",
-      "badgeType": "game",
-      "readTime": "6 分钟",
-      "hotScore": 96,
-      "tags": [
-        "GTA VI",
-        "Rockstar",
-        "开放世界"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "11 月 19 日登陆 PS5 / Xbox Series；",
-            "重返 Vice City，主角 Jason 与 Lucia；",
-            "PC 版日期尚未公布。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "GTA VI 是观察「技术表现如何服务于叙事规模」的绝佳样本。对新人，它最大的启发未必是画质，而是 Rockstar 如何用十年磨一剑的节奏，把开放世界做成一种文化事件。"
-        }
-      ]
-    },
-    {
-      "id": "ga-footballmanager27",
-      "category": "games",
-      "categoryName": "热门游戏",
-      "subcategory": "体育模拟",
-      "tag": "Football Manager 27",
-      "title": "《足球经理 27》11 月 10 日全球发布，加入 Netflix 移动版",
-      "summary": "笔者注意到，《Football Manager 27》将于 11 月 10 日登陆 PC、Xbox、PS5 与 Netflix 移动端，带来更新的导航、比赛日体验与转会截止日/杯赛抽签机制。对做模拟经营与数据驱动玩法的开发者，它的数据库更新与战术系统是最值得拆解的对象。",
-      "source": "Football Manager 官方（一手）",
-      "date": "2026-11-03",
-      "url": "https://www.footballmanager.com/",
-      "image": "https://cdn.footballmanager.com/site/2026-09/FM27%20Opengraph%20-%201200x630.png",
-      "badge": "游戏",
-      "badgeType": "game",
-      "readTime": "5 分钟",
+      "readTime": "7 分钟",
       "hotScore": 82,
       "tags": [
-        "FM27",
-        "Sports Interactive",
-        "模拟经营"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "11 月 10 日 PC、Xbox、PS5、Netflix 移动端同步；",
-            "更新导航与比赛日体验；",
-            "转会截止日与杯赛抽签机制改进。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "FM 系列是「数据驱动玩法」的活化石。想做模拟经营的新人，研究它的数据库结构、评分体系与战术表达，比读十篇设计文档都实在。"
-        }
-      ]
-    },
-    {
-      "id": "ga-metaphor-switch2",
-      "category": "games",
-      "categoryName": "热门游戏",
-      "subcategory": "JRPG",
-      "tag": "Metaphor ReFantazio",
-      "title": "《Metaphor: ReFantazio》登陆 Switch 2（11/12），JRPG 阵容补强",
-      "summary": "笔者观察到，Atlus 的《Metaphor: ReFantazio》将于 11 月 12 日登陆 Nintendo Switch 2。对新人而言，Atlus 的回合制节奏、意象化美术与叙事密度，是拆解「JRPG 系统如何服务情绪」的上佳样本；而它转向新平台也说明老 IP 仍在靠移植续命。",
-      "source": "Atlus 官方（一手）",
-      "date": "2026-11-03",
-      "url": "https://metaphor.atlus.com/",
-      "image": "https://metaphor.atlus.com/media/img/common/og_img.jpg",
-      "badge": "游戏",
-      "badgeType": "game",
-      "readTime": "5 分钟",
-      "hotScore": 81,
-      "tags": [
-        "Atlus",
-        "JRPG",
-        "Switch 2"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "11 月 12 日登陆 Nintendo Switch 2；",
-            "Atlus 的回合制与意象化美术；",
-            "老 IP 借新平台延续生命周期。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "移植是行业里被低估的一门手艺。把一款为旧硬件打磨的 RPG 搬到新平台还保持手感，本身就是工程与设计的双重功课。"
-        }
-      ]
-    },
-    {
-      "id": "ga-stellarblade-ns2",
-      "category": "games",
-      "categoryName": "热门游戏",
-      "subcategory": "移植",
-      "tag": "Stellar Blade",
-      "title": "《Stellar Blade》登陆 Switch 2（11/5–6），高速动作进入任系阵营",
-      "summary": "笔者注意到，Shift Up 的《Stellar Blade》将于 11 月初登陆 Nintendo Switch 2，把标志性的高速近战与美术表现带到新平台。对做动作游戏的开发者，它是观察「主机独占如何做跨平台适配、如何在保留手感的同时压住功耗」的案例。",
-      "source": "Stellar Blade 官方（一手）",
-      "date": "2026-11-03",
-      "url": "https://www.stellarblade.com/ns2/",
-      "image": "https://www.stellarblade.com/ns2/assets/images/main/bg_hero.jpg",
-      "badge": "游戏",
-      "badgeType": "game",
-      "readTime": "5 分钟",
-      "hotScore": 80,
-      "tags": [
-        "Stellar Blade",
-        "Shift Up",
-        "Switch 2"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "11 月初登陆 Nintendo Switch 2；",
-            "高速近战与标志性美术表现；",
-            "从独占到跨平台的适配课题。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "动作游戏的手感极依赖帧率与输入延迟。把一款以手感著称的作品搬上不同硬件，最考验的是「在不牺牲体验的前提下压住功耗」的取舍。"
-        }
-      ]
-    },
-    {
-      "id": "ga-pathofexile2",
-      "category": "games",
-      "categoryName": "热门游戏",
-      "subcategory": "ARPG",
-      "tag": "Path of Exile 2",
-      "title": "《流放之路 2》12 月 11 日迈向 1.0，暗黑系 ARPG 收官本年",
-      "summary": "笔者观察到，《Path of Exile 2》计划于 12 月 11 日推出 1.0 正式版，在免费模式下延续深度 BD 与终局玩法。对设计者而言，它的技能宝石系统、经济与终局地图是拆解「长线服务型 ARPG 如何维持十年热度」的教科书。",
-      "source": "Path of Exile 官方（一手）",
-      "date": "2026-11-03",
-      "url": "https://www.pathofexile.com/",
-      "image": "https://web.poecdn.com/protected/image/favicon/ogimage.png?key=DDHQnVxwj0AxeMbsPiRoEQ",
-      "badge": "游戏",
-      "badgeType": "game",
-      "readTime": "5 分钟",
-      "hotScore": 83,
-      "tags": [
-        "PoE2",
-        "Grinding Gear",
-        "ARPG"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "12 月 11 日推出 1.0 正式版；",
-            "技能宝石系统与深度 BD；",
-            "终局玩法支撑长线服务。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "PoE2 是「系统深度」的极致样本。它证明：一个可组合、可成长的规则系统，比不断堆新内容更能让玩家留下来十年。"
-        }
-      ]
-    },
-    {
-      "id": "os-p5js",
-      "category": "opensource",
-      "categoryName": "开源宝库",
-      "subcategory": "创意编程",
-      "tag": "p5.js",
-      "title": "p5.js：用最少的代码把创意画到浏览器画布上",
-      "summary": "笔者注意到，processing/p5.js 把 Processing 的「一行代码一个图形」哲学带进浏览器，内置绘图、交互、声音与媒体 API。对新人而言，它是理解「程序化生成美术」最温柔的入口——不用先学引擎，先让代码长出形状。",
-      "source": "processing/p5.js 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/processing/p5.js",
-      "image": "https://opengraph.githubassets.com/1/processing/p5.js",
-      "badge": "开源",
-      "badgeType": "opensource",
-      "readTime": "6 分钟",
-      "hotScore": 87,
-      "tags": [
-        "p5.js",
-        "创意编程",
-        "可视化"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "浏览器内创意编程，API 极简；",
-            "内置绘图、交互、声音、媒体；",
-            "适合程序化生成美术入门。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "p5.js 的魔力在于即时反馈：改一行，画面就变。这种「代码即画笔」的体感，是很多新人爱上做游戏的第一颗种子。"
-        }
-      ]
-    },
-    {
-      "id": "os-opentk",
-      "category": "opensource",
-      "categoryName": "开源宝库",
-      "subcategory": "多媒体·C#",
-      "tag": "OpenTK",
-      "title": "OpenTK：用 C# 直接调 OpenGL/Vulkan/OpenAL 写游戏",
-      "summary": "笔者观察到，opentk/opentk 为 .NET 提供了面向 OpenGL、OpenGL ES、Vulkan 与 OpenAL 的底层绑定与数学库，让你在 C# 里亲手管渲染与音频。它比 Unity 更裸，却正适合理解「引擎之下到底发生了什么」。",
-      "source": "opentk/opentk 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/opentk/opentk",
-      "image": "https://opengraph.githubassets.com/1/opentk/opentk",
-      "badge": "开源",
-      "badgeType": "opensource",
-      "readTime": "6 分钟",
-      "hotScore": 84,
-      "tags": [
-        "OpenTK",
-        "C#",
-        "图形 API"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "面向 OpenGL/Vulkan/OpenAL 的 .NET 绑定；",
-            "附带数学库；",
-            "比 Unity 更裸，贴近底层。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "用 C# 又想看懂引擎底层，OpenTK 是绝佳跳板。它逼你亲手管理渲染上下文，这种「无遮挡」的体验，会让你回头用 Unity 时更明白那些抽象在替你做什么。"
-        }
-      ]
-    },
-    {
-      "id": "os-json",
-      "category": "opensource",
-      "categoryName": "开源宝库",
-      "subcategory": "数据·C++",
-      "tag": "nlohmann/json",
-      "title": "nlohmann/json：游戏配置与存档序列化的事实标准",
-      "summary": "笔者注意到，nlohmann/json 是 C++ 里最流行的单头文件 JSON 库，几乎成了游戏项目做配置表、本地化与存档读写的默认选择。新人不必深究解析细节，先把它当成「把游戏数据安全地存进文件再读出来」的趁手工具。",
-      "source": "nlohmann/json 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/nlohmann/json",
-      "image": "https://opengraph.githubassets.com/1/nlohmann/json",
-      "badge": "开源",
-      "badgeType": "opensource",
-      "readTime": "5 分钟",
-      "hotScore": 85,
-      "tags": [
-        "JSON",
+        "Urho3D",
         "C++",
-        "序列化"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "单头文件 C++ JSON 库；",
-            "配置表、本地化、存档读写默认选择；",
-            "API 友好、零外部依赖。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "存档与配置是每款游戏都绕不开的脏活。先把 nlohmann/json 用顺手，你就少了一块「数据怎么落地」的心理负担。"
-        }
-      ]
-    },
-    {
-      "id": "os-hazel",
-      "category": "opensource",
-      "categoryName": "开源宝库",
-      "subcategory": "教学·C++",
-      "tag": "Hazel",
-      "title": "TheCherno/Hazel：跟着视频从零写一套 C++ 游戏引擎",
-      "summary": "笔者观察到，TheCherno/Hazel 是配套 YouTube 系列的教学引擎，从窗口、渲染、图层一路写到引擎架构。它不追求工业级完备，而是把「引擎是怎么搭起来的」完整摊开——想真正看懂大引擎源码，先跟着手写一遍最划算。",
-      "source": "TheCherno/Hazel 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/TheCherno/Hazel",
-      "image": "https://opengraph.githubassets.com/1/TheCherno/Hazel",
-      "badge": "开源",
-      "badgeType": "opensource",
-      "readTime": "6 分钟",
-      "hotScore": 86,
-      "tags": [
-        "Hazel",
-        "C++",
-        "引擎教学"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "配套视频从零写引擎；",
-            "覆盖窗口、渲染、图层与架构；",
-            "教学优先，不追求工业完备。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "看大引擎源码常让人窒息。Hazel 的价值是把复杂度按集拆开：跟着手写一遍，你再读 Unity/Unreal 的源码，会少很多「这到底是啥」的茫然。"
-        }
-      ]
-    },
-    {
-      "id": "os-sokol",
-      "category": "opensource",
-      "categoryName": "开源宝库",
-      "subcategory": "图形·C",
-      "tag": "Sokol",
-      "title": "Sokol：用单头文件把图形/音频/文件跨平台打包",
-      "summary": "笔者注意到，floooh/sokol 用一组单头文件提供跨平台的 3D 图形、音频、文件与计算能力，零依赖、编译快。对想做轻量工具、原型或 WebAssembly 导出的人，它是「能直接塞进项目、不绑架构建系统」的务实选择。",
-      "source": "floooh/sokol 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/floooh/sokol",
-      "image": "https://opengraph.githubassets.com/1/floooh/sokol",
-      "badge": "开源",
-      "badgeType": "opensource",
-      "readTime": "6 分钟",
-      "hotScore": 83,
-      "tags": [
-        "Sokol",
-        "C",
         "跨平台"
       ],
       "content": [
@@ -836,113 +234,1101 @@ window.DAILY_NEWS_DATA = {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "单头文件组，跨平台图形/音频/文件；",
-            "零依赖、编译快；",
-            "适合工具、原型与 WASM 导出。"
+            "C++ 实现、模块清晰；",
+            "渲染/物理/UI/网络一体；",
+            "适合读源码理解子系统。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "Sokol 的信条是「不绑架你的构建系统」。这种克制对做自研工具链的人极友好——它像乐高零件，而不是一整套装修方案。"
+          "text": "读大引擎像读一座城市容易迷路；读 Urho3D 像读一个小镇主干清晰。新人想搞懂一个引擎到底由哪些部件组成，从这种体量适中的项目切入，比硬啃巨型代码库更高效。"
         }
       ]
     },
     {
-      "id": "os-vulkan-samples",
-      "category": "opensource",
-      "categoryName": "开源宝库",
-      "subcategory": "图形·Vulkan",
-      "tag": "Vulkan Samples",
-      "title": "KhronosGroup/Vulkan-Samples：官方示范如何写好 Vulkan",
-      "summary": "笔者观察到，KhronosGroup/Vulkan-Samples 由 Khronos 官方维护，用一个个可运行的小例子讲清同步、渲染、降噪等 Vulkan 关键点。对想跨过「Vulkan 太难」这道坎的人，它比文档更直观，是挨着 API 学的脚手架。",
-      "source": "KhronosGroup/Vulkan-Samples 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/KhronosGroup/Vulkan-Samples",
-      "image": "https://opengraph.githubassets.com/1/KhronosGroup/Vulkan-Samples",
-      "badge": "开源",
-      "badgeType": "opensource",
+      "id": "en-macroquad",
+      "category": "engine",
+      "categoryName": "引擎前沿",
+      "subcategory": "框架·Rust",
+      "tag": "macroquad",
+      "title": "macroquad：Rust 里的单文件游戏框架，先做出东西再谈工程",
+      "summary": "笔者观察到，macroquad 用极简 Rust API 覆盖 2D 渲染、输入与音频，跨 Web/桌面/移动，近乎零配置。对想用 Rust 又不想被构建链劝退的人，它是先跑起来的友好入口。",
+      "source": "not-fl3/macroquad 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/not-fl3/macroquad",
+      "image": "https://opengraph.githubassets.com/1/not-fl3/macroquad",
+      "badge": "引擎",
+      "badgeType": "engine",
       "readTime": "6 分钟",
-      "hotScore": 82,
+      "hotScore": 83,
       "tags": [
-        "Vulkan",
-        "Khronos",
-        "图形"
+        "macroquad",
+        "Rust",
+        "2D"
       ],
       "content": [
         {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "Khronos 官方维护；",
-            "可运行小例子讲清关键概念；",
-            "适合按 API 挨个突破。"
+            "极简 Rust 2D 框架；",
+            "跨 Web/桌面/移动；",
+            "近乎零配置上手。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "Vulkan 的门槛在显式与繁琐。Vulkan-Samples 把每个难点做成可跑的样例，相当于有人陪你一行行把坑踩平——比干读规范高效太多。"
+          "text": "Rust 的学习曲线常被构建系统拖长。macroquad 把这件事砍掉，让你当天就能画出方块。先有正反馈再补底层原理，节奏才对——这点对所有语言都成立。"
         }
       ]
     },
     {
-      "id": "tu-phaser",
-      "category": "tutorials",
-      "categoryName": "实战教程",
-      "subcategory": "入门·JS",
-      "tag": "Phaser",
-      "title": "Phaser 官方 Learn：用最少的代码做出第一个网页小游戏",
-      "summary": "笔者注意到，phaser.io/learn 提供从场景、精灵、物理到发布的渐进式教程，强调「先跑起来再讲原理」。对新人，网页游戏免安装、改完即见，是最好的第一块试验田。",
-      "source": "Phaser 官方（一手）",
-      "date": "2026-11-03",
-      "url": "https://phaser.io/learn",
+      "id": "en-panda3d",
+      "category": "engine",
+      "categoryName": "引擎前沿",
+      "subcategory": "引擎·Python",
+      "tag": "Panda3D",
+      "title": "Panda3D：迪士尼与 CMU 走出的 Python 3D 引擎，科研与原型友好",
+      "summary": "笔者注意到，Panda3D 起源于迪士尼 VR 工作室，用 Python 暴露完整 3D 能力，兼顾 C++ 性能内核。对做可视化、仿真、教学原型的人，它是脚本化 3D 的成熟选择。",
+      "source": "panda3d/panda3d 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/panda3d/panda3d",
+      "image": "https://opengraph.githubassets.com/1/panda3d/panda3d",
+      "badge": "引擎",
+      "badgeType": "engine",
+      "readTime": "7 分钟",
+      "hotScore": 81,
+      "tags": [
+        "Panda3D",
+        "Python",
+        "3D"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "Python 驱动、C++ 内核；",
+            "源于迪士尼/CMU；",
+            "可视化与仿真友好。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "当你的重心是快速把想法画出来而不是榨干帧率，Python 引擎就有价值。Panda3D 证明：用脚本语言操控完整 3D 管线，在科研与原型场景里反而更高效。"
+        }
+      ]
+    },
+    {
+      "id": "ind-makersfund",
+      "category": "industry",
+      "categoryName": "行业热点",
+      "subcategory": "投融资·VC",
+      "tag": "Makers Fund",
+      "title": "Makers Fund 募集 2.5 亿美元第四期，继续下注互动娱乐早期项目",
+      "summary": "笔者观察到，Makers Fund 完成第四期 2.5 亿美元募资，总管理资产达 15 亿美元，专注游戏与互动娱乐早期投资。它说明即便在紧缩周期，资本仍愿为早期高潜的创意团队下注。",
+      "source": "GamesIndustry.biz 一手报道",
+      "date": "2026-11-04",
+      "url": "https://www.gamesindustry.biz/makers-fund-raises-250m-in-fourth-round-to-support-interactive-entertainment-startups",
       "image": "",
-      "badge": "教程",
-      "badgeType": "tutorial",
+      "badge": "行业",
+      "badgeType": "business",
       "readTime": "5 分钟",
       "hotScore": 84,
       "tags": [
-        "Phaser",
-        "网页游戏",
-        "入门"
+        "Makers Fund",
+        "VC",
+        "早期投资"
       ],
       "content": [
         {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "场景、精灵、物理、发布渐进式；",
-            "强调先跑起来再讲原理；",
-            "网页游戏免安装、改完即见。"
+            "第四期募资 2.5 亿美元；",
+            "累计管理资产 15 亿；",
+            "聚焦互动娱乐早期。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "网页是最友好的第一块试验田：没有安装门槛，改完刷新就能看到结果。Phaser 的教程思路也值得借鉴——先让画面动起来，兴趣才会留下。"
+          "text": "早期投资看的是人与方向，不是当期营收。新人看融资新闻，重点不是金额，而是资本在押注哪类团队——这能反推你该往哪个方向积累作品集。"
         }
       ]
     },
     {
-      "id": "tu-godot-intro",
-      "category": "tutorials",
-      "categoryName": "实战教程",
-      "subcategory": "入门·GDScript",
-      "tag": "Godot",
-      "title": "Godot 官方入门：用节点与 GDScript 搭出第一个场景",
-      "summary": "笔者观察到，docs.godotengine.org 的入门章节把「场景=可复用节点树」讲得很透。对新人，Godot 的编辑器即所见即所得，先照着做出能动的角色，再理解信号与场景继承，比空读概念高效得多。",
-      "source": "Godot 文档（一手）",
-      "date": "2026-11-03",
-      "url": "https://docs.godotengine.org/en/stable/about/introduction.html",
+      "id": "ind-cigames",
+      "category": "industry",
+      "categoryName": "行业热点",
+      "subcategory": "融资·自发行",
+      "tag": "CI Games",
+      "title": "CI Games 拿下 3200 万美元贷款，自研自发《堕落之主 2》",
+      "summary": "笔者注意到，CI Games 签署 3200 万美元银团贷款，用于完成并自发行魂类续作《Lords of the Fallen II》，同时 refinance 既有债务。它反映中型厂在撤掉发行商后，如何用金融工具把项目推进到底。",
+      "source": "GamesIndustry.biz 一手报道",
+      "date": "2026-11-04",
+      "url": "https://www.gamesindustry.biz/ci-games-secures-32-million-loan-to-finish-and-self-publish-lords-of-the-fallen-2",
       "image": "",
-      "badge": "教程",
-      "badgeType": "tutorial",
+      "badge": "行业",
+      "badgeType": "business",
+      "readTime": "5 分钟",
+      "hotScore": 82,
+      "tags": [
+        "CI Games",
+        "魂类",
+        "自发行"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "3200 万美元银团贷款；",
+            "用于完成并自发行续作；",
+            "同时 refinance 旧债。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "自发行不是不找发行商那么简单，而是把发行风险也背在身上。CI Games 用贷款顶住制作，说明中厂在独立又不够大的夹缝里，正用更灵活的财务手段换主动权。"
+        }
+      ]
+    },
+    {
+      "id": "ind-valve-ceva",
+      "category": "industry",
+      "categoryName": "行业热点",
+      "subcategory": "安全·供应链",
+      "tag": "Valve",
+      "title": "Valve 确认 Steam 硬件买家数据在 CEVA 物流合作方泄露事件中遭波及",
+      "summary": "笔者观察到，Valve 证实其欧洲区物流合作方 CEVA Logistics 遭网络攻击，部分 Steam 硬件买家的配送数据被波及。它提醒我们：游戏公司的数据边界早已越过自家服务器，延伸到第三方履约链。",
+      "source": "GamesIndustry.biz 一手报道",
+      "date": "2026-11-04",
+      "url": "https://www.gamesindustry.biz/valve-confirms-steam-hardware-buyers-data-exposed-in-ceva-logistics-cyberattack",
+      "image": "https://assetsio.gnwcdn.com/Steam-Machine-(3).png?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+      "badge": "行业",
+      "badgeType": "business",
+      "readTime": "5 分钟",
+      "hotScore": 83,
+      "tags": [
+        "Valve",
+        "Steam",
+        "数据安全"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "CEVA 物流遭攻击；",
+            "部分 Steam 硬件买家数据受影响；",
+            "波及第三方履约链。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "开发者常以为安全只是服务器别被黑。Valve 这桩事说明：你托管的物流、支付、客服伙伴任何一个失守都是你的事故。做产品越往上走，越要会看整条供应链的风险。"
+        }
+      ]
+    },
+    {
+      "id": "ind-nagoshi",
+      "category": "industry",
+      "categoryName": "行业热点",
+      "subcategory": "工作室·解散",
+      "tag": "Nagoshi",
+      "title": "名越工作室在网易切断资金后解散，明星制作人的独立梦碎于资本",
+      "summary": "笔者注意到，《如龙》之父名越稔洋创立的 Nagoshi Studio 在网易撤资数月后于 10 月 31 日经股东决议正式解散。它把大厂光环加独立融资的脆弱性摆上台面：创意信用不等于现金流。",
+      "source": "GamesIndustry.biz 一手报道",
+      "date": "2026-11-04",
+      "url": "https://www.gamesindustry.biz/gang-of-dragon-developer-nagoshi-studio-shutters-months-after-netease-cut-funding",
+      "image": "https://assetsio.gnwcdn.com/gang-of-dragon_yAI7wse.webp?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+      "badge": "行业",
+      "badgeType": "business",
       "readTime": "5 分钟",
       "hotScore": 85,
       "tags": [
-        "Godot",
-        "GDScript",
+        "名越稔洋",
+        "Nagoshi",
+        "网易"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "网易撤资数月后解散；",
+            "10/31 股东决议关停；",
+            "创意信用不等于现金流。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "明星制作人创业常被当成稳赢。Nagoshi 的案例冷酷地提醒：再强的个人品牌也需要持续的资金节奏撑过制作周期。对新人，这比任何成功学都更真实。"
+        }
+      ]
+    },
+    {
+      "id": "ind-roblox-ai",
+      "category": "industry",
+      "categoryName": "行业热点",
+      "subcategory": "AI·开源",
+      "tag": "Roblox",
+      "title": "Roblox 将其三款 AI 安全工具开源，把平台治理做成公共品",
+      "summary": "笔者观察到，Roblox 将其部分 AI 安全工具开源至 ROOST 社区（与 Google、OpenAI、Discord 共建）。这意味着头部平台正把内容安全从自家护城河部分转成行业公共基础设施。",
+      "source": "GamesIndustry.biz 一手报道",
+      "date": "2026-11-04",
+      "url": "https://www.gamesindustry.biz/roblox-makes-three-of-its-ai-safety-tools-open-source",
+      "image": "https://assetsio.gnwcdn.com/roblox-phone.png?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+      "badge": "行业",
+      "badgeType": "business",
+      "readTime": "5 分钟",
+      "hotScore": 84,
+      "tags": [
+        "Roblox",
+        "AI安全",
+        "开源"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "三款 AI 安全工具开源；",
+            "托管于 ROOST 社区；",
+            "与 Google/OpenAI/Discord 共建。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "内容安全是 UGC 平台的生死线。Roblox 把它的一部分开源，既是公关也是务实：安全标准越统一，整个生态的合规成本越低。做多人社区产品的开发者值得盯这类治理即基础设施的动向。"
+        }
+      ]
+    },
+    {
+      "id": "ind-schell",
+      "category": "industry",
+      "categoryName": "行业热点",
+      "subcategory": "裁员·教育向",
+      "tag": "Schell Games",
+      "title": "《Among Us VR》合作方 Schell Games 年内二度裁员，教育向工作室承压",
+      "summary": "笔者注意到，Schell Games（《Among Us VR》联合开发者）宣布今年第二轮裁员，称为确保可持续未来必须削减相当数量岗位。它折射出教育/家庭向团队在宏观逆风下的生存压力。",
+      "source": "GamesIndustry.biz 一手报道",
+      "date": "2026-11-04",
+      "url": "https://www.gamesindustry.biz/among-us-vr-co-developer-schell-games-announces-second-round-of-layoffs-this-year",
+      "image": "https://assetsio.gnwcdn.com/among-us-vr_wbXHFDI.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+      "badge": "行业",
+      "badgeType": "business",
+      "readTime": "5 分钟",
+      "hotScore": 81,
+      "tags": [
+        "Schell Games",
+        "裁员",
+        "Among Us VR"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "年内第二轮裁员；",
+            "称为确保可持续；",
+            "教育向团队承压。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "做有意义的产品和活下去是两件事。Schell 的困境说明：哪怕背靠爆款 IP，若收入模型不稳，组织仍会被迫收缩。新人选赛道时别只看作品调性，也要看背后的商业韧性。"
+        }
+      ]
+    },
+    {
+      "id": "games-veloren",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "开源游戏",
+      "tag": "Veloren",
+      "title": "Veloren：用 Rust 写的开源多人在线 RPG，把社区共建当核心机制",
+      "summary": "笔者观察到，Veloren 是一款类似 Cube World 的开源多人在线 RPG，Rust 实现、资产全原创、模块化设计。对想研究网络同步、体素世界与社区驱动开发的开发者，它是鲜活样本。",
+      "source": "Veloren 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/veloren/veloren",
+      "image": "https://opengraph.githubassets.com/1/veloren/veloren",
+      "badge": "游戏",
+      "badgeType": "game",
+      "readTime": "7 分钟",
+      "hotScore": 86,
+      "tags": [
+        "Veloren",
+        "Rust",
+        "开源RPG"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "Rust 多人在线 RPG；",
+            "资产原创、模块化；",
+            "社区驱动开发。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "多人在线最难的不是画出来，是让几十人在同一世界不穿帮。Veloren 把网络同步、体素地形、ECS 架构都开源，等于把一份可运行的大型网游骨架摊给你读。"
+        }
+      ]
+    },
+    {
+      "id": "games-openra",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "开源游戏",
+      "tag": "OpenRA",
+      "title": "OpenRA：用现代引擎重写红警与泰伯利亚的开源即时战略",
+      "summary": "笔者注意到，OpenRA 以重写的引擎复刻《命令与征服》《红警》《泰伯利亚黎明》等经典即时战略，支持现代分辨率与联机。它示范了老玩法加新管线如何既怀旧又耐玩。",
+      "source": "OpenRA 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/OpenRA/OpenRA",
+      "image": "https://opengraph.githubassets.com/1/OpenRA/OpenRA",
+      "badge": "游戏",
+      "badgeType": "game",
+      "readTime": "6 分钟",
+      "hotScore": 85,
+      "tags": [
+        "OpenRA",
+        "RTS",
+        "开源"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "重写经典 RTS 引擎；",
+            "支持现代分辨率与联机；",
+            "老玩法+新管线。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "复刻经典最容易掉进抄画面陷阱。OpenRA 的启发是：保留玩法手感、替换底层管线，让老游戏在新硬件上复活。想做 RTS 的新人，它的输入/寻路/联机值得拆。"
+        }
+      ]
+    },
+    {
+      "id": "games-thrive",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "开源游戏",
+      "tag": "Thrive",
+      "title": "Thrive：从单细胞到文明的开源进化模拟，把生物学当玩法引擎",
+      "summary": "笔者观察到，Thrive 是一款以生命演化为主线的开源模拟游戏，覆盖单细胞、生物量与文明阶段，数值与机制尽量贴近真实生物学。对想做模拟/系统驱动玩法的开发者，它是硬核范本。",
+      "source": "Revolutionary-Games/Thrive 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/Revolutionary-Games/Thrive",
+      "image": "https://opengraph.githubassets.com/1/Revolutionary-Games/Thrive",
+      "badge": "游戏",
+      "badgeType": "game",
+      "readTime": "7 分钟",
+      "hotScore": 84,
+      "tags": [
+        "Thrive",
+        "进化模拟",
+        "系统驱动"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "以生命演化为主线；",
+            "多阶段系统模拟；",
+            "机制贴近真实生物学。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "模拟深度靠的是自洽的规则系统，不是堆内容。Thrive 把生物学原理做成可玩的晋升链，提醒我们：当规则足够真实，玩家自己就会长出故事。"
+        }
+      ]
+    },
+    {
+      "id": "games-endlesssky",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "开源游戏",
+      "tag": "Endless Sky",
+      "title": "Endless Sky：用 2D 像素讲星海贸易与舰队战争的开源太空歌剧",
+      "summary": "笔者注意到，Endless Sky 是一款开源 2D 太空贸易与战斗游戏，主打可扩展的剧情、经济与舰队系统。它证明轻量画面加重系统同样能撑起上百小时的策略循环。",
+      "source": "endless-sky/endless-sky 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/endless-sky/endless-sky",
+      "image": "https://opengraph.githubassets.com/1/endless-sky/endless-sky",
+      "badge": "游戏",
+      "badgeType": "game",
+      "readTime": "6 分钟",
+      "hotScore": 83,
+      "tags": [
+        "Endless Sky",
+        "太空",
+        "策略"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "2D 太空贸易战斗；",
+            "可扩展剧情与经济；",
+            "轻画面重系统。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "很多新人误以为好玩等于画面好。Endless Sky 用像素和数值系统撑起长线策略，说明玩法循环的引力往往比美术预算更持久。"
+        }
+      ]
+    },
+    {
+      "id": "games-luanti",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "开源游戏",
+      "tag": "Luanti",
+      "title": "Luanti（原 Minetest）：把我的世界式沙盒做成可 mod 的引擎化游戏",
+      "summary": "笔者观察到，Luanti 是 Minetest 更名后的开源沙盒引擎，提供 voxel 世界、Lua 脚本与海量社区 mod。它示范了游戏即平台——核心极小、玩法由社区生态扩展。",
+      "source": "luanti-org/luanti 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/luanti-org/luanti",
+      "image": "https://opengraph.githubassets.com/1/luanti-org/luanti",
+      "badge": "游戏",
+      "badgeType": "game",
+      "readTime": "6 分钟",
+      "hotScore": 84,
+      "tags": [
+        "Luanti",
+        "沙盒",
+        "Mod"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "原 Minetest 更名；",
+            "voxel 世界+Lua 脚本；",
+            "社区 mod 生态庞大。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "游戏即平台是最高级的留存设计。Luanti 把核心做薄、把扩展交出去，让玩家兼开发者。想做 UGC/沙盒的新人，它的架构就是一本现成的教科书。"
+        }
+      ]
+    },
+    {
+      "id": "games-unvanquished",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "开源游戏",
+      "tag": "Unvanquished",
+      "title": "Unvanquished：把 FPS 与 RTS 揉在一起的开源非对称对抗样本",
+      "summary": "笔者注意到，Unvanquished 是一款开源非对称对抗游戏，玩家既打 FPS 又经营基地（RTS），人类与外星种族机制迥异。它适合研究两套玩法如何塞进同一局对战。",
+      "source": "Unvanquished 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/Unvanquished/Unvanquished",
+      "image": "https://opengraph.githubassets.com/1/Unvanquished/Unvanquished",
+      "badge": "游戏",
+      "badgeType": "game",
+      "readTime": "6 分钟",
+      "hotScore": 82,
+      "tags": [
+        "Unvanquished",
+        "FPS",
+        "非对称"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "开源非对称对抗；",
+            "FPS+RTS 双玩法；",
+            "人族与异族机制迥异。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "非对称对抗的设计难点在平衡两种体验。Unvanquished 让一方打仗、一方建基地，却在同一局里收敛，这种双循环共场的思路对做多人玩法很有启发。"
+        }
+      ]
+    },
+    {
+      "id": "os-sdl",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "库·跨平台",
+      "tag": "SDL",
+      "title": "SDL：跨平台多媒体层的事实标准，几乎每个引擎的底层都见过它",
+      "summary": "笔者观察到，SDL 用 C 提供了窗口、输入、音频与线程的跨平台抽象，是无数游戏与引擎的底层依赖。想理解一次编写多端运行是怎么实现的，SDL 是最该读的基石之一。",
+      "source": "libsdl-org/SDL 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/libsdl-org/SDL",
+      "image": "https://opengraph.githubassets.com/1/libsdl-org/SDL",
+      "badge": "开源",
+      "badgeType": "engine",
+      "readTime": "6 分钟",
+      "hotScore": 87,
+      "tags": [
+        "SDL",
+        "跨平台",
+        "C"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "C 写的多媒体抽象层；",
+            "窗口/输入/音频/线程；",
+            "众多引擎底层依赖。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "跨平台三个字背后是无数适配坑。SDL 把最脏的活揽下来，让上层只写逻辑。新人读它能明白为什么你的游戏能在 Win/Mac/Linux 上跑——不是魔法，是有人替你挡住了系统差异。"
+        }
+      ]
+    },
+    {
+      "id": "os-sfml",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "库·C++",
+      "tag": "SFML",
+      "title": "SFML：用清晰 API 把 2D 多媒体封装成 C++ 初学者的好朋友",
+      "summary": "笔者注意到，SFML 以模块化、易读的 C++ API 提供窗口、图形、音频、网络与输入，是做 2D 小游戏与原型的轻量首选。它的设计哲学是让新手少踩编译的坑。",
+      "source": "SFML/SFML 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/SFML/SFML",
+      "image": "https://opengraph.githubassets.com/1/SFML/SFML",
+      "badge": "开源",
+      "badgeType": "engine",
+      "readTime": "6 分钟",
+      "hotScore": 85,
+      "tags": [
+        "SFML",
+        "C++",
+        "2D"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "模块化 C++ 多媒体库；",
+            "窗口/图形/音频/网络；",
+            "2D 原型轻量首选。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "框架的友好度往往体现在出错信息是否说人话。SFML 的 API 直白到几乎不用查文档，这让它成为 C++ 新手从会编程到会做游戏的最短桥梁。"
+        }
+      ]
+    },
+    {
+      "id": "os-assimp",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "库·3D格式",
+      "tag": "Assimp",
+      "title": "Assimp：把几十种 3D 格式统一成一条导入管线的开源答案",
+      "summary": "笔者观察到，Assimp 支持导入数十种 3D 文件格式并输出统一数据结构，是游戏与工具链里模型进引擎的通用闸门。对做资源管线的人，它是绕不开的格式翻译层。",
+      "source": "assimp/assimp 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/assimp/assimp",
+      "image": "https://opengraph.githubassets.com/1/assimp/assimp",
+      "badge": "开源",
+      "badgeType": "engine",
+      "readTime": "6 分钟",
+      "hotScore": 84,
+      "tags": [
+        "Assimp",
+        "3D格式",
+        "管线"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "支持数十种 3D 格式；",
+            "输出统一数据结构；",
+            "模型导入通用闸门。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "美术用 Blender、Maya、3ds Max，引擎只认自己的格式——中间这道翻译谁来做？Assimp 就是。新人做工具链时先想清楚格式转换在哪一层发生，能省掉无数返工。"
+        }
+      ]
+    },
+    {
+      "id": "os-freetype",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "库·字体",
+      "tag": "FreeType",
+      "title": "FreeType：屏幕上几乎每个字形，都经过它的栅格化",
+      "summary": "笔者观察到，FreeType 是业界标准的字体光栅化引擎，被游戏、浏览器与操作系统广泛集成。想做 UI、HUD 或任意文本渲染，理解 FreeType 如何把轮廓变成像素是基础功。",
+      "source": "freetype/freetype 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/freetype/freetype",
+      "image": "https://opengraph.githubassets.com/1/freetype/freetype",
+      "badge": "开源",
+      "badgeType": "engine",
+      "readTime": "6 分钟",
+      "hotScore": 83,
+      "tags": [
+        "FreeType",
+        "字体",
+        "栅格化"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "业界标准字体栅格化；",
+            "被游戏/浏览器广泛集成；",
+            "文本渲染基础功。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "文字渲染常被低估，直到你的中文在界面上糊成一团。FreeType 处理的就是轮廓到像素这一步，涉及 hinting、抗锯齿等细节。做 UI 的人迟早要和它打交道。"
+        }
+      ]
+    },
+    {
+      "id": "os-jolt",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "物理·C++",
+      "tag": "Jolt",
+      "title": "Jolt Physics：用多层架构把物理求解做得又快又稳的现代 C++ 引擎",
+      "summary": "笔者观察到，Jolt Physics 是 Horizon Forbidden West 等作品采用的物理引擎，以确定性、多线程与易用 API 著称。它适合想理解现代刚体/角色控制器实现的开发者。",
+      "source": "jrouwe/JoltPhysics 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/jrouwe/JoltPhysics",
+      "image": "https://opengraph.githubassets.com/1/jrouwe/JoltPhysics",
+      "badge": "开源",
+      "badgeType": "engine",
+      "readTime": "7 分钟",
+      "hotScore": 86,
+      "tags": [
+        "Jolt",
+        "物理",
+        "C++"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "被用于 3A 作品；",
+            "确定性+多线程；",
+            "刚体与角色控制器。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "物理最怕两帧之间炸了。Jolt 用确定性与分层设计把稳定性做进骨子里，还被商业大作验证过。新人读它能学到工业级物理和玩具物理之间的真实差距。"
+        }
+      ]
+    },
+    {
+      "id": "os-recast",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "AI·导航",
+      "tag": "Recast",
+      "title": "Recast & Detour：开源导航网格的行业标配，AI 寻路从这里起步",
+      "summary": "笔者观察到，Recast 负责从网格生成导航网格、Detour 负责在网格上寻路，被无数游戏用作 AI 移动的底层。想做 NPC 巡逻、群体寻路，这套工具是绕不开的起点。",
+      "source": "recastnavigation/recastnavigation 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/recastnavigation/recastnavigation",
+      "image": "https://opengraph.githubassets.com/1/recastnavigation/recastnavigation",
+      "badge": "开源",
+      "badgeType": "engine",
+      "readTime": "7 分钟",
+      "hotScore": 85,
+      "tags": [
+        "Recast",
+        "导航网格",
+        "寻路"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "Recast 生成导航网格；",
+            "Detour 负责寻路；",
+            "NPC 移动底层。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "NPC 怎么不卡墙是动作游戏的基本功。Recast/Detour 把导航网格这套方法论开源化，等于把行业积累十几年的寻路经验直接递到你手上。"
+        }
+      ]
+    },
+    {
+      "id": "tu-handmade",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "底层·引擎",
+      "tag": "Handmade Hero",
+      "title": "Handmade Hero：从零写游戏引擎的逐集直播，把底层黑盒全拆开",
+      "summary": "笔者建议把 Handmade Hero 当长期陪练：作者 Casey Muratori 从空白项目逐集直播写一台游戏引擎，覆盖平台层、渲染、音频与碰撞。想真正搞懂引擎之下还有什么，这是最硬的课。",
+      "source": "Handmade Hero 官方站（一手）",
+      "date": "2026-11-04",
+      "url": "https://handmadehero.org/",
+      "image": "",
+      "badge": "教程",
+      "badgeType": "game",
+      "readTime": "8 分钟",
+      "hotScore": 88,
+      "tags": [
+        "Handmade Hero",
+        "引擎",
+        "底层"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "逐集直播写引擎；",
+            "覆盖平台/渲染/音频；",
+            "适合啃底层。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "大多数教程教你用引擎，Handmade Hero 教你造引擎。它的价值不在代码本身，而在让你亲眼看清：你习以为常的每一帧画面，下面都站着多少自己写的系统。"
+        }
+      ]
+    },
+    {
+      "id": "tu-bookofshaders",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "图形·Shader",
+      "tag": "The Book of Shaders",
+      "title": "The Book of Shaders：用交互式网页，把片元着色器讲到能上手",
+      "summary": "笔者观察到，The Book of Shaders 以可交互的网页循序渐进讲 GLSL 片元着色器，从颜色、形状到噪声与矩阵变换。对想入门 Shader 又怕数学劝退的人，它是门槛最低的入口。",
+      "source": "The Book of Shaders 官方教程（一手）",
+      "date": "2026-11-04",
+      "url": "https://thebookofshaders.com/",
+      "image": "",
+      "badge": "教程",
+      "badgeType": "game",
+      "readTime": "7 分钟",
+      "hotScore": 86,
+      "tags": [
+        "Shader",
+        "GLSL",
+        "图形学"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "交互式讲 GLSL；",
+            "从颜色到噪声；",
+            "入门 Shader 低门槛。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "着色器最怕公式看懂、屏幕全黑。这本书用网页让你边改边看，把抽象的数学立刻变成像素变化。先有视觉反馈再补理论，是学图形学最省力的一条路。"
+        }
+      ]
+    },
+    {
+      "id": "tu-gpp",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "架构·设计模式",
+      "tag": "Game Programming Patterns",
+      "title": "Game Programming Patterns：把引擎里的设计模式写成能读的教科书",
+      "summary": "笔者建议把《Game Programming Patterns》作为进阶读物：它用游戏开发的具体场景讲命令、组件、状态机、事件队列等模式，比通用设计模式书更贴地。想写可维护的游戏代码，这本几乎是必读。",
+      "source": "Game Programming Patterns 官方站（一手）",
+      "date": "2026-11-04",
+      "url": "https://gameprogrammingpatterns.com/",
+      "image": "",
+      "badge": "教程",
+      "badgeType": "game",
+      "readTime": "8 分钟",
+      "hotScore": 87,
+      "tags": [
+        "设计模式",
+        "架构",
+        "代码"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "用游戏场景讲模式；",
+            "命令/组件/状态机；",
+            "比通用模式书贴地。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "很多新人写游戏代码，玩意一多就变成意大利面。这本书把组件、状态机、事件队列这些套路讲透，让你在复杂度爆炸前就搭好骨架——架构意识比会写功能更重要。"
+        }
+      ]
+    },
+    {
+      "id": "tu-threejsjourney",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "Web3D·课程",
+      "tag": "Three.js Journey",
+      "title": "Three.js Journey：Bruno Simon 把 Web 3D 实战做成体系化视频课",
+      "summary": "笔者观察到，Three.js Journey 用大量实战章节覆盖 Three.js 从基础到 Shader、物理与优化的完整路径，是前端转 Web3D 最系统的课程之一。想认真做网页 3D，这份路径值得跟。",
+      "source": "Three.js Journey 官方课程（一手）",
+      "date": "2026-11-04",
+      "url": "https://threejs-journey.com/",
+      "image": "",
+      "badge": "教程",
+      "badgeType": "game",
+      "readTime": "8 分钟",
+      "hotScore": 86,
+      "tags": [
+        "Three.js",
+        "Web3D",
+        "课程"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "实战章节体系完整；",
+            "覆盖 Shader/物理/优化；",
+            "前端转 Web3D 系统课。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "免费碎片教程容易让人学到一半卡住。Three.js Journey 的强项是路径完整：从画一个立方体一路走到写 shader 和做优化。新人最需要的不是更多片段，而是一条不中断的路。"
+        }
+      ]
+    },
+    {
+      "id": "tu-pbr",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "渲染·光照",
+      "tag": "PBR Book",
+      "title": "Physically Based Rendering：把光线如何变成像素写成开源巨著",
+      "summary": "笔者建议把 PBR 这本书当案头参考：它从光线传输的数学出发，推导出现代离线渲染的完整实现，代码开源。想真正理解材质、光照与全局光照，这是绕不开的硬核底稿。",
+      "source": "PBR Book 官方站（一手）",
+      "date": "2026-11-04",
+      "url": "https://www.pbr-book.org/",
+      "image": "",
+      "badge": "教程",
+      "badgeType": "game",
+      "readTime": "9 分钟",
+      "hotScore": 85,
+      "tags": [
+        "PBR",
+        "渲染",
+        "光照"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "从光线传输推导渲染；",
+            "实现代码开源；",
+            "材质/光照硬核底稿。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "调材质如果只靠拖滑块，永远调不出道理。PBR 这本书把光照拆到物理层面，让你知道每个参数背后是什么。想做写实渲染的人，这本书就是你和看起来对之间的那座桥。"
+        }
+      ]
+    },
+    {
+      "id": "tu-gpugems",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "算法·GPU",
+      "tag": "GPU Gems",
+      "title": "GPU Gems：英伟达把 GPU 上的算法汇成可查的算法宝库",
+      "summary": "笔者注意到，GPU Gems 系列汇集了大量在 GPU 上实现的高效算法（粒子、水体、光照、剔除等），由英伟达整理公开。对想做高性能图形与计算着色器的人，它是常翻常新的参考。",
+      "source": "NVIDIA GPU Gems 官方文档（一手）",
+      "date": "2026-11-04",
+      "url": "https://developer.nvidia.com/gpugems",
+      "image": "",
+      "badge": "教程",
+      "badgeType": "game",
+      "readTime": "8 分钟",
+      "hotScore": 84,
+      "tags": [
+        "GPU Gems",
+        "算法",
+        "计算"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "GPU 高效算法合集；",
+            "粒子/水体/光照/剔除；",
+            "常翻常新的参考。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "很多炫酷效果本质是一个被前人写过的 GPU 算法。GPU Gems 的价值在于把散落各处的技巧汇成体系，让你遇到性能瓶颈时有地方可查——它教的是思路库，不是抄答案。"
+        }
+      ]
+    },
+    {
+      "id": "ai-ollama",
+      "category": "ai",
+      "categoryName": "AI前沿",
+      "subcategory": "推理·本地",
+      "tag": "Ollama",
+      "title": "Ollama：把本地跑大模型做成一条命令，AI 助手落到自己机器上",
+      "summary": "笔者观察到，Ollama 用极简命令行把主流开源大模型拉到本机运行，统一管理权重与推理。对想做 AI 辅助开发又顾虑隐私与成本的开发者，它是把模型请回本机的钥匙。",
+      "source": "ollama/ollama 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/ollama/ollama",
+      "image": "https://opengraph.githubassets.com/1/ollama/ollama",
+      "badge": "AI",
+      "badgeType": "ai",
+      "readTime": "7 分钟",
+      "hotScore": 89,
+      "tags": [
+        "Ollama",
+        "本地推理",
+        "大模型"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "一条命令跑本地模型；",
+            "统一管理权重与推理；",
+            "隐私/成本友好。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "模型在云端意味着每次都要联网、要付费、要交数据。Ollama 把推理拉回本地，等于给开发者一个可控的发动机。想做本地 copilot 或 NPC 对话，它几乎是必装的第一块砖。"
+        }
+      ]
+    },
+    {
+      "id": "ai-vllm",
+      "category": "ai",
+      "categoryName": "AI前沿",
+      "subcategory": "推理·服务",
+      "tag": "vLLM",
+      "title": "vLLM：用 PagedAttention 把大模型推理吞吐拉满的开源引擎",
+      "summary": "笔者注意到，vLLM 以 PagedAttention 显存管理显著提升大模型 serving 的吞吐与并发，被大量部署采用。对想自建 AI 后端、服务游戏内智能体的开发者，它是性能基线级工具。",
+      "source": "vllm-project/vllm 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/vllm-project/vllm",
+      "image": "https://opengraph.githubassets.com/1/vllm-project/vllm",
+      "badge": "AI",
+      "badgeType": "ai",
+      "readTime": "7 分钟",
+      "hotScore": 87,
+      "tags": [
+        "vLLM",
+        "推理",
+        "吞吐"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "PagedAttention 显存管理；",
+            "高吞吐高并发 serving；",
+            "AI 后端性能基线。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "模型能跑和能同时服务一千人是两回事。vLLM 解决的是推理服务的效率瓶颈——当你要把 AI 接进在线游戏，吞吐直接决定成本与体验。这类工程细节才是落地真正的护城河。"
+        }
+      ]
+    },
+    {
+      "id": "ai-comfyui",
+      "category": "ai",
+      "categoryName": "AI前沿",
+      "subcategory": "生图·节点",
+      "tag": "ComfyUI",
+      "title": "ComfyUI：用节点图把 AI 生图流程可视化，美术资产流水线化",
+      "summary": "笔者观察到，ComfyUI 以节点式工作流组织 Stable Diffusion 等生成模型，让生图、改图、批处理变成可复用管线。对游戏美术做概念图、贴图、素材变体，它是把 AI 接进产线的利器。",
+      "source": "comfyanonymous/ComfyUI 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/comfyanonymous/ComfyUI",
+      "image": "https://opengraph.githubassets.com/1/comfyanonymous/ComfyUI",
+      "badge": "AI",
+      "badgeType": "ai",
+      "readTime": "7 分钟",
+      "hotScore": 88,
+      "tags": [
+        "ComfyUI",
+        "生图",
         "节点"
       ],
       "content": [
@@ -950,509 +1336,281 @@ window.DAILY_NEWS_DATA = {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "入门章节讲清节点与场景；",
-            "编辑器所见即所得；",
-            "先做出能动角色，再学信号与继承。"
+            "节点式生图工作流；",
+            "可复用 AI 管线；",
+            "概念图/贴图利器。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "Godot 的「场景即节点树」是理解组合优于继承的好教材。新手照着文档做出第一个会动的小人，比背一堆术语更早建立真实体感。"
+          "text": "AI 生图最怕每次都从头调。ComfyUI 把流程固化为节点图，意味着你的美术产线可以版本化、可复现。对团队，这比单次出图重要得多——它把 AI 从玩具变成工序。"
         }
       ]
     },
     {
-      "id": "tu-unity-learn",
-      "category": "tutorials",
-      "categoryName": "实战教程",
-      "subcategory": "入门·Unity",
-      "tag": "Unity Learn",
-      "title": "Unity Learn：从编辑器到 C# 脚本的系统化路径",
-      "summary": "笔者注意到，learn.unity.com 把官方课程按角色与项目组织好，覆盖编辑器、C# 脚本、2D/3D 与 Shader。对想进工业级管线的人，它提供了「照着做一遍完整小项目」的结构化入口。",
-      "source": "Unity Learn 官方（一手）",
-      "date": "2026-11-03",
-      "url": "https://learn.unity.com/",
-      "image": "https://cdn.sanity.io/images/fuvbjjlp/learn-production/b29e9c9c1ed197a3361510be60163c3f05b8c7c1-1920x1080.jpg?w=1280&q=80&fit=max&auto=format",
-      "badge": "教程",
-      "badgeType": "tutorial",
-      "readTime": "5 分钟",
-      "hotScore": 83,
-      "tags": [
-        "Unity",
-        "C#",
-        "系统化"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "课程按角色与项目组织；",
-            "覆盖编辑器、C#、2D/3D 与 Shader；",
-            "提供完整小项目的结构化路径。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "想进工业级管线，结构化学习比碎片化教程更省时间。Unity Learn 的价值在于它把「从零到能交付一个小项目」的路径铺平了。"
-        }
-      ]
-    },
-    {
-      "id": "tu-mdn-games",
-      "category": "tutorials",
-      "categoryName": "实战教程",
-      "subcategory": "入门·Web",
-      "tag": "MDN",
-      "title": "MDN Game Development：从 canvas 到 WebGL 的纯前端路线",
-      "summary": "笔者观察到，MDN 的 Game Development 专题用原生 JavaScript 讲清游戏循环、碰撞、音效与 WebGL 基础。它不依赖任何引擎，适合想搞懂「浏览器里一帧到底怎么画」的人打底。",
-      "source": "MDN Web Docs（一手）",
-      "date": "2026-11-03",
-      "url": "https://developer.mozilla.org/en-US/docs/Games",
-      "image": "",
-      "badge": "教程",
-      "badgeType": "tutorial",
-      "readTime": "5 分钟",
-      "hotScore": 82,
-      "tags": [
-        "MDN",
-        "canvas",
-        "WebGL"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "原生 JS 讲游戏循环与碰撞；",
-            "覆盖音效与 WebGL 基础；",
-            "不依赖任何引擎。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "在不依赖引擎的情况下理解「一帧怎么画」，是从使用者迈向创造者的关键一跃。MDN 给你的是地基，不是脚手架。"
-        }
-      ]
-    },
-    {
-      "id": "tu-catlike",
-      "category": "tutorials",
-      "categoryName": "实战教程",
-      "subcategory": "进阶·Unity",
-      "tag": "Catlike Coding",
-      "title": "Catlike Coding：用 Unity 把数学与渲染啃透的实战教程",
-      "summary": "笔者注意到，catlikecoding.com/unity/tutorials 以「一个概念一篇文章+可运行工程」的方式，把噪声、渲染管线、曲线、Mesh 等讲得很硬核。对想从「会用引擎」迈向「懂引擎在算什么」的人，它是进阶的磨刀石。",
-      "source": "Catlike Coding（一手）",
-      "date": "2026-11-03",
-      "url": "https://catlikecoding.com/unity/tutorials/",
-      "image": "https://catlikecoding.com/unity/tutorials/banner.png",
-      "badge": "教程",
-      "badgeType": "tutorial",
-      "readTime": "6 分钟",
-      "hotScore": 81,
-      "tags": [
-        "Unity",
-        "渲染",
-        "数学"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "一个概念一篇文章+可运行工程；",
-            "覆盖噪声、渲染管线、曲线、Mesh；",
-            "硬核、适合进阶。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "会用引擎和懂引擎之间隔着一道数学与渲染的墙。Catlike Coding 不绕路，它带你把墙拆掉——过程辛苦，但拆完之后看什么都通透。"
-        }
-      ]
-    },
-    {
-      "id": "ai-transformers",
+      "id": "ai-openhands",
       "category": "ai",
       "categoryName": "AI前沿",
-      "subcategory": "框架·NLP",
-      "tag": "Transformers",
-      "title": "Hugging Face Transformers：把大模型接进游戏工作流的入口",
-      "summary": "笔者注意到，huggingface/transformers 几乎是开源模型的统一接口层，覆盖文本、视觉、音频与多模态。对游戏开发者，它意味着你能本地加载一个小模型做 NPC 对话、内容审核或文案生成，而不必每个需求都调云端 API。",
-      "source": "huggingface/transformers 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/huggingface/transformers",
-      "image": "https://opengraph.githubassets.com/1/huggingface/transformers",
+      "subcategory": "智能体·自托管",
+      "tag": "OpenHands",
+      "title": "OpenHands：把 AI 软件工程智能体做成开源可自托管，让 agent 直接改仓库",
+      "summary": "笔者注意到，OpenHands（原 OpenDevin）是可自托管的 AI 编程智能体，能读代码、改文件、跑命令、开 PR。对想把 AI 同事接进日常开发流、又不愿把代码交第三方的团队，它是合规友好的选择。",
+      "source": "All-Hands-AI/OpenHands 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/All-Hands-AI/OpenHands",
+      "image": "https://opengraph.githubassets.com/1/All-Hands-AI/OpenHands",
       "badge": "AI",
       "badgeType": "ai",
-      "readTime": "6 分钟",
-      "hotScore": 89,
+      "readTime": "7 分钟",
+      "hotScore": 86,
       "tags": [
-        "Hugging Face",
-        "大模型",
-        "NLP"
+        "OpenHands",
+        "Agent",
+        "自托管"
       ],
       "content": [
         {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "开源模型的统一接口层；",
-            "覆盖文本、视觉、音频与多模态；",
-            "可本地加载小模型做 NPC 对话等。"
+            "开源可自托管编程 agent；",
+            "读码/改文件/跑命令/开PR；",
+            "代码不出本地更合规。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "对游戏开发者，Transformers 的真正价值是「本地可控」：把模型接进工作流，既能做 NPC 对话，也能做内容审核，而不必把每个需求都交给云端。"
+          "text": "会写代码的 AI 和能自己开 PR 的 AI 差着一整个工作流。OpenHands 的意义在于自托管——你的源码不必离开内网就能多一个会干活的同事。敏感项目尤其该走这条路线。"
         }
       ]
     },
     {
-      "id": "ai-pytorch",
+      "id": "ai-langgraph",
       "category": "ai",
       "categoryName": "AI前沿",
-      "subcategory": "框架·深度学习",
-      "tag": "PyTorch",
-      "title": "PyTorch：从研究原型到训练你自己的游戏 AI",
-      "summary": "笔者观察到，pytorch/pytorch 是当代深度学习的事实标准，动态图让你边写边调。对新人，先用它复现一个简单的强化学习 agent 玩小游戏，比读论文更快建立「模型是怎么从奖励里学出行为」的直觉。",
-      "source": "pytorch/pytorch 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/pytorch/pytorch",
-      "image": "https://opengraph.githubassets.com/1/pytorch/pytorch",
+      "subcategory": "智能体·流程",
+      "tag": "LangGraph",
+      "title": "LangGraph：用图组织 AI 智能体的状态与分支，把复杂流程画清楚",
+      "summary": "笔者观察到，LangGraph 以有向图描述智能体的状态、循环与分支，适合把多步、可回滚的 agent 工作流结构化。对做游戏内助手、自动化测试或内容生成管线的人，它比线性链更可控。",
+      "source": "langchain-ai/langgraph 官方仓库（一手）",
+      "date": "2026-11-04",
+      "url": "https://github.com/langchain-ai/langgraph",
+      "image": "https://opengraph.githubassets.com/1/langchain-ai/langgraph",
+      "badge": "AI",
+      "badgeType": "ai",
+      "readTime": "7 分钟",
+      "hotScore": 85,
+      "tags": [
+        "LangGraph",
+        "智能体",
+        "状态机"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "图描述状态/循环/分支；",
+            "适合多步可回滚流程；",
+            "比线性链更可控。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "真实任务很少是问答一次完事。LangGraph 用图把 agent 的每一步和回退路径显式画出来，意味着流程可观测、可调试。做复杂 AI 功能时，这种可视化控制流能救命。"
+        }
+      ]
+    },
+    {
+      "id": "ai-kimi",
+      "category": "ai",
+      "categoryName": "AI前沿",
+      "subcategory": "游戏·Agent",
+      "tag": "Kimi",
+      "title": "Kimi 发布游戏开发解决方案：让 AI Agent 直接操作 Unity/虚幻工程",
+      "summary": "笔者观察到，月之暗面 Kimi 于 11 月初发布游戏开发与创意工作解决方案，基于 K3.1 系列模型与 Kimi Code/Work Agent，通过插件直接操作 Unity、虚幻、Blender 现有工程。它把 AI 接管从原型到运营往前推了一步。",
+      "source": "IT之家 报道（一手公告转述）",
+      "date": "2026-11-04",
+      "url": "https://www.ithome.com/1/021/539.htm",
+      "image": "",
       "badge": "AI",
       "badgeType": "ai",
       "readTime": "6 分钟",
       "hotScore": 88,
       "tags": [
-        "PyTorch",
-        "深度学习",
-        "强化学习"
+        "Kimi",
+        "游戏AI",
+        "Agent"
       ],
       "content": [
         {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "当代深度学习事实标准；",
-            "动态图，边写边调；",
-            "适合复现 RL agent 玩小游戏。"
+            "基于 K3.1 与 Code/Work Agent；",
+            "插件直连 Unity/虚幻/Blender；",
+            "覆盖原型到发行运营。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "想理解 AI 游戏智能体，先别读论文。用 PyTorch 复现一个会玩 Flappy Bird 的小 agent，那种「它真的学会了」的震撼，会替你记住所有概念。"
+          "text": "AI 生成一段文字和 AI 改你的工程文件是质的区别。Kimi 这步若真能稳定操作专业工具，原型验证成本会被压低一个数量级——但新人仍需盯紧：agent 改坏的锅最后还是你背。"
         }
       ]
     },
     {
-      "id": "ai-autogen",
-      "category": "ai",
-      "categoryName": "AI前沿",
-      "subcategory": "框架·多智能体",
-      "tag": "AutoGen",
-      "title": "Microsoft AutoGen：用多智能体编排游戏开发流水线",
-      "summary": "笔者注意到，microsoft/autogen 让你把多个 LLM agent 编排成可对话、可协作的团队，适合做「策划 agent + 美术 agent + 代码 agent」的原型。对想用 AI 串起工作流的人，它是理解「agent 如何分工」的好起点。",
-      "source": "microsoft/autogen 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/microsoft/autogen",
-      "image": "https://opengraph.githubassets.com/1/microsoft/autogen",
-      "badge": "AI",
-      "badgeType": "ai",
-      "readTime": "6 分钟",
-      "hotScore": 86,
-      "tags": [
-        "AutoGen",
-        "多智能体",
-        "微软"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "多 LLM agent 可对话协作；",
-            "适合策划/美术/代码 agent 原型；",
-            "理解 agent 分工的起点。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "多智能体不是噱头，而是把「一个大 prompt 解决一切」的幻想拆成可验证的分工。AutoGen 让你先看清：协作本身就需要设计。"
-        }
-      ]
-    },
-    {
-      "id": "ai-tensorflow",
-      "category": "ai",
-      "categoryName": "AI前沿",
-      "subcategory": "框架·工业级",
-      "tag": "TensorFlow",
-      "title": "TensorFlow：工业级模型训练与部署的另一条主线",
-      "summary": "笔者观察到，tensorflow/tensorflow 在训练、导出与端侧部署上生态成熟，适合把模型从笔记本搬到服务器或移动端。新人不必二选一，理解两套框架的共同抽象（张量、计算图、自动微分），比死磕某个库更重要。",
-      "source": "tensorflow/tensorflow 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/tensorflow/tensorflow",
-      "image": "https://opengraph.githubassets.com/1/tensorflow/tensorflow",
-      "badge": "AI",
-      "badgeType": "ai",
-      "readTime": "6 分钟",
-      "hotScore": 84,
-      "tags": [
-        "TensorFlow",
-        "部署",
-        "端侧"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "训练、导出、端侧部署生态成熟；",
-            "适合模型从笔记本到移动端；",
-            "与 PyTorch 共享核心抽象。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "两套路子不必二选一。真正该掌握的，是张量、计算图、自动微分这些共同语言——框架只是方言，概念才是母语。"
-        }
-      ]
-    },
-    {
-      "id": "ai-audiocraft",
-      "category": "ai",
-      "categoryName": "AI前沿",
-      "subcategory": "生成·音频",
-      "tag": "AudioCraft",
-      "title": "Meta AudioCraft：用文本生成音乐与音效的开放研究",
-      "summary": "笔者注意到，facebookresearch/audiocraft 提供了 MusicGen 与 AudioGen，能从文本/条件生成音乐与音效。对独立开发者，这是「先快速铺一层氛围音、再手工精修」的捷径，也值得思考 AI 生成音频的版权与工作流边界。",
-      "source": "facebookresearch/audiocraft 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/facebookresearch/audiocraft",
-      "image": "https://opengraph.githubassets.com/1/facebookresearch/audiocraft",
-      "badge": "AI",
-      "badgeType": "ai",
-      "readTime": "6 分钟",
-      "hotScore": 83,
-      "tags": [
-        "AudioCraft",
-        "音乐生成",
-        "Meta"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "MusicGen 与 AudioGen 文本/条件生成；",
-            "适合快速铺氛围音再精修；",
-            "引出 AI 音频版权议题。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "音频是独立开发者最容易卡壳的环节。AudioCraft 这类工具先把氛围铺起来，你再手工打磨——但版权与署名这条线，越早想清楚越好。"
-        }
-      ]
-    },
-    {
-      "id": "ai-whisper",
-      "category": "ai",
-      "categoryName": "AI前沿",
-      "subcategory": "语音·ASR",
-      "tag": "Whisper",
-      "title": "OpenAI Whisper：把语音变成字幕与可检索对话",
-      "summary": "笔者观察到，openai/whisper 是多语言语音识别的开放基线，本地即可跑。对做语音交互 NPC、游戏内字幕或播客式叙事的人，它意味着「让玩家用嘴说话、系统用文字回应」的门槛被大幅拉低。",
-      "source": "openai/whisper 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/openai/whisper",
-      "image": "https://opengraph.githubassets.com/1/openai/whisper",
-      "badge": "AI",
-      "badgeType": "ai",
-      "readTime": "6 分钟",
-      "hotScore": 85,
-      "tags": [
-        "Whisper",
-        "语音识别",
-        "OpenAI"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "多语言语音识别开放基线；",
-            "本地即可运行；",
-            "适合语音 NPC 与字幕。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "语音交互最难的不是「听懂」，而是「接得住」。Whisper 把识别这一步拉平后，真正的设计功夫落在：玩家说出的话，系统要怎么回应才不尴尬。"
-        }
-      ]
-    },
-    {
-      "id": "ai-nanogpt",
-      "category": "ai",
-      "categoryName": "AI前沿",
-      "subcategory": "教学·训练",
-      "tag": "nanoGPT",
-      "title": "Karpathy/nanoGPT：几百行代码看清 GPT 是怎么炼成的",
-      "summary": "笔者注意到，karpathy/nanoGPT 用极简代码从零实现 GPT 训练，是「读得懂、跑得动」的教科书。对新人，先把它跑通、再喂自己的小语料，比直接调 API 更能建立对「模型到底是什么」的真实体感。",
-      "source": "karpathy/nanoGPT 仓库（一手）",
-      "date": "2026-11-03",
-      "url": "https://github.com/karpathy/nanoGPT",
-      "image": "https://opengraph.githubassets.com/1/karpathy/nanoGPT",
-      "badge": "AI",
-      "badgeType": "ai",
-      "readTime": "6 分钟",
-      "hotScore": 84,
-      "tags": [
-        "nanoGPT",
-        "GPT",
-        "教学"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "几百行从零实现 GPT 训练；",
-            "读得懂、跑得动；",
-            "适合喂自己的小语料练手。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "调 API 像是借别人的大脑，跑 nanoGPT 则是自己长出一颗。前者让你快点用上 AI，后者让你真正明白 AI 是怎么回事——两者都值得。"
-        }
-      ]
-    },
-    {
-      "id": "co-ld61",
+      "id": "contest-ld62",
       "category": "contest",
       "categoryName": "杂项",
       "subcategory": "赛事·Game Jam",
-      "tag": "Ludum Dare 61",
-      "title": "Ludum Dare 61 开赛：48/72 小时极限做出可玩原型",
-      "summary": "笔者注意到，Ludum Dare 61 如期开赛，沿用经典的 Solo（48h）与 Jam（72h）双赛道，给定主题后比拼创意与完成度。对新人，它是「逼自己交付一个完整循环」的最佳练兵——评分反馈比任何教程都真实。",
-      "source": "Ludum Dare 官方（一手）",
-      "date": "2026-11-03",
-      "url": "https://ldjam.com/events/ludum-dare-61",
+      "tag": "Ludum Dare 62",
+      "title": "Ludum Dare 62：全球最老牌限时 Game Jam 的下一届赛程已开页",
+      "summary": "笔者注意到，Ludum Dare 62 的赛事页面已开放，延续限时 48/72 小时、给定主题做游戏的经典形式。对想逼自己快速出原型、又盼全球同行评审的新人，它是练手与曝光兼得的入口。",
+      "source": "Ludum Dare 官方赛事页（一手）",
+      "date": "2026-11-04",
+      "url": "https://ldjam.com/events/ludum-dare-62",
+      "image": "",
+      "badge": "赛事",
+      "badgeType": "event",
+      "readTime": "4 分钟",
+      "hotScore": 82,
+      "tags": [
+        "Ludum Dare",
+        "Game Jam",
+        "限时"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "LD62 赛事页已开放；",
+            "48/72 小时限时；",
+            "全球评审与曝光。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "Game Jam 的魔力在强制交付。LD 这种老牌赛事逼你在两天里走完立项到上线的全过程。新人别追求完美，先学会在截止前交出能玩的东西——这比任何课程都练人。"
+        }
+      ]
+    },
+    {
+      "id": "contest-indieplay",
+      "category": "contest",
+      "categoryName": "杂项",
+      "subcategory": "赛事·大赛",
+      "tag": "indiePlay",
+      "title": "indiePlay 中国独立游戏大赛：本土独立团队的年度作品窗口",
+      "summary": "笔者观察到，由 CiGA 主办的中国独立游戏大赛（indiePlay）是本土独立开发者重要的作品展示与评选平台，覆盖游戏、叙事、美术等维度。对想让作品被行业看见的国内新人，它是年度关键窗口。",
+      "source": "CiGA indiePlay 官方页（一手）",
+      "date": "2026-11-04",
+      "url": "https://www.ciga.me/indieplay",
+      "image": "",
+      "badge": "赛事",
+      "badgeType": "event",
+      "readTime": "4 分钟",
+      "hotScore": 81,
+      "tags": [
+        "indiePlay",
+        "独立游戏",
+        "CiGA"
+      ],
+      "content": [
+        {
+          "title": "本次要点",
+          "type": "list",
+          "items": [
+            "CiGA 主办年度大赛；",
+            "覆盖游戏/叙事/美术；",
+            "本土作品展示窗口。"
+          ]
+        },
+        {
+          "title": "笔者观察",
+          "type": "text",
+          "text": "独立开发者最缺的不是能力，是被看见的机会。indiePlay 这类赛事把评审、媒体与发行方聚到同一张桌上，你的 demo 可能就差这一次上台。提前打磨参选版本比临时抱佛脚强。"
+        }
+      ]
+    },
+    {
+      "id": "contest-ggj",
+      "category": "contest",
+      "categoryName": "杂项",
+      "subcategory": "赛事·Game Jam",
+      "tag": "Global Game Jam",
+      "title": "Global Game Jam：每年一月全球同步的 48 小时造游戏盛典",
+      "summary": "笔者注意到，Global Game Jam 是每年一月在世界各地同步举行的超大规模 Game Jam，单一主题、48 小时、线下站点协作。对想体验和陌生队友限时共创的新人，它是入行社交与实战的捷径。",
+      "source": "Global Game Jam 官方站（一手）",
+      "date": "2026-11-04",
+      "url": "https://globalgamejam.org/",
       "image": "",
       "badge": "赛事",
       "badgeType": "event",
       "readTime": "4 分钟",
       "hotScore": 80,
       "tags": [
-        "Ludum Dare",
+        "GGJ",
         "Game Jam",
-        "极限开发"
+        "线下"
       ],
       "content": [
         {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "Solo 48h 与 Jam 72h 双赛道；",
-            "给定主题后比拼创意与完成度；",
-            "评分反馈真实、练兵价值高。"
+            "每年一月全球同步；",
+            "单一主题 48 小时；",
+            "线下站点协作。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "Game Jam 的价值不在获奖，而在「限时逼出完整闭环」。新人最该从 LD 学到的，是把一个想法在三天内变成能玩的东西——这种肌肉，平时练不出来。"
+          "text": "GGJ 的珍贵在于在场。你会在站点遇到美术、程序、音效各路人马，48 小时里被迫学会分工与妥协。这种高密度协作经验是线上独自开发永远给不了的。"
         }
       ]
     },
     {
-      "id": "co-taomee",
+      "id": "contest-funplus",
       "category": "contest",
       "categoryName": "杂项",
-      "subcategory": "招聘·校招",
-      "tag": "淘米网络",
-      "title": "淘米网络 2027 校招：游戏客户端/策划多岗，看重 AI 工具运用",
-      "summary": "笔者观察到，淘米网络 2027 届校招开放游戏客户端开发等岗位，明确要求「具备良好的 AI 工具运用能力，能熟练使用 AI 编程工具提升效率」，并对 Agent/Skill/MCP 有实际了解者加分。对应届生，这释放出清晰信号：会用好 AI 工具，正在成为基础项。",
-      "source": "24365 就业平台 / 淘米（一手）",
-      "date": "2026-11-03",
-      "url": "https://www.91job.org.cn/recruitment/jobDetails?dwid=702372&zpgwid=1000000000769903",
-      "image": "",
+      "subcategory": "招聘·社招",
+      "tag": "FunPlus",
+      "title": "FunPlus 趣加开放招聘：中厂出海团队的研发与运营岗位窗口",
+      "summary": "笔者观察到，FunPlus（趣加）在官网开放招聘入口，覆盖游戏研发、发行运营与技术中台等方向，偏向有出海经验的复合人才。对想进中厂、全球化、节奏相对可控团队的应届与社招同学，这是一条值得盯的线。",
+      "source": "FunPlus 官方招聘页（一手）",
+      "date": "2026-11-04",
+      "url": "https://funplus.com/careers/",
+      "image": "https://funplus.com/wp-content/uploads/2024/07/FunPlus_Pride_FunIsBeingYouLogo-1.png",
       "badge": "招聘",
-      "badgeType": "recruit",
+      "badgeType": "business",
       "readTime": "4 分钟",
-      "hotScore": 79,
+      "hotScore": 80,
       "tags": [
-        "淘米",
-        "校招",
-        "AI 工具"
+        "FunPlus",
+        "招聘",
+        "出海"
       ],
       "content": [
         {
           "title": "本次要点",
           "type": "list",
           "items": [
-            "开放游戏客户端开发等岗位；",
-            "明确要求 AI 编程工具运用能力；",
-            "Agent/Skill/MCP 实践者加分。"
+            "官网开放招聘入口；",
+            "研发/发行/技术中台；",
+            "偏好出海复合人才。"
           ]
         },
         {
           "title": "笔者观察",
           "type": "text",
-          "text": "招聘要求里写进「AI 工具运用」，是今年最值得新人注意的信号：会用 AI 提效，正从加分项变成基础项。早一点把它变成肌肉记忆，比临场抱佛脚强。"
-        }
-      ]
-    },
-    {
-      "id": "co-37games",
-      "category": "contest",
-      "categoryName": "杂项",
-      "subcategory": "招聘·校招",
-      "tag": "三七互娱",
-      "title": "三七互娱 2027 秋招启动：以「游戏×AI 科技」寻新生力量",
-      "summary": "笔者注意到，三七互娱 2027 届秋招以「游戏×AI 科技」为主题，岗位覆盖技术开发、AI 算法/平台、游戏研发、策划、美术与运营，并设有内推加速通道。对想进成熟发行体系的人，这是流程透明、岗位齐全的窗口期。",
-      "source": "云校招 / 三七互娱（一手）",
-      "date": "2026-11-03",
-      "url": "https://51uns.bysjy.com.cn/Announce/Details/3575519?schoolCode=10723",
-      "image": "",
-      "badge": "招聘",
-      "badgeType": "recruit",
-      "readTime": "4 分钟",
-      "hotScore": 78,
-      "tags": [
-        "三七互娱",
-        "校招",
-        "游戏 AI"
-      ],
-      "content": [
-        {
-          "title": "本次要点",
-          "type": "list",
-          "items": [
-            "以「游戏×AI 科技」为主题；",
-            "覆盖技术开发、AI 算法、研发、策划、美术、运营；",
-            "设有内推加速通道。"
-          ]
-        },
-        {
-          "title": "笔者观察",
-          "type": "text",
-          "text": "三七把「AI」写进校招主题，说明大厂已经把 AI 当作战略底色而非点缀。新人选题或准备作品集时，往「AI 如何真正服务玩法」上靠，会更容易被看见。"
+          "text": "校招是信息战，社招更看赛道匹配。FunPlus 这类出海中厂，节奏比大厂灵活、体量又够你练完整项目。投之前先研究它旗下产品的市场，面试时能多聊出一层理解。"
         }
       ]
     }

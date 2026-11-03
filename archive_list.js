@@ -1,5 +1,6 @@
 window.NEWS_ARCHIVE_LIST = [
-    { date: "2026-11-03", weekday: "星期二", file: "data/2026-11-03.js", title: "2026-11-03 每日情报：EA关闭BioWare·GTA VI定档11/19 · Cocos/LÖVE/A-Frame/Kaplay/Excalibur 开源引擎精读 · p5.js/OpenTK/JSON/Hazel/Sokol/Vulkan 开源宝库 · HuggingFace/PyTorch/AutoGen AI · Ludum Dare 61·淘米/三七2027校招", desc: "今日最新情报" },
+    { date: "2026-11-04", weekday: "星期三", file: "data/2026-11-04.js", title: "2026-11-04 每日情报：Tripledot 4000万收购Unity旗下Supersonic · Godot/Three.js/PlayCanvas/Urho3D/macroquad/Panda3D 引擎精读 · Veloren/OpenRA/Thrive/Endless Sky/Luanti/Unvanquished 开源游戏 · SDL/SFML/Assimp/FreeType/Jolt/Recast 开源宝库 · Ollama/vLLM/ComfyUI/OpenHands/LangGraph·Kimi游戏Agent · Ludum Dare 62/GGJ·FunPlus社招", desc: "今日最新情报" },
+    { date: "2026-11-03", weekday: "星期二", file: "data/2026-11-03.js", title: "2026-11-03 每日情报：EA关闭BioWare·GTA VI定档11/19 · Cocos/LÖVE/A-Frame/Kaplay/Excalibur 开源引擎精读 · p5.js/OpenTK/JSON/Hazel/Sokol/Vulkan 开源宝库 · HuggingFace/PyTorch/AutoGen AI · Ludum Dare 61·淘米/三七2027校招", desc: "往期技术归档" },
 
     { date: "2026-11-02", weekday: "星期一", file: "data/2026-11-02.js", title: "2026-11-02 每日情报：Skydance完成1110亿并购·Paramount/WB Games并入 · Raylib/Heaps/FNA/Flax/wgpu/Piston 开源引擎精读 · Enshrouded 1.0/Stupid Never Dies 评测 · llama.cpp/web-llm/Semantic Kernel/ML-Agents 开源AI · SHIFT/Craftalog Jam·多益/灵犀2027校招", desc: "往期技术归档" },
 
