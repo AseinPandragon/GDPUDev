@@ -1110,7 +1110,7 @@ window.DAILY_NEWS_DATA = {
       "tag": "Promethean AI",
       "title": "Promethean AI：把「美术指导」做成 Agent，在引擎内一键铺满整场景",
       "summary": "笔者观察到，Promethean AI 定位于「AI 美术指导」：在 Unity/Unreal 内用自然语言描述场景（如「一个凌乱的 90 年代卧室」），它理解你已有的资产并逻辑化地摆放，把环境美术从逐件拖拽变成对话式生成。",
-      "image": "",
+      "image": "https://static.wixstatic.com/media/dd3bb7_3121fbf35e914c89b7f33bd940dee538~mv2.png/v1/fill/w_1920,h_1080,al_c/dd3bb7_3121fbf35e914c89b7f33bd940dee538~mv2.png",
       "source": "Promethean AI 官方（一手）",
       "date": "2026-11-05",
       "url": "https://www.prometheanai.com/",
