@@ -41,9 +41,8 @@ jobs:
           script: |
             const local = process.env.LOCAL_FP;
             const live  = process.env.LIVE_FP;
-            const title = '[Cloudflare 部署落后] 线上内容与 GitHub 不一致';
-            const fallback = `https://${context.repo.owner}.github.io/${context.repo.repo}/`;
-            const body = [
+    const title = '[Cloudflare 部署落后] 线上内容与 GitHub 不一致';
+    const body = [
               'Cloudflare Pages 上的 `news_data.js` 与仓库 `main` 分支不一致，生产部署未同步。',
               '',
               '最常见原因：**Cloudflare 积分耗尽，生产部署被暂停**（站点仍在线，但不再部署新提交）。',
@@ -55,9 +54,9 @@ jobs:
               '',
               '### 应急方案',
               '',
-              `本站已同步部署到 GitHub Pages，可直接切换到备用地址：`,
-              '',
-              fallback,
+              '本站**仅由 Cloudflare Pages 单一部署，没有独立的 GitHub Pages 备用站**（原设计里的备用地址从未启用）。',
+              'Cloudflare 落后期间，最新权威内容始终以 GitHub 仓库 `main` 分支为准；',
+              '其免费计划积分在**每月 1 日**刷新后，部署会自动追平，本告警也会自动关闭。',
               '',
               '### 恢复时间',
               '',
