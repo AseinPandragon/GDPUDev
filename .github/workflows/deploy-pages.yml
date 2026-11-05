@@ -9,6 +9,9 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  # 允许工作流自带的 GITHUB_TOKEN 开通（创建）Pages 站点：开通属于仓库管理操作，
+  # 需要 administration:write，仅 pages:write 只能往已存在的站点部署。
+  administration: write
 
 concurrency:
   group: pages
