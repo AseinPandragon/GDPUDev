@@ -1,49 +1,34 @@
 window.NEWS_ARCHIVE_LIST = [
-    { date: "2026-11-08", weekday: "星期日", file: "data/2026-11-08.js", title: "2026-11-08 每日情报：《黑神话：悟空》持续热销·estella/ezEngine/SpartanEngine/Redot/Lumix/Pomdog 跨端引擎精读 · Flecs/bgfx/DXC/Vulkan-Hpp/OpenXR/implot 开源宝库 · Wanaka AI 引擎/Render Sandboxes/Copilot×JetBrains Air/SGLang/LMDeploy/TensorRT-LLM · CS50/Red Blob/GameDev.tv/Unity Junior/Khronos 教程 · RDR2/只狼/匹诺曹的谎言/环世界/英灵神殿/黑帝斯 · Steam 评测收紧/Krafton 回购/游族42亿购GPU/Unity 私有化传闻 · 腾讯高校大赛/NCDA/CiGA GameJams/腾讯校招", desc: "今日最新情报" },
-
+    { date: "2026-11-09", weekday: "星期一", file: "data/2026-11-09.js", title: "2026-11-09 每日情报：Monster Train 2 11/10 登陆 Steam · Flax/rbfx/Hyperion/doriax/Lumina/Pulsar 引擎精读 · raylib/stb/glTF/DirectXTK/Bullet/Vulkan-Samples 开源宝库 · Kimi/游点灵/Claude 限克隆/LLM NPC AI · Web/GB汇编/olc/tinyrenderer/MDN 教程 · Loftia/Blacksmith/ArcheAge/Airframe/Underkeep/9Kings · Unity 250亿私有化/BioWare 落幕/Steam 审核收紧/Nexus AI 披露 · GGJ2027/Ludum Dare/indienova/大厂校招", desc: "今日最新情报" },
     { date: "2026-11-08", weekday: "星期日", file: "data/2026-11-08.js", title: "2026-11-08 每日情报：《黑神话：悟空》持续热销·estella/ezEngine/SpartanEngine/Redot/Lumix/Pomdog 跨端引擎精读 · Flecs/bgfx/DXC/Vulkan-Hpp/OpenXR/implot 开源宝库 · Wanaka AI 引擎/Render Sandboxes/Copilot×JetBrains Air/SGLang/LMDeploy/TensorRT-LLM · CS50/Red Blob/GameDev.tv/Unity Junior/Khronos 教程 · RDR2/只狼/匹诺曹的谎言/环世界/英灵神殿/黑帝斯 · Steam 评测收紧/Krafton 回购/游族42亿购GPU/Unity 私有化传闻 · 腾讯高校大赛/NCDA/CiGA GameJams/腾讯校招", desc: "往期技术归档" },
-
     { date: "2026-11-07", weekday: "星期六", file: "data/2026-11-07.js", title: "2026-11-07 每日情报：《影之刃零》三天破400万·OGRE/Magnum/Filament/Torque3D/libGDX/LWJGL 引擎精读 · Dear ImGui/EnTT/spdlog/fmt/GLM/meshoptimizer 开源宝库 · DeepSeek dsh/agent-sprite-forge/LlamaIndex/smolagents/NeMo/Claude Code · LearnOpenGL/Vulkan/Unity手册 教程 · Hades II/Silksong/KCD2/Elden Ring/赛博朋克2077/Helldivers2/MH Wilds/Clair Obscur · 育碧竞购Arkane/Compulsion独立/上古卷轴6定名Sentinel · Epic AI MegaJam/GGJ2027/米哈游校招", desc: "往期技术归档" },
     { date: "2026-11-06", weekday: "星期五", file: "data/2026-11-06.js", title: "2026-11-06 每日情报：《Probably Stolen》两周14万并发 · Diligent/Armory/jMonkey/Dawn/ANGLE/WebGPU 引擎精读 · GLFW/OpenAL/miniaudio/nuklear/RmlUi/raygui 开源宝库 · Moon Sweepers/Loftia/Deus Mantle · Kimi游戏Agent/Anthropic规则/AI克隆潮 · 名越工作室解散/Krafton回购/游族算力 · GMTK/金山世游/波克/网易/莉莉丝校招", desc: "往期技术归档" },
     { date: "2026-11-05", weekday: "星期四", file: "data/2026-11-05.js", title: "2026-11-05 每日情报：《影之刃零》72h 400万 · Crown/Horde3D/Bevy/Babylon/Fyrox/Openage/Defold/Stride 引擎精读 · GDevelop/egui/Taichi/RenderDoc/RayTracing/RPCS3/Aseprite/PixiJS/MonoGame 开源宝库 · Phasmophobia/Appulse/Threads of Time · ForgeAX/Promethean/NVIDIA ACE/Beckett · 任天堂财报/索尼中国之星 · Unity Jam/米哈游校招", desc: "往期技术归档" },
     { date: "2026-11-04", weekday: "星期三", file: "data/2026-11-04.js", title: "2026-11-04 每日情报：Tripledot 4000万收购Unity旗下Supersonic · Godot/Three.js/PlayCanvas/Urho3D/macroquad/Panda3D 引擎精读 · Veloren/OpenRA/Thrive/Endless Sky/Luanti/Unvanquished 开源游戏 · SDL/SFML/Assimp/FreeType/Jolt/Recast 开源宝库 · Ollama/vLLM/ComfyUI/OpenHands/LangGraph·Kimi游戏Agent · Ludum Dare 62/GGJ·FunPlus社招", desc: "往期技术归档" },
     { date: "2026-11-03", weekday: "星期二", file: "data/2026-11-03.js", title: "2026-11-03 每日情报：EA关闭BioWare·GTA VI定档11/19 · Cocos/LÖVE/A-Frame/Kaplay/Excalibur 开源引擎精读 · p5.js/OpenTK/JSON/Hazel/Sokol/Vulkan 开源宝库 · HuggingFace/PyTorch/AutoGen AI · Ludum Dare 61·淘米/三七2027校招", desc: "往期技术归档" },
-
     { date: "2026-11-02", weekday: "星期一", file: "data/2026-11-02.js", title: "2026-11-02 每日情报：Skydance完成1110亿并购·Paramount/WB Games并入 · Raylib/Heaps/FNA/Flax/wgpu/Piston 开源引擎精读 · Enshrouded 1.0/Stupid Never Dies 评测 · llama.cpp/web-llm/Semantic Kernel/ML-Agents 开源AI · SHIFT/Craftalog Jam·多益/灵犀2027校招", desc: "往期技术归档" },
-
     { date: "2026-11-01", weekday: "星期日", file: "data/2026-11-01.js", title: "2026-11-01 每日情报：Gemini 4 Carbon 登顶 AI 指数 · Godot4.8β2/Babylon.js9.0/O3DE/Cocos 引擎更新 · Hades II/Silksong/KCD II 设计观察 · Phaser/libGDX/ImGui/Box2D/EnTT/Filament 开源精读 · Mistral/OpenAI DevDay/DeepSeek/Qwen · 英雄游戏/网易互娱 2027 校招 · GitHub Game Off 2026 开赛", desc: "往期技术归档" },
     { date: "2026-10-31", weekday: "星期六", file: "data/2026-10-31.js", title: "2026-10-31 每日情报：《Hypnos》1.0正式发售 · Gemini 4 Carbon登顶/ GPT-6.1 Terra砍半单价 · 昆仑开源Matrix-Game 4.0 · BRUTAL与RE:Dox开源 · 盛趣/畅游/腾讯2027校招", desc: "往期技术归档" },
-
     { date: "2026-10-30", weekday: "星期五", file: "data/2026-10-30.js", title: "2026-10-30 每日情报：《影之刃零》正式发售 · Undead Labs 自述曾把《腐烂国度3》重写成 MMO 再推倒重来——裁剪勇气的一课 · AI 基建三连 · Claude-Code-Game-Studios 登顶热榜 · 校招进行时", desc: "往期技术归档" },
-
     { date: "2026-10-29", weekday: "星期四", file: "data/2026-10-29.js", title: "2026-10-29 每日情报：Epic把genAI写进UE6产线 · Godot4.7.2/Bevy0.20.1/Defold1.14.0/OGRE14.6.2 · Don't Nod濒临破产/Capcom财报/Kutaragi谈现状 · Gemini沉浸式探索/Genie4/微软Copilot Harness · 米哈游/网易雷火/叠纸2027校招", desc: "往期技术归档" },
-
     { date: "2026-10-28", weekday: "星期三", file: "data/2026-10-28.js", title: "2026-10-28 每日情报：Unity6000.6.7/Defold1.14(Xbox)/PlayCanvas v2.35(MCP)/OpenXR容器/CocosXR · 行业交锋(Epic批Steam AI披露/Sucker Punch裁员/Warhorse遭攻击) · Hypnos 1.0/Pokémon Unite停服 · 开源SFML/SpacetimeDB/three.js · Anthropic S-1/Claude Duet · 多益/4399校招·LD56", desc: "往期技术归档" },
     { date: "2026-10-27", weekday: "星期二", file: "data/2026-10-27.js", title: "2026-10-27 每日情报：UE5.7(PCG/Nanite植被/AI助手) · 工会化与AI保护成常态(GDC超三成受裁员) · Bevy0.16/Defold/MonoGame/Diligent/Fyrox · 开源Jolt/bgfx/PlayCanvas/PixiJS/AnvilWiki/OpenSpeedy · DeepSeek-V4.1-Flash-1017/Gemini4 Argon/Mistral3/gpt-oss · 数媒国赛/NCDA/网易高校赛/完美校招", desc: "往期技术归档" },
     { date: "2026-10-26", weekday: "星期一", file: "data/2026-10-26.js", title: "2026-10-26 每日情报：FF共鸣HD-2D好评如潮 · 开源智能体(DeepSeek Harness/微软Agent Framework/OpenAI Agents SDK) · 引擎百花齐放(WickedEngine/LittleJS/Lumix/estella/Godot4.8) · 行业震荡(Arkane寻求出售/Nerial关张/Razer收StreamElements/Bose收FMOD) · 莉莉丝2027秋招·腾讯高校大赛·itch.io Jam", desc: "往期技术归档" },
     { date: "2026-10-25", weekday: "星期日", file: "data/2026-10-25.js", title: "2026-10-25 每日情报：Stride4.4/Bevy0.17/Cocos/OpenMW/wgpu/Filament · Vivrato 97%用AI · FSR4.1·Helix 1200-1800$ · PEGI开箱16+ · 多益/盛趣校招·LD59·indiePlay", desc: "往期技术归档" },
     { date: "2026-10-24", weekday: "星期六", file: "data/2026-10-24.js", title: "2026-10-24 每日情报：Babylon 9.32/O3DE 2605/RayLib 6.2 · GameMaker GMRT 免费 · Capcom 1.17亿账户泄露 · Epic AI优先/Unity Spark · 吉比特校招·盛趣社招·LD58", desc: "往期技术归档" },
     { date: "2026-10-23", weekday: "星期五", file: "data/2026-10-23.js", title: "2026-10-23 每日情报：Fortnite 重返澳区 iOS · DeepSeek V4.1 Flash · Godot 4.8-beta1 · Zoud×GGJ 金融素养 Jam · 网易雷火2027秋招", desc: "往期技术归档" },
-
     { date: "2026-10-22", weekday: "星期四", file: "data/2026-10-22.js", title: "2026-10-22 每日情报：BioWare 30年落幕 · Unity 6.7 发布 · Subnautica 2 2.0 · 米哈游2027秋招 · DeepSeek DeepInfer", desc: "往期技术归档" },
     { date: "2026-10-21", weekday: "星期三", file: "data/2026-10-21.js", title: "2026-10-21 每日情报：MIT荒岛智能体实验 · 微软Guardian Agents · MiniMax M3.1 Flash · 赛博朋克2.5更新 · 完美世界2027秋招", desc: "往期技术归档" },
     { date: "2026-10-20", weekday: "星期二", file: "data/2026-10-20.js", title: "2026-10-20 每日情报：VAST开源EdenLive世界模型 · Anthropic 5%股份公益基金 · Unity EDM/Grok/Spark三连发 · GDCA 2027开放直投", desc: "往期技术归档" },
-    { date: "2026-10-19", weekday: "星期一", file: "data/2026-10-19.js", title: "2026-10-19 每日情报：Gemini四智能体击败末影龙 · PS6内存成本破680美元 · Next Fest今日开幕", desc: "往期技术归档"},
-    { date: "2026-10-18", weekday: "星期日", file: "data/2026-10-18.js", title: "2026-10-18 每日情报（补位）：科乐美「做游戏最重要的还是人」 · Liquid Swords破产 · indiePlay入围", desc: "往期技术归档"},
-    { date: "2026-10-17", weekday: "星期六", file: "data/2026-10-17.js", title: "2026-10-17 每日情报：Meta开源816B Muse Spark Open · Steam成就集beta · 叠纸2027秋招启动", desc: "往期技术归档"},
-    { date: "2026-10-16", weekday: "星期五", file: "data/2026-10-16.js", title: "2026-10-16 每日情报：Godot 4.8-beta1发布 · Dean Hall开源Brutal · 雾锁王国1.0", desc: "往期技术归档"},
-    { date: "2026-10-15", weekday: "星期四", file: "data/2026-10-15.js", title: "2026-10-15 每日情报：时之笛Switch2重制预览 · 堡垒之夜登陆Linux · 育碧关停RedLynx", desc: "往期技术归档"},
+    { date: "2026-10-19", weekday: "星期一", file: "data/2026-10-19.js", title: "2026-10-19 每日情报：Gemini四智能体击败末影龙 · PS6内存成本破680美元 · Next Fest今日开幕", desc: "往期技术归档" },
+    { date: "2026-10-18", weekday: "星期日", file: "data/2026-10-18.js", title: "2026-10-18 每日情报（补位）：科乐美「做游戏最重要的还是人」 · Liquid Swords破产 · indiePlay入围", desc: "往期技术归档" },
+    { date: "2026-10-17", weekday: "星期六", file: "data/2026-10-17.js", title: "2026-10-17 每日情报：Meta开源816B Muse Spark Open · Steam成就集beta · 叠纸2027秋招启动", desc: "往期技术归档" },
+    { date: "2026-10-16", weekday: "星期五", file: "data/2026-10-16.js", title: "2026-10-16 每日情报：Godot 4.8-beta1发布 · Dean Hall开源Brutal · 雾锁王国1.0", desc: "往期技术归档" },
+    { date: "2026-10-15", weekday: "星期四", file: "data/2026-10-15.js", title: "2026-10-15 每日情报：时之笛Switch2重制预览 · 堡垒之夜登陆Linux · 育碧关停RedLynx", desc: "往期技术归档" },
     { date: "2026-10-14", weekday: "星期三", file: "data/2026-10-14.js", title: "2026-10-14 每日情报：Meta发布Muse Wonder · Xbox Labs成立 · 六大监管风险指南", desc: "往期技术归档" },
     { date: "2026-10-13", weekday: "星期二", file: "data/2026-10-13.js", title: "2026-10-13 每日情报：Epic强推AI优先 · Tarn Adams反对 · Valve公开CAD文件", desc: "往期技术归档" },
     { date: "2026-10-12", weekday: "星期一", file: "data/2026-10-12.js", title: "2026-10-12 每日情报：Capcom RE引擎引入AI · PAX Aus落幕 · js13k余温", desc: "往期技术归档" },
     { date: "2026-10-11", weekday: "星期日", file: "data/2026-10-11.js", title: "2026-10-11 每日情报：Anthropic断网自曝 · 机械迷城外周末观察 · js13k获奖公布", desc: "往期技术归档" },
     { date: "2026-10-10", weekday: "星期六", file: "data/2026-10-10.js", title: "2026-10-10 每日情报：机械迷城2官宣 · Capcom开源REDox · 索尼VR专利转Meta", desc: "往期技术归档" },
     { date: "2026-10-09", weekday: "星期五", file: "data/2026-10-09.js", title: "2026-10-09 每日情报：赛博朋克2077影视化 · Bevy 0.20 正式版 · Xbox XP 跨媒介部门", desc: "往期技术归档" },
-
-  { date: "2026-10-08", weekday: "星期四", file: "data/2026-10-08.js", desc: "往期技术归档" },
-  { date: "2026-10-07", weekday: "星期三", file: "data/2026-10-07.js", desc: "往期技术归档" },
-  { date: "2026-10-06", weekday: "星期二", file: "data/2026-10-06.js", desc: "往期技术归档" },
-  { date: "2026-10-05", weekday: "星期一", file: "data/2026-10-05.js", desc: "往期技术归档" },
-  { date: "2026-10-04", weekday: "星期日", file: "data/2026-10-04.js", desc: "往期技术归档" },
-  { date: "2026-10-03", weekday: "星期六", file: "data/2026-10-03.js", desc: "往期技术归档" },
 ];
