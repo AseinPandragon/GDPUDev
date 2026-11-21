@@ -10,7 +10,7 @@ window.DAILY_NEWS_DATA = {
       "行业头条：网易游戏收入罕见同比下滑，港股一天跌近两成（hero）",
       "引擎精读：UE Shader 三类瓶颈辨析、Unity DOTS 万体同屏、PlayCanvas 2.24 高斯泼溅",
       "开源宝库：PhoneBox 旧手机副屏、SoduWork 多智能体编排、ffmpeg-skill 本地媒体处理",
-      "AI 前沿：Genie 4 接入 Gemini API、Anthropic 挂牌涨 33%、NVIDIA SkillEvaluator 上闸",
+      "AI 前沿：Claude 参与黎曼猜想证明声明震动数学界、Genie 4 接入 Gemini API、Anthropic 挂牌涨 33%",
       "游戏动态：Dice Have No Eyes 结束抢先体验、模拟山羊 3 新扩展、12 款新游同日上线",
       "竞赛招聘：Unity 官方 Jam 进入投票期、TapTap Spotlight 百万奖池、腾讯/Unity 引擎岗"
     ],
@@ -67,7 +67,7 @@ window.DAILY_NEWS_DATA = {
     "subcategory": "行业·财报",
     "title": "网易游戏收入罕见同比下滑，港股一天跌去近两成",
     "summary": "网易 11 月 19 日发布三季报：净收入 279 亿元、同比减 1.8%，游戏及相关增值服务收入 229 亿元、同比下降 1.7%，为 2024 年三季度以来该业务再次同比下滑。11 月 20 日港股盘中一度跌超 19%。管理层把原因归于《燕云十六声》《逆水寒》表现逊色与新作《遗忘之海》不及预期，同时确认《无限大》仍按 2027 年 1 月 15 日全球上线推进。头部厂商的增长放缓往往不是单点失误，而是产品周期换挡的信号——看财报更该看管线，而不是单季的数字起伏。",
-    "image": "https://inews.gtimg.com/om_bt/O21413zmWub_aa6syGNagubCbPHMn3132XmUghdVcbTIkAA/1000",
+    "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-21-hero-netease.jpg",
     "source": "上海证券报·中国证券网",
     "date": "2026-11-20",
     "url": "https://finance.eastmoney.com/a/202611203935995888.html",
@@ -110,7 +110,7 @@ window.DAILY_NEWS_DATA = {
       "source": "腾讯新闻",
       "date": "2026-11-20",
       "url": "https://news.qq.com/rain/a/20261120A0AULZ00",
-      "image": "https://inews.gtimg.com/om_bt/O21413zmWub_aa6syGNagubCbPHMn3132XmUghdVcbTIkAA/1000",
+      "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-21-hero-netease.jpg",
       "badge": "财报",
       "badgeType": "business",
       "readTime": "5 分钟",
@@ -1537,6 +1537,47 @@ window.DAILY_NEWS_DATA = {
           "type": "text",
           "text": [
             "当前端产出越来越容易，「像不像人做的」就成了新的分水岭。把排版与层级规则固化成技能，让 AI 每次都遵守底线规范，比事后返工省时得多。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-riemann-proof",
+      "category": "ai",
+      "subcategory": "AI·数学",
+      "title": "Claude 参与证明黎曼猜想？一份 4 页声明与 1730 万行 Lean 代码震动数学界",
+      "summary": "11 月 20 日，Anthropic 数学家 Levent Alpöge 在个人网站发布 4 页声明，称借助 Claude 找到黎曼猜想证明，并宣称同一方法可推广到广义黎曼猜想；完整论证以 14 个分卷的 Lean 代码放出，约 1730 万行。牛津大学数学家 Maynard 表示有「98% 或 99% 把握」认为很可能正确，但科技日报明确写下「成果仍有待数学界验证」，目前也没有公开的完整构建结果。把「宣称突破」写成「已经证明」是这条新闻最容易踩的坑。",
+      "source": "Levent Alpöge 个人声明（alpo.ge）",
+      "date": "2026-11-20",
+      "url": "https://alpo.ge/remark.pdf",
+      "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-21-ai-riemann.jpg",
+      "badge": "AI",
+      "badgeType": "ai",
+      "readTime": "6 分钟",
+      "hotScore": 98,
+      "tags": [
+        "Claude",
+        "黎曼猜想",
+        "Lean",
+        "形式化验证",
+        "数学"
+      ],
+      "content": [
+        {
+          "title": "声明要点",
+          "type": "list",
+          "items": [
+            "11 月 20 日 Alpöge 发布 4 页声明，称与 Claude 合作找到黎曼猜想证明",
+            "同一方法被宣称可推广至广义黎曼猜想",
+            "完整论证以 14 个分卷 Lean 代码放出，约 1730 万行、无额外假设",
+            "截至发稿尚无公开的完整构建与独立验证结果"
+          ]
+        },
+        {
+          "title": "观察",
+          "type": "text",
+          "text": [
+            "三种口径必须分开：Alpöge 本人用词是「我相信」，牛津大学数学家 Maynard 给出「98% 或 99% 把握」的第三方判断，科技日报则明确写「仍有待数学界验证」。同日意大利独立数学家 Masullo 也发布了一份不用 AI、耗时 12 年的广义黎曼猜想证明草稿，同样待审。对开发者来说，比「AI 会不会做数学」更值得盯的是形式化验证这条路径——Lean 代码能否被独立跑通、是否不含 sorry 占位，正在成为 AI 数学成果的验收标准；可机器校验的产物，比任何声明都更接近可信。"
           ]
         }
       ]
