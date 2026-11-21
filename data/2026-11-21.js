@@ -582,6 +582,47 @@ window.DAILY_NEWS_DATA = {
       ]
     },
     {
+      "id": "ga-weplay-room6",
+      "category": "games",
+      "subcategory": "国内·展会",
+      "title": "WePlay 2026 今日上海开展：room6 带四款游戏试玩，开发总监亲临",
+      "summary": "WePlay 2026 于 11 月 21 日至 22 日在上海国家会展中心举办，room6 在 A33-35 展位提供《狐蛙奇旅：化野岛迷踪记》《PIGGY ONE SUPER SPARK》《破防打工妹♥死线节拍!!》《致命柔情》四款游戏试玩，其中《狐蛙奇旅》开发总监 Rias 从日本到现场与玩家交流。多款试玩版是在开拓芯游戏创享节公开版本基础上的内容更新版。展会首日就能对着开发者试玩最新 Demo，是独立游戏圈少见的近距离反馈场。",
+      "source": "3DM",
+      "date": "2026-11-21",
+      "url": "https://www.3dmgame.com/news/202611/3960038.html",
+      "image": "",
+      "badge": "游戏",
+      "badgeType": "games",
+      "readTime": "3 分钟",
+      "hotScore": 71,
+      "tags": [
+        "WePlay 2026",
+        "room6",
+        "独立游戏",
+        "试玩",
+        "上海"
+      ],
+      "content": [
+        {
+          "title": "展会要点",
+          "type": "list",
+          "items": [
+            "11 月 21-22 日，上海国家会展中心，room6 展位 A33-35",
+            "四款游戏现场试玩，多款为创享节版本后的内容更新版",
+            "《狐蛙奇旅》开发总监 Rias 到场与玩家直接交流",
+            "关注社媒并加 Steam 愿望单可领原创周边与官方徽章"
+          ]
+        },
+        {
+          "title": "观察",
+          "type": "text",
+          "text": [
+            "对独立开发者来说，这类线下试玩会的价值在于把「做完—没人看」的死循环打断：玩家当场试、当场说哪里卡关、哪里没看懂，反馈密度远高于线上发一版无人问津的包。room6 把开发总监直接放到展台，本身就是一种把反馈当资源的做法。这条来自 3DM 的国内游戏资讯正文可直接读取；图片 CDN 有防盗链，所以这条不配外链图，避免页面出现裂图。"
+          ]
+        }
+      ]
+    },
+    {
       "id": "en-ue-shader",
       "category": "engine",
       "subcategory": "渲染·着色器",
@@ -1297,6 +1338,47 @@ window.DAILY_NEWS_DATA = {
           "type": "text",
           "text": [
             "卡通渲染看着是美术风格，落到实现全是工程取舍：色块靠 Ramp、描边靠几何、性能靠变体。先把这三条主线理清，再谈风格细节，才不会在调参里迷路。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tu-godot-codex-ai",
+      "category": "tutorials",
+      "subcategory": "Godot·AI 实战",
+      "title": "Godot + Codex 12 小时做出可玩原型：一位知乎开发者的实战复盘",
+      "summary": "开发者少年奕记录了一次 Godot + Codex 的 12 小时游戏开发实验：先花 3-4 小时过 Godot 官方 Quick Start，接入 godot-mcp 让 Codex 调试与读输出，把玩法拆成 16 个 step 写入 progress.txt 逐个会话推进、每三步插一次 review，再让子任务批量替换美术素材、用 Suno 生成 BGM。结论很克制：AI 把「做出原型」从数月压到半天，但端到端测试、UI 对齐、美术风格统一和 Token 消耗仍是硬坎——更现实的工作流是「人给草图 → AI 细化 → 人再统一风格」。",
+      "source": "知乎 @少年奕（授权转载）",
+      "date": "2026-11-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzE5MTA0NzYxMQ==&mid=2247515401&idx=1&sn=ce99d2a719700609fa12fc1d3ec5514c&chksm=977955860f6e70230af30f79a1b828e3ad9a24857caa12f5e573b7a8aa8c6f2bc60193d7b384",
+      "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-21-tu-godot-codex.jpg",
+      "badge": "教程",
+      "badgeType": "engine",
+      "readTime": "6 分钟",
+      "hotScore": 82,
+      "tags": [
+        "Godot",
+        "Codex",
+        "AI 辅助开发",
+        "原型",
+        "独立游戏"
+      ],
+      "content": [
+        {
+          "title": "实战要点",
+          "type": "list",
+          "items": [
+            "3-4 小时过 Godot 官方 Quick Start，GDScript 类 Python 上手快",
+            "接入 godot-mcp，让 Codex 能操纵引擎调试、看输出",
+            "玩法拆成 16 个 step 写进 progress.txt，逐会话推进、每三步 review",
+            "子任务批量替换美术素材，Suno 生成 BGM（英文提示词风格更稳）"
+          ]
+        },
+        {
+          "title": "观察",
+          "type": "text",
+          "text": [
+            "这条来自中文开发者社区的一手复盘，价值不在「AI 多神」，而在把失败边界写得很具体：战斗实时性高时模型 thinking 太慢、对 UI 对不齐和关卡直觉问题几乎看不出来、多张 AI 图风格统一不了、100 美元套餐跑 xhigh+fast 很快见底。对想用 AI 做游戏的人，「人给草图—AI 细化—人再统一风格」比全自动流水线更接近可落地。知乎正文有登录墙，这次是通过作者授权转载的公众号全文读到的——中文一手内容值得专门找可读的转载落点，不该因为反爬就放弃。"
           ]
         }
       ]
