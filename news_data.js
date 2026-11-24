@@ -1,1680 +1,1643 @@
 window.DAILY_NEWS_DATA = {
   "meta": {
-    "date": "2026-11-23",
-    "weekday": "星期一",
+    "date": "2026-11-24",
+    "weekday": "星期二",
     "title": "GDPUDev 个人数字创作展示・每日技术情报",
     "subtitle": "个人学习观察与评述・附参考来源外部链接",
-    "updateTime": "2026-11-23 07:00",
+    "updateTime": "2026-11-24 07:00",
     "editor": "GDPUDev 技术中枢 & CodeBuddy",
     "highlights": [
-      "行业头条：阿里 Qwen4-Max 原生视觉 + 百万上下文，能读图驱动 Blender 建 3D 场景（hero）",
-      "引擎精读：UE6 首发弃用蓝图转 Verse+AI、Unity CLI 1.0/6000.6.10f1、Defold 1.14.1、Godot 版本支持表",
-      "开源宝库：Horizon/Rust ECS、godot-mcp、awesome-ai-game-dev-tools、claude-animation-skills、PlayGen2",
-      "AI 前沿：米哈游 Gamer 通用 VLA(65ms)、Claude Fable 5.2 一句话做游戏、大模型 3D 能力集体越界",
-      "游戏动态：《深渊航线》《Grand Theft Timeline》《诡视低语》《点点岛》、Phonopolis 夺 DevGAMM 大奖",
-      "竞赛招聘：TapTap Game Jam、Game Off 2026，库洛/莉莉丝/鹰角 27 届校招"
+      "行业头条：Klei 正版授权手游《饥困荒野》11/24 上线，预约破 2500 万，取消武器宠物抽卡改兑换商店（hero）",
+      "引擎精读：PlayCanvas 2.24 动态天空与平面反射、Unity 6.2 AI Assistant/Sentis、PlayCanvas 2.24 引擎更新、Stride 4.4 图形后端重构",
+      "开源宝库：raea（React+TS 描述的渲染引擎）、OhMyGame 一人游戏工作室、SolidCraft 参数化 3D CAD、ArtCraft AI 创作 IDE",
+      "AI 前沿：Anthropic IPO 募资 1195 亿美元收官、Gemini Decisions API 决策模型、Inkling 2 Mini 26B 本地可跑、腾讯 Hy4 开源",
+      "游戏动态：《饥困荒野》11/24 上线、年末五款旗舰排期、Terminus Day Zero 免费上线、No Asteroids 挖小行星",
+      "竞赛招聘：EHU Game Jam 2026、库洛/莉莉丝 2027 秋招、英雄游戏社招与 27 届校招"
     ],
     "engineStatus": [
       {
-        "name": "Unreal 6",
-        "type": "unreal",
-        "status": "弃蓝图转Verse+AI",
-        "badge": "UE",
-        "color": "violet"
+        "name": "PlayCanvas 2.24",
+        "type": "webgpu",
+        "status": "动态天空+平面反射",
+        "badge": "WEB",
+        "color": "cyan"
       },
       {
-        "name": "Unity CLI 1.0",
+        "name": "Unity 6.2",
         "type": "unity",
-        "status": "智能体可编排",
+        "status": "AI Assistant 登场",
         "badge": "UNITY",
         "color": "blue"
       },
       {
-        "name": "Godot 4.8",
-        "type": "godot",
-        "status": "beta4 收尾",
-        "badge": "OSS",
-        "color": "green"
-      },
-      {
-        "name": "Defold 1.14",
+        "name": "Stride 4.4",
         "type": "native",
-        "status": "矢量字体",
+        "status": "Vulkan/DX12 重构",
         "badge": "OSS",
         "color": "teal"
       },
       {
-        "name": "Castle Engine",
+        "name": "Bevy 0.20",
         "type": "native",
-        "status": "Pascal 跨平台",
+        "status": "Rust ECS 引擎",
         "badge": "OSS",
-        "color": "cyan"
+        "color": "orange"
       },
       {
-        "name": "Qwen4-Max",
+        "name": "Gemini Decision 1",
         "type": "ai",
-        "status": "原生视觉+3D",
+        "status": "决策模型 API",
         "badge": "AI",
-        "color": "orange"
+        "color": "violet"
+      },
+      {
+        "name": "饥困荒野",
+        "type": "game",
+        "status": "11/24 上线",
+        "badge": "GAME",
+        "color": "green"
       }
     ]
   },
   "hero": {
-    "id": "hero-qwen4max-3d",
-    "category": "ai",
-    "categoryName": "AI前沿",
-    "tag": "阿里·基座模型",
-    "subcategory": "AI·3D生成",
-    "title": "阿里 Qwen4-Max 发布：原生视觉 + 百万上下文，读一张图就能驱动 Blender 搭 3D 场景",
-    "summary": "11 月 16 日阿里发布新一代基座模型 Qwen4-Max，主打原生视觉能力与百万 token 上下文。官方演示中它能熟练调用 Blender，把几何建模、场景搭建、材质配置到灯光渲染串成一条链，把一句创意逐步做成风格化 3D 作品；同一时期 Claude Fable 5.2、GPT-6.2 Astra 也都在强化 3D 空间理解。头部模型把 3D 生成从演示工具推向可编排的生产环节，值得做内容管线的团队实测其稳定性与导出格式，而不是只看演示视频。",
-    "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-23-hero-qwen4max.jpg",
-    "source": "网易科技（每日经济新闻转载）",
-    "date": "2026-11-16",
-    "url": "https://www.163.com/dy/article/LC1DNIFN0512B07B.html",
-    "readTime": "8 分钟",
-    "hotScore": 97,
+    "id": "hero-famine-wilds-launch",
+    "category": "industry",
+    "categoryName": "行业热点",
+    "tag": "腾讯发行·Klei 授权",
+    "subcategory": "大厂动向",
+    "title": "《饥困荒野》11 月 24 日上线：预约破 2500 万，饥荒手游砍掉武器宠物抽卡",
+    "summary": "由 Klei 正版授权、盛趣研发、腾讯发行的《饥困荒野》11 月 24 日全平台上线，国内预约量突破 2500 万。这款基于《饥荒：联机版》的多人生存手游保留随机生成世界、四季循环与哥特美术，新增「家园」安全区，角色与背包跨局保留；商业化上取消武器和宠物抽卡，改为沙盒材料兑换商店，付费重心转向外观。把成熟 IP 的移动化做成「去抽卡化」样本，反映大厂在长线运营与口碑之间的取舍正在往玩家友好一侧移动，值得做商业化设计的团队盯住它的留存数据。",
+    "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-24-hero-famine.jpg",
+    "source": "腾讯新闻（年末新游盘点）",
+    "date": "2026-11-18",
+    "url": "https://news.qq.com/rain/a/20261118A0F3Q700",
+    "readTime": "6 分钟",
+    "hotScore": 95,
     "tags": [
-      "Qwen4-Max",
-      "阿里",
-      "原生视觉",
-      "3D生成",
-      "Blender"
+      "饥困荒野",
+      "腾讯游戏",
+      "Klei",
+      "手游上线",
+      "商业化"
     ],
     "content": [
       {
-        "title": "已披露要点",
+        "title": "关键事实",
         "type": "list",
         "items": [
-          "Qwen4-Max 于 11 月 16 日发布，主打原生视觉能力与百万 token 上下文",
-          "官方演示中模型可熟练使用 Blender，串联几何建模、场景搭建、材质配置与灯光渲染",
-          "同期 Claude Fable 5.2、GPT-6.2 Astra 均强化 3D 空间理解与交互式场景构建",
-          "业内分歧集中在是否把语言模型与物理/世界模型统一到同一技术体系"
+          "11 月 24 日全平台上线，Klei 正版授权、盛趣研发、腾讯发行，基于《饥荒：联机版》开发",
+          "国内预约量突破 2500 万，新增「家园」安全区，沙盒重置后角色与背包物品保留",
+          "取消武器与宠物抽卡，改为兑换商店，道具只消耗沙盒材料，付费转向外观"
         ]
       },
       {
-        "title": "观察",
+        "title": "学习观察",
         "type": "text",
-        "text": [
-          "3D 生成正从「能出一张图」迈向「能进引擎」。真正衡量价值的不是演示视频里的惊艳程度，而是模型输出能不能稳定导出为网格、贴图与材质参数，接进现有 Blender/Unity/UE 管线。对团队而言，现在值得投入的是把提示词模板、资产校验和人工复核流程先搭起来，等模型能力继续上量时直接复用。"
-        ]
+        "text": "把「饥荒」这套高自由度的生存循环搬到移动端，难点从来不是玩法移植，而是如何在不破坏探索节奏的前提下建立商业化。取消抽卡、改用材料兑换，是把付费压力从核心循环挪到外观层的一次尝试；对独立开发者来说，这类大厂实验等于替行业验证了「去抽卡化」在买量时代是否还能跑通，比看财报数字更有参考价值。"
       }
     ]
   },
   "items": [
     {
-      "id": "en-ue6-noblueprint",
-      "category": "engine",
-      "subcategory": "引擎·Unreal",
-      "title": "Unreal Engine 6 首发移除蓝图：玩法改用 Verse + Scene Graph，押注 AI 迁移",
-      "summary": "11 月 19 日 Epic 开发执行副总裁 Marcus Wassmer 撰文确认，UE6（含早期体验版）不再包含蓝图与 Actor Gameplay Framework，玩法将基于 Verse 语言与新的 Scene Graph 框架。Epic 称已用 AI 把《堡垒之夜》两万多个蓝图转成约 300 万行 Verse，据此判断 UE5→UE6 迁移可靠 AI 大幅自动化，从而按时甚至提前交付。蓝图在 UE5 仍保留，但中间层工具的缺失已引发设计师群体担忧。",
-      "source": "PC Gamer",
-      "date": "2026-11-19",
-      "url": "https://pcgamer.com/gaming-industry/unreal-engine-6-to-jettison-key-scripting-feature-earlier-than-planned-in-favor-of-ai-coding",
-      "image": "https://cdn.mos.cms.futurecdn.net/ZoNnbwEE9xr6vSMNfPbQVN-1920-80.jpg",
-      "badge": "UE6",
-      "badgeType": "engine",
-      "readTime": "7 分钟",
-      "hotScore": 94,
-      "tags": [
-        "Unreal 6",
-        "Verse",
-        "蓝图",
-        "AI迁移",
-        "Scene Graph"
-      ],
-      "content": [
-        {
-          "title": "版本要点",
-          "type": "list",
-          "items": [
-            "UE6 及早期体验版不含蓝图与 Actor 框架，玩法基于 Verse + Scene Graph",
-            "Epic 称用 AI 把堡垒之夜两万多个蓝图转成约 300 万行 Verse",
-            "官方理由是 AI 让 UE5→UE6 迁移可近乎自动化，从而按时交付",
-            "蓝图在 UE5 仍保留，UE6 完整功能与迁移政策待后续文档确认"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "移除蓝图是一次技术路线押注：Epic 赌的是 AI 迁移工具成熟到能让美术与设计师平滑过渡到代码优先。对中小团队，这不是要不要用 AI 的问题，而是要提前评估现有蓝图资产在 UE6 的迁移成本，并把 Verse 纳入技术储备——工具层的确定性一旦消失，提前布局的人会占先手。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "en-unity-cli10",
-      "category": "engine",
-      "subcategory": "引擎·Unity",
-      "title": "Unity CLI 1.0 转正 + 6000.6.10f1：智能体可直接建场景、编译并试玩",
-      "summary": "截至 11 月 22 日，Unity Pipeline 1.0.0 与 CLI 1.0.1 进入稳定，开发者可通过命令创建场景与资产、跑测试构建、检查运行中的游戏；官方插件让 Claude Code、Codex 等智能体搭关卡、写代码、触发编译、修错误并试玩场景。编辑器侧 6000.6.10f1 于 11 月 19 日发布，修正 Forward+/Deferred+ 在远景与近裁剪面的光照处理。",
-      "source": "Unity Releases",
-      "date": "2026-11-22",
-      "url": "https://unityreleases.com/",
-      "image": "https://unityreleases.com/brand/social-preview-gearbox.png",
-      "badge": "Unity CLI",
-      "badgeType": "engine",
+      "id": "in-plugindigital",
+      "category": "industry",
+      "categoryName": "行业热点",
+      "subcategory": "投融资·并购",
+      "title": "法国 Plug In Digital 收购 Twin Sails，合并成面向独立游戏的发行集团",
+      "summary": "法国发行商 Plug In Digital 收购《News Tower》发行方 Twin Sails Interactive，两家合并为 Plug In Digital Group，Twin Sails CEO 升任集团 CEO。新集团整合 Dear Villagers、移植工作室 Pixel Ratio，为独立开发者提供最高 50 万欧元开发预算与全球分发，目标每年发行 6 至 8 款新作。发行端 consolidation 在给独立团队更多基础设施的同时，也意味着选发行商要更看重长线分发能力。",
+      "source": "GamesIndustry.biz",
+      "date": "2026-11-21",
+      "url": "https://gamesindustry.biz/plug-in-digital-acquires-news-tower-publisher-twin-sails-interactive-creating-new-publishing-group-to-compete-in-a-highly-competitive-market",
+      "image": "https://assetsio.gnwcdn.com/HeroBanner_TSIxPiD.png?width=1200&height=630&fit=crop&enable=upscale&aut=format",
+      "badge": "发行并购",
+      "badgeType": "business",
       "readTime": "5 分钟",
       "hotScore": 88,
       "tags": [
-        "Unity",
-        "CLI",
-        "Pipeline",
-        "AI智能体",
-        "6000.6"
+        "Plug In Digital",
+        "Twin Sails",
+        "独立发行",
+        "并购"
       ],
       "content": [
         {
-          "title": "版本要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "Pipeline 1.0.0 稳定：命令式建场景/资产、跑测试与构建、检查运行中游戏",
-            "CLI 1.0.1 稳定：无需 Hub 即可装编辑器、管项目、自动化构建与测试",
-            "官方插件支持 Claude Code/Codex 等智能体搭关卡、编译、修错、试玩",
-            "6000.6.10f1（11/19）修正 Forward+/Deferred+ 光照边界处理"
+            "Plug In Digital 收购《News Tower》发行方 Twin Sails Interactive，合并为 Plug In Digital Group",
+            "新集团为独立开发者提供最高 50 万欧元开发预算与全球分发，目标每年发行 6-8 款新作",
+            "Twin Sails CEO Nicolas Godement 升任集团 CEO，Dear Villagers 等厂牌继续独立运营"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "把编辑器能力做成可被脚本和智能体调用的 CLI，是引擎工具链这两年少有的「基础设施级」变化。它的价值不在某条命令，而在于让构建、验证、修错形成闭环——这正是 AI 辅助开发真正能落地的地方。建议先在分支项目里试，把结构化输出接进自己的 CI，别急着动生产工程。"
-          ]
+          "text": "发行商合并潮的另一面，是独立开发者越来越需要「发行+移植+渠道」一条龙能力。挑合作伙伴时，与其看单款分成比例，不如看它在多平台分发和中国市场落地上的真本事，这才是作品能不能活过首年的关键。"
         }
       ]
     },
     {
-      "id": "en-defold1141",
-      "category": "engine",
-      "subcategory": "引擎·Defold",
-      "title": "Defold 1.14.1 加入矢量字体：一套面向多端的轻量 2D/3D 引擎再补关键拼图",
-      "summary": "Indie Tooling 报道 Defold 1.14.1 引入矢量字体支持，让这套开源引擎在 UI 与文本渲染上补齐一块常用能力。Defold 以轻量、脚本驱动（Lua）、一键导出多平台见长，适合体量受限的 2D 与轻量 3D 项目。",
-      "source": "Indie Tooling",
-      "date": "2026-11-15",
-      "url": "https://indietooling.com/posts/defold-1-14-1-vector-fonts",
-      "image": "https://indietooling.com/_astro/defold-1-14-1-vector-fonts.Z0RJhLic_1Hxa0D.jpg",
-      "badge": "Defold 1.14",
-      "badgeType": "engine",
-      "readTime": "4 分钟",
-      "hotScore": 76,
-      "tags": [
-        "Defold",
-        "矢量字体",
-        "Lua",
-        "轻量引擎"
-      ],
-      "content": [
-        {
-          "title": "版本要点",
-          "type": "list",
-          "items": [
-            "Defold 1.14.1 增加矢量字体支持",
-            "引擎以 Lua 脚本驱动、包体小、导出平台多为特点",
-            "定位偏向 2D 与轻量 3D 的快速开发与多端发布"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "在动辄数百 MB 的现代引擎之外，Defold 这类轻量选项对广告小游戏、教育内容和低端设备仍有独特价值。矢量字体的补齐说明它在认真解决 UI 细节——选型时别只看 3A 渲染能力，包体与启动速度往往更影响留存。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "en-godot-versions",
-      "category": "engine",
-      "subcategory": "引擎·Godot",
-      "title": "Godot 版本支持状态表更新：4.7.2 为最新稳定版，4.8 beta 4 或为最后测试版",
-      "summary": "GodotAwesome 维护的版本支持表（11 月 19 日核对）显示，最新稳定版为 4.7.2（8 月 18 日发布），4.8 处于 beta 4（11 月 18 日，123 项修复），可能是稳定版前最后一个测试版。表格同时标注各分支支持状态：4.6 全支持、4.5 仅安全维护、4.4 及更早停止支持，帮助团队判断该升到哪个分支。",
-      "source": "GodotAwesome",
-      "date": "2026-11-19",
-      "url": "https://godotawesome.com/godot-versions",
-      "image": "",
-      "badge": "Godot 4.8",
-      "badgeType": "engine",
-      "readTime": "5 分钟",
-      "hotScore": 81,
-      "tags": [
-        "Godot",
-        "版本支持",
-        "4.7.2",
-        "4.8 beta",
-        ".NET 10"
-      ],
-      "content": [
-        {
-          "title": "版本要点",
-          "type": "list",
-          "items": [
-            "最新稳定版 4.7.2（8/18），最新稳定分支建议新项目采用",
-            "4.8 beta 4（11/18，123 项修复）或为最后测试版，.NET 构建要求升到 .NET 10",
-            "4.6 全支持、4.5 仅安全与平台修复、4.4 及更早 EOL",
-            "Godot 3 的 3.6.x 作为长期分支继续维护"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "把版本支持状态做成一张表，省去翻发布说明的时间。真正要紧的是那条 .NET 8→10 的门槛：C# 团队升级 4.8 前先把工具链对齐，否则会在构建环节卡住。生产项目继续留在稳定分支，测试版只在副本里试。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "en-castle-engine",
-      "category": "engine",
-      "subcategory": "引擎·开源",
-      "title": "Castle Game Engine：用 Pascal 写的跨平台 3D 引擎持续迭代",
-      "summary": "Castle Engine 是一套以 Object Pascal 编写的开源 3D 游戏引擎，支持桌面、移动端与 Web 多平台导出，附带场景编辑器与 VR 支持。作为 Non-Unity/UE 生态的老牌选项，它在 Pascal 开发者与教育场景里仍有稳定用户群。",
-      "source": "Castle Engine",
-      "date": "2026-11-20",
-      "url": "https://castle-engine.io/",
-      "image": "https://castle-engine.io/images/combined_cge_logo_game.png",
-      "badge": "Castle",
-      "badgeType": "engine",
-      "readTime": "4 分钟",
-      "hotScore": 70,
-      "tags": [
-        "Castle Engine",
-        "Pascal",
-        "开源引擎",
-        "跨平台"
-      ],
-      "content": [
-        {
-          "title": "引擎要点",
-          "type": "list",
-          "items": [
-            "以 Object Pascal 编写的开源 3D 引擎",
-            "支持桌面、移动端与 Web 多平台导出",
-            "自带场景编辑器，并提供 VR 相关支持"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "引擎生态不只有 Unity 和 UE。对 Pascal 背景的团队或教学场景，Castle 这类项目提供了低门槛的 3D 入口。选型时把语言栈与社区活跃度一起算进去，往往比单纯比渲染特性更实用。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "en-ue59-preview2-web",
-      "category": "engine",
-      "subcategory": "引擎·Unreal",
-      "title": "UE 5.9 Preview 2：纯蓝图项目也能导出网页，AI 工具默认开启",
-      "summary": "Cyberoly 报道 Unreal Engine 5.9 Preview 2 放开网页导出限制——此前打包 Web 至少要含一个 C++ 类，现在纯蓝图项目即可直接面向浏览器。配套的贴图流送、更高效的着色器下载、移动端用 TAA 替代 FXAA 等改进同步到位；AI 辅助工具默认集成进编辑器，代理可直接参与蓝图编辑、资产管理、调试与性能分析。官方强调网页部署仍属实验特性。",
-      "source": "Cyberoly",
-      "date": "2026-11-20",
-      "url": "https://cyberoly.com/post/epic-games-releases-unreal-engine-59-preview-2-with-browser-based-blueprint",
-      "image": "",
-      "badge": "UE 5.9",
-      "badgeType": "engine",
-      "readTime": "6 分钟",
-      "hotScore": 84,
-      "tags": [
-        "Unreal 5.9",
-        "网页导出",
-        "蓝图",
-        "AI工具",
-        "TAA"
-      ],
-      "content": [
-        {
-          "title": "版本要点",
-          "type": "list",
-          "items": [
-            "纯蓝图项目可直接导出 Web，不再强制包含 C++ 类",
-            "贴图流送、着色器下载优化，移动端渲染用 TAA 替代 FXAA",
-            "AI 辅助工具默认集成，代理可参与蓝图编辑、资产管理、调试与性能分析",
-            "网页部署仍标记为实验特性，建议用项目副本测试"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "把 Web 目标从「要写 C++」降到「纯蓝图可用」，对展示型项目和轻量玩法是实质利好。但实验特性意味着兼容性坑还在，先用副本跑通构建再决定是否纳入发行渠道。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "in-gta6-day1",
+      "id": "in-tencent-q3ai",
       "category": "industry",
-      "subcategory": "行业·财报",
-      "title": "GTA 6 首日销售额 37.9 亿美元，刷新全球娱乐产品首发纪录",
-      "summary": "11 月 21 日 Take-Two 公布，《GTA 6》首发日零售销售额达 37.9 亿美元（约 253.6 亿元人民币），刷新全球娱乐产品首发纪录。第三方机构 Sensor Tower 估算其预购与首日销售合计约 23.6 亿美元，不同口径差异较大；Ampere Analysis 称有超 200 万英美 Xbox 用户通过改区到新西兰提前玩到游戏。",
-      "source": "GamesIndustry.biz",
-      "date": "2026-11-21",
-      "url": "https://www.gamesindustry.biz/gta-6-hits-379-billion-in-its-first-day-on-sale-becoming-the-biggest-entertainment-launch-in-history",
-      "image": "https://assetsio.gnwcdn.com/Raul_Bautista_02_RUnoiiq.jpg?width=1200&height=630&fit=crop&enable=upscale",
-      "badge": "GTA 6",
-      "badgeType": "industry",
-      "readTime": "6 分钟",
-      "hotScore": 96,
-      "tags": [
-        "GTA 6",
-        "Take-Two",
-        "首发纪录",
-        "Sensor Tower"
-      ],
-      "content": [
-        {
-          "title": "核心数字",
-          "type": "list",
-          "items": [
-            "Take-Two：首日零售额 37.9 亿美元，约 253.6 亿元人民币",
-            "Sensor Tower：预购与首日销售合计估算约 23.6 亿美元",
-            "Ampere：超 200 万英美 Xbox 用户改区新西兰提前游玩",
-            "刷新全球娱乐产品首发纪录"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "同一场首发，官方、第三方估算与渠道口径差出十亿美元级别，读数字前先看清统计范围——是零售额、预购还是渠道分成。对从业者更有价值的是它抬高了 3A 首发的天花板，也把「超长线运营」的预期进一步拉满。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "in-market-cap",
-      "category": "industry",
-      "subcategory": "行业·财报",
-      "title": "腾讯网易市值单日合计蒸发超 3000 亿港元，Q3 财报季市场情绪转冷",
-      "summary": "竞核统计，11 月 14 日至 20 日，腾讯控股市值蒸发约 3850 亿港元、网易约 1200 亿港元。腾讯 Q3 网络游戏收入 665 亿元、同比增 5%（本土 +11%、国际 -9%），财报次日收跌 6.55%；网易 Q3 净收入 279 亿元、同比减 1.8%，游戏及相关收入 229 亿元、同比减 1.7%，次日港股收跌 17.6%、美股跌 11.4%。",
-      "source": "竞核（网易订阅转载）",
-      "date": "2026-11-22",
-      "url": "https://www.163.com/dy/article/LCBFRJQH0511CVBI.html",
+      "categoryName": "行业热点",
+      "subcategory": "大厂财报",
+      "title": "腾讯三季度经营利润降 7%，财报把账算在 AI 投入头上",
+      "summary": "腾讯 2026 年三季度营收 2073.36 亿元、同比增 8%，归母净利润 636.12 亿元、同比增 0.8%，但经营利润 591 亿元、同比下降 7%，经营利润率从 33% 降到 29%。财报注明若剔除混元、元宝、CodeBuddy、WorkBuddy 等新 AI 产品投入，经营利润为 833 亿元、同比增 8%。三季度自由现金流为负 691 亿元，主因大额算力采购预付款。把 AI 成本单独摊开披露，是大厂给股东交代投入节奏的新写法。",
+      "source": "网易财经（转中国工业报）",
+      "date": "2026-11-23",
+      "url": "https://www.163.com/dy/article/LCDQJOQS05568W0A.html",
       "image": "",
-      "badge": "财报季",
-      "badgeType": "industry",
-      "readTime": "7 分钟",
-      "hotScore": 92,
+      "badge": "财报解读",
+      "badgeType": "business",
+      "readTime": "6 分钟",
+      "hotScore": 90,
       "tags": [
         "腾讯",
-        "网易",
-        "Q3财报",
-        "市值",
-        "存量竞争"
+        "三季度财报",
+        "AI投入",
+        "算力采购"
       ],
       "content": [
         {
-          "title": "核心数字",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "腾讯 Q3 游戏收入 665 亿元（本土 +11%、国际 -9%），次日收跌 6.55%",
-            "网易 Q3 净收入 279 亿元、游戏及相关 229 亿元，均同比下滑",
-            "一周内腾讯市值蒸发约 3850 亿港元、网易约 1200 亿港元",
-            "世纪华通 Q3 后市值较 2025 年底缩水近 440 亿元"
+            "三季度营收 2073.36 亿元、同比增 8%；经营利润 591 亿元、同比下降 7%",
+            "剔除新 AI 产品投入后经营利润 833 亿元、同比增 8%，利润率保持 40%",
+            "自由现金流为负 691 亿元，主要来自算力采购预付款"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "盈利依旧可观，股价却集体承压，说明市场在给「增长叙事」重新定价，而不是否定当前利润。国内游戏进入存量竞争、短剧等新娱乐分流注意力，是这轮估值的真实背景——接下来能不能扭转情绪，要看新游爆款而非降本。"
-          ]
+          "text": "「剔除 AI 后利润其实在涨」这种披露口径，本质是在给长周期投入争取时间窗口。对做技术选型的团队，信号很直接：头部厂商把算力当战略资产囤，未来一两年的云与模型调用供给会更充足，但上游价格波动也值得提前锁价。"
         }
       ]
     },
     {
-      "id": "in-korea-fta",
+      "id": "in-game-etf",
       "category": "industry",
-      "subcategory": "行业·政策",
-      "title": "中韩 FTA 后续谈判突破：韩国游戏获最惠国待遇，大批韩游排队入华",
-      "summary": "据韩国产业通商资源部 11 月 18 日披露，在中韩自贸协定服务与投资后续谈判中，中方承诺在电影、游戏等领域给予韩方不低于第三国待遇，并对网游等事前审查适用非歧视原则。GameLook 梳理称，NCSoft、Nexon、Netmarble、Kakao 等厂商的多款 MMO 与二次元新作已拿版号或正筹备入华。",
-      "source": "GameLook",
-      "date": "2026-11-20",
-      "url": "http://www.gamelook.com.cn/2026/11/606824",
+      "categoryName": "行业热点",
+      "subcategory": "资本市场",
+      "title": "游戏 ETF 连续 5 个交易日净流入，合计吸金 2.3 亿元",
+      "summary": "截至 11 月 20 日，游戏 ETF 华夏（159869）连续 5 个交易日获资金净流入，单日最高 0.86 亿元，合计约 2.30 亿元。11 月 23 日早盘动漫游戏板块走强，北纬科技涨 6.86%、盛天网络涨 4.79%；消息面受网易三季度财报与短剧冲击讨论影响。资金在「政策利好+产品周期+AI 赋能」叙事下回补游戏板块，但成分股涨跌互现，说明预期的兑现仍分化。",
+      "source": "每日经济新闻（网易转载）",
+      "date": "2026-11-23",
+      "url": "https://www.163.com/dy/article/LCDNLFUO0512B07B.html",
       "image": "",
-      "badge": "政策",
-      "badgeType": "industry",
-      "readTime": "7 分钟",
-      "hotScore": 89,
-      "tags": [
-        "中韩FTA",
-        "最惠国待遇",
-        "版号",
-        "韩游入华"
-      ],
-      "content": [
-        {
-          "title": "事件要点",
-          "type": "list",
-          "items": [
-            "中方承诺在电影、游戏等领域给予韩国不低于第三国待遇",
-            "网游等内容的事前审查适用非歧视原则",
-            "NCSoft《天堂M》《永恒之塔手游》等已获版号，多家中韩厂商在筹备发行",
-            "这是中方首次在贸易协定中纳入此类条款"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "政策闸门放开，韩游入华或进入宽松期。但十年前的手游崛起逻辑已变：在二次元、竞技等国内厂商的优势赛道，情怀 IP 未必还能撑起长线运营。对国内团队，这既是竞争压力，也是合作与代理窗口。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "in-license-1766",
-      "category": "industry",
-      "subcategory": "行业·政策",
-      "title": "2026 年已下发游戏版号 1766 个，出海升级为国产厂商核心战略",
-      "summary": "据竞核不完全统计，截至 2026 年 10 月全年共下发游戏版号 1766 个（国产 1708、进口 58）。稳定的按月放量为厂商做长线研发提供确定性，但国内手游用户池见顶、买量成本高企，三七互娱、腾讯、米哈游、莉莉丝、点点互动等已把出海从增收补充升级为核心战略。",
-      "source": "NBE 攻略网",
-      "date": "2026-11-21",
-      "url": "https://www.nbegame.com/post/16177.html",
-      "image": "",
-      "badge": "版号",
-      "badgeType": "industry",
-      "readTime": "5 分钟",
-      "hotScore": 83,
-      "tags": [
-        "游戏版号",
-        "出海",
-        "国产手游",
-        "存量竞争"
-      ],
-      "content": [
-        {
-          "title": "核心数字",
-          "type": "list",
-          "items": [
-            "截至 10 月全年下发版号 1766 个：国产 1708、进口 58",
-            "移动游戏长期占比八成以上，双端互通产品增多",
-            "美日韩为核心市场，欧洲、东南亚、拉美、中东持续释放增量"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "版号稳定供给把行业竞争从「能不能上线」转向「 product 好不好玩」。当国内进入存量博弈，出海不再是选择题而是必答题——但真正的壁垒是立项即全球化，而非上架后翻译一遍。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "in-layoffs-2026",
-      "category": "industry",
-      "subcategory": "行业·就业",
-      "title": "研究机构：2026 年游戏业已裁撤约 7773 人，Epic 与育碧受冲击最大",
-      "summary": "11 月 22 日发布的一项 TradingPlatforms 研究显示，截至 11 月，98 家被记录的公司共裁撤 7773 名游戏从业者，Epic Games 与育碧受影响最大。研究把销售下滑、竞争加剧、3A 开发成本上升列为主因，并指出小型工作室与独立开发者受影响相对较小。另有行业追踪机构给出的口径更高，称 2026 全年裁员或超 1.4 万人。",
-      "source": "SoftwareBay",
-      "date": "2026-11-22",
-      "url": "https://www.softwarebay.de/news/job-cuts-in-the-gaming-industry-2026",
-      "image": "https://www.softwarebay.de/uploads/news/softwarebay.de_stellenabbau-in-der-games-branche-2026_1795359615.jpg",
-      "badge": "裁员",
-      "badgeType": "industry",
+      "badge": "资金动向",
+      "badgeType": "business",
       "readTime": "5 分钟",
       "hotScore": 85,
       "tags": [
-        "游戏裁员",
-        "Epic",
-        "育碧",
-        "3A成本"
+        "游戏ETF",
+        "A股",
+        "资金净流入",
+        "板块"
       ],
       "content": [
         {
-          "title": "核心数字",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "TradingPlatforms：98 家公司共裁撤 7773 人（截至 11 月）",
-            "Epic Games 与育碧为受冲击最大的公司",
-            "另有追踪机构口径称全年裁员或超 1.4 万人",
-            "小型工作室与独立开发者受影响相对较小"
+            "游戏 ETF 华夏连续 5 个交易日净流入，合计约 2.30 亿元",
+            "11 月 23 日早盘北纬科技涨 6.86%、盛天网络涨 4.79%",
+            "网易三季度游戏及相关增值服务净收入 229 亿元、同比下降 1.7%"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "不同机构数字差出一倍，反映裁员统计的口径与覆盖差异，但趋势一致：大厂在收缩、成本在重估。对从业者，灵活的小团队模式抗风险更强；对管理者，重投入 3A 的回报周期需要重新算账。"
-          ]
+          "text": "板块资金回流不等于行业基本面上行，净流入更多是「政策+AI」叙事的定价修复。做发行和投放的人别被指数带着走，真正要看的是自己赛道的用户时长与付费转化有没有跟着回暖。"
         }
       ]
     },
     {
-      "id": "in-gta6-billion",
+      "id": "in-yearend-newgames",
       "category": "industry",
-      "subcategory": "行业·观点",
-      "title": "观点：GTA 6 可能是第一款十亿美元游戏，也可能最后一款",
-      "summary": "GamesIndustry.biz 评论指出，GTA 6 以创纪录的首发刷新娱乐产品天花板，但 3A 开发成本与周期同步攀升，越来越少项目能承担这种量级的投入。文章认为，当头部作品不断抬高预算标杆，行业更可能走向「少数超级大作 + 大量中小精品」的两极结构。",
-      "source": "GamesIndustry.biz",
-      "date": "2026-11-20",
-      "url": "https://www.gamesindustry.biz/gta-6-the-first-billion-dollar-game-may-also-be-the-last",
-      "image": "https://assetsio.gnwcdn.com/gta-6-headline-launch-gallery-22.jpg?width=1200&height=630&fit=crop&enable=upscale",
-      "badge": "观点",
-      "badgeType": "industry",
+      "categoryName": "行业热点",
+      "subcategory": "新游排期",
+      "title": "年末五款旗舰新游六周内扎堆开服，赛道覆盖二次元到生活模拟",
+      "summary": "11 月中下旬至 12 月，《饥困荒野》《蓝色星原：旅谣》《星布谷地》《白银之城》《异人之下》五款重点新游在不到六周内接连开服，涵盖沙盒生存、幻想大世界、生活模拟、开放世界动作 RPG 与 3D 格斗。预约量从 1000 万到 4700 万不等，其中《白银之城》基于虚幻引擎 5 开发、《星布谷地》官宣 2027 年登陆 Switch 2。密集排期把年末变成新品试金石，同期撞车也意味着买量与内容质量的双重考验。",
+      "source": "腾讯新闻",
+      "date": "2026-11-18",
+      "url": "https://news.qq.com/rain/a/20261118A0F3Q700",
+      "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-24-yearend.jpg",
+      "badge": "新游潮",
+      "badgeType": "game",
       "readTime": "6 分钟",
-      "hotScore": 80,
+      "hotScore": 91,
       "tags": [
-        "GTA 6",
-        "3A成本",
-        "行业结构",
-        "观点"
+        "年末新游",
+        "蓝色星原",
+        "星布谷地",
+        "白银之城",
+        "异人之下"
       ],
       "content": [
         {
-          "title": "核心观点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "GTA 6 刷新娱乐产品首发纪录，成为现象级产品",
-            "3A 开发与营销成本同步攀升，能承担该量级投入的项目越来越少",
-            "行业或走向少数超级大作与大量中小精品并存的两极结构"
+            "六周内五款重点新游开服，预约量从 1000 万到 4700 万不等",
+            "《白银之城》基于虚幻引擎 5，《星布谷地》官宣 2027 年登陆 Switch 2",
+            "题材覆盖沙盒生存、幻想大世界、生活模拟、开放世界动作与 3D 格斗"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "这更像一句提醒：用一个 GTA 6 的样本去推导行业未来为时尚早，但成本曲线确实在把中小团队挤向差异化。与其追 3A 军备竞赛，不如把预算花在能被快速验证的核心玩法上。"
-          ]
+          "text": "五款产品挤在同一窗口，本质是各家对「年末注意力红利」的集中押注。对中小团队，这不是跟着挤独木舟的理由，反而提示了一个空档：大作扎堆时，差异化题材与清晰卖点比堆量更容易被看见。"
         }
       ]
     },
     {
-      "id": "ga-abyss",
-      "category": "games",
-      "subcategory": "游戏·新游",
-      "title": "《深渊航线》登陆 Steam：四条通信线路同时推进的深海推理",
-      "summary": "3DM 报道深海题材推理游戏《深渊航线》登陆 Steam。玩家在深海设施中通过四条通信线路并行推进线索，在信息不对称中还原事件全貌。多线叙事与沟通解谜构成核心玩法。",
-      "source": "3DM",
-      "date": "2026-11-19",
-      "url": "https://en.3dmgame.com/news/11014",
-      "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-23-abyss.jpg",
-      "badge": "新游",
-      "badgeType": "games",
-      "readTime": "4 分钟",
-      "hotScore": 72,
+      "id": "in-hot-preview",
+      "category": "industry",
+      "categoryName": "行业热点",
+      "subcategory": "版本动态",
+      "title": "无畏契约手游新版本 11/26 上线，怪物猎人崛起 Netflix 版同日登陆移动端",
+      "summary": "腾讯新闻热点预告显示，无畏契约手游新版本「新频共振」11 月 26 日上线，推出新特工、新地图与排位赛季更新；卡普空《怪物猎人：崛起》Netflix 版 11 月 24 日推出，订阅用户可在手机端体验本体与全部 DLC。同期《装备仔：OVERGEARED》11 月 25 日开服，《蕾斯莱莉娅娜的炼金工房》日服 11 月 25 日停运。新版本与订阅制并行，正在改写玩家获取 3A 内容的路径。",
+      "source": "腾讯新闻",
+      "date": "2026-11-23",
+      "url": "https://news.qq.com/rain/a/20261123A07M5Q00",
+      "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-24-hotpreview.jpg",
+      "badge": "版本预告",
+      "badgeType": "game",
+      "readTime": "5 分钟",
+      "hotScore": 84,
       "tags": [
-        "深渊航线",
-        "推理",
-        "深海",
-        "多线叙事"
+        "无畏契约手游",
+        "怪物猎人崛起",
+        "Netflix",
+        "版本更新"
       ],
       "content": [
         {
-          "title": "游戏要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "深海题材推理游戏，已登陆 Steam",
-            "核心机制为四条通信线路并行推进线索",
-            "玩法强调信息不对称与沟通解谜"
+            "无畏契约手游「新频共振」11 月 26 日上线，含新特工、新地图与排位更新",
+            "《怪物猎人：崛起》Netflix 版 11 月 24 日登陆移动端，订阅用户可玩本体与全部 DLC",
+            "《装备仔：OVERGEARED》11 月 25 日开服，炼金工房手游日服同日停运"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "把「多线并行」做成核心机制，比堆砌剧情分支更考验设计功力。这类小体量推理作品的价值，正在于用结构创新换掉对内容量的依赖。"
-          ]
+          "text": "把成熟主机作品塞进订阅制、直接开放手机端，是在用内容库摊薄获客成本。对开发者而言，这意味着「移植到订阅平台」正变成一条独立于买断与内购之外的第三条发行路径，值得在立项期就纳入平台评估。"
         }
       ]
     },
     {
-      "id": "ga-timeline",
-      "category": "games",
-      "subcategory": "游戏·新游",
-      "title": "《Grand Theft Timeline》：把时间线操纵做成开放世界玩法",
-      "summary": "3DM 报道《Grand Theft Timeline》公布，游戏围绕时间线操纵构建开放世界玩法，玩家可借助改变时间进程的机制影响任务与探索结果。",
-      "source": "3DM",
+      "id": "in-layoffs",
+      "category": "industry",
+      "categoryName": "行业热点",
+      "subcategory": "行业调查",
+      "title": "2026 年游戏业裁员预测上调至 14259 人，确认人数已破 12800",
+      "summary": "ASGC 裁员追踪 11 月 23 日更新，把 2026 年全球游戏业裁员预测上调至 14259 人，较 11 月 10 日的预测增加 39 人；已确认实际裁员从 12420 人升至 12809 人。今年已记录 175 起裁员事件，其中 65% 在北美、27% 集中在加州，前五大事件约占全部裁员的 43%。2022 至 2026 五年累计裁员预计达 58087 人。数据仍在攀升，行业集中度风险比单月数字更值得警惕。",
+      "source": "ASGC Games Industry Layoffs Tracker",
+      "date": "2026-11-23",
+      "url": "https://layoffs.asgc.gg/",
+      "image": "",
+      "badge": "行业数据",
+      "badgeType": "business",
+      "readTime": "5 分钟",
+      "hotScore": 87,
+      "tags": [
+        "游戏裁员",
+        "行业报告",
+        "ASGC",
+        "就业"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "2026 年裁员预测上调至 14259 人，已确认实际裁员 12809 人",
+            "今年记录 175 起裁员事件，65% 在北美、27% 在加州",
+            "前五大裁员事件约占全部裁员的 43%，五年累计预计 58087 人"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "「大厂大裁员」的叙事听多了容易麻木，但集中度数据说明风险正在向少数超大事件聚集。对求职中的应届生，判断一家工作室是否稳定，要比对它的现金流来源与项目管线，而不是只看招牌是否响亮。"
+        }
+      ]
+    },
+    {
+      "id": "en-playcanvas224",
+      "category": "engine",
+      "categoryName": "引擎前沿",
+      "subcategory": "Web 引擎",
+      "title": "PlayCanvas 2.24 发布：动态天空、平面反射与公开渲染通道 API",
+      "summary": "PlayCanvas 11 月 9 日发布引擎 2.24，新增 DynamicSkyEffect，可绘制昼夜、星空、月亮与体积云，并让方向光与环境光照随太阳同步变化；StandardMaterial 加入平面反射输入，镜面、抛光地面与静水可用镜像相机渲染反射；帧通道 API 转为公开并新增 ComputePass。体积云和反射都有额外 GPU 开销，官方建议先在目标设备实测。把电影级光照塞进浏览器引擎，Web 项目的画面天花板又被抬高一层。",
+      "source": "Cinevva（PlayCanvas Release Notes）",
+      "date": "2026-11-13",
+      "url": "https://app.cinevva.com/news/2026-11-13-playcanvas-2-24-dynamic-skies-reflections",
+      "image": "https://app.cinevva.com/news/playcanvas-2-24-dynamic-sky.jpg",
+      "badge": "引擎更新",
+      "badgeType": "hot",
+      "readTime": "6 分钟",
+      "hotScore": 88,
+      "tags": [
+        "PlayCanvas",
+        "WebGPU",
+        "动态天空",
+        "平面反射"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "2.24 新增 DynamicSkyEffect，昼夜循环随太阳同步更新方向光与环境光照",
+            "StandardMaterial 加入平面反射，帧通道 API 公开并新增 ComputePass",
+            "体积云与反射有额外 GPU 成本，ComputePass 仅 WebGPU 可用"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "Web 引擎补齐动态天空与反射，意味着「浏览器里做写实 outdoor 场景」的成本又降了一截。真正要注意的是性能账：体积云和镜像相机都是帧率杀手，先定设备档位再决定开哪些效果，比堆功能更重要。"
+        }
+      ]
+    },
+    {
+      "id": "en-unity62",
+      "category": "engine",
+      "categoryName": "引擎前沿",
+      "subcategory": "Unity 版本",
+      "title": "Unity 6.2 深度解析：AI Assistant 登场，World Space UI 与 Sentis 升级",
+      "summary": "Unity 6.2 把三项更新摆上台面：编辑器内 AI Assistant 面向创作效率，World Space UI 扩展 UI 能力边界，Sentis 运行时智能升级。配套变化包括 Web 平台预配置构建 Profile、Shader Graph 新增 Append 节点、Unity Test Framework 成为核心包，以及新增场景加载时强制 GC 的可关闭选项。Unity 6.2 也是最后一个完整支持 Magic Leap 的版本。一个点版本里三项战略级更新，说明 Unity 正把 AI 与 UI 能力当作下一阶段的主战场。",
+      "source": "尧图网络（Unity 官方博客解读）",
       "date": "2026-11-20",
-      "url": "https://en.3dmgame.com/news/11117",
-      "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-23-timeline.jpg",
-      "badge": "新游",
-      "badgeType": "games",
-      "readTime": "4 分钟",
-      "hotScore": 70,
-      "tags": [
-        "Grand Theft Timeline",
-        "时间操纵",
-        "开放世界"
-      ],
-      "content": [
-        {
-          "title": "游戏要点",
-          "type": "list",
-          "items": [
-            "开放世界新作《Grand Theft Timeline》公布",
-            "核心卖点为时间线操纵机制",
-            "玩法把时间进程变化与任务、探索结果关联"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "时间操纵是最容易出彩也最容易失控的机制：一旦玩家能随意改写时间，关卡设计与平衡都会被放大。能否把自由度约束在可控边界，是这类作品成败的关键。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ga-whisper",
-      "category": "games",
-      "subcategory": "游戏·新游",
-      "title": "《诡视低语》登陆 Steam：对着麦克风念真实咒语的恐怖游戏",
-      "summary": "独立工作室 BinaryLunar 的超自然监视恐怖游戏《诡视低语》11 月 17 日登陆 Steam（Windows PC），定价 26 元、首发 14 天 85 折。玩家被困在一间房里，通过水晶球监视周围房间，描摹符文并对着真实麦克风念出驱逐咒语；发售前愿望单已破 3000。",
-      "source": "游民星空",
-      "date": "2026-11-17",
-      "url": "https://www.gamersky.com/news/202611/2247793.shtml",
+      "url": "http://www.mzlw.cn/news/30357",
       "image": "",
-      "badge": "新游",
-      "badgeType": "games",
-      "readTime": "4 分钟",
-      "hotScore": 74,
+      "badge": "版本解读",
+      "badgeType": "hot",
+      "readTime": "6 分钟",
+      "hotScore": 89,
       "tags": [
-        "诡视低语",
-        "恐怖游戏",
-        "麦克风",
-        "BinaryLunar"
+        "Unity 6.2",
+        "AI Assistant",
+        "Sentis",
+        "World Space UI"
       ],
       "content": [
         {
-          "title": "游戏要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "11/17 登陆 Steam，定价 26 元、首发 14 天 85 折",
-            "核心玩法：水晶球监视 + 描摹符文 + 对麦克风念咒驱魔",
-            "单人心理恐怖，需麦克风（推荐耳机），愿望单破 3000"
+            "AI Assistant 登场，World Space UI 与 Sentis 三项战略级更新",
+            "Web 平台新增预配置构建 Profile，Shader Graph 加入 Append 节点",
+            "Unity Test Framework 成为核心包，6.2 是最后完整支持 Magic Leap 的版本"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "把麦克风变成核心输入，是用硬件特性换取沉浸感的巧思，也天然制造社交传播点。但语音识别的容错与误触发是体验红线——小团队做这类交互，宁可把词库做窄也要保证识别稳定。"
-          ]
+          "text": "把 AI Assistant 直接塞进编辑器，是「AI 辅助」从插件走向内置工作流的信号。对团队而言，值得关注的不是功能本身有多炫，而是内置后能否沉淀成可复用的项目规范——工具进菜单容易，进流程难。"
         }
       ]
     },
     {
-      "id": "ga-clicky",
-      "category": "games",
-      "subcategory": "游戏·新游",
-      "title": "《点点岛》发售：双人团队做的放置建造游戏，帕鲁客串打工",
-      "summary": "由波兰双人团队 Karrot Games 开发、Pocketpair Publishing 发行的《Clicky Islands／点点岛》11 月 17 日登陆 Steam。游戏融合点击放置、城市建造与资源管理，试玩版 98% 好评、愿望单破 2 万；同步上线 6 款捆绑包，《幻兽帕鲁》帕鲁可作为免费劳动力登场。",
-      "source": "17173（来源 3DM）",
-      "date": "2026-11-17",
-      "url": "https://news.17173.com/content/11172026/153107607.shtml",
-      "image": "",
-      "badge": "新游",
-      "badgeType": "games",
-      "readTime": "4 分钟",
-      "hotScore": 73,
-      "tags": [
-        "点点岛",
-        "放置建造",
-        "Pocketpair",
-        "幻兽帕鲁"
-      ],
-      "content": [
-        {
-          "title": "游戏要点",
-          "type": "list",
-          "items": [
-            "11/17 登陆 Steam，双人团队 Karrot Games 开发、Pocketpair Publishing 发行",
-            "融合点击放置、城市建造与资源管理，试玩 98% 好评、愿望单破 2 万",
-            "首发两周 8 折，同步 6 款捆绑包，帕鲁可作为免费劳动力登场"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "放置品类靠的是「数值反馈 + 自动化成就感」的循环，这本不是新鲜事。真正聪明的做法是用帕鲁联动借势——小团队在同类红海里，找对一张熟悉的 IP 脸，比多做一个系统更有效。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ga-phonopolis",
-      "category": "games",
-      "subcategory": "游戏·奖项",
-      "title": "《Phonopolis》夺 DevGAMM Awards 大奖",
-      "summary": "GamesIndustry.biz 报道，Amanita Design 出品的《Phonopolis》在 DevGAMM Awards 上摘得 Grand Prize。Amanita Design 以《机械迷城》等点击式解谜作品闻名，《Phonopolis》延续其手绘风格与解谜传统。",
-      "source": "GamesIndustry.biz",
+      "id": "en-playcanvas-forum",
+      "category": "engine",
+      "categoryName": "引擎前沿",
+      "subcategory": "引擎发布",
+      "title": "PlayCanvas 引擎 2.24 转正：二十余个新示例覆盖抗锯齿与高斯泼溅",
+      "summary": "PlayCanvas 官方论坛宣布引擎 2.24 发布，随版本放出大量新示例：抗锯齿对比（SMAA 质量档与 TAA 时域升采样）、自动曝光、动态天空、墨线描边、镜头光晕、场景地图扫描脉冲（WebGPU）等；还包括汽车配置器、Villa Sales 高斯泼溅演示、火星 3D Tiles 与赫尔辛基 3D Tiles 流式加载。该版本计划 11 月 16 日前后升为编辑器默认版本。示例即文档，PlayCanvas 用一批可运行 demo 降低了新特性的上手门槛。",
+      "source": "PlayCanvas 官方论坛",
       "date": "2026-11-20",
-      "url": "https://www.gamesindustry.biz/phonopolis-from-amanita-design-wins-grand-prize-at-the-devgamm-awards",
-      "image": "https://assetsio.gnwcdn.com/IMG_8211.jpeg?width=1200&height=630&fit=crop&enable=upscale",
-      "badge": "奖项",
-      "badgeType": "games",
-      "readTime": "4 分钟",
-      "hotScore": 68,
-      "tags": [
-        "Phonopolis",
-        "DevGAMM",
-        "Amanita Design",
-        "解谜"
-      ],
-      "content": [
-        {
-          "title": "获奖要点",
-          "type": "list",
-          "items": [
-            "《Phonopolis》获 DevGAMM Awards Grand Prize",
-            "开发商 Amanita Design 以《机械迷城》等点击解谜闻名",
-            "作品延续手绘美术与解谜设计传统"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "在 3A 与 AI 生成内容占据话题的当口，一款强调手绘与解谜的作品拿下大奖，说明「辨识度」仍是独立游戏的硬通货。风格化不是保守，而是让作品在海量新品里被记住的最低成本方式。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ga-nursesim",
-      "category": "games",
-      "subcategory": "游戏·新游",
-      "title": "《夜班护士模拟》公布：把排班与突发处置搬进模拟经营",
-      "summary": "一款名为《Night Shift Nurse Simulator》的模拟经营新作公布，玩家扮演夜班护士，在值班窗口内处理病房呼叫、分配床位与应对突发状况，把医疗场景的节奏压力做成可玩循环。",
-      "source": "Aayyy",
-      "date": "2026-11-19",
-      "url": "https://www.aayyy.com/latest/night-shift-nurse-simulator-steam-guide-release-date",
+      "url": "https://forum.playcanvas.com/t/engine-v2-24-0/42778",
       "image": "",
-      "badge": "新游",
-      "badgeType": "games",
-      "readTime": "4 分钟",
-      "hotScore": 66,
+      "badge": "引擎发布",
+      "badgeType": "hot",
+      "readTime": "5 分钟",
+      "hotScore": 86,
       "tags": [
-        "夜班护士模拟",
-        "模拟经营",
-        "Steam"
+        "PlayCanvas",
+        "引擎示例",
+        "WebGPU",
+        "高斯泼溅"
       ],
       "content": [
         {
-          "title": "游戏要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "模拟经营新作，主题为夜班护士值守",
-            "核心循环为处理病房呼叫、分配床位与应对突发状况",
-            "强调值班窗口内的节奏与压力管理"
+            "引擎 2.24 发布，计划 11 月 16 日前后升为编辑器默认版本",
+            "新示例覆盖 SMAA/TAA 抗锯齿、自动曝光、动态天空、墨线描边与镜头光晕",
+            "高斯泼溅、3D Tiles 流式加载与物理骨架示例同步放出"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "职业模拟品类正在从「流程复刻」转向「压力管理」，把工作节奏本身做成玩法。选这类题材，与其堆专业术语，不如把时间压力与优先级判断打磨扎实——那才是玩家真正会觉得有趣的部分。"
-          ]
+          "text": "官方把每个新特性都配一个可运行示例，这种「示例即文档」的做法很值得中小引擎团队学。开发者评估新版本时，跑一遍示例比读发布说明更快判断「这功能到底能不能用在我项目里」。"
         }
       ]
     },
     {
-      "id": "os-horizon",
-      "category": "opensource",
-      "subcategory": "开源·引擎",
-      "title": "Horizon：用 Rust 写的开源 ECS 游戏引擎",
-      "summary": "GitHub 项目 Horizon（horizon-rust/horizon）是一套用 Rust 构建的开源游戏引擎，采用实体组件系统（ECS）架构，主打内存安全与并发性能。Rust 生态近年在游戏引擎方向持续升温，Horizon 是其中较活跃的一个。",
-      "source": "GitHub",
-      "date": "2026-11-21",
-      "url": "https://github.com/horizon-rust/horizon",
-      "image": "https://opengraph.githubassets.com/1/horizon-rust/horizon",
-      "badge": "Rust",
-      "badgeType": "opensource",
-      "readTime": "4 分钟",
-      "hotScore": 78,
+      "id": "en-stride44",
+      "category": "engine",
+      "categoryName": "引擎前沿",
+      "subcategory": "开源引擎",
+      "title": "Stride 4.4 重构图形后端：Vulkan 与 DX12 上位，OpenGL 退场",
+      "summary": "开源 C# 引擎 Stride（原 Xenko）4.4 版本于 10 月 9 日发布，维护者称是自上次更新以来约 3200 次提交的「多年最大更新之一」。图形后端方面，Vulkan 与 Direct3D 12 被大幅重构，OpenGL 与 OpenGL ES 被移除，团队透露下一大版本可能放弃 Direct3D 11。引擎用 SyncScript 把逻辑留在 C#、参数调优放在编辑器属性面板，形成编辑与运行分离的工作流。主动砍掉旧后端，是 Stride 为现代化渲染管线做的取舍。",
+      "source": "UrhobA",
+      "date": "2026-11-18",
+      "url": "https://www.urhoba.net/zh/post/stride-xenko-c",
+      "image": "https://www.urhoba.net/uploads/2026/11/what-is-stride-engine-04d4734e.webp",
+      "badge": "引擎深读",
+      "badgeType": "hot",
+      "readTime": "6 分钟",
+      "hotScore": 85,
       "tags": [
-        "Horizon",
+        "Stride",
+        "C#引擎",
+        "Vulkan",
+        "DX12"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "Stride 4.4 约 3200 次提交，Vulkan 与 DX12 后端大幅重构",
+            "OpenGL 与 OpenGL ES 被移除，下一版本或放弃 Direct3D 11",
+            "SyncScript 把 C# 逻辑与编辑器参数调优分离"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "敢砍掉 OpenGL 说明 Stride 把赌注压在现代图形 API 上。对用 C# 做 3D 的团队，这是一条值得观察的 Unity 之外的路线，但版本升级要盯紧它每三个月一次的破坏性改动节奏。"
+        }
+      ]
+    },
+    {
+      "id": "en-bevy-ecs",
+      "category": "engine",
+      "categoryName": "引擎前沿",
+      "subcategory": "Rust 引擎",
+      "title": "Bevy 逼近 5 万星：Rust ECS 引擎的插件化架构与破坏性升级节奏",
+      "summary": "数据驱动 Rust 引擎 Bevy 的 GitHub 星数逼近 5 万。它用 ECS（实体-组件-系统）架构支持 2D/3D 开发，以 Plugin 为模块化单位，DefaultPlugins 打包常用功能、可按需替换。项目处于早期开发，约每三到五个月发一版且常带破坏性 API 变更：0.16（2025-04）、0.17（2025-09）、0.18（2026-01）、0.19（2026-06）、0.20（2026-10）。官方建议固定版本并把每次升级当计划任务，编辑器仍在开发中。星数高不等于稳定，Bevy 的升级成本要提前算进技术债。",
+      "source": "UrhobA",
+      "date": "2026-11-18",
+      "url": "https://www.urhoba.net/zh/post/bevy-ecs-rust",
+      "image": "https://www.urhoba.net/uploads/2026/11/what-is-bevy-engine-62223ea3.webp",
+      "badge": "引擎深读",
+      "badgeType": "hot",
+      "readTime": "6 分钟",
+      "hotScore": 84,
+      "tags": [
+        "Bevy",
         "Rust",
         "ECS",
+        "版本节奏"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "Bevy 星数逼近 5 万，采用 ECS 架构与 Plugin 模块化",
+            "约每三到五个月发一版且常带破坏性 API 变更，0.20 于 2026-10 发布",
+            "社区建议固定版本，官方编辑器截至 11 月仍在开发中"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "选 Bevy 等于接受「快速演进」的代价：ECS 的数据局部性优势很诱人，但每次破坏性升级都要预留迁移工时。个人学习门槛在 Rust 与 ECS 思维，团队采用则要把版本锁定写进工程规范。"
+        }
+      ]
+    },
+    {
+      "id": "en-web-engine-guide",
+      "category": "engine",
+      "categoryName": "引擎前沿",
+      "subcategory": "选型实战",
+      "title": "Awesome-Gamedev 引擎专区盘点：三大商业引擎与 20+ 开源方案怎么选",
+      "summary": "GitCode 博客对 Awesome-Gamedev 引擎专区做了梳理：Unity 资源丰富、跨平台尤其移动端强，但未开源且方案繁杂；Unreal 蓝图可视化编程强大、渲染顶级，适合追求 C++ 与高画质的团队；Godot 完全免费开源、编辑器仅几百 MB、2D 与轻量 3D 体验好，是独立开发者的甜点。专区还收录 Defold、MonoGame、Urho3D、GDevelop、SFML 等 20 多款开源引擎，并给出「定平台—定技能—定目标」三步定位法。选型口诀是按需求收敛，而不是纠结谁更强。",
+      "source": "GitCode 博客（Awesome-Gamedev 引擎专区）",
+      "date": "2026-11-14",
+      "url": "https://blog.gitcode.com/f9eae8e389132641812a69a9f024e054.html",
+      "image": "",
+      "badge": "选型指南",
+      "badgeType": "hot",
+      "readTime": "7 分钟",
+      "hotScore": 87,
+      "tags": [
+        "引擎选型",
+        "Awesome-Gamedev",
+        "Godot",
+        "Unreal",
         "开源引擎"
       ],
       "content": [
         {
-          "title": "项目要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "用 Rust 编写的开源游戏引擎",
-            "采用 ECS（实体组件系统）架构",
-            "主打内存安全与并发性能"
+            "Unity 资源与跨平台强但未开源，Unreal 渲染与蓝图强、C++ 门槛高",
+            "Godot 完全免费开源、轻量，适合独立开发者与 2D/轻量 3D",
+            "专区收录 Defold/MonoGame/GDevelop 等 20+ 开源引擎，给出三步定位法"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "Rust 做引擎的核心卖点是「无 GC + 内存安全」，但生态与工具链成熟度仍是短板。想跟进的团队可以先从工具层或小型项目试水，别一上来就压主力项目。"
-          ]
+          "text": "把引擎选择拆成「定平台—定技能—定目标」三步，比空谈「哪个引擎最强」有用得多。对个人开发者，Godot 的零授权门槛与轻量编辑器确实降低了试错成本，但大型项目仍要看团队长期维护能力。"
         }
       ]
     },
     {
-      "id": "os-godotmcp",
-      "category": "opensource",
-      "subcategory": "开源·工具",
-      "title": "godot-mcp：把 Godot 编辑器能力接进 MCP，让 AI 智能体直接操纵场景",
-      "summary": "GitHub 项目 godot-mcp（hybridindie/godot-mcp）为 Godot 提供 MCP 服务，让 AI 智能体通过标准协议读取与修改场景、脚本和资源。它延续了「编辑器能力可被智能体调用」的思路，与 Unity CLI 的编排方向呼应。",
-      "source": "GitHub",
-      "date": "2026-11-21",
-      "url": "https://github.com/hybridindie/godot-mcp",
-      "image": "https://opengraph.githubassets.com/1/hybridindie/godot-mcp",
-      "badge": "MCP",
-      "badgeType": "opensource",
-      "readTime": "4 分钟",
-      "hotScore": 80,
-      "tags": [
-        "Godot",
-        "MCP",
-        "AI智能体",
-        "编辑器工具"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "为 Godot 提供 MCP 服务端",
-            "智能体可通过协议读写场景、脚本与资源",
-            "让 Godot 编辑器能力接入 AI 工作流"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "把编辑器能力标准化成 MCP，是 AI 辅助开发从「聊天写代码」走向「真正动手改项目」的关键一步。用这类工具务必配合版本控制，智能体改完先看 diff 再决定合入。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "os-awesomeai",
-      "category": "opensource",
-      "subcategory": "开源·资源",
-      "title": "awesome-ai-game-dev-tools：AI 游戏开发工具清单持续更新",
-      "summary": "GitHub 仓库 awesome-ai-game-dev-tools（BlueSkyID666）汇总了面向游戏开发的 AI 工具与资源，覆盖资产生成、代码辅助、NPC 行为与工作流自动化等方向，是快速摸清 AI 游戏工具生态的入口。",
-      "source": "GitHub",
-      "date": "2026-11-21",
-      "url": "https://github.com/BlueSkyID666/awesome-ai-game-dev-tools",
-      "image": "",
-      "badge": "清单",
-      "badgeType": "opensource",
-      "readTime": "3 分钟",
-      "hotScore": 76,
-      "tags": [
-        "AI工具",
-        "资源清单",
-        "游戏开发",
-        "GitHub"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "汇总面向游戏开发的 AI 工具与资源",
-            "覆盖资产生成、代码辅助、NPC 行为、工作流自动化等方向",
-            "适合作为摸清 AI 游戏工具生态的入口"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "awesome 类清单的价值在于省掉信息筛选成本，但工具迭代极快，清单也常有滞后。把它当索引用，真正采用前还得回到官方文档和实测。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "os-claudeanim",
-      "category": "opensource",
-      "subcategory": "开源·工具",
-      "title": "claude-animation-skills：给 AI 编码助手装上动画制作技能",
-      "summary": "GitHub 项目 claude-animation-skills（artemnovitckii）为 Claude 等编码智能体提供一组动画制作技能，让智能体按规范生成与编辑动画相关代码或资产，把「技能包」模式延伸到动画制作环节。",
-      "source": "GitHub",
-      "date": "2026-11-21",
-      "url": "https://github.com/artemnovitckii/claude-animation-skills",
-      "image": "https://opengraph.githubassets.com/1/artemnovitckii/claude-animation-skills",
-      "badge": "Agent Skills",
-      "badgeType": "opensource",
-      "readTime": "4 分钟",
-      "hotScore": 77,
-      "tags": [
-        "Claude",
-        "技能包",
-        "动画",
-        "AI智能体"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "为编码智能体提供动画制作技能包",
-            "让智能体按规范生成/编辑动画代码或资产",
-            "体现「技能包」向垂直美术环节延伸的趋势"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "把领域知识打包成可复用技能，是让通用智能体干好专项活的有效路径。动画这种规范密集的任务尤其适合——前提是人要把「什么是做对了」写清楚，否则智能体只会稳定地产出错误。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "os-hedra",
-      "category": "opensource",
-      "subcategory": "开源·引擎",
-      "title": "Project Hedra：开源 3D 引擎与体素沙盒实验",
-      "summary": "GitHub 项目 Project Hedra（maxilevi/project-hedra）是一个开源 3D 引擎与体素沙盒实验项目，聚焦实时渲染、程序化地形与交互玩法，可作为学习引擎底层与体素技术的参考实现。",
-      "source": "GitHub",
-      "date": "2026-11-21",
-      "url": "https://github.com/maxilevi/project-hedra",
-      "image": "https://opengraph.githubassets.com/1/maxilevi/project-hedra",
-      "badge": "3D",
-      "badgeType": "opensource",
-      "readTime": "4 分钟",
-      "hotScore": 72,
-      "tags": [
-        "Project Hedra",
-        "体素",
-        "3D引擎",
-        "程序化"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "开源 3D 引擎与体素沙盒实验项目",
-            "聚焦实时渲染、程序化地形与交互玩法",
-            "适合作为引擎底层与体素技术的参考实现"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "个人引擎项目未必能替代成熟方案，但它们是理解「引擎到底怎么跑起来」的最佳教材。想深入渲染底层的人，读这类代码比看教程更能建立系统性认知。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "os-playgen2",
-      "category": "opensource",
-      "subcategory": "开源·AI",
-      "title": "PlayGen2 开源：可键盘游玩的 Doom 世界模型，Apache-2.0 放权重",
-      "summary": "PlayGen2 是港中文、腾讯与南洋理工研究者提出的可玩世界模型（arXiv 2611.07867），代码与权重以 Apache-2.0 开源。它把游戏引擎的思路拆开：41.2M 参数的世界状态模型维护显式 3D 状态，神经渲染器从深度与语义投影绘出第一人称画面，生成的帧不回灌到状态预测，避免地图记忆被视觉误差腐蚀。在 M4 Pro 上完整循环约 160ms，串行约 5 FPS。",
-      "source": "ArtRealmAI",
-      "date": "2026-11-06",
-      "url": "https://artrealmai.com/article/playgen2-playable-doom-world-model-open-weights",
-      "image": "https://pub-4552ab4b36fa4e0889188dd998a66596.r2.dev/playgen2-playable-doom-world-model-open-weights-cover.jpg",
-      "badge": "世界模型",
-      "badgeType": "opensource",
-      "readTime": "7 分钟",
-      "hotScore": 85,
-      "tags": [
-        "PlayGen2",
-        "世界模型",
-        "Doom",
-        "Apache-2.0",
-        "神经渲染"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "港中文/腾讯/NTU 提出，代码与权重 Apache-2.0 开源",
-            "显式 3D 状态（41.2M）+ 神经渲染器（29.1M+VAE），生成帧不回灌状态",
-            "约 500 小时机器人游玩数据训练，M4 Pro 上循环约 160ms",
-            "支持通过修改显式状态做可编程玩法，多玩家可由单人模型组合"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "把「状态」和「渲染」分开，是 PlayGen2 相较像素级世界模型最值得借鉴的设计——状态可脚本化、可组合，才谈得上做玩法。它目前只在 Doom、160×120 下验证，离生产工具很远，但作为引擎式神经游戏的蓝图值得研读。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "tu-godot2dshader",
-      "category": "tutorials",
-      "subcategory": "教程·Godot",
-      "title": "Godot 官方教程：从零写出第一个 2D 着色器",
-      "summary": "Godot 官方文档的「Your first 2D shader」手把手带读者创建一个 2D 着色器，从新建 ShaderMaterial、编写顶点与片元函数，到把材质挂到 CanvasItem 上并实时预览。适合第一次接触 Godot 着色器的开发者。",
-      "source": "Godot Docs",
-      "date": "2026-11-20",
-      "url": "https://docs.godotengine.org/en/stable/tutorials/shaders/your_first_shader/your_first_2d_shader.html",
-      "image": "",
-      "badge": "教程",
-      "badgeType": "tutorials",
-      "readTime": "6 分钟",
-      "hotScore": 74,
-      "tags": [
-        "Godot",
-        "着色器",
-        "2D",
-        "官方教程"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "从新建 ShaderMaterial 到编写顶点/片元函数",
-            "把材质挂到 CanvasItem 并实时预览效果",
-            "面向首次接触 Godot 着色器的开发者"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "官方教程的价值在于概念准确、跟着就能跑通。着色器入门最忌只看不写——照着做一遍、改几个参数看变化，比读十篇原理文章更管用。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "tu-catlikecurl",
-      "category": "tutorials",
-      "subcategory": "教程·Godot",
-      "title": "Catlike Coding：Godot 里独立推导旋度噪声的程序化 GPU 图案",
-      "summary": "Catlike Coding 的 Godot 系列新增「Independent Curl」一节，讲如何在 GPU 上程序化生成旋度噪声图案，从数学推导到着色器实现，配套 banner 与源码。延续其「讲透原理再写代码」的风格。",
-      "source": "Catlike Coding",
-      "date": "2026-11-21",
-      "url": "https://catlikecoding.com/godot/procedural-gpu-patterns/11-independent-curl/",
-      "image": "https://catlikecoding.com/godot/procedural-gpu-patterns/11-independent-curl/banner.png",
-      "badge": "进阶",
-      "badgeType": "tutorials",
-      "readTime": "8 分钟",
-      "hotScore": 82,
-      "tags": [
-        "Catlike Coding",
-        "旋度噪声",
-        "程序化",
-        "GPU"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "讲在 GPU 上程序化生成旋度噪声（curl noise）图案",
-            "从数学推导到着色器实现，配源码",
-            "延续 Catlike Coding 讲透原理的写作风格"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "程序化图案的难点从不是代码，而是背后的数学直觉。Catlike 这类从推导写起的教程稀缺，适合想真正掌握噪声、流场等效果的开发者，而不是只想要一段可复制的 shader。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "tu-stylizedsky",
-      "category": "tutorials",
-      "subcategory": "教程·Godot",
-      "title": "GDQuest 开源示例：在 Godot 4 里做风格化天空",
-      "summary": "GitHub 项目 gdquest-demos/godot-4-stylized-sky 提供一套在 Godot 4 中制作风格化天空的示例工程，涵盖天空着色器、渐变与云层处理，可直接下载学习或复用。",
-      "source": "GitHub / GDQuest",
-      "date": "2026-11-21",
-      "url": "https://github.com/gdquest-demos/godot-4-stylized-sky",
-      "image": "https://opengraph.githubassets.com/1/gdquest-demos/godot-4-stylized-sky",
-      "badge": "示例工程",
-      "badgeType": "tutorials",
+      "id": "ga-famine-launch",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "新游上线",
+      "title": "《饥困荒野》今日全平台上线，把饥荒生存循环搬进手机",
+      "summary": "Klei 正版授权、盛趣研发、腾讯发行的《饥困荒野》11 月 24 日全平台上线。游戏基于《饥荒：联机版》开发，保留随机生成世界、昼夜四季循环与哥特风美术，新增「家园」安全区，沙盒世界重置后角色与背包物品保留；提供轻松、标准、专家三种模式，并有手游独家赛季「绿洲之诗」。国内预约量突破 2500 万，商业化取消武器与宠物抽卡，改为兑换商店。经典 IP 的移动化落地，给「老玩法新平台」提供了一份完整样本。",
+      "source": "18183 游戏网",
+      "date": "2026-11-18",
+      "url": "https://news.18183.com/yxxw/202611/9194158.html",
+      "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-24-hero-famine.jpg",
+      "badge": "新游",
+      "badgeType": "game",
       "readTime": "5 分钟",
-      "hotScore": 79,
-      "tags": [
-        "GDQuest",
-        "Godot 4",
-        "天空着色器",
-        "风格化"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "Godot 4 风格化天空的可运行示例工程",
-            "涵盖天空着色器、渐变与云层处理",
-            "可下载学习或直接复用"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "可运行示例比截图教程更有价值——能拆开看参数、改了立刻见效。学风格化渲染，从这类完整小工程入手，比零散片段更容易建立整体感。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "tu-godotmosh",
-      "category": "tutorials",
-      "subcategory": "教程·Godot",
-      "title": "Godot 论坛免费教程：手把手做 DataMoshing 故障着色器（第一部分）",
-      "summary": "Godot 官方论坛的免费教程贴详细讲解如何实现 DataMoshing 故障艺术着色器：通过扰动 UV 与颜色通道制造画面撕裂与错位效果，适合想在 2D/UI 里加入故障风格特效的开发者。",
-      "source": "Godot Forum",
-      "date": "2026-11-20",
-      "url": "https://forum.godotengine.org/t/free-tutorial-datamosh-shader-part-1/144716",
-      "image": "https://forum.godotengine.org/uploads/default/optimized/3X/5/a/5a3f96db3b57758aa488aa7fea4f3f9801a4dfdd_2_1024x432.jpeg",
-      "badge": "免费",
-      "badgeType": "tutorials",
-      "readTime": "5 分钟",
-      "hotScore": 76,
-      "tags": [
-        "Godot",
-        "DataMoshing",
-        "故障艺术",
-        "着色器"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "在 Godot 中实现 DataMoshing 故障着色器",
-            "通过扰动 UV 与颜色通道制造撕裂、错位效果",
-            "免费、分部分讲解，适合 2D/UI 特效"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "故障特效好用但极易滥用。把它当点缀而非主食——控制触发时机与强度，让效果服务于叙事（比如角色状态异常），才不会让玩家视觉疲劳。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "tu-unityprof",
-      "category": "tutorials",
-      "subcategory": "教程·Unity",
-      "title": "Unity 基础架构与性能分析实战：从 Entity 到帧率的系统化排查",
-      "summary": "DEV Community 上的一篇实战文章梳理 Unity 项目的底层架构与性能分析方法：如何建立模块化的代码结构、用 Profiler 定位慢帧与内存增长、按优先级处理瓶颈，强调「先测量再优化」的工作流。",
-      "source": "DEV Community",
-      "date": "2026-11-19",
-      "url": "https://new.benhalpern.com/tenaciousdan/unity-foundational-architecture-profiling-optimization-34ea",
-      "image": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk42tcsg5yf9543k2e2pv.webp",
-      "badge": "性能",
-      "badgeType": "tutorials",
-      "readTime": "7 分钟",
-      "hotScore": 80,
-      "tags": [
-        "Unity",
-        "Profiler",
-        "性能优化",
-        "架构"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "梳理 Unity 项目的模块化基础架构",
-            "用 Profiler 定位慢帧、内存增长与构建瓶颈",
-            "强调先测量再优化、按优先级处理瓶颈"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "性能优化最常见的错误是「凭感觉改」。先把 Profiler 数据摆出来，找到真正的热点再动手——多数时候瓶颈和你想的不一样。把这套流程固化下来，比记住某个优化技巧更值钱。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "tu-unityshader-opt",
-      "category": "tutorials",
-      "subcategory": "教程·Unity",
-      "title": "Unity Shader 性能自查：从多精度策略到纹理通道打包",
-      "summary": "一篇面向 Unity 开发者的着色器性能文章，系统梳理移动端 Shader 优化要点：按平台选择合适的数值精度、减少重复与复杂计算、把标量数据打包进纹理通道以降低插值与采样开销。",
-      "source": " Hubble 数码",
-      "date": "2026-11-21",
-      "url": "https://www.hqwc.cn/a/560599.html",
-      "image": "",
-      "badge": "优化",
-      "badgeType": "tutorials",
-      "readTime": "6 分钟",
-      "hotScore": 78,
-      "tags": [
-        "Unity",
-        "Shader",
-        "移动端",
-        "精度优化"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "按平台选择合适的数值精度（half/fixed 等）",
-            "减少重复计算与高开销函数",
-            "把标量数据打包进纹理通道，降低插值与采样成本"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "移动端 Shader 优化的关键不是删效果，而是理解 GPU 的成本结构：精度、带宽、插值各有代价。把这份自查清单用在真机上量一遍，往往能挖出不少「看不见」的开销。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ai-gamer-vla",
-      "category": "ai",
-      "subcategory": "AI·游戏智能体",
-      "title": "米哈游 Gamer 通用 VLA 模型拆解：看屏幕输出键鼠，延迟压到 65 毫秒",
-      "summary": "米哈游 Honkai AI 联合多所高校发布 Gamer（通用视觉-语言-动作基础模型），只看屏幕画面、直接输出与人类相同的键鼠指令，可跨《崩铁》《原神》《Minecraft》等 2D/3D 游戏执行长时程任务。三阶段训练结合记忆摘要的 TA-GRPO，配合 Streaming-vLLM 把推理延迟从 1306ms 压到 65.12ms（20.1 倍）。论文与提示词规范已开源，Streaming-vLLM 代码待放出。",
-      "source": "AI 科技新闻（aiposthub）",
-      "date": "2026-11-19",
-      "url": "https://www.aiposthub.com/gamer-generalist-vla-foundation-model",
-      "image": "https://storage.ghost.io/c/5e/61/5e6189f0-c5e0-49a0-97b4-5eddd3f43c77/content/images/size/w1200/2026/11/gamer-generalist-vla-foundation-model-official.png",
-      "badge": "VLA",
-      "badgeType": "ai",
-      "readTime": "8 分钟",
-      "hotScore": 93,
-      "tags": [
-        "米哈游",
-        "Gamer",
-        "VLA",
-        "TA-GRPO",
-        "Streaming-vLLM"
-      ],
-      "content": [
-        {
-          "title": "技术要点",
-          "type": "list",
-          "items": [
-            "纯视觉输入、设备层键鼠输出的统一接口，跨游戏无需专用 API",
-            "三阶段训练：CPT + 稀疏推理 SFT + 时间感知强化学习 TA-GRPO",
-            "Streaming-vLLM 把端到端延迟从 1306ms 降到 65.12ms（20.1×）",
-            "论文与系统提示词规范已开源，Streaming-vLLM 待放出"
-          ]
-        },
-        {
-          "title": "观察",
-          "type": "text",
-          "text": [
-            "把「游戏 AI」做成不挑游戏的通用接口，价值在于标准化了观察与动作格式——这和机器人领域的思路同源。真正卡落地的是延迟与稳定性，65ms 是跨过可玩门槛的关键数字。想复现的团队注意：核心推理引擎尚未开源。"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ai-fable52",
-      "category": "ai",
-      "subcategory": "AI·生成",
-      "title": "Claude Fable 5.2 一句话做游戏：8 小时、约 550 美元从零生成可玩射击游戏",
-      "summary": "Anthropic 于 11 月 9 日发布 Claude Fable 5.2，主打技术任务与交互式 3D 世界生成。上线一天内，开发者用单条提示词在浏览器里生成射击、竞速、MMO 村庄等游戏；Anthropic 员工 Felix Rieseberg 的射击 Demo 用 270 万输出 token、约 550 美元 API 成本、耗时 8 小时从零生成模型、音效与贴图。API 价格降到每百万输入 8 美元、输出 40 美元。",
-      "source": "TalkEsport",
-      "date": "2026-11-16",
-      "url": "https://www.talkesport.com/editorials/claude-fable-5-2-games-ai-game-development/",
-      "image": "https://www.talkesport.com/wp-content/uploads/claude-fable-5-2-games-ai-game-development-scaled.webp",
-      "badge": "Fable 5.2",
-      "badgeType": "ai",
-      "readTime": "7 分钟",
       "hotScore": 90,
       "tags": [
-        "Claude",
-        "Fable 5.2",
-        "AI生成游戏",
-        "Anthropic"
+        "饥困荒野",
+        "饥荒",
+        "生存手游",
+        "腾讯"
       ],
       "content": [
         {
-          "title": "关键事实",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "11/9 发布，主打交互式 3D 世界与技术任务",
-            "单提示词生成射击/竞速/MMO 村庄等可玩 Demo",
-            "一个射击 Demo：约 550 美元、8 小时、270 万输出 token，从零生成模型音效贴图",
-            "API 价格降至输入 8 美元/百万、输出 40 美元/百万"
+            "11 月 24 日全平台上线，预约破 2500 万，基于《饥荒：联机版》开发",
+            "保留随机世界与四季循环，新增「家园」安全区，角色背包跨局保留",
+            "取消武器宠物抽卡，改兑换商店，道具只消耗沙盒材料"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "从「生成一段代码」到「生成一个可玩游戏」，成本与时间是绕不开的现实：550 美元、8 小时换来的更像一个可验证原型，而非可发行产品。演示很震撼，但对工作室而言，它目前的价值是快速验证玩法点子，而不是替代生产管线。"
-          ]
+          "text": "把 PC 生存游戏做成手游，最难的是在触屏上保留「探索-收集-制作」的节奏感。取消抽卡、以材料兑换替代，说明团队把长线留存押在玩法循环而非数值付费上，这个取舍值得同类改编项目参考。"
         }
       ]
     },
     {
-      "id": "ai-qwen4max-dev",
-      "category": "ai",
-      "subcategory": "AI·模型",
-      "title": "Qwen4-Max 开发解读：原生视觉 + 百万上下文，把 3D 创作串成一条链",
-      "summary": "阿里云开发者社区对 Qwen4-Max 的解读指出，该模型具备原生视觉能力，能熟练使用 Blender 完成几何建模、场景搭建、材质配置到灯光渲染的完整链路，并支持百万 token 上下文。它与同期 Fable 5.2、GPT-6.2 Astra 一起，把大模型的 3D 能力推向实用化。",
-      "source": "阿里云开发者社区",
-      "date": "2026-11-16",
-      "url": "https://developer.aliyun.com/article/1784685",
-      "image": "https://img.alicdn.com/tfs/TB1LCE1aQ5E3KVjSZFCXXbuzXXa-200-200.png",
-      "badge": "Qwen4-Max",
+      "id": "ga-terminius",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "独立游戏",
+      "title": "《Terminus: Day Zero》免费上线：不能战斗的僵尸生存叙事",
+      "summary": "Longplay Studios 的《Terminus: Day Zero》11 月 24 日在 Steam 免费上线，仅支持 Windows。它是《Terminus: Zombie Survivors》世界观的短篇前传，讲述爆发第一天独自在家的女孩 Daisy 如何躲藏求生——她无法战斗，只能靠对家里的躲藏点、还关得上的门的熟悉度活下去，随后逃入满是陌生人的街区。没有战斗的僵尸题材把压力全押在潜行与叙事上，是独立游戏用小体量做体验差异的一次尝试。",
+      "source": "Patchbeat",
+      "date": "2026-11-24",
+      "url": "https://patchbeat.net/news/terminus-day-zero-out-now-steam-free",
+      "image": "https://patchbeat.net/og/news/terminus-day-zero-out-now-steam-free.jpg",
+      "badge": "免费新游",
+      "badgeType": "game",
+      "readTime": "5 分钟",
+      "hotScore": 82,
+      "tags": [
+        "Terminus",
+        "僵尸生存",
+        "叙事游戏",
+        "Steam"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "11 月 24 日 Steam 免费上线，Windows 独占，为《Zombie Survivors》前传",
+            "主角 Daisy 无法战斗，只能靠躲藏与熟悉环境求生",
+            "以「一个女孩、一个街区」的叙事视角替代传统战斗生存"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "砍掉战斗系统反而给僵尸题材腾出了叙事空间：当玩家不能反击，紧张感来自观察与判断而非数值碾压。小团队做差异化，与其加系统，不如先想清楚要卖哪种体验。"
+        }
+      ]
+    },
+    {
+      "id": "ga-noasteroids",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "独立游戏",
+      "title": "《No Asteroids》11/24 上线：挖小行星拯救地球的多人协作玩法",
+      "summary": "Unruled Games 开发发行的休闲模拟兼第一人称挖矿游戏《No Asteroids》11 月 24 日登陆 Steam PC。玩家面对一颗 500 万立方米的巨大小行星，需要在 90 天内把它挖空——从十字镐起步，卖矿石升级工具与武器，最终用黑洞加速进度。游戏支持最多 8 人在线协作挖同一颗小行星，共享钱包、由房主分配支出，离开飞船的人会丢失货物。把「倒计时+共享进度」做成多人协作核心，是轻度玩法里少见的强社交设计。",
+      "source": "MadInfinite",
+      "date": "2026-11-24",
+      "url": "https://www.madinfinite.com/news/you-have-90-days-to-act-while-mining-an-asteroid-to-defend-earth-in-no-asteroids",
+      "image": "",
+      "badge": "独立新游",
+      "badgeType": "game",
+      "readTime": "5 分钟",
+      "hotScore": 81,
+      "tags": [
+        "No Asteroids",
+        "多人协作",
+        "挖矿",
+        "Steam"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "11 月 24 日登陆 Steam，玩家需在 90 天内挖空 500 万立方米小行星",
+            "从十字镐起步，卖矿石升级工具，最高可用黑洞加速",
+            "支持最多 8 人在线共享钱包协作，未登船者会丢失货物"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "把「共享进度+有限时间」压进同一个目标，天然催生分工与争执，这正是一座低成本高互动的社交玩法骨架。独立游戏想做多人，先设计一个能让玩家有理由互相算计的目标，比堆模式有效。"
+        }
+      ]
+    },
+    {
+      "id": "ga-50days",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "新游排期",
+      "title": "50 天五款大作排队：绝区零前瞻打头，二次元赛道迎最凶险大决战",
+      "summary": "腾讯新闻梳理 11 月至 12 月新游排期：绝区零 3.4 版本前瞻直播率先开启，蛮啾《蓝色星原：旅谣》11 月 26 日公测、全球预约超 2500 万且五端互通；鹰角《明日方舟：终末地》2.0 前瞻、米哈游《崩坏：因缘精灵》幸福测试穿插其间；12 月 4 日《星布谷地》、12 月 14 日《白银之城》接连公测，腾讯魔方《异人之下》12 月上线、预约破 4700 万。GameLook 称这轮为「二次元游戏史上最凶险大决战」。密集排期背后，是各家对同一批用户时长的贴身争夺。",
+      "source": "腾讯新闻",
+      "date": "2026-11-20",
+      "url": "https://news.qq.com/rain/a/20261120A0CWEL00",
+      "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-24-50days.jpg",
+      "badge": "新游潮",
+      "badgeType": "game",
+      "readTime": "6 分钟",
+      "hotScore": 89,
+      "tags": [
+        "绝区零",
+        "蓝色星原",
+        "终末地",
+        "异人之下",
+        "排期"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "绝区零 3.4 前瞻打头，蓝色星原旅谣 11 月 26 日公测、预约超 2500 万",
+            "终末地 2.0 前瞻与崩坏因缘精灵测试穿插，12 月星布谷地、白银之城接连公测",
+            "异人之下 12 月上线、预约破 4700 万，GameLook 称最凶险二次元大决战"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "同一批用户在 50 天内被五款大作争抢，结果是福利战与口碑战同时开打。对开发者，这提示了「错峰」的价值：当头部产品扎堆，与其硬碰硬，不如把上线窗口挪到注意力真空期。"
+        }
+      ]
+    },
+    {
+      "id": "ga-steamrec",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "Steam 新作",
+      "title": "Steam 11/23-11/29 上架推荐：增量、恐怖与模拟经营百花齐放",
+      "summary": "Steam 11 月 23 至 29 日上架新作中，11 月 24 日上线的包括休闲增量游戏《A Thousand Clowns》（操控烤面包机在异星采集）、PSX 风格心理恐怖《Late Night Duty》、手绘解谜《逃离宝宝警报》、增量 RTS《Incremental RTS》与恐龙动物园经营《侏罗纪建筑师》。其中多款支持中文，题材从育儿模拟到多人酒馆经营，独立小品的创意密度很高。看这批新品能直观感受到：小团队正用题材细分而非画面堆料找突破口。",
+      "source": "腾讯新闻",
+      "date": "2026-11-23",
+      "url": "https://news.qq.com/rain/a/20261123A03Y6400",
+      "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-24-steamrec.jpg",
+      "badge": "Steam 上新",
+      "badgeType": "game",
+      "readTime": "5 分钟",
+      "hotScore": 80,
+      "tags": [
+        "Steam",
+        "独立游戏",
+        "新作推荐",
+        "增量游戏"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "11 月 24 日上线《A Thousand Clowns》《Late Night Duty》《Incremental RTS》等多款",
+            "《逃离宝宝警报》《侏罗纪建筑师》等支持中文，题材覆盖解谜与模拟经营",
+            "多款作品用独特题材（烤面包机、育儿、恐龙动物园）做差异化"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "一周新游列表是观察独立游戏创意风向的好窗口。这批作品几乎不拼画面，而是靠一个清晰的「如果……会怎样」设定立住玩法，这种低成本高概念的思路正是小团队最该学的。"
+        }
+      ]
+    },
+    {
+      "id": "ga-famine-business",
+      "category": "games",
+      "categoryName": "热门游戏",
+      "subcategory": "商业化观察",
+      "title": "饥荒手游取消抽卡的样本：从数值付费转向外观与赛季",
+      "summary": "《饥困荒野》的商业化设计成为年末新游讨论焦点：游戏取消武器与宠物抽卡，原卡池改为兑换商店，道具只消耗沙盒材料，玩家通过日常活跃即可免费兑换；突破养成仅消耗沙盒基础材料，付费重心转向外观等非战力内容。同时推出手游独家赛季「绿洲之诗」与多种联动内容维系长线活跃。这套「去战力付费」结构在头部发行产品里并不多见，等于把口碑与留存放在短期付费之前。",
+      "source": "18183 游戏网",
+      "date": "2026-11-18",
+      "url": "https://news.18183.com/yxxw/202611/9197180.html",
+      "image": "",
+      "badge": "商业化",
+      "badgeType": "game",
+      "readTime": "5 分钟",
+      "hotScore": 83,
+      "tags": [
+        "饥困荒野",
+        "去抽卡",
+        "商业化",
+        "赛季制"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "取消武器与宠物抽卡，卡池改兑换商店，道具只消耗沙盒材料",
+            "突破养成仅消耗基础材料，付费重心转向外观等非战力内容",
+            "以手游独家赛季「绿洲之诗」与联动内容维系长线活跃"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "「去战力付费」在大厂产品里是稀有选择，因为它要求用内容更新而非数值膨胀来撑留存。这条路能不能走通，要看赛季内容产能是否跟得上；但对被抽卡疲劳困扰的玩家，至少提供了一个不同的选项。"
+        }
+      ]
+    },
+    {
+      "id": "os-raea",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "渲染引擎",
+      "title": "raea：用 React 和 TypeScript 描述视频与 3D，在本地 GPU 上渲染",
+      "summary": "GitHub 项目 shinyobjectz/raea 是一个「渲染一切」引擎：开发者用 React 与 TypeScript 编写视频、动态图形、3D 场景（基于 Bevy）和游戏，由 Rust 引擎在本地 GPU 与硬件编码器上渲染。它提供 raea CLI 与桌面应用，让 Claude 等智能体写合成、渲染帧、检查输出并迭代；`raea check` 可自动识别文字裁切、低对比度、卡顿与音量问题。项目采用 FSL-1.1-ALv2 许可，非 OSI 开源，近一周增长数百星。把「描述式创作+本地渲染+自动质检」打通，是 AI 生成内容工具链的新形态。",
+      "source": "GitHub: shinyobjectz/raea",
+      "date": "2026-11-22",
+      "url": "https://github.com/shinyobjectz/raea",
+      "image": "https://opengraph.githubassets.com/1/shinyobjectz/raea",
+      "badge": "开源引擎",
+      "badgeType": "hot",
+      "readTime": "6 分钟",
+      "hotScore": 89,
+      "tags": [
+        "raea",
+        "React",
+        "Bevy",
+        "AI渲染",
+        "TypeScript"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "用 React/TS 编写视频、动态图形、3D 与游戏，Rust+Bevy 本地 GPU 渲染",
+            "提供 CLI 与桌面应用，智能体可写合成、渲染帧、检查并迭代",
+            "raea check 自动检测文字裁切、低对比度、卡顿与音量问题；FSL-1.1 许可非 OSI 开源"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "把「生成」和「质检」塞进同一条本地管线，是这类工具最有价值的地方：AI 生成内容的瓶颈早就不是生成速度，而是能不能稳定验收。商用前记得核对 FSL 许可条款，别把非 OSI 开源当成 Apache 用。"
+        }
+      ]
+    },
+    {
+      "id": "os-ohmygame",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "AI 游戏开发",
+      "title": "OhMyGame：一个人也能开游戏工作室的桌面智能体应用",
+      "summary": "GitHub 项目 WhiteTowerAI/ohmygame 是一个 Electron 桌面应用（TypeScript），让 AI 智能体在设计文档、图片、视频、3D 模型与音频的画布上工作：智能体编写 Three.js、React Three Fiber 或 Phaser 网页游戏，在实时预览中试玩并自动重试修复，最后发布可分享链接。它支持 40 多家模型供应商自带密钥，也可接入 Claude Code、Codex、OpenCode；提供 Godot、Unity、Unreal、Blender 等插件，项目文件是普通 Markdown/JSON。beta 阶段、仅 macOS Apple Silicon 与 Windows x64 有安装包。把设计到试玩闭环在一个画布里，是「一人工作室」工具链的激进实验。",
+      "source": "GitHub: WhiteTowerAI/ohmygame",
+      "date": "2026-11-20",
+      "url": "https://github.com/WhiteTowerAI/ohmygame",
+      "image": "https://opengraph.githubassets.com/1/WhiteTowerAI/ohmygame",
+      "badge": "开源工具",
+      "badgeType": "ai",
+      "readTime": "6 分钟",
+      "hotScore": 88,
+      "tags": [
+        "OhMyGame",
+        "AI智能体",
+        "网页游戏",
+        "一人开发"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "Electron 桌面应用，智能体在设计画布上编写网页游戏并实时试玩修复",
+            "支持 40+ 模型供应商自带密钥，提供 Godot/Unity/Unreal/Blender 等插件",
+            "项目文件是普通 Markdown/JSON，beta 阶段仅部分平台有安装包"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "「智能体自己试玩、自己修」是这套工具最值得关注的能力：生成代码不难，难的是闭环验证。项目还早、安装包也挑平台，但一人工作室的技术形态已经能窥见轮廓了。"
+        }
+      ]
+    },
+    {
+      "id": "os-solidcraft",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "参数化建模",
+      "title": "SolidCraft：纯 Rust 参数化 3D CAD，桌面/浏览器/MCP 三端可用",
+      "summary": "GitHub 项目 tangency-labs/solidcraft 是纯 Rust 编写的参数化 3D CAD，星数约 1.6 万、Apache-2.0 许可。它支持在特征时间轴上草图、约束并构建实体，改一个尺寸即可重建模型；同一引擎运行在 Windows、macOS、Linux 与浏览器端，并内置 MCP 服务器让 AI 智能体通过自然语言驱动建模，支持 STEP 导出与 WebAssembly 插件（仅显式请求时加载）。对游戏开发者，它是做程序化资产与硬表面原型的轻量选择；参数化+智能体驱动，正在把 CAD 从手工工具变成可编程管线。",
+      "source": "GitHub: tangency-labs/solidcraft",
+      "date": "2026-11-15",
+      "url": "https://github.com/tangency-labs/solidcraft",
+      "image": "https://opengraph.githubassets.com/1/tangency-labs/solidcraft",
+      "badge": "开源工具",
+      "badgeType": "hot",
+      "readTime": "5 分钟",
+      "hotScore": 86,
+      "tags": [
+        "SolidCraft",
+        "参数化CAD",
+        "Rust",
+        "MCP",
+        "程序化资产"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "纯 Rust 参数化 3D CAD，约 1.6 万星，Apache-2.0 许可",
+            "桌面与浏览器同引擎，内置 MCP 服务器让智能体驱动建模",
+            "支持 STEP 导出与按需加载的 WebAssembly 插件"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "参数化建模的价值在于「改一个参数、整模型重建」，这和游戏里的程序化资产生成天然契合。MCP 接口让 AI 能直接操刀建模，未来做道具、关卡结构的技术美术工作流可能被重新定义。"
+        }
+      ]
+    },
+    {
+      "id": "os-artcraft",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "AI 创作 IDE",
+      "title": "ArtCraft：在 2D 构图、3D 布景里调用多模型的 AI 创作桌面 IDE",
+      "summary": "GitHub 项目 storytold/artcraft 是 Rust 编写的桌面 IDE，面向交互式 AI 图像与视频创作：用户在 2D 中构图、在 3D 中布景，再从数十个 AI 模型里挑一个生成最终结果，覆盖去背景、inpainting、GPT-Image 等 filmmaking 场景。项目星数约 4 万，是 3D 类目里增长较快的一个。把「场景编排」放在模型调用之前，说明 AI 创作工具正从「抽卡式出图」转向可控的生产管线。",
+      "source": "GitHub: storytold/artcraft",
+      "date": "2026-11-21",
+      "url": "https://github.com/storytold/artcraft",
+      "image": "",
+      "badge": "开源工具",
       "badgeType": "ai",
       "readTime": "5 分钟",
       "hotScore": 84,
       "tags": [
-        "Qwen4-Max",
-        "原生视觉",
-        "Blender",
-        "百万上下文"
+        "ArtCraft",
+        "AI创作",
+        "Rust",
+        "视频生成",
+        "3D布景"
       ],
       "content": [
         {
-          "title": "模型要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "具备原生视觉能力，支持百万 token 上下文",
-            "可使用 Blender 串联建模、场景、材质与渲染",
-            "与 Fable 5.2、GPT-6.2 Astra 同属 3D 能力强化浪潮"
+            "Rust 桌面 IDE，2D 构图 + 3D 布景，再调用多种 AI 模型生成",
+            "覆盖去背景、inpainting、GPT-Image 等影视创作场景",
+            "GitHub 约 4 万星，3D 类目增长较快"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "把工具调用串成完整创作链，是大模型从「回答」走向「执行」的标志。评估这类模型别只盯着演示效果，重点看输出能否进引擎、能否复现——那才是它能否进入生产流程的分水岭。"
-          ]
+          "text": "先编排场景、再调用模型，这种顺序把 AI 从「随机灵感机」变成可控的生产环节。对做游戏美术管线的团队，这类工具的思路比具体功能更值得借鉴：把不确定性锁在最小的生成步骤里。"
         }
       ]
     },
     {
-      "id": "ai-gamescaling",
-      "category": "ai",
-      "subcategory": "AI·研究",
-      "title": "THUSI-Lab 发布 gamescaling-model 集合：研究游戏任务的模型缩放律",
-      "summary": "Hugging Face 上的 THUSI-Lab/gamescaling-model 集合追踪了团队在游戏任务上的视觉-语言模型缩放研究，用于对照模型规模与键鼠控制等游戏能力的关系。该集合与米哈游 Gamer 的论文相关联，为研究者提供可对照的基础模型资产。",
-      "source": "xinfinite",
-      "date": "2026-11-17",
-      "url": "https://www.xinfinite.net/t/topic/23702/5",
-      "image": "https://media1.xinfinite.net/original/3X/7/f/7fcfbb0085182aa652cb2a000c662e7626570eb3.png",
-      "badge": "研究",
-      "badgeType": "ai",
+      "id": "os-droiddeck",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "移动端工具",
+      "title": "DroidDeck：把 SteamOS 大屏体验搬到骁龙安卓掌机",
+      "summary": "GitHub 项目 Droid-Deck/DroidDeck 让安卓设备获得 SteamOS 大屏体验，可在搭载高通 Adreno GPU 的手机或掌机上，通过 ARM64 Proton 运行 Steam 客户端与 Windows 游戏。开源免费、纯本地运行，旧骁龙 8 手机即可尝试；局限是仅支持 Adreno 机型，天玑、Exynos 暂不支持，重度 3A 受转译损耗影响、部分游戏文字偏小可切「电视模式」。把现成手机变成掌机，开源社区用软件补齐了硬件的最后一公里。",
+      "source": "GitHub: Droid-Deck/DroidDeck",
+      "date": "2026-11-20",
+      "url": "https://github.com/Droid-Deck/DroidDeck",
+      "image": "https://opengraph.githubassets.com/1/Droid-Deck/DroidDeck",
+      "badge": "开源工具",
+      "badgeType": "hot",
       "readTime": "5 分钟",
-      "hotScore": 76,
+      "hotScore": 83,
       "tags": [
-        "gamescaling",
-        "缩放律",
-        "VLA",
-        "Hugging Face"
+        "DroidDeck",
+        "SteamOS",
+        "安卓掌机",
+        "Proton",
+        "模拟器"
       ],
       "content": [
         {
-          "title": "要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "THUSI-Lab 在 Hugging Face 发布 gamescaling-model 集合",
-            "研究游戏任务上模型规模与能力（如键鼠控制）的缩放关系",
-            "与米哈游 Gamer 论文相关联，提供对照资产"
+            "在骁龙 Adreno 安卓设备上通过 ARM64 Proton 运行 Steam 与 Windows 游戏",
+            "开源免费、纯本地运行，旧骁龙 8 手机即可尝试",
+            "仅支持 Adreno 机型，重度 3A 受转译损耗，部分文字偏小"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "缩放律研究回答的是「模型做游戏任务，堆规模到底有没有用」。把不同规模的模型放一起对照，比单个炫技 Demo 更能说明能力边界——这类基础工作对判断投入方向很有参考价值。"
-          ]
+          "text": "把闲置手机变成掌机，是转译与兼容层技术的平民化落地。对游戏开发者，别忘了这类设备正在扩大「类 Steam 环境」的覆盖范围——你的输入映射、手柄适配与低分辨率 UI，未来会被更多非 PC 设备检验。"
         }
       ]
     },
     {
-      "id": "ai-raon",
-      "category": "ai",
-      "subcategory": "AI·NPC",
-      "title": "RAON-1 nano NPC：把生成式 NPC 压到可实时运行的小规模",
-      "summary": "Sam Witteveen 介绍的 RAON-1 nano 面向游戏 NPC，主打在小规模模型下实现可用的 NPC 交互，让生成式对话角色能在实时场景中运行，降低普通项目接入 AI NPC 的硬件与延迟门槛。",
-      "source": "AI TLDR",
-      "date": "2026-11-17",
-      "url": "https://ai-tldr.dev/releases/sam-witteveen-raon-1-nano-npcs-nov17/",
-      "image": "https://i.ytimg.com/vi/IRZqAdKcNTE/hqdefault.jpg",
-      "badge": "NPC",
-      "badgeType": "ai",
+      "id": "os-playcanvas-engine",
+      "category": "opensource",
+      "categoryName": "开源宝库",
+      "subcategory": "Web 引擎",
+      "title": "PlayCanvas Engine：MIT 许可的 WebGL/WebGPU 3D 引擎持续更新",
+      "summary": "PlayCanvas 引擎（github.com/playcanvas/engine）是 MIT 许可的开源 Web 3D 引擎，基于 WebGL2 与 WebGPU，星数约 1.7 万，最新稳定版 2.24.1。它支持计算着色器、3D 高斯泼溅的编辑与渲染，可用可视化编辑器、npm、React 或 Web Components 多种方式开发；配合 create-playcanvas 可快速搭建项目。2.24 版本新增动态天空与平面反射，编辑器默认版本同步跟进。想做浏览器 3D 又不想被托管平台绑定，PlayCanvas 引擎提供了可自托管的完整底座。",
+      "source": "GitHub: playcanvas/engine",
+      "date": "2026-11-12",
+      "url": "https://github.com/playcanvas/engine",
+      "image": "https://repository-images.githubusercontent.com/19696006/f792c200-9ae5-11ea-8193-af24596ab0c7",
+      "badge": "开源引擎",
+      "badgeType": "hot",
       "readTime": "5 分钟",
-      "hotScore": 75,
+      "hotScore": 85,
       "tags": [
-        "RAON-1",
-        "NPC",
-        "小模型",
-        "实时交互"
+        "PlayCanvas",
+        "WebGL",
+        "WebGPU",
+        "开源引擎",
+        "高斯泼溅"
       ],
       "content": [
         {
-          "title": "要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "RAON-1 nano 面向游戏 NPC 交互",
-            "主打小规模模型下的实时可用",
-            "降低 AI NPC 的硬件与延迟门槛"
+            "MIT 许可 Web 3D 引擎，基于 WebGL2/WebGPU，约 1.7 万星",
+            "支持计算着色器与高斯泼溅，提供编辑器/npm/React/Web Components 工作流",
+            "最新稳定版 2.24.1，2.24 新增动态天空与平面反射"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "AI NPC 落地的关键从来不是「能不能对话」，而是「延迟和成本能不能接受」。把模型压到实时可跑，比追求更像人更进一步——玩家要的是即时反馈，不是哲学对话。"
-          ]
+          "text": "MIT 许可加上可自托管，让 PlayCanvas 成为「既想要引擎完整度、又不愿被平台锁死」时的现实选择。评估时重点看 WebGPU 特性的实际覆盖——很多新能力在 WebGL 后端会静默失效。"
         }
       ]
     },
     {
-      "id": "ai-3d-beyond",
-      "category": "ai",
-      "subcategory": "AI·趋势",
-      "title": "一句话生成游戏场景、52 分钟渲染 3D 短片：大模型集体「越界」物理世界",
-      "summary": "网易科技梳理指出，Qwen4-Max、Claude Fable 5.2、GPT-6.2 Astra 等模型近期 3D 能力显著提升：Fable 5.2 用一条提示词自行写 Blender 代码建模并调 10 块 GPU 渲染 4K 短片，耗时 52 分钟；Qwen4-Max 强调原生视觉与 Blender 操作。业内分歧集中在是否要把语言模型与物理模型统一到同一技术体系。",
-      "source": "网易科技（每日经济新闻）",
-      "date": "2026-11-16",
-      "url": "https://www.163.com/dy/article/LC1DNIFN0512B07B.html",
+      "id": "tu-godot-compute",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "着色器实战",
+      "title": "Godot 4 计算着色器实战：先常规 Shader 做 80%，再补性能缺口",
+      "summary": "独游魔盒的 Godot 关键技术笔记指出，Compute Shader 在 Godot 4 里最适合大规模粒子模拟与屏幕后处理（动态模糊、景深、体积光），但别当银弹：GPU 并行顺序不可预测，粒子相互碰撞要用共享显存，冲突处理会吃掉大半性能收益。作者建议先用 CanvasItem/Particles 常规 Shader 完成 80% 效果，只对绕不开的 20% 性能缺口上 Compute；入门方式是写小规模测试、用计算缓冲模拟几十个粒子，再对照 Profiler 的 CPU/GPU 耗时找拐点。判断该不该上 Compute，靠的是 Profiler 数据不是直觉。",
+      "source": "独游魔盒",
+      "date": "2026-11-19",
+      "url": "https://xmohe.com/techie/special/godot-key-tech/06-from-basics-to-compute",
       "image": "",
-      "badge": "趋势",
+      "badge": "技术笔记",
+      "badgeType": "hot",
+      "readTime": "6 分钟",
+      "hotScore": 87,
+      "tags": [
+        "Godot",
+        "Compute Shader",
+        "粒子",
+        "性能优化"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "Compute Shader 适合大规模粒子与屏幕后处理，但共享显存冲突会吃掉性能收益",
+            "建议先用常规 Shader 做 80% 效果，只对 20% 缺口用 Compute",
+            "入门 Write 小规模测试，用 Profiler 对比 CPU/GPU 耗时找拐点"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "「别把 Compute 当银弹」这句提醒很实在：并行化的门槛不在语法，而在能否看出一张图可以并行拆解。先用数据证明瓶颈，再决定是否上重武器，是性能优化的基本纪律。"
+        }
+      ]
+    },
+    {
+      "id": "tu-godot-perf",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "性能与发布",
+      "title": "Godot 4.7.2 性能实战：看 gpu_ms/cpu_ms 而非窗口帧率",
+      "summary": "GitCode 博客逐条解读一份 Godot 4.7.2 性能优化笔记：判断性能要看 gpu_ms 与 cpu_ms，而不是窗口里的帧率数字；Export With Debug 不会让游戏变慢，可直接用于设备测量；Performance Advisor 适合放进 CI 并为场景打 region marker；短测试看不到降频，要看温度曲线。笔记指出 4.7.2 没有热状态 API，替代方案是长时日志；陈旧构建缓存叠加 API 改名会造成追了几周的「幽灵性能 bug」，每次报告都该从干净构建开始。把测量方法做对，比盲目调参数有用得多。",
+      "source": "GitCode 博客",
+      "date": "2026-11-19",
+      "url": "https://blog.gitcode.com/c26a59e384ca094f37a740ef63b81519.html",
+      "image": "",
+      "badge": "专家笔记",
+      "badgeType": "hot",
+      "readTime": "7 分钟",
+      "hotScore": 88,
+      "tags": [
+        "Godot",
+        "性能优化",
+        "Profiler",
+        "CI",
+        "干净构建"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "判断性能看 gpu_ms/cpu_ms 而非窗口帧率，Export With Debug 可直接测量",
+            "Performance Advisor 适合进 CI，短测试看不到降频需看温度曲线",
+            "陈旧构建缓存会造成难查的幽灵 bug，每次报告从干净构建开始"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "性能调优最常见的坑不是不会优化，而是测得不准。这份笔记把「干净构建+分场景标记+长时温度曲线」变成可复用的流程，比单点技巧更能救命。"
+        }
+      ]
+    },
+    {
+      "id": "tu-gdscript",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "GDScript 进阶",
+      "title": "GDScript 高效开发：把节点查找从 _process 里挪出去",
+      "summary": "一篇 GDScript 开发指南强调几类高频性能坑：_process 与 _physics_process 每秒执行 60 次以上，里面做 find_node 或长路径 $ 查询会拖慢帧率，应在 _ready 中用 @onready 缓存引用；循环里频繁创建 Vector2、Array、Dictionary 应复用或在循环外声明；用get_tree().get_nodes_in_group 前先想清楚频率。监控重点包括帧时间（60FPS 下每帧低于 16.6ms）、物理处理时间、脚本函数耗时与对象计数。热点定位要顺着 Profiler 的调用树走，而不是猜哪个函数慢。",
+      "source": "编程知识（hqwc）",
+      "date": "2026-11-18",
+      "url": "http://www.hqwc.cn/news/854575.html",
+      "image": "",
+      "badge": "实战教程",
+      "badgeType": "hot",
+      "readTime": "6 分钟",
+      "hotScore": 84,
+      "tags": [
+        "GDScript",
+        "Godot",
+        "性能优化",
+        "Profiler",
+        "对象池"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "_process 里避免 find_node 与长路径查询，用 @onready 缓存引用",
+            "循环里复用对象而非重复创建，字符串与数组尽量预声明",
+            "监控帧时间 16.6ms、物理处理、脚本耗时与对象计数"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "这些规则单看都很基础，真正拉开差距的是把它们变成编码习惯。GDScript 的动态特性让「每帧查节点」这类坑极易发生，团队用代码审查把 @onready 缓存固化下来，比事后 Profile 追热点省事。"
+        }
+      ]
+    },
+    {
+      "id": "tu-gdquest",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "架构设计",
+      "title": "GDQuest 设计模式教程：把经典模式搬进 Godot 的工程实践",
+      "summary": "GDQuest 的 Godot 设计模式教程把游戏开发常见的架构问题整理成可落地的模式集合，配合其交互式 GDScript 课程，帮开发者从「能跑通」走向「好维护」。教程强调信号解耦、单一职责节点、用 Resource 承载数据、谨慎使用 Autoload，以及缓存节点引用、对象池复用、静态类型等性能实践。对从脚本堆砌转向工程化的人来说，设计模式不是教条，而是让场景可复用、改动可控的工具。把模式与引擎特性结合讲，比空谈 UML 更实用。",
+      "source": "GDQuest",
+      "date": "2026-11-16",
+      "url": "https://www.gdquest.com/tutorial/godot/design-patterns/intro-to-design-patterns/",
+      "image": "https://www.gdquest.com/img/social-banner.png",
+      "badge": "系统教程",
+      "badgeType": "hot",
+      "readTime": "6 分钟",
+      "hotScore": 85,
+      "tags": [
+        "GDQuest",
+        "设计模式",
+        "Godot",
+        "架构",
+        "GDScript"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "把信号解耦、单一职责节点、Resource 数据与谨慎 Autoload 讲成工程实践",
+            "性能侧强调缓存引用、对象池与静态类型",
+            "配合交互式 GDScript 课程，从能跑通走向好维护"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "设计模式最怕变成背概念。GDQuest 的价值在于把每个模式都扣回 Godot 的节点与信号机制，让「为什么这样写」有引擎层面的答案——这才是从脚本爱好者到工程师的分水岭。"
+        }
+      ]
+    },
+    {
+      "id": "tu-dantes3d",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "学习路线",
+      "title": "3D 游戏开发学习资源清单：从 Polycount 到 LearnOpenGL 的十年路径",
+      "summary": "Project Monte Cristo 整理的 3D 游戏开发资源清单，按初级到进阶列出十项免费/付费材料：Polycount 看美术批评标准，Godot 官方文档做分步项目，Unreal Engine Learn 提供蓝图与 Nanite/Lumen 参考，Unity Learn 用项目制路径教 C# 脚本；进阶有 LearnOpenGL（从建窗口、写着色器到 PBR 与延迟渲染）、Game Programming Patterns（游戏循环等架构模式）与《Game Engine Architecture》。清单按「学会什么」而非「有多少资源」编排，对自学路线很有参考价值。",
+      "source": "Project Monte Cristo",
+      "date": "2026-11-20",
+      "url": "https://dantes.io/subject/3d-game-development",
+      "image": "https://dantes.io/subject/3d-game-development/opengraph-image",
+      "badge": "学习路线",
+      "badgeType": "hot",
+      "readTime": "6 分钟",
+      "hotScore": 83,
+      "tags": [
+        "学习资源",
+        "LearnOpenGL",
+        "游戏编程模式",
+        "引擎架构",
+        "自学路线"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "初级：Polycount 看美术标准，Godot/Unreal/Unity 官方文档做分步项目",
+            "进阶：LearnOpenGL 从着色器到 PBR，Game Programming Patterns 讲架构模式",
+            "延伸：《Game Engine Architecture》系统梳理商业引擎子系统"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "好清单的价值在于取舍：它没堆几百个链接，而是按「先做什么、再学什么」排了顺序。自学者最容易犯的错就是收藏成瘾，照这条路径挑两三个资源吃透，比囤一百个收藏夹有用。"
+        }
+      ]
+    },
+    {
+      "id": "tu-gamepatterns",
+      "category": "tutorials",
+      "categoryName": "实战教程",
+      "subcategory": "架构经典",
+      "title": "《游戏编程模式》在线版：把更新、状态与对象池讲成可复用的解法",
+      "summary": "Robert Nystrom 的《游戏编程模式》在线版把游戏代码里的常见结构整理成模式：游戏循环、更新方法、组件、命令、观察者、状态、对象池、空间分区与数据局部性等。每一项既讲「解决什么问题」也讲「什么时候别用」，例如对象池在频繁创建销毁对象时 reduces GC 抖动，但对生命周期长的对象反而是负担。这本书免费在线可读，是连接「会写脚本」与「写得可维护」的经典桥梁。模式不是越多越好，理解适用边界才是重点。",
+      "source": "Game Programming Patterns",
+      "date": "2026-11-15",
+      "url": "https://gameprogrammingpatterns.com/contents.html",
+      "image": "",
+      "badge": "经典读物",
+      "badgeType": "hot",
+      "readTime": "7 分钟",
+      "hotScore": 82,
+      "tags": [
+        "游戏编程模式",
+        "架构",
+        "对象池",
+        "状态机",
+        "数据局部性"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "覆盖游戏循环、更新方法、组件、命令、观察者、状态、对象池等模式",
+            "每一项同时讲清适用场景与不适用边界",
+            "免费在线可读，连接脚本编写与可维护架构"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "这本书最难得的不是列模式，而是反复提醒「什么时候别用」。架构的核心是取舍——把状态机用在合适的地方能省掉大量 if-else，滥用则让简单逻辑变得绕。"
+        }
+      ]
+    },
+    {
+      "id": "ai-anthropic-ipo",
+      "category": "ai",
+      "categoryName": "AI前沿",
+      "subcategory": "AI 资本",
+      "title": "Anthropic IPO 收官：合计募资约 1195 亿美元，刷新全球最大 IPO 纪录",
+      "summary": "Anthropic 宣布完成 IPO，以每股 83 美元发行 11.27 亿股 A 类普通股（含承销商全额行使额外 1.47 亿股期权），募资总额约 935 亿美元；同期向 AMD、博通、谷歌、美光、微软、英伟达、台积电等定向增发 3.13 亿股 N 类股，约 260 亿美元，合计毛募资约 1195 亿美元。A 类股 11 月 19 日以代码 ANT 在纳斯达克开始交易。这是全球规模最大的 IPO 之一，也把 AI 实验室的资本化推向新量级。",
+      "source": "Anthropic 官方公告",
+      "date": "2026-11-21",
+      "url": "https://www.anthropic.com/news/ipo-close",
+      "image": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "badge": "AI 资本",
+      "badgeType": "ai",
+      "readTime": "6 分钟",
+      "hotScore": 94,
+      "tags": [
+        "Anthropic",
+        "IPO",
+        "Claude",
+        "AI产业",
+        "融资"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "以每股 83 美元发行 11.27 亿股，公开募资约 935 亿美元",
+            "向 AMD、谷歌、英伟达、台积电等定向增发约 260 亿美元 N 类股",
+            "合计毛募资约 1195 亿美元，A 类股 11 月 19 日以 ANT 在纳斯达克交易"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "史上最大 IPO 之一落在 AI 实验室，说明资本对基础模型的定价还没降温。对开发者，这意味着上游模型的研发投入短期不会缺钱，工具链与 API 供给会更丰富；但要留意资本回报压力最终会怎么传导到定价策略。"
+        }
+      ]
+    },
+    {
+      "id": "ai-gemini-decision",
+      "category": "ai",
+      "categoryName": "AI前沿",
+      "subcategory": "AI 模型",
+      "title": "谷歌发布 Gemini Decision 1：不生成文字，只给候选项打分",
+      "summary": "谷歌 11 月 11 日发布首个决策模型 Gemini Decision 1 与 Decisions API：模型不生成文本，而是对预设候选项返回概率与置信度，单次请求最多评估 1000 个独立问题，支持文本、图像、音频、视频与 PDF 混合输入，16K token 内端到端延迟 150-250ms，且问题数从 1 增至 100 延迟几乎不变。它提供 Yes/No（noul）、Choice（2-255 选项）与 Score（打分）三类问题，官方称 JevBench 得分 92.2%、价格约为 Gemini 3.5 Flash-Lite 的五分之一。目前通过 Gemini API 在 AI Studio 提供（v1beta）。把「判断」从「生成」里拆出来单做模型，是推理分层的新方向。",
+      "source": "LLMs Blog（Google DeepMind 公告解读）",
+      "date": "2026-11-20",
+      "url": "https://www.llms.blog/posts/gemini-decisions-api",
+      "image": "https://cms.llms.blog/content/images/2026/11/gemini-decisions-api-cover-mwcwzjqu.png",
+      "badge": "AI 模型",
+      "badgeType": "ai",
+      "readTime": "6 分钟",
+      "hotScore": 90,
+      "tags": [
+        "Gemini Decision",
+        "决策模型",
+        "API",
+        "工具路由",
+        "多模态"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "决策模型只返回概率与置信度，单次最多评估 1000 个问题",
+            "支持多模态输入，16K 内延迟 150-250ms，问题数增加几乎不影响延迟",
+            "提供 noul/Choice/Score 三类问题，通过 Gemini API 在 AI Studio 提供"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "把「判断」从大模型生成里拆出来单做，对做智能体的团队很实用：工具选择、策略检查、模型路由这类封闭决策，用专用模型比让生成模型吐 JSON 更快更省。值得注意的是它还在 v1beta，接口细节可能变。"
+        }
+      ]
+    },
+    {
+      "id": "ai-inkling2",
+      "category": "ai",
+      "categoryName": "AI前沿",
+      "subcategory": "开源模型",
+      "title": "Thinking Machines 开源 Inkling 2 Mini：26.4B 参数，32GB 内存笔记本可离线跑",
+      "summary": "Thinking Machines Lab 11 月 20 日发布开放权重多模态模型 Inkling 2 Mini，Apache-2.0 许可，支持文本与图像输入、文本输出。模型总参数 26.4B、每 token 激活 3.4B（循环层重复三次使有效计算约 5.4B），24 层 decoder-only 架构、128 专家路由 8 个，检查点约 20GB，可在 32GB 内存的 Mac 或 DGX Spark 上本地运行，支持 vLLM、llama.cpp、Ollama 等框架。官方自报 SWE-bench Verified 79.2%，但承认长对话会退化、调试时可能陷入重复循环。本地可跑的多模态模型给了隐私敏感场景一个新选项，但别把厂商自评当独立结论。",
+      "source": "New Runtime",
+      "date": "2026-11-21",
+      "url": "https://newruntime.com/posts/thinking-machines-releases-inkling-2-mini-open-weights-34eb4b",
+      "image": "https://newruntime.com/og/field-notes.png",
+      "badge": "开源模型",
+      "badgeType": "ai",
+      "readTime": "6 分钟",
+      "hotScore": 89,
+      "tags": [
+        "Inkling 2 Mini",
+        "开源模型",
+        "本地推理",
+        "多模态",
+        "Apache-2.0"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "26.4B 总参/3.4B 激活，循环层设计以小体积换更多计算",
+            "约 20GB 检查点，32GB 内存可本地跑，Apache-2.0 许可",
+            "官方自报 SWE-bench Verified 79.2%，但长对话退化与重复循环是已知短板"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "「笔记本能离线跑的多模态模型」对不想把代码上传云端的团队很有吸引力。不过厂商跑分要打折看，官方自己都写了调试时会陷入循环——上线前务必用自己的任务集压测，并给智能体套上输出与轮次限制。"
+        }
+      ]
+    },
+    {
+      "id": "ai-hy4",
+      "category": "ai",
+      "categoryName": "AI前沿",
+      "subcategory": "开源模型",
+      "title": "腾讯混元 Hy4 开源：770B MoE、百万上下文，许可证需仔细核对",
+      "summary": "腾讯 11 月 20 日开放混元旗舰 Hy4 权重，采用 MoE 架构、总参 770B、每 token 激活 49B，上下文 100 万 token，原生支持文本、图像与视频输入，同步放出指令版、FP8 量化版与 base 版，并提供 GGUF 与 vLLM、SGLang 镜像。官方自评办公与金融基准居开源前列，但与非正式测试存在口径差异；许可证是 Tencent Hy License 1.0（派生自 Apache 2.0），全球年营收超 5000 万美元或月活超 1 亿的 MaaS 场景需单独书面授权。多家媒体误写为 Apache 2.0，商用前务必核对 LICENSE 原文。",
+      "source": "GitHub: Tencent-Hunyuan/Hy4",
+      "date": "2026-11-20",
+      "url": "https://github.com/Tencent-Hunyuan/Hy4",
+      "image": "https://opengraph.githubassets.com/1/Tencent-Hunyuan/Hy4",
+      "badge": "开源模型",
       "badgeType": "ai",
       "readTime": "7 分钟",
-      "hotScore": 86,
+      "hotScore": 91,
       "tags": [
-        "3D生成",
-        "空间智能",
-        "世界模型",
-        "大模型"
+        "混元 Hy4",
+        "开源大模型",
+        "MoE",
+        "许可证",
+        "腾讯云"
       ],
       "content": [
         {
-          "title": "关键事实",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "Fable 5.2 单提示词写 Blender 代码建模、动画，调 10 块 GPU 渲染 4K 短片耗时 52 分钟",
-            "Qwen4-Max 强调原生视觉与 Blender 全流程操作",
-            "GPT-6.2 Astra 强化机械建模与物理仿真",
-            "业内分歧：是否把语言模型与物理模型统一到同一技术体系"
+            "770B 总参/49B 激活、百万上下文，原生多模态，四平台可下载",
+            "提供指令版、FP8 与 base 版，附 GGUF 与 vLLM/SGLang 镜像",
+            "许可证为 Tencent Hy License 1.0，MaaS 场景触发营收/月活门槛需书面授权"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "当大模型开始「理解」并生成三维空间，AI 的边界正从文本走向物理世界。但争议点很实在：语言模型和世界模型是不是同一套东西，决定了未来工具链是收敛还是分化。眼下更该关心的是能不能稳定产出可导入引擎的资产。"
-          ]
+          "text": "「是不是真 Apache 2.0」这件事，值得每个打算商用的团队打开 LICENSE 逐字读。厂商自评跑分与媒体转述常常打架，开源的意义不只是权重可下载，更包括许可边界清晰——这条如果含糊，再强的模型也得先放一放。"
         }
       ]
     },
     {
-      "id": "co-taptap-jam",
+      "id": "ai-hy4-ama",
+      "category": "ai",
+      "categoryName": "AI前沿",
+      "subcategory": "模型动态",
+      "title": "混元团队 Reddit AMA：Hy4-mini 在路上，图像视频小模型也在规划中",
+      "summary": "腾讯混元团队 11 月 21 日在 Reddit 举行两小时 AMA，收到 300 多条留言。团队确认 Hy4-mini 已在路线图，正考虑 24-31B 稠密模型，并预告面向客服、文档解析与简单自动化的前沿 Flash-Lite 模型（如 35B-A3B）；图像模型将考虑 5-12B 本地版本，视频模型「也在路上」。架构上 Hy4 flash 以 iHC、门控 MLA 和 DSA 为基础，新增混合 SWA、LatentMoE 与 Engram。官方称 Hy4 在后训练与大规模强化学习上仍有提升空间，下一代规模将显著扩大。路线图信息属官方预告，落地版本与时间表尚未敲定。",
+      "source": "覆手为雨（AI 早报）",
+      "date": "2026-11-22",
+      "url": "https://www.lininn.cn/page/ai-daily-2026-11-22-morning",
+      "image": "",
+      "badge": "模型动态",
+      "badgeType": "ai",
+      "readTime": "5 分钟",
+      "hotScore": 83,
+      "tags": [
+        "混元",
+        "AMA",
+        "Hy4-mini",
+        "路线图",
+        "小模型"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "团队确认 Hy4-mini 在路线图，考虑 24-31B 稠密模型",
+            "预告 35B-A3B 级 Flash-Lite，图像考虑 5-12B 本地版，视频模型在路上",
+            "Hy4 flash 架构新增混合 SWA、LatentMoE 与 Engram"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "从旗舰开源到本地小模型的路线图，反映大模型厂商正在往「端侧可部署」铺路。对做游戏内 AI 的团队，小模型的意义在于能塞进客户端或本地服务器——但这些都是官方预告，等真放权重再排期不迟。"
+        }
+      ]
+    },
+    {
+      "id": "ai-openweights-trend",
+      "category": "ai",
+      "categoryName": "AI前沿",
+      "subcategory": "行业观察",
+      "title": "开放权重模型密集发布：本地推理正在成为一条独立路线",
+      "summary": "11 月下旬，Thinking Machines 的 Inkling 2 Mini（26B、Apache-2.0）、腾讯混元 Hy4（770B MoE）等开放权重模型密集发布，加上此前多家厂商跟进，本地与自托管推理的选项显著增加。这些模型的共同点是给出明确硬件目标（如 20GB 检查点、32GB 内存）和多家推理框架支持，让团队能按自有硬件评估可行性。与此同时，模型卡里的「已知限制」也越写越细——幻觉、长对话退化、工具误用都被明确标注。开放权重让实验更可控，但可靠性仍要靠受限的智能体外壳来兜底。",
+      "source": "Optimisus",
+      "date": "2026-11-21",
+      "url": "https://optimisus.com/news/ai-news/thinking-machines-inkling-2-mini-26b-looped-model-offline-laptop-open-weights",
+      "image": "https://optimisus.com/wp-content/uploads/2026/11/optimisus-2026-11-21-inkling-ai-mini.png",
+      "badge": "行业观察",
+      "badgeType": "ai",
+      "readTime": "6 分钟",
+      "hotScore": 82,
+      "tags": [
+        "开放权重",
+        "本地推理",
+        "模型卡",
+        "自托管",
+        "AI趋势"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "Inkling 2 Mini、Hy4 等开放权重模型密集发布，本地推理选项增加",
+            "模型卡给出明确硬件目标与多家推理框架支持，便于按硬件评估",
+            "已知限制（幻觉、长对话退化、工具误用）被明确标注"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "开放权重不等于开箱即用：模型卡把风险写清楚是好事，但真正的可靠性来自外面的约束设计——限制输出长度、限制工具轮次、关键操作需确认。选型时把「模型能力」和「外壳可靠性」分开评估，才不会被跑分带偏。"
+        }
+      ]
+    },
+    {
+      "id": "co-ehujam",
       "category": "contest",
-      "subcategory": "竞赛·Game Jam",
-      "title": "TapTap 制造 Game Jam：面向独立开发者的限时创作活动",
-      "summary": "TapTap 发布制造 Game Jam 活动，面向独立开发者与团队在限定周期内围绕主题完成可玩原型，并提供曝光与奖励资源，延续平台对原创游戏的扶持思路。",
-      "source": "TapTap",
-      "date": "2026-11-12",
-      "url": "https://www.taptap.cn/moment/866271546321143189",
+      "categoryName": "杂项",
+      "subcategory": "竞赛·GameJam",
+      "title": "EHU Game Jam 2026：三天创作电子或桌游，鼓励 AI 辅助",
+      "summary": "欧洲人文大学（EHU）举办 EHU Game Jam 2026，为期三天（11 月 13-15 日），面向在校学生，可组队创作电子游戏或桌游。活动明确欢迎并鼓励使用 AI 工具辅助创作，设置最佳游戏、最佳视觉、游戏设计、最佳叙事、最佳 AI 应用与最佳桌游等多个奖项，并安排客座讲座与行业分享；无需专业经验，组织方会在开场安排提案与组队。这类「允许并鼓励 AI」的学生 Jam，正在把 AI 素养变成创作默认值。",
+      "source": "European Humanities University",
+      "date": "2026-11-13",
+      "url": "https://en.ehuniversity.lt/news/ehu-game-jam-2026-opens-registrations/",
       "image": "",
       "badge": "Game Jam",
-      "badgeType": "contest",
-      "readTime": "4 分钟",
-      "hotScore": 70,
+      "badgeType": "event",
+      "readTime": "5 分钟",
+      "hotScore": 80,
       "tags": [
-        "TapTap",
-        "Game Jam",
-        "独立开发",
-        "原型"
+        "EHU Game Jam",
+        "GameJam",
+        "学生竞赛",
+        "AI辅助",
+        "桌游"
       ],
       "content": [
         {
-          "title": "活动要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "TapTap 面向独立开发者发起限时 Game Jam",
-            "在周期内围绕主题完成可玩原型",
-            "提供曝光与奖励资源，扶持原创"
+            "11 月 13-15 日举办，为期三天，面向学生，可创作电子游戏或桌游",
+            "明确鼓励使用 AI 工具，设最佳 AI 应用等多个奖项",
+            "安排客座讲座与行业分享，无需经验、现场组队"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "Game Jam 的价值不在奖项，而在于逼你在极短时间内验证「这个点子到底好不好玩」。对求职作品集来说，一个完成度高的 Jam 作品往往比半成品大作更有说服力。"
-          ]
+          "text": "学生 Jam 把 AI 从争议变成默认工具，给新手的启示是：先做出来再谈对错。国内高校的 Game Jam 也可以借鉴这种「低门槛+多赛道」组织方式，让非程序背景的同学都能参与进来。"
         }
       ]
     },
     {
-      "id": "co-kuro",
+      "id": "co-kuro27",
       "category": "contest",
+      "categoryName": "杂项",
       "subcategory": "招聘·校招",
-      "title": "库洛游戏 27 届校招：引擎/客户端/美术多岗位开放",
-      "summary": "库洛游戏 2027 届校园招聘开放，覆盖游戏客户端、引擎开发、技术美术与策划等方向，面向 2027 届毕业生。",
-      "source": "安徽大学就业网",
-      "date": "2026-11-09",
-      "url": "https://www.ahua.edu.cn/jyw/2026/1109/c254a50567/page.htm",
+      "title": "库洛游戏 2027 届秋招开启：八大类岗位，广州上海两地",
+      "summary": "库洛游戏 2027 届秋季校园招聘全面开启，面向 2026 年 9 月至 2027 年 8 月毕业生，工作地点广州、上海，开放技术、美术、策划、音频、运营、营销、项管、职能八大类岗位。公司旗下有《战双帕弥什》《鸣潮》等产品，海外发行覆盖日韩、东南亚与欧美。每人可投两个志愿、第一志愿优先，官网与飞书投递通道同步开放，使用内推码可加速流程。想做引擎与图形开发的应届生，可重点关注其技术类岗位的具体方向。",
+      "source": "四川大学就业指导中心",
+      "date": "2026-11-19",
+      "url": "https://jy.scu.edu.cn/index/index/newsdetail.html?data=MDAwMDAwMDAwMJG6n3_Ed6imi4qQtbR4iZmKutS-yGHRp7ugzc-GnZ2skMx9ZMN4gtKLipCwxKF0lZC5sq-0gqJv",
       "image": "",
       "badge": "校招",
-      "badgeType": "contest",
-      "readTime": "3 分钟",
-      "hotScore": 66,
+      "badgeType": "event",
+      "readTime": "5 分钟",
+      "hotScore": 82,
       "tags": [
         "库洛游戏",
-        "27届校招",
-        "引擎",
-        "客户端"
+        "2027校招",
+        "鸣潮",
+        "战双帕弥什",
+        "游戏岗位"
       ],
       "content": [
         {
-          "title": "招聘要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "库洛游戏 2027 届校园招聘开放",
-            "覆盖客户端、引擎、技术美术与策划方向",
-            "面向 2027 届毕业生"
+            "面向 2026.9-2027.8 毕业生，广州上海两地，八大类岗位",
+            "旗下有《战双帕弥什》《鸣潮》，海外发行覆盖多地区",
+            "每人可投两个志愿，第一志愿优先，内推码可加速流程"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "二次元开放世界赛道仍在扩招引擎与 TA，说明这批公司进入技术深水区。想进这行的同学，把图形学和引擎实操打扎实，比堆项目数量更管用。"
-          ]
+          "text": "库洛的技术岗位常年偏重引擎与图形方向，准备投递的同学建议把项目作品与岗位方向对齐，而不是海投。招聘信息以高校就业网转载为准，最终以企业官网投递页面为准。"
         }
       ]
     },
     {
-      "id": "co-lilith",
+      "id": "co-lilith27",
       "category": "contest",
+      "categoryName": "杂项",
       "subcategory": "招聘·校招",
-      "title": "莉莉丝游戏校招：游戏开发工程师岗位开放",
-      "summary": "莉莉丝游戏 2027 校招放出游戏开发工程师等岗位，面向全球发行与自研项目招募应届人才。",
-      "source": "中国矿业大学（北京）就业网",
-      "date": "2026-11-10",
-      "url": "https://jy.cumtb.edu.cn/Zhaopin/xiaozhao.html?id=b26b7f11-f67c-2555-d8a3-fce87d649da5",
+      "title": "莉莉丝游戏 2027 届秋招持续开放：技术产品发行测试多方向",
+      "summary": "莉莉丝游戏 2027 届秋季校园招聘正式批部分岗位仍开放网申、招满即止，面向 2026 年 1 月至 2027 年 12 月毕业生，热招方向覆盖技术、产品、发行、测试与项目管理；同时开放校招储备实习与日常实习，面向 2027 年 1-12 月毕业生。公司代表作有《小冰冰传奇》《剑与远征》《万国觉醒》，全球员工超 2300 人，是中国游戏出海代表之一。通过内推码选择「大使推荐」可优先筛选。出海向岗位对跨文化发行与本地化能力有额外要求。",
+      "source": "华中师范大学就业信息网",
+      "date": "2026-11-20",
+      "url": "https://ccnu.91wllm.cn/campus/view/id/1010156",
       "image": "",
       "badge": "校招",
-      "badgeType": "contest",
-      "readTime": "3 分钟",
-      "hotScore": 65,
+      "badgeType": "event",
+      "readTime": "5 分钟",
+      "hotScore": 81,
       "tags": [
-        "莉莉丝",
-        "校招",
-        "游戏开发",
-        "应届"
+        "莉莉丝游戏",
+        "2027秋招",
+        "游戏出海",
+        "实习",
+        "校招"
       ],
       "content": [
         {
-          "title": "招聘要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "莉莉丝游戏 2027 校招开放",
-            "含游戏开发工程师等岗位",
-            "面向自研与全球发行项目招募应届生"
+            "2027 届秋招正式批部分岗位开放，面向 2026.1-2027.12 毕业生",
+            "热招技术、产品、发行、测试、项目管理，另开储备实习与日常实习",
+            "代表作《剑与远征》《万国觉醒》，全球员工超 2300 人"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "出海型厂商招人时更看重工程基本功与学习能力，因为产品要适配多地区多平台。简历里能体现「把一件事做完整」的经历，往往比堆关键词更有效。"
-          ]
+          "text": "莉莉丝的出海基因让它的发行与本地化岗位更有国际视野，适合想做全球发行的同学。秋招岗位「招满即止」，看到匹配方向尽早投，别等到截止日前。"
         }
       ]
     },
     {
-      "id": "co-yingjiao",
+      "id": "co-hero27",
       "category": "contest",
-      "subcategory": "招聘·校招",
-      "title": "鹰角网络 27 届校招：内推通道开放，技术与美术岗位在列",
-      "summary": "鹰角网络 2027 届校园招聘内推通道开放，覆盖技术、美术、策划等方向，面向 2027 届毕业生招募。",
-      "source": "力扣讨论区",
-      "date": "2026-11-12",
-      "url": "https://leetcode.cn/discuss/post/4052134/",
-      "image": "https://pic.leetcode.cn/1793241973-oFtqkC-campus-referral.jpg",
-      "badge": "校招",
-      "badgeType": "contest",
-      "readTime": "3 分钟",
-      "hotScore": 67,
+      "categoryName": "杂项",
+      "subcategory": "招聘·社招",
+      "title": "英雄游戏放出社招与 27 届校招：UE5 特效、开放世界 TA 与实习岗",
+      "summary": "英雄游戏（Hero Games）双 11 一次性放出社招、27 届校招与实习三大专场。社招北京地区含 UE5 特效资深/组长、客户端 TA（开放世界 CrisisX）、战斗策划与场景模型等；广州地区有 Unity3D 客户端开发、TA 技术美术等；校招岗位含角色原画、场景原画与文案策划；实习岗含 UE 开发、数值策划、地编与关卡策划等，工作地覆盖北京、广州、杭州。招聘时间为 11 月 11 日至 12 月 9 日。校招社招同时开放，给不同阶段的开发者都留了入口。",
+      "source": "牛企直聘（英雄游戏 HR）",
+      "date": "2026-11-11",
+      "url": "https://campus.niuqizp.com/job-vmlNZa5zZ.html",
+      "image": "",
+      "badge": "社招·校招",
+      "badgeType": "event",
+      "readTime": "5 分钟",
+      "hotScore": 80,
       "tags": [
-        "鹰角网络",
+        "英雄游戏",
+        "社招",
         "27届校招",
-        "内推",
+        "UE5",
         "技术美术"
       ],
       "content": [
         {
-          "title": "招聘要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "鹰角网络 2027 届校招内推通道开放",
-            "覆盖技术、美术、策划等方向",
-            "面向 2027 届毕业生"
+            "社招含 UE5 特效资深/组长、开放世界客户端 TA 与 Unity3D 客户端开发",
+            "校招含角色原画、场景原画、文案策划；实习含 UE 开发、地编与关卡策划",
+            "招聘期 11 月 11 日至 12 月 9 日，工作地北京、广州、杭州"
           ]
         },
         {
-          "title": "观察",
+          "title": "学习观察",
           "type": "text",
-          "text": [
-            "头部二游公司校招竞争依旧激烈，内推能提高简历被看到的概率，但决定因素还是作品与基本功。把算法题和项目深度补上去，比海投更实在。"
-          ]
+          "text": "UE5 特效与开放世界 TA 岗集中释放，说明项目对实时渲染与技术美术的需求仍在扩张。这类岗位看重作品集与实际管线经验，准备时把「做过什么效果、怎么优化」讲清楚，比堆关键词有效。"
         }
       ]
     }
