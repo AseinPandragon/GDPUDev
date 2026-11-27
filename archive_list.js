@@ -1,5 +1,6 @@
 window.NEWS_ARCHIVE_LIST = [
-    { date: "2026-11-27", weekday: "星期五", file: "data/2026-11-27.js", title: "2026-11-27 每日情报：Rockstar工会票决75%反对·Xbox独占回摆·Unity6.6层级分帧/7alpha XeSS·3DCodeFactory开源·游卡友塔27届校招（hero） · 引擎开源教程AI", desc: "今日最新情报" },
+    { date: "2026-11-28", weekday: "星期六", file: "data/2026-11-28.js", title: "2026-11-28 每日情报：腾讯混元Hy3D 3.6把AI 3D生成推进专业资产管线（hero） · Unity6.7/7路线图CoreCLR/ECS/神经纹理压缩/免烘焙GI · DFly2与Ling-3.2-air同日开源 · TGA2026 GTA6八项/影之刃零五项 · Procedural开源宝库 · ueskill材质/MCP×Codex教程 · TapTap淘米27届校招", desc: "今日最新情报" },
+    { date: "2026-11-27", weekday: "星期五", file: "data/2026-11-27.js", title: "2026-11-27 每日情报：Rockstar工会票决75%反对·Xbox独占回摆·Unity6.6层级分帧/7alpha XeSS·3DCodeFactory开源·游卡友塔27届校招（hero） · 引擎开源教程AI", desc: "往期技术归档" },
 
     { date: "2026-11-26", weekday: "星期四", file: "data/2026-11-26.js", title: "2026-11-26 每日情报：蛮啾《蓝色星原：旅谣》五端公测·2500万预约开启年末二游混战（hero） · URTI光追注入/Unity URP GI与SSR/NVIDIA Kimodo/Unity7 alpha 引擎精读 · vello/WASD/LDtk/Aseprite/Tiled 开源宝库 · GameScaling八模型/MAGI-2/Agora-1/文心5.5开源 AI · 异人之下定档/佣兵猎手 · indiePlay奖项/网易互娱·莉莉丝27届校招", desc: "往期技术归档" },
     { date: "2026-11-25", weekday: "星期三", file: "data/2026-11-25.js", title: "2026-11-25 每日情报：腾讯「游点灵」百万 AI 创作大赛转向 UGC 社区（hero） · Godot4.8β5/O3DE26.10迁Qt6/horizOn三端SDK 引擎精读 · Claude-BugHunter/superpowers/3A GameFactory-Motion 开源宝库 · GPT-6.2 Astra/GLM-5.4 Loop/MagicDawn开源 AI · 异人之下定档/幻梦无年/异化之境 · indiePlay最高奖空缺/22.8万开源Jam/虎牙·完美世界27届校招", desc: "往期技术归档" },

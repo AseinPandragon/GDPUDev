@@ -1,278 +1,487 @@
 window.DAILY_NEWS_DATA = {
   "meta": {
-    "date": "2026-11-27",
-    "weekday": "星期五",
+    "date": "2026-11-28",
+    "weekday": "星期六",
     "title": "GDPUDev 个人数字创作展示・每日技术情报",
     "subtitle": "个人学习观察与评述・附参考来源外部链接",
-    "updateTime": "2026-11-27 07:00",
+    "updateTime": "2026-11-28 07:00",
     "editor": "GDPUDev 技术中枢 & CodeBuddy",
     "highlights": [
-      "Rockstar 英国员工工会承认投票75%反对：GTA6发售月，爆款产能与议价权同台",
-      "微软被曝2027重新收紧Xbox独占，多款第一方新作取消Switch 2移植",
-      "Unity同日双更：6000.6.11f1层级窗口分帧刷新，7.0.0a22 HDRP接入Intel XeSS",
-      "小红书开源3DCodeFactory：5045条轨迹、5.52B tokens把3D场景代码变成训练数据",
-      "游卡/友塔2027校招把Copilot、Cursor写进硬条件，AI协作能力成岗位新门槛"
+      "腾讯混元 Hy3D 3.6 把 AI 3D 生成推进专业资产管线：200 万面、8K PBR 贴图，直指游戏高模工作流",
+      "腾讯 DFly2 与蚂蚁 Ling-3.2-air 同日开源：一个让长文本解码提速 4.2 倍，一个 124B 只激活 55 亿",
+      "Unite Tokyo 摊开 Unity 6.7/7 路线图：CoreCLR 迁移、ECS for All 与编码智能体官方插件",
+      "TGA 2026 提名出炉：GTA6 八项领跑，国产《影之刃零》五项入围创单机新高",
+      "TapTap/淘米 2027 校招把 AI 工具能力写进硬条件，Game Jam 与独立作品成加分项"
     ],
     "engineStatus": [
       {
         "name": "Unity",
         "type": "引擎",
-        "status": "6000.6.11f1层级窗口按帧分块刷新（默认0.5ms预算）；7.0.0a22 HDRP接入Intel XeSS超分",
-        "badge": "6.6/7 alpha",
+        "status": "Unite Tokyo 摊开 6.7 LTS/7 路线图：CoreCLR 迁移、ECS for All、NTC 神经纹理压缩显存降约30%、Atrio 展示免烘焙 GI",
+        "badge": "6.7/7 roadmap",
         "color": "#3f51b5"
       },
       {
         "name": "Unreal Engine",
         "type": "引擎",
-        "status": "5.9 Preview持续迭代，蓝图Web打包与AI工具链保持更新",
-        "badge": "5.9 Preview",
+        "status": "5.8 社区教程密集更新：卡通/火焰材质、Actor 组件复用、New Composure 广播级合成与 MCP×Codex 灯光 LookDev",
+        "badge": "5.8",
         "color": "#0f172a"
       },
       {
         "name": "Godot",
         "type": "引擎",
-        "status": "4.8 beta 5清掉全部发布阻断、.NET门槛升到10；gdext 0.5.6改进variant封送并初步支持visionOS",
-        "badge": "4.8 beta5",
+        "status": "Material Maker 基于 Godot 构建程序化纹理工作流，1.8 版本持续迭代",
+        "badge": "生态",
         "color": "#478cbf"
       },
       {
-        "name": "O3DE",
+        "name": "Flax / Stride",
         "type": "引擎",
-        "status": "26.10编辑器迁移Qt 6，新增粒子预览模块并弃用PhysX 4",
-        "badge": "26.10",
+        "status": "Flax 1.13.1 热修复合入 30 项修复；开源 C# 引擎 Stride 更新至 4.4.3",
+        "badge": "1.13.1/4.4.3",
         "color": "#ff9800"
       }
     ]
   },
   "hero": {
-    "id": "hero-rockstar-union-vote",
-    "category": "industry",
-    "categoryName": "行业热点",
+    "id": "hero-hy3d36",
+    "category": "ai",
+    "categoryName": "AI前沿",
     "tag": "今日头条",
-    "title": "GTA6 发售月，Rockstar 员工用 75% 反对票否掉工会承认",
-    "summary": "11月26日，英国工会 IWGB 公布：Rockstar 1544 名英国员工参与工会承认投票，75%反对、25%赞成。工会称落败仍让集体谈判与 AI、裁员保护进入视野。在 GTA6 首日37.9亿美元时，这场票决把爆款产能与议价权摆上台面：红利集中时如何转化为可持续雇佣关系，是行业治理的真问题。",
-    "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-27-hero-union.jpg",
-    "source": "网易",
-    "date": "2026-11-27",
-    "url": "https://www.163.com/dy/article/LCMTTL2N05561FYA.html",
-    "readTime": 6,
+    "title": "腾讯混元 Hy3D 3.6 把 AI 3D 生成推进专业资产管线",
+    "summary": "11月27日，腾讯发布新一代 3D 大模型 Hy3D 3.6，主攻高模几何与 PBR 材质贴图：默认目标面数从上代 50 万提至 200 万、贴图最高 8K，几何表面更整洁、部件层次更清晰。模型已上线腾讯云 Token Hub 开放 API，并接入 Miora、游戏资产生成平台 LAP 与影视平台 WorkRally。它把 AI 生成从「看得过去的演示」往「能进重拓扑与烘焙环节的生产草稿」推了一步。对游戏美术而言，真正的价值不是替代建模，而是把高模起步的时间成本压下来。",
+    "image": "https://www.gdpudev.cn/gamedev/assets/news/2026-11-28-hero-hy3d36.jpg",
+    "source": "腾讯新闻 / 腾讯混元",
+    "date": "2026-11-28",
+    "url": "https://news.qq.com/rain/a/20261127A07ADP00",
+    "readTime": 7,
     "hotScore": 96,
     "tags": [
-      "Rockstar",
-      "工会投票",
-      "GTA6",
-      "劳工关系"
+      "腾讯混元",
+      "Hy3D 3.6",
+      "3D生成",
+      "PBR",
+      "游戏资产"
     ],
     "content": [
       {
         "title": "要点速览",
         "type": "list",
         "items": [
-          "11月26日，IWGB 宣布 Rockstar 工会承认投票结果：1544 名英国员工参与，75%反对、25%赞成，投票率93.2%。",
-          "工会称虽未拿到承认协议，但集体谈判、薪酬透明、合同加班费以及针对 AI 与裁员的保护已进入全员讨论。",
-          "Rockstar 出版负责人 Jennifer Kolbe 表示结果反映团队对直连沟通的支持；同期 GTA6 首日营收达37.9亿美元。"
+          "11月27日腾讯发布 Hy3D 3.6，面向专业 3D 创作，重点优化高模几何与 PBR 材质贴图生成。",
+          "默认目标面数由 Hy3D 3.1 的 50 万提升到 200 万，贴图分辨率最高 8K，硬表面与曲面细节更整洁。",
+          "已上线腾讯云 Token Hub 提供 API，Miora、腾讯游戏 LAP、影视平台 WorkRally 完成接入；Public 创作引擎每日 5 次免费。"
         ]
       },
       {
         "title": "学习观察",
         "type": "text",
-        "text": "在 GTA6 创下娱乐产品首发纪录的同月，一场工会票决把另一条叙事线摆上台面：产能与议价权并不天然同步。值得记下的不只是 AI 与裁员保护被写进诉求，而是当生产工具越来越强，分配与协作机制的更新速度，正在成为决定团队能否长期稳定的关键变量。"
+        "text": "原生 3D 生成模型与语言模型写代码生成 3D 是两条路线：前者更擅长角色、生物、服装与复杂道具的剪影和曲面，后者适合参数化零件与场景布局。Hy3D 3.6 强调的是「可直接进入后续流程的草稿」——表面平整、部件清晰、带 PBR 贴图，恰好对应游戏高模重拓扑与烘焙的入口要求。腾讯盲测称几何、纹理质量优于同类模型，但这是厂商口径。对中小团队的现实意义在于：把高模起步的重复劳动压缩，把精力留给真正需要审美判断的精修环节。"
       }
     ]
   },
   "items": [
     {
-      "id": "xbox-exclusivity-2027-reset",
-      "category": "industry",
-      "badgeType": "business",
-      "tag": "行业观察",
-      "title": "Xbox 重新把独占写回路线图：平台品牌要绑住自己拥有的 IP",
-      "summary": "11月26日，微软战略负责人 Matthew Ball 称修正 Xbox 未绑定自有 IP，2027年铺开；多款第一方新作被曝取消 Switch 2 移植。Xbox 回摆独占，跨端承诺生变。",
-      "image": "https://www.worldprogramming.org/storage/posts/images/ade98551c31481a89abf40a8e393895d08598940.jpg",
-      "source": "World Programming",
-      "date": "2026-11-27",
-      "url": "https://www.worldprogramming.org/posts/microsoft-will-link-the-xbox-brand-against-first-party-games-harder-in-2027-sxetww",
-      "readTime": 5,
-      "hotScore": 88,
+      "id": "en-ntc-compress",
+      "category": "engine",
+      "subcategory": "图形渲染",
+      "badge": "Unity",
+      "badgeType": "engine",
+      "tag": "Unity",
+      "title": "Unity 神经纹理压缩把显存占用压低近三成",
+      "summary": "Unity 在 Unite Tokyo 展示 Neural Texture Compression：以 Sentis 在自有纹理上训练压缩模型，Atrio 场景纹理显存与磁盘体积各降约 30%，画质基本不变。功能将在 6.7 LTS 实验性登场、7.0 正式发布。",
+      "image": "https://st.renderu.com/og/902315",
+      "source": "Renderu / Unity",
+      "date": "2026-11-28",
+      "url": "https://renderu.com/zh/news/post/28929",
+      "readTime": 6,
+      "hotScore": 91,
       "tags": [
-        "Xbox",
-        "平台战略",
-        "独占策略"
+        "Unity",
+        "NTC",
+        "神经纹理压缩",
+        "显存优化"
       ],
       "content": [
         {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "11月26日，微软游戏战略负责人 Matthew Ball 在社交平台回应批评，称将修正 Xbox 未充分绑定自有 IP 的问题，2027年铺开。",
-            "同期有消息称多款原计划登陆 Switch 2 的 Xbox 第一方游戏移植安排生变，《光环：士官长合集》等仍无官方确认。",
-            "新任 CEO Asha Sharma 将日活玩家设为北极星指标，并调整 Game Pass 定价与首发策略。"
+            "NTC 工具内置于 Unity Editor，模型通过 Sentis 仅在开发者自有纹理数据上训练。",
+            "Atrio 实测纹理显存占用减少近 30%，构建包体积同步下降约 30%。",
+            "7.0 将推进 Shader Model 6.1 与 D3D12 LinAlg 支持，官方称推理速度最高可提升约 10 倍。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "从全平台发行到重新强调独占，Xbox 的策略转身说明平台承诺有很强的周期性。做技术选型或发行规划时，把窗口期当成可随时收回的变量，比当成常量更稳妥。"
+          "text": "纹理往往是移动游戏显存与包体的大头。NTC 的价值在于把「省显存」从人工挑格式变成项目内自动训练的工作流——但训练成本与解码对 shader model 的依赖仍需实测，别把厂商的 30% 直接写进预算表。"
         }
       ]
     },
     {
-      "id": "cdpr-q3-witcher4-gta6",
-      "category": "industry",
-      "badgeType": "business",
-      "tag": "行业观察",
-      "title": "CDPR 把《巫师4》的标尺立成 GTA6：财报里的长线管线叙事",
-      "summary": "11月25日，CD Projekt 发布三季度财报，《巫师3》重制版反响好，《巫师4》推进中。联合 CEO 称其升级幅度对标 GTA6，预计2028年发售。以管线锚定预期，是头部单机厂的资本市场叙事。",
-      "image": "https://image.mrjjxw.com/uploads/articles/thumbnails/1939159/open-uri20261125-20-g7wq38.large_b.jpg",
-      "source": "每日经济新闻",
-      "date": "2026-11-27",
-      "url": "https://www.mrjjxw.com/articles/2026-11-25/4658957.html",
+      "id": "en-atrio-urp-gi",
+      "category": "engine",
+      "subcategory": "图形渲染",
+      "badge": "Unity",
+      "badgeType": "engine",
+      "tag": "Unity",
+      "title": "Unity Atrio 展示免烘焙 URP 全局光照与反射",
+      "summary": "Unite Tokyo 上 Unity 用 Atrio 场景演示 6.7/7 的 URP 新能力：Surface Cache GI 提供动态间接漫反射，屏幕空间反射支持移动端，地面真实环境光遮蔽并入 Volume 系统。",
+      "image": "https://st.renderu.com/og/902048",
+      "source": "Renderu / Unity",
+      "date": "2026-11-28",
+      "url": "https://renderu.com/zh/news/post/28912",
+      "readTime": 6,
+      "hotScore": 90,
+      "tags": [
+        "Unity",
+        "URP",
+        "全局光照",
+        "Atrio"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "Surface Cache GI 主打动态间接漫反射，在运行时性能与画质间取平衡。",
+            "URP 新增屏幕空间反射、Ground Truth AO、物理光照单位与体积雾，并集成进 Volume 框架。",
+            "Atrio  Samples 已在 Asset Store 提供，用于对照新渲染路径的实际表现。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "把 GI 与反射塞进 URP，意味着中小团队不必为光照质量单独跳管线上 HDRP。这类「统一管线持续加厚」的方向值得跟，但实验性功能先在小场景验证回归风险，再决定是否进入主线。"
+        }
+      ]
+    },
+    {
+      "id": "en-flax-1131",
+      "category": "engine",
+      "subcategory": "引擎版本",
+      "badge": "Flax",
+      "badgeType": "engine",
+      "tag": "Flax",
+      "title": "Flax 1.13.1 热修复合入 30 项修复与 22 个 PR",
+      "summary": "Flax Engine 在 1.13 后两周发布 1.13.1：修复 30 个社区问题、合并 22 个 Pull Request，涉及场景加载回调、RPC 清理、脚本更新顺序与 Intel Arc 上的 DX12 启动崩溃。",
+      "image": "https://flaxengine.com/wp-content/uploads/2026/11/Post_Flax1131.jpg",
+      "source": "Flax Engine 官方",
+      "date": "2026-11-28",
+      "url": "https://flaxengine.com/?p=2619",
       "readTime": 5,
       "hotScore": 86,
       "tags": [
-        "CD Projekt",
-        "财报",
-        "巫师4"
+        "Flax",
+        "1.13.1",
+        "热修复",
+        "渲染后端"
       ],
       "content": [
         {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "11月25日，CD Projekt 发布2026年第三季度财报，《巫师3》重制版市场反响良好。",
-            "联合 CEO 米哈乌·诺瓦科夫斯基称《巫师3》到《巫师4》的间隔与 GTA5 到 GTA6 相当，升级幅度将远超前作。",
-            "按计划《巫师4》预计2028年发售，《赛博朋克2》预计2030年前不会推出。"
+            "新增场景路径/文件名 API，公开 BatchedDrawCall 与 ConcurrentArenaAllocator。",
+            "非 Windows 平台补上 BC6H 压缩支持，BC7 HDR 压缩问题同步修复。",
+            "修掉 DX12 在 Intel Arc 上的启动崩溃、Vulkan 调试层警告与阴影接缝等渲染问题。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "用对标对象来传达升级幅度，比直接喊预算数字更容易让市场理解。对研发团队而言，这类公开目标也是一把尺子：一旦把对标 GTA6 说出口，后续每个技术决策都会被放进这个坐标系里审视。"
+          "text": "一个引擎的安全感往往来自热修复质量而非大版本号。Flax 这次把重心放在编辑器工作流与图形后端边角问题上，对做工具链密集型管线的团队是积极信号——不过它仍是源码可用、非开源许可，商用前先算清 royalty。"
         }
       ]
     },
     {
-      "id": "lol-esports-manager-shutdown",
-      "category": "industry",
-      "badgeType": "business",
-      "tag": "行业观察",
-      "title": "运营四年半的《英雄联盟电竞经理》停服：赛游联动也有生命周期",
-      "summary": "11月26日，腾讯公告《英雄联盟电竞经理》将于2027年1月26日停服，当日停止充值与新注册，付费点券可换五款游戏礼包。该作2022年7月公测，运营四年半。顶级 IP 不是保险，衍生品生死仍看留存。",
-      "image": "https://media.nfnews.com/nfplus/ossfs/pic/xy/202611/26/ca255501-0494-4a20-852b-5d7b67224f4d.png",
-      "source": "南方+",
-      "date": "2026-11-27",
-      "url": "https://www.nfnews.com/content/R6gNgdl83p.html",
+      "id": "en-spartan-rt",
+      "category": "engine",
+      "subcategory": "引擎前沿",
+      "badge": "Spartan",
+      "badgeType": "engine",
+      "tag": "Spartan",
+      "title": "Spartan 引擎加入参考级路径追踪渲染路径",
+      "summary": "开源引擎 Spartan 放出 11 月 19 日自动构建版，Renderer 新增「reference path tracer」参考路径追踪路径，提供 Vulkan/D3D12/WebGPU 多后端预编译包。",
+      "image": "https://opengraph.githubassets.com/1/PanosK92/SpartanEngine",
+      "source": "GitHub: PanosK92/SpartanEngine",
+      "date": "2026-11-28",
+      "url": "https://github.com/PanosK92/SpartanEngine/releases/tag/2026.11.19.20.07",
       "readTime": 5,
       "hotScore": 85,
       "tags": [
-        "腾讯",
-        "停运",
-        "电竞IP"
+        "Spartan",
+        "路径追踪",
+        "WebGPU",
+        "开源引擎"
       ],
       "content": [
         {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "11月26日，腾讯公告《英雄联盟电竞经理》因开发与运营策略调整，将于2027年1月26日11时停服。",
-            "当日11时起停止充值与新用户注册；付费点券按余额分档，可兑换《英雄联盟》《无畏契约》等五款游戏礼包。",
-            "该作由拳头开发、腾讯在中国大陆发行，2022年7月20日公测，运营约四年半。"
+            "该构建版本在 Renderer 中加入 reference path tracer 路径追踪参考实现。",
+            "提供 Windows Vulkan/D3D12、Linux Vulkan、macOS Metal、Windows WebGPU 与浏览器 WebGPU 多种包。",
+            "首次启动需联网下载项目与世界资源，仓库附带 SHA-256 校验和。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "依托顶级赛事 IP 起步，仍未逃过生命周期的收敛。赛游联动的价值不在授权本身，而在于能否把赛事热度转成日常留存，这一点对所有衍生品类都成立。"
+          "text": "把路径追踪做进可在浏览器 WebGPU 运行的开源引擎，是研究实时全局光照的低成本试验场。参考实现偏正确性而非性能，适合拿来做教学与对照，别指望直接支撑产品帧率。"
         }
       ]
     },
     {
-      "id": "37games-rd-subsidiary-capital-increase",
-      "category": "industry",
-      "badgeType": "business",
-      "tag": "行业观察",
-      "title": "三七互娱 3000 万增资研发子公司：把核心制作人绑进股权结构",
-      "summary": "11月26日，三七互娱董事会通过议案：子公司大道至简增资扩股，注册资本由100万增至250万元，徐志高出资2000万元并负责研发，公司持股降至60%。以股权绑定制作人，比涨薪更能对齐长期目标。",
-      "image": "",
-      "source": "东方财富网",
-      "date": "2026-11-27",
-      "url": "https://data.eastmoney.com/notices/detail/002555/AN202611261832070849.html",
-      "readTime": 4,
+      "id": "en-unite-roadmap",
+      "category": "engine",
+      "subcategory": "引擎路线图",
+      "badge": "Unity",
+      "badgeType": "engine",
+      "tag": "Unity",
+      "title": "Unite Tokyo 2026 摊开 Unity 6.7 与 Unity 7 双线路线图",
+      "summary": "Unity 在 Unite Tokyo 公布 6.7 LTS 与 7.0 alpha 路线：Editor 迁移 CoreCLR、ECS for All 让 GameObject 同时也是 Entity，另有 Web Requests Profiler、统一 Netcode 与编码智能体官方插件。",
+      "image": "https://unityreleases.com/brand/social-preview-gearbox.png",
+      "source": "Unity Releases",
+      "date": "2026-11-28",
+      "url": "https://unityreleases.com/whats-new/unite-tokyo-2026",
+      "readTime": 6,
+      "hotScore": 89,
+      "tags": [
+        "Unity",
+        "6.7 LTS",
+        "Unity 7",
+        "ECS",
+        "CoreCLR"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "6.7 聚焦 CoreCLR 迁移基础、ECS for All 底座与 2D 图形/物理创作组件。",
+            "7.0 计划在 Inspector 中查看与编辑 Entity 数据，网格图形后端 Unity Graphics Kernel 同步 preview。",
+            "Unity CLI 1.0 已稳定，面向 Claude Code、Codex、Antigravity、Grok 的官方插件放出安装文档。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "路线图归路线图，落地节奏要看每个功能的实际版本。ECS for All 若真能让老项目渐进加速，会改变大量 Unity 团队的架构选择；编码智能体插件则是引擎厂商第一次把 AI 协作写进官方工具链。"
+        }
+      ]
+    },
+    {
+      "id": "en-stride-443",
+      "category": "engine",
+      "subcategory": "引擎版本",
+      "badge": "Stride",
+      "badgeType": "engine",
+      "tag": "Stride",
+      "title": "开源 C# 引擎 Stride 更新至 4.4.3",
+      "summary": "跨平台 C# 游戏引擎 Stride 在 11 月 17 日发布 4.4.3 版本。Stride 支持 2D/3D/VR，采用 C# 技术栈，是 Unity 之外的开源替代选项之一。",
+      "image": "https://opengraph.githubassets.com/1/stride3d/stride",
+      "source": "GitHub: stride3d/stride",
+      "date": "2026-11-28",
+      "url": "https://github.com/stride3d/stride",
+      "readTime": 5,
       "hotScore": 82,
       "tags": [
-        "三七互娱",
-        "投融资",
-        "研发"
+        "Stride",
+        "C#",
+        "开源引擎",
+        "版本更新"
       ],
       "content": [
         {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "11月26日，三七互娱第七届董事会第十三次会议审议通过子公司大道至简增资扩股议案。",
-            "大道至简注册资本由100万元增至250万元，广州幻创出资1000万元、徐志高出资2000万元，增资价20元/注册资本。",
-            "交易完成后公司对大道至简持股由100%降至60%，徐志高将负责研发相关工作。"
+            "Stride 是开源的 C# 2D/3D/VR 引擎，GitHub 仓库持续维护。",
+            "社区目录将其 4.4.3（11 月 17 日）列为当前最新版本。",
+            "与 Godot、PlayCanvas、O3DE 一同被列入 Unity 的开源替代候选。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "把核心研发人员变成子公司股东，是把个人收益与产品长线绑在一起的一种做法。相比单纯加薪，股权安排更考验对人的判断，也更能承载需要多年投入的精品研发。"
+          "text": "对 C# 团队而言，Stride 的价值是语言栈几乎无需切换。开源替代的成熟度和生态规模差距仍要正视，选型时把「社区活跃度」和「自己能维护多少」一起算进去。"
         }
       ]
     },
     {
-      "id": "riot-merrill-20years-retrospective",
+      "id": "in-marvelous",
       "category": "industry",
+      "subcategory": "厂商动向",
+      "badge": "厂商重组",
       "badgeType": "business",
-      "tag": "行业观察",
-      "title": "拳头创始人复盘二十年：盲目扩张让一年成本涨 45%",
-      "summary": "11月26日 GameLook 对拳头创始人 Marc Merrill 的访谈：公司曾盲目扩张致一年成本增45%，资本退潮后行业入冷静期；强调先验证再投入。把增长定义为可持续能力，是这轮周期的一课。",
+      "tag": "厂商重组",
+      "title": "Marvelous 为主机业务寻求约 65 人自愿离职",
+      "summary": "11月27日，《符文工房》《牧场物语》厂商 Marvelous 董事会批准职业转型计划，面向家用机业务约 65 人自愿离职，申请期 12月14日至次年1月8日，预计约 2.2 亿日元特别费用。",
+      "image": "https://www.gaming.net/wp-content/uploads/2026/11/marvelous-seeks-65-voluntary-departures-in-console-game-restructuring.jpg",
+      "source": "Gaming.net",
+      "date": "2026-11-28",
+      "url": "https://www.gaming.net/marvelous-seeks-65-voluntary-departures-in-console-game-restructuring",
+      "readTime": 6,
+      "hotScore": 90,
+      "tags": [
+        "Marvelous",
+        "自愿离职",
+        "主机业务",
+        " restructuring"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "计划针对消费者游戏部门（主机/PC，不含手游），目标约 65 人，离职日原则上为 2027年3月31日。",
+            "公司称主机项目变大、周期变长，将结合内部团队与外部合作伙伴的开发结构。",
+            "据 Eurogamer 引Automaton，其 4—9 月数字内容利润同比大增，本轮调整并非因销售下滑。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "在利润改善的同时收缩固定成本，说明厂商在给长周期项目「削峰填谷」。把开发重心转向内部核心+外部协作，是中小体量厂商应对 3A 化成本曲线的常见选择——效果如何要看后续作品产能。"
+        }
+      ]
+    },
+    {
+      "id": "in-ubisoft-ai-mandate",
+      "category": "industry",
+      "subcategory": "生产流程",
+      "badge": "育碧",
+      "badgeType": "business",
+      "tag": "育碧",
+      "title": "育碧被曝要求新游立项说明 AI 用法，不用需给理由",
+      "summary": "据 Vertical Slice 报道并经游民星空转载，育碧要求内部提交立项方案时说明 AI 如何提效，若不使用 AI 须详细解释。此前育碧刚成立生成式 AI 工作室 Motherbrain。",
+      "image": "",
+      "source": "游民星空 / GameQuest",
+      "date": "2026-11-28",
+      "url": "https://www.gamersky.com/news/202611/2255207.shtml",
+      "readTime": 6,
+      "hotScore": 92,
+      "tags": [
+        "育碧",
+        "生成式AI",
+        "立项流程",
+        "Motherbrain"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "多名在职员工称，提案若未写明 AI 使用计划将难以获批。",
+            "管理层把生成式 AI 视为小团队快速做原型、迭代与及时砍项目的重要手段。",
+            "财报显示员工数从 2022年9月的 2.07 万降至 2026年9月的 1.55 万，四年减少 5200 人。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "把 AI 使用写进立项门槛，本质是把工具选择变成组织级默认项。这里的关键不是立场之争，而是「可验证」：原型更快能否转化为更好玩的游戏，需要项目数据回答，而不是口号。"
+        }
+      ]
+    },
+    {
+      "id": "in-tga2026",
+      "category": "industry",
+      "subcategory": "行业展会",
+      "badge": "TGA 2026",
+      "badgeType": "event",
+      "tag": "TGA 2026",
+      "title": "TGA 2026 提名出炉：GTA6 八项领跑，国产《影之刃零》五项入围",
+      "summary": "TGA 2026 年度游戏六强为《007 初露锋芒》《控制：共振》《GTA6》《影之刃零》《生化危机：安魂曲》《塞尔达传说：时之笛》重制版，GTA6 以 8 项提名居首。",
+      "image": "https://images.ludens.com.tw/uploads/images/wp-content/uploads/2026/11/tga-2026-nominees.jpg",
+      "source": "Ludens Media",
+      "date": "2026-11-28",
+      "url": "https://www.ludens.com.tw/tga-2026-nominees",
+      "readTime": 6,
+      "hotScore": 93,
+      "tags": [
+        "TGA 2026",
+        "年度游戏",
+        "GTA6",
+        "影之刃零"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "参选资格为 11月20日前发售，GTA6 于 11月19日上线，评委提前拿到游戏。",
+            "以发行商计任天堂 12 项最多，Capcom 11 项、Rockstar 8 项。",
+            "新增「最佳玩家创作」奖；结果由 160 家媒体评审团（90%）与玩家投票（10%）共同决定。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "发售前一天入围引发的「野榜」争论，其实暴露的是评审机制与玩家感知的时间差。对开发者更有价值的信号是《影之刃零》以 5 项提名成为国产单机新高——全球同步发售的路径正在被验证。"
+        }
+      ]
+    },
+    {
+      "id": "in-russia-license",
+      "category": "industry",
+      "subcategory": "政策监管",
+      "badge": "海外市场",
+      "badgeType": "business",
+      "tag": "海外市场",
+      "title": "俄罗斯讨论强制游戏发行许可并允许安全局获取玩家数据",
+      "summary": "据《莫斯科时报》《商业报》11月23日报道，俄罗斯当局讨论对游戏实施类似电影的发行许可制度，并要求数据在俄境内存储、采用 SORM 监控系统。国家杜马计划年底前完成初审。",
       "image": "",
       "source": "GameLook",
-      "date": "2026-11-27",
-      "url": "http://www.gamelook.com.cn/2026/11/607299",
+      "date": "2026-11-28",
+      "url": "http://www.gamelook.com.cn/2026/11/607139",
       "readTime": 6,
-      "hotScore": 84,
+      "hotScore": 88,
       "tags": [
-        "拳头游戏",
-        "行业观察",
-        "团队管理"
+        "俄罗斯",
+        "发行许可",
+        "数据合规",
+        "SORM"
       ],
       "content": [
         {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "GameLook 发布对拳头联合创始人 Marc Merrill 的访谈，回顾公司二十年发展历程。",
-            "他坦言公司曾盲目扩张，一年成本剧增45%，风险资金撤离后行业进入冷静期。",
-            "如今拳头强调合理团队规模、先验证再投入，并围绕多款长青游戏持续运营。"
+            "提案要求开发者与发行商取得发行许可证，并在通信监管局注册。",
+            "要求用户数据存储在俄罗斯境内，采用 FSB 的 SORM  electronic 通信监控系统。",
+            "行业组织警告：游戏是持续更新的「服务」，一次性证书一个月后即可能失效。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "世界不需要更多平庸产品这句判断，落在当下的产能过剩环境里格外具体。扩张之前先验证、发布之后留余粮，这两条听起来朴素，却是多数团队在周期切换时最先丢掉的东西。"
+          "text": "对做出海的公司，这类政策的现实影响是合规成本与发布节奏的重新计算。证书制与「游戏即服务」的更新频率天然冲突，监督机制能否落地仍有变数，值得持续跟踪而非即刻下结论。"
         }
       ]
     },
     {
-      "id": "tencent-circle-games-series-a",
+      "id": "in-bili-chenrui",
       "category": "industry",
+      "subcategory": "厂商财报",
+      "badge": "B站",
       "badgeType": "business",
-      "tag": "行业观察",
-      "title": "腾讯领投土耳其休闲团队 2500 万美元：出海下注从买量转向产品能力",
-      "summary": "11月26日，土耳其休闲团队 Circle Games 凭《Tidy Room!》冲上 iOS 美榜第4。该团队2024年成立，9月获腾讯领投2500万美元A轮。资本押的是产品能力，不是单款爆款。",
+      "tag": "B站",
+      "title": "B站陈睿披露 AI 创作数据与四款新游储备",
+      "summary": "B站董事长陈睿在业绩沟通中称，AI 原生视频创作平台 UpDream 累计观看超 50 亿分钟；首款自研游戏《闪耀吧！噜咪》海外流水占比约 45%，并一口气公布三款三国题材新游。",
       "image": "",
-      "source": "腾讯新闻",
-      "date": "2026-11-27",
-      "url": "https://news.qq.com/rain/a/20261126A0HK9000",
-      "readTime": 5,
-      "hotScore": 83,
+      "source": "GameLook",
+      "date": "2026-11-28",
+      "url": "http://www.gamelook.com.cn/2026/11/607343",
+      "readTime": 6,
+      "hotScore": 87,
       "tags": [
-        "腾讯",
-        "投融资",
-        "休闲游戏",
+        "B站",
+        "UpDream",
+        "自研游戏",
         "出海"
       ],
       "content": [
@@ -280,1050 +489,417 @@ window.DAILY_NEWS_DATA = {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "11月26日消息，土耳其休闲团队 Circle Games 的新作《Tidy Room!》冲上 iOS 美榜第4，单日下载破15万。",
-            "公司2024年成立于伊斯坦布尔，创始班底来自 Gram Games、Dream Games 与 Good Job Games。",
-            "2026年9月完成2500万美元A轮融资，由腾讯领投，累计融资3225万美元。"
+            "UpDream 创作视频累计观看超 50 亿分钟，播放破百万视频超 1000 条。",
+            "《闪耀吧！噜咪》进入中国 iOS 下载榜前两名，海外市场约占其流水 45%。",
+            "《三国志：王道天下》定档 12月24日，《仙境传说3》《激战：大牌英雄》《三国火凤燎原》计划 2027 年上线。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "在休闲赛道，单品冲榜的偶然性很高，真正被资本定价的是把机制打磨成可复用流程的团队能力。这也提示小团队：比一款爆款更值钱的，是能连续做出爆款的组织方法。"
+          "text": "分发平台做自研的关键，是能否用社区理解反向指导产品。海外流水占比接近一半说明内容型产品的全球化不再是可选项——但用密集新品对冲长线波动，最终仍要回到单品留存。"
         }
       ]
     },
     {
-      "id": "ga-arkheron-ea",
-      "category": "games",
-      "subcategory": "抢先体验",
-      "title": "前暴雪团队把爬塔PvP做成遗物构筑秀，冷启动靠好友通行证破局",
-      "summary": "《Arkheron》11月27日抢先体验登陆 Steam 等平台：三人小队爬塔 PvP，遗物改写 build，集齐四件解锁第五能力。首周免费与好友通行证直击冷启动；社交门槛当设计题解，比堆内容值得学。",
-      "source": "Steam 官方商店",
-      "date": "2026-11-27",
-      "url": "https://store.steampowered.com/app/3333850/",
-      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3333850/header.jpg",
-      "badge": "抢先体验",
-      "badgeType": "game",
+      "id": "in-kaiying-ai",
+      "category": "industry",
+      "subcategory": "公司研究",
+      "badge": "恺英网络",
+      "badgeType": "business",
+      "tag": "恺英网络",
+      "title": "恺英网络研报：AI 轻游戏平台 SoonPlay 探索视频即游戏",
+      "summary": "华鑫证券 11月27日研报梳理恺英网络 AI 布局：旗下极逸人工智能推出 AI 轻游戏生成交互平台 SoonPlay，打通刷视频、玩游戏、做游戏三个场景。",
+      "image": "",
+      "source": "新浪财经 / 华鑫证券研报",
+      "date": "2026-11-28",
+      "url": "https://vip.stock.finance.sina.com.cn/q/go.php/vReport_Show/kind/lastest/rptid/849088458567/index.phtml",
       "readTime": 5,
-      "hotScore": 91,
+      "hotScore": 83,
       "tags": [
-        "PvP",
-        "Bonfire Studios",
-        "遗物构筑",
+        "恺英网络",
+        "AI轻游戏",
+        "SoonPlay",
+        "视频即游戏"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "SoonPlay 被描述为全球首个 AI 轻游戏生成交互平台，主打「视频即游戏」。",
+            "时光川行研发面向专业创作者的 AI 内容平台《零号台》，覆盖构思到成片全流程。",
+            "公司持续探索 AI 陪伴、AI 潮玩、AI 短剧等新场景。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "券商研报带立场，数字与表述要打折看。真正值得技术团队留意的是「视频即游戏」这类交互形态：它把创作门槛降到内容消费场景里，是否成立要看留存与转化数据，而非概念新不新。"
+        }
+      ]
+    },
+    {
+      "id": "ga-exodus-core",
+      "category": "games",
+      "subcategory": "新游速览",
+      "badge": "新游",
+      "badgeType": "game",
+      "tag": "新游",
+      "title": "回合制战术机甲新作 Exodus Core 11月28日上线",
+      "summary": "黑暗科幻回合制战术游戏 Exodus Core 于 11月28日发售（抢先体验），玩家操控三台搭载士兵数字化人格的巨型机甲，对抗具备思维的虫群。支持中文。",
+      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3692020/bd3defbce4bec3e0e3cce4f4e8dcc4d81ebfd018/header.jpg?t=1795819767",
+      "source": "Steam 商店",
+      "date": "2026-11-28",
+      "url": "https://store.steampowered.com/app/3692020/",
+      "readTime": 5,
+      "hotScore": 84,
+      "tags": [
+        "Exodus Core",
+        "回合制战术",
+        "机甲",
+        "新游"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "发行日期 2026年11月28日，抢先体验，支持简体中文。",
+            "核心玩法为高难度回合制战术，操控三台巨型机甲对抗虫群。",
+            "Steam 商店页提供公开 header 图，appid 3692020 已通过 appdetails 核对名称。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "战术机甲是小而稳的独立品类。对开发者的启发在于：把「单位少、决策重」作为设计核心，能在有限美术成本下换取策略深度——比堆单位数量更适合小团队。"
+        }
+      ]
+    },
+    {
+      "id": "ga-am-i-nima",
+      "category": "games",
+      "subcategory": "新游速览",
+      "badge": "新游",
+      "badgeType": "game",
+      "tag": "新游",
+      "title": "心理恐怖互动小说 Am I Nima 用组词推进对话",
+      "summary": "心理恐怖游戏 Am I Nima 于 11月28日发售，玩家要在脑海中组词造句与母亲交流，设法让她相信自己就是女儿妮玛。以指向点击与互动叙事推进。",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/3224600/header.jpg",
+      "source": "Steam 商店",
+      "date": "2026-11-28",
+      "url": "https://store.steampowered.com/app/3224600/",
+      "readTime": 5,
+      "hotScore": 82,
+      "tags": [
+        "Am I Nima",
+        "心理恐怖",
+        "互动小说",
+        "新游"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "发行日期 2026年11月28日，类型为心理恐怖、互动小说、指向点击。",
+            "核心机制是用词组造句与母亲对话，争取信任以推进剧情。",
+            "Steam appid 3224600，名称经 appdetails 核对无误。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "把「语言生成」做成核心交互而非装饰，是叙事游戏少见的尝试。这类设计的关键在文本容错：玩家的输入如何被稳定映射到剧情分支，比恐怖氛围更决定体验下限。"
+        }
+      ]
+    },
+    {
+      "id": "ga-10-million-pixels",
+      "category": "games",
+      "subcategory": "新游速览",
+      "badge": "新游",
+      "badgeType": "game",
+      "tag": "新游",
+      "title": "增量游戏 10 Million Pixels 把挖掘做成像素侵蚀",
+      "summary": "增量游戏 10 Million Pixels 于 11月28日发售并支持中文，玩家在数百万像素中挖掘寻找唯一黄金像素，围绕探索与侵蚀主题展开。",
+      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4738100/b3f45c611fc7e96e0714a0a39b83606082577a9c/header.jpg?t=1795735526",
+      "source": "Steam 商店",
+      "date": "2026-11-28",
+      "url": "https://store.steampowered.com/app/4738100/",
+      "readTime": 5,
+      "hotScore": 80,
+      "tags": [
+        "10 Million Pixels",
+        "增量游戏",
+        "物理",
+        "新游"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "发行日期 2026年11月28日，支持简体中文，标签含增量、破坏、物理。",
+            "玩法目标是挖掘数百万像素、找出唯一黄金像素。",
+            "Steam appid 4738100，名称经 appdetails 核对无误。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "单一机制做到极致是增量游戏的常见打法。它提醒独立开发者：一个足够清晰的「唯一目标」，有时比复杂系统更能撑起完整体验。"
+        }
+      ]
+    },
+    {
+      "id": "ga-dreadwinter",
+      "category": "games",
+      "subcategory": "新游速览",
+      "badge": "新游",
+      "badgeType": "game",
+      "tag": "新游",
+      "title": "魔法咖啡馆模拟 Dreadwinter 11月28日开启抢先体验",
+      "summary": "工作模拟游戏 Dreadwinter 于 11月28日抢先体验发售，玩家经营一家诡异又温馨的魔法咖啡馆，在奇幻世界中精进手艺、把小店做成传奇。",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2505230/header.jpg",
+      "source": "Steam 商店",
+      "date": "2026-11-28",
+      "url": "https://store.steampowered.com/app/2505230/",
+      "readTime": 5,
+      "hotScore": 79,
+      "tags": [
+        "Dreadwinter",
+        "工作模拟",
+        "咖啡馆",
         "抢先体验"
       ],
       "content": [
         {
-          "title": "游戏要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "Bonfire Studios 开发、前暴雪成员组成，11月27日在 Steam、PS5、Xbox Series X|S 同步开启抢先体验。",
-            "核心为三人小队爬塔 PvP：遗物可在对局中途改变打法，集齐同套四件解锁第五能力，另有 15 队同场的大乱斗模式。",
-            "首周面向全员免费开放，并提供好友通行证；官方明确无开箱、无抽卡、无付费变强。"
+            "发行日期 2026年11月28日，抢先体验，标签含工作模拟、商店管理、温馨惬意。",
+            "核心循环是经营咖啡馆、精进手艺并扩展影响力。",
+            "Steam appid 2505230，名称经 appdetails 核对无误。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "对开发团队而言，最值得记的不是遗物数量，而是把「凑不齐三个人」当成核心设计问题：好友通行证与免费周末本质上是在用机制降低社交启动成本。做多人或服务型游戏时，冷启动往往不是宣发量级问题，而是组队摩擦力问题；先用设计把门槛抹平，再谈长期内容节奏。"
+          "text": "「诡异+温馨」的混搭定位，是模拟经营品类拉开差异的常见手法。抢先体验阶段适合观察商店页愿望单与更新节奏，再判断内容量是否支撑长线运营。"
         }
       ]
     },
     {
-      "id": "ga-the-last-inn-demo",
+      "id": "ga-iron-dawn",
       "category": "games",
-      "subcategory": "试玩上线",
-      "title": "《江城创业记》团队把废土经营切成6小时Demo，白天开店夜里拾荒",
-      "summary": "iFAction Studio 的《末日旅店》Demo 11月25日登陆 Steam：白天经营、夜里拾荒，约6小时含5名员工与3名可攻略角色。用完整昼夜循环做试玩切片，比堆时长更能验证循环。",
-      "source": "Steam 官方商店",
-      "date": "2026-11-25",
-      "url": "https://store.steampowered.com/app/5424210/",
-      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5424210/0d26cadf60b447e578ec794c85624c195a0e924b/header_schinese.jpg?t=1795712560",
-      "badge": "Demo上线",
+      "subcategory": "新游速览",
+      "badge": "新游",
       "badgeType": "game",
+      "tag": "新游",
+      "title": "战术机甲射击 Iron Dawn 主打可完全摧毁战场",
+      "summary": "Iron Dawn 于 11月27日发售，玩家作为佣兵驾驶员操控战争机器，选择合约、定制装备，部署到可完全摧毁的战场，带着收益撤离并升级武器库。",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2765070/header.jpg",
+      "source": "Steam 商店 / 腾讯新闻",
+      "date": "2026-11-28",
+      "url": "https://store.steampowered.com/app/2765070/",
       "readTime": 5,
-      "hotScore": 82,
+      "hotScore": 81,
       "tags": [
-        "模拟经营",
-        "废土",
-        "Demo",
-        "iFAction Studio"
+        "Iron Dawn",
+        "机甲",
+        "撤离射击",
+        "可摧毁场景"
       ],
       "content": [
         {
-          "title": "游戏要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "《末日旅店》Demo 于 11月25日上线 Steam，开发商为 iFAction Studio，即《江城创业记》团队。",
-            "玩法按昼夜分段：白天经营旅店、种田养殖、招待各有故事的住客；打烊后穿防护服外出狩猎拾荒，收集食材与物资。",
-            "试玩版约 6 小时，开放 5 名员工与 3 名可攻略角色；正式版规划 5 大区域与 10 名可攻略角色。"
+            "发行日期 2026年11月27日，标签含机甲、动作、机器人。",
+            "核心是接合约、定制装备、在可完全摧毁的战场作战并撤离。",
+            "Steam appid 2765070，名称经 appdetails 核对无误。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "试玩版没有把内容一股脑塞进去，而是用 6 小时完整跑通「白天经营—夜晚补给」的循环，再留 5 名员工、3 名角色作钩子。对小团队来说，Demo 的价值不在展示体量，而在验证玩家是否愿意重复这个循环；把昼夜两段钩子都放进试玩，是比堆地图更聪明的做法。"
+          "text": "可摧毁场景与撤离经济结合，把「环境交互」从噱头变成战术变量。对技术实现而言，破坏系统的性能预算与网络同步是这类项目真正的成本所在。"
         }
       ]
     },
     {
-      "id": "ga-me-and-you-coop",
+      "id": "ga-just-pull-weeds",
       "category": "games",
-      "subcategory": "合作解谜",
-      "title": "把「改写规则」做成双人协作，《Me and You》11月25日上线",
-      "summary": "《Me and You》11月25日 Steam 发售，PMF Top Joy Games 开发：致敬《Baba Is You》的双人合作解谜，共同改写规则过关。把规则做成可编辑对象，难度来自理解差。",
-      "source": "Steam 官方商店",
-      "date": "2026-11-25",
-      "url": "https://store.steampowered.com/app/4933500/",
-      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4933500/31fbf2a60a4bacd4061e64c06ff3cd6b108a4ba8/header.jpg?t=1795615744",
-      "badge": "新游发售",
+      "subcategory": "新游速览",
+      "badge": "新游",
       "badgeType": "game",
+      "tag": "新游",
+      "title": "解压游戏《只管拔草》登陆 Steam，最多 6 人联机拔十万株",
+      "summary": "日本独立团队 C-Chicken 开发的《只管拔草》11月27日登陆 Steam，目标是清完 10 万株杂草，支持最多 6 人联机，拔草、喂羊换钱、升级工具形成循环。",
+      "image": "",
+      "source": "3DM 游戏网",
+      "date": "2026-11-28",
+      "url": "https://www.3dmgame.com/news/202611/3961474.html",
       "readTime": 5,
-      "hotScore": 84,
+      "hotScore": 83,
       "tags": [
-        "合作解谜",
-        "规则改写",
-        "Baba Is You",
+        "只管拔草",
+        "劳动模拟",
+        "多人联机",
         "独立游戏"
       ],
       "content": [
         {
-          "title": "游戏要点",
-          "type": "list",
-          "items": [
-            "《Me and You》由 PMF Top Joy Games 开发，11月25日发售，支持简体中文与在线合作。",
-            "玩法灵感来自《Baba Is You》，两名玩家需一起创造、改变并打破每关规则才能解开谜题。",
-            "规则可被双方实时改写，关卡没有唯一解法，配合与沟通本身就是解题过程。"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "这类把「规则」做成可操作对象的设计，天然适合合作：一人改规则、一人验证，沟通成本直接变成玩法乐趣。做双人解谜时，与其加更多机关，不如给玩家一个共同作者身份；但要小心规则表述的歧义，联机场景下一条模糊规则就足以让协作崩掉。"
-        }
-      ]
-    },
-    {
-      "id": "ga-talos-cn-voice",
-      "category": "games",
-      "subcategory": "版本更新",
-      "title": "1000+手工谜题配上4000条中文台词，《沉星之序》把本地化做成内容更新",
-      "summary": "Thekla 开发、乔纳森·布洛领衔的《沉星之序》11月25日在 Steam 免费上线中文配音，16位演员录制近4000条台词，覆盖1000余个谜题。把本地化当内容更新做，老作品能重新拿到曝光窗口。",
-      "source": "3DM游戏网",
-      "date": "2026-11-25",
-      "url": "https://www.3dmgame.com/news/202611/3961216.html",
-      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/499170/8e4b79f6886648fe2b9b4fd36824146559b047ec/header_schinese.jpg?t=1795478005",
-      "badge": "本地化更新",
-      "badgeType": "game",
-      "readTime": 5,
-      "hotScore": 83,
-      "tags": [
-        "叙事解谜",
-        "本地化",
-        "乔纳森·布洛",
-        "版本更新"
-      ],
-      "content": [
-        {
-          "title": "游戏要点",
-          "type": "list",
-          "items": [
-            "发行商 Gamirror Games 与开发商 Thekla 宣布，11月25日在 Steam 免费上线《沉星之序》全中文配音。",
-            "配音由「怪物细胞」制作，16位演员录制近4000条台词，覆盖女王、吟游诗人、会说话的船等全部角色。",
-            "本体含超过1000个手工打造的谜题，四个世界的机制与角色在后期相互交汇，中文配音同步覆盖叙事内容。"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "值得留意的是更新节奏：本体已在10月发售，11月用一次高质量中文配音把叙事门槛降下来，等于给老产品再造一个入口。解谜游戏的本地化成本常被低估，近4000条台词不是小数目；当文本与谜题强绑定时，配音更新其实是一次重新打磨叙事的机会，而不只是加一条音轨。"
-        }
-      ]
-    },
-    {
-      "id": "ga-athelan-battlegrounds",
-      "category": "games",
-      "subcategory": "免费上线",
-      "title": "两人小团队做无养成PvP，《阿瑟兰战场》把编辑器塞进对战游戏",
-      "summary": "《阿瑟兰战场》11月25日 Steam 免费上线，Athelan Games 二人小团队打造回合制 PvP：无局外养成、无付费变强，外观仅装饰，还内置关卡编辑器。用编辑器延长寿命，是小团队的务实解。",
-      "source": "Steam 官方商店",
-      "date": "2026-11-25",
-      "url": "https://store.steampowered.com/app/3572070/",
-      "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3572070/a18386f22fd485ee5e6e4ed1e22eef2987d070da/header.jpg?t=1795630942",
-      "badge": "免费上线",
-      "badgeType": "game",
-      "readTime": 5,
-      "hotScore": 86,
-      "tags": [
-        "回合战术",
-        "PvP",
-        "关卡编辑器",
-        "免费游玩"
-      ],
-      "content": [
-        {
-          "title": "游戏要点",
-          "type": "list",
-          "items": [
-            "《阿瑟兰战场》由 Athelan Games 开发，11月25日在 Steam 免费上线，支持简体中文。",
-            "主打赛博朋克竞技场里的回合制战术 PvP：每回合移动一名英雄并释放两个技能之一，强调站位、冷却与节奏博弈。",
-            "无局外永久养成、无数值付费，皮肤与棋盘地砖仅作装饰；内置关卡编辑器，可自制解谜关卡并配套赛事直播。"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "两人团队最该学的不是做了什么模式，而是取舍：砍掉局外养成与数值付费，把有限人力全押在回合博弈和编辑器上。对战游戏最容易死在内容消耗速度上，编辑器把产出关卡的成本转嫁给社区，是用系统设计替代内容产能的典型做法。"
-        }
-      ]
-    },
-    {
-      "id": "ga-picross-s-climax",
-      "category": "games",
-      "subcategory": "新作定档",
-      "title": "1020道谜题之外，PICROSS 用跨代存档联动解锁40道奖励关",
-      "summary": "《PICROSS S CLIMAX》12月10日登陆 Switch，11月26日开放预约与体验版，收录9部作品共1020道谜题，并与前作存档联动解锁40道奖励题。把历史投入换成新作奖励，是低成本召回。",
-      "source": "游民星空",
-      "date": "2026-11-26",
-      "url": "https://www.gamersky.com/news/202611/2253894.shtml",
-      "image": "",
-      "badge": "系列新作",
-      "badgeType": "game",
-      "readTime": 5,
-      "hotScore": 80,
-      "tags": [
-        "数织解谜",
-        "存档联动",
-        "Nintendo Switch",
-        "Jupiter"
-      ],
-      "content": [
-        {
-          "title": "游戏要点",
-          "type": "list",
-          "items": [
-            "Jupiter 宣布《PICROSS S CLIMAX》12月10日在香港发售，登陆 Switch 2 与 Switch，系列累计下载量已突破100万。",
-            "收录《PICROSS S》至 S9 共9部作品的精选内容，5种模式合计1020道谜题，并重新划分难度、新增高难度奖励题。",
-            "与历代作品存档联动可解锁40道全新奖励谜题；11月26日起开放数字版预约与体验版下载。"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "最值得借鉴的是存档联动：不靠活动、不靠签到，而是让玩家过去九部作品的存档变成新作里的40道题。对系列化产品来说，历史数据是最容易被浪费的资产；把「你玩过」变成「你现在能解锁」，召回成本几乎为零，还顺手给了老玩家一个回归理由。"
-        }
-      ]
-    },
-    {
-      "id": "en-unity-6611f1",
-      "category": "engine",
-      "subcategory": "版本更新",
-      "title": "Unity 6.6 补丁把层级窗口拆成多帧更新，大场景卡顿有了新解法",
-      "summary": "Unity 11月26日发布6000.6.11f1，层级窗口新增Update Time Budget，默认每帧预算0.5毫秒，大场景改分帧刷新，修复异步上传缓冲损坏导致的渲染线程冻结。重活摊到多帧更划算。",
-      "source": "Unity 官方发布说明",
-      "date": "2026-11-26",
-      "url": "https://unity.com/releases/editor/whats-new/6000.6.11f1",
-      "image": "https://cdn.sanity.io/images/fuvbjjlp/production/b9385c095d1c8c58f48fc7d4fc8ae257395169c8-266x98.png",
-      "badge": "Unity 6.6",
-      "badgeType": "engine",
-      "readTime": 5,
-      "hotScore": 83,
-      "tags": [
-        "Unity 6.6",
-        "编辑器性能",
-        "版本更新"
-      ],
-      "content": [
-        {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "6000.6.11f1 于11月26日发布，属于 Unity 6.6 更新线的补丁版本",
-            "层级窗口新增 Update Time Budget，默认每帧 0.5 毫秒，大场景改为分帧刷新",
-            "修复异步上传缓冲损坏时的渲染线程冻结，以及 Quad 声道与 DX12 批处理模式崩溃"
+            "2026年11月27日发售，单人或最多 6 人在线合作，支持简体中文。",
+            "工具升级路线从空手、铲子、拔草机到黑洞、UFO，逐级提升效率。",
+            "3DM 正文可 curl 200 读取，但图床有防盗链，按规则不留外链配图。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "编辑器卡顿常被归咎于项目规模，这次改动说明在一帧内做完所有层级更新本身就是瓶颈。做工具链时，把一次性重活切成分帧预算，往往比优化某个绘制调用更划算。"
+          "text": "把「重复劳动」做成解压核心，靠的是升级反馈而非叙事。这类极简循环提醒我们：多人共处本身就是内容——和朋友一起做无意义的事，往往比复杂目标更有黏性。"
         }
       ]
     },
     {
-      "id": "en-unity7-a22",
-      "category": "engine",
-      "subcategory": "预览版",
-      "title": "Unity 7 alpha 22 补上 HDRP 的 XeSS，两千多条修复里藏着迁移成本",
-      "summary": "Unity 11月26日放出7000.0.0a22，2132条说明，HDRP接入Intel XeSS超分，修复无GPU服务器上D3D12误启用光追的崩溃。alpha修复越密，越说明正式版前仍有结构性调整。",
-      "source": "Unity 官方发布说明",
-      "date": "2026-11-26",
-      "url": "https://unity.com/releases/editor/whats-new/7000.0.0a22",
-      "image": "https://cdn.sanity.io/images/fuvbjjlp/production/b9385c095d1c8c58f48fc7d4fc8ae257395169c8-266x98.png",
-      "badge": "Unity 7 alpha",
+      "id": "os-pumpkin",
+      "category": "opensource",
+      "subcategory": "开源引擎",
+      "badge": "开源",
       "badgeType": "engine",
+      "tag": "开源",
+      "title": "Pumpkin：用 Rust 重写的高性能 Minecraft 服务器",
+      "summary": "Pumpkin 是用 Rust 编写的 Minecraft 服务器，星标约 1.3 万，通过 Cargo Workspace 拆分模块与 Tokio 并发，兼容 Java/Bedrock，并提供 WASM 插件机制。",
+      "image": "https://opengraph.githubassets.com/1/Pumpkin-MC/Pumpkin",
+      "source": "GitHub: Pumpkin-MC/Pumpkin",
+      "date": "2026-11-28",
+      "url": "https://github.com/Pumpkin-MC/Pumpkin",
       "readTime": 6,
-      "hotScore": 87,
-      "tags": [
-        "Unity 7",
-        "HDRP",
-        "XeSS",
-        "Alpha"
-      ],
-      "content": [
-        {
-          "title": "要点速览",
-          "type": "list",
-          "items": [
-            "Alpha 22 于11月26日发布，变更集 dbac4d68c4de，共 2132 条发行说明",
-            "HDRP 集成 Intel XeSS 超分辨率，图形侧另有阴影投射者与渲染目标回收修复",
-            "无 GPU 的 Windows Server 2025 上 WARP 不再被误判支持光追，并修复 D3D12 启动崩溃"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "把超分辨率直接塞进 HDRP，等于承认高端画质越来越依赖重建而非纯光栅。跟进 alpha 的价值在于提前发现 API 迁移点，但两千多条修复也提醒人：别把 alpha 当稳定版用。"
-        }
-      ]
-    },
-    {
-      "id": "en-babylon-938",
-      "category": "engine",
-      "subcategory": "WebGPU 渲染",
-      "title": "Babylon.js 9.38 把大气深度和 WebGPU 资源回收一起推进",
-      "summary": "Babylon.js 11月26日发布9.38.0，改进大气深度，WebGPU释放effect时清理管线上下文，并加入可选WebGL深度范围裁剪与四元数精度修正。显性资源管理正成为引擎升级的隐形门槛。",
-      "source": "Babylon.js GitHub Release",
-      "date": "2026-11-26",
-      "url": "https://github.com/BabylonJS/Babylon.js/releases/tag/9.38.0",
-      "image": "https://opengraph.githubassets.com/1/BabylonJS/Babylon.js",
-      "badge": "Babylon.js 9.38",
-      "badgeType": "engine",
-      "readTime": 5,
-      "hotScore": 82,
-      "tags": [
-        "Babylon.js",
-        "WebGPU",
-        "大气渲染"
-      ],
-      "content": [
-        {
-          "title": "要点速览",
-          "type": "list",
-          "items": [
-            "9.38.0 于11月26日发布，改动集中在 Addons 与 Core 两部分",
-            "大气深度改进；WebGPU 在 effect 释放时同步销毁对应管线上下文",
-            "新增可选 WebGL 深度范围裁剪控制，修正接近 90 度俯仰时 toEulerAngles 的精度"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "这些改动都不是炫目的新功能，而是长时间运行后的稳定性补丁。做 WebGPU 项目时，资源生命周期若靠猜，迟早会在切换场景时暴露，跟着官方 release 走是低成本的避坑方式。"
-        }
-      ]
-    },
-    {
-      "id": "en-playcanvas-2243",
-      "category": "engine",
-      "subcategory": "渲染补丁",
-      "title": "PlayCanvas 2.24.3 修正高斯泼溅插值，压缩网格示例也换了",
-      "summary": "PlayCanvas 11月23日发布2.24.3补丁，修正高斯泼溅逐splat浮点变量的平面插值，加入HandleGizmo深度偏移并替换Draco示例。小版本的渲染细节，往往比大版本更说明成熟度。",
-      "source": "PlayCanvas GitHub Release",
-      "date": "2026-11-26",
-      "url": "https://github.com/playcanvas/engine/releases/tag/v2.24.3",
-      "image": "https://opengraph.githubassets.com/1/playcanvas/engine",
-      "badge": "PlayCanvas 2.24.3",
-      "badgeType": "engine",
-      "readTime": 5,
-      "hotScore": 78,
-      "tags": [
-        "PlayCanvas",
-        "高斯泼溅",
-        "WebGPU"
-      ],
-      "content": [
-        {
-          "title": "要点速览",
-          "type": "list",
-          "items": [
-            "2.24.3 于11月23日发布，由 3 位贡献者提交 3 项改动",
-            "修复高斯泼溅逐 splat 浮点变量的平面插值问题",
-            "新增 HandleGizmo 的 fillDepthBias，Draco GLB 示例替换为压缩网格示例"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "高斯泼溅已经从实验特性走向补丁维护阶段，这类插值修正正是生产可用的信号。看引擎更新时，我会优先读小版本的修复清单，那里藏着真实的使用反馈。"
-        }
-      ]
-    },
-    {
-      "id": "en-unity-asset-cli",
-      "category": "engine",
-      "subcategory": "官方工具",
-      "title": "Unity 让编码智能体直接翻资源商店，一次只拿一个预制件",
-      "summary": "Unity 11月23日宣布CLI接入Asset Store与60多个AI资源生成器，Asset Library插件可从包中单独导入预制件，目前开放测试。把资源获取变成命令行，省的不只是下载体积。",
-      "source": "Unity 官方博客",
-      "date": "2026-11-26",
-      "url": "https://unity.com/blog/unity-asset-store-ai-generators-coding-agents",
-      "image": "https://cdn.sanity.io/images/fuvbjjlp/production/975d6169fac725a6b18b73f40b74ac123490055c-2291x1391.png",
-      "badge": "CLI 开放测试",
-      "badgeType": "engine",
-      "readTime": 6,
-      "hotScore": 85,
-      "tags": [
-        "Unity CLI",
-        "Asset Store",
-        "AI 资源"
-      ],
-      "content": [
-        {
-          "title": "要点速览",
-          "type": "list",
-          "items": [
-            "Unity CLI 连接 Claude Code、Codex、Grok Build 与 Google Antigravity 等编码智能体",
-            "Asset Library 插件可从资源包中单独取一个预制件，并展示三角形数与是否绑定骨骼",
-            "60 多个 AI 生成模型可通过 CLI 调用，每个文件记录模型、提示词与成本；功能处于开放测试"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "以前攒资源包是买整包只用其中一小部分，现在粒度终于落到单个资产。更值得留意的是生成记录：当 AI 产出进入项目，可追溯的提示词和成本比文件本身更影响长期维护。"
-        }
-      ]
-    },
-    {
-      "id": "en-gdext-056",
-      "category": "engine",
-      "subcategory": "生态绑定",
-      "title": "gdext 0.5.6 给 Godot 的 Rust 绑定减了编译负担",
-      "summary": "gdext 11月22日发布0.5.6，减少单态化、改进variant封送并新增unbind()，修复析构、C++热重载与Debug崩溃，初步支持visionOS。绑定层性能正成为Godot生态新战场。",
-      "source": "gdext GitHub Release",
-      "date": "2026-11-26",
-      "url": "https://github.com/godot-rust/gdext/releases/tag/v0.5.6",
-      "image": "https://opengraph.githubassets.com/2/godot-rust/gdext",
-      "badge": "gdext 0.5.6",
-      "badgeType": "engine",
-      "readTime": 5,
-      "hotScore": 80,
-      "tags": [
-        "Godot",
-        "Rust",
-        "GDExtension"
-      ],
-      "content": [
-        {
-          "title": "要点速览",
-          "type": "list",
-          "items": [
-            "0.5.6 于11月22日发布，是 Godot 的 Rust 绑定 gdext 的新版本",
-            "编译侧减少单态化，运行时改进 variant 封送，新增 unbind() 以允许 self 被重新借用",
-            "修复对象析构、C++ 热重载与 Debug 输出相关崩溃，初步支持 visionOS"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "选 Rust 做 Godot 扩展的人，痛点往往不在语法而在编译等待和热重载稳定性。这个版本把优化重点放在这两处，说明绑定层已经从能用进入好用阶段。"
-        }
-      ]
-    },
-    {
-      "id": "os-raylib",
-      "category": "opensource",
-      "subcategory": "引擎工具",
-      "title": "raylib 星标冲到 3.58 万：极简 C 库为何还这么能打",
-      "summary": "raylib 是用 C 写的极简游戏库，3.58 万星、Zlib 协议，主打几行代码出画面，10 月发布 6.2 版后仍高频更新。这种拒绝层层封装的路线，对想搞懂渲染底层的人反而是条捷径。",
-      "source": "GitHub: raysan5/raylib",
-      "date": "2026-11-26",
-      "url": "https://github.com/raysan5/raylib",
-      "image": "https://opengraph.githubassets.com/1/raysan5/raylib",
-      "badge": "★35.8k",
-      "badgeType": "hot",
-      "readTime": 5,
-      "hotScore": 92,
-      "tags": [
-        "C语言",
-        "游戏库",
-        "开源引擎"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "C 语言编写，3.58 万星、3400 余分叉，采用 Zlib 协议",
-            "10 月发布 6.2 版，代码库在 11 月 26 日仍有提交",
-            "主打低门槛：不依赖复杂抽象，几行代码即可绘制 2D/3D 画面"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "raylib 的价值不在功能多，而在把渲染、输入、音频摊开给你看。想补底层课的人，读它的源码比追新框架更划算。"
-        }
-      ]
-    },
-    {
-      "id": "os-pyxel",
-      "category": "opensource",
-      "subcategory": "复古引擎",
-      "title": "Pyxel 用 16 色和 128×128 画布，把做游戏拉回小时候",
-      "summary": "kitao/pyxel 是 Python 复古引擎，1.87 万星，11 月 23 日更新 3.0.4，自带 16 色像素画与音效编辑器，128×128 画面。设限逼人先做扎实玩法，比追高清更实用。",
-      "source": "GitHub: kitao/pyxel",
-      "date": "2026-11-26",
-      "url": "https://github.com/kitao/pyxel",
-      "image": "https://opengraph.githubassets.com/1/kitao/pyxel",
-      "badge": "★18.7k",
-      "badgeType": "hot",
-      "readTime": 5,
-      "hotScore": 86,
-      "tags": [
-        "Python",
-        "复古游戏",
-        "像素画"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "Python 复古游戏引擎，1.87 万星、980 分叉，11 月 23 日发布 3.0.4",
-            "内置像素画与音效编辑器，限定 16 色调色板和 128×128 画布",
-            "可用 Python 脚本直接操作图像、声音与输入"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "限制反而是一种教学：颜色只有 16 种、画面只有 128×128，先把玩法做清楚，再考虑美术。新手做原型，这种约束比自由更省时间。"
-        }
-      ]
-    },
-    {
-      "id": "os-joltphysics",
-      "category": "opensource",
-      "subcategory": "物理引擎",
-      "title": "JoltPhysics 星标破 1.2 万：多核刚体物理正在成为新默认",
-      "summary": "JoltPhysics 是 C++ 多核刚体与碰撞库，1.25 万星、MIT 协议，面向游戏和 VR，11 月 26 日仍在提交。并行求解成默认能力，对想理解物理引擎怎么吃满多核的人很有参考价值。",
-      "source": "GitHub: jrouwe/JoltPhysics",
-      "date": "2026-11-26",
-      "url": "https://github.com/jrouwe/JoltPhysics",
-      "image": "https://opengraph.githubassets.com/1/jrouwe/JoltPhysics",
-      "badge": "★12.5k",
-      "badgeType": "hot",
-      "readTime": 5,
-      "hotScore": 84,
-      "tags": [
-        "物理引擎",
-        "C++",
-        "多核"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "C++ 实现的多核刚体物理与碰撞库，1.25 万星、MIT 协议",
-            "面向游戏与 VR 场景，11 月 26 日仍在提交",
-            "并行求解与宽相、窄相检测针对现代多核 CPU 优化"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "物理引擎的进化方向是吃满多核，而不是单点算得更快。读 Jolt 的任务拆分方式，比背公式更能理解引擎性能从哪来。"
-        }
-      ]
-    },
-    {
-      "id": "os-miniaudio",
-      "category": "opensource",
-      "subcategory": "音频库",
-      "title": "一个 C 文件搞定音频：miniaudio 的少即是多值得反复看",
-      "summary": "miniaudio 是单文件 C 音频库，7705 星、653 分叉，把播放与采集塞进一个源文件，11 月 24 日仍有更新。把复杂功能压进单文件，对想读透音频底层又怕被构建系统劝退的人特别友好。",
-      "source": "GitHub: mackron/miniaudio",
-      "date": "2026-11-26",
-      "url": "https://github.com/mackron/miniaudio",
-      "image": "https://opengraph.githubassets.com/1/mackron/miniaudio",
-      "badge": "★7.7k",
-      "badgeType": "hot",
-      "readTime": 5,
-      "hotScore": 80,
-      "tags": [
-        "音频库",
-        "C语言",
-        "单文件"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "单文件 C 音频库，7705 星、653 分叉，播放与采集一体",
-            "11 月 24 日仍有更新，可嵌入 C/C++ 项目而无需额外依赖",
-            "支持常见音频格式解码、空间音效与设备枚举"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "单文件不等于简单，它只是把复杂度从构建流程挪回代码本身。适合想读透音频管线、又怕被依赖管理拖住的人。"
-        }
-      ]
-    },
-    {
-      "id": "os-libgdx",
-      "category": "opensource",
-      "subcategory": "引擎框架",
-      "title": "libgdx 扛了十几年：Java 跨平台框架的老树开新花",
-      "summary": "libgdx 是 Java 游戏框架，2.56 万星、Apache-2.0，一套代码覆盖桌面、安卓、HTML5 与 iOS，11 月 26 日仍在维护。这种跨平台抽象，仍是理解多端运行的活教材。",
-      "source": "GitHub: libgdx/libgdx",
-      "date": "2026-11-26",
-      "url": "https://github.com/libgdx/libgdx",
-      "image": "https://opengraph.githubassets.com/1/libgdx/libgdx",
-      "badge": "★25.6k",
-      "badgeType": "hot",
-      "readTime": 5,
-      "hotScore": 88,
-      "tags": [
-        "Java",
-        "跨平台",
-        "游戏框架"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "Java 跨平台游戏框架，2.56 万星、6500 余分叉，Apache-2.0 协议",
-            "一套代码覆盖 Windows、Linux、macOS、安卓、HTML5 与 iOS",
-            "11 月 26 日仍在维护，配套工具与扩展生态完整"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "老框架的价值是被时间验证过的抽象。libgdx 的后端分层思路放到今天依然成立，值得拿来做跨平台架构的对照样本。"
-        }
-      ]
-    },
-    {
-      "id": "os-wgpu",
-      "category": "opensource",
-      "subcategory": "渲染库",
-      "title": "wgpu 把 WebGPU 写进 Rust：跨平台图形 API 的安全派解法",
-      "summary": "wgpu 是纯 Rust 跨平台图形 API，1.86 万星、Apache-2.0，11 月 26 日仍在更新，为 Bevy 等引擎提供底座。它用类型系统换掉驱动层错误，是观察安全图形抽象的好样本。",
-      "source": "GitHub: gfx-rs/wgpu",
-      "date": "2026-11-26",
-      "url": "https://github.com/gfx-rs/wgpu",
-      "image": "https://opengraph.githubassets.com/1/gfx-rs/wgpu",
-      "badge": "★18.6k",
-      "badgeType": "hot",
-      "readTime": 5,
-      "hotScore": 87,
-      "tags": [
-        "Rust",
-        "WebGPU",
-        "渲染"
-      ],
-      "content": [
-        {
-          "title": "项目要点",
-          "type": "list",
-          "items": [
-            "纯 Rust 跨平台图形 API，1.86 万星、1700 余分叉，Apache-2.0 协议",
-            "11 月 26 日仍在更新，是 Bevy 等引擎的重要底座",
-            "把 WebGPU 概念带到原生平台，强调安全与可移植"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "wgpu 说明安全抽象不必以性能为代价。观察它的资源绑定与校验设计，能看清 Rust 在图形层到底换来了什么。"
-        }
-      ]
-    },
-    {
-      "id": "tu-mdn-breakout",
-      "category": "tutorials",
-      "subcategory": "Web 游戏入门",
-      "title": "从空白 Canvas 到完整打砖块：MDN 把网页游戏拆成 11 步",
-      "summary": "MDN 用纯 JavaScript 分 11 步讲透打砖块的 Canvas 渲染、球拍碰撞、计分与胜负判定，每步配可编辑示例，适合有基础 JS 的开发者；上手 Web 游戏，这比先学框架更扎实。",
-      "source": "MDN Web Docs",
-      "date": "常青",
-      "url": "https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript",
-      "image": "https://developer.mozilla.org/mdn-social-image.46ac2375.png",
-      "badge": "官方教程",
-      "badgeType": "hot",
-      "readTime": 12,
-      "hotScore": 82,
-      "tags": [
-        "Web游戏",
-        "Canvas",
-        "JavaScript"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "从 canvas 标签与 2D 绘图上下文起步，先画出球拍和砖块",
-            "逐步接入球体移动、墙壁反弹、键盘与鼠标控制、碰撞检测",
-            "补齐计分、生命与胜负状态，每一步都有可编辑的实时示例对照"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "这套教程的价值不在打砖块本身，而在它刻意绕开框架，把渲染循环和碰撞判定这些底层机制暴露出来。建议按章节顺序敲一遍代码，再尝试替换素材或加一个道具系统，比直接套模板更能看懂引擎替你做了什么。"
-        }
-      ]
-    },
-    {
-      "id": "tu-phaser-first-game",
-      "category": "tutorials",
-      "subcategory": "引擎入门",
-      "title": "官方中文版第一个 Phaser 3 游戏：角色、平台与收集物一次跑通",
-      "summary": "Phaser 官方中文教程带读者做跑跳收集星星的小游戏，覆盖 config 配置、资源加载、Arcade 物理与场景结构，只需基础 JS；先看懂官方范例再查 API，比零敲碎打搜博客省时。",
-      "source": "Phaser",
-      "date": "常青",
-      "url": "https://phaser.io/tutorials/making-your-first-phaser-3-game-chinese",
-      "image": "https://cdn.phaser.io/tutorials/making-your-first-phaser-3-game-chinese/tutorial_header.png",
-      "badge": "官方中文",
-      "badgeType": "hot",
-      "readTime": 15,
-      "hotScore": 84,
-      "tags": [
-        "Phaser",
-        "HTML5",
-        "游戏框架"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "用 config 对象配置渲染器、画布尺寸和默认 Scene，理解 Phaser 3 的场景结构",
-            "在 preload 中加载图片与精灵图，在 create 中放置背景、平台和角色",
-            "用 Arcade 物理实现移动跳跃、碰撞检测与星星收集计分"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "官方教程的好处是概念定义和代码版本一致，不会遇到第三方博客常见的 API 过期问题。建议把它当作 Phaser 的入口，跑通后再去看官方示例库里对应的物理与粒子用例，学习曲线会平很多。"
-        }
-      ]
-    },
-    {
-      "id": "tu-godot-profiler",
-      "category": "tutorials",
-      "subcategory": "性能优化",
-      "title": "Godot 性能优化从读 Profiler 开始：先找瓶颈再谈改代码",
-      "summary": "独游魔盒的 Godot 专题分五层讲性能剖析：Profiler 各栏含义、Draw Call 阈值、GC 尖刺定位、GDScript 热路径迁移与空间分区；先读数据再改代码，比追新插件更能救帧率。",
-      "source": "独游魔盒 Xmohe",
-      "date": "常青",
-      "url": "https://xmohe.com/techie/special/godot-key-tech/14-profiler",
-      "image": "",
-      "badge": "实战长文",
-      "badgeType": "hot",
-      "readTime": 14,
-      "hotScore": 86,
-      "tags": [
-        "Godot",
-        "性能优化",
-        "Profiler"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "拆开 Godot 4 的 Profiler 面板，区分帧时间、CPU 子系统、渲染端点与脚本调用频率",
-            "给出 2D/3D 场景的 Draw Call 经验区间，并说明合并网格与纹理图集的降幅",
-            "用对象池和缓存压住 GC 尖刺，再判断是否值得把热路径迁到 C# 或 GDExtension"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "这篇最值得记的不是具体数字，而是先测量再动手的顺序：作者反复强调过早优化和拿别人项目标尺量自己的危害。建议把自己的项目跑一遍 Profiler，对着图表复述瓶颈在哪，再决定要不要改架构。"
-        }
-      ]
-    },
-    {
-      "id": "tu-unity-2026-start",
-      "category": "tutorials",
-      "subcategory": "C# 与引擎入门",
-      "title": "一条线跑通 Unity 安装到发布：零基础 C# 脚本如何写出第一个 Demo",
-      "summary": "一篇面向零基础的 Unity 2026 教程，按安装、建项目、写 C# 控制旋转移动、组件与输入、调试到打包发布串成完整链路，还附报错排查与目录规范；新手第一遍照着做比啃 API 手册更容易建立手感。",
-      "source": "CSDN 博客",
-      "date": "常青",
-      "url": "https://blog.csdn.net/weixin_29014939/article/details/170414025",
-      "image": "https://img-bss.csdnimg.cn/202112131616291007.png",
-      "badge": "入门路径",
-      "badgeType": "hot",
-      "readTime": 10,
-      "hotScore": 80,
-      "tags": [
-        "Unity",
-        "C#",
-        "零基础"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "从 Unity Hub 安装、LTS 版本选择与项目创建讲起，明确硬件与授权边界",
-            "用 C# 脚本控制方块旋转、移动与批量生成，理解组件调用和输入处理",
-            "覆盖 Profiler/Stats 性能观察、常见报错排查与工程目录规范"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "这类教程的关键不是信息密度，而是顺序：先让物体在屏幕上动起来，再回头补语法概念。建议照着做完后立刻改规则，比如让收集物旋转或加一个计分 UI，把看懂变成能改。"
-        }
-      ]
-    },
-    {
-      "id": "tu-urp-shader-variants",
-      "category": "tutorials",
-      "subcategory": "图形渲染",
-      "title": "URP 里 Shader 变体怎样拖慢加载：从 multi_compile 到异步预热",
-      "summary": "一篇长文拆解 URP 与 Shader 变体，讲清变体数量为何指数增长、编译卡顿在移动端为何更明显，给出 shader_feature 替换、变体集合与异步预热方案；值得放进 URP 项目性能清单。",
-      "source": "惊觉（leheavengame）",
-      "date": "常青",
-      "url": "https://www.leheavengame.com/article/6afcf1cfbdd2c6f4fa930ffa/unity-urp-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%B8%B2%E6%9F%93-%E7%90%86%E8%A7%A3-shader-%E5%8F%98%E4%BD%93%E5%AF%B9%E5%8A%A0%E8%BD%BD%E6%97%B6%E9%97%B4%E7%9A%84%E5%BD%B1%E5%93%8D",
-      "image": "https://cdn.leheavengame.com/head_def.png",
-      "badge": "渲染进阶",
-      "badgeType": "hot",
-      "readTime": 9,
-      "hotScore": 82,
-      "tags": [
-        "Unity",
-        "URP",
-        "Shader"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "解释 multi_compile 与 shader_feature 的变体生成差异，10 个开关可膨胀到 1024 个变体",
-            "用 Profiler 追踪变体首次编译，指出移动端加载耗时可达到中高端 PC 的四倍",
-            "给出 ShaderVariantCollection、分帧异步预热与变体裁剪的落地做法"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "变体爆炸往往是项目后期才暴露的问题，等到打包变慢、首帧卡顿才处理代价很高。建议在项目早期就用分析工具统计变体数，并把阈值检查加进构建流程，比事后逐个删关键词省事。"
-        }
-      ]
-    },
-    {
-      "id": "tu-gdquest-2d-practice",
-      "category": "tutorials",
-      "subcategory": "Godot 项目实战",
-      "title": "GDQuest 的 2D 课程把收集玩法留给学生自己做：点选、Tween 与随机行为",
-      "summary": "GDQuest 有一节 2D 实践挑战课，复用 Area2D 点击检测、Tween 动画与 Timer 随机行为，让学生扩展火炬和小鸟机制，适合跟完前几节练手；问答区兜底，比只看视频更易排错。",
-      "source": "GDQuest",
-      "date": "常青",
-      "url": "https://school.gdquest.com/courses/learn_2d_gamedev_godot_4/looting/lets_experiment",
-      "image": "https://school.gdquest.com//opengraph-image.png",
-      "badge": "官方课程",
-      "badgeType": "hot",
-      "readTime": 8,
-      "hotScore": 83,
-      "tags": [
-        "Godot",
-        "GDScript",
-        "项目实战"
-      ],
-      "content": [
-        {
-          "title": "教程要点",
-          "type": "list",
-          "items": [
-            "用 Area2D 与 _input_event 判断鼠标左键点击，实现物品收集与计数",
-            "用 create_tween 做缩放、移动和淡出，配合 set_parallel 控制动画节奏",
-            "用 Timer 与 randf_range 生成随机跳跃，并处理影子与朝向同步"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "这节课的设计思路值得借鉴：把已讲过的知识点重新组合成没讲过的需求，才是真正检验学会没有。建议先自己实现一遍再翻问答区，直接照抄答案会错过最有价值的试错过程。"
-        }
-      ]
-    },
-    {
-      "id": "ai-3dcodefactory-data",
-      "category": "ai",
-      "subcategory": "AI 3D 数据",
-      "title": "小红书把 3D 场景代码变成可验证的训练数据",
-      "summary": "小红书 dots post train 团队开源 3DCodeFactory 全自动数据合成框架，数据集含 5045 条多轮轨迹、5.52B tokens，单场景代码中位数 4270 行；团队自测微调 1 个 Epoch 的 27B 模型超过 2.4T 旗舰。做 3D 代码智能体，先看清验收门槛比堆参数更实在。",
-      "source": "GitHub",
-      "date": "2026-11-26",
-      "url": "https://github.com/3DCodeFactory/3DCodeFactory",
-      "image": "https://opengraph.githubassets.com/4de87f1da956894f8bb30356e744f5eb7a501cc7f3c2f0db44c80836db0f0342/3DCodeFactory/3DCodeFactory",
-      "badge": "开源数据集",
-      "badgeType": "ai",
-      "readTime": 5,
       "hotScore": 90,
       "tags": [
-        "小红书",
-        "3D代码",
-        "训练数据"
+        "Pumpkin",
+        "Rust",
+        "Minecraft",
+        "服务器"
       ],
       "content": [
         {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "框架从通用纯文本正向合成复杂 3D 建模任务，不依赖存量三维资产，覆盖 10 个一级领域、56 个细分类别。",
-            "3DCodeFactory-Data 含 5045 条多轮轨迹，单条平均超 100 万 tokens，总规模 5.52B tokens，代码覆盖 Blender 与 Three.js。",
-            "团队自测：缺陷轨迹拦截准确率 87.2%，微调 1 个 Epoch 的 Qwen3.8-27B 在三个生成基准上超过 2.4T 的 Qwen3.8-Max，尚无第三方复现。"
+            "项目采用 Rust Cargo Workspace，拆出 auth、config、command、inventory、plugin-api 等模块。",
+            "官方基准：冷启动约 9.6–12.9ms、空闲内存约 60MiB，400–700 人并发内存约 1.38–1.74GiB。",
+            "插件可运行在 WASM 环境，支持 Rust、Python、Kotlin、Go、C# 等语言；仍处 Pre-release。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "这批数据最值得借鉴的不是规模，而是把「视觉、规格、功能」三类判据写成可执行的合取门控：任一项不达标就重跑。对做游戏原型自动化的团队来说，生成一段能跑的 Three.js 场景并不稀奇，难的是让模型在渲染后自己看图、发现穿模再改一轮。把验收标准显式写进数据，等于把人工检查的经验固化成训练信号，这条思路比追新一轮基座模型更容易在项目里落地。"
+          "text": "用 Rust 重写服务端的核心收益是并发模型与内存控制。官方基准由项目自测、且尚未实现全部原版机制，选型时要按自己的玩家规模复测——别把实验室数字当生产承诺。"
         }
       ]
     },
     {
-      "id": "ai-sage-interaction",
-      "category": "ai",
-      "subcategory": "多模态交互",
-      "title": "9B 全模态模型把「随时插话」变成可量化的指标",
-      "summary": "上海 AI Lab 开源 Sage-Interaction：基于 MiniCPM-o 4.5 的 9B 全模态模型，官方报告 FD-Bench v1.5 得分 80.73、轮次切换延迟 1.29 秒，支持语音打断与后台任务委派。数字来自团队自测，做实时对话角色前仍需按自己的硬件复测延迟。",
-      "source": "Hugging Face",
-      "date": "2026-11-26",
-      "url": "https://huggingface.co/internlm/Sage-Interaction",
-      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/internlm/Sage-Interaction.png",
-      "badge": "全双工交互",
-      "badgeType": "ai",
-      "readTime": 5,
+      "id": "os-arnis",
+      "category": "opensource",
+      "subcategory": "开源工具",
+      "badge": "开源",
+      "badgeType": "engine",
+      "tag": "开源",
+      "title": "Arnis 用 OpenStreetMap 数据把真实城市生成进 Minecraft",
+      "summary": "开源工具 Arnis 用 OpenStreetMap 数据把地球上任意地点生成成可游玩的 Minecraft 世界，GitHub 下载近 90 万、约 70 名贡献者，已从 Python 原型重写为 Rust。",
+      "image": "https://opengraph.githubassets.com/1/louis-e/arnis",
+      "source": "GitHub: louis-e/arnis",
+      "date": "2026-11-28",
+      "url": "https://github.com/louis-e/arnis",
+      "readTime": 6,
       "hotScore": 89,
       "tags": [
-        "上海AI Lab",
-        "全双工",
-        "语音Agent"
+        "Arnis",
+        "OpenStreetMap",
+        "Minecraft",
+        "Rust"
       ],
       "content": [
         {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "模型参数量 9B，基于 MiniCPM-o 4.5，处理流式音频与视频并实时生成语音，权重以 BF16 提供。",
-            "官方报告 FD-Bench v1.5 得分 80.73，FD-Bench v1 轮次切换延迟 1.29 秒，支持被用户打断后平滑续说。",
-            "后台任务委派可把耗时推理交给后端，Daily Delegation 80.47 F1、Time Speak 85.96 F1，均为模型卡披露结果。"
+            "用户在地图选区，工具通过 Overpass API 拉取建筑、道路、河流、铁路与森林数据生成世界。",
+            "复杂结构做 3D 模型转换以保留比例与建筑细节，结果直接写入游戏存档目录。",
+            "团队已把地形生成扩展到月球与火星，使用 NASA 等机构的公开高程数据。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "把「能不能自然接话」单独列为评测目标，是这类模型比通用多模态榜单更有参考价值的地方。游戏里做 AI 队友或 NPC 语音，真正卡体验的往往不是识别准不准，而是玩家插话后角色能不能立刻停、接着说、还不丢上下文。1.29 秒是发布方在指定基准上的数字，换到消费级显卡和自家对话脚本上会怎样，需要开发者自己压测；任务委派的分层设计倒是可以直接借鉴，把耗时查询放后端、前端只保交互节奏。"
+          "text": "把真实地理数据转成游戏内容，是程序化生成最直观的一类落地。Rust 重写带来大规模区域的性能余量，AI 辅助则被用于自动化琐事——作者保留架构决策、把重复任务交给工具的分工方式值得借鉴。"
         }
       ]
     },
     {
-      "id": "ai-nemotron-image-30b",
-      "category": "ai",
-      "subcategory": "图像生成模型",
-      "title": "英伟达放出 30B 生图权重，许可仍限定研究与评估",
-      "summary": "英伟达 11 月 25 日在 Hugging Face 开放 Nemotron-Labs-Image-30B-A3B 图像生成模型权重：30B 总参、每 token 激活 3B，采用自回归方式逐 token 生成图片；官方自测 GenEval 92.86 高于 GPT Image 2，但 GenEval2 落后。许可限定非商业研究与评估，框架其余组件尚未放出。",
-      "source": "Hugging Face",
-      "date": "2026-11-26",
-      "url": "https://huggingface.co/nvidia/Nemotron-Labs-Image-30B-A3B",
-      "image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/nvidia/Nemotron-Labs-Image-30B-A3B.png",
-      "badge": "开放权重",
-      "badgeType": "ai",
-      "readTime": 5,
-      "hotScore": 86,
-      "tags": [
-        "NVIDIA",
-        "图像生成",
-        "MoE"
-      ],
-      "content": [
-        {
-          "title": "要点速览",
-          "type": "list",
-          "items": [
-            "模型为 MoE 架构，总参数约 300 亿、每 token 激活约 30 亿，基于 Nemotron-H 并用 Nemotron 3 Nano 初始化，配 6.42 亿参数视觉分词器。",
-            "官方参考推理配置为 4 张 H100 80GB 生成 1024×1024 图片，权重约 133GB、分 32 个 safetensors 分片。",
-            "英伟达自测最佳设置下 GenEval 92.86、BizGenEval 86.0 高于 GPT Image 2，但 GenEval2 与 Qwen-Image-Bench 落后；许可限非商业研究与评估。"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "「像素即代码」的分工比单项跑分更值得留意：位图走离散视觉 token，图表、网页、幻灯片这类需要精确文字和布局的内容走代码生成，两条路径共用同一个生成与渲染接口。做 UI 素材或数值图表的开发者可以照这个思路拆任务，别指望一个扩散模型同时兼顾表现力和字距。另一方面，权重开放不等于可商用，Harness 与 VisionCode 尚未放出，现阶段更适合作为研究参照而非生产管线。"
-        }
-      ]
-    },
-    {
-      "id": "ai-google-fuse-eval",
-      "category": "ai",
-      "subcategory": "AI 评测框架",
-      "title": "谷歌用隐藏动机模拟，量出助手只听转述的判断损耗",
-      "summary": "Google Research 公开社交推理评估框架，用 Concordia 多智能体模拟预设隐藏动机，再让助手只听用户转述来推断；覆盖 12 个模型、开源超 2 万条样本，发现模型会附和偏见。给陪伴类 Agent 做评测，这种「只听一面之词」的场景比静态题库更接近真实。",
-      "source": "Google Research",
-      "date": "2026-11-26",
-      "url": "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants",
-      "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
-      "badge": "评测开源",
-      "badgeType": "ai",
-      "readTime": 5,
-      "hotScore": 85,
-      "tags": [
-        "Google",
-        "社交推理",
-        "Agent评测"
-      ],
-      "content": [
-        {
-          "title": "要点速览",
-          "type": "list",
-          "items": [
-            "框架基于 Google 开源的 Concordia 多智能体库：先为目标角色设定隐藏动机，再让用户代理向被测助手转述，最后用 LLM 裁判核对答案。",
-            "研究覆盖 12 个 LLM，开源框架与超过 2 万条生成样本，模拟与问询阶段分离，便于同一批场景反复评测不同模型。",
-            "官方结论：助手只听转述时准确率明显低于直接观察客观事件；用户带偏见时更易被附和，多轮对话也不总能纠偏。"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "这套框架点破了一个容易被忽略的产品风险：助手表现出的「共情」，有时只是把用户的主观叙述原样返还。做剧情 NPC、陪伴角色或客服 Agent 时，如果所有判断都来自单方输入，模型就可能把误会固化成事实。把「复述立场」和「核验事实」分开评测，并在高风险回答里保留来源与不确定性，是比继续堆对话轮数更实际的改进方向。框架与数据已公开，适合直接拿来做回归测试。"
-        }
-      ]
-    },
-    {
-      "id": "ai-ludo-tileset",
-      "category": "ai",
-      "subcategory": "游戏美术工具",
-      "title": "两句话生成一套自动拼接瓦片，Godot 与 Tiled 直接可用",
-      "summary": "Ludo.ai 上线 Tileset Generator：输入两段地面描述即可生成 16 张自动拼接瓦片，覆盖俯视与等距网格，导出 Godot 4 .tres、Tiled .tsx、法线图与 JSON；单套 1 credit。2D 地图最耗时的边界拼接被压成一次生成，但风格一致性仍需先画小图试。",
-      "source": "Ludo.ai",
-      "date": "2026-11-26",
-      "url": "https://ludo.ai/features/tileset-generator",
-      "image": "https://ludo.ai/images/features/tileset-generator-v2/og.png",
-      "badge": "游戏AI工具",
-      "badgeType": "ai",
+      "id": "os-fantasy-map",
+      "category": "opensource",
+      "subcategory": "开源工具",
+      "badge": "开源",
+      "badgeType": "engine",
+      "tag": "开源",
+      "title": "Fantasy Map Generator 用 Voronoi 生成自洽的幻想地图",
+      "summary": "Azgaar/Fantasy-Map-Generator 是浏览器端开源地图生成器，用 Voronoi 图程序化生成地形、政体、文化系统，星标约 6220，最新版本 v1.158.0。",
+      "image": "https://opengraph.githubassets.com/1/Azgaar/Fantasy-Map-Generator",
+      "source": "GitHub: Azgaar/Fantasy-Map-Generator",
+      "date": "2026-11-28",
+      "url": "https://github.com/Azgaar/Fantasy-Map-Generator",
       "readTime": 5,
       "hotScore": 84,
       "tags": [
-        "Ludo.ai",
-        "2D美术",
+        "Fantasy Map Generator",
+        "Voronoi",
+        "程序化生成",
+        "世界构建"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "基于 Voronoi 图与地理逻辑生成地形，并集成政体、文化、宗教与军事系统。",
+            "参数高度可调、提供可视化编辑器，浏览器直接运行并支持离线桌面版。",
+            "GitHub 仓库 11月12日发布 v1.158.0，社区持续迭代。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "世界构建工具的价值不在「画得漂亮」，而在内在一致性——地形决定交通、交通影响政体边界。这种把系统耦合起来的程序化思路，对做开放世界与叙事设定的团队都有参考价值。"
+        }
+      ]
+    },
+    {
+      "id": "os-material-maker",
+      "category": "opensource",
+      "subcategory": "开源工具",
+      "badge": "开源",
+      "badgeType": "engine",
+      "tag": "开源",
+      "title": "Material Maker 用节点化流程生成程序化纹理",
+      "summary": "Material Maker 是基于 Godot 引擎构建的开源程序化纹理与 3D 绘制工具，通过节点连接纹理生成器、滤镜与数学运算，产出 PBR 材质贴图并导出到外部引擎。",
+      "image": "https://opengraph.githubassets.com/1/RodZill4/material-maker",
+      "source": "GitHub: RodZill4/material-maker",
+      "date": "2026-11-28",
+      "url": "https://github.com/RodZill4/material-maker",
+      "readTime": 5,
+      "hotScore": 83,
+      "tags": [
+        "Material Maker",
+        "程序化纹理",
+        "PBR",
         "Godot"
       ],
       "content": [
@@ -1331,199 +907,699 @@ window.DAILY_NEWS_DATA = {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "先用文字或参考图生成无缝基础瓦片，再把两块地形与一句边界描述合成 16 张瓦片，覆盖角、边与内角的所有衔接方式。",
-            "支持俯视、等距 2:1 与真等距网格，可导出 atlas PNG、法线图、Godot 4 TileSet (.tres)、Tiled (.tsx) 与逐块 JSON。",
-            "计费为基础瓦片 0.5 credit、整套或整次编辑 1 credit；Pro 与 Studio 计划可通过 CLI、MCP 和 REST API 调用。"
+            "节点式界面把纹理生成器、滤镜与数学运算连成复杂材质。",
+            "支持程序化笔刷直接在 3D 模型上绘制，可实时预览并导出贴图。",
+            "最近发布 1.8 版本，MIT 许可，覆盖 Windows/macOS/Linux。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "这个工具切中的是 2D 开发里真正琐碎的环节：单块地砖容易生成，难的从来是两块地形相接时那十几种边缘与转角。把 16 张瓦片作为一次原子输出，并顺手给出 Godot 地形集和 JSON 元数据，省掉的不仅是画画时间，还有在引擎里手工配置自动拼接规则的步骤。生成前先用参考图锁定风格、生成后在浏览器里画一张小地图验收，比直接铺满整关更稳妥。"
+          "text": "程序化纹理的核心优势是可参数化与可复用：一套节点图能派生整个材质族。对缺美术资源的团队，它是补齐 PBR 素材管线的现实选择之一，但艺术方向仍需人工把控。"
         }
       ]
     },
     {
-      "id": "ai-motubrain-2",
-      "category": "ai",
-      "subcategory": "世界动作模型",
-      "title": "20B 世界动作模型把「看视频学新任务」搬进真实机器人",
-      "summary": "生数科技发布 Motubrain 2.0：20B 世界动作模型加 Harness 智能体系统，官方称六项机器人基准五项第一；看一段人类视频即可零样本迁移，RoboTwin 未见任务平均成功率 69.52%。权重仍在分批开放，游戏侧复用其动作先验前须先确认许可与复现。",
-      "source": "Motubrain 官方博客",
-      "date": "2026-11-26",
-      "url": "https://www.motubrain.com/en/blog/motubrain-2",
-      "image": "https://www.motubrain.cn/_cms/assets/94450081-17a5-4e82-ab90-8a8ac319e408_4372cfc8-61e2-4835-9642-231227d96422/assets/research-cover-motubrain-2-kqtgMIzU.webp",
-      "badge": "世界模型",
+      "id": "os-llamacpp",
+      "category": "opensource",
+      "subcategory": "开源框架",
+      "badge": "开源",
       "badgeType": "ai",
-      "readTime": 5,
-      "hotScore": 88,
+      "tag": "开源",
+      "title": "llama.cpp 1.1.0 按体积预算自动逐层量化",
+      "summary": "llama.cpp 发布 1.1.0：可按给定体积预算自动逐层量化，免去手工挑选量化档位；旧 llama_batch 接口已废弃，脚本需迁移到 llama_batch_ext。",
+      "image": "https://opengraph.githubassets.com/1/ggml-org/llama.cpp",
+      "source": "GitHub: ggml-org/llama.cpp",
+      "date": "2026-11-28",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "readTime": 6,
+      "hotScore": 91,
       "tags": [
-        "生数科技",
-        "世界模型",
-        "具身智能"
+        "llama.cpp",
+        "量化",
+        "本地推理",
+        "1.1.0"
       ],
       "content": [
         {
           "title": "要点速览",
           "type": "list",
           "items": [
-            "系统由 20B 参数的世界动作模型与 Motubrain-Harness 智能体框架组成，把文本、视频、动作与三维几何放进四流架构统一建模。",
-            "官方称在六项机器人操作基准中五项第一；ICL-WAM 让机器人参考一段人类视频即以零样本方式尝试新任务，RoboTwin 七项未见任务平均成功率 69.52%。",
-            "预训练过程曾公开直播 25 天、600 小时、20 万步；团队表示权重与数据将陆续开放，已有版本下载但商用需书面授权。"
+            "新版本支持按体积预算自动逐层量化，降低手工调参门槛。",
+            "旧 llama_batch 接口废弃，相关脚本需改用 llama_batch_ext。",
+            "项目星标约 13.6 万，是 C/C++ 本地大模型推理的核心基础设施之一。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "视频生成模型积累的物体运动与空间知识，正在被直接拿去做动作预测，这条路线对游戏 AI 同样有启发：与其为每个 NPC 行为写状态机，不如让模型先理解「世界会怎么变」，再决定「我该怎么做」。Harness 把规划、工具调用和失败恢复拆成闭环，也说明单体模型再强也需要一层可编辑的编排。需要注意的是，榜单成绩来自官方不同任务集，开放环境里的泛化边界与长期稳定性还缺乏独立复现，商用授权也要先谈清楚。"
+          "text": "「给个预算就自动量化」把量化从专家活变成工程默认值，这对本地 AI 工具链是实质性进步。接口废弃提醒维护者：升级前先跑一遍回归，别让脚本在版本切换中静默失效。"
         }
       ]
     },
     {
-      "id": "co-yokaverse-2027",
-      "category": "contest",
-      "subcategory": "招聘·校招",
-      "title": "游卡网络 2027 届客户端岗开放：Unity/UE 与 AI 编程助手同时写进要求",
-      "summary": "杭州游卡网络 11 月 12 日放出 2027 届客户端开发岗，招 6 人，要求计算机相关本科以上、熟悉 Unity 或 Unreal 引擎，并明确会用 Copilot、Cursor 辅助开发且能审查生成代码。把 AI 协作写成硬条件，学生阶段就该练判断力而不只是写代码。",
-      "source": "安徽24365大学生就业服务平台",
-      "date": "2026-11-12",
-      "url": "http://24365.ah.smartedu.cn/job.html?jid=324737&cid=53238",
+      "id": "os-angelspec",
+      "category": "opensource",
+      "subcategory": "开源框架",
+      "badge": "开源",
+      "badgeType": "ai",
+      "tag": "开源",
+      "title": "腾讯 AngelSpec 开源：DFly2 背后的投机采样训练框架",
+      "summary": "腾讯混元在开源 DFly2 草稿模型的同时，把配套训练推理框架 AngelSpec 并入仓库，支持隐状态落盘复用与 256K 上下文大规模训练。",
+      "image": "https://opengraph.githubassets.com/1/Tencent/AngelSpec",
+      "source": "GitHub: Tencent/AngelSpec",
+      "date": "2026-11-28",
+      "url": "https://github.com/Tencent/AngelSpec",
+      "readTime": 6,
+      "hotScore": 88,
+      "tags": [
+        "AngelSpec",
+        "投机采样",
+        "腾讯混元",
+        "训练框架"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "DFly2 权重与训练代码一并开源，训练管线并入 AngelSpec。",
+            "框架支持隐状态落盘复用，面向 256K 上下文的大规模训练场景。",
+            "技术报告已上 arXiv，权重托管在 Hugging Face。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "把「模型」和「训练框架」一起开源，比只放权重更有工程价值——团队可以照着配置给自家稀疏模型配加速器。注意其收益依赖目标模型具备可复用的 KV 与索引选择，稠密模型受益有限。"
+        }
+      ]
+    },
+    {
+      "id": "tu-cel-shading",
+      "category": "tutorials",
+      "subcategory": "材质教程",
+      "badge": "教程",
+      "badgeType": "engine",
+      "tag": "教程",
+      "title": "UE5 从零搭一套卡通渲染后处理材质",
+      "summary": "Epic 官方社区教程用四步讲清卡通材质：Unlit 着色模型、点积、参数与材质实例，依次实现基础卡通阴影、分层阴影、高光与描边，适合材质编辑器新手。",
       "image": "",
-      "badge": "27届校招",
-      "badgeType": "event",
-      "readTime": 4,
+      "source": "Epic Developer Community",
+      "date": "2026-11-28",
+      "url": "https://dev.epicgames.com/community/learning/tutorials/YDwRx/creating-a-simple-stylized-cel-shading-post-process-material-in-unreal-engine-5",
+      "readTime": 6,
+      "hotScore": 86,
+      "tags": [
+        "Unreal Engine",
+        "卡通渲染",
+        "材质",
+        "后处理"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "教程面向 UE5 材质编辑器新手，用 Unlit 模型与点积搭建卡通光照。",
+            "四步递进：基础阴影、分层阴影、高光、描边，配材质实例便于复用。",
+            "Epic 官方社区页可读，但其 imgproxy 图床带本站 Referer 返回 403，按规则留空配图。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "卡通渲染是理解「材质即计算」的绝佳入门：每一个视觉特征都能还原成节点运算。对新手来说，比照着效果图调参数更有价值的，是理解每一步背后的数学意图。"
+        }
+      ]
+    },
+    {
+      "id": "tu-fire-material",
+      "category": "tutorials",
+      "subcategory": "材质教程",
+      "badge": "教程",
+      "badgeType": "engine",
+      "tag": "教程",
+      "title": "UE5 纯节点做动态火焰着色器：UV 扭曲与渐变叠加",
+      "summary": "Epic 社区教程只用材质节点制作风格化动态火焰：生成程序化条带、用正弦波扭曲 UV、叠加渐变并减去平移纹理，适配火把、网格体与 Niagara 缎带轨迹。",
+      "image": "",
+      "source": "Epic Developer Community",
+      "date": "2026-11-28",
+      "url": "https://dev.epicgames.com/community/learning/tutorials/58vZY/ich-habe-feuermaterialien-in-der-unreal-engine-5-erstellt",
+      "readTime": 6,
+      "hotScore": 84,
+      "tags": [
+        "Unreal Engine",
+        "火焰着色器",
+        "UV扭曲",
+        "Niagara"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "教程全程不写代码，用材质节点完成程序化条带与 UV 正弦扭曲。",
+            "多层 Lerp 渐变叠加出火焰纵深，滚动纹理用于溶解与裁切火焰形状。",
+            "末尾给出材质优化与 Niagara 缎带集成思路，附项目下载。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "火焰特效的本质是「噪声+时间+渐变」的组合。这类教程的价值在于给出可拆解的节点结构，学会之后能迁移到水流、能量场等一大类动态效果。"
+        }
+      ]
+    },
+    {
+      "id": "tu-actor-component",
+      "category": "tutorials",
+      "subcategory": "蓝图进阶",
+      "badge": "教程",
+      "badgeType": "engine",
+      "tag": "教程",
+      "title": "UE 蓝图 Actor 组件：让去实体化能力在多种 Actor 间复用",
+      "summary": "Epic 官方教程讲解如何构建可复用的蓝图 Actor 组件：以网格体去实体化并恢复为示例，把同一行为套用到墙体、移动平台与物理摆动目标上。",
+      "image": "",
+      "source": "Epic Developer Community",
+      "date": "2026-11-28",
+      "url": "https://dev.epicgames.com/community/learning/tutorials/wr5nG/unreal-engine-actor",
+      "readTime": 5,
       "hotScore": 82,
       "tags": [
-        "校招",
-        "Unity",
-        "客户端开发"
+        "Unreal Engine",
+        "蓝图",
+        "Actor组件",
+        "复用"
       ],
       "content": [
         {
-          "title": "信息要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "杭州游卡网络技术有限公司 11 月 12 日发布 2027 届精英应届生岗位，方向为客户端开发，计划招 6 人。",
-            "要求计算机相关专业、本科及以上，熟悉 C/C# 与面向对象设计，具有 Unity 或 Unreal Engine 项目经验，了解渲染管线与图形学基础。",
-            "JD 明确要求会用 Copilot、Cursor 等 AI 编程助手，并能对生成代码做审查与优化；有 Demo、竞赛获奖或开源贡献者优先。",
-            "网申入口为 campus.yokaverse.com，岗位在芜湖/杭州滨江均有说明，投递前以企业官方页面为准。"
+            "从零构建蓝图 Actor 组件，实现网格体去材质化与可逆恢复。",
+            "同一组件复用到墙体、移动平台、物理驱动目标，保留各自原有行为。",
+            "强调共享组件定义与独立实例状态的区别，用 UE5.8.3 录制。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "把 AI 编程助手写进硬性要求是个信号：学生阶段练习的重点正在从“能不能写出代码”转向“能不能判断代码对不对”。建议在做课程项目时就把 AI 纳入流程，并留出时间逐行核对生成结果，面试时才有东西可讲。"
+          "text": "组件化是蓝图工程从「能跑」走向「好维护」的分水岭。共享定义+独立状态这套思路，正是把玩法能力做成可复用模块的基础，值得每个蓝图开发者练一遍。"
         }
       ]
     },
     {
-      "id": "co-youta-2027",
-      "category": "contest",
-      "subcategory": "招聘·校招",
-      "title": "友塔网络 27 届校招放出 60 个游戏研发名额，UE5 客户端单独设岗",
-      "summary": "上海友塔网络 11 月 3 日发布 27 届校招，客户端与 UE5 客户端方向各招 30 人，面向本硕博，要求数据结构、操作系统等基础扎实，有 Unity/Unreal 与 Lua、C++ 经验优先。名额不少，但真正卡人的还是基础课。",
-      "source": "北京交通大学就业资讯网",
-      "date": "2026-11-03",
-      "url": "http://job.njtu.edu.cn/f/recruitmentinfo/show?recruitmentId=0d3267bc54914fb59f39cf979e5344c4",
+      "id": "tu-interaction-system",
+      "category": "tutorials",
+      "subcategory": "蓝图入门",
+      "badge": "教程",
+      "badgeType": "engine",
+      "tag": "教程",
+      "title": "UE5.8 从零搭一套基于射线的通用交互系统",
+      "summary": "Epic 社区入门教程用蓝图搭建第三人称/第一人称交互框架：从相机发射线条追踪获取注视 Actor，设置交互距离，配合接口与基类实现开门等示例。",
       "image": "",
-      "badge": "27届校招",
-      "badgeType": "event",
-      "readTime": 4,
+      "source": "Epic Developer Community",
+      "date": "2026-11-28",
+      "url": "https://dev.epicgames.com/community/learning/tutorials/19Kvl/unreal-engine-ue-5-8-3d-interaction-system",
+      "readTime": 5,
       "hotScore": 80,
       "tags": [
-        "校招",
-        "UE5",
-        "游戏研发"
+        "Unreal Engine",
+        "交互系统",
+        "线条追踪",
+        "接口"
       ],
       "content": [
         {
-          "title": "信息要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "上海友塔网络科技有限公司 11 月 3 日在北京交通大学就业资讯网发布 27 届校招公告。",
-            "游戏研发工程师客户端方向、UE5 客户端方向各招 30 人，工作地点为上海长宁区，面向本科、硕士、博士。",
-            "客户端方向要求熟练使用引擎完成模块开发，注重代码效率；UE5 方向要求实现 gameplay 系统、编辑器支持与性能优化。",
-            "共性要求是数据结构与算法、编译原理、操作系统、计算机网络基础扎实；有 Unity/Unreal 引擎经验，熟悉 Lua、C++ 或 UE C++ 者优先。"
+            "用线条追踪从相机获取玩家注视的 Actor，并设置交互距离。",
+            "讲解 Hit Result、蓝图接口、可交互对象基类与子类继承。",
+            "附带准星 UI、简单输入与调试消息，附赠用 Move Component To 做门动画。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "两个方向合计 60 个名额，看着不少，但筛选条件几乎全落在基础课上。与其堆一堆引擎插件经验，不如把数据结构和操作系统真正学透，再拿一个小项目把 UE5 流程走通，这样应对笔试和技术面都更稳。"
+          "text": "交互系统是几乎所有 3D 游戏的第一块拼图。用接口+基类而非硬编码判断，能让后续新增可交互物件的成本趋近于零——这是新手进阶时最该建立的习惯。"
         }
       ]
     },
     {
-      "id": "co-unity-jam-2026",
+      "id": "tu-composure",
+      "category": "tutorials",
+      "subcategory": "影视制作",
+      "badge": "教程",
+      "badgeType": "engine",
+      "tag": "教程",
+      "title": "UE5.8 New Composure：广播级 3D 合成工作流",
+      "summary": "Epic 社区教程带你实操 UE5.8 新版 Composure：用 Composite Actor、Layer 与 Pass 做绿幕抠像与 3D 环幕投影，并通过 Pixel Streaming 连接 iPhone 做虚拟摄影机。",
+      "image": "",
+      "source": "Epic Developer Community",
+      "date": "2026-11-28",
+      "url": "https://dev.epicgames.com/community/learning/tutorials/4VE9R/unreal-engine-5-8-new-composure-broadcast-style-3d-compositing-workflow",
+      "readTime": 5,
+      "hotScore": 81,
+      "tags": [
+        "Unreal Engine",
+        "Composure",
+        "虚拟制片",
+        "Pixel Streaming"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "覆盖新版 Composure 架构、Composite Actor、Layer 与 Pass 的组织方式。",
+            "实操绿幕抠像、预录素材投影到 3D 环幕网格。",
+            "讲解 VCam 设置与 iPhone 经 Pixel Streaming 的虚拟摄影机控制。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "实时合成把影视级流程压进引擎，成本结构随之改变。对做虚拟制片或过场内容的小团队，这套工作流值得研究——但硬件与延迟仍是落地的硬门槛。"
+        }
+      ]
+    },
+    {
+      "id": "tu-mcp-lookdev",
+      "category": "tutorials",
+      "subcategory": "AI 工作流",
+      "badge": "教程",
+      "badgeType": "ai",
+      "tag": "教程",
+      "title": "UE × AI 实战：用 Unreal MCP 与 Codex 做参考图灯光 LookDev",
+      "summary": "Epic 社区中文教程把 UE5.8 官方 Unreal MCP 接入 ChatGPT Codex，用自然语言在一个房间里做清晨、晚霞、夜晚三套灯光，并对照参考图核验 AI 改了哪些参数。",
+      "image": "",
+      "source": "Epic Developer Community",
+      "date": "2026-11-28",
+      "url": "https://dev.epicgames.com/community/learning/tutorials/ryk05/unreal-engine-ue-x-ai-unreal-mcp-codex-lookdev",
+      "readTime": 6,
+      "hotScore": 90,
+      "tags": [
+        "Unreal Engine",
+        "MCP",
+        "Codex",
+        "灯光LookDev"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "从 NoLight 关卡起步，对照参考图用自然语言调整阳光方向与灯具布置。",
+            "讲解锁定曝光、体积雾表现窗边光束，并在夜景加入蓝色月光。",
+            "核心是让 AI 执行后逐项确认它改了哪些灯光与参数值。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "这是把 AI 智能体接进引擎工具链的具体样本。最有价值的不是「AI 会打灯」，而是教程坚持逐项核验——能验证结果，才敢把重复劳动交给智能体。"
+        }
+      ]
+    },
+    {
+      "id": "ai-dfly2",
+      "category": "ai",
+      "subcategory": "大模型",
+      "badge": "AI",
+      "badgeType": "ai",
+      "tag": "AI",
+      "title": "腾讯混元开源 DFly2：不改主模型，长文本解码提速 4.2 倍",
+      "summary": "11月26日腾讯混元开源投机采样草稿模型 DFly2 及训练框架 AngelSpec。它复用主模型 KV 与索引，注意力开销与上下文长度脱钩，Agent 场景最高 4.2 倍解码加速且输出一致。",
+      "image": "https://ai-bot.cn/wp-content/uploads/2026/11/DFly2-website.png",
+      "source": "AI 工具集 / 腾讯混元",
+      "date": "2026-11-28",
+      "url": "https://ai-bot.cn/dfly2",
+      "readTime": 7,
+      "hotScore": 94,
+      "tags": [
+        "腾讯混元",
+        "DFly2",
+        "投机采样",
+        "长文本"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "DFly2 通过 KV Share 与 Index Share 复用主模型资源，注意力复杂度收敛为常数级。",
+            "19 个公开评测集上，长文与 Agentic 平均加速比分别比 DSpark 高约 12% 与 30%。",
+            "官方口径：4.2 倍是纯解码段数字，把 64K 预填充算进来端到端约 1.35 倍。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "「白捡的推理加速」有明确边界：它依赖目标模型是稀疏注意力架构，且收益集中在长文本与多轮 Agent。把端到端口径讲清楚，比单看 4.2 倍更能避免选型误判。"
+        }
+      ]
+    },
+    {
+      "id": "ai-ling32",
+      "category": "ai",
+      "subcategory": "大模型",
+      "badge": "AI",
+      "badgeType": "ai",
+      "tag": "AI",
+      "title": "蚂蚁开源 Ling-3.2-air：1240 亿总参数、每 token 仅激活 55 亿",
+      "summary": "蚂蚁百灵开源 Ling-3.2-air，原生多模态 MoE，总参数 124B、每 token 激活 5.5B，支持文本图像视频混合输入，MIT 许可可商用，SWE-bench Pro 由上代 26.40 升至 58.28。",
+      "image": "https://cdn.modelscope.cn/social-thumbnails/models/inclusionAI/Ling-3.2-air.png",
+      "source": "ModelScope / 蚂蚁百灵",
+      "date": "2026-11-28",
+      "url": "https://modelscope.cn/models/inclusionAI/Ling-3.2-air",
+      "readTime": 6,
+      "hotScore": 91,
+      "tags": [
+        "蚂蚁百灵",
+        "Ling-3.2-air",
+        "MoE",
+        "开源模型"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "模型卡写明 Total 124B、Activated 5.5B，多模态 MoE 架构。",
+            "官方称 SWE-bench Pro 从 26.40 提升到 58.28，AutomationBench-AA 从 15.7% 升至 61%。",
+            "MIT 许可可商用；但长尾推理仍需数张百 GB 级卡，谈不上端侧。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "稀疏激活把「大模型能力」与「单次推理成本」解耦，是开源阵营今年的主线之一。对预算有限的团队，它提供了私有化部署的新选项——但显存门槛决定了它仍是企业级方案。"
+        }
+      ]
+    },
+    {
+      "id": "ai-shownow",
+      "category": "ai",
+      "subcategory": "世界模型",
+      "badge": "AI",
+      "badgeType": "ai",
+      "tag": "AI",
+      "title": "ShowNow 用「预生成动作分支」把世界模型延迟砍掉 66%",
+      "summary": "新加坡国立大学 Show Lab 于 11月27日发布 ShowNow：在上一帧播放时预生成最多八条动作条件视频分支，用户按键瞬间提交对应分支。ViZDoom 中位延迟从 620ms 降至 208ms。",
+      "image": "",
+      "source": "Emergent / NUS Show Lab",
+      "date": "2026-11-28",
+      "url": "https://emergent.sh/news/shownow-cuts-world-model-latency-66-action",
+      "readTime": 7,
+      "hotScore": 92,
+      "tags": [
+        "世界模型",
+        "ShowNow",
+        "推测执行",
+        "实时交互"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "单张 H100 上 5B 模型中位延迟降 66%、P99 降 73%，480p/16fps 并维持八条分支。",
+            "33B 变体在 8 卡 B300 上达 1344×768、23.94fps，中位延迟 232ms。",
+            "论文承认在视觉保真度与长程一致性上存在权衡，但未给出量化数据。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "把 CPU/GPU 的空闲播放算力拿去「猜」下一步，是推测执行思想在生成式视频里的移植。208ms 让神经渲染环境接近可玩，但保真度代价仍是开放问题——离真正替代引擎还很远。"
+        }
+      ]
+    },
+    {
+      "id": "ai-karpathy-map",
+      "category": "ai",
+      "subcategory": "AI 应用",
+      "badge": "AI",
+      "badgeType": "ai",
+      "tag": "AI",
+      "title": "Karpathy 用 Claude Code 七小时生成文明风格游戏地图",
+      "summary": "Andrej Karpathy 用 Claude Code 桌面版加 Opus 5.5，7 小时生成约 4.5 万行代码，把美国 31 个真实数据源整合到 25 公里六边形网格，做成一张文明风格游戏地图。",
+      "image": "",
+      "source": "微信公众号 @码上八分钟（授权整理）",
+      "date": "2026-11-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzcwMTQ0MzU3MQ==&mid=2247484386&idx=1&sn=3b6d6360bb45e9e2c623ff27858209f1",
+      "readTime": 6,
+      "hotScore": 90,
+      "tags": [
+        "Karpathy",
+        "Claude Code",
+        "Vibe Coding",
+        "数据可视化"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "GDP 映射为金产量、城市按人口点亮，数据来自人口普查、经济分析局等 31 个来源。",
+            "整套项目约 4.5 万行代码、耗时 7 小时，被视作有代表性的 vibe coding 展示。",
+            "原始出处为 Karpathy 社交平台帖，本条落地用作者授权的公众号整理页。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "当别人还在争论 AI 能否写代码时，这类项目已经用它搭起数据驱动的平行世界。可验证性是关键：数据源真实、结果可对照，才让大规模生成代码变得可信。"
+        }
+      ]
+    },
+    {
+      "id": "ai-anthropic-rust",
+      "category": "ai",
+      "subcategory": "开发工具",
+      "badge": "AI",
+      "badgeType": "ai",
+      "tag": "AI",
+      "title": "Anthropic 把 Claude Messages API 从 Python 迁到 Rust",
+      "summary": "Anthropic 将 Claude Messages API 由 Python 迁移至 Rust，官方 SDK 与接口同步更新，社区实测首 token 中位时间下降约 20%。这是其近期连续抠开发者体验的又一步。",
+      "image": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "source": "微信公众号 @JavaFamily（授权整理）",
+      "date": "2026-11-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUxMjA2Mjc4MA==&mid=2247485664&idx=1&sn=64037d356416a888cddc8d8574d2c561",
+      "readTime": 6,
+      "hotScore": 87,
+      "tags": [
+        "Anthropic",
+        "Claude API",
+        "Rust",
+        "性能优化"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "Messages API 从 Python 迁到 Rust，官方 SDK 与接口同步换血。",
+            "社区报道首 token 中位时间降约 20%，目标是延迟、吞吐与内存的极限优化。",
+            "配合桌面端 Artifacts 安装成应用等动作，Anthropic 在开发者体验上持续加码。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "主干道接口换语言，图的是长期的性能与稳定性红利。这类底层重写短期看不出功能变化，却决定了上层工具的天花板——对做 AI 应用集成的团队，值得关注接口与延迟的后续变化。"
+        }
+      ]
+    },
+    {
+      "id": "ai-sage-interaction",
+      "category": "ai",
+      "subcategory": "大模型",
+      "badge": "AI",
+      "badgeType": "ai",
+      "tag": "AI",
+      "title": "上海 AI Lab 开源全双工模型 Sage-Interaction，可被随时打断",
+      "summary": "上海人工智能实验室开源全双工多模态模型 Sage-Interaction，支持随时打断、平滑接话与话题切换，语音响应时延压到 1.29 秒，双工交互质量得分 80.73。",
+      "image": "https://ai-bot.cn/wp-content/uploads/2026/11/Sage-Interaction-website.png",
+      "source": "AI 工具集 / 上海 AI Lab",
+      "date": "2026-11-28",
+      "url": "https://ai-bot.cn/sage-interaction",
+      "readTime": 6,
+      "hotScore": 88,
+      "tags": [
+        "上海AI Lab",
+        "Sage-Interaction",
+        "全双工",
+        "语音交互"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "支持随时打断、平滑接话、话题切换，回应时延 1.29 秒。",
+            "采用快慢架构：前台负责对话感知，数学与科学计算静默交给后台书生科学大模型。",
+            "在开闭源双工模型中时延排名第一，交互质量得分 80.73。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "语音是 C 端渗透率最高的交互形态，而「能被打断」是从客服机器人走向数字伙伴的分水岭。时延与打断体验一旦做到无感，交互入口的格局会重新洗牌。"
+        }
+      ]
+    },
+    {
+      "id": "co-tap-2027",
+      "category": "contest",
+      "subcategory": "招聘·校招",
+      "badge": "校招",
+      "badgeType": "event",
+      "tag": "校招",
+      "title": "TapTap 2027 届秋招开放 AI 游戏创作与引擎研发实习岗",
+      "summary": "TapTap 2027 届秋招启动，除常规技术岗外开放 AI 游戏创作实习生与 AI 游戏引擎开发实习生：前者用自然语言+AI 工具直接产出上线 TapTap 的游戏，后者参与引擎与智能体通信模块。",
+      "image": "",
+      "source": "中国科学院大学就业信息网",
+      "date": "2026-11-28",
+      "url": "https://job.ucas.ac.cn/frontpage/ucas/html/recruitmentinfoForm.html?&positionDetailId=4a3e0c9710cd49d0bd751d05e0aaedcf",
+      "readTime": 6,
+      "hotScore": 88,
+      "tags": [
+        "TapTap",
+        "2027校招",
+        "AI游戏创作",
+        "引擎开发"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "AI 游戏创作实习生用自然语言描述创意、AI 生成代码，作品直接上线 TapTap 接受玩家检验。",
+            "AI 游戏引擎开发实习生参与引擎与智能体通信、沙盒环境搭建与工具链开发。",
+            "要求熟悉至少一种主流引擎（Unity/UE5/Cocos/Godot），加分项含 Game Jam 经历与独立作品。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "把「Game Jam 经历」「独立作品」写进招聘要求，说明行业正在把可展示的实作能力当作硬通货。对在校生，这比刷简历关键词更值得投入——一个上线作品胜过十行技能列表。"
+        }
+      ]
+    },
+    {
+      "id": "co-taomee-2027",
+      "category": "contest",
+      "subcategory": "招聘·校招",
+      "badge": "校招",
+      "badgeType": "event",
+      "tag": "校招",
+      "title": "淘米网络 2027 校招把 AI 工具能力写进硬性说明",
+      "summary": "淘米网络开放 2027 届游戏客户端开发校招，要求 C#/C++ 与 Unity 基础，并明确「具备良好 AI 工具运用能力」，简历需说明常用 AI 工具、熟练程度与实际提效场景。",
+      "image": "",
+      "source": "西安邮电大学就业创业信息网",
+      "date": "2026-11-28",
+      "url": "http://jiuye.xupt.edu.cn/detail/job?id=3285046",
+      "readTime": 5,
+      "hotScore": 85,
+      "tags": [
+        "淘米网络",
+        "2027校招",
+        "游戏客户端",
+        "AI工具"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "面向 2027 届本科及以上，计算机相关专业，掌握 C#/C++，熟悉 Unity 等引擎。",
+            "AI 能力说明为必需项：需在简历介绍常用 AI 工具、熟练度与实际项目提效案例。",
+            "有可复用 Skill 沉淀实践、自研游戏作品或 ACM 获奖经历者优先。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "招聘要求从「会用 AI」细化到「能否沉淀可复用工作流」，这是岗位评价标准的实质变化。对求职者，把 AI 使用讲成具体场景与效果，比泛泛写「熟悉 AI 工具」有说服力得多。"
+        }
+      ]
+    },
+    {
+      "id": "co-ggj-2027",
       "category": "contest",
       "subcategory": "赛事·GameJam",
-      "title": "Unity 官方 Game Jam 首次单设学生赛道：7 天创作外加 Buffer 期",
-      "summary": "2026 官方 Unity Game Jam 已于 11 月 5 日至 14 日在线举办，赛期扩到 7 天并增设打包上传的 Buffer 期，首次单设学生赛道，奖品含 Unity Pro 与 Odin Inspector。想攒作品集的学生，短周期赛事比长期项目更容易出成果。",
-      "source": "The Futurist",
-      "date": "2026-11-07",
-      "url": "https://www.thefuturist.co/theme-reveal-2026-official-unity-game-jam/",
-      "image": "https://i.ytimg.com/vi/IYHIvcq21kM/maxresdefault.jpg",
-      "badge": "赛事回顾",
+      "badge": "赛事",
       "badgeType": "event",
-      "readTime": 4,
+      "tag": "赛事",
+      "title": "Global Game Jam 2027 开放站点注册，活动周定在 1 月 25—31 日",
+      "summary": "Global Game Jam 官方宣布 2027 站点注册已开放（自 11 月 1 日起），活动周为 2027 年 1 月 25—31 日；参与者注册将于 12 月 1 日开放，主题现场公布、48 小时完成游戏。",
+      "image": "https://awnchina.cn/wp-content/uploads/2026/05/AWN_LOGO_Web.png.webp",
+      "source": "動漫世界網絡中國站 / GGJ",
+      "date": "2026-11-28",
+      "url": "https://awnchina.cn/ggj-2027-%E7%AB%99%E7%82%B9%E6%B3%A8%E5%86%8C%E7%8E%B0%E5%B7%B2%E5%BC%80%E6%94%BE/",
+      "readTime": 5,
+      "hotScore": 86,
+      "tags": [
+        "Global Game Jam",
+        "GGJ 2027",
+        "Game Jam",
+        "48小时"
+      ],
+      "content": [
+        {
+          "title": "要点速览",
+          "type": "list",
+          "items": [
+            "GGJ 2027 官方活动周为 2027 年 1 月 25 日至 31 日，具体日期依各站点而定。",
+            "站点注册自 2026 年 11 月 1 日开放，参与者注册 12 月 1 日开放。",
+            "历史累计参与者超 50 万、诞生游戏超 11 万款，可申办线下站点或线上参与。"
+          ]
+        },
+        {
+          "title": "学习观察",
+          "type": "text",
+          "text": "48 小时围绕统一主题做出可玩原型，是训练快速原型与团队协作最高效的场合之一。想在校招里拿出作品的在校生，GGJ 是门槛最低、产出可展示的起点。"
+        }
+      ]
+    },
+    {
+      "id": "co-stl-roundup",
+      "category": "contest",
+      "subcategory": "赛事·GameJam",
+      "badge": "赛事",
+      "badgeType": "event",
+      "tag": "赛事",
+      "title": "St. Louis 开发者社区 Spooky Jam 作品回顾与 11 月分享会",
+      "summary": "St. Louis 游戏开发者社区第 40 期 RoundUp 回顾 Spooky Jam 获奖作品，并宣布 11 月 28 日 Share & Play 试玩活动开放 15 个展示名额，另有季度分享与年末聚会。",
+      "image": "https://raw.githubusercontent.com/STLGameDev/STLGameDevRoundUp/main/screenshots/issue-40.png",
+      "source": "St Louis Game Developer RoundUp",
+      "date": "2026-11-28",
+      "url": "https://roundup.stlgame.dev/issue-40",
+      "readTime": 5,
       "hotScore": 78,
       "tags": [
         "Game Jam",
-        "Unity",
-        "学生赛道"
+        "Spooky Jam",
+        "Share & Play",
+        "开发者社区"
       ],
       "content": [
         {
-          "title": "信息要点",
+          "title": "要点速览",
           "type": "list",
           "items": [
-            "2026 官方 Unity Game Jam 于 11 月 5 日至 14 日在线举办，通过 itch.io 与 Unity Discord 进行。",
-            "本届赛期扩展为 7 天，并在截止后增加专门用来打包、上传和修复临时 Bug 的 Buffer 期。",
-            "首次设置 Best Student Category，面向在校学生，奖品包括 Unity Pro、Discord Nitro、Odin Inspector 与 Photon Plus。",
-            "主题在开幕时公布，参赛者可单人或多人在限定时间内完成一款可玩原型。"
+            "社区年度 Spooky Jam 主题为 The Other Side，多款成员作品在列。",
+            "11 月 28 日 Share & Play 试玩活动开放 15 个 demo 展示名额。",
+            "另有月度社交、季度 Share & Play 与 12 月 6 日年末聚会。"
           ]
         },
         {
           "title": "学习观察",
           "type": "text",
-          "text": "7 天创作加 Buffer 期的安排，把“赶 deadline”和“收尾打磨”拆开，更贴近真实项目节奏。学生团队不必追求大而全，围绕主题做一个机制完整的小原型，反而更容易在评委面前讲清楚设计意图。"
-        }
-      ]
-    },
-    {
-      "id": "co-ncda-2026",
-      "category": "contest",
-      "subcategory": "赛事·奖项",
-      "title": "NCDA 第十四届总决赛本周末线上答辩：报名 10 月已截止，赛程进入收官",
-      "summary": "第十四届全国大学生数字媒体科技作品及创意竞赛通知显示，全国总决赛定于 11 月 27 日至 29 日线上评审答辩，颁奖暂定 12 月 4 日至 6 日在北京；报名 10 月 23 日已截止。没赶上的学生可把这份赛程存进日历，明年按同一节奏准备。",
-      "source": "全国大学生数字媒体科技作品及创意竞赛组织委员会",
-      "date": "2026-11-27",
-      "url": "http://www.cmit.cn/en/html/tongzhigonggao/show-144-45826-1.html",
-      "image": "",
-      "badge": "赛事日历",
-      "badgeType": "event",
-      "readTime": 4,
-      "hotScore": 76,
-      "tags": [
-        "NCDA",
-        "数字媒体",
-        "总决赛"
-      ],
-      "content": [
-        {
-          "title": "信息要点",
-          "type": "list",
-          "items": [
-            "官方通知显示，2026 年第十四届全国大学生数字媒体科技作品及创意竞赛全国总决赛安排在 11 月 27 日至 29 日。",
-            "总决赛采用线上评审、作品展示与答辩交流；颁奖典礼及作品展示暂定 12 月 4 日至 6 日在北京举行。",
-            "报名及作品提交已于 10 月 23 日 23:59:59 截止，赛区选拔在 11 月 2 日至 15 日进行，入围名单 11 月 19 日至 22 日公布。",
-            "参赛面向全日制研究生、本科及高职高专学生，专业不限，每队不超过 5 人，可设 1 至 2 名指导教师。"
-          ]
-        },
-        {
-          "title": "学习观察",
-          "type": "text",
-          "text": "报名窗口已经关上，这条更适合当作赛程日历来记：它把校赛、赛区赛、国赛的时间线摆得很清楚。打算明年参加的学生，可以按这份节奏倒推准备作品，而不是等到截止前两周才动手。"
+          "text": "地方开发者社区的 Jam 与试玩会，是独立开发者获得真实反馈的低门槛渠道。作品要能被陌生人玩到、被直白点评，成长速度往往比闭门开发更快。"
         }
       ]
     }
